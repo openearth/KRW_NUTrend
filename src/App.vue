@@ -15,7 +15,6 @@
     <legal-dialog
       title="Legal"
       button-text="Accept"
-      storage="none"
       :body="legalText"
       :checkboxes="checkboxes"
     />
