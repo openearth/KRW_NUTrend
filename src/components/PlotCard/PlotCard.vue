@@ -1,5 +1,5 @@
 <template>
-  <v-card class="plot-card">
+  <v-card class="plot-card" outlined>
     <div class="d-flex flex-no-wrap justify-space-between">
       <div>
         <v-card-title>{{ title }}</v-card-title>

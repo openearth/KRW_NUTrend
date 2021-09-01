@@ -6,7 +6,8 @@
     <v-select
       v-bind="$attrs"
       append-icon="mdi-chevron-down"
-      solo
+      outlined
+      dense
     />
   </div>
 </template>
