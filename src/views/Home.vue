@@ -109,9 +109,9 @@
     },
     data() {
       return {
-        typeList: ['Toestand', 'Trends', 'Concentratie'],
+        typeList: [ 'Toestand', 'Trends', 'Concentratie' ],
         selectedType: 'Toestand',
-        particalList: ['Stikstof', 'Fosfor', 'DIN (Anorganisch stikstof)'],
+        particalList: [ 'Stikstof', 'Fosfor', 'DIN (Anorganisch stikstof)' ],
         selectedPartical: 'Stikstof',
         currentYear: new Date().getFullYear(),
         selectedYear: new Date().getFullYear(),
