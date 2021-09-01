@@ -38,9 +38,17 @@
           <v-col>
             <v-expansion-panels>
               <v-expansion-panel>
-                <v-expansion-panel-header>Item</v-expansion-panel-header>
+                <v-expansion-panel-header class="text-caption">
+                  Toetsing stikstof aan normen toetsjaar 2020
+                </v-expansion-panel-header>
                 <v-expansion-panel-content>
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                  <p class="text-body-2">
+                    Per waterlichaam wordt voor de toetsjaren 1991 tot en met 2020
+                    het resultaat van de toetsing weergegeven. Elk toetsjaar maakt
+                    gebruik van de drie voorafgaande jaren; voor bijvoorbeeld 2020
+                    zijn de jaren 2017 tot en met 2019 gebruikt. De toetsing is
+                    uitgevoerd conform de toetsregels van de Kaderrichtlijn Water.
+                  </p>
                 </v-expansion-panel-content>
               </v-expansion-panel>
             </v-expansion-panels>
@@ -65,7 +73,10 @@
 
         <v-row>
           <v-col>
-            <v-btn block large>
+            <v-btn
+              block
+              elevation="0"
+            >
               Download (.csv)
             </v-btn>
           </v-col>
