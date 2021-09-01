@@ -1,20 +1,18 @@
 
 <template>
   <app-shell header-title="KRW: NUTrend">
-    <router-link slot="header-right" :to="{ name: 'home' }">
-      <v-btn text>
-        Home
+    <template slot="header-right">
+      <v-btn href="http://krw-nutrend.nl/site/data/download/11203728-006-BGS-0002_v1.1-KRW%20-%20Toestand-%20en%20trendanalyse%20voor%20nutrienten1.pdf" text>
+        Meer informatie
       </v-btn>
-    </router-link>
-    <router-link slot="header-right" :to="{ name: 'about' }">
-      <v-btn text>
-        About
+      <v-btn href="mailto:asdf@asdf.nl" text>
+        Contact
       </v-btn>
-    </router-link>
+    </template>
 
     <legal-dialog
-      title="Legal"
-      button-text="Accept"
+      title="KRW-NUTrend"
+      button-text="Accepteren"
       :body="legalText"
       :checkboxes="checkboxes"
     />
@@ -35,12 +33,12 @@
 <script>
   import { mapState } from 'vuex'
 
-  import {
-    AppShell,
-    MapboxMap,
-    MapboxWmsLayer,
-    LegalDialog,
-  } from '@deltares/vue-components'
+  import legalMarkdown from '~/docs/legal.md'
+
+  import { MapboxMap, MapboxWmsLayer } from '@deltares/vue-components'
+
+  import AppShell from '~/components/AppShell/AppShell'
+  import LegalDialog from '~/components/LegalDialog/LegalDialog'
 
   export default {
     components: {
@@ -51,16 +49,19 @@
     },
     data: () => ({
       accessToken: process.env.VUE_APP_MAPBOX_TOKEN,
-      legalText: 'lorem <b>ipsum</b> dolor sit amet, consectetur adipisicing elit. Quibusdam iure earum, quidem, dolorem, ex eveniet labore illo quis porro accusamus ad nisi ab nam. Tempora nisi corrupti a cumque alias.',
+      legalText: '',
       checkboxes: [
-        'I accept the above statement',
-        'I agree to the use of cookies',
+        'Functionele en analytische cookies accepteren',
+        'Alleen functionele cookies',
       ],
     }),
     computed: {
       ...mapState({
         wmsLayers: ({ map }) => map.wmsLayers,
       }),
+    },
+    mounted() {
+      this.legalText = legalMarkdown
     },
   }
 </script>

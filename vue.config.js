@@ -9,6 +9,14 @@ module.exports = {
     },
   },
   configureWebpack: {
+    module: {
+      rules: [
+        {
+          test: /\.md$/,
+          loader: 'raw-loader',
+        },
+      ],
+    },
     resolve: {
       alias: {
         '~': path.resolve(__dirname, 'src/'),
