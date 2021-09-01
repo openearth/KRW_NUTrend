@@ -5,7 +5,7 @@
         <v-card-title>{{ title }}</v-card-title>
         <v-card-actions>
           <v-btn depressed>
-            View details
+            Bekijken
           </v-btn>
         </v-card-actions>
       </div>

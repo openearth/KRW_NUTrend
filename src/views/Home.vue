@@ -66,7 +66,7 @@
         <v-row>
           <v-col>
             <v-btn block large>
-              Download
+              Download (.csv)
             </v-btn>
           </v-col>
         </v-row>
