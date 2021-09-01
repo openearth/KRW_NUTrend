@@ -1,5 +1,6 @@
 import Vue from 'vue'
 import './plugins/composition-api'
+import './plugins/axios'
 import router from './router'
 import store from './store'
 import vuetify from './plugins/vuetify'

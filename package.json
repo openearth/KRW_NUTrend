@@ -26,6 +26,7 @@
     "@deltares/vue-components": "^0.3.0",
     "@deltares/vuetify-theme": "^0.3.0",
     "@vue/composition-api": "1.0.0-beta.18",
+    "axios": "^0.21.1",
     "core-js": "^3.6.5",
     "mapbox-gl": "^1.11.1",
     "sortablejs": "1.12.0",
