@@ -19,7 +19,7 @@ module.exports = {
   rules: {
     'array-bracket-spacing': [ 'warn', 'always' ],
     'comma-dangle': [ 'error', 'always-multiline' ],
-    'semi': ['error', 'never'],
+    'semi': [ 'error', 'never' ],
     'no-console': process.env.NODE_ENV === 'production' ? 'warn' : 'off',
     'no-debugger': process.env.NODE_ENV === 'production' ? 'warn' : 'off',
     'no-unused-vars': 'warn',
