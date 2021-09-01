@@ -117,5 +117,19 @@
         selectedYear: new Date().getFullYear(),
       }
     },
+    created() {
+      this.getExampleData()
+    },
+    methods: {
+      async getExampleData() {
+        try {
+          const response = await this.$axios.get('http://jsonplaceholder.typicode.com/posts')
+          const posts = response.data
+          console.log(posts)
+        } catch (error) {
+          console.log(error)
+        }
+      },
+    },
   }
 </script>
