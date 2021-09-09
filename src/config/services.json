@@ -1,0 +1,218 @@
+[
+  {
+    "id": "state",
+    "name": "Toestand",
+    "areas": [
+      {
+        "id": "ntot",
+        "name": "Stikstof",
+        "services": [
+          {
+            "id": "krw-wl-ntot-1",
+            "name": "Toetsing stikstof aan normen toetsjaar 2020"
+          },
+          {
+            "id": "krw-wl-ntot-2",
+            "name": "Verschilkaart toetsing stikstof actueel vs. toetsjaar 2009"
+          },
+          {
+            "id": "krw-wl-ntot-3",
+            "name": "Verschilkaart toetsing stikstof actueel vs. toetsjaar 2015"
+          },
+          {
+            "id": "krw-wl-ntot-4",
+            "name": "Doelgat (afstand tot de norm 'goed')"
+          }
+        ]
+      },
+      {
+        "id": "ptot",
+        "name": "Fosfor",
+        "services": [
+          {
+            "id": "krw-wl-ptot-1",
+            "name": "Toetsing fosfor aan normen toetsjaar 2020"
+          },
+          {
+            "id": "krw-wl-ptot-2",
+            "name": "Verschilkaart toetsing fosfor actueel vs. toetsjaar 2009"
+          },
+          {
+            "id": "krw-wl-ptot-3",
+            "name": "Verschilkaart toetsing fosfor actueel vs. toetsjaar 2015"
+          },
+          {
+            "id": "krw-wl-ptot-4",
+            "name": "Doelgat (afstand tot de norm 'goed')"
+          }
+        ]
+      },
+      {
+        "id": "din",
+        "name": "DIN (Anorganisch stikstof)",
+        "services": [
+          {
+            "id": "krw-wl-din-1",
+            "name": "Toetsing DIN aan normen toetsjaar 2020"
+          },
+          {
+            "id": "krw-wl-din-2",
+            "name": "Verschilkaart toetsing DIN actueel vs. toetsjaar 2009"
+          },
+          {
+            "id": "krw-wl-din-3",
+            "name": "Verschilkaart toetsing DIN actueel vs. toetsjaar 2015"
+          },
+          {
+            "id": "krw-wl-din-4",
+            "name": "Doelgat (afstand tot de norm 'goed')"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "trends",
+    "name": "Trends",
+    "areas": [
+      {
+        "id": "ntot",
+        "name": "Stikstof",
+        "services": [
+          {
+            "id": "krw-wl-ntot-1",
+            "name": "Trendhelling (% per decennium)"
+          }
+        ]
+      },
+      {
+        "id": "ptot",
+        "name": "Fosfor",
+        "services": [
+          {
+            "id": "krw-wl-ptot-1",
+            "name": "Trendhelling (% per decennium)"
+          }
+        ]
+      },
+      {
+        "id": "din",
+        "name": "DIN (Anorganisch stikstof)",
+        "services": [
+          {
+            "id": "krw-wl-din-1",
+            "name": "Trendhelling (% per decennium)"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "concentration",
+    "name": "Concentratie",
+    "areas": [
+      {
+        "id": "ntot",
+        "name": "Stikstof",
+        "services": [
+          {
+            "id": "krw-wl-ntot-1",
+            "name": "3-jarig zomergemiddelde (mg/l)"
+          },
+          {
+            "id": "krw-wl-ntot-2",
+            "name": "Verschilkaart actueel t.o.v. toetsjaar 2009 (3 voorgaande jaren, mg/l)"
+          },
+          {
+            "id": "krw-wl-ntot-3",
+            "name": "Verschilkaart actueel t.o.v. toetsjaar 2015 (3 voorgaande jaren, mg/l)"
+          },
+          {
+            "id": "krw-wl-ntot-4",
+            "name": "Jaargemiddelde (mg/l)"
+          },
+          {
+            "id": "krw-wl-ntot-5",
+            "name": "Normklassegrens goed-matig (mg/l)"
+          },
+          {
+            "id": "krw-wl-ntot-6",
+            "name": "Normklassegrens matig-ontoereikend (mg/l)"
+          },
+          {
+            "id": "krw-wl-ntot-7",
+            "name": "Normklassegrens ontoereikend-slecht (mg/l)"
+          }
+        ]
+      },
+      {
+        "id": "ptot",
+        "name": "Fosfor",
+        "services": [
+          {
+            "id": "krw-wl-ptot-1",
+            "name": "3-jarig zomergemiddelde (mg/l)"
+          },
+          {
+            "id": "krw-wl-ptot-2",
+            "name": "Verschilkaart actueel t.o.v. toetsjaar 2009 (3 voorgaande jaren, mg/l)"
+          },
+          {
+            "id": "krw-wl-ptot-3",
+            "name": "Verschilkaart actueel t.o.v. toetsjaar 2015 (3 voorgaande jaren, mg/l)"
+          },
+          {
+            "id": "krw-wl-ptot-4",
+            "name": "Jaargemiddelde (mg/l)"
+          },
+          {
+            "id": "krw-wl-ptot-5",
+            "name": "Normklassegrens goed-matig (mg/l)"
+          },
+          {
+            "id": "krw-wl-ptot-6",
+            "name": "Normklassegrens matig-ontoereikend (mg/l)"
+          },
+          {
+            "id": "krw-wl-ptot-7",
+            "name": "Normklassegrens ontoereikend-slecht (mg/l)"
+          }
+        ]
+      },
+      {
+        "id": "din",
+        "name": "DIN (Anorganisch stikstof)",
+        "services": [
+          {
+            "id": "krw-wl-din-1",
+            "name": "3-jarig wintergemiddelde (mg/l)"
+          },
+          {
+            "id": "krw-wl-din-2",
+            "name": "Verschilkaart actueel t.o.v. toetsjaar 2009 (3 voorgaande jaren, mg/l)"
+          },
+          {
+            "id": "krw-wl-din-3",
+            "name": "Verschilkaart actueel t.o.v. toetsjaar 2015 (3 voorgaande jaren, mg/l)"
+          },
+          {
+            "id": "krw-wl-din-4",
+            "name": "Jaargemiddelde (mg/l)"
+          },
+          {
+            "id": "krw-wl-din-5",
+            "name": "Normklassegrens goed-matig (mg/l)"
+          },
+          {
+            "id": "krw-wl-din-6",
+            "name": "Normklassegrens matig-ontoereikend (mg/l)"
+          },
+          {
+            "id": "krw-wl-din-7",
+            "name": "Normklassegrens ontoereikend-slecht (mg/l)"
+          }
+        ]
+      }
+    ]
+  }
+]

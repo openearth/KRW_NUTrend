@@ -9,7 +9,7 @@ export default {
   state: () => ({
     selectedBasin: null,
     selectedBodyOfWater: null,
-    selectedPartical: null,
+    selectedParticle: null,
     selectedSubBasin: null,
     selectedType: null,
     selectedWaterManager: null,
@@ -47,8 +47,8 @@ export default {
     setSelectedBodyOfWater(context, payload) {
       context.commit('SET_SELECTED_BODY_OF_WATER', payload)
     },
-    setSelectedPartical(context, payload) {
-      context.commit('SET_SELECTED_PARTICAL', payload)
+    setSelectedParticle(context, payload) {
+      context.commit('SET_SELECTED_PARTICLE', payload)
     },
     setSelectedSubBasin(context, payload) {
       context.commit('SET_SELECTED_SUB_BASIN', payload)
@@ -68,8 +68,8 @@ export default {
     SET_SELECTED_BODY_OF_WATER(state, { selectedBodyOfWater }) {
       state.selectedBodyOfWater = selectedBodyOfWater
     },
-    SET_SELECTED_PARTICAL(state, { selectedPartical }) {
-      state.selectedPartical = selectedPartical
+    SET_SELECTED_PARTICLE(state, { selectedParticle }) {
+      state.selectedParticle = selectedParticle
     },
     SET_SELECTED_SUB_BASIN(state, { selectedSubBasin }) {
       state.selectedSubBasin = selectedSubBasin
