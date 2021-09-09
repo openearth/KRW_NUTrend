@@ -118,29 +118,5 @@
       FilterDataForm,
       PlotCard,
     },
-    data() {
-      return {
-        typeList: [ 'Toestand', 'Trends', 'Concentratie' ],
-        selectedType: 'Toestand',
-        particalList: [ 'Stikstof', 'Fosfor', 'DIN (Anorganisch stikstof)' ],
-        selectedPartical: 'Stikstof',
-        currentYear: new Date().getFullYear(),
-        selectedYear: new Date().getFullYear(),
-      }
-    },
-    created() {
-      this.getExampleData()
-    },
-    methods: {
-      async getExampleData() {
-        try {
-          const response = await this.$axios.get('http://jsonplaceholder.typicode.com/posts')
-          const posts = response.data
-          console.log(posts)
-        } catch (error) {
-          console.log(error)
-        }
-      },
-    },
   }
 </script>
