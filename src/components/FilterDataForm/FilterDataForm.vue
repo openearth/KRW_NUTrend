@@ -2,36 +2,72 @@
   <v-container class="filter-data-form" fluid>
     <v-row no-gutters>
       <v-col>
-        <select-input
-          label="Stroomgebied:"
-          :items="areaList"
-          :value="selectedArea"
+        <div class="text-body-1 pb-3">
+          Stroomgebied:
+        </div>
+        <v-select
+          :items="availableBasins"
+          :value="selectedBasin"
           placeholder="selecteer gebied"
+          append-icon="mdi-chevron-down"
           clearable
+          outlined
+          dense
+          @input="onSelectedBasin"
+        />
+      </v-col>
+    </v-row>
+
+    <v-row v-if="selectedBasinHasSubBasins" no-gutters>
+      <v-col>
+        <div class="text-body-1 pb-3">
+          Deelstroomgebied:
+        </div>
+        <v-select
+          :items="availableSubBasins"
+          :value="selectedSubBasin"
+          placeholder="selecteer gebied"
+          append-icon="mdi-chevron-down"
+          clearable
+          outlined
+          dense
+          @input="onSelectedSubBasin"
         />
       </v-col>
     </v-row>
 
     <v-row no-gutters>
       <v-col>
-        <select-input
-          label="Waterbeheerder:"
-          :items="waterManagerList"
+        <div class="text-body-1 pb-3">
+          Waterbeheerder:
+        </div>
+        <v-select
+          :items="availableWaterManagers"
           :value="selectedWaterManager"
           placeholder="selecteer beheerder"
+          append-icon="mdi-chevron-down"
           clearable
+          outlined
+          dense
+          @input="onSelectedWaterManager"
         />
       </v-col>
     </v-row>
 
     <v-row no-gutters>
       <v-col>
-        <select-input
-          label="Waterlichaam:"
-          :items="bodyOfWaterList"
+        <div class="text-body-1 pb-3">
+          Waterlichaam:
+        </div>
+        <v-select
+          :items="availableWaterBodies"
           :value="selectedBodyOfWater"
           placeholder="selecteer water"
+          append-icon="mdi-chevron-down"
           clearable
+          outlined
+          dense
+          @input="onSelectedBodyOfWater"
         />
       </v-col>
     </v-row>
@@ -39,22 +75,62 @@
 </template>
 
 <script>
-  import SelectInput from '~/components/SelectInput/SelectInput'
+  import { mapActions, mapGetters } from 'vuex'
 
   export default {
     name: 'FilterDataForm',
-    components: {
-      SelectInput,
-    },
     data() {
       return {
-        areaList: [ 'Eems', 'Maas', 'Rijn', 'Rijn-Noord', 'Rijn-Oost', 'Rijn-West', 'Schelde' ],
-        selectedArea: '',
-        waterManagerList: [ 'Aa en Maas', 'Amstel Gooi en Vecht', 'Brabantse Delta', 'Delfland', 'Dommel', 'Drents Overijsselse Delta', 'Fryslan', 'Hollands Noorderkwartier', 'Hollandse Delta', 'Hunze en Aa\'s', 'Limburg', 'Noorderzijlvest', 'Rijkswaterstaat', 'Rijn en IJssel', 'Rijnland', 'Rivierenland', 'Scheldestromen', 'Schieland en Krimpenerwaard', 'Stichtse Rijnlanden', 'Vallei en Veluwe', 'Vechtstromen', 'Zuiderzeeland' ],
+        selectedBasin: '',
+        selectedSubBasin: '',
         selectedWaterManager: '',
-        bodyOfWaterList: [ 'NL02L1', 'NL02L10a', 'NL02L10b', 'NL02L11', 'NL02L12', 'NL02L13', 'NL02L14', 'NL02L16' ],
         selectedBodyOfWater: '',
       }
+    },
+    computed: {
+      ...mapGetters('filters', [
+        'availableBasins',
+        'availableSubBasins',
+        'availableWaterBodies',
+        'availableWaterManagers',
+      ]),
+      selectedBasinHasSubBasins() {
+        return this.selectedBasin === 'Rijn'
+      },
+    },
+    watch: {
+      selectedBasin(value) {
+        this.setSelectedBasin({ selectedBasin: value })
+      },
+      selectedSubBasin(value) {
+        this.setSelectedSubBasin({ selectedSubBasin: value })
+      },
+      selectedWaterManager(value) {
+        this.setSelectedWaterManager({ selectedWaterManager: value })
+      },
+      selectedBodyOfWater(value) {
+        this.setSelectedBodyOfWater({ selectedBodyOfWater: value })
+      },
+    },
+    methods: {
+      ...mapActions('filters', [
+        'setSelectedBasin',
+        'setSelectedSubBasin',
+        'setSelectedWaterManager',
+        'setSelectedBodyOfWater',
+      ]),
+      onSelectedBasin(value) {
+        this.selectedBasin = value
+      },
+      onSelectedSubBasin(value) {
+        this.selectedSubBasin = value
+      },
+      onSelectedWaterManager(value) {
+        this.selectedWaterManager = value
+      },
+      onSelectedBodyOfWater(value) {
+        this.selectedBodyOfWater = value
+      },
     },
   }
 </script>

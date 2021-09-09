@@ -31,7 +31,7 @@
 </template>
 
 <script>
-  import { mapState } from 'vuex'
+  import { mapActions, mapState } from 'vuex'
 
   import legalMarkdown from '~/docs/legal.md'
 
@@ -60,8 +60,12 @@
         wmsLayers: ({ map }) => map.wmsLayers,
       }),
     },
-    mounted() {
+    created() {
       this.legalText = legalMarkdown
+      this.getLocations()
+    },
+    methods: {
+      ...mapActions('locations', [ 'getLocations' ]),
     },
   }
 </script>
