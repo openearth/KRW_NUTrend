@@ -33,7 +33,7 @@
 <script>
   import { mapActions, mapState } from 'vuex'
 
-  import legalMarkdown from '~/docs/legal.md'
+  import legalMarkdown from '~/content/legal.md'
 
   import { MapboxMap, MapboxWmsLayer } from '@deltares/vue-components'
 
