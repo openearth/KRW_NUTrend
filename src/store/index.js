@@ -6,8 +6,12 @@ import map from './modules/map'
 Vue.use(Vuex)
 
 export default new Vuex.Store({
-  state: {},
-  mutations: {},
+  state: { testData: null },
+  mutations: {
+    SET_TEST_DATA(state, data) {
+      state.testData = data
+    },
+  },
   actions: {},
   modules: {
     map,
