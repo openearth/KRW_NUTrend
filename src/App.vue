@@ -18,34 +18,34 @@
     />
 
     <mapbox-map
-      slot="map"
       :access-token="accessToken"
     >
-      <mapbox-wms-layer
-        v-for="layer in wmsLayers"
+      <map-layer
+        v-for="layer in layers"
         :key="layer.id"
-        :layer="layer"
-      />
+        :options="layer" 
+      /> 
     </mapbox-map>
   </app-shell>
 </template>
 
 <script>
-  import { mapState } from 'vuex'
-
+  
   import legalMarkdown from '~/docs/legal.md'
 
-  import { MapboxMap, MapboxWmsLayer } from '@deltares/vue-components'
+  import { MapboxMap } from '@deltares/vue-components'
 
   import AppShell from '~/components/AppShell/AppShell'
   import LegalDialog from '~/components/LegalDialog/LegalDialog'
+  import MapLayer from './map-layer'
+  import { mapState } from 'vuex'
 
   export default {
     components: {
       AppShell,
       MapboxMap,
-      MapboxWmsLayer,
       LegalDialog,
+      MapLayer,
     },
     data: () => ({
       accessToken: process.env.VUE_APP_MAPBOX_TOKEN,
@@ -54,14 +54,85 @@
         'Functionele en analytische cookies accepteren',
         'Alleen functionele cookies',
       ],
+      /*       geojson_data: {
+        "type": "FeatureCollection",
+        "features": [
+          {
+            "type": "Feature",
+            "properties": {
+              "locationId": "NL02L10a",
+              "value": 4,
+            },
+            "geometry": {
+              "type": "Point",
+              "coordinates": [
+                6.235080651990514,
+                53.016662661129416,
+              ],
+            },
+          },
+          {
+            "type": "Feature",
+            "properties": {
+              "locationId": "NL12_210",
+              "value": 3,
+            },
+            "geometry": {
+              "type": "Point",
+              "coordinates": [
+                4.841526304081336,
+                52.55228533949656,
+              ],
+            },
+          },
+        ],
+      }, */
+      layers: [],
+
     }),
-    computed: {
-      ...mapState({
-        wmsLayers: ({ map }) => map.wmsLayers,
+    computed: { 
+      ...mapState({ 
+        testData: (state) => state.testData,
       }),
+    },
+    watch: {
+      testData() {
+        console.log('testData in App.vue', this.testData)
+        this.addLayer()
+      },
+
     },
     mounted() {
       this.legalText = legalMarkdown
+     
+    },
+    methods: { 
+      addLayer(){
+        const layer =  {
+          'id': 'test-layer',
+          'type': 'circle',
+          'source': {
+            'type':'geojson',
+            'data': this.testData,
+          },
+          'paint': {
+            'circle-radius': 6,
+            'circle-color': [
+              'match',
+              [ 'get', 'value' ],
+              '4',
+              '#E51B23',
+              '3',
+              '#a0ee45',
+              '#ccc',
+
+            ],
+        
+          },
+        }
+        this.layers.push(layer)
+        console.log("layers after push", this.layers)
+      },
     },
   }
 </script>
