@@ -9,7 +9,13 @@
         "services": [
           {
             "id": "krw-wl-ntot-1",
-            "name": "Toetsing stikstof aan normen toetsjaar 2020"
+            "name": "Toetsing stikstof aan normen toetsjaar 2020",
+            "layer": {
+              "id": "",
+              "layer": "",
+              "name": "",
+              "url": "http://185.224.89.110:8082/FewsWebServices/rest/fewspiservice/v1/timeseries?filterId=krw-wl-ntot-toets-lSGBP&startTime=2020-01-01T00:00:00Z&endTime=2020-01-01T00:00:00Z&showThresholds=true&showStatistics=true&documentFormat=PI_JSON"
+            }
           },
           {
             "id": "krw-wl-ntot-2",
@@ -31,7 +37,13 @@
         "services": [
           {
             "id": "krw-wl-ptot-1",
-            "name": "Toetsing fosfor aan normen toetsjaar 2020"
+            "name": "Toetsing fosfor aan normen toetsjaar 2020",
+            "layer": {
+              "id": "",
+              "layer": "",
+              "name": "",
+              "url": "http://185.224.89.110:8082/FewsWebServices/rest/fewspiservice/v1/timeseries?filterId=krw-wl-ptot-toets-lSGBP&startTime=2020-01-01T00%3A00%3A00Z&endTime=2020-01-01T00%3A00%3A00Z&showThresholds=true&showStatistics=true&documentFormat=PI_JSON"
+            }
           },
           {
             "id": "krw-wl-ptot-2",
@@ -53,7 +65,13 @@
         "services": [
           {
             "id": "krw-wl-din-1",
-            "name": "Toetsing DIN aan normen toetsjaar 2020"
+            "name": "Toetsing DIN aan normen toetsjaar 2020",
+            "layer": {
+              "id": "",
+              "layer": "",
+              "name": "",
+              "url": "http://185.224.89.110:8082/FewsWebServices/rest/fewspiservice/v1/timeseries?filterId=krw-wl-din-toets-lSGBP&startTime=2020-01-01T00%3A00%3A00Z&endTime=2020-01-01T00%3A00%3A00Z&showThresholds=true&showStatistics=true&documentFormat=PI_JSON"
+            }
           },
           {
             "id": "krw-wl-din-2",
