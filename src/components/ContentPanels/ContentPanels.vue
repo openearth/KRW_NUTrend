@@ -1,8 +1,15 @@
 <template>
   <v-col>
     <v-expansion-panels v-if="selectedType && selectedParticle">
-      <v-expansion-panel v-for="panel in panels" :key="panel.id">
-        <v-expansion-panel-header class="text-caption" @click="onPanelHeaderClick(panel.layer)">
+      <v-expansion-panel
+        v-for="(panel, index) in panels"
+        :key="panel.id"
+        :ref="`panel-${ index }`"
+      >
+        <v-expansion-panel-header
+          class="text-caption"
+          @transitionend="(event) => onTransitionEnd(event, index, panel)"
+        >
           {{ panel.title }}
         </v-expansion-panel-header>
         <v-expansion-panel-content>
@@ -48,16 +55,19 @@
       },
     },
     methods: {
-      ...mapActions('map', [ 'getTimeSeries' ]),
+      ...mapActions('map', [ 'getTimeSeries', 'setActiveMapLayer' ]),
       importFileContent(fileName) {
         return require(`~/content/services/${ this.selectedType }/${ this.selectedParticle }/${ fileName }.md`)
       },
-      onPanelHeaderClick(layer) {
-        if (!layer.url) {
-          return
-        }
+      onTransitionEnd(event, index, panel) {
+        const { isActive } = this.$refs[`panel-${ index }`][0]
+        const { propertyName } = event
+        const url = panel?.layer?.url
 
-        this.getTimeSeries({ url: layer.url })
+        if (isActive && propertyName === 'min-height' && url) {
+          this.getTimeSeries({ url: panel.layer.url })
+          this.setActiveMapLayer({ activeMapLayer: panel })
+        }
       },
     },
   }

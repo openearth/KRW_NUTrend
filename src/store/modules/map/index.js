@@ -6,14 +6,12 @@ export default {
   namespaced: true,
 
   state: () => ({
+    activeMapLayer: null,
     mapLayerData: null,
     wmsLayers: [],
   }),
 
   actions: {
-    setWmsLayers(context, payload) {
-      context.commit('SET_WMS_LAYERS', payload)
-    },
     getTimeSeries(context, payload) {
       const { url } = payload
 
@@ -22,9 +20,18 @@ export default {
         .then(mapTimeseriesToGeoJSON)
         .then(json => context.commit('SET_MAP_LAYER_DATA', { mapLayerData: json }))
     },
+    setWmsLayers(context, payload) {
+      context.commit('SET_WMS_LAYERS', payload)
+    },
+    setActiveMapLayer(context, payload) {
+      context.commit('SET_ACTIVE_MAP_LAYER', payload)
+    },
   },
 
   mutations: {
+    SET_ACTIVE_MAP_LAYER(state, { activeMapLayer }) {
+      state.activeMapLayer = activeMapLayer
+    },
     SET_MAP_LAYER_DATA(state, { mapLayerData }) {
       state.mapLayerData = mapLayerData
     },

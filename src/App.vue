@@ -21,6 +21,13 @@
       slot="map"
       :access-token="accessToken"
     >
+      <v-fade-transition mode="out-in">
+        <div v-if="activeMapLayer" class="mapbox-map__title">
+          <p class="mapbox-map__title-text text-body-2">
+            {{ activeMapLayer.title }}
+          </p>
+        </div>
+      </v-fade-transition>
       <mapbox-wms-layer
         v-for="layer in wmsLayers"
         :key="layer.id"
@@ -56,9 +63,7 @@
       ],
     }),
     computed: {
-      ...mapState({
-        wmsLayers: ({ map }) => map.wmsLayers,
-      }),
+      ...mapState('map', [ 'activeMapLayer', 'wmsLayers' ]),
     },
     created() {
       this.legalText = legalMarkdown
@@ -69,3 +74,19 @@
     },
   }
 </script>
+
+<style lang="scss">
+  .mapbox-map__title {
+    position: absolute;
+    z-index: 1;
+    top: $spacing-default;
+    left: $spacing-default;
+    padding: $spacing-smaller $spacing-small;
+    background-color: $color-white;
+    user-select: none;
+  }
+
+  .mapbox-map__title .text-body-2 {
+    margin: 0;
+  }
+</style>
