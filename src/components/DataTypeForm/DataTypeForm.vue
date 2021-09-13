@@ -22,12 +22,13 @@
           Stof:
         </div>
         <v-select
-          :items="particalList"
-          :value="selectedPartical"
+          :items="particleList"
+          :value="selectedParticle"
+          placeholder="selecteer stof"
           append-icon="mdi-chevron-down"
           outlined
           dense
-          @input="onSelectedPartical"
+          @input="onSelectedParticle"
         />
       </v-col>
     </v-row>
@@ -49,46 +50,53 @@
 </template>
 
 <script>
-  import { mapActions } from 'vuex'
+  import { mapActions, mapState } from 'vuex'
+
+  import services from '~/config/services.json'
 
   export default {
     name: 'DataTypeForm',
     data() {
       return {
-        typeList: [
-          { text: 'Toestand', value: 'state' },
-          { text: 'Trends', value: 'trends' },
-          { text: 'Concentratie', value: 'concentration' },
-        ],
-        selectedType: 'state',
-        particalList: [
-          { text: 'Stikstof', value: 'ntot' },
-          { text: 'Fosfor', value: 'ptot' },
-          { text: 'DIN (Anorganisch stikstof)', value: 'din' },
-        ],
-        selectedPartical: 'ntot',
+        typeList: [],
         currentYear: new Date().getFullYear(),
         selectedYear: new Date().getFullYear(),
       }
     },
-    watch: {
-      selectedType(value) {
-        this.setSelectedType({ selectedType: value })
+    computed: {
+      ...mapState('filters', [
+        'selectedType',
+        'selectedParticle',
+      ]),
+      particleList() {
+        const service = services.find(service => service.id === this.selectedType)
+
+        return service.areas
+          .map(area => ({ text: area.name, value: area.id }))
+          .sort((a, b) => a.text.localeCompare(b.text))
       },
-      selectedPartical(value) {
-        this.setSelectedPartical({ selectedPartical: value })
-      },
+    },
+    created() {
+      this.createTypeList(services)
     },
     methods: {
       ...mapActions('filters', [
         'setSelectedType',
-        'setSelectedPartical',
+        'setSelectedParticle',
       ]),
       onSelectedType(value) {
-        this.selectedType = value
+        this.setSelectedType({ selectedType: value })
       },
-      onSelectedPartical(value) {
-        this.selectedPartical = value
+      onSelectedParticle(value) {
+        this.setSelectedParticle({ selectedParticle: value })
+      },
+      createTypeList(services) {
+        this.typeList = services
+          .map(service => ({ text: service.name, value: service.id }))
+          .sort((a, b) => a.text.localeCompare(b.text))
+
+        // set first option as selected by default.
+        this.setSelectedType({ selectedType: this.typeList[0].value })
       },
     },
   }

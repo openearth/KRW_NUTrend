@@ -35,24 +35,7 @@
         <app-divider />
 
         <v-row>
-          <v-col>
-            <v-expansion-panels>
-              <v-expansion-panel>
-                <v-expansion-panel-header class="text-caption">
-                  Toetsing stikstof aan normen toetsjaar 2020
-                </v-expansion-panel-header>
-                <v-expansion-panel-content>
-                  <p class="text-body-2">
-                    Per waterlichaam wordt voor de toetsjaren 1991 tot en met 2020
-                    het resultaat van de toetsing weergegeven. Elk toetsjaar maakt
-                    gebruik van de drie voorafgaande jaren; voor bijvoorbeeld 2020
-                    zijn de jaren 2017 tot en met 2019 gebruikt. De toetsing is
-                    uitgevoerd conform de toetsregels van de Kaderrichtlijn Water.
-                  </p>
-                </v-expansion-panel-content>
-              </v-expansion-panel>
-            </v-expansion-panels>
-          </v-col>
+          <content-panels />
         </v-row>
       </v-container>
     </v-navigation-drawer>
@@ -106,6 +89,7 @@
 
 <script>
   import AppDivider from '~/components/AppDivider/AppDivider'
+  import ContentPanels from '~/components/ContentPanels/ContentPanels'
   import DataTypeForm from '~/components/DataTypeForm/DataTypeForm'
   import FilterDataForm from '~/components/FilterDataForm/FilterDataForm'
   import PlotCard from '~/components/PlotCard/PlotCard'
@@ -114,6 +98,7 @@
     name: 'Home',
     components: {
       AppDivider,
+      ContentPanels,
       DataTypeForm,
       FilterDataForm,
       PlotCard,
