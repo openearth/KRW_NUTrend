@@ -51,7 +51,7 @@
   import VueMarkdown from 'vue-markdown-render'
 
   const STORAGE_KEY = '__legal_accepted'
-  const STORAGE_MODES = ['session', 'local', 'none']
+  const STORAGE_MODES = [ 'session', 'local', 'none' ]
 
   export default {
     components: {
@@ -80,7 +80,7 @@
         validator(value) {
           const valid = STORAGE_MODES.includes(value)
           if (!valid) {
-            console.warn(`LegalDialog: 'mode' should be one of the following values: ${STORAGE_MODES.join(', ')}`)
+            console.warn(`LegalDialog: 'mode' should be one of the following values: ${ STORAGE_MODES.join(', ') }`)
           }
           return valid
         },
@@ -100,7 +100,7 @@
         if (this.storage === 'none') {
           return false
         } else if (STORAGE_MODES.includes(this.storage)) {
-          return `${this.storage}Storage`
+          return `${ this.storage }Storage`
         }
         return null
       },

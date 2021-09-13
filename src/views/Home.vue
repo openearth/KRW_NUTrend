@@ -54,6 +54,7 @@
               </v-expansion-panel>
             </v-expansion-panels>
           </v-col>
+          <content-panels />
         </v-row>
       </v-container>
     </v-navigation-drawer>
@@ -117,11 +118,17 @@
   import FilterDataForm from "~/components/FilterDataForm/FilterDataForm"
   import PlotCard from "~/components/PlotCard/PlotCard"
   import { geojson } from '~/lib/geojson'
+  import AppDivider from '~/components/AppDivider/AppDivider'
+  import ContentPanels from '~/components/ContentPanels/ContentPanels'
+  import DataTypeForm from '~/components/DataTypeForm/DataTypeForm'
+  import FilterDataForm from '~/components/FilterDataForm/FilterDataForm'
+  import PlotCard from '~/components/PlotCard/PlotCard'
 
   export default {
     name: "Home",
     components: {
       AppDivider,
+      ContentPanels,
       DataTypeForm,
       FilterDataForm,
       PlotCard,

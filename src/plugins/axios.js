@@ -1,7 +1,4 @@
-import Vue from 'vue'
 import axios from 'axios'
-
-// axios: https://github.com/axios/axios
 
 // request config: https://github.com/axios/axios#request-config
 const AXIOS_CONFIG = {
@@ -12,4 +9,4 @@ const AXIOS_CONFIG = {
 }
 const instance = axios.create(AXIOS_CONFIG)
 
-Vue.prototype.$axios = instance
+export default instance

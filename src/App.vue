@@ -1,4 +1,3 @@
-
 <template>
   <app-shell header-title="KRW: NUTrend">
     <template slot="header-right">
@@ -30,8 +29,9 @@
 </template>
 
 <script>
-  
-  import legalMarkdown from '~/docs/legal.md'
+  import { mapActions, mapState } from 'vuex'
+
+  import legalMarkdown from '~/content/legal.md'
 
   import { MapboxMap } from '@deltares/vue-components'
 
@@ -133,6 +133,12 @@
         this.layers.push(layer)
         console.log("layers after push", this.layers)
       },
+    created() {
+      this.legalText = legalMarkdown
+      this.getLocations()
+    },
+    methods: {
+      ...mapActions('locations', [ 'getLocations' ]),
     },
   }
 </script>
