@@ -7,7 +7,6 @@ const AXIOS_CONFIG = {
     'Content-type': 'application/json; charset=UTF-8',
   },
 }
-
 const instance = axios.create(AXIOS_CONFIG)
 
 export default instance
