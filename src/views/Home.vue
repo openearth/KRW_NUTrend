@@ -65,45 +65,61 @@
           </v-col>
         </v-row>
 
-        <v-row>
+        <v-row v-if="!selectedBasin && !selectedWaterManager">
           <v-col>
-            <plot-card title="Nederland" image="https://cdn.vuetifyjs.com/images/cards/docks.jpg" />
+            <chart-modal-activator
+              modal-title="Nederland"
+            />
+          </v-col>
+        </v-row>
+
+        <v-row v-if="!selectedWaterManager">
+          <v-col>
+            <chart-modal-activator
+              modal-title="Stroomgebied"
+            />
           </v-col>
         </v-row>
 
         <v-row>
           <v-col>
-            <plot-card title="Stroomgebied" image="https://cdn.vuetifyjs.com/images/cards/docks.jpg" />
-          </v-col>
-        </v-row>
-
-        <v-row>
-          <v-col>
-            <plot-card title="Waterbeheerders" image="https://cdn.vuetifyjs.com/images/cards/docks.jpg" />
+            <chart-modal-activator
+              modal-title="Waterbeheerders"
+            />
           </v-col>
         </v-row>
       </v-container>
     </v-navigation-drawer>
+
+    <chart-modal />
   </div>
 </template>
 
-
 <script>
-  import DataTypeForm from "~/components/DataTypeForm/DataTypeForm"
-  import FilterDataForm from "~/components/FilterDataForm/FilterDataForm"
-  import PlotCard from "~/components/PlotCard/PlotCard" 
+  import { mapState } from 'vuex'
+
   import AppDivider from '~/components/AppDivider/AppDivider'
+  import ChartModal from '~/components/ChartModal/ChartModal'
+  import ChartModalActivator from '~/components/ChartModalActivator/ChartModalActivator'
   import ContentPanels from '~/components/ContentPanels/ContentPanels'
+  import DataTypeForm from '~/components/DataTypeForm/DataTypeForm'
+  import FilterDataForm from '~/components/FilterDataForm/FilterDataForm'
 
   export default {
     name: 'Home',
     components: {
       AppDivider,
+      ChartModal,
+      ChartModalActivator,
       ContentPanels,
       DataTypeForm,
       FilterDataForm,
-      PlotCard,
     },
-
+    computed: {
+      ...mapState('filters', [
+        'selectedBasin',
+        'selectedWaterManager',
+      ]),
+    },
   }
 </script>
