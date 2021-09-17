@@ -1,8 +1,15 @@
 <template>
   <v-col>
     <v-expansion-panels v-if="selectedType && selectedParticle">
-      <v-expansion-panel v-for="panel in panels" :key="panel.id">
-        <v-expansion-panel-header class="text-caption">
+      <v-expansion-panel
+        v-for="(panel, index) in panels"
+        :key="panel.id"
+        :ref="`panel-${ index }`"
+      >
+        <v-expansion-panel-header
+          class="text-caption"
+          @transitionend="(event) => onTransitionEnd(event, index, panel)"
+        >
           {{ panel.title }}
         </v-expansion-panel-header>
         <v-expansion-panel-content>
@@ -14,7 +21,7 @@
 </template>
 
 <script>
-  import { mapState } from 'vuex'
+  import { mapActions, mapState } from 'vuex'
   import VueMarkdown from 'vue-markdown-render'
 
   import services from '~/config/services.json'
@@ -35,20 +42,32 @@
         return area.services
       },
       panels() {
-        return this.mappedServices.map(({ id, name }) => {
+        return this.mappedServices.map(({ id, name, layer }) => {
           const content = this.importFileContent(id)
 
           return {
+            content: content.default,
             id,
             title: name,
-            content: content.default,
+            layer,
           }
         })
       },
     },
     methods: {
+      ...mapActions('map', [ 'getTimeSeries', 'setActiveMapLayer' ]),
       importFileContent(fileName) {
         return require(`~/content/services/${ this.selectedType }/${ this.selectedParticle }/${ fileName }.md`)
+      },
+      onTransitionEnd(event, index, panel) {
+        const { isActive } = this.$refs[`panel-${ index }`][0]
+        const { propertyName } = event
+        const url = panel?.layer?.url
+
+        if (isActive && propertyName === 'min-height' && url) {
+          this.getTimeSeries({ url: panel.layer.url })
+          this.setActiveMapLayer({ activeMapLayer: panel })
+        }
       },
     },
   }

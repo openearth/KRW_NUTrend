@@ -20,11 +20,18 @@
       slot="map"
       :access-token="accessToken"
     >
+      <v-fade-transition mode="out-in">
+        <div v-if="activeMapLayer" class="mapbox-map__title">
+          <p class="mapbox-map__title-text text-body-2">
+            {{ activeMapLayer.title }}
+          </p>
+        </div>
+      </v-fade-transition>
       <v-mapbox-layer
         v-for="layer in layers"
         :key="layer.id"
         :options="layer"
-      /> 
+      />
     </mapbox-map>
   </app-shell>
 </template>
@@ -37,7 +44,7 @@
   import AppShell from '~/components/AppShell/AppShell'
   import LegalDialog from '~/components/LegalDialog/LegalDialog'
   import buildGeojonLayer  from '~/lib/build-geojson-layer'
-  
+
   export default {
     components: {
       AppShell,
@@ -55,22 +62,18 @@
       layers: [],
 
     }),
-    computed: { 
-      ...mapState('layers', [ 'selectedLayer' ]), 
+    computed: {
+      ...mapState('map', [ 'activeMapLayer', 'wmsLayers' ]),
+      ...mapState('layers', [ 'selectedLayer' ]),
       ...mapGetters('layers', [ 'availableLayer' ]),
-
       ...mapGetters('filters', [ 'availableWaterBodies' ]),
     },
-    watch: { 
+    watch: {
       availableLayer() {
-        //Want to empty the layers every time we click to open a new one. 
+        // Want to empty the layers every time we click to open a new one.
         this.layers = []
         this.layers.push(buildGeojonLayer(this.availableLayer))
       },
-    },
-
-    mounted() {
-      this.legalText = legalMarkdown
     },
     created() {
       this.legalText = legalMarkdown
@@ -83,3 +86,19 @@
     },
   }
 </script>
+
+<style lang="scss">
+  .mapbox-map__title {
+    position: absolute;
+    z-index: 1;
+    top: $spacing-default;
+    left: $spacing-default;
+    padding: $spacing-smaller $spacing-small;
+    background-color: $color-white;
+    user-select: none;
+  }
+
+  .mapbox-map__title .text-body-2 {
+    margin: 0;
+  }
+</style>

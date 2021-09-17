@@ -1,19 +1,25 @@
-export default (timeseries) => {
-  const geojson = {
-    type: "FeatureCollection",
-    features: timeseries.map((waterbody) => ({
-      type: "Feature",
-      properties: {
-        locationId: waterbody.header.locationId,
-        value: waterbody.events[0].value,
-      },
-      geometry: {
-        type: "Point",
-        coordinates: [ waterbody.header.lon, waterbody.header.lat ],
-      },
-    })),
+export default (data) => {
+  if (!data?.timeSeries.length) {
+    return []
   }
-  return geojson
+
+  const features = data.timeSeries.map(({ events, header }) => ({
+    type: 'Feature',
+    properties: {
+      locationId: header.locationId,
+      value: events[0].value,
+    },
+    geometry: {
+      type: 'Point',
+      coordinates: [
+        header.lon,
+        header.lat,
+      ],
+    },
+  }))
+
+  return {
+    type: 'FeatureCollection',
+    features,
+  }
 }
-
-
