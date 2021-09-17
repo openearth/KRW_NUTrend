@@ -4,6 +4,7 @@
     class="chart-modal"
     width="90%"
     max-width="1000"
+    @click:outside="onClickClose"
   >
     <v-card>
       <v-app-bar flat color="white">
@@ -13,12 +14,12 @@
 
         <v-spacer />
 
-        <v-btn icon @click="onButtonClick">
+        <v-btn icon @click="onClickClose">
           <v-icon>mdi-close</v-icon>
         </v-btn>
       </v-app-bar>
 
-      <app-chart />
+      <app-chart v-if="isOpen" />
     </v-card>
   </v-dialog>
 </template>
@@ -42,7 +43,7 @@
       ...mapActions('modal', [
         'setIsOpen',
       ]),
-      onButtonClick() {
+      onClickClose() {
         this.setIsOpen({ isOpen: false })
       },
     },

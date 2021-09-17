@@ -1,89 +1,137 @@
 <template>
   <div class="app-chart">
-    <v-chart :option="options" />
+    <div v-if="isLoading" class="app-chart__loader">
+      <v-progress-circular
+        :size="50"
+        color="primary"
+        indeterminate
+      />
+    </div>
+    <div v-else class="app-chart__canvas">
+      <v-chart
+        :init-options="initOptions"
+        :option="options"
+        autoresize
+      />
+    </div>
   </div>
 </template>
 
 <script>
   import { use } from 'echarts/core'
   import { CanvasRenderer } from 'echarts/renderers'
-  import { PieChart } from 'echarts/charts'
+  import { BarChart } from 'echarts/charts'
   import {
-    TitleComponent,
+    GridComponent,
     TooltipComponent,
     LegendComponent,
   } from 'echarts/components'
-  import VChart, { THEME_KEY } from 'vue-echarts'
+  import VChart from 'vue-echarts'
 
   use([
     CanvasRenderer,
-    PieChart,
-    TitleComponent,
+    GridComponent,
+    BarChart,
     TooltipComponent,
     LegendComponent,
   ])
+
+  const TIMEOUT_DURATION = 1000 // 1 second
 
   export default {
     name: 'AppChart',
     components: {
       VChart,
     },
-    provide: {
-      [THEME_KEY]: 'dark',
-    },
     data() {
       return {
+        isLoading: true,
+        initOptions: {
+          height: '400px',
+        },
         options: {
-          title: {
-            text: 'Traffic Sources',
-            left: 'center',
-          },
-          tooltip: {
-            trigger: 'item',
-            formatter: '{a} <br/>{b} : {c} ({d}%)',
-          },
           legend: {
-            orient: 'vertical',
-            left: 'left',
-            data: [
-              'Direct',
-              'Email',
-              'Ad Networks',
-              'Video Ads',
-              'Search Engines',
-            ],
+            data: [ 'Goed', 'Matig', 'Ontoereikend', 'Slecht' ],
+          },
+          grid: {
+            top: '10%',
+            right: '3%',
+            bottom: '3%',
+            left: '3%',
+            containLabel: true,
+            backgroundColor: '#fff',
+          },
+          xAxis: {
+            type: 'value',
+          },
+          yAxis: {
+            type: 'category',
+            data: [ 'Eems', 'Maas', 'Rijn', 'Rijn-Noord', 'Rijn-Oost', 'Rijn-West', 'Schelde' ],
           },
           series: [
             {
-              name: 'Traffic Sources',
-              type: 'pie',
-              radius: '55%',
-              center: [ '50%', '60%' ],
-              data: [
-                { value: 335, name: 'Direct' },
-                { value: 310, name: 'Email' },
-                { value: 234, name: 'Ad Networks' },
-                { value: 135, name: 'Video Ads' },
-                { value: 1548, name: 'Search Engines' },
-              ],
-              emphasis: {
-                itemStyle: {
-                  shadowBlur: 10,
-                  shadowOffsetX: 0,
-                  shadowColor: 'rgba(0, 0, 0, 0.5)',
-                },
+              name: 'Goed',
+              type: 'bar',
+              stack: 'total',
+              data: [ 320, 302, 301, 334, 390, 330, 320 ],
+              label: {
+                show: true,
+              },
+            },
+            {
+              name: 'Matig',
+              type: 'bar',
+              stack: 'total',
+              data: [ 120, 132, 101, 134, 90, 230, 210 ],
+              label: {
+                show: true,
+              },
+            },
+            {
+              name: 'Ontoereikend',
+              type: 'bar',
+              stack: 'total',
+              data: [ 220, 182, 191, 234, 290, 330, 310 ],
+              label: {
+                show: true,
+              },
+            },
+            {
+              name: 'Slecht',
+              type: 'bar',
+              stack: 'total',
+              data: [ 150, 212, 201, 154, 190, 330, 410 ],
+              label: {
+                show: true,
               },
             },
           ],
         },
       }
     },
+    created() {
+      setTimeout(() => {
+        this.isLoading = false
+      }, TIMEOUT_DURATION)
+    },
   }
 </script>
 
 <style lang="scss">
   .app-chart {
-    width: 400px;
+    padding: $spacing-default;
+  }
+
+  .app-chart__canvas {
+    width: 100%;
+    height: 400px;
+  }
+
+  .app-chart__loader {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
     height: 400px;
   }
 </style>
