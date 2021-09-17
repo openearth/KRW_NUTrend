@@ -3,14 +3,15 @@ import Vuex from 'vuex'
 
 import filters from './modules/filters'
 import locations from './modules/locations'
-import map from './modules/map'
+import layers from './modules/layers'
 
 Vue.use(Vuex)
 
 export default new Vuex.Store({
+  actions: {},
   modules: {
     filters,
     locations,
-    map,
+    layers,
   },
 })
