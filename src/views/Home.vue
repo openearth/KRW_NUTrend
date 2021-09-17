@@ -87,15 +87,16 @@
   </div>
 </template>
 
+
 <script>
-  import AppDivider from '~/components/AppDivider/AppDivider'
+  import AppDivider from "~/components/AppDivider/AppDivider"
+  import DataTypeForm from "~/components/DataTypeForm/DataTypeForm"
+  import FilterDataForm from "~/components/FilterDataForm/FilterDataForm"
+  import PlotCard from "~/components/PlotCard/PlotCard" 
   import ContentPanels from '~/components/ContentPanels/ContentPanels'
-  import DataTypeForm from '~/components/DataTypeForm/DataTypeForm'
-  import FilterDataForm from '~/components/FilterDataForm/FilterDataForm'
-  import PlotCard from '~/components/PlotCard/PlotCard'
 
   export default {
-    name: 'Home',
+    name: "Home",
     components: {
       AppDivider,
       ContentPanels,
@@ -103,5 +104,6 @@
       FilterDataForm,
       PlotCard,
     },
+
   }
 </script>
