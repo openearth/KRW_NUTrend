@@ -13,6 +13,7 @@ export default {
     selectedSubBasin: null,
     selectedType: null,
     selectedWaterManager: null,
+    selectedTimestamp: '2020-01-01T00:00:00Z',
   }),
 
   getters: {
@@ -53,6 +54,9 @@ export default {
     setSelectedSubBasin(context, payload) {
       context.commit('SET_SELECTED_SUB_BASIN', payload)
     },
+    setSelectedTimestamp(context, payload) {
+      context.commit('SET_SELECTED_TIMESTAMP', payload)
+    },
     setSelectedType(context, payload) {
       context.commit('SET_SELECTED_TYPE', payload)
     },
@@ -79,6 +83,9 @@ export default {
     },
     SET_SELECTED_WATER_MANAGER(state, { selectedWaterManager }) {
       state.selectedWaterManager = selectedWaterManager
+    },
+    SET_SELECTED_TIMESTAMP(state, { selectedTimestamp }) {
+      state.selectedTimestamp = selectedTimestamp
     },
   },
 }

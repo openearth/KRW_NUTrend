@@ -55,7 +55,7 @@
       },
     },
     methods: {
-      ...mapActions('map', [ 'getTimeSeries', 'setActiveMapLayer' ]),
+      ...mapActions('layers', [ 'getTimeSeries', 'setActiveMapLayer' ]),
       importFileContent(fileName) {
         return require(`~/content/services/${ this.selectedType }/${ this.selectedParticle }/${ fileName }.md`)
       },
