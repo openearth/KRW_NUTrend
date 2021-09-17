@@ -6,7 +6,7 @@
     :fullscreen="$vuetify.breakpoint.xsOnly"
     :max-width="640"
   >
-    <v-card class="d-flex flex-column" style="max-height: 100%;overflow:hidden">
+    <v-card class="d-flex flex-column" style="max-height: 100%; overflow: hidden;">
       <v-card-title class="pa-5">
         <v-toolbar-title>{{ title }}</v-toolbar-title>
       </v-card-title>
@@ -16,7 +16,7 @@
       </div>
 
       <v-card-actions>
-        <div class="pa-2" style="width:100%">
+        <div class="pa-2" style="width: 100%;">
           <p class="text-caption">
             Deze website maakt gebruik van cookies die noodzakelijk zijn voor het juist functioneren en het verbeteren van de website.
             <a href="http://krw-nutrend.nl/site/data/download/cookies.pdf">Meer informatie over cookies</a>
@@ -49,10 +49,8 @@
 
 <script>
   import VueMarkdown from 'vue-markdown-render'
-
   const STORAGE_KEY = '__legal_accepted'
   const STORAGE_MODES = [ 'session', 'local', 'none' ]
-
   export default {
     components: {
       VueMarkdown,

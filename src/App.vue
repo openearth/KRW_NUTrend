@@ -17,35 +17,33 @@
     />
 
     <mapbox-map
+      slot="map"
       :access-token="accessToken"
     >
-      <map-layer
+      <v-mapbox-layer
         v-for="layer in layers"
         :key="layer.id"
-        :options="layer" 
+        :options="layer"
       /> 
     </mapbox-map>
   </app-shell>
 </template>
 
+
 <script>
-  import { mapActions, mapState } from 'vuex'
-
+  import { mapActions, mapState, mapGetters } from 'vuex'
   import legalMarkdown from '~/content/legal.md'
-
   import { MapboxMap } from '@deltares/vue-components'
-
   import AppShell from '~/components/AppShell/AppShell'
   import LegalDialog from '~/components/LegalDialog/LegalDialog'
-  import MapLayer from './map-layer'
-  import { mapState } from 'vuex'
-
+  import buildGeojonLayer  from '~/lib/build-geojson-layer'
+  
   export default {
     components: {
       AppShell,
       MapboxMap,
       LegalDialog,
-      MapLayer,
+
     },
     data: () => ({
       accessToken: process.env.VUE_APP_MAPBOX_TOKEN,
@@ -54,91 +52,34 @@
         'Functionele en analytische cookies accepteren',
         'Alleen functionele cookies',
       ],
-      /*       geojson_data: {
-        "type": "FeatureCollection",
-        "features": [
-          {
-            "type": "Feature",
-            "properties": {
-              "locationId": "NL02L10a",
-              "value": 4,
-            },
-            "geometry": {
-              "type": "Point",
-              "coordinates": [
-                6.235080651990514,
-                53.016662661129416,
-              ],
-            },
-          },
-          {
-            "type": "Feature",
-            "properties": {
-              "locationId": "NL12_210",
-              "value": 3,
-            },
-            "geometry": {
-              "type": "Point",
-              "coordinates": [
-                4.841526304081336,
-                52.55228533949656,
-              ],
-            },
-          },
-        ],
-      }, */
       layers: [],
 
     }),
     computed: { 
-      ...mapState({ 
-        testData: (state) => state.testData,
-      }),
-    },
-    watch: {
-      testData() {
-        console.log('testData in App.vue', this.testData)
-        this.addLayer()
-      },
+      ...mapState('layers', [ 'selectedLayer' ]), 
+      ...mapGetters('layers', [ 'availableLayer' ]),
 
+      ...mapGetters('filters', [ 'availableWaterBodies' ]),
     },
+    watch: { 
+      availableLayer() {
+        //Want to empty the layers every time we click to open a new one. 
+        this.layers = []
+        this.layers.push(buildGeojonLayer(this.availableLayer))
+      },
+    },
+
     mounted() {
       this.legalText = legalMarkdown
-     
     },
-    methods: { 
-      addLayer(){
-        const layer =  {
-          'id': 'test-layer',
-          'type': 'circle',
-          'source': {
-            'type':'geojson',
-            'data': this.testData,
-          },
-          'paint': {
-            'circle-radius': 6,
-            'circle-color': [
-              'match',
-              [ 'get', 'value' ],
-              '4',
-              '#E51B23',
-              '3',
-              '#a0ee45',
-              '#ccc',
-
-            ],
-        
-          },
-        }
-        this.layers.push(layer)
-        console.log("layers after push", this.layers)
-      },
     created() {
       this.legalText = legalMarkdown
       this.getLocations()
+      this.getInitialMapData()
     },
     methods: {
-      ...mapActions('locations', [ 'getLocations' ]),
+      ...mapActions('locations', [ 'getLocations' ]) ,
+      ...mapActions('layers', [ 'getInitialMapData' ]),
     },
   }
 </script>
