@@ -12,10 +12,10 @@
   "scripts": {
     "build": "vue-cli-service build",
     "dev": "run-s lint serve",
-    "fix": "run-s lint:js:fix lint:scss:fix",
+    "fix": "run-s fix:*",
     "fix:js": "vue-cli-service lint",
     "fix:scss": "stylelint ./src/**/*.{vue,scss} --fix",
-    "lint": "run-s lint:js lint:scss",
+    "lint": "run-s lint:*",
     "lint:js": "vue-cli-service lint --no-fix",
     "lint:scss": "stylelint ./src/**/*.{vue,scss}",
     "serve": "vue-cli-service serve --port 3000 --color",
