@@ -19,11 +19,13 @@ module.exports = {
   rules: {
     'array-bracket-spacing': [ 'warn', 'always' ],
     'comma-dangle': [ 'error', 'always-multiline' ],
+    'jsx-quotes': [ 'error', 'prefer-double' ],
     'semi': [ 'error', 'never' ],
     'no-console': process.env.NODE_ENV === 'production' ? 'warn' : 'off',
     'no-debugger': process.env.NODE_ENV === 'production' ? 'warn' : 'off',
     'no-unused-vars': 'warn',
     'object-curly-spacing': [ 'warn', 'always' ],
+    'quotes': [ 'error', 'single' ],
     'template-curly-spacing': [ 'warn', 'always' ],
     'vue/max-attributes-per-line': [ 'error', { singleline: 2 } ],
     'vue/no-unused-components': 'warn',

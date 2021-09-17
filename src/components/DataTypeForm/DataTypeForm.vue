@@ -43,6 +43,8 @@
           min="1991"
           :max="currentYear"
           :value="selectedYear"
+          @change="updateSelectedYear"
+          @end="onSelectedYear"
         />
       </v-col>
     </v-row>
@@ -52,6 +54,8 @@
 <script>
   import { mapActions, mapState } from 'vuex'
 
+  import getISOTimestamp from '~/lib/get-iso-timestamp'
+
   import services from '~/config/services.json'
 
   export default {
@@ -60,11 +64,12 @@
       return {
         typeList: [],
         currentYear: new Date().getFullYear(),
-        selectedYear: new Date().getFullYear(),
+        selectedYear: '',
       }
     },
     computed: {
       ...mapState('filters', [
+        'selectedTimestamp',
         'selectedType',
         'selectedParticle',
       ]),
@@ -76,6 +81,16 @@
           .sort((a, b) => a.text.localeCompare(b.text))
       },
     },
+    watch: {
+      selectedTimestamp: {
+        immediate: true,
+        handler(value) {
+          if (value) {
+            this.selectedYear = new Date(value).getFullYear().toString()
+          }
+        },
+      },
+    },
     created() {
       this.createTypeList(services)
     },
@@ -83,12 +98,20 @@
       ...mapActions('filters', [
         'setSelectedType',
         'setSelectedParticle',
+        'setSelectedTimestamp',
       ]),
       onSelectedType(value) {
         this.setSelectedType({ selectedType: value })
       },
       onSelectedParticle(value) {
         this.setSelectedParticle({ selectedParticle: value })
+      },
+      onSelectedYear(value) {
+        const timestamp = getISOTimestamp(value)
+        this.setSelectedTimestamp({ selectedTimestamp: timestamp })
+      },
+      updateSelectedYear(value) {
+        this.selectedYear = value
       },
       createTypeList(services) {
         this.typeList = services

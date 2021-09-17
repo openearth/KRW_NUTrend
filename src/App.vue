@@ -1,4 +1,3 @@
-
 <template>
   <app-shell header-title="KRW: NUTrend">
     <template slot="header-right">
@@ -21,21 +20,30 @@
       slot="map"
       :access-token="accessToken"
     >
-      <mapbox-wms-layer
-        v-for="layer in wmsLayers"
+      <v-fade-transition mode="out-in">
+        <div v-if="activeMapLayer" class="mapbox-map__title">
+          <p class="mapbox-map__title-text text-body-2">
+            {{ activeMapLayer.title }}
+          </p>
+        </div>
+      </v-fade-transition>
+      <v-mapbox-layer
+        v-for="layer in layers"
         :key="layer.id"
-        :layer="layer"
+        :options="layer"
       />
     </mapbox-map>
   </app-shell>
 </template>
 
+
 <script>
-  import { mapActions, mapState } from 'vuex'
+  import { mapActions, mapGetters, mapState } from 'vuex'
 
   import legalMarkdown from '~/content/legal.md'
+  import buildGeojonLayer  from '~/lib/build-geojson-layer'
 
-  import { MapboxMap, MapboxWmsLayer } from '@deltares/vue-components'
+  import { MapboxMap } from '@deltares/vue-components'
 
   import AppShell from '~/components/AppShell/AppShell'
   import LegalDialog from '~/components/LegalDialog/LegalDialog'
@@ -44,7 +52,6 @@
     components: {
       AppShell,
       MapboxMap,
-      MapboxWmsLayer,
       LegalDialog,
     },
     data: () => ({
@@ -54,18 +61,45 @@
         'Functionele en analytische cookies accepteren',
         'Alleen functionele cookies',
       ],
+      layers: [],
     }),
     computed: {
-      ...mapState({
-        wmsLayers: ({ map }) => map.wmsLayers,
-      }),
+      ...mapState('layers', [ 'activeMapLayer' ]),
+      ...mapGetters('layers', [ 'availableLayer' ]),
+    },
+    watch: {
+      availableLayer: {
+        handler() {
+          // Want to empty the layers every time we click to open a new one.
+          this.layers = []
+          this.layers.push(buildGeojonLayer(this.availableLayer))
+        },
+      },
     },
     created() {
       this.legalText = legalMarkdown
       this.getLocations()
+      this.getDefaultMapLayer()
     },
     methods: {
-      ...mapActions('locations', [ 'getLocations' ]),
+      ...mapActions('locations', [ 'getLocations' ]) ,
+      ...mapActions('layers', [ 'getDefaultMapLayer' ]),
     },
   }
 </script>
+
+<style lang="scss">
+  .mapbox-map__title {
+    position: absolute;
+    z-index: 1;
+    top: $spacing-default;
+    left: $spacing-default;
+    padding: $spacing-smaller $spacing-small;
+    background-color: $color-white;
+    user-select: none;
+  }
+
+  .mapbox-map__title .text-body-2 {
+    margin: 0;
+  }
+</style>
