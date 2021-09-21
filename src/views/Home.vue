@@ -89,14 +89,14 @@
 
 
 <script>
-  import AppDivider from "~/components/AppDivider/AppDivider"
-  import DataTypeForm from "~/components/DataTypeForm/DataTypeForm"
-  import FilterDataForm from "~/components/FilterDataForm/FilterDataForm"
-  import PlotCard from "~/components/PlotCard/PlotCard" 
+  import AppDivider from '~/components/AppDivider/AppDivider'
+  import DataTypeForm from '~/components/DataTypeForm/DataTypeForm'
+  import FilterDataForm from '~/components/FilterDataForm/FilterDataForm'
+  import PlotCard from '~/components/PlotCard/PlotCard' 
   import ContentPanels from '~/components/ContentPanels/ContentPanels'
 
   export default {
-    name: "Home",
+    name: 'Home',
     components: {
       AppDivider,
       ContentPanels,

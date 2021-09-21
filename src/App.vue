@@ -79,7 +79,6 @@
     created() {
       this.legalText = legalMarkdown
       this.getLocations()
-      this.getDefaultMapLayer()
     },
     methods: {
       ...mapActions('locations', [ 'getLocations' ]) ,

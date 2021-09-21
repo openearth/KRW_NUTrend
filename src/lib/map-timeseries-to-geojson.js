@@ -8,13 +8,11 @@ export default (data) => {
     properties: {
       locationId: header.locationId,
       value: events[0].value,
+      value2: events[events.length - 1].value,
     },
     geometry: {
       type: 'Point',
-      coordinates: [
-        header.lon,
-        header.lat,
-      ],
+      coordinates: [ header.lon, header.lat ],
     },
   }))
 
