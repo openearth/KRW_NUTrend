@@ -3,7 +3,7 @@
 </template>
 
 <script>
-
+  import { mapActions } from 'vuex'
 
   export default {
     inject: [ 'getMap' ],
@@ -13,43 +13,41 @@
         default: null,
       },
     },
-    data() {
-      return {
-      
-      }
-    },
-    watch: {
-
-    },
     mounted() {
-      console.log('in map controls')
       const map = this.getMap()
-      // if we are already loaded
       if (map) {
-        this.addClickEventOnMap(map)
+        this.addEventsToMap(map)
       }
     },
-
     methods: {
+      ...mapActions('layers', [
+        'setActiveMapLocation',
+      ]),
       deferredMountedTo(map) {
-        console.log('in map controls')
         if (this.layer) {
-          this.addClickEventOnMap(map)
+          this.addEventsToMap(map)
         }
       },
-
-      addClickEventOnMap(map) {
-        map.on('click', this.layer.id, e =>{
-          const features = e.features[0].properties
-          console.log('clicked feature properties', features)
+      addEventsToMap(map) {
+        this.handleMapPointClick(map)
+        this.handleMapMouseEnter(map)
+        this.handleMapMouseLeave(map)
+      },
+      handleMapPointClick(map) {
+        map.on('click', this.layer.id, (e) => {
+          const { locationId } = e.features[0].properties
+          this.setActiveMapLocation({ activeMapLocation: locationId })
         })
+      },
+      handleMapMouseEnter(map) {
         map.on('mouseenter', this.layer.id, () => {
           map.getCanvas().style.cursor = 'pointer'
         })
+      },
+      handleMapMouseLeave(map) {
         map.on('mouseleave', this.layer.id, () => {
           map.getCanvas().style.cursor = ''
         })
-
       },
     },
   }

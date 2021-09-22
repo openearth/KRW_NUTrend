@@ -21,9 +21,9 @@
       :access-token="accessToken"
     >
       <v-fade-transition mode="out-in">
-        <div v-if="activeMapLayer" class="mapbox-map__title">
+        <div v-if="activeMap" class="mapbox-map__title">
           <p class="mapbox-map__title-text text-body-2">
-            {{ activeMapLayer.title }}
+            {{ activeMap.title }}
           </p>
         </div>
       </v-fade-transition>
@@ -32,7 +32,7 @@
         :key="layer.id"
         :options="layer"
       />
-      <map-controls v-if="availableLayer" :layer="availableLayer" />
+      <map-controls v-if="activeMap" :layer="activeMap" />
     </mapbox-map>
   </app-shell>
 </template>
@@ -57,7 +57,7 @@
       MapboxMap,
       LegalDialog,
       MapControls,
-       
+
     },
     data: () => ({
       accessToken: process.env.VUE_APP_MAPBOX_TOKEN,
@@ -69,19 +69,19 @@
       layers: [],
     }),
     computed: {
-      ...mapState('layers', [ 'activeMapLayer' ]),
-      ...mapGetters('layers', [ 'availableLayer' ]),
+      ...mapState('layers', [ 'activeMap' ]),
+      ...mapGetters('layers', [ 'filteredMap' ]),
     },
     watch: {
-      availableLayer: {
-        handler() {
-          // Want to empty the layers every time we click to open a new one.
-          
-          this.layers = []
-          if (this.availableLayer) {
-            this.layers.push(buildGeojonLayer(this.availableLayer))
+      filteredMap: {
+        handler(value) {
+          if (value) {
+            // Want to empty the layers every time we click to open a new one.
+            this.layers = []
+            if (this.filteredMap?.data) {
+              this.layers.push(buildGeojonLayer(this.filteredMap))
+            }
           }
-          
         },
       },
     },

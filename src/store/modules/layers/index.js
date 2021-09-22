@@ -9,31 +9,31 @@ export default {
   namespaced: true,
 
   state: () => ({
-    activeMapLayer: null,
-    mapLayerData: null,
+    activeMap: null,
+    activeMapLocation: null,
     featuresCollection: [],
   }),
 
   getters: {
-    availableLayer(state, getters, rootState, rootGetters) {
+    filteredMap(state, getters, rootState, rootGetters) {
       const waterBodies = rootGetters['filters/availableWaterBodies']
       const { selectedBodyOfWater } = rootState.filters
-      const layer = state.activeMapLayer
-      if (layer && layer.data) {
+
+      if (state.activeMap?.data) {
         const featuresCollection = filterFeaturesCollection(
-          layer.data,
+          state.activeMap.data,
           waterBodies,
           selectedBodyOfWater,
         )
         const data = { data: featuresCollection }
-        return { ...layer, ...data }
+        return { ...state.activeMap, ...data }
       }
     },
   },
 
   actions: {
     getTimeSeries({ commit, state, rootState }) {
-      const { id } = state.activeMapLayer
+      const { id } = state.activeMap
       const { selectedTimestamp } = rootState.filters
       const params = {
         filterId: id,
@@ -46,34 +46,39 @@ export default {
         .then(response => response?.data)
         .then(mapTimeseriesToGeoJSON)
         .then((timeSeries) => {
-          commit('ADD_FEATURES_TO_ACTIVE_MAP_LAYER', timeSeries)
+          commit('ADD_DATA_TO_ACTIVE_MAP', timeSeries)
         })
     },
-    getTimeSeriesDifferenceMaps({ commit, state }) { 
-      const { url } = state.activeMapLayer
+    getTimeSeriesDifferenceMaps({ commit, state, getters }) {
+      console.log(getters)
+      const { url } = state.activeMap
       return $axios
         .get(url)
         .then((response) => response?.data)
         .then(mapTimeseriesToGeoJSON)
         .then((timeSeries) => {
-          commit('ADD_FEATURES_TO_ACTIVE_MAP_LAYER', timeSeries)
+          commit('ADD_DATA_TO_ACTIVE_MAP', timeSeries)
         })
     },
-    setActiveMapLayer(context, payload) {
-      context.commit('SET_ACTIVE_MAP_LAYER', payload)
+    setActiveMap(context, payload) {
+      context.commit('SET_ACTIVE_MAP', payload)
+    },
+    setActiveMapLocation(context, payload) {
+      context.commit('SET_ACTIVE_MAP_LOCATION', payload)
     },
   },
 
   mutations: {
-    ADD_FEATURES_TO_ACTIVE_MAP_LAYER(state, features) {
+    ADD_DATA_TO_ACTIVE_MAP(state, features) {
       const data = { data: features }
-      state.activeMapLayer = { ...state.activeMapLayer, ...data }
+      state.activeMap = { ...state.activeMap, ...data }
     },
-    SET_ACTIVE_MAP_LAYER(state, { activeMapLayer }) {
-      state.activeMapLayer = activeMapLayer
+    SET_ACTIVE_MAP(state, { activeMap }) {
+      state.activeMap = activeMap
     },
-    SET_MAP_LAYER_DATA(state, { mapLayerData }) {
-      state.mapLayerData = mapLayerData
+    SET_ACTIVE_MAP_LOCATION(state, { activeMapLocation }) {
+      console.log(activeMapLocation)
+      state.activeMapLocation = activeMapLocation
     },
   },
 }
