@@ -2,32 +2,111 @@
   {
     "id": "state",
     "name": "Toestand",
-    "areas": [
+    "spatialPlots": [
       {
         "id": "ntot",
         "name": "Stikstof",
         "services": [
           {
-            "id": "krw-wl-ntot-1",
+            "id": "krw-wl-ntot-toets-lSGBP",
             "name": "Toetsing stikstof aan normen toetsjaar 2020",
-            "layer": {
-              "id": "",
-              "layer": "",
-              "name": "",
-              "url": "http://185.224.89.110:8082/FewsWebServices/rest/fewspiservice/v1/timeseries?filterId=krw-wl-ntot-toets-lSGBP&startTime=2020-01-01T00:00:00Z&endTime=2020-01-01T00:00:00Z&showThresholds=true&showStatistics=true&documentFormat=PI_JSON"
-            }
+            "data": {},
+            "paint": {
+              "circle-radius": 6,
+              "circle-color": [
+                "match",
+                [
+                  "get",
+                  "value"
+                ],
+                "4",
+                "#a0ee45",
+                "3",
+                "#ffff00",
+                "2",
+                "#EE9900",
+                "1",
+                "#E51B23",
+                "#ccc"
+              ]
+            },
+            "url": null
           },
           {
             "id": "krw-wl-ntot-2",
-            "name": "Verschilkaart toetsing stikstof actueel vs. toetsjaar 2009"
+            "name": "Verschilkaart toetsing stikstof actueel vs. toetsjaar 2009",
+            "data": {},
+            "paint": {
+              "circle-radius": 3,
+              "circle-stroke-opacity": 1,
+              "circle-stroke-color": [
+                "match",
+                [
+                  "get",
+                  "value"
+                ],
+                "4",
+                "#a0ee45",
+                "3",
+                "#ffff00",
+                "2",
+                "#EE9900",
+                "1",
+                "#E51B23",
+                "#E9E6EA"
+              ],
+              "circle-stroke-width": 3,
+              "circle-opacity": 1,
+              "circle-color": [
+                "match",
+                [
+                  "get",
+                  "value2"
+                ],
+                "4",
+                "#a0ee45",
+                "3",
+                "#ffff00",
+                "2",
+                "#EE9900",
+                "1",
+                "#E51B23",
+                "#E9E6EA"
+              ]
+            },
+            "startTime": 2009,
+            "endTime": 2020,
+            "url": "http://185.224.89.110:8082/FewsWebServices/rest/fewspiservice/v1/timeseries?filterId=krw-wl-ntot-toets-lSGBP&startTime=2009-01-01T00%3A00%3A00Z&endTime=2020-01-01T00%3A00%3A00Z&showThresholds=true&showStatistics=true&documentFormat=PI_JSON"
           },
           {
             "id": "krw-wl-ntot-3",
             "name": "Verschilkaart toetsing stikstof actueel vs. toetsjaar 2015"
           },
           {
-            "id": "krw-wl-ntot-4",
-            "name": "Doelgat (afstand tot de norm 'goed')"
+            "id": "krw-wl-ntot-toets-doelgat",
+            "name": "Doelgat (afstand tot de norm 'goed')",
+            "data": {},
+            "paint": {
+              "circle-radius": 6,
+              "circle-color": [
+                "match",
+                [
+                  "get",
+                  "value"
+                ],
+                "5",
+                "#b3b3b1",
+                "4",
+                "#b1fb17",
+                "3",
+                "#ffff00",
+                "2",
+                "#ffb133",
+                "1",
+                "#ff0000",
+                "#ffffff"
+              ]
+            }
           }
         ]
       },
@@ -36,13 +115,29 @@
         "name": "Fosfor",
         "services": [
           {
-            "id": "krw-wl-ptot-1",
+            "id": "krw-wl-ptot-toets-lSGBP",
             "name": "Toetsing fosfor aan normen toetsjaar 2020",
-            "layer": {
-              "id": "",
-              "layer": "",
-              "name": "",
-              "url": "http://185.224.89.110:8082/FewsWebServices/rest/fewspiservice/v1/timeseries?filterId=krw-wl-ptot-toets-lSGBP&startTime=2020-01-01T00%3A00%3A00Z&endTime=2020-01-01T00%3A00%3A00Z&showThresholds=true&showStatistics=true&documentFormat=PI_JSON"
+            "data": {},
+            "paint": {
+              "circle-radius": 6,
+              "circle-stroke-color": "#000000",
+              "circle-stroke-opacity": 1,
+              "circle-color": [
+                "match",
+                [
+                  "get",
+                  "value"
+                ],
+                "4",
+                "#a0ee45",
+                "3",
+                "#ffff00",
+                "2",
+                "#EE9900",
+                "1",
+                "#E51B23",
+                "#ccc"
+              ]
             }
           },
           {
@@ -54,8 +149,32 @@
             "name": "Verschilkaart toetsing fosfor actueel vs. toetsjaar 2015"
           },
           {
-            "id": "krw-wl-ptot-4",
-            "name": "Doelgat (afstand tot de norm 'goed')"
+            "id": "krw-wl-ptot-toets-doelgat",
+            "name": "Doelgat (afstand tot de norm 'goed')",
+            "data": {},
+            "paint": {
+              "circle-radius": 6,
+              "circle-stroke-color": "#000000",
+              "circle-stroke-opacity": 1,
+              "circle-color": [
+                "match",
+                [
+                  "get",
+                  "value"
+                ],
+                "5",
+                "#b3b3b1",
+                "4",
+                "#b1fb17",
+                "3",
+                "#fffc17",
+                "2",
+                "#ffb133",
+                "1",
+                "#ff0000",
+                "#ccc"
+              ]
+            }
           }
         ]
       },
@@ -64,13 +183,29 @@
         "name": "DIN (Anorganisch stikstof)",
         "services": [
           {
-            "id": "krw-wl-din-1",
+            "id": "krw-wl-din-toets-lSGBP",
             "name": "Toetsing DIN aan normen toetsjaar 2020",
-            "layer": {
-              "id": "",
-              "layer": "",
-              "name": "",
-              "url": "http://185.224.89.110:8082/FewsWebServices/rest/fewspiservice/v1/timeseries?filterId=krw-wl-din-toets-lSGBP&startTime=2020-01-01T00%3A00%3A00Z&endTime=2020-01-01T00%3A00%3A00Z&showThresholds=true&showStatistics=true&documentFormat=PI_JSON"
+            "data": {},
+            "paint": {
+              "circle-radius": 6,
+              "circle-stroke-color": "#000000",
+              "circle-stroke-opacity": 1,
+              "circle-color": [
+                "match",
+                [
+                  "get",
+                  "value"
+                ],
+                "4",
+                "#a0ee45",
+                "3",
+                "#ffff00",
+                "2",
+                "#EE9900",
+                "1",
+                "#E51B23",
+                "#ccc"
+              ]
             }
           },
           {
@@ -82,8 +217,32 @@
             "name": "Verschilkaart toetsing DIN actueel vs. toetsjaar 2015"
           },
           {
-            "id": "krw-wl-din-4",
-            "name": "Doelgat (afstand tot de norm 'goed')"
+            "id": "krw-wl-din-toets-doelgat",
+            "name": "Doelgat (afstand tot de norm 'goed')",
+            "data": {},
+            "paint": {
+              "circle-radius": 6,
+              "circle-stroke-color": "#000000",
+              "circle-stroke-opacity": 1,
+              "circle-color": [
+                "match",
+                [
+                  "get",
+                  "value"
+                ],
+                "5",
+                "#ffffff",
+                "4",
+                "#ffff00",
+                "3",
+                "#fbb117",
+                "2",
+                "#f63817",
+                "1",
+                "#980517",
+                "#ccc"
+              ]
+            }
           }
         ]
       }
@@ -92,7 +251,7 @@
   {
     "id": "trends",
     "name": "Trends",
-    "areas": [
+    "spatialPlots": [
       {
         "id": "ntot",
         "name": "Stikstof",
@@ -128,7 +287,7 @@
   {
     "id": "concentration",
     "name": "Concentratie",
-    "areas": [
+    "spatialPlots": [
       {
         "id": "ntot",
         "name": "Stikstof",

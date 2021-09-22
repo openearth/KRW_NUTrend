@@ -1,0 +1,3277 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- edited with XMLSpy v2014 rel. 2 sp1 (http://www.altova.com) by Afdeling ICT (Stichting Deltares) -->
+<gridDisplay xmlns="http://www.wldelft.nl/fews" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.wldelft.nl/fews http://fews.wldelft.nl/schemas/version1.0/gridDisplay.xsd">
+	<title>Spatial display</title>
+	<defaults>
+		<plotGroupId>KRW-waterlichamen</plotGroupId>
+		<classBreaks>
+			<break lowerValue="0" color="white" label="Ontbrekend" opaquenessPercentage="2"/>
+			<break lowerValue="1" color="green" label="Groen" opaquenessPercentage="80"/>
+			<break lowerValue="2" color="red" label="Rood" opaquenessPercentage="80"/>
+		</classBreaks>
+		<geoMap>
+			<geoDatum>Rijks Driehoekstelsel</geoDatum>
+			<projection>mercator</projection>
+			<defaultExtent id="Nederland">
+				<left>-148000</left>
+				<right>465000</right>
+				<top>613700</top>
+				<bottom>307000</bottom>
+			</defaultExtent>
+			<extraExtent id="Hoogheemraadschap Amstel Gooi en Vecht">
+				<left>92835</left>
+				<right>163921</right>
+				<top>490964</top>
+				<bottom>457516</bottom>
+			</extraExtent>
+			<extraExtent id="Hoogheemraadschap De Stichtse Rijnlanden">
+				<left>100539</left>
+				<right>171993</right>
+				<top>469072</top>
+				<bottom>435592</bottom>
+			</extraExtent>
+			<extraExtent id="Hoogheemraadschap Hollands Noorderkwartier">
+				<left>-15708</left>
+				<right>264922</right>
+				<top>603530</top>
+				<bottom>471084</bottom>
+			</extraExtent>
+			<extraExtent id="Hoogheemraadschap van Delfland">
+				<left>43755.560091873514</left>
+				<right>120219.85150638339</right>
+				<top>463257.84257645655</top>
+				<bottom>428689.2707140689</bottom>
+			</extraExtent>
+			<extraExtent id="Hoogheemraadschap van Rijnland">
+				<left>38329.80011530964</left>
+				<right>183395.70702694007</right>
+				<top>507062.8110053879</top>
+				<bottom>439233.1060220243</bottom>
+			</extraExtent>
+			<extraExtent id="Hoogheemraadschap van Schieland en Krimpenerwaard">
+				<left>69317</left>
+				<right>140680</right>
+				<top>461251</top>
+				<bottom>427267</bottom>
+			</extraExtent>
+			<extraExtent id="Waterschap Aa en Maas">
+				<left>106214</left>
+				<right>251252</right>
+				<top>431193</top>
+				<bottom>364721</bottom>
+			</extraExtent>
+			<extraExtent id="Waterschap Brabantse Delta">
+				<left>29293</left>
+				<right>177113</right>
+				<top>433170</top>
+				<bottom>364121</bottom>
+			</extraExtent>
+			<extraExtent id="Waterschap De Dommel">
+				<left>84151</left>
+				<right>233148</right>
+				<top>417569</top>
+				<bottom>349954</bottom>
+			</extraExtent>
+			<extraExtent id="Waterschap Drents Overijsselse Delta">
+				<left>136992.65959427063</left>
+				<right>296823.1768144208</right>
+				<top>550513.7473380341</top>
+				<bottom>473975.0562237121</bottom>
+			</extraExtent>
+			<extraExtent id="Waterschap Hollandse Delta">
+				<left>5456</left>
+				<right>152728</right>
+				<top>460326</top>
+				<bottom>390914</bottom>
+			</extraExtent>
+			<extraExtent id="Waterschap Hunze en Aa's">
+				<left>118863</left>
+				<right>410103</right>
+				<top>628049</top>
+				<bottom>503907</bottom>
+			</extraExtent>
+			<extraExtent id="Waterschap Limburg">
+				<left>124099.06484912123</left>
+				<right>271423.05572469137</right>
+				<top>418430.5064960229</top>
+				<bottom>300104.80309737765</bottom>
+			</extraExtent>
+			<extraExtent id="Waterschap Noorderzijlvest">
+				<left>163862</left>
+				<right>308691</right>
+				<top>610433</top>
+				<bottom>547747</bottom>
+			</extraExtent>
+			<extraExtent id="Waterschap Rijn en IJssel">
+				<left>159340</left>
+				<right>311066</right>
+				<top>486255</top>
+				<bottom>421895</bottom>
+			</extraExtent>
+			<extraExtent id="Waterschap Rivierenland">
+				<left>74029</left>
+				<right>225330</right>
+				<top>463626</top>
+				<bottom>396358</bottom>
+			</extraExtent>
+			<extraExtent id="Waterschap Scheldestromen">
+				<left>-21274</left>
+				<right>129989</right>
+				<top>424661</top>
+				<bottom>353973</bottom>
+			</extraExtent>
+			<extraExtent id="Waterschap Vallei en Veluwe">
+				<left>110891.95770913846</left>
+				<right>253455.04103821894</right>
+				<top>505642.7906192001</top>
+				<bottom>439887.82808329427</bottom>
+			</extraExtent>
+			<extraExtent id="Waterschap Vechtstromen">
+				<left>123339.58095494352</left>
+				<right>397075.1420866267</right>
+				<top>570364.5579939552</top>
+				<bottom>443936.80969519226</bottom>
+			</extraExtent>
+			<extraExtent id="Waterschap Zuiderzeeland">
+				<left>98769</left>
+				<right>248051</right>
+				<top>539954</top>
+				<bottom>474437</bottom>
+			</extraExtent>
+			<extraExtent id="Wetterskip Fryslan">
+				<left>62444.75121476482</left>
+				<right>338805.9700477661</right>
+				<top>637370.3263747258</top>
+				<bottom>509519.3737509023</bottom>
+			</extraExtent>
+			<extraExtent id="Eems">
+				<left>188006.82631474474</left>
+				<right>345377.385158209</right>
+				<top>634887.4338304765</top>
+				<bottom>573749.7637973991</bottom>
+			</extraExtent>
+			<extraExtent id="Maas">
+				<left>7109.227579200611</left>
+				<right>262492.9566276589</right>
+				<top>433051.4527434886</top>
+				<bottom>305474.43756146845</bottom>
+			</extraExtent>
+			<extraExtent id="Rijn">
+				<left>54653.061944541536</left>
+				<right>215852.3381694689</right>
+				<top>464906.727274942</top>
+				<bottom>397173.9444986593</bottom>
+			</extraExtent>
+			<extraExtent id="Rijn-Noord">
+				<left>79749.063136781</left>
+				<right>264049.7885035026</right>
+				<top>623041.6361187189</top>
+				<bottom>532693.434490472</bottom>
+			</extraExtent>
+			<extraExtent id="Rijn-Oost">
+				<left>60258.72778489679</left>
+				<right>353225.20848892926</right>
+				<top>571053.9582727005</top>
+				<bottom>429917.46124207886</bottom>
+			</extraExtent>
+			<extraExtent id="Rijn-West">
+				<left>-30372.00999551409</left>
+				<right>319201.7563099477</right>
+				<top>584670.110698456</top>
+				<bottom>410706.43920082325</bottom>
+			</extraExtent>
+			<extraExtent id="Schelde">
+				<left>-24291.757534749515</left>
+				<right>126440.37999915401</right>
+				<top>431890.06762428366</top>
+				<bottom>353470.2183719385</bottom>
+			</extraExtent>
+			<scaleBarVisible>true</scaleBarVisible>
+			<northArrowVisible>true</northArrowVisible>
+			<labelsVisible>true</labelsVisible>
+			<openStreetMapLayer id="Osm" name="Open Street Map">
+				<url>http://tile.openstreetmap.org</url>
+				<visible>true</visible>
+				<cacheDir>$MAPCACHES_DIR$/OsmTiles</cacheDir>
+			</openStreetMapLayer>
+			<layerGroup id="Nederland">
+				<esriShapeLayer id="Nederland">
+					<file>Nederland.shp</file>
+					<visible>false</visible>
+					<lineRgbColor>E9FFBE</lineRgbColor>
+					<fillRgbColor>E9FFBE</fillRgbColor>
+				</esriShapeLayer>
+				<esriShapeLayer id="Water groot">
+					<file>Water2007.shp</file>
+					<visible>false</visible>
+					<lineRgbColor>97DBF2</lineRgbColor>
+					<fillRgbColor>97DBF2</fillRgbColor>
+				</esriShapeLayer>
+				<esriShapeLayer id="Hoofdwegen">
+					<file>weg_prim.shp</file>
+					<visible>false</visible>
+					<maxScale>1:100000</maxScale>
+					<lineRgbColor>F59B9B</lineRgbColor>
+					<lineWidth maxScale="10000" value="3"/>
+					<lineWidth maxScale="100000" value="2"/>
+					<lineWidth maxScale="250000" value="1"/>
+				</esriShapeLayer>
+				<esriShapeLayer id="regio snelwegen">
+					<file>basis_autosnelweg.shp</file>
+					<visible>false</visible>
+					<minScale>1:100000</minScale>
+					<lineRgbColor>F56B6B</lineRgbColor>
+					<lineWidth maxScale="100000" value="5"/>
+					<lineWidth maxScale="1000000" value="3"/>
+					<lineWidth maxScale="1500000" value="2"/>
+				</esriShapeLayer>
+				<esriShapeLayer id="regio snelwegen geel">
+					<file>basis_autosnelweg.shp</file>
+					<visible>false</visible>
+					<minScale>1:100000</minScale>
+					<lineColor>yellow</lineColor>
+					<lineWidth maxScale="100000" value="1.2"/>
+					<lineWidth maxScale="1000000" value="1"/>
+				</esriShapeLayer>
+				<esriShapeLayer id="Hoofdwegen">
+					<file>basis_hoofdweg.shp</file>
+					<visible>false</visible>
+					<minScale>1:100000</minScale>
+					<lineRgbColor>F00000</lineRgbColor>
+					<lineWidth maxScale="100000" value="2"/>
+					<lineWidth maxScale="1000000" value="1"/>
+				</esriShapeLayer>
+				<esriShapeLayer id="straten">
+					<file>zoom_straat.shp</file>
+					<visible>false</visible>
+					<minScale>1:25000</minScale>
+					<lineRgbColor>FFFFFF</lineRgbColor>
+					<fillRgbColor>FFFFFF</fillRgbColor>
+				</esriShapeLayer>
+				<esriShapeLayer id="lokale wegen">
+					<file>zoom_lokaleweg.shp</file>
+					<visible>false</visible>
+					<minScale>1:25000</minScale>
+					<lineRgbColor>FFFF00</lineRgbColor>
+					<fillRgbColor>FFFF00</fillRgbColor>
+				</esriShapeLayer>
+				<esriShapeLayer id="Spoorlijnen-wit">
+					<file>spoor.shp</file>
+					<visible>false</visible>
+					<lineColor>white</lineColor>
+					<lineWidth maxScale="10000" value="4"/>
+					<lineWidth maxScale="100000" value="3"/>
+					<lineWidth maxScale="750000" value="2"/>
+				</esriShapeLayer>
+				<esriShapeLayer id="Spoorlijnen">
+					<file>spoor.shp</file>
+					<visible>false</visible>
+					<lineColor>gray</lineColor>
+					<linePattern>dashed</linePattern>
+					<lineDashLength>10</lineDashLength>
+					<lineWidth maxScale="10000" value="4"/>
+					<lineWidth maxScale="100000" value="3"/>
+					<lineWidth maxScale="750000" value="2"/>
+				</esriShapeLayer>
+			</layerGroup>
+			<layerGroup id="KRW">
+				<esriShapeLayer id="waterlichamen">
+					<file>OWL_KRWNUTrend_20210103</file>
+					<visible>false</visible>
+					<toolTip>id=%OWMIDENT%\nName=%OWMNAAM%\nType=%OWMTYPE%</toolTip>
+					<lineRgbColor>CDC0B0</lineRgbColor>
+				</esriShapeLayer>
+			</layerGroup>
+			<layerGroup id="Waterschappen">
+				<esriShapeLayer id="Waterschapsgrenzen">
+					<file>2016-Waterschappen</file>
+					<visible>true</visible>
+					<lineColor>black</lineColor>
+					<lineWidth maxScale="10000" value="5"/>
+					<lineWidth maxScale="100000" value="4"/>
+					<lineWidth maxScale="250000" value="3"/>
+				</esriShapeLayer>
+			</layerGroup>
+			<layerGroup id="Stroomgebieden">
+				<esriShapeLayer id="Stroomgebieden">
+					<file>Stroomgebieden.shp</file>
+					<visible>false</visible>
+					<lineColor>black</lineColor>
+					<lineWidth maxScale="10000" value="5"/>
+					<lineWidth maxScale="100000" value="4"/>
+					<lineWidth maxScale="250000" value="3"/>
+				</esriShapeLayer>
+			</layerGroup>
+		</geoMap>
+	</defaults>
+	<gridPlotGroup id="Nederland totaal">
+		<gridPlotGroup id="KRW-waterlichamen">
+			<gridPlotGroup id="N totaal">
+				<gridPlotGroup id="Zomergemiddelden">
+					<gridPlot id="Ntot Zomergemiddeld (mg/l) NL" name="3-jarig zomerhalfjaargemiddelde (mg/l)">
+						<description>3-jarig zomerhalfjaargemiddelde per waterlichaam (mg/l)</description>
+						<dataLayer>
+							<onlyCircles>true</onlyCircles>
+							<circleSizeFunction>10</circleSizeFunction>
+							<circleBorderSize>1</circleBorderSize>
+							<circleBorderColor>black</circleBorderColor>
+							<timeSeriesSet>
+								<moduleInstanceId>SamenvoegenMeetdata_Ntot</moduleInstanceId>
+								<valueType>scalar</valueType>
+								<parameterId>Ntot</parameterId>
+								<qualifierId>BE_summermean</qualifierId>
+								<qualifierId>BE_3jaargem</qualifierId>
+								<locationSetId>KRW_waterlichamen_NL</locationSetId>
+								<timeSeriesType>simulated historical</timeSeriesType>
+								<timeStep id="jaar"/>
+								<relativeViewPeriod unit="day" start="-10000" end="0"/>
+								<readWriteMode>read complete forecast</readWriteMode>
+							</timeSeriesSet>
+						</dataLayer>
+						<movieFrameDurationMillis>50</movieFrameDurationMillis>
+						<legendStyle>table</legendStyle>
+						<classBreaks>
+							<color color="alice blue" lowerValue="0" label="kleiner dan 2 mg/l"/>
+							<color color="cadet blue2" lowerValue="2" label="2 - 4 mg/l"/>
+							<color color="royal blue2" lowerValue="4" label="4 - 6 mg/l"/>
+							<color color="blue4" lowerValue="6" label="6 - 12 mg/l"/>
+							<color color="black" lowerValue="12" label="groter dan 12 mg/l"/>
+						</classBreaks>
+					</gridPlot>
+					<gridPlot id="Ntot Verschilkaart actueel t.o.v. voorlaatste_SGBP (mg/l) NL" name="Verschilkaart actueel t.o.v. $voorlaatste_SGBP$ (3 voorgaande jaren, mg/l)">
+						<description>Verschilkaart actueel t.o.v. $voorlaatste_SGBP$ per waterlichaam (3 voorgaande jaren, mg/l)</description>
+						<dataLayer>
+							<onlyCircles>true</onlyCircles>
+							<circleSizeFunction>10</circleSizeFunction>
+							<circleBorderSize>1</circleBorderSize>
+							<circleBorderColor>black</circleBorderColor>
+							<timeSeriesSet>
+								<moduleInstanceId>SamenvoegenMeetdata_Ntot</moduleInstanceId>
+								<valueType>scalar</valueType>
+								<parameterId>Ntot</parameterId>
+								<qualifierId>HH_1</qualifierId>
+								<qualifierId>BE_SGBP2009</qualifierId>
+								<qualifierId>BE_shift</qualifierId>
+								<qualifierId>BE_trend</qualifierId>
+								<locationSetId>KRW_waterlichamen_NL</locationSetId>
+								<timeSeriesType>simulated historical</timeSeriesType>
+								<timeStep id="jaar"/>
+								<relativeViewPeriod unit="day" start="-10000" startOverrulable="true" end="0" endOverrulable="true"/>
+								<readWriteMode>read complete forecast</readWriteMode>
+							</timeSeriesSet>
+						</dataLayer>
+						<movieFrameDurationMillis>50</movieFrameDurationMillis>
+						<classBreaks>
+							<color color="green4" lowerValue="-1000" label="kleiner dan -1 mg/l"/>
+							<color color="green1" lowerValue="-1" label="-1 tot -0.5 mg/l"/>
+							<color color="green yellow" lowerValue="-0.5" label="-0.5 tot 0 mg/l"/>
+							<color color="gray90" lowerValue="0" label="0 mg/l"/>
+							<color color="yellow" lowerValue="0.0000001" label="0 tot 0.5 mg/l"/>
+							<color color="orange" lowerValue="0.5" label="0.5 tot 1 mg/l"/>
+							<color color="red" lowerValue="1" label="groter dan 1 mg/l"/>
+						</classBreaks>
+					</gridPlot>
+					<gridPlot id="Ntot Verschilkaart actueel t.o.v. laatste_SGBP (mg/l) NL" name="Verschilkaart actueel t.o.v. $laatste_SGBP$ (3 voorgaande jaren, mg/l)">
+						<description>Verschilkaart actueel t.o.v. $laatste_SGBP$ per waterlichaam (3 voorgaande jaren, mg/l)</description>
+						<dataLayer>
+							<onlyCircles>true</onlyCircles>
+							<circleSizeFunction>10</circleSizeFunction>
+							<circleBorderSize>1</circleBorderSize>
+							<circleBorderColor>black</circleBorderColor>
+							<timeSeriesSet>
+								<moduleInstanceId>SamenvoegenMeetdata_Ntot</moduleInstanceId>
+								<valueType>scalar</valueType>
+								<parameterId>Ntot</parameterId>
+								<qualifierId>HH_1</qualifierId>
+								<qualifierId>BE_SGBP2015</qualifierId>
+								<qualifierId>BE_shift</qualifierId>
+								<qualifierId>BE_trend</qualifierId>
+								<locationSetId>KRW_waterlichamen_NL</locationSetId>
+								<timeSeriesType>simulated historical</timeSeriesType>
+								<timeStep id="jaar"/>
+								<relativeViewPeriod unit="day" start="-10000" startOverrulable="true" end="0" endOverrulable="true"/>
+								<readWriteMode>read complete forecast</readWriteMode>
+							</timeSeriesSet>
+						</dataLayer>
+						<movieFrameDurationMillis>50</movieFrameDurationMillis>
+						<classBreaks>
+							<color color="green4" lowerValue="-1000" label="kleiner dan -1 mg/l"/>
+							<color color="green1" lowerValue="-1" label="-1 tot -0.5 mg/l "/>
+							<color color="green yellow" lowerValue="-0.5" label="-0.5 tot 0 mg/l"/>
+							<color color="gray90" lowerValue="0" label="0 mg/l"/>
+							<color color="yellow" lowerValue="0.0000001" label="0 tot 0.5 mg/l"/>
+							<color color="orange" lowerValue="0.5" label="0.5 tot 1 mg/l"/>
+							<color color="red" lowerValue="1" label="groter dan 1 mg/l"/>
+						</classBreaks>
+					</gridPlot>
+				</gridPlotGroup>
+				<gridPlotGroup id="Jaargemiddelden">
+					<gridPlot id="Ntot Jaargemiddeld (mg/l) NL" name="Jaargemiddelde (mg/l)">
+						<description>Jaargemiddelde per waterlichaam (mg/l)</description>
+						<dataLayer>
+							<onlyCircles>true</onlyCircles>
+							<circleSizeFunction>10</circleSizeFunction>
+							<circleBorderSize>1</circleBorderSize>
+							<circleBorderColor>black</circleBorderColor>
+							<timeSeriesSet>
+								<moduleInstanceId>SamenvoegenMeetdata_Ntot</moduleInstanceId>
+								<valueType>scalar</valueType>
+								<parameterId>Ntot</parameterId>
+								<qualifierId>BE_jaargem</qualifierId>
+								<locationSetId>KRW-wl-wltype_zoet</locationSetId>
+								<timeSeriesType>simulated historical</timeSeriesType>
+								<timeStep id="een.jaar"/>
+								<relativeViewPeriod unit="day" start="-10000" end="0"/>
+								<readWriteMode>read complete forecast</readWriteMode>
+							</timeSeriesSet>
+						</dataLayer>
+						<movieFrameDurationMillis>50</movieFrameDurationMillis>
+						<legendStyle>table</legendStyle>
+						<classBreaks>
+							<color color="alice blue" lowerValue="0" label="kleiner dan 2 mg/l"/>
+							<color color="cadet blue2" lowerValue="2" label="2 - 4 mg/l"/>
+							<color color="royal blue2" lowerValue="4" label="4 - 6 mg/l"/>
+							<color color="blue4" lowerValue="6" label="6 - 12 mg/l"/>
+							<color color="black" lowerValue="12" label="groter dan 12 mg/l"/>
+						</classBreaks>
+					</gridPlot>
+				</gridPlotGroup>
+				<gridPlotGroup id="Normen">
+					<gridPlot id="Ntot Norm Goed-Matig (mg/l) NL" name="Goed-Matig (mg/l)">
+						<description>Norm Goed-Matig per waterlichaam (mg/l)</description>
+						<dataLayer>
+							<onlyCircles>true</onlyCircles>
+							<circleSizeFunction>10</circleSizeFunction>
+							<circleBorderSize>1</circleBorderSize>
+							<circleBorderColor>black</circleBorderColor>
+							<timeSeriesSet>
+								<moduleInstanceId>Aggregate_KRWtypes</moduleInstanceId>
+								<valueType>scalar</valueType>
+								<parameterId>Ntot</parameterId>
+								<qualifierId>WN_3</qualifierId>
+								<qualifierId>WT_3</qualifierId>
+								<locationSetId>KRW_waterlichamen_NL</locationSetId>
+								<timeSeriesType>external historical</timeSeriesType>
+								<timeStep unit="nonequidistant"/>
+								<readWriteMode>read complete forecast</readWriteMode>
+							</timeSeriesSet>
+						</dataLayer>
+						<movieFrameDurationMillis>50</movieFrameDurationMillis>
+						<legendStyle>table</legendStyle>
+						<classBreaks>
+							<color color="steel blue" lowerValue="0" label="kleiner dan 2 mg/l"/>
+							<color color="steel blue1" lowerValue="2" label="2 - 4 mg/l"/>
+							<color color="orchid1" lowerValue="4" label="4 - 6 mg/l"/>
+							<color color="plum" lowerValue="6" label="6 - 12 mg/l"/>
+							<color color="dark orchid4" lowerValue="12" label="groter dan 12 mg/l"/>
+						</classBreaks>
+					</gridPlot>
+					<gridPlot id="Ntot Norm Matig-Ontoereikend (mg/l) NL" name="Matig-Ontoereikend (mg/l)">
+						<description>Norm Matig-Ontoereikend per waterlichaam (mg/l)</description>
+						<dataLayer>
+							<onlyCircles>true</onlyCircles>
+							<circleSizeFunction>10</circleSizeFunction>
+							<circleBorderSize>1</circleBorderSize>
+							<circleBorderColor>black</circleBorderColor>
+							<timeSeriesSet>
+								<moduleInstanceId>Aggregate_KRWtypes</moduleInstanceId>
+								<valueType>scalar</valueType>
+								<parameterId>Ntot</parameterId>
+								<qualifierId>WN_4</qualifierId>
+								<qualifierId>WT_3</qualifierId>
+								<locationSetId>KRW_waterlichamen_NL</locationSetId>
+								<timeSeriesType>external historical</timeSeriesType>
+								<timeStep unit="nonequidistant"/>
+								<readWriteMode>read complete forecast</readWriteMode>
+							</timeSeriesSet>
+						</dataLayer>
+						<movieFrameDurationMillis>50</movieFrameDurationMillis>
+						<legendStyle>table</legendStyle>
+						<classBreaks>
+							<color color="steel blue" lowerValue="0" label="kleiner dan 2 mg/l"/>
+							<color color="steel blue1" lowerValue="2" label="2 - 4 mg/l"/>
+							<color color="orchid1" lowerValue="4" label="4 - 6 mg/l"/>
+							<color color="plum" lowerValue="6" label="6 - 12 mg/l"/>
+							<color color="dark orchid4" lowerValue="12" label="groter dan 12 mg/l"/>
+						</classBreaks>
+					</gridPlot>
+					<gridPlot id="Ntot Norm Ontoereikend-Slecht (mg/l) NL" name="Ontoereikend-Slecht (mg/l)">
+						<description>Norm Ontoereikend-Slecht per waterlichaam (mg/l) </description>
+						<dataLayer>
+							<onlyCircles>true</onlyCircles>
+							<circleSizeFunction>10</circleSizeFunction>
+							<circleBorderSize>1</circleBorderSize>
+							<circleBorderColor>black</circleBorderColor>
+							<timeSeriesSet>
+								<moduleInstanceId>Aggregate_KRWtypes</moduleInstanceId>
+								<valueType>scalar</valueType>
+								<parameterId>Ntot</parameterId>
+								<qualifierId>WN_5</qualifierId>
+								<qualifierId>WT_3</qualifierId>
+								<locationSetId>KRW_waterlichamen_NL</locationSetId>
+								<timeSeriesType>external historical</timeSeriesType>
+								<timeStep unit="nonequidistant"/>
+								<readWriteMode>read complete forecast</readWriteMode>
+							</timeSeriesSet>
+						</dataLayer>
+						<movieFrameDurationMillis>50</movieFrameDurationMillis>
+						<legendStyle>table</legendStyle>
+						<classBreaks>
+							<color color="steel blue" lowerValue="0" label="kleiner dan 2 mg/l"/>
+							<color color="steel blue1" lowerValue="2" label="2 - 4 mg/l"/>
+							<color color="orchid1" lowerValue="4" label="4 - 6 mg/l"/>
+							<color color="plum" lowerValue="6" label="6 - 12 mg/l"/>
+							<color color="dark orchid4" lowerValue="12" label="groter dan 12 mg/l"/>
+						</classBreaks>
+					</gridPlot>
+				</gridPlotGroup>
+				<gridPlotGroup id="Toetsing">
+					<gridPlot id="Ntot Toetsing t.o.v. normen laatste_SGBP (-) NL" name="Toetsing stikstof aan normen $huidige_SGBP$">
+						<description>Toetsing stikstof aan normen $huidige_SGBP$ per waterlichaam</description>
+						<dataLayer>
+							<onlyCircles>true</onlyCircles>
+							<circleSizeFunction>10</circleSizeFunction>
+							<circleBorderSize>1</circleBorderSize>
+							<circleBorderColor>black</circleBorderColor>
+							<timeSeriesSet>
+								<moduleInstanceId>SamenvoegenToetsing_Ntot</moduleInstanceId>
+								<valueType>scalar</valueType>
+								<parameterId>Oordeel</parameterId>
+								<qualifierId>HH_1</qualifierId>
+								<qualifierId>BE_SGBPhuidig_toets</qualifierId>
+								<locationSetId>KRW_waterlichamen_NL</locationSetId>
+								<timeSeriesType>simulated historical</timeSeriesType>
+								<timeStep id="jaar"/>
+								<relativeViewPeriod unit="day" start="-3500" end="0"/>
+								<readWriteMode>read complete forecast</readWriteMode>
+							</timeSeriesSet>
+						</dataLayer>
+						<movieFrameDurationMillis>50</movieFrameDurationMillis>
+						<classBreaks>
+							<color color="red" lowerValue="1" label="slecht"/>
+							<color color="orange" lowerValue="2" label="ontoereikend"/>
+							<color color="yellow" lowerValue="3" label="matig"/>
+							<color color="green" lowerValue="4" label="goed"/>
+						</classBreaks>
+					</gridPlot>
+					<gridPlot id="Ntot Verschilkaart Toetsing actueel vs. voorlaatste_SGBP (-) NL" name="Verschilkaart toetsing stikstof actueel vs. $voorlaatste_SGBP$ (-)">
+						<description>Verschilkaart toetsing stikstof actueel vs. $voorlaatste_SGBP$ per waterlichaam (-)</description>
+						<dataLayer>
+							<onlyCircles>true</onlyCircles>
+							<circleSizeFunction>10</circleSizeFunction>
+							<circleBorderSize>1</circleBorderSize>
+							<circleBorderColor>black</circleBorderColor>
+							<timeSeriesSet>
+								<moduleInstanceId>SamenvoegenToetsing_Ntot</moduleInstanceId>
+								<valueType>scalar</valueType>
+								<parameterId>Oordeel</parameterId>
+								<qualifierId>HH_1</qualifierId>
+								<qualifierId>BE_shift</qualifierId>
+								<qualifierId>BE_SGBP2009</qualifierId>
+								<qualifierId>BE_trend</qualifierId>
+								<locationSetId>KRW_waterlichamen_NL</locationSetId>
+								<timeSeriesType>simulated historical</timeSeriesType>
+								<timeStep id="jaar"/>
+								<relativeViewPeriod unit="day" start="-1" startOverrulable="false" end="0" endOverrulable="true"/>
+								<readWriteMode>read complete forecast</readWriteMode>
+							</timeSeriesSet>
+						</dataLayer>
+						<movieFrameDurationMillis>50</movieFrameDurationMillis>
+						<classBreaks>
+							<color color="red" lowerValue="-1" label="verslechterd"/>
+							<color color="yellow" lowerValue="0" label="gelijkblijvend"/>
+							<color color="green" lowerValue="1" label="verbeterd"/>
+						</classBreaks>
+					</gridPlot>
+					<gridPlot id="Ntot Verschilkaart Toetsing actueel vs. laatste_SGBP (-) NL" name="Verschilkaart toetsing stikstof actueel vs. $laatste_SGBP$ (-)">
+						<description>Verschilkaart toetsing stikstof actueel vs. $laatste_SGBP$ per waterlichaam (-)</description>
+						<dataLayer>
+							<onlyCircles>true</onlyCircles>
+							<circleSizeFunction>10</circleSizeFunction>
+							<circleBorderSize>1</circleBorderSize>
+							<circleBorderColor>black</circleBorderColor>
+							<timeSeriesSet>
+								<moduleInstanceId>SamenvoegenToetsing_Ntot</moduleInstanceId>
+								<valueType>scalar</valueType>
+								<parameterId>Oordeel</parameterId>
+								<qualifierId>HH_1</qualifierId>
+								<qualifierId>BE_shift</qualifierId>
+								<qualifierId>BE_SGBP2015</qualifierId>
+								<qualifierId>BE_trend</qualifierId>
+								<locationSetId>KRW_waterlichamen_NL</locationSetId>
+								<timeSeriesType>simulated historical</timeSeriesType>
+								<timeStep id="jaar"/>
+								<relativeViewPeriod unit="day" start="-1" startOverrulable="false" end="0" endOverrulable="true"/>
+								<readWriteMode>read complete forecast</readWriteMode>
+							</timeSeriesSet>
+						</dataLayer>
+						<movieFrameDurationMillis>50</movieFrameDurationMillis>
+						<classBreaks>
+							<color color="red" lowerValue="-1" label="verslechterd"/>
+							<color color="yellow" lowerValue="0" label="gelijkblijvend"/>
+							<color color="green" lowerValue="1" label="verbeterd"/>
+						</classBreaks>
+					</gridPlot>
+					<gridPlot id="Ntot Verschil t.o.v. de huidige norm Goed (-; doelgat) NL" name="Doelgat (afstand tot de norm ‘goed’)">
+						<description>Doelgat per waterlichaam (afstand tot de norm ‘goed’)</description>
+						<dataLayer>
+							<onlyCircles>true</onlyCircles>
+							<circleSizeFunction>10</circleSizeFunction>
+							<circleBorderSize>1</circleBorderSize>
+							<circleBorderColor>black</circleBorderColor>
+							<timeSeriesSet>
+								<moduleInstanceId>SamenvoegenToetsing_Ntot</moduleInstanceId>
+								<valueType>scalar</valueType>
+								<parameterId>Oordeel</parameterId>
+								<qualifierId>HH_1</qualifierId>
+								<qualifierId>BE_doelgat</qualifierId>
+								<locationSetId>KRW_waterlichamen_NL</locationSetId>
+								<timeSeriesType>simulated historical</timeSeriesType>
+								<timeStep id="jaar"/>
+								<relativeViewPeriod unit="day" start="-10000" startOverrulable="true" end="0" endOverrulable="true"/>
+								<readWriteMode>read complete forecast</readWriteMode>
+							</timeSeriesSet>
+						</dataLayer>
+						<movieFrameDurationMillis>50</movieFrameDurationMillis>
+						<classBreaks>
+							<color color="brown" lowerValue="1" label=">5 keer de norm"/>
+							<color color="orange red" lowerValue="2" label="2 tot 5 keer de norm"/>
+							<color color="dark goldenrod1" lowerValue="3" label="1.5 tot 2 keer de norm"/>
+							<color color="yellow" lowerValue="4" label="1 tot 1.5 keer de norm"/>
+							<color color="white" lowerValue="5" label="binnen de norm"/>
+						</classBreaks>
+					</gridPlot>
+				</gridPlotGroup>
+			</gridPlotGroup>
+			<gridPlotGroup id="P totaal">
+				<gridPlotGroup id="Zomergemiddelden">
+					<gridPlot id="Ptot Zomergemiddeld (mg/l) NL" name="3-jarig zomerhalfjaargemiddelde (mg/l)">
+						<description>3-jarig zomerhalfjaargemiddelde per waterlichaam (mg/l)</description>
+						<dataLayer>
+							<onlyCircles>true</onlyCircles>
+							<circleSizeFunction>10</circleSizeFunction>
+							<circleBorderSize>1</circleBorderSize>
+							<circleBorderColor>black</circleBorderColor>
+							<timeSeriesSet>
+								<moduleInstanceId>SamenvoegenMeetdata_Ptot</moduleInstanceId>
+								<valueType>scalar</valueType>
+								<parameterId>Ptot</parameterId>
+								<qualifierId>BE_summermean</qualifierId>
+								<qualifierId>BE_3jaargem</qualifierId>
+								<locationSetId>KRW_waterlichamen_NL</locationSetId>
+								<timeSeriesType>simulated historical</timeSeriesType>
+								<timeStep id="jaar"/>
+								<relativeViewPeriod unit="day" start="-10000" end="0"/>
+								<readWriteMode>read complete forecast</readWriteMode>
+							</timeSeriesSet>
+						</dataLayer>
+						<movieFrameDurationMillis>50</movieFrameDurationMillis>
+						<legendStyle>table</legendStyle>
+						<classBreaks>
+							<color color="alice blue" lowerValue="0" label="kleiner dan 0.1 mg/l"/>
+							<color color="cadet blue2" lowerValue="0.1" label="0.1 - 0.2 mg/l"/>
+							<color color="royal blue2" lowerValue="0.2" label="0.2 - 0.5 mg/l"/>
+							<color color="blue4" lowerValue="0.5" label="0.5 - 1 mg/l"/>
+							<color color="black" lowerValue="1" label="groter dan 1 mg/l"/>
+						</classBreaks>
+					</gridPlot>
+					<gridPlot id="Ptot Verschilkaart actueel t.o.v. voorlaatste_SGBP (mg/l) NL" name="Verschilkaart actueel t.o.v. $voorlaatste_SGBP$ (3 voorgaande jaren, mg/l)">
+						<description>Verschilkaart actueel t.o.v. $voorlaatste_SGBP$ per waterlichaam (3 voorgaande jaren, mg/l)</description>
+						<dataLayer>
+							<onlyCircles>true</onlyCircles>
+							<circleSizeFunction>10</circleSizeFunction>
+							<circleBorderSize>1</circleBorderSize>
+							<circleBorderColor>black</circleBorderColor>
+							<timeSeriesSet>
+								<moduleInstanceId>SamenvoegenMeetdata_Ptot</moduleInstanceId>
+								<valueType>scalar</valueType>
+								<parameterId>Ptot</parameterId>
+								<qualifierId>HH_2</qualifierId>
+								<qualifierId>BE_SGBP2009</qualifierId>
+								<qualifierId>BE_shift</qualifierId>
+								<qualifierId>BE_trend</qualifierId>
+								<locationSetId>KRW_waterlichamen_NL</locationSetId>
+								<timeSeriesType>simulated historical</timeSeriesType>
+								<timeStep id="jaar"/>
+								<relativeViewPeriod unit="day" start="-10000" startOverrulable="true" end="0" endOverrulable="true"/>
+								<readWriteMode>read complete forecast</readWriteMode>
+							</timeSeriesSet>
+						</dataLayer>
+						<movieFrameDurationMillis>50</movieFrameDurationMillis>
+						<classBreaks>
+							<color color="green4" lowerValue="-1000" label="kleiner dan -0.1 mg/l"/>
+							<color color="green1" lowerValue="-0.1" label="-0.1 tot -0.05 mg/l"/>
+							<color color="green yellow" lowerValue="-0.05" label="-0.05 tot 0 mg/l"/>
+							<color color="gray90" lowerValue="0" label="0 mg/l"/>
+							<color color="yellow" lowerValue="0.0000001" label="0 tot 0.05 mg/l"/>
+							<color color="orange" lowerValue="0.05" label="0.05 tot 0.1 mg/l"/>
+							<color color="red" lowerValue="0.1" label="groter dan 0.1 mg/l"/>
+						</classBreaks>
+					</gridPlot>
+					<gridPlot id="Ptot Verschilkaart actueel t.o.v. laatste_SGBP (mg/l) NL" name="Verschilkaart actueel t.o.v. $laatste_SGBP$ (3 voorgaande jaren, mg/l)">
+						<description>Verschilkaart actueel t.o.v. $laatste_SGBP$ per waterlichaam (3 voorgaande jaren, mg/l)</description>
+						<dataLayer>
+							<onlyCircles>true</onlyCircles>
+							<circleSizeFunction>10</circleSizeFunction>
+							<circleBorderSize>1</circleBorderSize>
+							<circleBorderColor>black</circleBorderColor>
+							<timeSeriesSet>
+								<moduleInstanceId>SamenvoegenMeetdata_Ptot</moduleInstanceId>
+								<valueType>scalar</valueType>
+								<parameterId>Ptot</parameterId>
+								<qualifierId>HH_2</qualifierId>
+								<qualifierId>BE_SGBP2015</qualifierId>
+								<qualifierId>BE_shift</qualifierId>
+								<qualifierId>BE_trend</qualifierId>
+								<locationSetId>KRW_waterlichamen_NL</locationSetId>
+								<timeSeriesType>simulated historical</timeSeriesType>
+								<timeStep id="jaar"/>
+								<relativeViewPeriod unit="day" start="-10000" startOverrulable="true" end="0" endOverrulable="true"/>
+								<readWriteMode>read complete forecast</readWriteMode>
+							</timeSeriesSet>
+						</dataLayer>
+						<movieFrameDurationMillis>50</movieFrameDurationMillis>
+						<classBreaks>
+							<color color="green4" lowerValue="-1000" label="kleiner dan -0.1 mg/l"/>
+							<color color="green1" lowerValue="-0.1" label="-0.1 tot -0.05 mg/l"/>
+							<color color="green yellow" lowerValue="-0.05" label="-0.05 tot 0 mg/l"/>
+							<color color="gray90" lowerValue="0" label="0 mg/l"/>
+							<color color="yellow" lowerValue="0.0000001" label="0 tot 0.05 mg/l"/>
+							<color color="orange" lowerValue="0.05" label="0.05 tot 0.1 mg/l"/>
+							<color color="red" lowerValue="0.1" label="groter dan 0.1 mg/l"/>
+						</classBreaks>
+					</gridPlot>
+				</gridPlotGroup>
+				<gridPlotGroup id="Jaargemiddelden">
+					<gridPlot id="Ptot Jaargemiddeld (mg/l) NL" name="Jaargemiddelde (mg/l)">
+						<description>Jaargemiddelde per waterlichaam (mg/l)</description>
+						<dataLayer>
+							<onlyCircles>true</onlyCircles>
+							<circleSizeFunction>10</circleSizeFunction>
+							<circleBorderSize>1</circleBorderSize>
+							<circleBorderColor>black</circleBorderColor>
+							<timeSeriesSet>
+								<moduleInstanceId>SamenvoegenMeetdata_Ptot</moduleInstanceId>
+								<valueType>scalar</valueType>
+								<parameterId>Ptot</parameterId>
+								<qualifierId>BE_jaargem</qualifierId>
+								<locationSetId>KRW-wl-wltype_zoet</locationSetId>
+								<timeSeriesType>simulated historical</timeSeriesType>
+								<timeStep id="een.jaar"/>
+								<relativeViewPeriod unit="day" start="-10000" end="0"/>
+								<readWriteMode>read complete forecast</readWriteMode>
+							</timeSeriesSet>
+						</dataLayer>
+						<movieFrameDurationMillis>50</movieFrameDurationMillis>
+						<legendStyle>table</legendStyle>
+						<classBreaks>
+							<color color="alice blue" lowerValue="0" label="kleiner dan 0.1 mg/l"/>
+							<color color="cadet blue2" lowerValue="0.1" label="0.1 - 0.2 mg/l"/>
+							<color color="royal blue2" lowerValue="0.2" label="0.2 - 0.5 mg/l"/>
+							<color color="blue4" lowerValue="0.5" label="0.5 - 1 mg/l"/>
+							<color color="black" lowerValue="1" label="groter dan 1 mg/l"/>
+						</classBreaks>
+					</gridPlot>
+				</gridPlotGroup>
+				<gridPlotGroup id="Normen">
+					<gridPlot id="Ptot Norm Goed-Matig (mg/l) NL" name="Goed-Matig (mg/l)">
+						<description>Norm Goed-Matig per waterlichaam (mg/l)</description>
+						<dataLayer>
+							<onlyCircles>true</onlyCircles>
+							<circleSizeFunction>10</circleSizeFunction>
+							<circleBorderSize>1</circleBorderSize>
+							<circleBorderColor>black</circleBorderColor>
+							<timeSeriesSet>
+								<moduleInstanceId>Aggregate_KRWtypes</moduleInstanceId>
+								<valueType>scalar</valueType>
+								<parameterId>Ptot</parameterId>
+								<qualifierId>WN_3</qualifierId>
+								<qualifierId>WT_3</qualifierId>
+								<locationSetId>KRW_waterlichamen_NL</locationSetId>
+								<timeSeriesType>external historical</timeSeriesType>
+								<timeStep unit="nonequidistant"/>
+								<readWriteMode>read complete forecast</readWriteMode>
+							</timeSeriesSet>
+						</dataLayer>
+						<movieFrameDurationMillis>50</movieFrameDurationMillis>
+						<legendStyle>table</legendStyle>
+						<classBreaks>
+							<color color="steel blue" lowerValue="0" label="kleiner dan 0.1 mg/l"/>
+							<color color="steel blue1" lowerValue="0.1" label="0.1 - 0.2 mg/l"/>
+							<color color="orchid1" lowerValue="0.2" label="0.2 - 0.5 mg/l"/>
+							<color color="plum" lowerValue="0.5" label="0.5 - 1 mg/l"/>
+							<color color="dark orchid4" lowerValue="1" label="groter dan 1 mg/l"/>
+						</classBreaks>
+					</gridPlot>
+					<gridPlot id="Ptot Norm Matig-Ontoereikend (mg/l) NL" name="Matig-Ontoereikend (mg/l)">
+						<description>Norm Matig-Ontoereikend per waterlichaam (mg/l)</description>
+						<dataLayer>
+							<onlyCircles>true</onlyCircles>
+							<circleSizeFunction>10</circleSizeFunction>
+							<circleBorderSize>1</circleBorderSize>
+							<circleBorderColor>black</circleBorderColor>
+							<timeSeriesSet>
+								<moduleInstanceId>Aggregate_KRWtypes</moduleInstanceId>
+								<valueType>scalar</valueType>
+								<parameterId>Ptot</parameterId>
+								<qualifierId>WN_4</qualifierId>
+								<qualifierId>WT_3</qualifierId>
+								<locationSetId>KRW_waterlichamen_NL</locationSetId>
+								<timeSeriesType>external historical</timeSeriesType>
+								<timeStep unit="nonequidistant"/>
+								<readWriteMode>read complete forecast</readWriteMode>
+							</timeSeriesSet>
+						</dataLayer>
+						<movieFrameDurationMillis>50</movieFrameDurationMillis>
+						<legendStyle>table</legendStyle>
+						<classBreaks>
+							<color color="steel blue" lowerValue="0" label="kleiner dan 0.1 mg/l"/>
+							<color color="steel blue1" lowerValue="0.1" label="0.1 - 0.2 mg/l"/>
+							<color color="orchid1" lowerValue="0.2" label="0.2 - 0.5 mg/l"/>
+							<color color="plum" lowerValue="0.5" label="0.5 - 1 mg/l"/>
+							<color color="dark orchid4" lowerValue="1" label="groter dan 1 mg/l"/>
+						</classBreaks>
+					</gridPlot>
+					<gridPlot id="Ptot Norm Ontoereikend-Slecht (mg/l) NL" name="Ontoereikend-Slecht (mg/l)">
+						<description>Norm Ontoereikend-Slecht per waterlichaam (mg/l) </description>
+						<dataLayer>
+							<onlyCircles>true</onlyCircles>
+							<circleSizeFunction>10</circleSizeFunction>
+							<circleBorderSize>1</circleBorderSize>
+							<circleBorderColor>black</circleBorderColor>
+							<timeSeriesSet>
+								<moduleInstanceId>Aggregate_KRWtypes</moduleInstanceId>
+								<valueType>scalar</valueType>
+								<parameterId>Ptot</parameterId>
+								<qualifierId>WN_5</qualifierId>
+								<qualifierId>WT_3</qualifierId>
+								<locationSetId>KRW_waterlichamen_NL</locationSetId>
+								<timeSeriesType>external historical</timeSeriesType>
+								<timeStep unit="nonequidistant"/>
+								<readWriteMode>read complete forecast</readWriteMode>
+							</timeSeriesSet>
+						</dataLayer>
+						<movieFrameDurationMillis>50</movieFrameDurationMillis>
+						<legendStyle>table</legendStyle>
+						<classBreaks>
+							<color color="steel blue" lowerValue="0" label="kleiner dan 0.1 mg/l"/>
+							<color color="steel blue1" lowerValue="0.1" label="0.1 - 0.2 mg/l"/>
+							<color color="orchid1" lowerValue="0.2" label="0.2 - 0.5 mg/l"/>
+							<color color="plum" lowerValue="0.5" label="0.5 - 1 mg/l"/>
+							<color color="dark orchid4" lowerValue="1" label="groter dan 1 mg/l"/>
+						</classBreaks>
+					</gridPlot>
+				</gridPlotGroup>
+				<gridPlotGroup id="Toetsing">
+					<gridPlot id="Ptot Toetsing t.o.v. normen laatste_SGBP (-) NL" name="Toetsing fosfor aan normen $huidige_SGBP$">
+						<description>Toetsing fosfor aan normen $huidige_SGBP$ per waterlichaam</description>
+						<dataLayer>
+							<onlyCircles>true</onlyCircles>
+							<circleSizeFunction>10</circleSizeFunction>
+							<circleBorderSize>1</circleBorderSize>
+							<circleBorderColor>black</circleBorderColor>
+							<timeSeriesSet>
+								<moduleInstanceId>SamenvoegenToetsing_Ptot</moduleInstanceId>
+								<valueType>scalar</valueType>
+								<parameterId>Oordeel</parameterId>
+								<qualifierId>HH_2</qualifierId>
+								<qualifierId>BE_SGBPhuidig_toets</qualifierId>
+								<locationSetId>KRW_waterlichamen_NL</locationSetId>
+								<timeSeriesType>simulated historical</timeSeriesType>
+								<timeStep id="jaar"/>
+								<relativeViewPeriod unit="day" start="-3500" end="0"/>
+								<readWriteMode>read complete forecast</readWriteMode>
+							</timeSeriesSet>
+						</dataLayer>
+						<movieFrameDurationMillis>50</movieFrameDurationMillis>
+						<classBreaks>
+							<color color="red" lowerValue="1" label="slecht"/>
+							<color color="orange" lowerValue="2" label="ontoereikend"/>
+							<color color="yellow" lowerValue="3" label="matig"/>
+							<color color="green" lowerValue="4" label="goed"/>
+						</classBreaks>
+					</gridPlot>
+					<gridPlot id="Ptot Verschilkaart Toetsing actueel vs. voorlaatste_SGBP (-) NL" name="Verschilkaart toetsing fosfor actueel vs. $voorlaatste_SGBP$ (-)">
+						<description>Verschilkaart toetsing fosfor actueel vs. $voorlaatste_SGBP$ per waterlichaam (-)</description>
+						<dataLayer>
+							<onlyCircles>true</onlyCircles>
+							<circleSizeFunction>10</circleSizeFunction>
+							<circleBorderSize>1</circleBorderSize>
+							<circleBorderColor>black</circleBorderColor>
+							<timeSeriesSet>
+								<moduleInstanceId>SamenvoegenToetsing_Ptot</moduleInstanceId>
+								<valueType>scalar</valueType>
+								<parameterId>Oordeel</parameterId>
+								<qualifierId>HH_2</qualifierId>
+								<qualifierId>BE_shift</qualifierId>
+								<qualifierId>BE_SGBP2009</qualifierId>
+								<qualifierId>BE_trend</qualifierId>
+								<locationSetId>KRW_waterlichamen_NL</locationSetId>
+								<timeSeriesType>simulated historical</timeSeriesType>
+								<timeStep id="jaar"/>
+								<relativeViewPeriod unit="day" start="-1" startOverrulable="false" end="0" endOverrulable="true"/>
+								<readWriteMode>read complete forecast</readWriteMode>
+							</timeSeriesSet>
+						</dataLayer>
+						<movieFrameDurationMillis>50</movieFrameDurationMillis>
+						<classBreaks>
+							<color color="red" lowerValue="-1" label="verslechterd"/>
+							<color color="yellow" lowerValue="0" label="gelijkblijvend"/>
+							<color color="green" lowerValue="1" label="verbeterd"/>
+						</classBreaks>
+					</gridPlot>
+					<gridPlot id="Ptot Verschilkaart Toetsing actueel vs. laatste_SGBP (-) NL" name="Verschilkaart toetsing fosfor actueel vs. $laatste_SGBP$ (-)">
+						<description>Verschilkaart toetsing fosfor actueel vs. $laatste_SGBP$ per waterlichaam (-)</description>
+						<dataLayer>
+							<onlyCircles>true</onlyCircles>
+							<circleSizeFunction>10</circleSizeFunction>
+							<circleBorderSize>1</circleBorderSize>
+							<circleBorderColor>black</circleBorderColor>
+							<timeSeriesSet>
+								<moduleInstanceId>SamenvoegenToetsing_Ptot</moduleInstanceId>
+								<valueType>scalar</valueType>
+								<parameterId>Oordeel</parameterId>
+								<qualifierId>HH_2</qualifierId>
+								<qualifierId>BE_shift</qualifierId>
+								<qualifierId>BE_SGBP2015</qualifierId>
+								<qualifierId>BE_trend</qualifierId>
+								<locationSetId>KRW_waterlichamen_NL</locationSetId>
+								<timeSeriesType>simulated historical</timeSeriesType>
+								<timeStep id="jaar"/>
+								<relativeViewPeriod unit="day" start="-1" startOverrulable="false" end="0" endOverrulable="true"/>
+								<readWriteMode>read complete forecast</readWriteMode>
+							</timeSeriesSet>
+						</dataLayer>
+						<movieFrameDurationMillis>50</movieFrameDurationMillis>
+						<classBreaks>
+							<color color="red" lowerValue="-1" label="verslechterd"/>
+							<color color="yellow" lowerValue="0" label="gelijkblijvend"/>
+							<color color="green" lowerValue="1" label="verbeterd"/>
+						</classBreaks>
+					</gridPlot>
+					<gridPlot id="Ptot Verschil t.o.v. de huidige norm Goed (-; doelgat) NL" name="Doelgat (afstand tot de norm ‘goed’)">
+						<description>Doelgat per waterlichaam (afstand tot de norm ‘goed’)</description>
+						<dataLayer>
+							<onlyCircles>true</onlyCircles>
+							<circleSizeFunction>10</circleSizeFunction>
+							<circleBorderSize>1</circleBorderSize>
+							<circleBorderColor>black</circleBorderColor>
+							<timeSeriesSet>
+								<moduleInstanceId>SamenvoegenToetsing_Ptot</moduleInstanceId>
+								<valueType>scalar</valueType>
+								<parameterId>Oordeel</parameterId>
+								<qualifierId>HH_2</qualifierId>
+								<qualifierId>BE_doelgat</qualifierId>
+								<locationSetId>KRW_waterlichamen_NL</locationSetId>
+								<timeSeriesType>simulated historical</timeSeriesType>
+								<timeStep id="jaar"/>
+								<relativeViewPeriod unit="day" start="-10000" startOverrulable="true" end="0" endOverrulable="true"/>
+								<readWriteMode>read complete forecast</readWriteMode>
+							</timeSeriesSet>
+						</dataLayer>
+						<movieFrameDurationMillis>50</movieFrameDurationMillis>
+						<classBreaks>
+							<color color="brown" lowerValue="1" label=">5 keer de norm"/>
+							<color color="orange red" lowerValue="2" label="2 tot 5 keer de norm"/>
+							<color color="dark goldenrod1" lowerValue="3" label="1.5 tot 2 keer de norm"/>
+							<color color="yellow" lowerValue="4" label="1 tot 1.5 keer de norm"/>
+							<color color="white" lowerValue="5" label="binnen de norm"/>
+						</classBreaks>
+					</gridPlot>
+				</gridPlotGroup>
+			</gridPlotGroup>
+			<gridPlotGroup id="Winter DIN">
+				<gridPlotGroup id="Wintergemiddelden">
+					<gridPlot id="DIN Wintergemiddeld (mg/l) NL" name="3-jarig wintergemiddelde (mg/l)">
+						<description>3-jarig wintergemiddelde per waterlichaam (mg/l)</description>
+						<dataLayer>
+							<onlyCircles>true</onlyCircles>
+							<circleSizeFunction>10</circleSizeFunction>
+							<circleBorderSize>1</circleBorderSize>
+							<circleBorderColor>black</circleBorderColor>
+							<timeSeriesSet>
+								<moduleInstanceId>SamenvoegenMeetdata_DIN</moduleInstanceId>
+								<valueType>scalar</valueType>
+								<parameterId>DIN</parameterId>
+								<qualifierId>BE_wintermean</qualifierId>
+								<qualifierId>BE_3jaargem</qualifierId>
+								<locationSetId>KRW_waterlichamen_NL</locationSetId>
+								<timeSeriesType>simulated historical</timeSeriesType>
+								<timeStep id="jaar"/>
+								<relativeViewPeriod unit="day" start="-3500" end="0"/>
+								<readWriteMode>read complete forecast</readWriteMode>
+							</timeSeriesSet>
+						</dataLayer>
+						<movieFrameDurationMillis>50</movieFrameDurationMillis>
+						<legendStyle>table</legendStyle>
+						<classBreaks>
+							<color color="alice blue" lowerValue="0" label="kleiner dan 0.5 mg/l"/>
+							<color color="cadet blue2" lowerValue="0.5" label="0.5 - 1 mg/l"/>
+							<color color="royal blue2" lowerValue="1" label="1 - 2 mg/l"/>
+							<color color="blue4" lowerValue="2" label="2 - 4 mg/l"/>
+							<color color="black" lowerValue="4" label="groter dan 4 mg/l"/>
+						</classBreaks>
+					</gridPlot>
+					<gridPlot id="DIN Verschilkaart actueel t.o.v. voorlaatste_SGBP (mg/l) NL" name="Verschilkaart actueel t.o.v. $voorlaatste_SGBP$ (3 voorgaande jaren, mg/l)">
+						<description>Verschilkaart actueel t.o.v. $voorlaatste_SGBP$ per waterlichaam (3 voorgaande jaren, mg/l)</description>
+						<dataLayer>
+							<onlyCircles>true</onlyCircles>
+							<circleSizeFunction>10</circleSizeFunction>
+							<circleBorderSize>1</circleBorderSize>
+							<circleBorderColor>black</circleBorderColor>
+							<timeSeriesSet>
+								<moduleInstanceId>SamenvoegenMeetdata_DIN</moduleInstanceId>
+								<valueType>scalar</valueType>
+								<parameterId>DIN</parameterId>
+								<qualifierId>HH_4</qualifierId>
+								<qualifierId>BE_SGBP2009</qualifierId>
+								<qualifierId>BE_shift</qualifierId>
+								<qualifierId>BE_trend</qualifierId>
+								<locationSetId>KRW_waterlichamen_NL</locationSetId>
+								<timeSeriesType>simulated historical</timeSeriesType>
+								<timeStep id="jaar"/>
+								<relativeViewPeriod unit="day" start="-10000" startOverrulable="true" end="0" endOverrulable="true"/>
+								<readWriteMode>read complete forecast</readWriteMode>
+							</timeSeriesSet>
+						</dataLayer>
+						<movieFrameDurationMillis>50</movieFrameDurationMillis>
+						<classBreaks>
+							<color color="green4" lowerValue="-1000" label="kleiner dan -1 mg/l"/>
+							<color color="green1" lowerValue="-1" label="-1 tot -0.5 mg/l"/>
+							<color color="green yellow" lowerValue="-0.5" label="-0.5 tot 0 mg/l"/>
+							<color color="gray90" lowerValue="0" label="0 mg/l"/>
+							<color color="yellow" lowerValue="0.0000001" label="0 tot 0.5 mg/l"/>
+							<color color="orange" lowerValue="0.5" label="0.5 tot 1 mg/l"/>
+							<color color="red" lowerValue="1" label="groter dan 1 mg/l"/>
+						</classBreaks>
+					</gridPlot>
+					<gridPlot id="DIN Verschilkaart actueel t.o.v. laatste_SGBP (mg/l) NL" name="Verschilkaart actueel t.o.v. $laatste_SGBP$ (3 voorgaande jaren, mg/l)">
+						<description>Verschilkaart actueel t.o.v. $laatste_SGBP$ per waterlichaam (3 voorgaande jaren, mg/l)</description>
+						<dataLayer>
+							<onlyCircles>true</onlyCircles>
+							<circleSizeFunction>10</circleSizeFunction>
+							<circleBorderSize>1</circleBorderSize>
+							<circleBorderColor>black</circleBorderColor>
+							<timeSeriesSet>
+								<moduleInstanceId>SamenvoegenMeetdata_DIN</moduleInstanceId>
+								<valueType>scalar</valueType>
+								<parameterId>DIN</parameterId>
+								<qualifierId>HH_4</qualifierId>
+								<qualifierId>BE_SGBP2015</qualifierId>
+								<qualifierId>BE_shift</qualifierId>
+								<qualifierId>BE_trend</qualifierId>
+								<locationSetId>KRW_waterlichamen_NL</locationSetId>
+								<timeSeriesType>simulated historical</timeSeriesType>
+								<timeStep id="jaar"/>
+								<relativeViewPeriod unit="day" start="-10000" startOverrulable="true" end="0" endOverrulable="true"/>
+								<readWriteMode>read complete forecast</readWriteMode>
+							</timeSeriesSet>
+						</dataLayer>
+						<movieFrameDurationMillis>50</movieFrameDurationMillis>
+						<classBreaks>
+							<color color="green4" lowerValue="-1000" label="kleiner dan -1 mg/l"/>
+							<color color="green1" lowerValue="-1" label="-1 tot -0.5 mg/l"/>
+							<color color="green yellow" lowerValue="-0.5" label="-0.5 tot 0 mg/l"/>
+							<color color="gray90" lowerValue="0" label="0 mg/l"/>
+							<color color="yellow" lowerValue="0.0000001" label="0 tot 0.5 mg/l"/>
+							<color color="orange" lowerValue="0.5" label="0.5 tot 1 mg/l"/>
+							<color color="red" lowerValue="1" label="groter dan 1 mg/l"/>
+						</classBreaks>
+					</gridPlot>
+				</gridPlotGroup>
+				<gridPlotGroup id="Jaargemiddelden">
+					<gridPlot id="DIN Jaargemiddeld (mg/l) NL" name="Jaargemiddelde (mg/l)">
+						<description>Jaargemiddelde per waterlichaam (mg/l)</description>
+						<dataLayer>
+							<onlyCircles>true</onlyCircles>
+							<circleSizeFunction>10</circleSizeFunction>
+							<circleBorderSize>1</circleBorderSize>
+							<circleBorderColor>black</circleBorderColor>
+							<timeSeriesSet>
+								<moduleInstanceId>SamenvoegenMeetdata_DIN</moduleInstanceId>
+								<valueType>scalar</valueType>
+								<parameterId>DIN</parameterId>
+								<qualifierId>BE_jaargem</qualifierId>
+								<locationSetId>KRW-wl-wltype_zout</locationSetId>
+								<timeSeriesType>simulated historical</timeSeriesType>
+								<timeStep id="een.jaar"/>
+								<relativeViewPeriod unit="day" start="-10000" end="0"/>
+								<readWriteMode>read complete forecast</readWriteMode>
+							</timeSeriesSet>
+						</dataLayer>
+						<movieFrameDurationMillis>50</movieFrameDurationMillis>
+						<legendStyle>table</legendStyle>
+						<classBreaks>
+							<color color="alice blue" lowerValue="0" label="kleiner dan 0.5 mg/l"/>
+							<color color="cadet blue2" lowerValue="0.5" label="0.5 - 1 mg/l"/>
+							<color color="royal blue2" lowerValue="1" label="1 - 2 mg/l"/>
+							<color color="blue4" lowerValue="2" label="2 - 4 mg/l"/>
+							<color color="black" lowerValue="4" label="groter dan 4 mg/l"/>
+						</classBreaks>
+					</gridPlot>
+				</gridPlotGroup>
+				<gridPlotGroup id="Normen">
+					<gridPlot id="DIN Norm Goed-Matig (mg/l) NL" name="Goed-Matig (mg/l)">
+						<description>Norm Goed-Matig per waterlichaam (mg/l)</description>
+						<dataLayer>
+							<onlyCircles>true</onlyCircles>
+							<circleSizeFunction>10</circleSizeFunction>
+							<circleBorderSize>1</circleBorderSize>
+							<circleBorderColor>black</circleBorderColor>
+							<timeSeriesSet>
+								<moduleInstanceId>Aggregate_KRWtypes</moduleInstanceId>
+								<valueType>scalar</valueType>
+								<parameterId>DIN</parameterId>
+								<qualifierId>WN_3</qualifierId>
+								<qualifierId>WT_3</qualifierId>
+								<locationSetId>KRW_waterlichamen_NL</locationSetId>
+								<timeSeriesType>external historical</timeSeriesType>
+								<timeStep unit="nonequidistant"/>
+								<readWriteMode>read complete forecast</readWriteMode>
+							</timeSeriesSet>
+						</dataLayer>
+						<movieFrameDurationMillis>50</movieFrameDurationMillis>
+						<legendStyle>table</legendStyle>
+						<classBreaks>
+							<color color="steel blue" lowerValue="0" label="kleiner dan 0.5 mg/l"/>
+							<color color="steel blue1" lowerValue="0.5" label="0.5 - 1 mg/l"/>
+							<color color="orchid1" lowerValue="1" label="1 - 2 mg/l"/>
+							<color color="plum" lowerValue="2" label="2 - 4 mg/l"/>
+							<color color="dark orchid4" lowerValue="4" label="groter dan 4 mg/l"/>
+						</classBreaks>
+					</gridPlot>
+					<gridPlot id="DIN Norm Matig-Ontoereikend (mg/l) NL" name="Matig-Ontoereikend (mg/l)">
+						<description>Norm Matig-Ontoereikend per waterlichaam (mg/l)</description>
+						<dataLayer>
+							<onlyCircles>true</onlyCircles>
+							<circleSizeFunction>10</circleSizeFunction>
+							<circleBorderSize>1</circleBorderSize>
+							<circleBorderColor>black</circleBorderColor>
+							<timeSeriesSet>
+								<moduleInstanceId>Aggregate_KRWtypes</moduleInstanceId>
+								<valueType>scalar</valueType>
+								<parameterId>DIN</parameterId>
+								<qualifierId>WN_4</qualifierId>
+								<qualifierId>WT_3</qualifierId>
+								<locationSetId>KRW_waterlichamen_NL</locationSetId>
+								<timeSeriesType>external historical</timeSeriesType>
+								<timeStep unit="nonequidistant"/>
+								<readWriteMode>read complete forecast</readWriteMode>
+							</timeSeriesSet>
+						</dataLayer>
+						<movieFrameDurationMillis>50</movieFrameDurationMillis>
+						<legendStyle>table</legendStyle>
+						<classBreaks>
+							<color color="steel blue" lowerValue="0" label="kleiner dan 0.5 mg/l"/>
+							<color color="steel blue1" lowerValue="0.5" label="0.5 - 1 mg/l"/>
+							<color color="orchid1" lowerValue="1" label="1 - 2 mg/l"/>
+							<color color="plum" lowerValue="2" label="2 - 4 mg/l"/>
+							<color color="dark orchid4" lowerValue="4" label="groter dan 4 mg/l"/>
+						</classBreaks>
+					</gridPlot>
+					<gridPlot id="DIN Norm Ontoereikend-Slecht (mg/l) NL" name="Ontoereikend-Slecht (mg/l)">
+						<description>Norm Ontoereikend-Slecht per waterlichaam (mg/l) </description>
+						<dataLayer>
+							<onlyCircles>true</onlyCircles>
+							<circleSizeFunction>10</circleSizeFunction>
+							<circleBorderSize>1</circleBorderSize>
+							<circleBorderColor>black</circleBorderColor>
+							<timeSeriesSet>
+								<moduleInstanceId>Aggregate_KRWtypes</moduleInstanceId>
+								<valueType>scalar</valueType>
+								<parameterId>DIN</parameterId>
+								<qualifierId>WN_5</qualifierId>
+								<qualifierId>WT_3</qualifierId>
+								<locationSetId>KRW_waterlichamen_NL</locationSetId>
+								<timeSeriesType>external historical</timeSeriesType>
+								<timeStep unit="nonequidistant"/>
+								<readWriteMode>read complete forecast</readWriteMode>
+							</timeSeriesSet>
+						</dataLayer>
+						<movieFrameDurationMillis>50</movieFrameDurationMillis>
+						<legendStyle>table</legendStyle>
+						<classBreaks>
+							<color color="steel blue" lowerValue="0" label="kleiner dan 0.5 mg/l"/>
+							<color color="steel blue1" lowerValue="0.5" label="0.5 - 1 mg/l"/>
+							<color color="orchid1" lowerValue="1" label="1 - 2 mg/l"/>
+							<color color="plum" lowerValue="2" label="2 - 4 mg/l"/>
+							<color color="dark orchid4" lowerValue="4" label="groter dan 4 mg/l"/>
+						</classBreaks>
+					</gridPlot>
+				</gridPlotGroup>
+				<gridPlotGroup id="Toetsing">
+					<gridPlot id="DIN Toetsing t.o.v. normen laatste_SGBP (-) NL" name="Toetsing DIN aan normen $huidige_SGBP$">
+						<description>Toetsing DIN aan normen $huidige_SGBP$ per waterlichaam</description>
+						<dataLayer>
+							<onlyCircles>true</onlyCircles>
+							<circleSizeFunction>10</circleSizeFunction>
+							<circleBorderSize>1</circleBorderSize>
+							<circleBorderColor>black</circleBorderColor>
+							<timeSeriesSet>
+								<moduleInstanceId>SamenvoegenToetsing_DIN</moduleInstanceId>
+								<valueType>scalar</valueType>
+								<parameterId>Oordeel</parameterId>
+								<qualifierId>HH_4</qualifierId>
+								<qualifierId>BE_SGBPhuidig_toets</qualifierId>
+								<locationSetId>KRW_waterlichamen_NL</locationSetId>
+								<timeSeriesType>simulated historical</timeSeriesType>
+								<timeStep id="jaar"/>
+								<relativeViewPeriod unit="day" start="-3500" end="0"/>
+								<readWriteMode>read complete forecast</readWriteMode>
+							</timeSeriesSet>
+						</dataLayer>
+						<movieFrameDurationMillis>50</movieFrameDurationMillis>
+						<classBreaks>
+							<color color="red" lowerValue="1" label="slecht"/>
+							<color color="orange" lowerValue="2" label="ontoereikend"/>
+							<color color="yellow" lowerValue="3" label="matig"/>
+							<color color="green" lowerValue="4" label="goed"/>
+						</classBreaks>
+					</gridPlot>
+					<gridPlot id="DIN Verschilkaart Toetsing actueel vs. voorlaatste_SGBP (-) NL" name="Verschilkaart toetsing DIN actueel vs. $voorlaatste_SGBP$ (-)">
+						<description>Verschilkaart toetsing DIN actueel vs. $voorlaatste_SGBP$ per waterlichaam (-)</description>
+						<dataLayer>
+							<onlyCircles>true</onlyCircles>
+							<circleSizeFunction>10</circleSizeFunction>
+							<circleBorderSize>1</circleBorderSize>
+							<circleBorderColor>black</circleBorderColor>
+							<timeSeriesSet>
+								<moduleInstanceId>SamenvoegenToetsing_DIN</moduleInstanceId>
+								<valueType>scalar</valueType>
+								<parameterId>Oordeel</parameterId>
+								<qualifierId>HH_4</qualifierId>
+								<qualifierId>BE_shift</qualifierId>
+								<qualifierId>BE_SGBP2009</qualifierId>
+								<qualifierId>BE_trend</qualifierId>
+								<locationSetId>KRW_waterlichamen_NL</locationSetId>
+								<timeSeriesType>simulated historical</timeSeriesType>
+								<timeStep id="jaar"/>
+								<relativeViewPeriod unit="day" start="-1" startOverrulable="false" end="0" endOverrulable="true"/>
+								<readWriteMode>read complete forecast</readWriteMode>
+							</timeSeriesSet>
+						</dataLayer>
+						<movieFrameDurationMillis>50</movieFrameDurationMillis>
+						<classBreaks>
+							<color color="red" lowerValue="-1" label="verslechterd"/>
+							<color color="yellow" lowerValue="0" label="gelijkblijvend"/>
+							<color color="green" lowerValue="1" label="verbeterd"/>
+						</classBreaks>
+					</gridPlot>
+					<gridPlot id="DIN Verschilkaart Toetsing actueel vs. laatste_SGBP (-) NL" name="Verschilkaart toetsing DIN actueel vs. $laatste_SGBP$ (-)">
+						<description>Verschilkaart toetsing DIN actueel vs. $laatste_SGBP$ per waterlichaam (-)</description>
+						<dataLayer>
+							<onlyCircles>true</onlyCircles>
+							<circleSizeFunction>10</circleSizeFunction>
+							<circleBorderSize>1</circleBorderSize>
+							<circleBorderColor>black</circleBorderColor>
+							<timeSeriesSet>
+								<moduleInstanceId>SamenvoegenToetsing_DIN</moduleInstanceId>
+								<valueType>scalar</valueType>
+								<parameterId>Oordeel</parameterId>
+								<qualifierId>HH_4</qualifierId>
+								<qualifierId>BE_shift</qualifierId>
+								<qualifierId>BE_SGBP2015</qualifierId>
+								<qualifierId>BE_trend</qualifierId>
+								<locationSetId>KRW_waterlichamen_NL</locationSetId>
+								<timeSeriesType>simulated historical</timeSeriesType>
+								<timeStep id="jaar"/>
+								<relativeViewPeriod unit="day" start="-1" startOverrulable="false" end="0" endOverrulable="true"/>
+								<readWriteMode>read complete forecast</readWriteMode>
+							</timeSeriesSet>
+						</dataLayer>
+						<movieFrameDurationMillis>50</movieFrameDurationMillis>
+						<classBreaks>
+							<color color="red" lowerValue="-1" label="verslechterd"/>
+							<color color="yellow" lowerValue="0" label="gelijkblijvend"/>
+							<color color="green" lowerValue="1" label="verbeterd"/>
+						</classBreaks>
+					</gridPlot>
+					<gridPlot id="DIN Verschil t.o.v. de huidige norm Goed (-; doelgat) NL" name="Doelgat (afstand tot de norm ‘goed’)">
+						<description>Doelgat per waterlichaam (afstand tot de norm ‘goed’)</description>
+						<dataLayer>
+							<onlyCircles>true</onlyCircles>
+							<circleSizeFunction>10</circleSizeFunction>
+							<circleBorderSize>1</circleBorderSize>
+							<circleBorderColor>black</circleBorderColor>
+							<timeSeriesSet>
+								<moduleInstanceId>SamenvoegenToetsing_DIN</moduleInstanceId>
+								<valueType>scalar</valueType>
+								<parameterId>Oordeel</parameterId>
+								<qualifierId>HH_4</qualifierId>
+								<qualifierId>BE_doelgat</qualifierId>
+								<locationSetId>KRW_waterlichamen_NL</locationSetId>
+								<timeSeriesType>simulated historical</timeSeriesType>
+								<timeStep id="jaar"/>
+								<relativeViewPeriod unit="day" start="-10000" startOverrulable="true" end="0" endOverrulable="true"/>
+								<readWriteMode>read complete forecast</readWriteMode>
+							</timeSeriesSet>
+						</dataLayer>
+						<movieFrameDurationMillis>50</movieFrameDurationMillis>
+						<classBreaks>
+							<color color="brown" lowerValue="1" label=">5 keer de norm"/>
+							<color color="orange red" lowerValue="2" label="2 tot 5 keer de norm"/>
+							<color color="dark goldenrod1" lowerValue="3" label="1.5 tot 2 keer de norm"/>
+							<color color="yellow" lowerValue="4" label="1 tot 1.5 keer de norm"/>
+							<color color="white" lowerValue="5" label="binnen de norm"/>
+						</classBreaks>
+					</gridPlot>
+				</gridPlotGroup>
+			</gridPlotGroup>
+		</gridPlotGroup>
+		<gridPlotGroup id="KRW-monitoringslocaties">
+			<gridPlotGroup id="N totaal">
+				<gridPlot id="Ntot Trendhelling (% per decennium) NL">
+					<description>Trendhelling per monitoringslocatie (% per decennium)</description>
+					<dataLayer>
+						<onlyCircles>true</onlyCircles>
+						<circleSizeFunction>10</circleSizeFunction>
+						<circleBorderSize>1</circleBorderSize>
+						<circleBorderColor>black</circleBorderColor>
+						<timeSeriesSet>
+							<moduleInstanceId>Import_Trend_CSV</moduleInstanceId>
+							<valueType>scalar</valueType>
+							<parameterId>Trendhelling_perc</parameterId>
+							<qualifierId>HH_1</qualifierId>
+							<qualifierId>WT_2</qualifierId>
+							<locationSetId>KRW-monitoringslocaties_zoet</locationSetId>
+							<timeSeriesType>external historical</timeSeriesType>
+							<timeStep unit="nonequidistant"/>
+							<relativeViewPeriod unit="day" start="-1096" end="0"/>
+							<readWriteMode>read complete forecast</readWriteMode>
+						</timeSeriesSet>
+					</dataLayer>
+					<movieFrameDurationMillis>50</movieFrameDurationMillis>
+					<classBreaks>
+						<color color="green4" lowerValue="-1000" label="kleiner dan -50%"/>
+						<color color="lawn green" lowerValue="-50" label="-50 tot -25%"/>
+						<color color="yellow" lowerValue="-25" label="-25 tot 0%"/>
+						<color color="white" opaquenessPercentage="90" lowerValue="0" label="geen significante trend"/>
+						<color color="dark goldenrod1" lowerValue="0.0000001" label="0 - 25%"/>
+						<color color="red" lowerValue="25" label="groter dan 25%"/>
+					</classBreaks>
+				</gridPlot>
+			</gridPlotGroup>
+			<gridPlotGroup id="P totaal">
+				<gridPlot id="Ptot Trendhelling (% per decennium) NL">
+					<description>Trendhelling per monitoringslocatie (% per decennium)</description>
+					<dataLayer>
+						<onlyCircles>true</onlyCircles>
+						<circleSizeFunction>10</circleSizeFunction>
+						<circleBorderSize>1</circleBorderSize>
+						<circleBorderColor>black</circleBorderColor>
+						<timeSeriesSet>
+							<moduleInstanceId>Import_Trend_CSV</moduleInstanceId>
+							<valueType>scalar</valueType>
+							<parameterId>Trendhelling_perc</parameterId>
+							<qualifierId>HH_2</qualifierId>
+							<qualifierId>WT_2</qualifierId>
+							<locationSetId>KRW-monitoringslocaties_zoet</locationSetId>
+							<timeSeriesType>external historical</timeSeriesType>
+							<timeStep unit="nonequidistant"/>
+							<relativeViewPeriod unit="day" start="-1096" end="0"/>
+							<readWriteMode>read complete forecast</readWriteMode>
+						</timeSeriesSet>
+					</dataLayer>
+					<movieFrameDurationMillis>50</movieFrameDurationMillis>
+					<classBreaks>
+						<color color="green4" lowerValue="-1000" label="kleiner dan -50%"/>
+						<color color="lawn green" lowerValue="-50" label="-50 tot -25%"/>
+						<color color="yellow" lowerValue="-25" label="-25 tot 0%"/>
+						<color color="white" opaquenessPercentage="90" lowerValue="0" label="geen significante trend"/>
+						<color color="dark goldenrod1" lowerValue="0.0000001" label="0 - 25%"/>
+						<color color="red" lowerValue="25" label="groter dan 25%"/>
+					</classBreaks>
+				</gridPlot>
+			</gridPlotGroup>
+			<gridPlotGroup id="Winter DIN">
+				<gridPlot id="DIN Trendhelling (% per decennium) NL">
+					<description>Trendhelling per monitoringslocatie (% per decennium)</description>
+					<dataLayer>
+						<onlyCircles>true</onlyCircles>
+						<circleSizeFunction>10</circleSizeFunction>
+						<circleBorderSize>1</circleBorderSize>
+						<circleBorderColor>black</circleBorderColor>
+						<timeSeriesSet>
+							<moduleInstanceId>Import_Trend_CSV</moduleInstanceId>
+							<valueType>scalar</valueType>
+							<parameterId>Trendhelling_perc</parameterId>
+							<qualifierId>HH_4</qualifierId>
+							<qualifierId>WT_2</qualifierId>
+							<locationSetId>KRW-monitoringslocaties_zout</locationSetId>
+							<timeSeriesType>external historical</timeSeriesType>
+							<timeStep unit="nonequidistant"/>
+							<relativeViewPeriod unit="day" start="-1096" end="0"/>
+							<readWriteMode>read complete forecast</readWriteMode>
+						</timeSeriesSet>
+					</dataLayer>
+					<movieFrameDurationMillis>50</movieFrameDurationMillis>
+					<classBreaks>
+						<color color="green4" lowerValue="-1000" label="kleiner dan -50%"/>
+						<color color="lawn green" lowerValue="-50" label="-50 tot -25%"/>
+						<color color="yellow" lowerValue="-25" label="-25 tot 0%"/>
+						<color color="white" opaquenessPercentage="90" lowerValue="0" label="geen significante trend"/>
+						<color color="dark goldenrod1" lowerValue="0.0000001" label="0 - 25%"/>
+						<color color="red" lowerValue="25" label="groter dan 25%"/>
+					</classBreaks>
+				</gridPlot>
+			</gridPlotGroup>
+		</gridPlotGroup>
+	</gridPlotGroup>
+	<gridPlotGroup id="Waterschappen">
+		<gridPlotGroup id="KRW-waterlichamen">
+			<gridPlotGroup id="N totaal">
+				<gridPlotGroup id="Zomergemiddelden">
+					<gridPlot id="Ntot Zomergemiddeld (mg/l) WS" name="3-jarig zomerhalfjaargemiddelde (mg/l)">
+						<description>3-jarig zomerhalfjaargemiddelde per waterlichaam (mg/l)</description>
+						<dataLayer>
+							<onlyCircles>true</onlyCircles>
+							<circleSizeFunction>10</circleSizeFunction>
+							<circleBorderSize>1</circleBorderSize>
+							<circleBorderColor>black</circleBorderColor>
+							<timeSeriesSet>
+								<moduleInstanceId>SamenvoegenMeetdata_Ntot</moduleInstanceId>
+								<valueType>scalar</valueType>
+								<parameterId>Ntot</parameterId>
+								<qualifierId>BE_summermean</qualifierId>
+								<qualifierId>BE_3jaargem</qualifierId>
+								<locationSetId>KRW-wl-wkb-waterschappen</locationSetId>
+								<timeSeriesType>simulated historical</timeSeriesType>
+								<timeStep id="jaar"/>
+								<relativeViewPeriod unit="day" start="-3500" end="0"/>
+								<readWriteMode>read complete forecast</readWriteMode>
+							</timeSeriesSet>
+						</dataLayer>
+						<movieFrameDurationMillis>50</movieFrameDurationMillis>
+						<legendStyle>table</legendStyle>
+						<classBreaks>
+							<color color="alice blue" lowerValue="0" label="kleiner dan 2 mg/l"/>
+							<color color="cadet blue2" lowerValue="2" label="2 - 4 mg/l"/>
+							<color color="royal blue2" lowerValue="4" label="4 - 6 mg/l"/>
+							<color color="blue4" lowerValue="6" label="6 - 12 mg/l"/>
+							<color color="black" lowerValue="12" label="groter dan 12 mg/l"/>
+						</classBreaks>
+					</gridPlot>
+					<gridPlot id="Ntot Verschilkaart actueel t.o.v. voorlaatste_SGBP (mg/l) WS" name="Verschilkaart actueel t.o.v. $voorlaatste_SGBP$ (3 voorgaande jaren, mg/l)">
+						<description>Verschilkaart actueel t.o.v. $voorlaatste_SGBP$ per waterlichaam (3 voorgaande jaren, mg/l)</description>
+						<dataLayer>
+							<onlyCircles>true</onlyCircles>
+							<circleSizeFunction>10</circleSizeFunction>
+							<circleBorderSize>1</circleBorderSize>
+							<circleBorderColor>black</circleBorderColor>
+							<timeSeriesSet>
+								<moduleInstanceId>SamenvoegenMeetdata_Ntot</moduleInstanceId>
+								<valueType>scalar</valueType>
+								<parameterId>Ntot</parameterId>
+								<qualifierId>HH_1</qualifierId>
+								<qualifierId>BE_SGBP2009</qualifierId>
+								<qualifierId>BE_shift</qualifierId>
+								<qualifierId>BE_trend</qualifierId>
+								<locationSetId>KRW-wl-wkb-waterschappen</locationSetId>
+								<timeSeriesType>simulated historical</timeSeriesType>
+								<timeStep id="jaar"/>
+								<relativeViewPeriod unit="day" start="-10000" startOverrulable="true" end="0" endOverrulable="true"/>
+								<readWriteMode>read complete forecast</readWriteMode>
+							</timeSeriesSet>
+						</dataLayer>
+						<movieFrameDurationMillis>50</movieFrameDurationMillis>
+						<classBreaks>
+							<color color="green4" lowerValue="-1000" label="kleiner dan -1 mg/l"/>
+							<color color="green1" lowerValue="-1" label="-1 tot -0.5 mg/l"/>
+							<color color="green yellow" lowerValue="-0.5" label="-0.5 tot 0 mg/l"/>
+							<color color="gray90" lowerValue="0" label="0 mg/l"/>
+							<color color="yellow" lowerValue="0.0000001" label="0 tot 0.5 mg/l"/>
+							<color color="orange" lowerValue="0.5" label="0.5 tot 1 mg/l"/>
+							<color color="red" lowerValue="1" label="groter dan 1 mg/l"/>
+						</classBreaks>
+					</gridPlot>
+					<gridPlot id="Ntot Verschilkaart actueel t.o.v. laatste_SGBP (mg/l) WS" name="Verschilkaart actueel t.o.v. $laatste_SGBP$ (3 voorgaande jaren, mg/l)">
+						<description>Verschilkaart actueel t.o.v. $laatste_SGBP$ per waterlichaam (3 voorgaande jaren, mg/l)</description>
+						<dataLayer>
+							<onlyCircles>true</onlyCircles>
+							<circleSizeFunction>10</circleSizeFunction>
+							<circleBorderSize>1</circleBorderSize>
+							<circleBorderColor>black</circleBorderColor>
+							<timeSeriesSet>
+								<moduleInstanceId>SamenvoegenMeetdata_Ntot</moduleInstanceId>
+								<valueType>scalar</valueType>
+								<parameterId>Ntot</parameterId>
+								<qualifierId>HH_1</qualifierId>
+								<qualifierId>BE_SGBP2015</qualifierId>
+								<qualifierId>BE_shift</qualifierId>
+								<qualifierId>BE_trend</qualifierId>
+								<locationSetId>KRW-wl-wkb-waterschappen</locationSetId>
+								<timeSeriesType>simulated historical</timeSeriesType>
+								<timeStep id="jaar"/>
+								<relativeViewPeriod unit="day" start="-10000" startOverrulable="true" end="0" endOverrulable="true"/>
+								<readWriteMode>read complete forecast</readWriteMode>
+							</timeSeriesSet>
+						</dataLayer>
+						<movieFrameDurationMillis>50</movieFrameDurationMillis>
+						<classBreaks>
+							<color color="green4" lowerValue="-1000" label="kleiner dan -1 mg/l"/>
+							<color color="green1" lowerValue="-1" label="-1 tot -0.5 mg/l"/>
+							<color color="green yellow" lowerValue="-0.5" label="-0.5 tot 0 mg/l"/>
+							<color color="gray90" lowerValue="0" label="0 mg/l"/>
+							<color color="yellow" lowerValue="0.0000001" label="0 tot 0.5 mg/l"/>
+							<color color="orange" lowerValue="0.5" label="0.5 tot 1 mg/l"/>
+							<color color="red" lowerValue="1" label="groter dan 1 mg/l"/>
+						</classBreaks>
+					</gridPlot>
+				</gridPlotGroup>
+				<gridPlotGroup id="Jaargemiddelden">
+					<gridPlot id="Ntot Jaargemiddeld (mg/l) WS" name="Jaargemiddelde (mg/l)">
+						<description>Jaargemiddelde per waterlichaam (mg/l)</description>
+						<dataLayer>
+							<onlyCircles>true</onlyCircles>
+							<circleSizeFunction>10</circleSizeFunction>
+							<circleBorderSize>1</circleBorderSize>
+							<circleBorderColor>black</circleBorderColor>
+							<timeSeriesSet>
+								<moduleInstanceId>SamenvoegenMeetdata_Ntot</moduleInstanceId>
+								<valueType>scalar</valueType>
+								<parameterId>Ntot</parameterId>
+								<qualifierId>BE_jaargem</qualifierId>
+								<locationSetId>KRW-wl-wkb-waterschappen</locationSetId>
+								<timeSeriesType>simulated historical</timeSeriesType>
+								<timeStep id="een.jaar"/>
+								<relativeViewPeriod unit="day" start="-10000" end="0"/>
+								<readWriteMode>read complete forecast</readWriteMode>
+							</timeSeriesSet>
+						</dataLayer>
+						<movieFrameDurationMillis>50</movieFrameDurationMillis>
+						<legendStyle>table</legendStyle>
+						<classBreaks>
+							<color color="alice blue" lowerValue="0" label="kleiner dan 2 mg/l"/>
+							<color color="cadet blue2" lowerValue="2" label="2 - 4 mg/l"/>
+							<color color="royal blue2" lowerValue="4" label="4 - 6 mg/l"/>
+							<color color="blue4" lowerValue="6" label="6 - 12 mg/l"/>
+							<color color="black" lowerValue="12" label="groter dan 12 mg/l"/>
+						</classBreaks>
+					</gridPlot>
+				</gridPlotGroup>
+				<gridPlotGroup id="Normen">
+					<gridPlot id="Ntot Norm Goed-Matig (mg/l) WS" name="Goed-Matig (mg/l)">
+						<description>Norm Goed-Matig per waterlichaam (mg/l)</description>
+						<dataLayer>
+							<onlyCircles>true</onlyCircles>
+							<circleSizeFunction>10</circleSizeFunction>
+							<circleBorderSize>1</circleBorderSize>
+							<circleBorderColor>black</circleBorderColor>
+							<timeSeriesSet>
+								<moduleInstanceId>Aggregate_KRWtypes</moduleInstanceId>
+								<valueType>scalar</valueType>
+								<parameterId>Ntot</parameterId>
+								<qualifierId>WN_3</qualifierId>
+								<qualifierId>WT_3</qualifierId>
+								<locationSetId>KRW-wl-wkb-waterschappen</locationSetId>
+								<timeSeriesType>external historical</timeSeriesType>
+								<timeStep unit="nonequidistant"/>
+								<readWriteMode>read complete forecast</readWriteMode>
+							</timeSeriesSet>
+						</dataLayer>
+						<movieFrameDurationMillis>50</movieFrameDurationMillis>
+						<legendStyle>table</legendStyle>
+						<classBreaks>
+							<color color="steel blue" lowerValue="0" label="kleiner dan 2 mg/l"/>
+							<color color="steel blue1" lowerValue="2" label="2 - 4 mg/l"/>
+							<color color="orchid1" lowerValue="4" label="4 - 6 mg/l"/>
+							<color color="plum" lowerValue="6" label="6 - 12 mg/l"/>
+							<color color="dark orchid4" lowerValue="12" label="groter dan 12 mg/l"/>
+						</classBreaks>
+					</gridPlot>
+					<gridPlot id="Ntot Norm Matig-Ontoereikend (mg/l) WS" name="Matig-Ontoereikend (mg/l)">
+						<description>Norm Matig-Ontoereikend per waterlichaam (mg/l)</description>
+						<dataLayer>
+							<onlyCircles>true</onlyCircles>
+							<circleSizeFunction>10</circleSizeFunction>
+							<circleBorderSize>1</circleBorderSize>
+							<circleBorderColor>black</circleBorderColor>
+							<timeSeriesSet>
+								<moduleInstanceId>Aggregate_KRWtypes</moduleInstanceId>
+								<valueType>scalar</valueType>
+								<parameterId>Ntot</parameterId>
+								<qualifierId>WN_4</qualifierId>
+								<qualifierId>WT_3</qualifierId>
+								<locationSetId>KRW-wl-wkb-waterschappen</locationSetId>
+								<timeSeriesType>external historical</timeSeriesType>
+								<timeStep unit="nonequidistant"/>
+								<readWriteMode>read complete forecast</readWriteMode>
+							</timeSeriesSet>
+						</dataLayer>
+						<movieFrameDurationMillis>50</movieFrameDurationMillis>
+						<legendStyle>table</legendStyle>
+						<classBreaks>
+							<color color="steel blue" lowerValue="0" label="kleiner dan 2 mg/l"/>
+							<color color="steel blue1" lowerValue="2" label="2 - 4 mg/l"/>
+							<color color="orchid1" lowerValue="4" label="4 - 6 mg/l"/>
+							<color color="plum" lowerValue="6" label="6 - 12 mg/l"/>
+							<color color="dark orchid4" lowerValue="12" label="groter dan 12 mg/l"/>
+						</classBreaks>
+					</gridPlot>
+					<gridPlot id="Ntot Norm Ontoereikend-Slecht (mg/l) WS" name="Ontoereikend-Slecht (mg/l)">
+						<description>Norm Ontoereikend-Slecht per waterlichaam (mg/l) </description>
+						<dataLayer>
+							<onlyCircles>true</onlyCircles>
+							<circleSizeFunction>10</circleSizeFunction>
+							<circleBorderSize>1</circleBorderSize>
+							<circleBorderColor>black</circleBorderColor>
+							<timeSeriesSet>
+								<moduleInstanceId>Aggregate_KRWtypes</moduleInstanceId>
+								<valueType>scalar</valueType>
+								<parameterId>Ntot</parameterId>
+								<qualifierId>WN_5</qualifierId>
+								<qualifierId>WT_3</qualifierId>
+								<locationSetId>KRW-wl-wkb-waterschappen</locationSetId>
+								<timeSeriesType>external historical</timeSeriesType>
+								<timeStep unit="nonequidistant"/>
+								<readWriteMode>read complete forecast</readWriteMode>
+							</timeSeriesSet>
+						</dataLayer>
+						<movieFrameDurationMillis>50</movieFrameDurationMillis>
+						<legendStyle>table</legendStyle>
+						<classBreaks>
+							<color color="steel blue" lowerValue="0" label="kleiner dan 2 mg/l"/>
+							<color color="steel blue1" lowerValue="2" label="2 - 4 mg/l"/>
+							<color color="orchid1" lowerValue="4" label="4 - 6 mg/l"/>
+							<color color="plum" lowerValue="6" label="6 - 12 mg/l"/>
+							<color color="dark orchid4" lowerValue="12" label="groter dan 12 mg/l"/>
+						</classBreaks>
+					</gridPlot>
+				</gridPlotGroup>
+				<gridPlotGroup id="Toetsing">
+					<gridPlot id="Ntot Toetsing t.o.v. normen laatste_SGBP (-) WS" name="Toetsing stikstof aan normen $huidige_SGBP$">
+						<description>Toetsing stikstof aan normen $huidige_SGBP$ per waterlichaam</description>
+						<dataLayer>
+							<onlyCircles>true</onlyCircles>
+							<circleSizeFunction>10</circleSizeFunction>
+							<circleBorderSize>1</circleBorderSize>
+							<circleBorderColor>black</circleBorderColor>
+							<timeSeriesSet>
+								<moduleInstanceId>SamenvoegenToetsing_Ntot</moduleInstanceId>
+								<valueType>scalar</valueType>
+								<parameterId>Oordeel</parameterId>
+								<qualifierId>HH_1</qualifierId>
+								<qualifierId>BE_SGBPhuidig_toets</qualifierId>
+								<locationSetId>KRW-wl-wkb-waterschappen</locationSetId>
+								<timeSeriesType>simulated historical</timeSeriesType>
+								<timeStep id="jaar"/>
+								<relativeViewPeriod unit="day" start="-3500" end="0"/>
+								<readWriteMode>read complete forecast</readWriteMode>
+							</timeSeriesSet>
+						</dataLayer>
+						<movieFrameDurationMillis>50</movieFrameDurationMillis>
+						<classBreaks>
+							<color color="red" lowerValue="1" label="slecht"/>
+							<color color="orange" lowerValue="2" label="ontoereikend"/>
+							<color color="yellow" lowerValue="3" label="matig"/>
+							<color color="green" lowerValue="4" label="goed"/>
+						</classBreaks>
+					</gridPlot>
+					<gridPlot id="Ntot Verschilkaart Toetsing actueel vs. voorlaatste_SGBP (-) WS" name="Verschilkaart toetsing stikstof actueel vs. $voorlaatste_SGBP$ (-)">
+						<description>Verschilkaart toetsing stikstof actueel vs. $voorlaatste_SGBP$ per waterlichaam (-)</description>
+						<dataLayer>
+							<onlyCircles>true</onlyCircles>
+							<circleSizeFunction>10</circleSizeFunction>
+							<circleBorderSize>1</circleBorderSize>
+							<circleBorderColor>black</circleBorderColor>
+							<timeSeriesSet>
+								<moduleInstanceId>SamenvoegenToetsing_Ntot</moduleInstanceId>
+								<valueType>scalar</valueType>
+								<parameterId>Oordeel</parameterId>
+								<qualifierId>HH_1</qualifierId>
+								<qualifierId>BE_shift</qualifierId>
+								<qualifierId>BE_SGBP2009</qualifierId>
+								<qualifierId>BE_trend</qualifierId>
+								<locationSetId>KRW-wl-wkb-waterschappen</locationSetId>
+								<timeSeriesType>simulated historical</timeSeriesType>
+								<timeStep id="jaar"/>
+								<relativeViewPeriod unit="day" start="-1" startOverrulable="false" end="0" endOverrulable="true"/>
+								<readWriteMode>read complete forecast</readWriteMode>
+							</timeSeriesSet>
+						</dataLayer>
+						<movieFrameDurationMillis>50</movieFrameDurationMillis>
+						<classBreaks>
+							<color color="red" lowerValue="-1" label="verslechterd"/>
+							<color color="yellow" lowerValue="0" label="gelijkblijvend"/>
+							<color color="green" lowerValue="1" label="verbeterd"/>
+						</classBreaks>
+					</gridPlot>
+					<gridPlot id="Ntot Verschilkaart Toetsing actueel vs. laatste_SGBP (-) WS" name="Verschilkaart toetsing stikstof actueel vs. $laatste_SGBP$ (-)">
+						<description>Verschilkaart toetsing stikstof actueel vs. $laatste_SGBP$ per waterlichaam (-)</description>
+						<dataLayer>
+							<onlyCircles>true</onlyCircles>
+							<circleSizeFunction>10</circleSizeFunction>
+							<circleBorderSize>1</circleBorderSize>
+							<circleBorderColor>black</circleBorderColor>
+							<timeSeriesSet>
+								<moduleInstanceId>SamenvoegenToetsing_Ntot</moduleInstanceId>
+								<valueType>scalar</valueType>
+								<parameterId>Oordeel</parameterId>
+								<qualifierId>HH_1</qualifierId>
+								<qualifierId>BE_shift</qualifierId>
+								<qualifierId>BE_SGBP2015</qualifierId>
+								<qualifierId>BE_trend</qualifierId>
+								<locationSetId>KRW-wl-wkb-waterschappen</locationSetId>
+								<timeSeriesType>simulated historical</timeSeriesType>
+								<timeStep id="jaar"/>
+								<relativeViewPeriod unit="day" start="-1" startOverrulable="false" end="0" endOverrulable="true"/>
+								<readWriteMode>read complete forecast</readWriteMode>
+							</timeSeriesSet>
+						</dataLayer>
+						<movieFrameDurationMillis>50</movieFrameDurationMillis>
+						<classBreaks>
+							<color color="red" lowerValue="-1" label="verslechterd"/>
+							<color color="yellow" lowerValue="0" label="gelijkblijvend"/>
+							<color color="green" lowerValue="1" label="verbeterd"/>
+						</classBreaks>
+					</gridPlot>
+					<gridPlot id="Ntot Verschil t.o.v. de huidige norm Goed (-; doelgat) WS" name="Doelgat (afstand tot de norm ‘goed’)">
+						<description>Doelgat per waterlichaam (afstand tot de norm ‘goed’)</description>
+						<dataLayer>
+							<onlyCircles>true</onlyCircles>
+							<circleSizeFunction>10</circleSizeFunction>
+							<circleBorderSize>1</circleBorderSize>
+							<circleBorderColor>black</circleBorderColor>
+							<timeSeriesSet>
+								<moduleInstanceId>SamenvoegenToetsing_Ntot</moduleInstanceId>
+								<valueType>scalar</valueType>
+								<parameterId>Oordeel</parameterId>
+								<qualifierId>HH_1</qualifierId>
+								<qualifierId>BE_doelgat</qualifierId>
+								<locationSetId>KRW-wl-wkb-waterschappen</locationSetId>
+								<timeSeriesType>simulated historical</timeSeriesType>
+								<timeStep id="jaar"/>
+								<relativeViewPeriod unit="day" start="-10000" startOverrulable="true" end="0" endOverrulable="true"/>
+								<readWriteMode>read complete forecast</readWriteMode>
+							</timeSeriesSet>
+						</dataLayer>
+						<movieFrameDurationMillis>50</movieFrameDurationMillis>
+						<classBreaks>
+							<color color="brown" lowerValue="1" label=">5 keer de norm"/>
+							<color color="orange red" lowerValue="2" label="2 tot 5 keer de norm"/>
+							<color color="dark goldenrod1" lowerValue="3" label="1.5 tot 2 keer de norm"/>
+							<color color="yellow" lowerValue="4" label="1 tot 1.5 keer de norm"/>
+							<color color="white" lowerValue="5" label="binnen de norm"/>
+						</classBreaks>
+					</gridPlot>
+				</gridPlotGroup>
+			</gridPlotGroup>
+			<gridPlotGroup id="P totaal">
+				<gridPlotGroup id="Zomergemiddelden">
+					<gridPlot id="Ptot Zomergemiddeld (mg/l) WS" name="3-jarig zomerhalfjaargemiddelde (mg/l)">
+						<description>3-jarig zomerhalfjaargemiddelde per waterlichaam (mg/l)</description>
+						<dataLayer>
+							<onlyCircles>true</onlyCircles>
+							<circleSizeFunction>10</circleSizeFunction>
+							<circleBorderSize>1</circleBorderSize>
+							<circleBorderColor>black</circleBorderColor>
+							<timeSeriesSet>
+								<moduleInstanceId>SamenvoegenMeetdata_Ptot</moduleInstanceId>
+								<valueType>scalar</valueType>
+								<parameterId>Ptot</parameterId>
+								<qualifierId>BE_summermean</qualifierId>
+								<qualifierId>BE_3jaargem</qualifierId>
+								<locationSetId>KRW-wl-wkb-waterschappen</locationSetId>
+								<timeSeriesType>simulated historical</timeSeriesType>
+								<timeStep id="jaar"/>
+								<relativeViewPeriod unit="day" start="-3500" end="0"/>
+								<readWriteMode>read complete forecast</readWriteMode>
+							</timeSeriesSet>
+						</dataLayer>
+						<movieFrameDurationMillis>50</movieFrameDurationMillis>
+						<legendStyle>table</legendStyle>
+						<classBreaks>
+							<color color="alice blue" lowerValue="0" label="kleiner dan 0.1 mg/l"/>
+							<color color="cadet blue2" lowerValue="0.1" label="0.1 - 0.2 mg/l"/>
+							<color color="royal blue2" lowerValue="0.2" label="0.2 - 0.5 mg/l"/>
+							<color color="blue4" lowerValue="0.5" label="0.5 - 1 mg/l"/>
+							<color color="black" lowerValue="1" label="groter dan 1 mg/l"/>
+						</classBreaks>
+					</gridPlot>
+					<gridPlot id="Ptot Verschilkaart actueel t.o.v. voorlaatste_SGBP (mg/l) WS" name="Verschilkaart actueel t.o.v. $voorlaatste_SGBP$ (3 voorgaande jaren, mg/l)">
+						<description>Verschilkaart actueel t.o.v. $voorlaatste_SGBP$ per waterlichaam (3 voorgaande jaren, mg/l)</description>
+						<dataLayer>
+							<onlyCircles>true</onlyCircles>
+							<circleSizeFunction>10</circleSizeFunction>
+							<circleBorderSize>1</circleBorderSize>
+							<circleBorderColor>black</circleBorderColor>
+							<timeSeriesSet>
+								<moduleInstanceId>SamenvoegenMeetdata_Ptot</moduleInstanceId>
+								<valueType>scalar</valueType>
+								<parameterId>Ptot</parameterId>
+								<qualifierId>HH_2</qualifierId>
+								<qualifierId>BE_SGBP2009</qualifierId>
+								<qualifierId>BE_shift</qualifierId>
+								<qualifierId>BE_trend</qualifierId>
+								<locationSetId>KRW-wl-wkb-waterschappen</locationSetId>
+								<timeSeriesType>simulated historical</timeSeriesType>
+								<timeStep id="jaar"/>
+								<relativeViewPeriod unit="day" start="-10000" startOverrulable="true" end="0" endOverrulable="true"/>
+								<readWriteMode>read complete forecast</readWriteMode>
+							</timeSeriesSet>
+						</dataLayer>
+						<movieFrameDurationMillis>50</movieFrameDurationMillis>
+						<classBreaks>
+							<color color="green4" lowerValue="-1000" label="kleiner dan -0.1 mg/l"/>
+							<color color="green1" lowerValue="-0.1" label="-0.1 tot -0.05 mg/l"/>
+							<color color="green yellow" lowerValue="-0.05" label="-0.05 tot 0 mg/l"/>
+							<color color="gray90" lowerValue="0" label="0 mg/l"/>
+							<color color="yellow" lowerValue="0.0000001" label="0 tot 0.05 mg/l"/>
+							<color color="orange" lowerValue="0.05" label="0.05 tot 0.1 mg/l"/>
+							<color color="red" lowerValue="0.1" label="groter dan 0.1 mg/l"/>
+						</classBreaks>
+					</gridPlot>
+					<gridPlot id="Ptot Verschilkaart actueel t.o.v. laatste_SGBP (mg/l) WS" name="Verschilkaart actueel t.o.v. $laatste_SGBP$ (3 voorgaande jaren, mg/l)">
+						<description>Verschilkaart actueel t.o.v. $laatste_SGBP$ per waterlichaam (3 voorgaande jaren, mg/l)</description>
+						<dataLayer>
+							<onlyCircles>true</onlyCircles>
+							<circleSizeFunction>10</circleSizeFunction>
+							<circleBorderSize>1</circleBorderSize>
+							<circleBorderColor>black</circleBorderColor>
+							<timeSeriesSet>
+								<moduleInstanceId>SamenvoegenMeetdata_Ptot</moduleInstanceId>
+								<valueType>scalar</valueType>
+								<parameterId>Ptot</parameterId>
+								<qualifierId>HH_2</qualifierId>
+								<qualifierId>BE_SGBP2015</qualifierId>
+								<qualifierId>BE_shift</qualifierId>
+								<qualifierId>BE_trend</qualifierId>
+								<locationSetId>KRW-wl-wkb-waterschappen</locationSetId>
+								<timeSeriesType>simulated historical</timeSeriesType>
+								<timeStep id="jaar"/>
+								<relativeViewPeriod unit="day" start="-10000" startOverrulable="true" end="0" endOverrulable="true"/>
+								<readWriteMode>read complete forecast</readWriteMode>
+							</timeSeriesSet>
+						</dataLayer>
+						<movieFrameDurationMillis>50</movieFrameDurationMillis>
+						<classBreaks>
+							<color color="green4" lowerValue="-1000" label="kleiner dan -0.1 mg/l"/>
+							<color color="green1" lowerValue="-0.1" label="-0.1 tot -0.05 mg/l"/>
+							<color color="green yellow" lowerValue="-0.05" label="-0.05 tot 0 mg/l"/>
+							<color color="gray90" lowerValue="0" label="0 mg/l"/>
+							<color color="yellow" lowerValue="0.0000001" label="0 tot 0.05 mg/l"/>
+							<color color="orange" lowerValue="0.05" label="0.05 tot 0.1 mg/l"/>
+							<color color="red" lowerValue="0.1" label="groter dan 0.1 mg/l"/>
+						</classBreaks>
+					</gridPlot>
+				</gridPlotGroup>
+				<gridPlotGroup id="Jaargemiddelden">
+					<gridPlot id="Ptot Jaargemiddeld (mg/l) WS" name="Jaargemiddelde (mg/l)">
+						<description>Jaargemiddelde per waterlichaam (mg/l)</description>
+						<dataLayer>
+							<onlyCircles>true</onlyCircles>
+							<circleSizeFunction>10</circleSizeFunction>
+							<circleBorderSize>1</circleBorderSize>
+							<circleBorderColor>black</circleBorderColor>
+							<timeSeriesSet>
+								<moduleInstanceId>SamenvoegenMeetdata_Ptot</moduleInstanceId>
+								<valueType>scalar</valueType>
+								<parameterId>Ptot</parameterId>
+								<qualifierId>BE_jaargem</qualifierId>
+								<locationSetId>KRW-wl-wkb-waterschappen</locationSetId>
+								<timeSeriesType>simulated historical</timeSeriesType>
+								<timeStep id="een.jaar"/>
+								<relativeViewPeriod unit="day" start="-10000" end="0"/>
+								<readWriteMode>read complete forecast</readWriteMode>
+							</timeSeriesSet>
+						</dataLayer>
+						<movieFrameDurationMillis>50</movieFrameDurationMillis>
+						<legendStyle>table</legendStyle>
+						<classBreaks>
+							<color color="alice blue" lowerValue="0" label="kleiner dan 0.1 mg/l"/>
+							<color color="cadet blue2" lowerValue="0.1" label="0.1 - 0.2 mg/l"/>
+							<color color="royal blue2" lowerValue="0.2" label="0.2 - 0.5 mg/l"/>
+							<color color="blue4" lowerValue="0.5" label="0.5 - 1 mg/l"/>
+							<color color="black" lowerValue="1" label="groter dan 1 mg/l"/>
+						</classBreaks>
+					</gridPlot>
+				</gridPlotGroup>
+				<gridPlotGroup id="Normen">
+					<gridPlot id="Ptot Norm Goed-Matig (mg/l) WS" name="Goed-Matig (mg/l)">
+						<description>Norm Goed-Matig per waterlichaam (mg/l)</description>
+						<dataLayer>
+							<onlyCircles>true</onlyCircles>
+							<circleSizeFunction>10</circleSizeFunction>
+							<circleBorderSize>1</circleBorderSize>
+							<circleBorderColor>black</circleBorderColor>
+							<timeSeriesSet>
+								<moduleInstanceId>Aggregate_KRWtypes</moduleInstanceId>
+								<valueType>scalar</valueType>
+								<parameterId>Ptot</parameterId>
+								<qualifierId>WN_3</qualifierId>
+								<qualifierId>WT_3</qualifierId>
+								<locationSetId>KRW-wl-wkb-waterschappen</locationSetId>
+								<timeSeriesType>external historical</timeSeriesType>
+								<timeStep unit="nonequidistant"/>
+								<readWriteMode>read complete forecast</readWriteMode>
+							</timeSeriesSet>
+						</dataLayer>
+						<movieFrameDurationMillis>50</movieFrameDurationMillis>
+						<legendStyle>table</legendStyle>
+						<classBreaks>
+							<color color="steel blue" lowerValue="0" label="kleiner dan 0.1 mg/l"/>
+							<color color="steel blue1" lowerValue="0.1" label="0.1 - 0.2 mg/l"/>
+							<color color="orchid1" lowerValue="0.2" label="0.2 - 0.5 mg/l"/>
+							<color color="plum" lowerValue="0.5" label="0.5 - 1 mg/l"/>
+							<color color="dark orchid4" lowerValue="1" label="groter dan 1 mg/l"/>
+						</classBreaks>
+					</gridPlot>
+					<gridPlot id="Ptot Norm Matig-Ontoereikend (mg/l) WS" name="Matig-Ontoereikend (mg/l)">
+						<description>Norm Matig-Ontoereikend per waterlichaam (mg/l)</description>
+						<dataLayer>
+							<onlyCircles>true</onlyCircles>
+							<circleSizeFunction>10</circleSizeFunction>
+							<circleBorderSize>1</circleBorderSize>
+							<circleBorderColor>black</circleBorderColor>
+							<timeSeriesSet>
+								<moduleInstanceId>Aggregate_KRWtypes</moduleInstanceId>
+								<valueType>scalar</valueType>
+								<parameterId>Ptot</parameterId>
+								<qualifierId>WN_4</qualifierId>
+								<qualifierId>WT_3</qualifierId>
+								<locationSetId>KRW-wl-wkb-waterschappen</locationSetId>
+								<timeSeriesType>external historical</timeSeriesType>
+								<timeStep unit="nonequidistant"/>
+								<readWriteMode>read complete forecast</readWriteMode>
+							</timeSeriesSet>
+						</dataLayer>
+						<movieFrameDurationMillis>50</movieFrameDurationMillis>
+						<legendStyle>table</legendStyle>
+						<classBreaks>
+							<color color="steel blue" lowerValue="0" label="kleiner dan 0.1 mg/l"/>
+							<color color="steel blue1" lowerValue="0.1" label="0.1 - 0.2 mg/l"/>
+							<color color="orchid1" lowerValue="0.2" label="0.2 - 0.5 mg/l"/>
+							<color color="plum" lowerValue="0.5" label="0.5 - 1mg/l"/>
+							<color color="dark orchid4" lowerValue="1" label="groter dan 1 mg/l"/>
+						</classBreaks>
+					</gridPlot>
+					<gridPlot id="Ptot Norm Ontoereikend-Slecht (mg/l) WS" name="Ontoereikend-Slecht (mg/l)">
+						<description>Norm Ontoereikend-Slecht per waterlichaam (mg/l) </description>
+						<dataLayer>
+							<onlyCircles>true</onlyCircles>
+							<circleSizeFunction>10</circleSizeFunction>
+							<circleBorderSize>1</circleBorderSize>
+							<circleBorderColor>black</circleBorderColor>
+							<timeSeriesSet>
+								<moduleInstanceId>Aggregate_KRWtypes</moduleInstanceId>
+								<valueType>scalar</valueType>
+								<parameterId>Ptot</parameterId>
+								<qualifierId>WN_5</qualifierId>
+								<qualifierId>WT_3</qualifierId>
+								<locationSetId>KRW-wl-wkb-waterschappen</locationSetId>
+								<timeSeriesType>external historical</timeSeriesType>
+								<timeStep unit="nonequidistant"/>
+								<readWriteMode>read complete forecast</readWriteMode>
+							</timeSeriesSet>
+						</dataLayer>
+						<movieFrameDurationMillis>50</movieFrameDurationMillis>
+						<legendStyle>table</legendStyle>
+						<classBreaks>
+							<color color="steel blue" lowerValue="0" label="kleiner dan 0.1 mg/l"/>
+							<color color="steel blue1" lowerValue="0.1" label="0.1 - 0.2 mg/l"/>
+							<color color="orchid1" lowerValue="0.2" label="0.2 - 0.5 mg/l"/>
+							<color color="plum" lowerValue="0.5" label="0.5 - 1 mg/l"/>
+							<color color="dark orchid4" lowerValue="1" label="groter dan 1 mg/l"/>
+						</classBreaks>
+					</gridPlot>
+				</gridPlotGroup>
+				<gridPlotGroup id="Toetsing">
+					<gridPlot id="Ptot Toetsing t.o.v. normen laatste_SGBP (-) WS" name="Toetsing fosfor aan normen $huidige_SGBP$">
+						<description>Toetsing fosfor aan normen $huidige_SGBP$ per waterlichaam</description>
+						<dataLayer>
+							<onlyCircles>true</onlyCircles>
+							<circleSizeFunction>10</circleSizeFunction>
+							<circleBorderSize>1</circleBorderSize>
+							<circleBorderColor>black</circleBorderColor>
+							<timeSeriesSet>
+								<moduleInstanceId>SamenvoegenToetsing_Ptot</moduleInstanceId>
+								<valueType>scalar</valueType>
+								<parameterId>Oordeel</parameterId>
+								<qualifierId>HH_2</qualifierId>
+								<qualifierId>BE_SGBPhuidig_toets</qualifierId>
+								<locationSetId>KRW-wl-wkb-waterschappen</locationSetId>
+								<timeSeriesType>simulated historical</timeSeriesType>
+								<timeStep id="jaar"/>
+								<relativeViewPeriod unit="day" start="-3500" end="0"/>
+								<readWriteMode>read complete forecast</readWriteMode>
+							</timeSeriesSet>
+						</dataLayer>
+						<movieFrameDurationMillis>50</movieFrameDurationMillis>
+						<classBreaks>
+							<color color="red" lowerValue="1" label="slecht"/>
+							<color color="orange" lowerValue="2" label="ontoereikend"/>
+							<color color="yellow" lowerValue="3" label="matig"/>
+							<color color="green" lowerValue="4" label="goed"/>
+						</classBreaks>
+					</gridPlot>
+					<gridPlot id="Ptot Verschilkaart Toetsing actueel vs. voorlaatste_SGBP (-) WS" name="Verschilkaart toetsing fosfor actueel vs. $voorlaatste_SGBP$ (-)">
+						<description>Verschilkaart toetsing fosfor actueel vs. $voorlaatste_SGBP$ per waterlichaam (-)</description>
+						<dataLayer>
+							<onlyCircles>true</onlyCircles>
+							<circleSizeFunction>10</circleSizeFunction>
+							<circleBorderSize>1</circleBorderSize>
+							<circleBorderColor>black</circleBorderColor>
+							<timeSeriesSet>
+								<moduleInstanceId>SamenvoegenToetsing_Ptot</moduleInstanceId>
+								<valueType>scalar</valueType>
+								<parameterId>Oordeel</parameterId>
+								<qualifierId>HH_2</qualifierId>
+								<qualifierId>BE_shift</qualifierId>
+								<qualifierId>BE_SGBP2009</qualifierId>
+								<qualifierId>BE_trend</qualifierId>
+								<locationSetId>KRW-wl-wkb-waterschappen</locationSetId>
+								<timeSeriesType>simulated historical</timeSeriesType>
+								<timeStep id="jaar"/>
+								<relativeViewPeriod unit="day" start="-1" startOverrulable="false" end="0" endOverrulable="true"/>
+								<readWriteMode>read complete forecast</readWriteMode>
+							</timeSeriesSet>
+						</dataLayer>
+						<movieFrameDurationMillis>50</movieFrameDurationMillis>
+						<classBreaks>
+							<color color="red" lowerValue="-1" label="verslechterd"/>
+							<color color="yellow" lowerValue="0" label="gelijkblijvend"/>
+							<color color="green" lowerValue="1" label="verbeterd"/>
+						</classBreaks>
+					</gridPlot>
+					<gridPlot id="Ptot Verschilkaart Toetsing actueel vs. laatste_SGBP (-) WS" name="Verschilkaart toetsing fosfor actueel vs. $laatste_SGBP$ (-)">
+						<description>Verschilkaart toetsing fosfor actueel vs. $laatste_SGBP$ per waterlichaam (-)</description>
+						<dataLayer>
+							<onlyCircles>true</onlyCircles>
+							<circleSizeFunction>10</circleSizeFunction>
+							<circleBorderSize>1</circleBorderSize>
+							<circleBorderColor>black</circleBorderColor>
+							<timeSeriesSet>
+								<moduleInstanceId>SamenvoegenToetsing_Ptot</moduleInstanceId>
+								<valueType>scalar</valueType>
+								<parameterId>Oordeel</parameterId>
+								<qualifierId>HH_2</qualifierId>
+								<qualifierId>BE_shift</qualifierId>
+								<qualifierId>BE_SGBP2015</qualifierId>
+								<qualifierId>BE_trend</qualifierId>
+								<locationSetId>KRW-wl-wkb-waterschappen</locationSetId>
+								<timeSeriesType>simulated historical</timeSeriesType>
+								<timeStep id="jaar"/>
+								<relativeViewPeriod unit="day" start="-1" startOverrulable="false" end="0" endOverrulable="true"/>
+								<readWriteMode>read complete forecast</readWriteMode>
+							</timeSeriesSet>
+						</dataLayer>
+						<movieFrameDurationMillis>50</movieFrameDurationMillis>
+						<classBreaks>
+							<color color="red" lowerValue="-1" label="verslechterd"/>
+							<color color="yellow" lowerValue="0" label="gelijkblijvend"/>
+							<color color="green" lowerValue="1" label="verbeterd"/>
+						</classBreaks>
+					</gridPlot>
+					<gridPlot id="Ptot Verschil t.o.v. de huidige norm Goed (-; doelgat) WS" name="Doelgat (afstand tot de norm ‘goed’)">
+						<description>Doelgat per waterlichaam (afstand tot de norm ‘goed’)</description>
+						<dataLayer>
+							<onlyCircles>true</onlyCircles>
+							<circleSizeFunction>10</circleSizeFunction>
+							<circleBorderSize>1</circleBorderSize>
+							<circleBorderColor>black</circleBorderColor>
+							<timeSeriesSet>
+								<moduleInstanceId>SamenvoegenToetsing_Ptot</moduleInstanceId>
+								<valueType>scalar</valueType>
+								<parameterId>Oordeel</parameterId>
+								<qualifierId>HH_2</qualifierId>
+								<qualifierId>BE_doelgat</qualifierId>
+								<locationSetId>KRW-wl-wkb-waterschappen</locationSetId>
+								<timeSeriesType>simulated historical</timeSeriesType>
+								<timeStep id="jaar"/>
+								<relativeViewPeriod unit="day" start="-10000" startOverrulable="true" end="0" endOverrulable="true"/>
+								<readWriteMode>read complete forecast</readWriteMode>
+							</timeSeriesSet>
+						</dataLayer>
+						<movieFrameDurationMillis>50</movieFrameDurationMillis>
+						<classBreaks>
+							<color color="brown" lowerValue="1" label=">5 keer de norm"/>
+							<color color="orange red" lowerValue="2" label="2 tot 5 keer de norm"/>
+							<color color="dark goldenrod1" lowerValue="3" label="1.5 tot 2 keer de norm"/>
+							<color color="yellow" lowerValue="4" label="1 tot 1.5 keer de norm"/>
+							<color color="white" lowerValue="5" label="binnen de norm"/>
+						</classBreaks>
+					</gridPlot>
+				</gridPlotGroup>
+			</gridPlotGroup>
+		</gridPlotGroup>
+		<gridPlotGroup id="KRW-monitoringslocaties">
+			<gridPlotGroup id="N totaal">
+				<gridPlot id="Ntot Trendhelling (% per decennium) WS">
+					<description>Trendhelling per monitoringslocatie (% per decennium)</description>
+					<dataLayer>
+						<onlyCircles>true</onlyCircles>
+						<circleSizeFunction>10</circleSizeFunction>
+						<circleBorderSize>1</circleBorderSize>
+						<circleBorderColor>black</circleBorderColor>
+						<timeSeriesSet>
+							<moduleInstanceId>Import_Trend_CSV</moduleInstanceId>
+							<valueType>scalar</valueType>
+							<parameterId>Trendhelling_perc</parameterId>
+							<qualifierId>HH_1</qualifierId>
+							<qualifierId>WT_2</qualifierId>
+							<locationSetId>KRW-mn-wkb-waterschappen</locationSetId>
+							<timeSeriesType>external historical</timeSeriesType>
+							<timeStep unit="nonequidistant"/>
+							<relativeViewPeriod unit="day" start="-1096" end="0"/>
+							<readWriteMode>read complete forecast</readWriteMode>
+						</timeSeriesSet>
+					</dataLayer>
+					<movieFrameDurationMillis>50</movieFrameDurationMillis>
+					<classBreaks>
+						<color color="green4" lowerValue="-1000" label="kleiner dan -50%"/>
+						<color color="lawn green" lowerValue="-50" label="-50 tot -25%"/>
+						<color color="yellow" lowerValue="-25" label="-25 tot 0%"/>
+						<color color="gray90" opaquenessPercentage="90" lowerValue="0" label="geen significante trend"/>
+						<color color="dark goldenrod1" lowerValue="0.0000001" label="0 - 25%"/>
+						<color color="red" lowerValue="25" label="groter dan 25%"/>
+					</classBreaks>
+				</gridPlot>
+			</gridPlotGroup>
+			<gridPlotGroup id="P totaal">
+				<gridPlot id="Ptot Trendhelling (% per decennium) WS">
+					<description>Trendhelling per monitoringslocatie (% per decennium)</description>
+					<dataLayer>
+						<onlyCircles>true</onlyCircles>
+						<circleSizeFunction>10</circleSizeFunction>
+						<circleBorderSize>1</circleBorderSize>
+						<circleBorderColor>black</circleBorderColor>
+						<timeSeriesSet>
+							<moduleInstanceId>Import_Trend_CSV</moduleInstanceId>
+							<valueType>scalar</valueType>
+							<parameterId>Trendhelling_perc</parameterId>
+							<qualifierId>HH_2</qualifierId>
+							<qualifierId>WT_2</qualifierId>
+							<locationSetId>KRW-mn-wkb-waterschappen</locationSetId>
+							<timeSeriesType>external historical</timeSeriesType>
+							<timeStep unit="nonequidistant"/>
+							<relativeViewPeriod unit="day" start="-1096" end="0"/>
+							<readWriteMode>read complete forecast</readWriteMode>
+						</timeSeriesSet>
+					</dataLayer>
+					<movieFrameDurationMillis>50</movieFrameDurationMillis>
+					<classBreaks>
+						<color color="green4" lowerValue="-1000" label="kleiner dan -50%"/>
+						<color color="lawn green" lowerValue="-50" label="-50 tot -25%"/>
+						<color color="yellow" lowerValue="-25" label="-25 tot 0%"/>
+						<color color="gray90" opaquenessPercentage="90" lowerValue="0" label="geen significante trend"/>
+						<color color="dark goldenrod1" lowerValue="0.0000001" label="0 - 25%"/>
+						<color color="red" lowerValue="25" label="groter dan 25%"/>
+					</classBreaks>
+				</gridPlot>
+			</gridPlotGroup>
+		</gridPlotGroup>
+	</gridPlotGroup>
+	<gridPlotGroup id="Rijkswaterstaat">
+		<gridPlotGroup id="KRW-waterlichamen">
+			<gridPlotGroup id="N totaal">
+				<gridPlotGroup id="Zomergemiddelden">
+					<gridPlot id="Ntot Zomergemiddeld (mg/l) RWS" name="3-jarig zomerhalfjaargemiddelde (mg/l)">
+						<description>3-jarig zomerhalfjaargemiddelde per waterlichaam (mg/l)</description>
+						<dataLayer>
+							<onlyCircles>true</onlyCircles>
+							<circleSizeFunction>10</circleSizeFunction>
+							<circleBorderSize>1</circleBorderSize>
+							<circleBorderColor>black</circleBorderColor>
+							<timeSeriesSet>
+								<moduleInstanceId>SamenvoegenMeetdata_Ntot</moduleInstanceId>
+								<valueType>scalar</valueType>
+								<parameterId>Ntot</parameterId>
+								<qualifierId>BE_summermean</qualifierId>
+								<qualifierId>BE_3jaargem</qualifierId>
+								<locationSetId>KRW-wl-wkb-Rijkswaterstaat</locationSetId>
+								<timeSeriesType>simulated historical</timeSeriesType>
+								<timeStep id="jaar"/>
+								<relativeViewPeriod unit="day" start="-3500" end="0"/>
+								<readWriteMode>read complete forecast</readWriteMode>
+							</timeSeriesSet>
+						</dataLayer>
+						<movieFrameDurationMillis>50</movieFrameDurationMillis>
+						<legendStyle>table</legendStyle>
+						<classBreaks>
+							<color color="alice blue" lowerValue="0" label="kleiner dan 2 mg/l"/>
+							<color color="cadet blue2" lowerValue="2" label="2 - 4 mg/l"/>
+							<color color="royal blue2" lowerValue="4" label="4 - 6 mg/l"/>
+							<color color="blue4" lowerValue="6" label="6 - 12 mg/l"/>
+							<color color="black" lowerValue="12" label="groter dan 12 mg/l"/>
+						</classBreaks>
+					</gridPlot>
+					<gridPlot id="Ntot Verschilkaart actueel t.o.v. voorlaatste_SGBP (mg/l) RWS" name="Verschilkaart actueel t.o.v. $voorlaatste_SGBP$ (3 voorgaande jaren, mg/l)">
+						<description>Verschilkaart actueel t.o.v. $voorlaatste_SGBP$ per waterlichaam (3 voorgaande jaren, mg/l)</description>
+						<dataLayer>
+							<onlyCircles>true</onlyCircles>
+							<circleSizeFunction>10</circleSizeFunction>
+							<circleBorderSize>1</circleBorderSize>
+							<circleBorderColor>black</circleBorderColor>
+							<timeSeriesSet>
+								<moduleInstanceId>SamenvoegenMeetdata_Ntot</moduleInstanceId>
+								<valueType>scalar</valueType>
+								<parameterId>Ntot</parameterId>
+								<qualifierId>HH_1</qualifierId>
+								<qualifierId>BE_SGBP2009</qualifierId>
+								<qualifierId>BE_shift</qualifierId>
+								<qualifierId>BE_trend</qualifierId>
+								<locationSetId>KRW-wl-wkb-Rijkswaterstaat</locationSetId>
+								<timeSeriesType>simulated historical</timeSeriesType>
+								<timeStep id="jaar"/>
+								<relativeViewPeriod unit="day" start="-10000" startOverrulable="true" end="0" endOverrulable="true"/>
+								<readWriteMode>read complete forecast</readWriteMode>
+							</timeSeriesSet>
+						</dataLayer>
+						<movieFrameDurationMillis>50</movieFrameDurationMillis>
+						<classBreaks>
+							<color color="green4" lowerValue="-1000" label="kleiner dan -1 mg/l"/>
+							<color color="green1" lowerValue="-1" label="-1 tot -0.5 mg/l"/>
+							<color color="green yellow" lowerValue="-0.5" label="-0.5 tot 0 mg/l"/>
+							<color color="gray90" lowerValue="0" label="0 mg/l"/>
+							<color color="yellow" lowerValue="0.0000001" label="0 tot 0.5 mg/l"/>
+							<color color="orange" lowerValue="0.5" label="0.5 tot 1 mg/l"/>
+							<color color="red" lowerValue="1" label="groter dan 1 mg/l"/>
+						</classBreaks>
+					</gridPlot>
+					<gridPlot id="Ntot Verschilkaart actueel t.o.v. laatste_SGBP (mg/l) RWS" name="Verschilkaart actueel t.o.v. $laatste_SGBP$ (3 voorgaande jaren, mg/l)">
+						<description>Verschilkaart actueel t.o.v. $laatste_SGBP$ per waterlichaam (3 voorgaande jaren, mg/l)</description>
+						<dataLayer>
+							<onlyCircles>true</onlyCircles>
+							<circleSizeFunction>10</circleSizeFunction>
+							<circleBorderSize>1</circleBorderSize>
+							<circleBorderColor>black</circleBorderColor>
+							<timeSeriesSet>
+								<moduleInstanceId>SamenvoegenMeetdata_Ntot</moduleInstanceId>
+								<valueType>scalar</valueType>
+								<parameterId>Ntot</parameterId>
+								<qualifierId>HH_1</qualifierId>
+								<qualifierId>BE_SGBP2015</qualifierId>
+								<qualifierId>BE_shift</qualifierId>
+								<qualifierId>BE_trend</qualifierId>
+								<locationSetId>KRW-wl-wkb-Rijkswaterstaat</locationSetId>
+								<timeSeriesType>simulated historical</timeSeriesType>
+								<timeStep id="jaar"/>
+								<relativeViewPeriod unit="day" start="-10000" startOverrulable="true" end="0" endOverrulable="true"/>
+								<readWriteMode>read complete forecast</readWriteMode>
+							</timeSeriesSet>
+						</dataLayer>
+						<movieFrameDurationMillis>50</movieFrameDurationMillis>
+						<classBreaks>
+							<color color="green4" lowerValue="-1000" label="kleiner dan -1 mg/l"/>
+							<color color="green1" lowerValue="-1" label="-1 tot -0.5 mg/l"/>
+							<color color="green yellow" lowerValue="-0.5" label="-0.5 tot 0 mg/l"/>
+							<color color="gray90" lowerValue="0" label="0 mg/l"/>
+							<color color="yellow" lowerValue="0.0000001" label="0 tot 0.5 mg/l"/>
+							<color color="orange" lowerValue="0.5" label="0.5 tot 1 mg/l"/>
+							<color color="red" lowerValue="1" label="groter dan 1 mg/l"/>
+						</classBreaks>
+					</gridPlot>
+				</gridPlotGroup>
+				<gridPlotGroup id="Jaargemiddelden">
+					<gridPlot id="Ntot Jaargemiddeld (mg/l) RWS" name="Jaargemiddelde (mg/l)">
+						<description>Jaargemiddelde per waterlichaam (mg/l)</description>
+						<dataLayer>
+							<onlyCircles>true</onlyCircles>
+							<circleSizeFunction>10</circleSizeFunction>
+							<circleBorderSize>1</circleBorderSize>
+							<circleBorderColor>black</circleBorderColor>
+							<timeSeriesSet>
+								<moduleInstanceId>SamenvoegenMeetdata_Ntot</moduleInstanceId>
+								<valueType>scalar</valueType>
+								<parameterId>Ntot</parameterId>
+								<qualifierId>BE_jaargem</qualifierId>
+								<locationSetId>KRW-wl-wkb-Rijkswaterstaat-zoet</locationSetId>
+								<timeSeriesType>simulated historical</timeSeriesType>
+								<timeStep id="een.jaar"/>
+								<relativeViewPeriod unit="day" start="-10000" end="0"/>
+								<readWriteMode>read complete forecast</readWriteMode>
+							</timeSeriesSet>
+						</dataLayer>
+						<movieFrameDurationMillis>50</movieFrameDurationMillis>
+						<legendStyle>table</legendStyle>
+						<classBreaks>
+							<color color="alice blue" lowerValue="0" label="kleiner dan 2 mg/l"/>
+							<color color="cadet blue2" lowerValue="2" label="2 - 4 mg/l"/>
+							<color color="royal blue2" lowerValue="4" label="4 - 6 mg/l"/>
+							<color color="blue4" lowerValue="6" label="6 - 12 mg/l"/>
+							<color color="black" lowerValue="12" label="groter dan 12 mg/l"/>
+						</classBreaks>
+					</gridPlot>
+				</gridPlotGroup>
+				<gridPlotGroup id="Normen">
+					<gridPlot id="Ntot Norm Goed-Matig (mg/l) RWS" name="Goed-Matig (mg/l)">
+						<description>Norm Goed-Matig per waterlichaam (mg/l)</description>
+						<dataLayer>
+							<onlyCircles>true</onlyCircles>
+							<circleSizeFunction>10</circleSizeFunction>
+							<circleBorderSize>1</circleBorderSize>
+							<circleBorderColor>black</circleBorderColor>
+							<timeSeriesSet>
+								<moduleInstanceId>Aggregate_KRWtypes</moduleInstanceId>
+								<valueType>scalar</valueType>
+								<parameterId>Ntot</parameterId>
+								<qualifierId>WN_3</qualifierId>
+								<qualifierId>WT_3</qualifierId>
+								<locationSetId>KRW-wl-wkb-Rijkswaterstaat-zoet</locationSetId>
+								<timeSeriesType>external historical</timeSeriesType>
+								<timeStep unit="nonequidistant"/>
+								<readWriteMode>read complete forecast</readWriteMode>
+							</timeSeriesSet>
+						</dataLayer>
+						<movieFrameDurationMillis>50</movieFrameDurationMillis>
+						<legendStyle>table</legendStyle>
+						<classBreaks>
+							<color color="steel blue" lowerValue="0" label="kleiner dan 2 mg/l"/>
+							<color color="steel blue1" lowerValue="2" label="2 - 4 mg/l"/>
+							<color color="orchid1" lowerValue="4" label="4 - 6 mg/l"/>
+							<color color="plum" lowerValue="6" label="6 - 12 mg/l"/>
+							<color color="dark orchid4" lowerValue="12" label="groter dan 12 mg/l"/>
+						</classBreaks>
+					</gridPlot>
+					<gridPlot id="Ntot Norm Matig-Ontoereikend (mg/l) RWS" name="Matig-Ontoereikend (mg/l)">
+						<description>Norm Matig-Ontoereikend per waterlichaam (mg/l)</description>
+						<dataLayer>
+							<onlyCircles>true</onlyCircles>
+							<circleSizeFunction>10</circleSizeFunction>
+							<circleBorderSize>1</circleBorderSize>
+							<circleBorderColor>black</circleBorderColor>
+							<timeSeriesSet>
+								<moduleInstanceId>Aggregate_KRWtypes</moduleInstanceId>
+								<valueType>scalar</valueType>
+								<parameterId>Ntot</parameterId>
+								<qualifierId>WN_4</qualifierId>
+								<qualifierId>WT_3</qualifierId>
+								<locationSetId>KRW-wl-wkb-Rijkswaterstaat-zoet</locationSetId>
+								<timeSeriesType>external historical</timeSeriesType>
+								<timeStep unit="nonequidistant"/>
+								<readWriteMode>read complete forecast</readWriteMode>
+							</timeSeriesSet>
+						</dataLayer>
+						<movieFrameDurationMillis>50</movieFrameDurationMillis>
+						<legendStyle>table</legendStyle>
+						<classBreaks>
+							<color color="steel blue" lowerValue="0" label="kleiner dan 2 mg/l"/>
+							<color color="steel blue1" lowerValue="2" label="2 - 4 mg/l"/>
+							<color color="orchid1" lowerValue="4" label="4 - 6 mg/l"/>
+							<color color="plum" lowerValue="6" label="6 - 12 mg/l"/>
+							<color color="dark orchid4" lowerValue="12" label="groter dan 12 mg/l"/>
+						</classBreaks>
+					</gridPlot>
+					<gridPlot id="Ntot Norm Ontoereikend-Slecht (mg/l) RWS" name="Ontoereikend-Slecht (mg/l)">
+						<description>Norm Ontoereikend-Slecht per waterlichaam (mg/l) </description>
+						<dataLayer>
+							<onlyCircles>true</onlyCircles>
+							<circleSizeFunction>10</circleSizeFunction>
+							<circleBorderSize>1</circleBorderSize>
+							<circleBorderColor>black</circleBorderColor>
+							<timeSeriesSet>
+								<moduleInstanceId>Aggregate_KRWtypes</moduleInstanceId>
+								<valueType>scalar</valueType>
+								<parameterId>Ntot</parameterId>
+								<qualifierId>WN_5</qualifierId>
+								<qualifierId>WT_3</qualifierId>
+								<locationSetId>KRW-wl-wkb-Rijkswaterstaat-zoet</locationSetId>
+								<timeSeriesType>external historical</timeSeriesType>
+								<timeStep unit="nonequidistant"/>
+								<readWriteMode>read complete forecast</readWriteMode>
+							</timeSeriesSet>
+						</dataLayer>
+						<movieFrameDurationMillis>50</movieFrameDurationMillis>
+						<legendStyle>table</legendStyle>
+						<classBreaks>
+							<color color="steel blue" lowerValue="0" label="kleiner dan 2 mg/l"/>
+							<color color="steel blue1" lowerValue="2" label="2 - 4 mg/l"/>
+							<color color="orchid1" lowerValue="4" label="4 - 6 mg/l"/>
+							<color color="plum" lowerValue="6" label="6 - 12 mg/l"/>
+							<color color="dark orchid4" lowerValue="12" label="groter dan 12 mg/l"/>
+						</classBreaks>
+					</gridPlot>
+				</gridPlotGroup>
+				<gridPlotGroup id="Toetsing">
+					<gridPlot id="Ntot Toetsing t.o.v. normen laatste_SGBP (-) RWS" name="Toetsing stikstof aan normen $huidige_SGBP$">
+						<description>Toetsing stikstof aan normen $huidige_SGBP$ per waterlichaam</description>
+						<dataLayer>
+							<onlyCircles>true</onlyCircles>
+							<circleSizeFunction>10</circleSizeFunction>
+							<circleBorderSize>1</circleBorderSize>
+							<circleBorderColor>black</circleBorderColor>
+							<timeSeriesSet>
+								<moduleInstanceId>SamenvoegenToetsing_Ntot</moduleInstanceId>
+								<valueType>scalar</valueType>
+								<parameterId>Oordeel</parameterId>
+								<qualifierId>HH_1</qualifierId>
+								<qualifierId>BE_SGBPhuidig_toets</qualifierId>
+								<locationSetId>KRW-wl-wkb-Rijkswaterstaat-zoet</locationSetId>
+								<timeSeriesType>simulated historical</timeSeriesType>
+								<timeStep id="jaar"/>
+								<relativeViewPeriod unit="day" start="-3500" end="0"/>
+								<readWriteMode>read complete forecast</readWriteMode>
+							</timeSeriesSet>
+						</dataLayer>
+						<movieFrameDurationMillis>50</movieFrameDurationMillis>
+						<classBreaks>
+							<color color="red" lowerValue="1" label="slecht"/>
+							<color color="orange" lowerValue="2" label="ontoereikend"/>
+							<color color="yellow" lowerValue="3" label="matig"/>
+							<color color="green" lowerValue="4" label="goed"/>
+						</classBreaks>
+					</gridPlot>
+					<gridPlot id="Ntot Verschilkaart Toetsing actueel vs. voorlaatste_SGBP (-) RWS" name="Verschilkaart toetsing stikstof actueel vs. $voorlaatste_SGBP$ (-)">
+						<description>Verschilkaart toetsing stikstof actueel vs. $voorlaatste_SGBP$ per waterlichaam (-)</description>
+						<dataLayer>
+							<onlyCircles>true</onlyCircles>
+							<circleSizeFunction>10</circleSizeFunction>
+							<circleBorderSize>1</circleBorderSize>
+							<circleBorderColor>black</circleBorderColor>
+							<timeSeriesSet>
+								<moduleInstanceId>SamenvoegenToetsing_Ntot</moduleInstanceId>
+								<valueType>scalar</valueType>
+								<parameterId>Oordeel</parameterId>
+								<qualifierId>HH_1</qualifierId>
+								<qualifierId>BE_shift</qualifierId>
+								<qualifierId>BE_SGBP2009</qualifierId>
+								<qualifierId>BE_trend</qualifierId>
+								<locationSetId>KRW-wl-wkb-Rijkswaterstaat-zoet</locationSetId>
+								<timeSeriesType>simulated historical</timeSeriesType>
+								<timeStep id="jaar"/>
+								<relativeViewPeriod unit="day" start="-1" startOverrulable="false" end="0" endOverrulable="true"/>
+								<readWriteMode>read complete forecast</readWriteMode>
+							</timeSeriesSet>
+						</dataLayer>
+						<movieFrameDurationMillis>50</movieFrameDurationMillis>
+						<classBreaks>
+							<color color="red" lowerValue="-1" label="verslechterd"/>
+							<color color="yellow" lowerValue="0" label="gelijkblijvend"/>
+							<color color="green" lowerValue="1" label="verbeterd"/>
+						</classBreaks>
+					</gridPlot>
+					<gridPlot id="Ntot Verschilkaart Toetsing actueel vs. laatste_SGBP (-) RWS" name="Verschilkaart toetsing stikstof actueel vs. $laatste_SGBP$ (-)">
+						<description>Verschilkaart toetsing stikstof actueel vs. $laatste_SGBP$ per waterlichaam (-)</description>
+						<dataLayer>
+							<onlyCircles>true</onlyCircles>
+							<circleSizeFunction>10</circleSizeFunction>
+							<circleBorderSize>1</circleBorderSize>
+							<circleBorderColor>black</circleBorderColor>
+							<timeSeriesSet>
+								<moduleInstanceId>SamenvoegenToetsing_Ntot</moduleInstanceId>
+								<valueType>scalar</valueType>
+								<parameterId>Oordeel</parameterId>
+								<qualifierId>HH_1</qualifierId>
+								<qualifierId>BE_shift</qualifierId>
+								<qualifierId>BE_SGBP2015</qualifierId>
+								<qualifierId>BE_trend</qualifierId>
+								<locationSetId>KRW-wl-wkb-Rijkswaterstaat-zoet</locationSetId>
+								<timeSeriesType>simulated historical</timeSeriesType>
+								<timeStep id="jaar"/>
+								<relativeViewPeriod unit="day" start="-1" startOverrulable="false" end="0" endOverrulable="true"/>
+								<readWriteMode>read complete forecast</readWriteMode>
+							</timeSeriesSet>
+						</dataLayer>
+						<movieFrameDurationMillis>50</movieFrameDurationMillis>
+						<classBreaks>
+							<color color="red" lowerValue="-1" label="verslechterd"/>
+							<color color="yellow" lowerValue="0" label="gelijkblijvend"/>
+							<color color="green" lowerValue="1" label="verbeterd"/>
+						</classBreaks>
+					</gridPlot>
+					<gridPlot id="Ntot Verschil t.o.v. de huidige norm Goed (-; doelgat) RWS" name="Doelgat (afstand tot de norm ‘goed’)">
+						<description>Doelgat per waterlichaam (afstand tot de norm ‘goed’)</description>
+						<dataLayer>
+							<onlyCircles>true</onlyCircles>
+							<circleSizeFunction>10</circleSizeFunction>
+							<circleBorderSize>1</circleBorderSize>
+							<circleBorderColor>black</circleBorderColor>
+							<timeSeriesSet>
+								<moduleInstanceId>SamenvoegenToetsing_Ntot</moduleInstanceId>
+								<valueType>scalar</valueType>
+								<parameterId>Oordeel</parameterId>
+								<qualifierId>HH_1</qualifierId>
+								<qualifierId>BE_doelgat</qualifierId>
+								<locationSetId>KRW-wl-wkb-Rijkswaterstaat-zoet</locationSetId>
+								<timeSeriesType>simulated historical</timeSeriesType>
+								<timeStep id="jaar"/>
+								<relativeViewPeriod unit="day" start="-10000" startOverrulable="true" end="0" endOverrulable="true"/>
+								<readWriteMode>read complete forecast</readWriteMode>
+							</timeSeriesSet>
+						</dataLayer>
+						<movieFrameDurationMillis>50</movieFrameDurationMillis>
+						<classBreaks>
+							<color color="brown" lowerValue="1" label=">5 keer de norm"/>
+							<color color="orange red" lowerValue="2" label="2 tot 5 keer de norm"/>
+							<color color="dark goldenrod1" lowerValue="3" label="1.5 tot 2 keer de norm"/>
+							<color color="yellow" lowerValue="4" label="1 tot 1.5 keer de norm"/>
+							<color color="white" lowerValue="5" label="binnen de norm"/>
+						</classBreaks>
+					</gridPlot>
+				</gridPlotGroup>
+			</gridPlotGroup>
+			<gridPlotGroup id="P totaal">
+				<gridPlotGroup id="Zomergemiddelden">
+					<gridPlot id="Ptot Zomergemiddeld (mg/l) RWS" name="3-jarig zomerhalfjaargemiddelde (mg/l)">
+						<description>3-jarig zomerhalfjaargemiddelde per waterlichaam (mg/l)</description>
+						<dataLayer>
+							<onlyCircles>true</onlyCircles>
+							<circleSizeFunction>10</circleSizeFunction>
+							<circleBorderSize>1</circleBorderSize>
+							<circleBorderColor>black</circleBorderColor>
+							<timeSeriesSet>
+								<moduleInstanceId>SamenvoegenMeetdata_Ptot</moduleInstanceId>
+								<valueType>scalar</valueType>
+								<parameterId>Ptot</parameterId>
+								<qualifierId>BE_summermean</qualifierId>
+								<qualifierId>BE_3jaargem</qualifierId>
+								<locationSetId>KRW-wl-wkb-Rijkswaterstaat-zoet</locationSetId>
+								<timeSeriesType>simulated historical</timeSeriesType>
+								<timeStep id="jaar"/>
+								<relativeViewPeriod unit="day" start="-3500" end="0"/>
+								<readWriteMode>read complete forecast</readWriteMode>
+							</timeSeriesSet>
+						</dataLayer>
+						<movieFrameDurationMillis>50</movieFrameDurationMillis>
+						<legendStyle>table</legendStyle>
+						<classBreaks>
+							<color color="alice blue" lowerValue="0" label="kleiner dan 0.1 mg/l"/>
+							<color color="cadet blue2" lowerValue="0.1" label="0.1 - 0.2 mg/l"/>
+							<color color="royal blue2" lowerValue="0.2" label="0.2 - 0.5 mg/l"/>
+							<color color="blue4" lowerValue="0.5" label="0.5 - 1 mg/l"/>
+							<color color="black" lowerValue="1" label="groter dan 1 mg/l"/>
+						</classBreaks>
+					</gridPlot>
+					<gridPlot id="Ptot Verschilkaart actueel t.o.v. voorlaatste_SGBP (mg/l) RWS" name="Verschilkaart actueel t.o.v. $voorlaatste_SGBP$ (3 voorgaande jaren, mg/l)">
+						<description>Verschilkaart actueel t.o.v. $voorlaatste_SGBP$ per waterlichaam (3 voorgaande jaren, mg/l)</description>
+						<dataLayer>
+							<onlyCircles>true</onlyCircles>
+							<circleSizeFunction>10</circleSizeFunction>
+							<circleBorderSize>1</circleBorderSize>
+							<circleBorderColor>black</circleBorderColor>
+							<timeSeriesSet>
+								<moduleInstanceId>SamenvoegenMeetdata_Ptot</moduleInstanceId>
+								<valueType>scalar</valueType>
+								<parameterId>Ptot</parameterId>
+								<qualifierId>HH_2</qualifierId>
+								<qualifierId>BE_SGBP2009</qualifierId>
+								<qualifierId>BE_shift</qualifierId>
+								<qualifierId>BE_trend</qualifierId>
+								<locationSetId>KRW-wl-wkb-Rijkswaterstaat-zoet</locationSetId>
+								<timeSeriesType>simulated historical</timeSeriesType>
+								<timeStep id="jaar"/>
+								<relativeViewPeriod unit="day" start="-10000" startOverrulable="true" end="0" endOverrulable="true"/>
+								<readWriteMode>read complete forecast</readWriteMode>
+							</timeSeriesSet>
+						</dataLayer>
+						<movieFrameDurationMillis>50</movieFrameDurationMillis>
+						<classBreaks>
+							<color color="green4" lowerValue="-1000" label="kleiner dan -0.1 mg/l"/>
+							<color color="green1" lowerValue="-0.1" label="-0.1 tot -0.05 mg/l"/>
+							<color color="green yellow" lowerValue="-0.05" label="-0.05 tot 0 mg/l"/>
+							<color color="gray90" lowerValue="0" label="0 mg/l"/>
+							<color color="yellow" lowerValue="0.0000001" label="0 tot 0.05 mg/l"/>
+							<color color="orange" lowerValue="0.05" label="0.05 tot 0.1 mg/l"/>
+							<color color="red" lowerValue="0.1" label="groter dan 0.1 mg/l"/>
+						</classBreaks>
+					</gridPlot>
+					<gridPlot id="Ptot Verschilkaart actueel t.o.v. laatste_SGBP (mg/l) RWS" name="Verschilkaart actueel t.o.v. $laatste_SGBP$ (3 voorgaande jaren, mg/l)">
+						<description>Verschilkaart actueel t.o.v. $laatste_SGBP$ per waterlichaam (3 voorgaande jaren, mg/l)</description>
+						<dataLayer>
+							<onlyCircles>true</onlyCircles>
+							<circleSizeFunction>10</circleSizeFunction>
+							<circleBorderSize>1</circleBorderSize>
+							<circleBorderColor>black</circleBorderColor>
+							<timeSeriesSet>
+								<moduleInstanceId>SamenvoegenMeetdata_Ptot</moduleInstanceId>
+								<valueType>scalar</valueType>
+								<parameterId>Ptot</parameterId>
+								<qualifierId>HH_2</qualifierId>
+								<qualifierId>BE_SGBP2015</qualifierId>
+								<qualifierId>BE_shift</qualifierId>
+								<qualifierId>BE_trend</qualifierId>
+								<locationSetId>KRW-wl-wkb-Rijkswaterstaat-zoet</locationSetId>
+								<timeSeriesType>simulated historical</timeSeriesType>
+								<timeStep id="jaar"/>
+								<relativeViewPeriod unit="day" start="-10000" startOverrulable="true" end="0" endOverrulable="true"/>
+								<readWriteMode>read complete forecast</readWriteMode>
+							</timeSeriesSet>
+						</dataLayer>
+						<movieFrameDurationMillis>50</movieFrameDurationMillis>
+						<classBreaks>
+							<color color="green4" lowerValue="-1000" label="kleiner dan -0.1 mg/l"/>
+							<color color="green1" lowerValue="-0.1" label="-0.1 tot -0.05 mg/l"/>
+							<color color="green yellow" lowerValue="-0.05" label="-0.05 tot 0 mg/l"/>
+							<color color="gray90" lowerValue="0" label="0 mg/l"/>
+							<color color="yellow" lowerValue="0.0000001" label="0 tot 0.05 mg/l"/>
+							<color color="orange" lowerValue="0.05" label="0.05 tot 0.1 mg/l"/>
+							<color color="red" lowerValue="0.1" label="groter dan 0.1 mg/l"/>
+						</classBreaks>
+					</gridPlot>
+				</gridPlotGroup>
+				<gridPlotGroup id="Jaargemiddelden">
+					<gridPlot id="Ptot Jaargemiddeld (mg/l) RWS" name="Jaargemiddelde (mg/l)">
+						<description>Jaargemiddelde per waterlichaam (mg/l)</description>
+						<dataLayer>
+							<onlyCircles>true</onlyCircles>
+							<circleSizeFunction>10</circleSizeFunction>
+							<circleBorderSize>1</circleBorderSize>
+							<circleBorderColor>black</circleBorderColor>
+							<timeSeriesSet>
+								<moduleInstanceId>SamenvoegenMeetdata_Ptot</moduleInstanceId>
+								<valueType>scalar</valueType>
+								<parameterId>Ptot</parameterId>
+								<qualifierId>BE_jaargem</qualifierId>
+								<locationSetId>KRW-wl-wkb-Rijkswaterstaat-zoet</locationSetId>
+								<timeSeriesType>simulated historical</timeSeriesType>
+								<timeStep id="een.jaar"/>
+								<relativeViewPeriod unit="day" start="-10000" end="0"/>
+								<readWriteMode>read complete forecast</readWriteMode>
+							</timeSeriesSet>
+						</dataLayer>
+						<movieFrameDurationMillis>50</movieFrameDurationMillis>
+						<legendStyle>table</legendStyle>
+						<classBreaks>
+							<color color="alice blue" lowerValue="0" label="kleiner dan 0.1 mg/l"/>
+							<color color="cadet blue2" lowerValue="0.1" label="0.1 - 0.2 mg/l"/>
+							<color color="royal blue2" lowerValue="0.2" label="0.2 - 0.5 mg/l"/>
+							<color color="blue4" lowerValue="0.5" label="0.5 - 1 mg/l"/>
+							<color color="black" lowerValue="1" label="groter dan 1 mg/l"/>
+						</classBreaks>
+					</gridPlot>
+				</gridPlotGroup>
+				<gridPlotGroup id="Normen">
+					<gridPlot id="Ptot Norm Goed-Matig (mg/l) RWS" name="Goed-Matig (mg/l)">
+						<description>Norm Goed-Matig per waterlichaam (mg/l)</description>
+						<dataLayer>
+							<onlyCircles>true</onlyCircles>
+							<circleSizeFunction>10</circleSizeFunction>
+							<circleBorderSize>1</circleBorderSize>
+							<circleBorderColor>black</circleBorderColor>
+							<timeSeriesSet>
+								<moduleInstanceId>Aggregate_KRWtypes</moduleInstanceId>
+								<valueType>scalar</valueType>
+								<parameterId>Ptot</parameterId>
+								<qualifierId>WN_3</qualifierId>
+								<qualifierId>WT_3</qualifierId>
+								<locationSetId>KRW-wl-wkb-Rijkswaterstaat-zoet</locationSetId>
+								<timeSeriesType>external historical</timeSeriesType>
+								<timeStep unit="nonequidistant"/>
+								<readWriteMode>read complete forecast</readWriteMode>
+							</timeSeriesSet>
+						</dataLayer>
+						<movieFrameDurationMillis>50</movieFrameDurationMillis>
+						<legendStyle>table</legendStyle>
+						<classBreaks>
+							<color color="steel blue" lowerValue="0" label="kleiner dan 0.1 mg/l"/>
+							<color color="steel blue1" lowerValue="0.1" label="0.1 - 0.2 mg/l"/>
+							<color color="orchid1" lowerValue="0.2" label="0.2 - 0.5 mg/l"/>
+							<color color="plum" lowerValue="0.5" label="0.5 - 1 mg/l"/>
+							<color color="dark orchid4" lowerValue="1" label="groter dan 1 mg/l"/>
+						</classBreaks>
+					</gridPlot>
+					<gridPlot id="Ptot Norm Matig-Ontoereikend (mg/l) RWS" name="Matig-Ontoereikend (mg/l)">
+						<description>Norm Matig-Ontoereikend per waterlichaam (mg/l)</description>
+						<dataLayer>
+							<onlyCircles>true</onlyCircles>
+							<circleSizeFunction>10</circleSizeFunction>
+							<circleBorderSize>1</circleBorderSize>
+							<circleBorderColor>black</circleBorderColor>
+							<timeSeriesSet>
+								<moduleInstanceId>Aggregate_KRWtypes</moduleInstanceId>
+								<valueType>scalar</valueType>
+								<parameterId>Ptot</parameterId>
+								<qualifierId>WN_4</qualifierId>
+								<qualifierId>WT_3</qualifierId>
+								<locationSetId>KRW-wl-wkb-Rijkswaterstaat-zoet</locationSetId>
+								<timeSeriesType>external historical</timeSeriesType>
+								<timeStep unit="nonequidistant"/>
+								<readWriteMode>read complete forecast</readWriteMode>
+							</timeSeriesSet>
+						</dataLayer>
+						<movieFrameDurationMillis>50</movieFrameDurationMillis>
+						<legendStyle>table</legendStyle>
+						<classBreaks>
+							<color color="steel blue" lowerValue="0" label="kleiner dan 0.1 mg/l"/>
+							<color color="steel blue1" lowerValue="0.1" label="0.1 - 0.2 mg/l"/>
+							<color color="orchid1" lowerValue="0.2" label="0.2 - 0.5 mg/l"/>
+							<color color="plum" lowerValue="0.5" label="0.5 - 1 mg/l"/>
+							<color color="dark orchid4" lowerValue="1" label="groter dan 1 mg/l"/>
+						</classBreaks>
+					</gridPlot>
+					<gridPlot id="Ptot Norm Ontoereikend-Slecht (mg/l) RWS" name="Ontoereikend-Slecht (mg/l)">
+						<description>Norm Ontoereikend-Slecht per waterlichaam (mg/l) </description>
+						<dataLayer>
+							<onlyCircles>true</onlyCircles>
+							<circleSizeFunction>10</circleSizeFunction>
+							<circleBorderSize>1</circleBorderSize>
+							<circleBorderColor>black</circleBorderColor>
+							<timeSeriesSet>
+								<moduleInstanceId>Aggregate_KRWtypes</moduleInstanceId>
+								<valueType>scalar</valueType>
+								<parameterId>Ptot</parameterId>
+								<qualifierId>WN_5</qualifierId>
+								<qualifierId>WT_3</qualifierId>
+								<locationSetId>KRW-wl-wkb-Rijkswaterstaat-zoet</locationSetId>
+								<timeSeriesType>external historical</timeSeriesType>
+								<timeStep unit="nonequidistant"/>
+								<readWriteMode>read complete forecast</readWriteMode>
+							</timeSeriesSet>
+						</dataLayer>
+						<movieFrameDurationMillis>50</movieFrameDurationMillis>
+						<legendStyle>table</legendStyle>
+						<classBreaks>
+							<color color="steel blue" lowerValue="0" label="kleiner dan 0.1 mg/l"/>
+							<color color="steel blue1" lowerValue="0.1" label="0.1 - 0.2 mg/l"/>
+							<color color="orchid1" lowerValue="0.2" label="0.2 - 0.5 mg/l"/>
+							<color color="plum" lowerValue="0.5" label="0.5 - 1 mg/l"/>
+							<color color="dark orchid4" lowerValue="1" label="groter dan 1 mg/l"/>
+						</classBreaks>
+					</gridPlot>
+				</gridPlotGroup>
+				<gridPlotGroup id="Toetsing">
+					<gridPlot id="Ptot Toetsing t.o.v. normen laatste_SGBP (-) RWS" name="Toetsing fosfor aan normen $huidige_SGBP$">
+						<description>Toetsing fosfor aan normen $huidige_SGBP$ per waterlichaam</description>
+						<dataLayer>
+							<onlyCircles>true</onlyCircles>
+							<circleSizeFunction>10</circleSizeFunction>
+							<circleBorderSize>1</circleBorderSize>
+							<circleBorderColor>black</circleBorderColor>
+							<timeSeriesSet>
+								<moduleInstanceId>SamenvoegenToetsing_Ptot</moduleInstanceId>
+								<valueType>scalar</valueType>
+								<parameterId>Oordeel</parameterId>
+								<qualifierId>HH_2</qualifierId>
+								<qualifierId>BE_SGBPhuidig_toets</qualifierId>
+								<locationSetId>KRW-wl-wkb-Rijkswaterstaat-zoet</locationSetId>
+								<timeSeriesType>simulated historical</timeSeriesType>
+								<timeStep id="jaar"/>
+								<relativeViewPeriod unit="day" start="-3500" end="0"/>
+								<readWriteMode>read complete forecast</readWriteMode>
+							</timeSeriesSet>
+						</dataLayer>
+						<movieFrameDurationMillis>50</movieFrameDurationMillis>
+						<classBreaks>
+							<color color="red" lowerValue="1" label="slecht"/>
+							<color color="orange" lowerValue="2" label="ontoereikend"/>
+							<color color="yellow" lowerValue="3" label="matig"/>
+							<color color="green" lowerValue="4" label="goed"/>
+						</classBreaks>
+					</gridPlot>
+					<gridPlot id="Ptot Verschilkaart Toetsing actueel vs. voorlaatste_SGBP (-) RWS" name="Verschilkaart toetsing fosfor actueel vs. $voorlaatste_SGBP$ (-)">
+						<description>Verschilkaart toetsing fosfor actueel vs. $voorlaatste_SGBP$ per waterlichaam (-)</description>
+						<dataLayer>
+							<onlyCircles>true</onlyCircles>
+							<circleSizeFunction>10</circleSizeFunction>
+							<circleBorderSize>1</circleBorderSize>
+							<circleBorderColor>black</circleBorderColor>
+							<timeSeriesSet>
+								<moduleInstanceId>SamenvoegenToetsing_Ptot</moduleInstanceId>
+								<valueType>scalar</valueType>
+								<parameterId>Oordeel</parameterId>
+								<qualifierId>HH_2</qualifierId>
+								<qualifierId>BE_shift</qualifierId>
+								<qualifierId>BE_SGBP2009</qualifierId>
+								<qualifierId>BE_trend</qualifierId>
+								<locationSetId>KRW-wl-wkb-Rijkswaterstaat-zoet</locationSetId>
+								<timeSeriesType>simulated historical</timeSeriesType>
+								<timeStep id="jaar"/>
+								<relativeViewPeriod unit="day" start="-1" startOverrulable="false" end="0" endOverrulable="true"/>
+								<readWriteMode>read complete forecast</readWriteMode>
+							</timeSeriesSet>
+						</dataLayer>
+						<movieFrameDurationMillis>50</movieFrameDurationMillis>
+						<classBreaks>
+							<color color="red" lowerValue="-1" label="verslechterd"/>
+							<color color="yellow" lowerValue="0" label="gelijkblijvend"/>
+							<color color="green" lowerValue="1" label="verbeterd"/>
+						</classBreaks>
+					</gridPlot>
+					<gridPlot id="Ptot Verschilkaart Toetsing actueel vs. laatste_SGBP (-) RWS" name="Verschilkaart toetsing fosfor actueel vs. $laatste_SGBP$ (-)">
+						<description>Verschilkaart toetsing fosfor actueel vs. $laatste_SGBP$ per waterlichaam (-)</description>
+						<dataLayer>
+							<onlyCircles>true</onlyCircles>
+							<circleSizeFunction>10</circleSizeFunction>
+							<circleBorderSize>1</circleBorderSize>
+							<circleBorderColor>black</circleBorderColor>
+							<timeSeriesSet>
+								<moduleInstanceId>SamenvoegenToetsing_Ptot</moduleInstanceId>
+								<valueType>scalar</valueType>
+								<parameterId>Oordeel</parameterId>
+								<qualifierId>HH_2</qualifierId>
+								<qualifierId>BE_shift</qualifierId>
+								<qualifierId>BE_SGBP2015</qualifierId>
+								<qualifierId>BE_trend</qualifierId>
+								<locationSetId>KRW-wl-wkb-Rijkswaterstaat-zoet</locationSetId>
+								<timeSeriesType>simulated historical</timeSeriesType>
+								<timeStep id="jaar"/>
+								<relativeViewPeriod unit="day" start="-1" startOverrulable="false" end="0" endOverrulable="true"/>
+								<readWriteMode>read complete forecast</readWriteMode>
+							</timeSeriesSet>
+						</dataLayer>
+						<movieFrameDurationMillis>50</movieFrameDurationMillis>
+						<classBreaks>
+							<color color="red" lowerValue="-1" label="verslechterd"/>
+							<color color="yellow" lowerValue="0" label="gelijkblijvend"/>
+							<color color="green" lowerValue="1" label="verbeterd"/>
+						</classBreaks>
+					</gridPlot>
+					<gridPlot id="Ptot Verschil t.o.v. de huidige norm Goed (-; doelgat) RWS" name="Doelgat (afstand tot de norm ‘goed’)">
+						<description>Doelgat per waterlichaam (afstand tot de norm ‘goed’)</description>
+						<dataLayer>
+							<onlyCircles>true</onlyCircles>
+							<circleSizeFunction>10</circleSizeFunction>
+							<circleBorderSize>1</circleBorderSize>
+							<circleBorderColor>black</circleBorderColor>
+							<timeSeriesSet>
+								<moduleInstanceId>SamenvoegenToetsing_Ptot</moduleInstanceId>
+								<valueType>scalar</valueType>
+								<parameterId>Oordeel</parameterId>
+								<qualifierId>HH_2</qualifierId>
+								<qualifierId>BE_doelgat</qualifierId>
+								<locationSetId>KRW-wl-wkb-Rijkswaterstaat-zoet</locationSetId>
+								<timeSeriesType>simulated historical</timeSeriesType>
+								<timeStep id="jaar"/>
+								<relativeViewPeriod unit="day" start="-10000" startOverrulable="true" end="0" endOverrulable="true"/>
+								<readWriteMode>read complete forecast</readWriteMode>
+							</timeSeriesSet>
+						</dataLayer>
+						<movieFrameDurationMillis>50</movieFrameDurationMillis>
+						<classBreaks>
+							<color color="brown" lowerValue="1" label=">5 keer de norm"/>
+							<color color="orange red" lowerValue="2" label="2 tot 5 keer de norm"/>
+							<color color="dark goldenrod1" lowerValue="3" label="1.5 tot 2 keer de norm"/>
+							<color color="yellow" lowerValue="4" label="1 tot 1.5 keer de norm"/>
+							<color color="white" lowerValue="5" label="binnen de norm"/>
+						</classBreaks>
+					</gridPlot>
+				</gridPlotGroup>
+			</gridPlotGroup>
+			<gridPlotGroup id="Winter DIN">
+				<gridPlotGroup id="Wintergemiddelden">
+					<gridPlot id="DIN Wintergemiddeld (mg/l) RWS" name="3-jarig wintergemiddelde (mg/l)">
+						<description>3-jarig wintergemiddelde per waterlichaam (mg/l)</description>
+						<dataLayer>
+							<onlyCircles>true</onlyCircles>
+							<circleSizeFunction>10</circleSizeFunction>
+							<circleBorderSize>1</circleBorderSize>
+							<circleBorderColor>black</circleBorderColor>
+							<timeSeriesSet>
+								<moduleInstanceId>SamenvoegenMeetdata_DIN</moduleInstanceId>
+								<valueType>scalar</valueType>
+								<parameterId>DIN</parameterId>
+								<qualifierId>BE_wintermean</qualifierId>
+								<qualifierId>BE_3jaargem</qualifierId>
+								<locationSetId>KRW-wl-wkb-Rijkswaterstaat-zout</locationSetId>
+								<timeSeriesType>simulated historical</timeSeriesType>
+								<timeStep id="jaar"/>
+								<relativeViewPeriod unit="day" start="-3500" end="0"/>
+								<readWriteMode>read complete forecast</readWriteMode>
+							</timeSeriesSet>
+						</dataLayer>
+						<movieFrameDurationMillis>50</movieFrameDurationMillis>
+						<legendStyle>table</legendStyle>
+						<classBreaks>
+							<color color="alice blue" lowerValue="0" label="kleiner dan 0.5 mg/l"/>
+							<color color="cadet blue2" lowerValue="0.5" label="0.5 - 1 mg/l"/>
+							<color color="royal blue2" lowerValue="1" label="1 - 2 mg/l"/>
+							<color color="blue4" lowerValue="2" label="2 - 4 mg/l"/>
+							<color color="black" lowerValue="4" label="groter dan 4 mg/l"/>
+						</classBreaks>
+					</gridPlot>
+					<gridPlot id="DIN Verschilkaart actueel t.o.v. voorlaatste_SGBP (mg/l) RWS" name="Verschilkaart actueel t.o.v. $voorlaatste_SGBP$ (3 voorgaande jaren, mg/l)">
+						<description>Verschilkaart actueel t.o.v. $voorlaatste_SGBP$ per waterlichaam (3 voorgaande jaren, mg/l)</description>
+						<dataLayer>
+							<onlyCircles>true</onlyCircles>
+							<circleSizeFunction>10</circleSizeFunction>
+							<circleBorderSize>1</circleBorderSize>
+							<circleBorderColor>black</circleBorderColor>
+							<timeSeriesSet>
+								<moduleInstanceId>SamenvoegenMeetdata_DIN</moduleInstanceId>
+								<valueType>scalar</valueType>
+								<parameterId>DIN</parameterId>
+								<qualifierId>HH_4</qualifierId>
+								<qualifierId>BE_SGBP2009</qualifierId>
+								<qualifierId>BE_shift</qualifierId>
+								<qualifierId>BE_trend</qualifierId>
+								<locationSetId>KRW-wl-wkb-Rijkswaterstaat-zout</locationSetId>
+								<timeSeriesType>simulated historical</timeSeriesType>
+								<timeStep id="jaar"/>
+								<relativeViewPeriod unit="day" start="-10000" startOverrulable="true" end="0" endOverrulable="true"/>
+								<readWriteMode>read complete forecast</readWriteMode>
+							</timeSeriesSet>
+						</dataLayer>
+						<movieFrameDurationMillis>50</movieFrameDurationMillis>
+						<classBreaks>
+							<color color="green4" lowerValue="-1000" label="kleiner dan -1 mg/l"/>
+							<color color="green1" lowerValue="-1" label="-1 tot -0.5 mg/l"/>
+							<color color="green yellow" lowerValue="-0.5" label="-0.5 tot 0 mg/l"/>
+							<color color="gray90" lowerValue="0" label="0 mg/l"/>
+							<color color="yellow" lowerValue="0.0000001" label="0 tot 0.5 mg/l"/>
+							<color color="orange" lowerValue="0.5" label="0.5 tot 1 mg/l"/>
+							<color color="red" lowerValue="1" label="groter dan 1 mg/l"/>
+						</classBreaks>
+					</gridPlot>
+					<gridPlot id="DIN Verschilkaart actueel t.o.v. laatste_SGBP (mg/l) RWS" name="Verschilkaart actueel t.o.v. $laatste_SGBP$ (3 voorgaande jaren, mg/l)">
+						<description>Verschilkaart actueel t.o.v. $laatste_SGBP$ per waterlichaam (3 voorgaande jaren, mg/l)</description>
+						<dataLayer>
+							<onlyCircles>true</onlyCircles>
+							<circleSizeFunction>10</circleSizeFunction>
+							<circleBorderSize>1</circleBorderSize>
+							<circleBorderColor>black</circleBorderColor>
+							<timeSeriesSet>
+								<moduleInstanceId>SamenvoegenMeetdata_DIN</moduleInstanceId>
+								<valueType>scalar</valueType>
+								<parameterId>DIN</parameterId>
+								<qualifierId>HH_4</qualifierId>
+								<qualifierId>BE_SGBP2015</qualifierId>
+								<qualifierId>BE_shift</qualifierId>
+								<qualifierId>BE_trend</qualifierId>
+								<locationSetId>KRW-wl-wkb-Rijkswaterstaat-zout</locationSetId>
+								<timeSeriesType>simulated historical</timeSeriesType>
+								<timeStep id="jaar"/>
+								<relativeViewPeriod unit="day" start="-10000" startOverrulable="true" end="0" endOverrulable="true"/>
+								<readWriteMode>read complete forecast</readWriteMode>
+							</timeSeriesSet>
+						</dataLayer>
+						<movieFrameDurationMillis>50</movieFrameDurationMillis>
+						<classBreaks>
+							<color color="green4" lowerValue="-1000" label="kleiner dan -1 mg/l"/>
+							<color color="green1" lowerValue="-1" label="-1 tot -0.5 mg/l"/>
+							<color color="green yellow" lowerValue="-0.5" label="-0.5 tot 0 mg/l"/>
+							<color color="gray90" lowerValue="0" label="0 mg/l"/>
+							<color color="yellow" lowerValue="0.0000001" label="0 tot 0.5 mg/l"/>
+							<color color="orange" lowerValue="0.5" label="0.5 tot 1 mg/l"/>
+							<color color="red" lowerValue="1" label="groter dan 1 mg/l"/>
+						</classBreaks>
+					</gridPlot>
+				</gridPlotGroup>
+				<gridPlotGroup id="Jaargemiddelden">
+					<gridPlot id="DIN Jaargemiddeld (mg/l) RWS" name="Jaargemiddelde (mg/l)">
+						<description>Jaargemiddelde per waterlichaam (mg/l)</description>
+						<dataLayer>
+							<onlyCircles>true</onlyCircles>
+							<circleSizeFunction>10</circleSizeFunction>
+							<circleBorderSize>1</circleBorderSize>
+							<circleBorderColor>black</circleBorderColor>
+							<timeSeriesSet>
+								<moduleInstanceId>SamenvoegenMeetdata_DIN</moduleInstanceId>
+								<valueType>scalar</valueType>
+								<parameterId>DIN</parameterId>
+								<qualifierId>BE_jaargem</qualifierId>
+								<locationSetId>KRW-wl-wkb-Rijkswaterstaat-zout</locationSetId>
+								<timeSeriesType>simulated historical</timeSeriesType>
+								<timeStep id="een.jaar"/>
+								<relativeViewPeriod unit="day" start="-10000" end="0"/>
+								<readWriteMode>read complete forecast</readWriteMode>
+							</timeSeriesSet>
+						</dataLayer>
+						<movieFrameDurationMillis>50</movieFrameDurationMillis>
+						<legendStyle>table</legendStyle>
+						<classBreaks>
+							<color color="alice blue" lowerValue="0" label="kleiner dan 0.5 mg/l"/>
+							<color color="cadet blue2" lowerValue="0.5" label="0.5 - 1 mg/l"/>
+							<color color="royal blue2" lowerValue="1" label="1 - 2 mg/l"/>
+							<color color="blue4" lowerValue="2" label="2 - 4 mg/l"/>
+							<color color="black" lowerValue="4" label="groter dan 4 mg/l"/>
+						</classBreaks>
+					</gridPlot>
+				</gridPlotGroup>
+				<gridPlotGroup id="Normen">
+					<gridPlot id="DIN Norm Goed-Matig (mg/l) RWS" name="Goed-Matig (mg/l)">
+						<description>Norm Goed-Matig per waterlichaam (mg/l)</description>
+						<dataLayer>
+							<onlyCircles>true</onlyCircles>
+							<circleSizeFunction>10</circleSizeFunction>
+							<circleBorderSize>1</circleBorderSize>
+							<circleBorderColor>black</circleBorderColor>
+							<timeSeriesSet>
+								<moduleInstanceId>Aggregate_KRWtypes</moduleInstanceId>
+								<valueType>scalar</valueType>
+								<parameterId>DIN</parameterId>
+								<qualifierId>WN_3</qualifierId>
+								<qualifierId>WT_3</qualifierId>
+								<locationSetId>KRW-wl-wkb-Rijkswaterstaat-zout</locationSetId>
+								<timeSeriesType>external historical</timeSeriesType>
+								<timeStep unit="nonequidistant"/>
+								<readWriteMode>read complete forecast</readWriteMode>
+							</timeSeriesSet>
+						</dataLayer>
+						<movieFrameDurationMillis>50</movieFrameDurationMillis>
+						<legendStyle>table</legendStyle>
+						<classBreaks>
+							<color color="steel blue" lowerValue="0" label="kleiner dan 0.5 mg/l"/>
+							<color color="steel blue1" lowerValue="0.5" label="0.5 - 1 mg/l"/>
+							<color color="orchid1" lowerValue="1" label="1 - 2 mg/l"/>
+							<color color="plum" lowerValue="2" label="2 - 4 mg/l"/>
+							<color color="dark orchid4" lowerValue="4" label="groter dan 4 mg/l"/>
+						</classBreaks>
+					</gridPlot>
+					<gridPlot id="DIN Norm Matig-Ontoereikend (mg/l) RWS" name="Matig-Ontoereikend (mg/l)">
+						<description>Norm Matig-Ontoereikend per waterlichaam (mg/l)</description>
+						<dataLayer>
+							<onlyCircles>true</onlyCircles>
+							<circleSizeFunction>10</circleSizeFunction>
+							<circleBorderSize>1</circleBorderSize>
+							<circleBorderColor>black</circleBorderColor>
+							<timeSeriesSet>
+								<moduleInstanceId>Aggregate_KRWtypes</moduleInstanceId>
+								<valueType>scalar</valueType>
+								<parameterId>DIN</parameterId>
+								<qualifierId>WN_4</qualifierId>
+								<qualifierId>WT_3</qualifierId>
+								<locationSetId>KRW-wl-wkb-Rijkswaterstaat-zout</locationSetId>
+								<timeSeriesType>external historical</timeSeriesType>
+								<timeStep unit="nonequidistant"/>
+								<readWriteMode>read complete forecast</readWriteMode>
+							</timeSeriesSet>
+						</dataLayer>
+						<movieFrameDurationMillis>50</movieFrameDurationMillis>
+						<legendStyle>table</legendStyle>
+						<classBreaks>
+							<color color="steel blue" lowerValue="0" label="kleiner dan 0.5 mg/l"/>
+							<color color="steel blue1" lowerValue="0.5" label="0.5 - 1 mg/l"/>
+							<color color="orchid1" lowerValue="1" label="1 - 2  mg/l"/>
+							<color color="plum" lowerValue="2" label="2 - 4 mg/l"/>
+							<color color="dark orchid4" lowerValue="4" label="groter dan 4 mg/l"/>
+						</classBreaks>
+					</gridPlot>
+					<gridPlot id="DIN Norm Ontoereikend-Slecht (mg/l) RWS" name="Ontoereikend-Slecht (mg/l)">
+						<description>Norm Ontoereikend-Slecht per waterlichaam (mg/l) </description>
+						<dataLayer>
+							<onlyCircles>true</onlyCircles>
+							<circleSizeFunction>10</circleSizeFunction>
+							<circleBorderSize>1</circleBorderSize>
+							<circleBorderColor>black</circleBorderColor>
+							<timeSeriesSet>
+								<moduleInstanceId>Aggregate_KRWtypes</moduleInstanceId>
+								<valueType>scalar</valueType>
+								<parameterId>DIN</parameterId>
+								<qualifierId>WN_5</qualifierId>
+								<qualifierId>WT_3</qualifierId>
+								<locationSetId>KRW-wl-wkb-Rijkswaterstaat-zout</locationSetId>
+								<timeSeriesType>external historical</timeSeriesType>
+								<timeStep unit="nonequidistant"/>
+								<readWriteMode>read complete forecast</readWriteMode>
+							</timeSeriesSet>
+						</dataLayer>
+						<movieFrameDurationMillis>50</movieFrameDurationMillis>
+						<legendStyle>table</legendStyle>
+						<classBreaks>
+							<color color="steel blue" lowerValue="0" label="kleiner dan 0.5 mg/l"/>
+							<color color="steel blue1" lowerValue="0.5" label="0.5 - 1 mg/l"/>
+							<color color="orchid1" lowerValue="1" label="1 - 2 mg/l"/>
+							<color color="plum" lowerValue="2" label="2 - 4 mg/l"/>
+							<color color="dark orchid4" lowerValue="4" label="groter dan 4 mg/l"/>
+						</classBreaks>
+					</gridPlot>
+				</gridPlotGroup>
+				<gridPlotGroup id="Toetsing">
+					<gridPlot id="DIN Toetsing t.o.v. normen laatste_SGBP (-) RWS" name="Toetsing DIN aan normen $huidige_SGBP$">
+						<description>Toetsing DIN aan normen $huidige_SGBP$ per waterlichaam</description>
+						<dataLayer>
+							<onlyCircles>true</onlyCircles>
+							<circleSizeFunction>10</circleSizeFunction>
+							<circleBorderSize>1</circleBorderSize>
+							<circleBorderColor>black</circleBorderColor>
+							<timeSeriesSet>
+								<moduleInstanceId>SamenvoegenToetsing_DIN</moduleInstanceId>
+								<valueType>scalar</valueType>
+								<parameterId>Oordeel</parameterId>
+								<qualifierId>BE_SGBPhuidig_toets</qualifierId>
+								<qualifierId>HH_4</qualifierId>
+								<locationSetId>KRW-wl-wkb-Rijkswaterstaat-zout</locationSetId>
+								<timeSeriesType>simulated historical</timeSeriesType>
+								<timeStep id="jaar"/>
+								<relativeViewPeriod unit="day" start="-3500" end="0"/>
+								<readWriteMode>read complete forecast</readWriteMode>
+							</timeSeriesSet>
+						</dataLayer>
+						<movieFrameDurationMillis>50</movieFrameDurationMillis>
+						<classBreaks>
+							<color color="red" lowerValue="1" label="slecht"/>
+							<color color="orange" lowerValue="2" label="ontoereikend"/>
+							<color color="yellow" lowerValue="3" label="matig"/>
+							<color color="green" lowerValue="4" label="goed"/>
+						</classBreaks>
+					</gridPlot>
+					<gridPlot id="DIN Verschilkaart Toetsing actueel vs. voorlaatste_SGBP (-) RWS" name="Verschilkaart toetsing DIN actueel vs. $voorlaatste_SGBP$ (-)">
+						<description>Verschilkaart toetsing DIN actueel vs. $voorlaatste_SGBP$ per waterlichaam (-)</description>
+						<dataLayer>
+							<onlyCircles>true</onlyCircles>
+							<circleSizeFunction>10</circleSizeFunction>
+							<circleBorderSize>1</circleBorderSize>
+							<circleBorderColor>black</circleBorderColor>
+							<timeSeriesSet>
+								<moduleInstanceId>SamenvoegenToetsing_DIN</moduleInstanceId>
+								<valueType>scalar</valueType>
+								<parameterId>Oordeel</parameterId>
+								<qualifierId>HH_4</qualifierId>
+								<qualifierId>BE_shift</qualifierId>
+								<qualifierId>BE_SGBP2009</qualifierId>
+								<qualifierId>BE_trend</qualifierId>
+								<locationSetId>KRW-wl-wkb-Rijkswaterstaat-zout</locationSetId>
+								<timeSeriesType>simulated historical</timeSeriesType>
+								<timeStep id="jaar"/>
+								<relativeViewPeriod unit="day" start="-1" startOverrulable="false" end="0" endOverrulable="true"/>
+								<readWriteMode>read complete forecast</readWriteMode>
+							</timeSeriesSet>
+						</dataLayer>
+						<movieFrameDurationMillis>50</movieFrameDurationMillis>
+						<classBreaks>
+							<color color="red" lowerValue="-1" label="verslechterd"/>
+							<color color="yellow" lowerValue="0" label="gelijkblijvend"/>
+							<color color="green" lowerValue="1" label="verbeterd"/>
+						</classBreaks>
+					</gridPlot>
+					<gridPlot id="DIN Verschilkaart Toetsing actueel vs. laatste_SGBP (-) RWS" name="Verschilkaart toetsing DIN actueel vs. $laatste_SGBP$ (-)">
+						<description>Verschilkaart toetsing DIN actueel vs. $laatste_SGBP$ per waterlichaam (-)</description>
+						<dataLayer>
+							<onlyCircles>true</onlyCircles>
+							<circleSizeFunction>10</circleSizeFunction>
+							<circleBorderSize>1</circleBorderSize>
+							<circleBorderColor>black</circleBorderColor>
+							<timeSeriesSet>
+								<moduleInstanceId>SamenvoegenToetsing_DIN</moduleInstanceId>
+								<valueType>scalar</valueType>
+								<parameterId>Oordeel</parameterId>
+								<qualifierId>HH_4</qualifierId>
+								<qualifierId>BE_shift</qualifierId>
+								<qualifierId>BE_SGBP2015</qualifierId>
+								<qualifierId>BE_trend</qualifierId>
+								<locationSetId>KRW-wl-wkb-Rijkswaterstaat-zout</locationSetId>
+								<timeSeriesType>simulated historical</timeSeriesType>
+								<timeStep id="jaar"/>
+								<relativeViewPeriod unit="day" start="-1" startOverrulable="false" end="0" endOverrulable="true"/>
+								<readWriteMode>read complete forecast</readWriteMode>
+							</timeSeriesSet>
+						</dataLayer>
+						<movieFrameDurationMillis>50</movieFrameDurationMillis>
+						<classBreaks>
+							<color color="red" lowerValue="-1" label="verslechterd"/>
+							<color color="yellow" lowerValue="0" label="gelijkblijvend"/>
+							<color color="green" lowerValue="1" label="verbeterd"/>
+						</classBreaks>
+					</gridPlot>
+					<gridPlot id="DIN Verschil t.o.v. de huidige norm Goed (-; doelgat) RWS" name="Doelgat (afstand tot de norm ‘goed’)">
+						<description>Doelgat per waterlichaam (afstand tot de norm ‘goed’)</description>
+						<dataLayer>
+							<onlyCircles>true</onlyCircles>
+							<circleSizeFunction>10</circleSizeFunction>
+							<circleBorderSize>1</circleBorderSize>
+							<circleBorderColor>black</circleBorderColor>
+							<timeSeriesSet>
+								<moduleInstanceId>SamenvoegenToetsing_DIN</moduleInstanceId>
+								<valueType>scalar</valueType>
+								<parameterId>Oordeel</parameterId>
+								<qualifierId>HH_4</qualifierId>
+								<qualifierId>BE_doelgat</qualifierId>
+								<locationSetId>KRW-wl-wkb-Rijkswaterstaat-zout</locationSetId>
+								<timeSeriesType>simulated historical</timeSeriesType>
+								<timeStep id="jaar"/>
+								<relativeViewPeriod unit="day" start="-10000" startOverrulable="true" end="0" endOverrulable="true"/>
+								<readWriteMode>read complete forecast</readWriteMode>
+							</timeSeriesSet>
+						</dataLayer>
+						<movieFrameDurationMillis>50</movieFrameDurationMillis>
+						<classBreaks>
+							<color color="brown" lowerValue="1" label=">5 keer de norm"/>
+							<color color="orange red" lowerValue="2" label="2 tot 5 keer de norm"/>
+							<color color="dark goldenrod1" lowerValue="3" label="1.5 tot 2 keer de norm"/>
+							<color color="yellow" lowerValue="4" label="1 tot 1.5 keer de norm"/>
+							<color color="white" lowerValue="5" label="binnen de norm"/>
+						</classBreaks>
+					</gridPlot>
+				</gridPlotGroup>
+			</gridPlotGroup>
+		</gridPlotGroup>
+		<gridPlotGroup id="KRW-monitoringslocaties">
+			<gridPlotGroup id="N totaal">
+				<gridPlot id="Ntot Trendhelling (% per decennium) RWS">
+					<description>Trendhelling per monitoringslocatie (% per decennium)</description>
+					<dataLayer>
+						<onlyCircles>true</onlyCircles>
+						<circleSizeFunction>10</circleSizeFunction>
+						<circleBorderSize>1</circleBorderSize>
+						<circleBorderColor>black</circleBorderColor>
+						<timeSeriesSet>
+							<moduleInstanceId>Import_Trend_CSV</moduleInstanceId>
+							<valueType>scalar</valueType>
+							<parameterId>Trendhelling_perc</parameterId>
+							<qualifierId>HH_1</qualifierId>
+							<qualifierId>WT_2</qualifierId>
+							<locationSetId>KRW-mn-wkb-Rijkswaterstaat_zoet</locationSetId>
+							<timeSeriesType>external historical</timeSeriesType>
+							<timeStep unit="nonequidistant"/>
+							<relativeViewPeriod unit="day" start="-1096" end="0"/>
+							<readWriteMode>read complete forecast</readWriteMode>
+						</timeSeriesSet>
+					</dataLayer>
+					<movieFrameDurationMillis>50</movieFrameDurationMillis>
+					<classBreaks>
+						<color color="green4" lowerValue="-1000" label="kleiner dan -50%"/>
+						<color color="lawn green" lowerValue="-50" label="-50 tot -25%"/>
+						<color color="yellow" lowerValue="-25" label="-25 tot 0%"/>
+						<color color="gray90" opaquenessPercentage="90" lowerValue="0" label="geen significante trend"/>
+						<color color="dark goldenrod1" lowerValue="0.0000001" label="0 - 25%"/>
+						<color color="red" lowerValue="25" label="groter dan 25%"/>
+					</classBreaks>
+				</gridPlot>
+			</gridPlotGroup>
+			<gridPlotGroup id="P totaal">
+				<gridPlot id="Ptot Trendhelling (% per decennium) RWS">
+					<description>Trendhelling per monitoringslocatie (% per decennium)</description>
+					<dataLayer>
+						<onlyCircles>true</onlyCircles>
+						<circleSizeFunction>10</circleSizeFunction>
+						<circleBorderSize>1</circleBorderSize>
+						<circleBorderColor>black</circleBorderColor>
+						<timeSeriesSet>
+							<moduleInstanceId>Import_Trend_CSV</moduleInstanceId>
+							<valueType>scalar</valueType>
+							<parameterId>Trendhelling_perc</parameterId>
+							<qualifierId>HH_2</qualifierId>
+							<qualifierId>WT_2</qualifierId>
+							<locationSetId>KRW-mn-wkb-Rijkswaterstaat_zoet</locationSetId>
+							<timeSeriesType>external historical</timeSeriesType>
+							<timeStep unit="nonequidistant"/>
+							<relativeViewPeriod unit="day" start="-1096" end="0"/>
+							<readWriteMode>read complete forecast</readWriteMode>
+						</timeSeriesSet>
+					</dataLayer>
+					<movieFrameDurationMillis>50</movieFrameDurationMillis>
+					<classBreaks>
+						<color color="green4" lowerValue="-1000" label="kleiner dan -50%"/>
+						<color color="lawn green" lowerValue="-50" label="-50 tot -25%"/>
+						<color color="yellow" lowerValue="-25" label="-25 tot 0%"/>
+						<color color="gray90" opaquenessPercentage="90" lowerValue="0" label="geen significante trend"/>
+						<color color="dark goldenrod1" lowerValue="0.0000001" label="0 - 25%"/>
+						<color color="red" lowerValue="25" label="groter dan 25%"/>
+					</classBreaks>
+				</gridPlot>
+			</gridPlotGroup>
+			<gridPlotGroup id="Winter DIN">
+				<gridPlot id="DIN Trendhelling (% per decennium) RWS">
+					<description>Trendhelling per monitoringslocatie (% per decennium)</description>
+					<dataLayer>
+						<onlyCircles>true</onlyCircles>
+						<circleSizeFunction>10</circleSizeFunction>
+						<circleBorderSize>1</circleBorderSize>
+						<circleBorderColor>black</circleBorderColor>
+						<timeSeriesSet>
+							<moduleInstanceId>Import_Trend_CSV</moduleInstanceId>
+							<valueType>scalar</valueType>
+							<parameterId>Trendhelling_perc</parameterId>
+							<qualifierId>HH_4</qualifierId>
+							<qualifierId>WT_2</qualifierId>
+							<locationSetId>KRW-mn-wkb-Rijkswaterstaat_zout</locationSetId>
+							<timeSeriesType>external historical</timeSeriesType>
+							<timeStep unit="nonequidistant"/>
+							<relativeViewPeriod unit="day" start="-1096" end="0"/>
+							<readWriteMode>read complete forecast</readWriteMode>
+						</timeSeriesSet>
+					</dataLayer>
+					<movieFrameDurationMillis>50</movieFrameDurationMillis>
+					<classBreaks>
+						<color color="green4" lowerValue="-1000" label="kleiner dan -50%"/>
+						<color color="lawn green" lowerValue="-50" label="-50 tot -25%"/>
+						<color color="yellow" lowerValue="-25" label="-25 tot 0%"/>
+						<color color="gray90" opaquenessPercentage="90" lowerValue="0" label="geen significante trend"/>
+						<color color="dark goldenrod1" lowerValue="0.0000001" label="0 - 25%"/>
+						<color color="red" lowerValue="25" label="groter dan 25%"/>
+					</classBreaks>
+				</gridPlot>
+			</gridPlotGroup>
+		</gridPlotGroup>
+	</gridPlotGroup>
+</gridDisplay>

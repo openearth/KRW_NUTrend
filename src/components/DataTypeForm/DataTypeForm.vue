@@ -24,7 +24,6 @@
         <v-select
           :items="particleList"
           :value="selectedParticle"
-          placeholder="selecteer stof"
           append-icon="mdi-chevron-down"
           outlined
           dense
@@ -41,7 +40,7 @@
         <v-slider
           :thumb-label="true"
           min="1991"
-          :max="currentYear"
+          max="2020"
           :value="selectedYear"
           @change="updateSelectedYear"
           @end="onSelectedYear"
@@ -63,8 +62,9 @@
     data() {
       return {
         typeList: [],
-        currentYear: new Date().getFullYear(),
+        //currentYear: new Date().getFullYear(),
         selectedYear: '',
+        particleList: [],
       }
     },
     computed: {
@@ -73,13 +73,6 @@
         'selectedType',
         'selectedParticle',
       ]),
-      particleList() {
-        const service = services.find(service => service.id === this.selectedType)
-
-        return service.areas
-          .map(area => ({ text: area.name, value: area.id }))
-          .sort((a, b) => a.text.localeCompare(b.text))
-      },
     },
     watch: {
       selectedTimestamp: {
@@ -93,6 +86,7 @@
     },
     created() {
       this.createTypeList(services)
+      this.createParticleList(services)
     },
     methods: {
       ...mapActions('filters', [
@@ -100,6 +94,7 @@
         'setSelectedParticle',
         'setSelectedTimestamp',
       ]),
+      ...mapActions('layers', [ 'getTimeSeries' ]),
       onSelectedType(value) {
         this.setSelectedType({ selectedType: value })
       },
@@ -109,6 +104,8 @@
       onSelectedYear(value) {
         const timestamp = getISOTimestamp(value)
         this.setSelectedTimestamp({ selectedTimestamp: timestamp })
+        this.getTimeSeries()
+       
       },
       updateSelectedYear(value) {
         this.selectedYear = value
@@ -119,8 +116,17 @@
           .sort((a, b) => a.text.localeCompare(b.text))
 
         // set first option as selected by default.
-        this.setSelectedType({ selectedType: this.typeList[0].value })
+        this.setSelectedType({ selectedType: this.typeList[1].value })
       },
+      createParticleList(services) {
+        const service = services.find(service => service.id === this.selectedType)
+
+        this.particleList = service.spatialPlots
+          .map(spatialPlot => ({ text: spatialPlot.name, value: spatialPlot.id }))
+          .sort((a, b) => a.text.localeCompare(b.text))
+        this.setSelectedParticle({ selectedParticle: this.particleList[2].value })
+      },
+
     },
   }
 </script>
