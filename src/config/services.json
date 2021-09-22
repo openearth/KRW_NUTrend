@@ -30,7 +30,8 @@
                 "#ccc"
               ]
             },
-            "url": null
+            "url": null,
+            "locationParameters": {}
           },
           {
             "id": "krw-wl-ntot-2",
@@ -74,13 +75,16 @@
                 "#E9E6EA"
               ]
             },
-            "startTime": 2009,
-            "endTime": 2020,
-            "url": "http://185.224.89.110:8082/FewsWebServices/rest/fewspiservice/v1/timeseries?filterId=krw-wl-ntot-toets-lSGBP&startTime=2009-01-01T00%3A00%3A00Z&endTime=2020-01-01T00%3A00%3A00Z&showThresholds=true&showStatistics=true&documentFormat=PI_JSON"
+            "url": "http://185.224.89.110:8082/FewsWebServices/rest/fewspiservice/v1/timeseries?filterId=krw-wl-ntot-toets-lSGBP&startTime=2009-01-01T00%3A00%3A00Z&endTime=2020-01-01T00%3A00%3A00Z&showThresholds=true&showStatistics=true&documentFormat=PI_JSON",
+            "locationParameters": {}
           },
           {
             "id": "krw-wl-ntot-3",
-            "name": "Verschilkaart toetsing stikstof actueel vs. toetsjaar 2015"
+            "name": "Verschilkaart toetsing stikstof actueel vs. toetsjaar 2015",
+            "data": {},
+            "paint": {},
+            "url": null,
+            "locationParameters": {}
           },
           {
             "id": "krw-wl-ntot-toets-doelgat",
@@ -106,7 +110,9 @@
                 "#ff0000",
                 "#ffffff"
               ]
-            }
+            },
+            "url": null,
+            "locationParameters": {}
           }
         ]
       },
@@ -138,15 +144,25 @@
                 "#E51B23",
                 "#ccc"
               ]
-            }
+            },
+            "url": null,
+            "locationParameters": {}
           },
           {
             "id": "krw-wl-ptot-2",
-            "name": "Verschilkaart toetsing fosfor actueel vs. toetsjaar 2009"
+            "name": "Verschilkaart toetsing fosfor actueel vs. toetsjaar 2009",
+            "data": {},
+            "paint": {},
+            "url": null,
+            "locationParameters": {}
           },
           {
             "id": "krw-wl-ptot-3",
-            "name": "Verschilkaart toetsing fosfor actueel vs. toetsjaar 2015"
+            "name": "Verschilkaart toetsing fosfor actueel vs. toetsjaar 2015",
+            "data": {},
+            "paint": {},
+            "url": null,
+            "locationParameters": {}
           },
           {
             "id": "krw-wl-ptot-toets-doelgat",
@@ -174,7 +190,9 @@
                 "#ff0000",
                 "#ccc"
               ]
-            }
+            },
+            "url": null,
+            "locationParameters": {}
           }
         ]
       },
@@ -206,15 +224,25 @@
                 "#E51B23",
                 "#ccc"
               ]
-            }
+            },
+            "url": null,
+            "locationParameters": {}
           },
           {
             "id": "krw-wl-din-2",
-            "name": "Verschilkaart toetsing DIN actueel vs. toetsjaar 2009"
+            "name": "Verschilkaart toetsing DIN actueel vs. toetsjaar 2009",
+            "data": {},
+            "paint": {},
+            "url": null,
+            "locationParameters": {}
           },
           {
             "id": "krw-wl-din-3",
-            "name": "Verschilkaart toetsing DIN actueel vs. toetsjaar 2015"
+            "name": "Verschilkaart toetsing DIN actueel vs. toetsjaar 2015",
+            "data": {},
+            "paint": {},
+            "url": null,
+            "locationParameters": {}
           },
           {
             "id": "krw-wl-din-toets-doelgat",
@@ -242,7 +270,9 @@
                 "#980517",
                 "#ccc"
               ]
-            }
+            },
+            "url": null,
+            "locationParameters": {}
           }
         ]
       }
@@ -258,7 +288,11 @@
         "services": [
           {
             "id": "krw-wl-ntot-1",
-            "name": "Trendhelling (% per decennium)"
+            "name": "Trendhelling (% per decennium)",
+            "data": {},
+            "paint": {},
+            "url": null,
+            "locationParameters": {}
           }
         ]
       },
@@ -268,7 +302,11 @@
         "services": [
           {
             "id": "krw-wl-ptot-1",
-            "name": "Trendhelling (% per decennium)"
+            "name": "Trendhelling (% per decennium)",
+            "data": {},
+            "paint": {},
+            "url": null,
+            "locationParameters": {}
           }
         ]
       },
@@ -278,7 +316,11 @@
         "services": [
           {
             "id": "krw-wl-din-1",
-            "name": "Trendhelling (% per decennium)"
+            "name": "Trendhelling (% per decennium)",
+            "data": {},
+            "paint": {},
+            "url": null,
+            "locationParameters": {}
           }
         ]
       }
@@ -293,32 +335,86 @@
         "name": "Stikstof",
         "services": [
           {
-            "id": "krw-wl-ntot-1",
-            "name": "3-jarig zomergemiddelde (mg/l)"
+            "id": "krw-wl-ntot-zomgem-basis",
+            "name": "3-jarig zomergemiddelde (mg/l)",
+            "data": {},
+            "paint": {
+              "circle-radius": 6,
+              "circle-color": [
+                "match",
+                [
+                  "get",
+                  "value"
+                ],
+                "4",
+                "#a0ee45",
+                "3",
+                "#ffff00",
+                "2",
+                "#EE9900",
+                "1",
+                "#E51B23",
+                "#ccc"
+              ]
+            },
+            "url": null,
+            "locationParameters": {
+              "filterId": "krw-wl-gr-ntot",
+              "moduleInstanceIds": "SamenvoegenToetsing_Ntot",
+              "qualifierIds": "HH_1",
+              "startTime": "1980-01-01T00:00:00Z",
+              "endTime": "2020-01-01T00:00:00Z",
+              "timeStepId": "jaar",
+              "documentFormat": "PI_JSON"
+            }
           },
           {
             "id": "krw-wl-ntot-2",
-            "name": "Verschilkaart actueel t.o.v. toetsjaar 2009 (3 voorgaande jaren, mg/l)"
+            "name": "Verschilkaart actueel t.o.v. toetsjaar 2009 (3 voorgaande jaren, mg/l)",
+            "data": {},
+            "paint": {},
+            "url": null,
+            "locationParameters": {}
           },
           {
             "id": "krw-wl-ntot-3",
-            "name": "Verschilkaart actueel t.o.v. toetsjaar 2015 (3 voorgaande jaren, mg/l)"
+            "name": "Verschilkaart actueel t.o.v. toetsjaar 2015 (3 voorgaande jaren, mg/l)",
+            "data": {},
+            "paint": {},
+            "url": null,
+            "locationParameters": {}
           },
           {
             "id": "krw-wl-ntot-4",
-            "name": "Jaargemiddelde (mg/l)"
+            "name": "Jaargemiddelde (mg/l)",
+            "data": {},
+            "paint": {},
+            "url": null,
+            "locationParameters": {}
           },
           {
             "id": "krw-wl-ntot-5",
-            "name": "Normklassegrens goed-matig (mg/l)"
+            "name": "Normklassegrens goed-matig (mg/l)",
+            "data": {},
+            "paint": {},
+            "url": null,
+            "locationParameters": {}
           },
           {
             "id": "krw-wl-ntot-6",
-            "name": "Normklassegrens matig-ontoereikend (mg/l)"
+            "name": "Normklassegrens matig-ontoereikend (mg/l)",
+            "data": {},
+            "paint": {},
+            "url": null,
+            "locationParameters": {}
           },
           {
             "id": "krw-wl-ntot-7",
-            "name": "Normklassegrens ontoereikend-slecht (mg/l)"
+            "name": "Normklassegrens ontoereikend-slecht (mg/l)",
+            "data": {},
+            "paint": {},
+            "url": null,
+            "locationParameters": {}
           }
         ]
       },
@@ -328,31 +424,59 @@
         "services": [
           {
             "id": "krw-wl-ptot-1",
-            "name": "3-jarig zomergemiddelde (mg/l)"
+            "name": "3-jarig zomergemiddelde (mg/l)",
+            "data": {},
+            "paint": {},
+            "url": null,
+            "locationParameters": {}
           },
           {
             "id": "krw-wl-ptot-2",
-            "name": "Verschilkaart actueel t.o.v. toetsjaar 2009 (3 voorgaande jaren, mg/l)"
+            "name": "Verschilkaart actueel t.o.v. toetsjaar 2009 (3 voorgaande jaren, mg/l)",
+            "data": {},
+            "paint": {},
+            "url": null,
+            "locationParameters": {}
           },
           {
             "id": "krw-wl-ptot-3",
-            "name": "Verschilkaart actueel t.o.v. toetsjaar 2015 (3 voorgaande jaren, mg/l)"
+            "name": "Verschilkaart actueel t.o.v. toetsjaar 2015 (3 voorgaande jaren, mg/l)",
+            "data": {},
+            "paint": {},
+            "url": null,
+            "locationParameters": {}
           },
           {
             "id": "krw-wl-ptot-4",
-            "name": "Jaargemiddelde (mg/l)"
+            "name": "Jaargemiddelde (mg/l)",
+            "data": {},
+            "paint": {},
+            "url": null,
+            "locationParameters": {}
           },
           {
             "id": "krw-wl-ptot-5",
-            "name": "Normklassegrens goed-matig (mg/l)"
+            "name": "Normklassegrens goed-matig (mg/l)",
+            "data": {},
+            "paint": {},
+            "url": null,
+            "locationParameters": {}
           },
           {
             "id": "krw-wl-ptot-6",
-            "name": "Normklassegrens matig-ontoereikend (mg/l)"
+            "name": "Normklassegrens matig-ontoereikend (mg/l)",
+            "data": {},
+            "paint": {},
+            "url": null,
+            "locationParameters": {}
           },
           {
             "id": "krw-wl-ptot-7",
-            "name": "Normklassegrens ontoereikend-slecht (mg/l)"
+            "name": "Normklassegrens ontoereikend-slecht (mg/l)",
+            "data": {},
+            "paint": {},
+            "url": null,
+            "locationParameters": {}
           }
         ]
       },
@@ -362,31 +486,59 @@
         "services": [
           {
             "id": "krw-wl-din-1",
-            "name": "3-jarig wintergemiddelde (mg/l)"
+            "name": "3-jarig wintergemiddelde (mg/l)",
+            "data": {},
+            "paint": {},
+            "url": null,
+            "locationParameters": {}
           },
           {
             "id": "krw-wl-din-2",
-            "name": "Verschilkaart actueel t.o.v. toetsjaar 2009 (3 voorgaande jaren, mg/l)"
+            "name": "Verschilkaart actueel t.o.v. toetsjaar 2009 (3 voorgaande jaren, mg/l)",
+            "data": {},
+            "paint": {},
+            "url": null,
+            "locationParameters": {}
           },
           {
             "id": "krw-wl-din-3",
-            "name": "Verschilkaart actueel t.o.v. toetsjaar 2015 (3 voorgaande jaren, mg/l)"
+            "name": "Verschilkaart actueel t.o.v. toetsjaar 2015 (3 voorgaande jaren, mg/l)",
+            "data": {},
+            "paint": {},
+            "url": null,
+            "locationParameters": {}
           },
           {
             "id": "krw-wl-din-4",
-            "name": "Jaargemiddelde (mg/l)"
+            "name": "Jaargemiddelde (mg/l)",
+            "data": {},
+            "paint": {},
+            "url": null,
+            "locationParameters": {}
           },
           {
             "id": "krw-wl-din-5",
-            "name": "Normklassegrens goed-matig (mg/l)"
+            "name": "Normklassegrens goed-matig (mg/l)",
+            "data": {},
+            "paint": {},
+            "url": null,
+            "locationParameters": {}
           },
           {
             "id": "krw-wl-din-6",
-            "name": "Normklassegrens matig-ontoereikend (mg/l)"
+            "name": "Normklassegrens matig-ontoereikend (mg/l)",
+            "data": {},
+            "paint": {},
+            "url": null,
+            "locationParameters": {}
           },
           {
             "id": "krw-wl-din-7",
-            "name": "Normklassegrens ontoereikend-slecht (mg/l)"
+            "name": "Normklassegrens ontoereikend-slecht (mg/l)",
+            "data": {},
+            "paint": {},
+            "url": null,
+            "locationParameters": {}
           }
         ]
       }
