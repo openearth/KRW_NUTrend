@@ -112,6 +112,7 @@
         this.setSelectedBodyOfWater({ selectedBodyOfWater: value })
       },
     },
+
     methods: {
       ...mapActions('filters', [
         'setSelectedBasin',
@@ -132,5 +133,6 @@
         this.selectedBodyOfWater = value
       },
     },
+
   }
 </script>

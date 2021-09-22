@@ -37,36 +37,42 @@
       ]),
       mappedServices() {
         const type = services.find(service => service.id === this.selectedType)
-        const area = type.areas.find(area => area.id === this.selectedParticle)
+        const spatialPlot = type.spatialPlots.find(spatialPlot => spatialPlot.id === this.selectedParticle)
 
-        return area.services
+        return spatialPlot.services
       },
       panels() {
-        return this.mappedServices.map(({ id, name, layer }) => {
+        return this.mappedServices.map(({ id, name, paint, url }) => {
           const content = this.importFileContent(id)
-
           return {
             content: content.default,
             id,
             title: name,
-            layer,
+            paint,
+            url,
           }
         })
       },
     },
+   
     methods: {
-      ...mapActions('layers', [ 'getTimeSeries', 'setActiveMapLayer' ]),
+      ...mapActions('layers', [ 'getTimeSeries', 'setActiveMapLayer', 'getTimeSeriesDifferenceMaps' ]),
       importFileContent(fileName) {
         return require(`~/content/services/${ this.selectedType }/${ this.selectedParticle }/${ fileName }.md`)
       },
       onTransitionEnd(event, index, panel) {
         const { isActive } = this.$refs[`panel-${ index }`][0]
         const { propertyName } = event
-        const url = panel?.layer?.url
-
-        if (isActive && propertyName === 'min-height' && url) {
-          this.getTimeSeries({ url: panel.layer.url })
-          this.setActiveMapLayer({ activeMapLayer: panel })
+        
+        if (isActive && propertyName === 'min-height' ) {
+          if (panel.url) {
+            this.setActiveMapLayer({ activeMapLayer: panel }) 
+            this.getTimeSeriesDifferenceMaps()
+          }else{
+            this.setActiveMapLayer({ activeMapLayer: panel }) 
+            this.getTimeSeries() 
+          }
+          
         }
       },
     },
