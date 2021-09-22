@@ -54,25 +54,28 @@
         })
       },
     },
-   
+
     methods: {
-      ...mapActions('layers', [ 'getTimeSeries', 'setActiveMapLayer', 'getTimeSeriesDifferenceMaps' ]),
+      ...mapActions('layers', [
+        'getTimeSeries',
+        'setActiveMapLayer',
+        'getTimeSeriesDifferenceMaps',
+      ]),
       importFileContent(fileName) {
         return require(`~/content/services/${ this.selectedType }/${ this.selectedParticle }/${ fileName }.md`)
       },
       onTransitionEnd(event, index, panel) {
         const { isActive } = this.$refs[`panel-${ index }`][0]
         const { propertyName } = event
-        
+
         if (isActive && propertyName === 'min-height' ) {
           if (panel.url) {
-            this.setActiveMapLayer({ activeMapLayer: panel }) 
+            this.setActiveMapLayer({ activeMapLayer: panel })
             this.getTimeSeriesDifferenceMaps()
-          }else{
-            this.setActiveMapLayer({ activeMapLayer: panel }) 
-            this.getTimeSeries() 
+          } else {
+            this.setActiveMapLayer({ activeMapLayer: panel })
+            this.getTimeSeries()
           }
-          
         }
       },
     },
