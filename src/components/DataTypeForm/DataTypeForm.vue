@@ -42,6 +42,7 @@
           min="1991"
           max="2020"
           :value="selectedYear"
+          :disabled="!activeMapLayer"
           @change="updateSelectedYear"
           @end="onSelectedYear"
         />
@@ -62,12 +63,14 @@
     data() {
       return {
         typeList: [],
-        //currentYear: new Date().getFullYear(),
         selectedYear: '',
         particleList: [],
       }
     },
     computed: {
+      ...mapState('layers', [
+        'activeMapLayer',
+      ]),
       ...mapState('filters', [
         'selectedTimestamp',
         'selectedType',
@@ -105,7 +108,6 @@
         const timestamp = getISOTimestamp(value)
         this.setSelectedTimestamp({ selectedTimestamp: timestamp })
         this.getTimeSeries()
-       
       },
       updateSelectedYear(value) {
         this.selectedYear = value
