@@ -32,6 +32,7 @@
         :key="layer.id"
         :options="layer"
       />
+      <map-controls v-if="availableLayer" :layer="availableLayer" />
     </mapbox-map>
   </app-shell>
 </template>
@@ -47,12 +48,16 @@
 
   import AppShell from '~/components/AppShell/AppShell'
   import LegalDialog from '~/components/LegalDialog/LegalDialog'
+  import MapControls from '~/components/MapControls/MapControls'
+
 
   export default {
     components: {
       AppShell,
       MapboxMap,
       LegalDialog,
+      MapControls,
+       
     },
     data: () => ({
       accessToken: process.env.VUE_APP_MAPBOX_TOKEN,
@@ -71,8 +76,12 @@
       availableLayer: {
         handler() {
           // Want to empty the layers every time we click to open a new one.
+          
           this.layers = []
-          this.layers.push(buildGeojonLayer(this.availableLayer))
+          if (this.availableLayer) {
+            this.layers.push(buildGeojonLayer(this.availableLayer))
+          }
+          
         },
       },
     },

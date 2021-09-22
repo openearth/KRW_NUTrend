@@ -44,10 +44,6 @@
       panels() {
         return this.mappedServices.map(({ id, name, paint, url }) => {
           const content = this.importFileContent(id)
-          // TODO async call wait for the colors
-          // read them transform them to paint
-          // function to transform them to the correct format
-          // return the paint
           return {
             content: content.default,
             id,
