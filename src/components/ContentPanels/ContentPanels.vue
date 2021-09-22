@@ -58,7 +58,7 @@
     methods: {
       ...mapActions('layers', [
         'getTimeSeries',
-        'setActiveMapLayer',
+        'setActiveMap',
         'getTimeSeriesDifferenceMaps',
       ]),
       importFileContent(fileName) {
@@ -70,10 +70,10 @@
 
         if (isActive && propertyName === 'min-height' ) {
           if (panel.url) {
-            this.setActiveMapLayer({ activeMapLayer: panel })
+            this.setActiveMap({ activeMap: panel })
             this.getTimeSeriesDifferenceMaps()
           } else {
-            this.setActiveMapLayer({ activeMapLayer: panel })
+            this.setActiveMap({ activeMap: panel })
             this.getTimeSeries()
           }
         }

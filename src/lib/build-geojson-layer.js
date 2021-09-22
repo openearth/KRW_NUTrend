@@ -9,5 +9,3 @@ export default ({ id, data, paint }) => {
     paint,
   }
 }
-
-

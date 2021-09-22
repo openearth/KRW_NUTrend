@@ -42,7 +42,7 @@
           min="1991"
           max="2020"
           :value="selectedYear"
-          :disabled="!activeMapLayer"
+          :disabled="!activeMap"
           @change="updateSelectedYear"
           @end="onSelectedYear"
         />
@@ -69,7 +69,7 @@
     },
     computed: {
       ...mapState('layers', [
-        'activeMapLayer',
+        'activeMap',
       ]),
       ...mapState('filters', [
         'selectedTimestamp',

@@ -65,6 +65,16 @@
           </v-col>
         </v-row>
 
+        <v-row v-if="activeMapLocation">
+          <v-col>
+            <active-location-card
+              :name="activeMapLocation"
+              :id="activeMapLocation.id"
+              :value="activeMapLocation.value"
+            />
+          </v-col>
+        </v-row>
+
         <v-row v-if="!selectedBasin && !selectedWaterManager">
           <v-col>
             <chart-modal-activator
@@ -98,6 +108,7 @@
 <script>
   import { mapState } from 'vuex'
 
+  import ActiveLocationCard from '~/components/ActiveLocationCard/ActiveLocationCard'
   import AppDivider from '~/components/AppDivider/AppDivider'
   import ChartModal from '~/components/ChartModal/ChartModal'
   import ChartModalActivator from '~/components/ChartModalActivator/ChartModalActivator'
@@ -108,6 +119,7 @@
   export default {
     name: 'Home',
     components: {
+      ActiveLocationCard,
       AppDivider,
       ChartModal,
       ChartModalActivator,
@@ -119,6 +131,9 @@
       ...mapState('filters', [
         'selectedBasin',
         'selectedWaterManager',
+      ]),
+      ...mapState('layers', [
+        'activeMapLocation',
       ]),
     },
   }
