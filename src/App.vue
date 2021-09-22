@@ -57,7 +57,7 @@
       MapboxMap,
       LegalDialog,
       MapControls,
-       
+
     },
     data: () => ({
       accessToken: process.env.VUE_APP_MAPBOX_TOKEN,
@@ -76,12 +76,10 @@
       availableLayer: {
         handler() {
           // Want to empty the layers every time we click to open a new one.
-          
           this.layers = []
           if (this.availableLayer) {
             this.layers.push(buildGeojonLayer(this.availableLayer))
           }
-          
         },
       },
     },
