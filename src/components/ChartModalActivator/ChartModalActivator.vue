@@ -2,7 +2,7 @@
   <v-card class="chart-modal-activator" outlined>
     <div class="d-flex flex-no-wrap justify-space-between">
       <div>
-        <v-card-title>{{ modalTitle }}</v-card-title>
+        <v-card-title>{{ title }}</v-card-title>
         <v-card-actions>
           <v-btn depressed @click="onButtonClick">
             Bekijken
@@ -21,22 +21,26 @@
 </template>
 
 <script>
-  import { mapActions, mapState } from 'vuex'
+  import { mapActions } from 'vuex'
 
   export default {
     name: 'ChartModalActivator',
     inheritAttrs: false,
     props: {
+      title: {
+        type: String,
+        required: true,
+      },
       modalTitle: {
         type: String,
         required: true,
       },
     },
-    computed: {
-      ...mapState('modal', [
-        'title',
-      ]),
-    },
+    // computed: {
+    //   ...mapState('modal', [
+    //     'title',
+    //   ]),
+    // },
     methods: {
       ...mapActions('modal', [
         'setIsOpen',

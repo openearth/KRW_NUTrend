@@ -31,7 +31,7 @@
               ]
             },
             "url": null,
-            "locationParameters": {}
+            "components": []
           },
           {
             "id": "krw-wl-ntot-2",
@@ -75,8 +75,8 @@
                 "#E9E6EA"
               ]
             },
-            "url": "http://185.224.89.110:8082/FewsWebServices/rest/fewspiservice/v1/timeseries?filterId=krw-wl-ntot-toets-lSGBP&startTime=2009-01-01T00%3A00%3A00Z&endTime=2020-01-01T00%3A00%3A00Z&showThresholds=true&showStatistics=true&documentFormat=PI_JSON",
-            "locationParameters": {}
+            "url": "http://185.224.89.110:8082/FewsWebServices/rest/fewspiservice/v1/timeseries?filterId=krw-wl-ntot-toets-lSGBP&startTime=2009-01-01T00:00:00Z&endTime=2020-01-01T00:00:00Z&showThresholds=true&showStatistics=true&documentFormat=PI_JSON",
+            "components": []
           },
           {
             "id": "krw-wl-ntot-3",
@@ -84,7 +84,7 @@
             "data": {},
             "paint": {},
             "url": null,
-            "locationParameters": {}
+            "components": []
           },
           {
             "id": "krw-wl-ntot-toets-doelgat",
@@ -112,7 +112,7 @@
               ]
             },
             "url": null,
-            "locationParameters": {}
+            "components": []
           }
         ]
       },
@@ -146,7 +146,7 @@
               ]
             },
             "url": null,
-            "locationParameters": {}
+            "components": []
           },
           {
             "id": "krw-wl-ptot-2",
@@ -154,7 +154,7 @@
             "data": {},
             "paint": {},
             "url": null,
-            "locationParameters": {}
+            "components": []
           },
           {
             "id": "krw-wl-ptot-3",
@@ -162,7 +162,7 @@
             "data": {},
             "paint": {},
             "url": null,
-            "locationParameters": {}
+            "components": []
           },
           {
             "id": "krw-wl-ptot-toets-doelgat",
@@ -192,7 +192,7 @@
               ]
             },
             "url": null,
-            "locationParameters": {}
+            "components": []
           }
         ]
       },
@@ -226,7 +226,7 @@
               ]
             },
             "url": null,
-            "locationParameters": {}
+            "components": []
           },
           {
             "id": "krw-wl-din-2",
@@ -234,7 +234,7 @@
             "data": {},
             "paint": {},
             "url": null,
-            "locationParameters": {}
+            "components": []
           },
           {
             "id": "krw-wl-din-3",
@@ -242,7 +242,7 @@
             "data": {},
             "paint": {},
             "url": null,
-            "locationParameters": {}
+            "components": []
           },
           {
             "id": "krw-wl-din-toets-doelgat",
@@ -272,7 +272,7 @@
               ]
             },
             "url": null,
-            "locationParameters": {}
+            "components": []
           }
         ]
       }
@@ -292,7 +292,7 @@
             "data": {},
             "paint": {},
             "url": null,
-            "locationParameters": {}
+            "components": []
           }
         ]
       },
@@ -306,7 +306,7 @@
             "data": {},
             "paint": {},
             "url": null,
-            "locationParameters": {}
+            "components": []
           }
         ]
       },
@@ -320,7 +320,7 @@
             "data": {},
             "paint": {},
             "url": null,
-            "locationParameters": {}
+            "components": []
           }
         ]
       }
@@ -358,15 +358,18 @@
               ]
             },
             "url": null,
-            "locationParameters": {
-              "filterId": "krw-wl-gr-ntot",
-              "moduleInstanceIds": "SamenvoegenToetsing_Ntot",
-              "qualifierIds": "HH_1",
-              "startTime": "1980-01-01T00:00:00Z",
-              "endTime": "2020-01-01T00:00:00Z",
-              "timeStepId": "jaar",
-              "documentFormat": "PI_JSON"
-            }
+            "components": [
+              {
+                "filterId": "krw-wl-gr-ntot",
+                "parameterIds": "Oordeel",
+                "moduleInstanceIds": "SamenvoegenToetsing_Ntot",
+                "qualifierIds": "HH_1",
+                "startTime": "1980-01-01T00:00:00Z",
+                "endTime": "2020-01-01T00:00:00Z",
+                "timeStepId": "jaar",
+                "documentFormat": "PI_JSON"
+              }
+            ]
           },
           {
             "id": "krw-wl-ntot-2",
@@ -374,7 +377,7 @@
             "data": {},
             "paint": {},
             "url": null,
-            "locationParameters": {}
+            "components": []
           },
           {
             "id": "krw-wl-ntot-3",
@@ -382,7 +385,7 @@
             "data": {},
             "paint": {},
             "url": null,
-            "locationParameters": {}
+            "components": []
           },
           {
             "id": "krw-wl-ntot-4",
@@ -390,7 +393,7 @@
             "data": {},
             "paint": {},
             "url": null,
-            "locationParameters": {}
+            "components": []
           },
           {
             "id": "krw-wl-ntot-5",
@@ -398,7 +401,7 @@
             "data": {},
             "paint": {},
             "url": null,
-            "locationParameters": {}
+            "components": []
           },
           {
             "id": "krw-wl-ntot-6",
@@ -406,7 +409,7 @@
             "data": {},
             "paint": {},
             "url": null,
-            "locationParameters": {}
+            "components": []
           },
           {
             "id": "krw-wl-ntot-7",
@@ -414,7 +417,7 @@
             "data": {},
             "paint": {},
             "url": null,
-            "locationParameters": {}
+            "components": []
           }
         ]
       },
@@ -428,7 +431,7 @@
             "data": {},
             "paint": {},
             "url": null,
-            "locationParameters": {}
+            "components": []
           },
           {
             "id": "krw-wl-ptot-2",
@@ -436,7 +439,7 @@
             "data": {},
             "paint": {},
             "url": null,
-            "locationParameters": {}
+            "components": []
           },
           {
             "id": "krw-wl-ptot-3",
@@ -444,7 +447,7 @@
             "data": {},
             "paint": {},
             "url": null,
-            "locationParameters": {}
+            "components": []
           },
           {
             "id": "krw-wl-ptot-4",
@@ -452,7 +455,7 @@
             "data": {},
             "paint": {},
             "url": null,
-            "locationParameters": {}
+            "components": []
           },
           {
             "id": "krw-wl-ptot-5",
@@ -460,7 +463,7 @@
             "data": {},
             "paint": {},
             "url": null,
-            "locationParameters": {}
+            "components": []
           },
           {
             "id": "krw-wl-ptot-6",
@@ -468,7 +471,7 @@
             "data": {},
             "paint": {},
             "url": null,
-            "locationParameters": {}
+            "components": []
           },
           {
             "id": "krw-wl-ptot-7",
@@ -476,7 +479,7 @@
             "data": {},
             "paint": {},
             "url": null,
-            "locationParameters": {}
+            "components": []
           }
         ]
       },
@@ -490,7 +493,7 @@
             "data": {},
             "paint": {},
             "url": null,
-            "locationParameters": {}
+            "components": []
           },
           {
             "id": "krw-wl-din-2",
@@ -498,7 +501,7 @@
             "data": {},
             "paint": {},
             "url": null,
-            "locationParameters": {}
+            "components": []
           },
           {
             "id": "krw-wl-din-3",
@@ -506,7 +509,7 @@
             "data": {},
             "paint": {},
             "url": null,
-            "locationParameters": {}
+            "components": []
           },
           {
             "id": "krw-wl-din-4",
@@ -514,7 +517,7 @@
             "data": {},
             "paint": {},
             "url": null,
-            "locationParameters": {}
+            "components": []
           },
           {
             "id": "krw-wl-din-5",
@@ -522,7 +525,7 @@
             "data": {},
             "paint": {},
             "url": null,
-            "locationParameters": {}
+            "components": []
           },
           {
             "id": "krw-wl-din-6",
@@ -530,7 +533,7 @@
             "data": {},
             "paint": {},
             "url": null,
-            "locationParameters": {}
+            "components": []
           },
           {
             "id": "krw-wl-din-7",
@@ -538,7 +541,7 @@
             "data": {},
             "paint": {},
             "url": null,
-            "locationParameters": {}
+            "components": []
           }
         ]
       }

@@ -1,5 +1,6 @@
 import $axios from '~/plugins/axios'
 
+import services from '~/config/services.json'
 import filterFeaturesCollection from '~/lib/filter-features-collection'
 import mapTimeseriesToGeoJSON from '~/lib/map-timeseries-to-geojson'
 
@@ -29,6 +30,15 @@ export default {
         return { ...state.activeMap, ...data }
       }
     },
+    activeService(state, getters, rootState) {
+      const { selectedParticle, selectedType } = rootState.filters
+      const { id } = state.activeMap
+
+      const service = services.find(service => service.id === selectedType)
+      const particle = service.spatialPlots.find(plot => plot.id === selectedParticle)
+
+      return particle.services.find(service => service.id === id)
+    },
   },
 
   actions: {
@@ -49,8 +59,7 @@ export default {
           commit('ADD_DATA_TO_ACTIVE_MAP', timeSeries)
         })
     },
-    getTimeSeriesDifferenceMaps({ commit, state, getters }) {
-      console.log(getters)
+    getTimeSeriesDifferenceMaps({ commit, state }) {
       const { url } = state.activeMap
       return $axios
         .get(url)
@@ -77,7 +86,6 @@ export default {
       state.activeMap = activeMap
     },
     SET_ACTIVE_MAP_LOCATION(state, { activeMapLocation }) {
-      console.log(activeMapLocation)
       state.activeMapLocation = activeMapLocation
     },
   },
