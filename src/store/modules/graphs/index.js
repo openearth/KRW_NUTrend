@@ -15,6 +15,11 @@ export default {
 
   actions: {
     getGraphData({ commit, rootGetters }, payload) {
+      if (!rootGetters['layers/activeService']?.components.length) {
+        console.warn('No component layers available to retreive data for. Add them to services config.')
+        return
+      }
+
       const { components } = rootGetters['layers/activeService']
       const { id } = payload
 
