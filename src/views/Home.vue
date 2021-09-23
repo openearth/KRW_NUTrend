@@ -120,7 +120,7 @@
 </template>
 
 <script>
-  import { mapActions, mapState } from 'vuex'
+  import { mapState } from 'vuex'
 
   import ActiveLocationCard from '~/components/ActiveLocationCard/ActiveLocationCard'
   import AppDivider from '~/components/AppDivider/AppDivider'
@@ -148,18 +148,6 @@
       ]),
       ...mapState('layers', [
         'activeMapLocation',
-      ]),
-    },
-    watch: {
-      activeMapLocation(value) {
-        if (value) {
-          this.getGraphData({ id: value })
-        }
-      },
-    },
-    methods: {
-      ...mapActions('graphs', [
-        'getGraphData',
       ]),
     },
   }
