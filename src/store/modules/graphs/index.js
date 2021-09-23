@@ -42,17 +42,11 @@ export default {
     setGraphData(context, payload) {
       context.commit('SET_GRAPH_DATA', payload)
     },
-    resetGraphs(context) {
-      context.commit('RESET_GRAPHS')
-    },
   },
 
   mutations: {
     SET_GRAPH_DATA(state, { graphData }) {
       state.graphData = graphData
-    },
-    RESET_GRAPHS(state) {
-      state.graphs = []
     },
   },
 }
