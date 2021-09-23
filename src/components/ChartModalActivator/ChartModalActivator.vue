@@ -36,11 +36,6 @@
         required: true,
       },
     },
-    // computed: {
-    //   ...mapState('modal', [
-    //     'title',
-    //   ]),
-    // },
     methods: {
       ...mapActions('modal', [
         'setIsOpen',
