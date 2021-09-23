@@ -8,7 +8,6 @@
       />
     </div>
     <div v-else class="app-chart__canvas">
-      <p>{{ title }}</p>
       <v-chart
         :init-options="initOptions"
         :option="options"
@@ -25,9 +24,8 @@
   import { LineChart } from 'echarts/charts'
   import {
     GridComponent,
-    TooltipComponent,
-    LegendComponent,
     MarkAreaComponent,
+    TitleComponent,
   } from 'echarts/components'
   import VChart from 'vue-echarts'
 
@@ -37,9 +35,8 @@
     CanvasRenderer,
     GridComponent,
     LineChart,
-    TooltipComponent,
-    LegendComponent,
     MarkAreaComponent,
+    TitleComponent,
   ])
 
   const TIMEOUT_DURATION = 1000 // 1 second
@@ -62,9 +59,12 @@
           height: '400px',
         },
         baseOptions: {
+          title: {
+            text: this.title,
+          },
           grid: {
-            top: '32px',
-            right: '85px',
+            top: '40px',
+            right: '90px',
             bottom: '8px',
             left: '8px',
             containLabel: true,
@@ -78,7 +78,7 @@
         },
         seriesStyle: {
           symbol: 'circle',
-          symbolSize: 10,
+          symbolSize: 7,
           type: 'line',
           lineStyle: {
             width: 0,
@@ -99,6 +99,9 @@
       ...mapState('graphs', [
         'graphData',
       ]),
+      filterdData() {
+        return this.graphData.filter(item => item.value > -1)
+      },
       options() {
         return {
           ...this.baseOptions,
@@ -112,13 +115,14 @@
       xAxis() {
         return {
           type: 'category',
-          data: this.graphData.map(item => item.label),
+          boundaryGap: false,
+          data: this.filterdData.map(item => item.label),
         }
       },
       series() {
         return {
           ...this.seriesStyle,
-          data: this.graphData.map(item => parseInt(item.value, 10)).filter(value => value > -1),
+          data: this.filterdData.map(item => parseInt(item.value, 10)),
         }
       },
       markAreas() {
@@ -134,10 +138,6 @@
 </script>
 
 <style lang="scss">
-  .app-chart {
-    padding: $spacing-default;
-  }
-
   .app-chart__canvas {
     width: 100%;
     height: 100%;

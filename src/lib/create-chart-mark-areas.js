@@ -7,7 +7,7 @@ export default ({ color, name, min, max }) => {
         color,
       },
       label: {
-        position: [ '101%', '45%' ],
+        position: [ '102%', '45%' ],
         align: 'left',
       },
       data: [

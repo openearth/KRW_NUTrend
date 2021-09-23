@@ -55,3 +55,9 @@
     },
   }
 </script>
+
+<style lang="scss">
+  .v-dialog > .v-card > .v-card__text {
+    padding: 20px $spacing-medium;
+  }
+</style>
