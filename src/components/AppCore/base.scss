@@ -1,0 +1,5 @@
+// Overwrite any of Vuetify's styles here.
+
+.v-text-field.v-text-field--outlined fieldset {
+  border-color: $color-gray;
+}

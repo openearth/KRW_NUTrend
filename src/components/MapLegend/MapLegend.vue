@@ -38,7 +38,7 @@
     position: absolute;
     pointer-events: none;
     z-index: 2;
-    bottom: $spacing-medium;
+    bottom: $spacing-large;
     right: $spacing-default;
   }
 </style>

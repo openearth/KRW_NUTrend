@@ -1,8 +1,9 @@
 @import '~vuetify/src/styles/settings/_variables.scss';
 
 $color-white: #ffffff;
+$color-gray: rgba(0, 0, 0, 0.12);
 
-// Spacing (use Vuetify $spacer as base)
+// Spacing (using Vuetify $spacer as base)
 $spacing-tiny: $spacer;
 $spacing-smaller: $spacer * 2;
 $spacing-small: $spacer * 3;
