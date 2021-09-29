@@ -17,6 +17,7 @@
       const map = this.getMap()
       if (map) {
         this.addEventsToMap(map)
+
       }
     },
     methods: {
@@ -26,6 +27,7 @@
       deferredMountedTo(map) {
         if (this.layer) {
           this.addEventsToMap(map)
+         
         }
       },
       addEventsToMap(map) {

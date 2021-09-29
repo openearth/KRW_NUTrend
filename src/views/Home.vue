@@ -68,8 +68,8 @@
         <v-row v-if="activeMapLocation">
           <v-col>
             <active-location-card
-              :name="activeMapLocation"
               :id="activeMapLocation.id"
+              :name="activeMapLocation"
               :value="activeMapLocation.value"
             />
           </v-col>

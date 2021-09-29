@@ -32,8 +32,8 @@
         :key="layer.id"
         :options="layer"
       />
-      <map-controls v-if="activeMap" :layer="activeMap" />
-      <legend-card v-if="activeMap" :layer="activeMap" />
+      <map-controls v-if="filteredMap" :layer="filteredMap" />
+      <legend-card v-if="legendGraphic" :legend-graphic="legendGraphic" />
     </mapbox-map>
   </app-shell>
 </template>
@@ -70,7 +70,7 @@
       layers: [],
     }),
     computed: {
-      ...mapState('layers', [ 'activeMap' ]),
+      ...mapState('layers', [ 'activeMap', 'legendGraphic' ]),
       ...mapGetters('layers', [ 'filteredMap' ]),
     },
     watch: {

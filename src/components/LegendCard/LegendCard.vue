@@ -1,23 +1,20 @@
 <template>
-  <v-card
-    class="mapboxgl-ctrl-bottom-right"
-    width="200"
-  >
+  <v-card class="mapboxgl-ctrl-bottom-right" width="190">
     <v-container fluid>
       <v-row
-        v-for="feature in legendGraphics"
-        :key="feature.label"
-        dense
-        align-content
+        v-for="threshold in thresholds"
+        :key="threshold.label"
+        no-gutters
+        align="start"
       >
-        <v-col>
+        <v-col class="pl-6">
           <v-avatar
-            :color="feature.color"
+            :color="threshold.color"
             size="10"
           />
         </v-col>
-        <v-col class="p-0 m-0">
-          <label style="widht: 50px;">{{ feature.label }}</label>
+        <v-col class="pr-6" align="left">
+          <label>{{ threshold.label }}</label>
         </v-col>
       </v-row>
     </v-container>
@@ -26,48 +23,26 @@
 <script>
   export default {
     props: {
-      layer: {
-        type:Object,
+      legendGraphic: {
+        type: Object,
         default: null,
       },
     },
-    data() { 
-      return{
-        legendGraphics: [ 
-          {
-            'label': 'kleiner dan 2 mg/l',
-            'lowerValue': 0.0,
-            'color': '#eff7ff',
-          },
-          {
-            'label': '2 - 4 mg/l',
-            'lowerValue': 2.0,
-            'color': '#8ee2ec',
-          },
-          {
-            'label': '4 - 6 mg/l',
-            'lowerValue': 4.0,
-            'color': '#2b65ec',
-          },
-          {
-            'label': '6 - 12 mg/l',
-            'lowerValue': 6.0,
-            'color': '#151b7e',
-          },
-          {
-            'label': 'groter dan 12 mg/l',
-            'lowerValue': 12.0,
-            'color': '#000000',
-          },
-        ],
-      }
+    computed: { 
+      thresholds() { 
+        if (this.legendGraphic) {
+          return this.legendGraphic.legend
+        }
+        return []
+      },
     },
+
   }
 </script>
 <style>
-.colored-circles {
-  width: 10px;
-  height: 10px;
-  border-radius: 5px;
-}
+  .colored-circles {
+    width: 10px;
+    height: 10px;
+    border-radius: 5px;
+  }
 </style>
