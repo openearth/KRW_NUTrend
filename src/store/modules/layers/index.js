@@ -91,7 +91,7 @@ export default {
         .get('/FewsWebServices/wms?', { params })
         .then((response) => response?.data)
         .then((legend) => {
-          commit('SET_LEGEND_GRAPHIC', legend)
+          commit('SET_LEGEND_GRAPHIC', { legend })
         })
     },
     setActiveMap(context, payload) {
@@ -116,7 +116,7 @@ export default {
     SET_ACTIVE_MAP_LOCATION(state, { activeMapLocation }) {
       state.activeMapLocation = activeMapLocation
     },
-    SET_LEGEND_GRAPHIC(state, legend) {
+    SET_LEGEND_GRAPHIC(state, { legend }) {
       state.legendGraphic = legend
     },
     SET_DIFFERENCE_MAP(state, boolean) {
