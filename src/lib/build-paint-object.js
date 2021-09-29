@@ -4,5 +4,3 @@ export default (circlesColors) => {
     'circle-color': circlesColors,
   }
 }
-
-

@@ -33,8 +33,10 @@ export default {
         )
         const data = { data: featuresCollection }
         const circlesColor = buildCirclesColor(state.legendGraphic)
-        const paint =  state.differenceMap ? { paint: buildPaintObjectDiffMaps(circlesColor) } : { paint: buildPaintObject(circlesColor) }
-        console.log('{ ...state.activeMap, ...data, ...paint }', { ...state.activeMap, ...data, ...paint })
+        const paint = state.differenceMap
+          ? { paint: buildPaintObjectDiffMaps(circlesColor) }
+          : { paint: buildPaintObject(circlesColor) }
+
         return { ...state.activeMap, ...data, ...paint }
       }
     },
@@ -59,7 +61,7 @@ export default {
         endTime: selectedTimestamp,
         documentFormat: 'PI_JSON',
       }
-      return $axios 
+      return $axios
         .get(`/FewsWebServices/rest/fewspiservice/${ VUE_APP_API_VERSION }/timeseries`, { params })
         .then(response => response?.data)
         .then(mapTimeseriesToGeoJSON)
@@ -79,7 +81,7 @@ export default {
     },
     getLegendGraphic({ commit, state }) {
       const { legendGraphicId } = state.activeMap
-      const params = { 
+      const params = {
     	  request: 'GetLegendGraphic',
         service: 'WMS',
         format: 'application/json',
@@ -91,7 +93,6 @@ export default {
         .then((legend) => {
           commit('SET_LEGEND_GRAPHIC', legend)
         })
-      
     },
     setActiveMap(context, payload) {
       context.commit('SET_ACTIVE_MAP', payload)
@@ -121,6 +122,5 @@ export default {
     SET_DIFFERENCE_MAP(state, boolean) {
       state.differenceMap = boolean
     },
-
   },
 }

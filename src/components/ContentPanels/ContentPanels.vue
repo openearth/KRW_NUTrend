@@ -70,21 +70,18 @@
         const { isActive } = this.$refs[`panel-${ index }`][0]
         const { propertyName } = event
 
-        if (isActive && propertyName === 'min-height' ) {
+        if (isActive && propertyName === 'min-height') {
           //Only the difference maps have url in the services.json
           if (panel.url) {
             this.setDifferenceMap(true)
             this.setActiveMap({ activeMap: panel })
             this.getLegendGraphic()
             this.getTimeSeriesDifferenceMaps()
-            
-
           } else {
             this.setDifferenceMap(false)
             this.setActiveMap({ activeMap: panel })
             this.getLegendGraphic()
             this.getTimeSeries()
-           
           }
         }
       },
