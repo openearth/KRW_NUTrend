@@ -42,14 +42,14 @@
         return spatialPlot.services
       },
       panels() {
-        return this.mappedServices.map(({ id, name, paint, url }) => {
+        return this.mappedServices.map(({ id, name, url, legendGraphicId }) => {
           const content = this.importFileContent(id)
           return {
             content: content.default,
             id,
             title: name,
-            paint,
             url,
+            legendGraphicId,
           }
         })
       },
@@ -60,6 +60,8 @@
         'getTimeSeries',
         'setActiveMap',
         'getTimeSeriesDifferenceMaps',
+        'getLegendGraphic',
+        'setDifferenceMap',
       ]),
       importFileContent(fileName) {
         return require(`~/content/services/${ this.selectedType }/${ this.selectedParticle }/${ fileName }.md`)
@@ -69,12 +71,20 @@
         const { propertyName } = event
 
         if (isActive && propertyName === 'min-height' ) {
+          //Only the difference maps have url in the services.json
           if (panel.url) {
+            this.setDifferenceMap(true)
             this.setActiveMap({ activeMap: panel })
+            this.getLegendGraphic()
             this.getTimeSeriesDifferenceMaps()
+            
+
           } else {
+            this.setDifferenceMap(false)
             this.setActiveMap({ activeMap: panel })
+            this.getLegendGraphic()
             this.getTimeSeries()
+           
           }
         }
       },

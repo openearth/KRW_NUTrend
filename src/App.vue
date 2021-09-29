@@ -32,7 +32,8 @@
         :key="layer.id"
         :options="layer"
       />
-      <map-controls v-if="activeMap" :layer="activeMap" />
+      <map-controls v-if="filteredMap" :layer="filteredMap" />
+      <legend-card v-if="legendGraphic" :legend-graphic="legendGraphic" />
     </mapbox-map>
   </app-shell>
 </template>
@@ -49,7 +50,7 @@
   import AppShell from '~/components/AppShell/AppShell'
   import LegalDialog from '~/components/LegalDialog/LegalDialog'
   import MapControls from '~/components/MapControls/MapControls'
-
+  import LegendCard from '~/components/LegendCard/LegendCard'
 
   export default {
     components: {
@@ -57,7 +58,7 @@
       MapboxMap,
       LegalDialog,
       MapControls,
-
+      LegendCard,
     },
     data: () => ({
       accessToken: process.env.VUE_APP_MAPBOX_TOKEN,
@@ -69,7 +70,7 @@
       layers: [],
     }),
     computed: {
-      ...mapState('layers', [ 'activeMap' ]),
+      ...mapState('layers', [ 'activeMap', 'legendGraphic' ]),
       ...mapGetters('layers', [ 'filteredMap' ]),
     },
     watch: {
