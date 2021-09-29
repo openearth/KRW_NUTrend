@@ -33,7 +33,7 @@
       <map-controls v-if="filteredMap" :layer="filteredMap" />
 
       <v-fade-transition mode="out-in">
-        <map-legend v-if="legendGraphic.legend" :items="legendGraphic.legend" />
+        <map-legend v-if="showLegend" :items="legendGraphic.legend" />
       </v-fade-transition>
     </mapbox-map>
   </app-shell>
@@ -75,6 +75,9 @@
     computed: {
       ...mapState('layers', [ 'activeMap', 'legendGraphic' ]),
       ...mapGetters('layers', [ 'filteredMap' ]),
+      showLegend() {
+        return this.legendGraphic?.legend
+      },
     },
     watch: {
       filteredMap: {
