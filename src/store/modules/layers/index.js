@@ -1,5 +1,6 @@
 import $axios from '~/plugins/axios'
 
+import services from '~/config/services.json'
 import filterFeaturesCollection from '~/lib/filter-features-collection'
 import mapTimeseriesToGeoJSON from '~/lib/map-timeseries-to-geojson'
 import buildCirclesColor from '~/lib/build-circles-color'
@@ -32,10 +33,21 @@ export default {
         )
         const data = { data: featuresCollection }
         const circlesColor = buildCirclesColor(state.legendGraphic)
-        const paint =  state.differenceMap ? { paint: buildPaintObjectDiffMaps(circlesColor) } : { paint: buildPaintObject(circlesColor) }
-        console.log('{ ...state.activeMap, ...data, ...paint }', { ...state.activeMap, ...data, ...paint })
+        const paint = state.differenceMap
+          ? { paint: buildPaintObjectDiffMaps(circlesColor) }
+          : { paint: buildPaintObject(circlesColor) }
+
         return { ...state.activeMap, ...data, ...paint }
       }
+    },
+    activeService(state, getters, rootState) {
+      const { selectedParticle, selectedType } = rootState.filters
+      const { id } = state.activeMap
+
+      const service = services.find(service => service.id === selectedType)
+      const particle = service.spatialPlots.find(plot => plot.id === selectedParticle)
+
+      return particle.services.find(service => service.id === id)
     },
   },
 
@@ -49,7 +61,7 @@ export default {
         endTime: selectedTimestamp,
         documentFormat: 'PI_JSON',
       }
-      return $axios 
+      return $axios
         .get(`/FewsWebServices/rest/fewspiservice/${ VUE_APP_API_VERSION }/timeseries`, { params })
         .then(response => response?.data)
         .then(mapTimeseriesToGeoJSON)
@@ -57,7 +69,7 @@ export default {
           commit('ADD_DATA_TO_ACTIVE_MAP', timeSeries)
         })
     },
-    getTimeSeriesDifferenceMaps({ commit, state, getters }) {
+    getTimeSeriesDifferenceMaps({ commit, state }) {
       const { url } = state.activeMap
       return $axios
         .get(url)
@@ -69,7 +81,7 @@ export default {
     },
     getLegendGraphic({ commit, state }) {
       const { legendGraphicId } = state.activeMap
-      const params = { 
+      const params = {
     	  request: 'GetLegendGraphic',
         service: 'WMS',
         format: 'application/json',
@@ -79,9 +91,8 @@ export default {
         .get('/FewsWebServices/wms?', { params })
         .then((response) => response?.data)
         .then((legend) => {
-          commit('SET_LEGEND_GRAPHIC', legend)
+          commit('SET_LEGEND_GRAPHIC', { legend })
         })
-      
     },
     setActiveMap(context, payload) {
       context.commit('SET_ACTIVE_MAP', payload)
@@ -105,12 +116,11 @@ export default {
     SET_ACTIVE_MAP_LOCATION(state, { activeMapLocation }) {
       state.activeMapLocation = activeMapLocation
     },
-    SET_LEGEND_GRAPHIC(state, legend) {
+    SET_LEGEND_GRAPHIC(state, { legend }) {
       state.legendGraphic = legend
     },
     SET_DIFFERENCE_MAP(state, boolean) {
       state.differenceMap = boolean
     },
-
   },
 }

@@ -4,6 +4,7 @@
     class="chart-modal"
     width="90%"
     max-width="1000"
+    scrollable
     @click:outside="onClickClose"
   >
     <v-card>
@@ -18,8 +19,10 @@
           <v-icon>mdi-close</v-icon>
         </v-btn>
       </v-app-bar>
-
-      <app-chart v-if="isOpen" />
+      <v-divider />
+      <v-card-text>
+        <app-chart v-if="isOpen" :title="chartTitle" />
+      </v-card-text>
     </v-card>
   </v-dialog>
 </template>
@@ -38,6 +41,9 @@
         'isOpen',
         'title',
       ]),
+      chartTitle() {
+        return `N Totaal ${ this.title } (Toetsing)`
+      },
     },
     methods: {
       ...mapActions('modal', [
@@ -49,3 +55,9 @@
     },
   }
 </script>
+
+<style lang="scss">
+  .v-dialog > .v-card > .v-card__text {
+    padding: 20px $spacing-medium;
+  }
+</style>

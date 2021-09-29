@@ -54,7 +54,7 @@
 
         <app-divider />
 
-        <v-row>
+        <v-row v-if="activeMapLocation">
           <v-col>
             <v-btn
               block
@@ -68,32 +68,46 @@
         <v-row v-if="activeMapLocation">
           <v-col>
             <active-location-card
-              :id="activeMapLocation.id"
-              :name="activeMapLocation"
+              :id="activeMapLocation.locationId"
+              :name="activeMapLocation.stationName"
               :value="activeMapLocation.value"
             />
           </v-col>
         </v-row>
 
-        <v-row v-if="!selectedBasin && !selectedWaterManager">
+        <app-divider v-if="activeMapLocation" />
+
+        <v-row v-if="activeMapLocation">
           <v-col>
             <chart-modal-activator
+              :title="activeMapLocation.stationName"
+              :modal-title="activeMapLocation.locationId"
+            />
+          </v-col>
+        </v-row>
+
+        <v-row v-else-if="!selectedBasin && !selectedWaterManager">
+          <v-col>
+            <chart-modal-activator
+              title="Nederland"
               modal-title="Nederland"
             />
           </v-col>
         </v-row>
 
-        <v-row v-if="!selectedWaterManager">
+        <v-row v-else-if="!selectedWaterManager">
           <v-col>
             <chart-modal-activator
+              title="Stroomgebied"
               modal-title="Stroomgebied"
             />
           </v-col>
         </v-row>
 
-        <v-row>
+        <v-row v-if="!activeMapLocation">
           <v-col>
             <chart-modal-activator
+              title="Waterbeheerders"
               modal-title="Waterbeheerders"
             />
           </v-col>

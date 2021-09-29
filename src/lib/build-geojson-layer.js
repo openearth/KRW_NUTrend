@@ -1,5 +1,4 @@
 export default ({ id, data, paint }) => {
-  
   return {
     id,
     type: 'circle',

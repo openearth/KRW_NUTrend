@@ -1,6 +1,5 @@
 export default (circleStrokeColors) => {
-  console.log('paint diff', circleStrokeColors)
-  const circleColors = circleStrokeColors.map(rule => rule[1] == 'value' ?  [ 'get', 'value2' ] : rule  )
+  const circleColors = circleStrokeColors.map(rule => rule[1] == 'value' ?  [ 'get', 'value2' ] : rule)
   return {
     'circle-radius': 3,
     'circle-stroke-opacity': 1,

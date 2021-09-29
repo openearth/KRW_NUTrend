@@ -12,28 +12,32 @@
             "name": "Toetsing stikstof aan normen toetsjaar 2020",
             "data": {},
             "url": null,
-            "legendGraphicId": "Ntot Toetsing t.o.v. normen laatste_SGBP (-) NL"
+            "legendGraphicId": "Ntot Toetsing t.o.v. normen laatste_SGBP (-) NL",
+            "components": []
           },
           {
             "id": "krw-wl-ntot-difference-2009",
             "name": "Verschilkaart toetsing stikstof actueel vs. toetsjaar 2009",
             "data": {},
             "url": "http://185.224.89.110:8082/FewsWebServices/rest/fewspiservice/v1/timeseries?filterId=krw-wl-ntot-toets-lSGBP&startTime=2009-01-01T00%3A00%3A00Z&endTime=2020-01-01T00%3A00%3A00Z&showThresholds=true&showStatistics=true&documentFormat=PI_JSON",
-            "legendGraphicId": "Ntot Toetsing t.o.v. normen laatste_SGBP (-) NL"
+            "legendGraphicId": "Ntot Toetsing t.o.v. normen laatste_SGBP (-) NL",
+            "components": []
           },
           {
             "id": "krw-wl-ntot-difference-2015",
             "name": "Verschilkaart toetsing stikstof actueel vs. toetsjaar 2015",
             "data": {},
             "url": "http://185.224.89.110:8082/FewsWebServices/rest/fewspiservice/v1/timeseries?filterId=krw-wl-ntot-toets-lSGBP&startTime=2015-01-01T00%3A00%3A00Z&endTime=2020-01-01T00%3A00%3A00Z&showThresholds=true&showStatistics=true&documentFormat=PI_JSON",
-            "legendGraphicId": "Ntot Toetsing t.o.v. normen laatste_SGBP (-) NL"
+            "legendGraphicId": "Ntot Toetsing t.o.v. normen laatste_SGBP (-) NL",
+            "components": []
           },
           {
             "id": "krw-wl-ntot-toets-doelgat",
             "name": "Doelgat (afstand tot de norm 'goed')",
             "data": {},
             "url": null,
-            "legendGraphicId": "Ntot Verschil t.o.v. de huidige norm Goed (-; doelgat) NL"
+            "legendGraphicId": "Ntot Verschil t.o.v. de huidige norm Goed (-; doelgat) NL",
+            "components": []
           }
         ]
       },
@@ -46,28 +50,32 @@
             "name": "Toetsing fosfor aan normen toetsjaar 2020",
             "data": {},
             "url": null,
-            "legendGraphicId": "Ptot Toetsing t.o.v. normen laatste_SGBP (-) NL"
+            "legendGraphicId": "Ptot Toetsing t.o.v. normen laatste_SGBP (-) NL",
+            "components": []
           },
           {
             "id": "krw-wl-ptot-difference-2009",
             "name": "Verschilkaart toetsing fosfor actueel vs. toetsjaar 2009",
             "data": {},
             "url": "http://185.224.89.110:8082/FewsWebServices/rest/fewspiservice/v1/timeseries?filterId=krw-wl-ptot-toets-lSGBP&startTime=2009-01-01T00%3A00%3A00Z&endTime=2020-01-01T00%3A00%3A00Z&showThresholds=true&showStatistics=true&documentFormat=PI_JSON",
-            "legendGraphicId": "Ptot Toetsing t.o.v. normen laatste_SGBP (-) NL"
+            "legendGraphicId": "Ptot Toetsing t.o.v. normen laatste_SGBP (-) NL",
+            "components": []
           },
           {
             "id": "krw-wl-ptot-difference-2015",
             "name": "Verschilkaart toetsing fosfor actueel vs. toetsjaar 2015",
             "data": {},
             "url": "http://185.224.89.110:8082/FewsWebServices/rest/fewspiservice/v1/timeseries?filterId=krw-wl-ptot-toets-lSGBP&startTime=2015-01-01T00%3A00%3A00Z&endTime=2020-01-01T00%3A00%3A00Z&showThresholds=true&showStatistics=true&documentFormat=PI_JSON",
-            "legendGraphicId": "Ptot Toetsing t.o.v. normen laatste_SGBP (-) NL"
+            "legendGraphicId": "Ptot Toetsing t.o.v. normen laatste_SGBP (-) NL",
+            "components": []
           },
           {
             "id": "krw-wl-ptot-toets-doelgat",
             "name": "Doelgat (afstand tot de norm 'goed')",
             "data": {},
             "url": null,
-            "legendGraphicId": "Ptot Verschil t.o.v. de huidige norm Goed (-; doelgat) NL"
+            "legendGraphicId": "Ptot Verschil t.o.v. de huidige norm Goed (-; doelgat) NL",
+            "components": []
           }
         ]
       },
@@ -80,28 +88,32 @@
             "name": "Toetsing DIN aan normen toetsjaar 2020",
             "data": {},
             "url": null,
-            "legendGraphicId": "DIN Toetsing t.o.v. normen laatste_SGBP (-) NL"
+            "legendGraphicId": "DIN Toetsing t.o.v. normen laatste_SGBP (-) NL",
+            "components": []
           },
           {
             "id": "krw-wl-din-difference-2009",
             "name": "Verschilkaart toetsing DIN actueel vs. toetsjaar 2009",
             "data": {},
             "url": "http://185.224.89.110:8082/FewsWebServices/rest/fewspiservice/v1/timeseries?filterId=krw-wl-din-toets-lSGBP&startTime=2009-01-01T00%3A00%3A00Z&endTime=2020-01-01T00%3A00%3A00Z&showThresholds=true&showStatistics=true&documentFormat=PI_JSON",
-            "legendGraphicId": "DIN Toetsing t.o.v. normen laatste_SGBP (-) NL"
+            "legendGraphicId": "DIN Toetsing t.o.v. normen laatste_SGBP (-) NL",
+            "components": []
           },
           {
             "id": "krw-wl-din-difference-2015",
             "name": "Verschilkaart toetsing DIN actueel vs. toetsjaar 2015",
             "data": {},
             "url": "http://185.224.89.110:8082/FewsWebServices/rest/fewspiservice/v1/timeseries?filterId=krw-wl-din-toets-lSGBP&startTime=2015-01-01T00%3A00%3A00Z&endTime=2020-01-01T00%3A00%3A00Z&showThresholds=true&showStatistics=true&documentFormat=PI_JSON",
-            "legendGraphicId": "DIN Toetsing t.o.v. normen laatste_SGBP (-) NL"
+            "legendGraphicId": "DIN Toetsing t.o.v. normen laatste_SGBP (-) NL",
+            "components": []
           },
           {
             "id": "krw-wl-din-toets-doelgat",
             "name": "Doelgat (afstand tot de norm 'goed')",
             "data": {},
             "url": null,
-            "legendGraphicId": "DIN Verschil t.o.v. de huidige norm Goed (-; doelgat) NL"
+            "legendGraphicId": "DIN Verschil t.o.v. de huidige norm Goed (-; doelgat) NL",
+            "components": []
           }
         ]
       }
@@ -120,7 +132,8 @@
             "name": "Trendhelling (% per decennium)",
             "data": {},
             "url": null,
-            "legendGraphicId": "Ntot Toetsing t.o.v. normen laatste_SGBP (-) NL"
+            "legendGraphicId": "Ntot Toetsing t.o.v. normen laatste_SGBP (-) NL",
+            "components": []
           }
         ]
       },
@@ -133,7 +146,8 @@
             "name": "Trendhelling (% per decennium)",
             "data": {},
             "url": null,
-            "legendGraphicId": "Ntot Toetsing t.o.v. normen laatste_SGBP (-) NL"
+            "legendGraphicId": "Ntot Toetsing t.o.v. normen laatste_SGBP (-) NL",
+            "components": []
           }
         ]
       },
@@ -146,7 +160,8 @@
             "name": "Trendhelling (% per decennium)",
             "data": {},
             "url": null,
-            "legendGraphicId": "Ntot Toetsing t.o.v. normen laatste_SGBP (-) NL"
+            "legendGraphicId": "Ntot Toetsing t.o.v. normen laatste_SGBP (-) NL",
+            "components": []
           }
         ]
       }
@@ -165,49 +180,67 @@
             "name": "3-jarig zomergemiddelde (mg/l)",
             "data": {},
             "url": null,
-            "legendGraphicId": "Ntot Zomergemiddeld (mg/l) NL"
+            "legendGraphicId": "Ntot Zomergemiddeld (mg/l) NL",
+            "components": [
+              {
+                "filterId": "krw-wl-gr-ntot",
+                "parameterIds": "Oordeel",
+                "moduleInstanceIds": "SamenvoegenToetsing_Ntot",
+                "qualifierIds": "HH_1",
+                "startTime": "1980-01-01T00:00:00Z",
+                "endTime": "2020-01-01T00:00:00Z",
+                "timeStepId": "jaar",
+                "documentFormat": "PI_JSON"
+              }
+            ]
           },
           {
             "id": "krw-wl-ntot-zomgem-vvSGBP",
             "name": "Verschilkaart actueel t.o.v. toetsjaar 2009 (3 voorgaande jaren, mg/l)",
             "data": {},
             "url": null,
-            "legendGraphicId": "Ntot Verschilkaart actueel t.o.v. voorlaatste_SGBP (mg/l) NL"
+            "legendGraphicId": "Ntot Verschilkaart actueel t.o.v. voorlaatste_SGBP (mg/l) NL",
+            "components": []
           },
           {
             "id": "krw-wl-ntot-zomgem-vlSGBP",
             "name": "Verschilkaart actueel t.o.v. toetsjaar 2015 (3 voorgaande jaren, mg/l)",
             "data": {},
             "url": null,
-            "legendGraphicId": "Ntot Verschilkaart actueel t.o.v. laatste_SGBP (mg/l) NL"
+            "legendGraphicId": "Ntot Verschilkaart actueel t.o.v. laatste_SGBP (mg/l) NL",
+            "components": []
           },
           {
             "id": "krw-wl-ntot-jaargem",
             "name": "Jaargemiddelde (mg/l)",
             "data": {},
             "url": null,
-            "legendGraphicId": "Ntot Jaargemiddeld (mg/l) NL"
+            "legendGraphicId": "Ntot Jaargemiddeld (mg/l) NL",
+            "components": []
           },
           {
             "id": "krw-wl-ntot-norm-GM",
             "name": "Normklassegrens goed-matig (mg/l)",
             "data": {},
             "url": null,
-            "legendGraphicId": "Ntot Norm Goed-Matig (mg/l) NL"
+            "legendGraphicId": "Ntot Norm Goed-Matig (mg/l) NL",
+            "components": []
           },
           {
             "id": "krw-wl-ntot-norm-MO",
             "name": "Normklassegrens matig-ontoereikend (mg/l)",
             "data": {},
             "url": null,
-            "legendGraphicId": "Ntot Norm Matig-Ontoereikend (mg/l) NL"
+            "legendGraphicId": "Ntot Norm Matig-Ontoereikend (mg/l) NL",
+            "components": []
           },
           {
             "id": "krw-wl-ntot-norm-OS",
             "name": "Normklassegrens ontoereikend-slecht (mg/l)",
             "data": {},
             "url": null,
-            "legendGraphicId": "Ntot Norm Ontoereikend-Slecht (mg/l) NL"
+            "legendGraphicId": "Ntot Norm Ontoereikend-Slecht (mg/l) NL",
+            "components": []
           }
         ]
       },
@@ -220,49 +253,56 @@
             "name": "3-jarig zomergemiddelde (mg/l)",
             "data": {},
             "url": null,
-            "legendGraphicId": "Ntot Toetsing t.o.v. normen laatste_SGBP (-) NL"
+            "legendGraphicId": "Ntot Toetsing t.o.v. normen laatste_SGBP (-) NL",
+            "components": []
           },
           {
             "id": "krw-wl-ptot-2",
             "name": "Verschilkaart actueel t.o.v. toetsjaar 2009 (3 voorgaande jaren, mg/l)",
             "data": {},
             "url": null,
-            "legendGraphicId": "Ntot Toetsing t.o.v. normen laatste_SGBP (-) NL"
+            "legendGraphicId": "Ntot Toetsing t.o.v. normen laatste_SGBP (-) NL",
+            "components": []
           },
           {
             "id": "krw-wl-ptot-3",
             "name": "Verschilkaart actueel t.o.v. toetsjaar 2015 (3 voorgaande jaren, mg/l)",
             "data": {},
             "url": null,
-            "legendGraphicId": "Ntot Toetsing t.o.v. normen laatste_SGBP (-) NL"
+            "legendGraphicId": "Ntot Toetsing t.o.v. normen laatste_SGBP (-) NL",
+            "components": []
           },
           {
             "id": "krw-wl-ptot-4",
             "name": "Jaargemiddelde (mg/l)",
             "data": {},
             "url": null,
-            "legendGraphicId": "Ntot Toetsing t.o.v. normen laatste_SGBP (-) NL"
+            "legendGraphicId": "Ntot Toetsing t.o.v. normen laatste_SGBP (-) NL",
+            "components": []
           },
           {
             "id": "krw-wl-ptot-5",
             "name": "Normklassegrens goed-matig (mg/l)",
             "data": {},
             "url": null,
-            "legendGraphicId": "Ntot Toetsing t.o.v. normen laatste_SGBP (-) NL"
+            "legendGraphicId": "Ntot Toetsing t.o.v. normen laatste_SGBP (-) NL",
+            "components": []
           },
           {
             "id": "krw-wl-ptot-6",
             "name": "Normklassegrens matig-ontoereikend (mg/l)",
             "data": {},
             "url": null,
-            "legendGraphicId": "Ntot Toetsing t.o.v. normen laatste_SGBP (-) NL"
+            "legendGraphicId": "Ntot Toetsing t.o.v. normen laatste_SGBP (-) NL",
+            "components": []
           },
           {
             "id": "krw-wl-ptot-7",
             "name": "Normklassegrens ontoereikend-slecht (mg/l)",
             "data": {},
             "url": null,
-            "legendGraphicId": "Ntot Toetsing t.o.v. normen laatste_SGBP (-) NL"
+            "legendGraphicId": "Ntot Toetsing t.o.v. normen laatste_SGBP (-) NL",
+            "components": []
           }
         ]
       },
@@ -275,49 +315,56 @@
             "name": "3-jarig wintergemiddelde (mg/l)",
             "data": {},
             "url": null,
-            "legendGraphicId": "Ntot Toetsing t.o.v. normen laatste_SGBP (-) NL"
+            "legendGraphicId": "Ntot Toetsing t.o.v. normen laatste_SGBP (-) NL",
+            "components": []
           },
           {
             "id": "krw-wl-din-2",
             "name": "Verschilkaart actueel t.o.v. toetsjaar 2009 (3 voorgaande jaren, mg/l)",
             "data": {},
             "url": null,
-            "legendGraphicId": "Ntot Toetsing t.o.v. normen laatste_SGBP (-) NL"
+            "legendGraphicId": "Ntot Toetsing t.o.v. normen laatste_SGBP (-) NL",
+            "components": []
           },
           {
             "id": "krw-wl-din-3",
             "name": "Verschilkaart actueel t.o.v. toetsjaar 2015 (3 voorgaande jaren, mg/l)",
             "data": {},
             "url": null,
-            "legendGraphicId": "Ntot Toetsing t.o.v. normen laatste_SGBP (-) NL"
+            "legendGraphicId": "Ntot Toetsing t.o.v. normen laatste_SGBP (-) NL",
+            "components": []
           },
           {
             "id": "krw-wl-din-4",
             "name": "Jaargemiddelde (mg/l)",
             "data": {},
             "url": null,
-            "legendGraphicId": "Ntot Toetsing t.o.v. normen laatste_SGBP (-) NL"
+            "legendGraphicId": "Ntot Toetsing t.o.v. normen laatste_SGBP (-) NL",
+            "components": []
           },
           {
             "id": "krw-wl-din-5",
             "name": "Normklassegrens goed-matig (mg/l)",
             "data": {},
             "url": null,
-            "legendGraphicId": "Ntot Toetsing t.o.v. normen laatste_SGBP (-) NL"
+            "legendGraphicId": "Ntot Toetsing t.o.v. normen laatste_SGBP (-) NL",
+            "components": []
           },
           {
             "id": "krw-wl-din-6",
             "name": "Normklassegrens matig-ontoereikend (mg/l)",
             "data": {},
             "url": null,
-            "legendGraphicId": "Ntot Toetsing t.o.v. normen laatste_SGBP (-) NL"
+            "legendGraphicId": "Ntot Toetsing t.o.v. normen laatste_SGBP (-) NL",
+            "components": []
           },
           {
             "id": "krw-wl-din-7",
             "name": "Normklassegrens ontoereikend-slecht (mg/l)",
             "data": {},
             "url": null,
-            "legendGraphicId": "Ntot Toetsing t.o.v. normen laatste_SGBP (-) NL"
+            "legendGraphicId": "Ntot Toetsing t.o.v. normen laatste_SGBP (-) NL",
+            "components": []
           }
         ]
       }

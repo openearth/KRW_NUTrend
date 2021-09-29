@@ -21,8 +21,8 @@
       }
     },
     methods: {
-      ...mapActions('layers', [
-        'setActiveMapLocation',
+      ...mapActions('graphs', [
+        'getGraphData',
       ]),
       deferredMountedTo(map) {
         if (this.layer) {
@@ -38,7 +38,7 @@
       handleMapPointClick(map) {
         map.on('click', this.layer.id, (e) => {
           const { locationId } = e.features[0].properties
-          this.setActiveMapLocation({ activeMapLocation: locationId })
+          this.getGraphData({ id: locationId })
         })
       },
       handleMapMouseEnter(map) {
