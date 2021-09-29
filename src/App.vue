@@ -33,7 +33,7 @@
       <map-controls v-if="filteredMap" :layer="filteredMap" />
 
       <v-fade-transition mode="out-in">
-        <map-legend v-if="legendGraphic" :legend-graphic="legendGraphic" />
+        <map-legend v-if="legendGraphic.legend" :items="legendGraphic.legend" />
       </v-fade-transition>
     </mapbox-map>
   </app-shell>

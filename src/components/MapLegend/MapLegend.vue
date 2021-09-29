@@ -1,25 +1,20 @@
 <template>
-  <v-card
-    v-if="thresholds"
-    class="map-legend"
-    flat
-  >
+  <v-card class="map-legend" flat>
     <v-list dense>
       <v-list-item-group>
-        <v-list-item
-          v-for="(threshold, index) in thresholds"
-          :key="index"
-        >
+        <v-list-item v-for="(item, index) in items" :key="index">
           <v-list-item-icon>
             <v-sheet
-              :color="threshold.color"
+              :color="item.color"
               height="24"
               rounded
               width="24"
             />
           </v-list-item-icon>
           <v-list-item-content>
-            <v-list-item-title v-text="threshold.label" />
+            <span class="text-body-2">
+              {{ item.label }}
+            </span>
           </v-list-item-content>
         </v-list-item>
       </v-list-item-group>
@@ -30,20 +25,11 @@
 <script>
   export default {
     props: {
-      legendGraphic: {
-        type: Object,
-        default: null,
+      items: {
+        type: Array,
+        default: () => [],
       },
     },
-    computed: {
-      thresholds() {
-        if (this.legendGraphic) {
-          return this.legendGraphic.legend
-        }
-        return []
-      },
-    },
-
   }
 </script>
 
