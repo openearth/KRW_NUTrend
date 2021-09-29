@@ -21,19 +21,20 @@
       :access-token="accessToken"
     >
       <v-fade-transition mode="out-in">
-        <div v-if="activeMap" class="mapbox-map__title">
-          <p class="mapbox-map__title-text text-body-2">
-            {{ activeMap.title }}
-          </p>
-        </div>
+        <map-title v-if="activeMap" :title="activeMap.title" />
       </v-fade-transition>
+
       <v-mapbox-layer
         v-for="layer in layers"
         :key="layer.id"
         :options="layer"
       />
+
       <map-controls v-if="filteredMap" :layer="filteredMap" />
-      <legend-card v-if="legendGraphic" :legend-graphic="legendGraphic" />
+
+      <v-fade-transition mode="out-in">
+        <map-legend v-if="legendGraphic" :legend-graphic="legendGraphic" />
+      </v-fade-transition>
     </mapbox-map>
   </app-shell>
 </template>
@@ -50,7 +51,8 @@
   import AppShell from '~/components/AppShell/AppShell'
   import LegalDialog from '~/components/LegalDialog/LegalDialog'
   import MapControls from '~/components/MapControls/MapControls'
-  import LegendCard from '~/components/LegendCard/LegendCard'
+  import MapLegend from '~/components/MapLegend/MapLegend'
+  import MapTitle from '~/components/MapTitle/MapTitle'
 
   export default {
     components: {
@@ -58,7 +60,8 @@
       MapboxMap,
       LegalDialog,
       MapControls,
-      LegendCard,
+      MapLegend,
+      MapTitle,
     },
     data: () => ({
       accessToken: process.env.VUE_APP_MAPBOX_TOKEN,
@@ -96,19 +99,3 @@
     },
   }
 </script>
-
-<style lang="scss">
-  .mapbox-map__title {
-    position: absolute;
-    z-index: 1;
-    top: $spacing-default;
-    left: $spacing-default;
-    padding: $spacing-smaller $spacing-small;
-    background-color: $color-white;
-    user-select: none;
-  }
-
-  .mapbox-map__title .text-body-2 {
-    margin: 0;
-  }
-</style>
