@@ -34,7 +34,7 @@
   }
 </script>
 
-<style>
+<style lang="scss">
   .active-location-card .text-body-2 {
     margin-bottom: 0;
   }
