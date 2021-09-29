@@ -25,7 +25,7 @@ export default {
       const waterBodies = rootGetters['filters/availableWaterBodies']
       const { selectedBodyOfWater } = rootState.filters
 
-      if (state.activeMap?.data) {
+      if (state.activeMap?.data && state?.legendGraphic) {
         const featuresCollection = filterFeaturesCollection(
           state.activeMap.data,
           waterBodies,
