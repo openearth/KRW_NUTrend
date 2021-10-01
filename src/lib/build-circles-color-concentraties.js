@@ -1,14 +1,14 @@
 //get legendgraphic response
 //create empty array
-export default(legendGraphic) => {
-  if (!legendGraphic.length) {
+export default(legend) => {
+  if (!legend.length) {
     return []
   }
 
   const circlesColor = [ 'step', [ 'get', 'value' ] ]
-  const matchValues = [ legendGraphic[0].color ]
+  const matchValues = [ legend[0].color ]
 
-  legendGraphic.forEach(object => {
+  legend.forEach(object => {
     if (matchValues[0] !== object.color) {
       matchValues.push(object.lowerValue)
       matchValues.push(object.color)

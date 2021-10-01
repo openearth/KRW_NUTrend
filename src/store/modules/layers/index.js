@@ -18,7 +18,7 @@ export default {
     activeMap: null,
     activeMapLocation: null,
     featuresCollection: [],
-    legendGraphic: [],
+    legend: [],
     differenceMap: false,
   }),
 
@@ -27,7 +27,7 @@ export default {
       const waterBodies = rootGetters['filters/availableWaterBodies']
       const { selectedBodyOfWater, selectedType } = rootState.filters
 
-      if (state.activeMap?.data && state?.legendGraphic.length) {
+      if (state.activeMap?.data && state?.legend.length) {
         const featuresCollection = filterFeaturesCollection(
           state.activeMap.data,
           waterBodies,
@@ -35,8 +35,8 @@ export default {
         )
         const data = { data: featuresCollection }
         const circlesColor = selectedType === 'concentration'
-          ? buildCirclesColorConcentraties(state.legendGraphic)
-          : buildCirclesColor(state.legendGraphic)
+          ? buildCirclesColorConcentraties(state.legend)
+          : buildCirclesColor(state.legend)
 
         const paint = state.differenceMap
           ? { paint: buildPaintObjectDiffMaps(circlesColor) }
@@ -137,7 +137,7 @@ export default {
       state.activeMapLocation = activeMapLocation
     },
     SET_LEGEND_GRAPHIC(state, { legend }) {
-      state.legendGraphic = legend
+      state.legend = legend
     },
     SET_DIFFERENCE_MAP(state, boolean) {
       state.differenceMap = boolean
