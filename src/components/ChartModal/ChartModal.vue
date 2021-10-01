@@ -21,7 +21,14 @@
       </v-app-bar>
       <v-divider />
       <v-card-text>
-        <app-chart v-if="isOpen" :title="chartTitle" />
+        <app-chart
+          :title="lineChartTitle"
+          type="lines"
+        />
+        <app-chart
+          :title="dotsChartTitle"
+          type="dots"
+        />
       </v-card-text>
     </v-card>
   </v-dialog>
@@ -41,7 +48,10 @@
         'isOpen',
         'title',
       ]),
-      chartTitle() {
+      lineChartTitle() {
+        return `N Totaal ${ this.title } (mg/l)`
+      },
+      dotsChartTitle() {
         return `N Totaal ${ this.title } (Toetsing)`
       },
     },
@@ -49,8 +59,12 @@
       ...mapActions('modal', [
         'setIsOpen',
       ]),
+      ...mapActions('charts', [
+        'resetChartsData',
+      ]),
       onClickClose() {
         this.setIsOpen({ isOpen: false })
+        this.resetChartsData()
       },
     },
   }
@@ -59,5 +73,13 @@
 <style lang="scss">
   .v-dialog > .v-card > .v-card__text {
     padding: 20px $spacing-medium;
+  }
+
+  .v-dialog .app-chart {
+    margin-top: $spacing-small;
+
+    + .app-chart {
+      margin-top: $spacing-medium;
+    }
   }
 </style>

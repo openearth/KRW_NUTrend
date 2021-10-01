@@ -13,7 +13,7 @@
             "data": {},
             "url": null,
             "legendGraphicId": "Ntot Toetsing t.o.v. normen laatste_SGBP (-) NL",
-            "components": []
+            "charts": {}
           },
           {
             "id": "krw-wl-ntot-difference-2009",
@@ -21,7 +21,7 @@
             "data": {},
             "url": "http://185.224.89.110:8082/FewsWebServices/rest/fewspiservice/v1/timeseries?filterId=krw-wl-ntot-toets-lSGBP&startTime=2009-01-01T00%3A00%3A00Z&endTime=2020-01-01T00%3A00%3A00Z&showThresholds=true&showStatistics=true&documentFormat=PI_JSON",
             "legendGraphicId": "Ntot Toetsing t.o.v. normen laatste_SGBP (-) NL",
-            "components": []
+            "charts": {}
           },
           {
             "id": "krw-wl-ntot-difference-2015",
@@ -29,7 +29,7 @@
             "data": {},
             "url": "http://185.224.89.110:8082/FewsWebServices/rest/fewspiservice/v1/timeseries?filterId=krw-wl-ntot-toets-lSGBP&startTime=2015-01-01T00%3A00%3A00Z&endTime=2020-01-01T00%3A00%3A00Z&showThresholds=true&showStatistics=true&documentFormat=PI_JSON",
             "legendGraphicId": "Ntot Toetsing t.o.v. normen laatste_SGBP (-) NL",
-            "components": []
+            "charts": {}
           },
           {
             "id": "krw-wl-ntot-toets-doelgat",
@@ -37,7 +37,7 @@
             "data": {},
             "url": null,
             "legendGraphicId": "Ntot Verschil t.o.v. de huidige norm Goed (-; doelgat) NL",
-            "components": []
+            "charts": {}
           }
         ]
       },
@@ -51,7 +51,7 @@
             "data": {},
             "url": null,
             "legendGraphicId": "Ptot Toetsing t.o.v. normen laatste_SGBP (-) NL",
-            "components": []
+            "charts": {}
           },
           {
             "id": "krw-wl-ptot-difference-2009",
@@ -59,7 +59,7 @@
             "data": {},
             "url": "http://185.224.89.110:8082/FewsWebServices/rest/fewspiservice/v1/timeseries?filterId=krw-wl-ptot-toets-lSGBP&startTime=2009-01-01T00%3A00%3A00Z&endTime=2020-01-01T00%3A00%3A00Z&showThresholds=true&showStatistics=true&documentFormat=PI_JSON",
             "legendGraphicId": "Ptot Toetsing t.o.v. normen laatste_SGBP (-) NL",
-            "components": []
+            "charts": {}
           },
           {
             "id": "krw-wl-ptot-difference-2015",
@@ -67,7 +67,7 @@
             "data": {},
             "url": "http://185.224.89.110:8082/FewsWebServices/rest/fewspiservice/v1/timeseries?filterId=krw-wl-ptot-toets-lSGBP&startTime=2015-01-01T00%3A00%3A00Z&endTime=2020-01-01T00%3A00%3A00Z&showThresholds=true&showStatistics=true&documentFormat=PI_JSON",
             "legendGraphicId": "Ptot Toetsing t.o.v. normen laatste_SGBP (-) NL",
-            "components": []
+            "charts": {}
           },
           {
             "id": "krw-wl-ptot-toets-doelgat",
@@ -75,7 +75,7 @@
             "data": {},
             "url": null,
             "legendGraphicId": "Ptot Verschil t.o.v. de huidige norm Goed (-; doelgat) NL",
-            "components": []
+            "charts": {}
           }
         ]
       },
@@ -89,7 +89,7 @@
             "data": {},
             "url": null,
             "legendGraphicId": "DIN Toetsing t.o.v. normen laatste_SGBP (-) NL",
-            "components": []
+            "charts": {}
           },
           {
             "id": "krw-wl-din-difference-2009",
@@ -97,7 +97,7 @@
             "data": {},
             "url": "http://185.224.89.110:8082/FewsWebServices/rest/fewspiservice/v1/timeseries?filterId=krw-wl-din-toets-lSGBP&startTime=2009-01-01T00%3A00%3A00Z&endTime=2020-01-01T00%3A00%3A00Z&showThresholds=true&showStatistics=true&documentFormat=PI_JSON",
             "legendGraphicId": "DIN Toetsing t.o.v. normen laatste_SGBP (-) NL",
-            "components": []
+            "charts": {}
           },
           {
             "id": "krw-wl-din-difference-2015",
@@ -105,7 +105,7 @@
             "data": {},
             "url": "http://185.224.89.110:8082/FewsWebServices/rest/fewspiservice/v1/timeseries?filterId=krw-wl-din-toets-lSGBP&startTime=2015-01-01T00%3A00%3A00Z&endTime=2020-01-01T00%3A00%3A00Z&showThresholds=true&showStatistics=true&documentFormat=PI_JSON",
             "legendGraphicId": "DIN Toetsing t.o.v. normen laatste_SGBP (-) NL",
-            "components": []
+            "charts": {}
           },
           {
             "id": "krw-wl-din-toets-doelgat",
@@ -113,7 +113,7 @@
             "data": {},
             "url": null,
             "legendGraphicId": "DIN Verschil t.o.v. de huidige norm Goed (-; doelgat) NL",
-            "components": []
+            "charts": {}
           }
         ]
       }
@@ -133,7 +133,7 @@
             "data": {},
             "url": null,
             "legendGraphicId": "Ntot Toetsing t.o.v. normen laatste_SGBP (-) NL",
-            "components": []
+            "charts": {}
           }
         ]
       },
@@ -147,7 +147,7 @@
             "data": {},
             "url": null,
             "legendGraphicId": "Ntot Toetsing t.o.v. normen laatste_SGBP (-) NL",
-            "components": []
+            "charts": {}
           }
         ]
       },
@@ -161,7 +161,7 @@
             "data": {},
             "url": null,
             "legendGraphicId": "Ntot Toetsing t.o.v. normen laatste_SGBP (-) NL",
-            "components": []
+            "charts": {}
           }
         ]
       }
@@ -181,18 +181,86 @@
             "data": {},
             "url": null,
             "legendGraphicId": "Ntot Zomergemiddeld (mg/l) NL",
-            "components": [
-              {
-                "filterId": "krw-wl-gr-ntot",
-                "parameterIds": "Oordeel",
-                "moduleInstanceIds": "SamenvoegenToetsing_Ntot",
-                "qualifierIds": "HH_1",
-                "startTime": "1980-01-01T00:00:00Z",
-                "endTime": "2020-01-01T00:00:00Z",
-                "timeStepId": "jaar",
-                "documentFormat": "PI_JSON"
-              }
-            ]
+            "charts": {
+              "dots": [
+                {
+                  "filterId": "krw-wl-gr-ntot",
+                  "parameterIds": "Oordeel",
+                  "moduleInstanceIds": "SamenvoegenToetsing_Ntot",
+                  "qualifierIds": "HH_1",
+                  "startTime": "1980-01-01T00:00:00Z",
+                  "endTime": "2020-01-01T00:00:00Z",
+                  "timeStepId": "jaar"
+                }
+              ],
+              "lines": [
+                {
+                  "filterId": "krw-wl-gr-ntot",
+                  "parameterIds": "Ntot",
+                  "moduleInstanceIds": "BerekenNormen_Ntot",
+                  "qualifierIds": "WN_3",
+                  "startTime": "1980-01-01T00:00:00Z",
+                  "endTime": "2020-01-01T00:00:00Z",
+                  "timeStepId": "jaar"
+                },
+                {
+                  "filterId": "krw-wl-gr-ntot",
+                  "parameterIds": "Ntot",
+                  "moduleInstanceIds": "BerekenNormen_Ntot",
+                  "qualifierIds": "WN_4",
+                  "startTime": "1980-01-01T00:00:00Z",
+                  "endTime": "2020-01-01T00:00:00Z",
+                  "timeStepId": "jaar"
+                },
+                {
+                  "filterId": "krw-wl-gr-ntot",
+                  "parameterIds": "Ntot",
+                  "moduleInstanceIds": "BerekenNormen_Ntot",
+                  "qualifierIds": "WN_5",
+                  "startTime": "1980-01-01T00:00:00Z",
+                  "endTime": "2020-01-01T00:00:00Z",
+                  "timeStepId": "jaar"
+                },
+                {
+                  "filterId": "krw-wl-gr-ntot",
+                  "parameterIds": "Ntot",
+                  "moduleInstanceIds": "SamenvoegenMeetdata_Ntot",
+                  "qualifierIds": "BE_3jaargem",
+                  "startTime": "1980-01-01T00:00:00Z",
+                  "endTime": "2020-01-01T00:00:00Z",
+                  "timeStepId": "jaar"
+                },
+                {
+                  "filterId": "krw-wl-gr-ntot",
+                  "parameterIds": "Ntot",
+                  "moduleInstanceIds": "SamenvoegenMeetdata_Ntot",
+                  "qualifierIds": "BE_jaargem",
+                  "startTime": "1980-01-01T00:00:00Z",
+                  "endTime": "2020-01-01T00:00:00Z",
+                  "timeStepId": "een.jaar"
+                },
+                {
+                  "filterId": "krw-wl-gr-ntot",
+                  "parameterIds": "Ntot",
+                  "moduleInstanceIds": "SamenvoegenMeetdata_Ntot",
+                  "qualifierIds": "BE_summermean",
+                  "startTime": "1980-01-01T00:00:00Z",
+                  "endTime": "2020-01-01T00:00:00Z",
+                  "timeStepId": "zomer"
+                }
+              ],
+              "scatter": [
+                {
+                  "filterId": "krw-wl-gr-ntot",
+                  "parameterIds": "Ntot",
+                  "moduleInstanceIds": "SamenvoegenMeetdata_Ntot",
+                  "qualifierIds": "BE_summermean",
+                  "startTime": "1980-01-01T00:00:00Z",
+                  "endTime": "2020-01-01T00:00:00Z",
+                  "timeStepId": "zomer"
+                }
+              ]
+            }
           },
           {
             "id": "krw-wl-ntot-zomgem-vvSGBP",
@@ -200,7 +268,7 @@
             "data": {},
             "url": null,
             "legendGraphicId": "Ntot Verschilkaart actueel t.o.v. voorlaatste_SGBP (mg/l) NL",
-            "components": []
+            "charts": {}
           },
           {
             "id": "krw-wl-ntot-zomgem-vlSGBP",
@@ -208,7 +276,7 @@
             "data": {},
             "url": null,
             "legendGraphicId": "Ntot Verschilkaart actueel t.o.v. laatste_SGBP (mg/l) NL",
-            "components": []
+            "charts": {}
           },
           {
             "id": "krw-wl-ntot-jaargem",
@@ -216,7 +284,7 @@
             "data": {},
             "url": null,
             "legendGraphicId": "Ntot Jaargemiddeld (mg/l) NL",
-            "components": []
+            "charts": {}
           },
           {
             "id": "krw-wl-ntot-norm-GM",
@@ -224,7 +292,7 @@
             "data": {},
             "url": null,
             "legendGraphicId": "Ntot Norm Goed-Matig (mg/l) NL",
-            "components": []
+            "charts": {}
           },
           {
             "id": "krw-wl-ntot-norm-MO",
@@ -232,7 +300,7 @@
             "data": {},
             "url": null,
             "legendGraphicId": "Ntot Norm Matig-Ontoereikend (mg/l) NL",
-            "components": []
+            "charts": {}
           },
           {
             "id": "krw-wl-ntot-norm-OS",
@@ -240,7 +308,7 @@
             "data": {},
             "url": null,
             "legendGraphicId": "Ntot Norm Ontoereikend-Slecht (mg/l) NL",
-            "components": []
+            "charts": {}
           }
         ]
       },
@@ -254,7 +322,7 @@
             "data": {},
             "url": null,
             "legendGraphicId": "Ntot Toetsing t.o.v. normen laatste_SGBP (-) NL",
-            "components": []
+            "charts": {}
           },
           {
             "id": "krw-wl-ptot-2",
@@ -262,7 +330,7 @@
             "data": {},
             "url": null,
             "legendGraphicId": "Ntot Toetsing t.o.v. normen laatste_SGBP (-) NL",
-            "components": []
+            "charts": {}
           },
           {
             "id": "krw-wl-ptot-3",
@@ -270,7 +338,7 @@
             "data": {},
             "url": null,
             "legendGraphicId": "Ntot Toetsing t.o.v. normen laatste_SGBP (-) NL",
-            "components": []
+            "charts": {}
           },
           {
             "id": "krw-wl-ptot-4",
@@ -278,7 +346,7 @@
             "data": {},
             "url": null,
             "legendGraphicId": "Ntot Toetsing t.o.v. normen laatste_SGBP (-) NL",
-            "components": []
+            "charts": {}
           },
           {
             "id": "krw-wl-ptot-5",
@@ -286,7 +354,7 @@
             "data": {},
             "url": null,
             "legendGraphicId": "Ntot Toetsing t.o.v. normen laatste_SGBP (-) NL",
-            "components": []
+            "charts": {}
           },
           {
             "id": "krw-wl-ptot-6",
@@ -294,7 +362,7 @@
             "data": {},
             "url": null,
             "legendGraphicId": "Ntot Toetsing t.o.v. normen laatste_SGBP (-) NL",
-            "components": []
+            "charts": {}
           },
           {
             "id": "krw-wl-ptot-7",
@@ -302,7 +370,7 @@
             "data": {},
             "url": null,
             "legendGraphicId": "Ntot Toetsing t.o.v. normen laatste_SGBP (-) NL",
-            "components": []
+            "charts": {}
           }
         ]
       },
@@ -316,7 +384,7 @@
             "data": {},
             "url": null,
             "legendGraphicId": "Ntot Toetsing t.o.v. normen laatste_SGBP (-) NL",
-            "components": []
+            "charts": {}
           },
           {
             "id": "krw-wl-din-2",
@@ -324,7 +392,7 @@
             "data": {},
             "url": null,
             "legendGraphicId": "Ntot Toetsing t.o.v. normen laatste_SGBP (-) NL",
-            "components": []
+            "charts": {}
           },
           {
             "id": "krw-wl-din-3",
@@ -332,7 +400,7 @@
             "data": {},
             "url": null,
             "legendGraphicId": "Ntot Toetsing t.o.v. normen laatste_SGBP (-) NL",
-            "components": []
+            "charts": {}
           },
           {
             "id": "krw-wl-din-4",
@@ -340,7 +408,7 @@
             "data": {},
             "url": null,
             "legendGraphicId": "Ntot Toetsing t.o.v. normen laatste_SGBP (-) NL",
-            "components": []
+            "charts": {}
           },
           {
             "id": "krw-wl-din-5",
@@ -348,7 +416,7 @@
             "data": {},
             "url": null,
             "legendGraphicId": "Ntot Toetsing t.o.v. normen laatste_SGBP (-) NL",
-            "components": []
+            "charts": {}
           },
           {
             "id": "krw-wl-din-6",
@@ -356,7 +424,7 @@
             "data": {},
             "url": null,
             "legendGraphicId": "Ntot Toetsing t.o.v. normen laatste_SGBP (-) NL",
-            "components": []
+            "charts": {}
           },
           {
             "id": "krw-wl-din-7",
@@ -364,7 +432,7 @@
             "data": {},
             "url": null,
             "legendGraphicId": "Ntot Toetsing t.o.v. normen laatste_SGBP (-) NL",
-            "components": []
+            "charts": {}
           }
         ]
       }

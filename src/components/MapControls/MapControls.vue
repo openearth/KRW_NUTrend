@@ -13,43 +13,57 @@
         default: null,
       },
     },
+    data() {
+      return {
+        map: null,
+      }
+    },
+    watch: {
+      map: {
+        handler(value) {
+          if (value) {
+            this.addEventsToMap()
+          }
+        },
+      },
+    },
     mounted() {
       const map = this.getMap()
       if (map) {
-        this.addEventsToMap(map)
-
+        this.map = map
       }
     },
+    beforeDestroy() {
+      this.removeEventsFromMap()
+    },
     methods: {
-      ...mapActions('graphs', [
-        'getGraphData',
+      ...mapActions('charts', [
+        'getChartsData',
       ]),
       deferredMountedTo(map) {
         if (this.layer) {
-          this.addEventsToMap(map)
-         
+          this.map = map
         }
       },
-      addEventsToMap(map) {
-        this.handleMapPointClick(map)
-        this.handleMapMouseEnter(map)
-        this.handleMapMouseLeave(map)
+      onClick(e) {
+        const { locationId } = e.features[0].properties
+        this.getChartsData({ id: locationId })
       },
-      handleMapPointClick(map) {
-        map.on('click', this.layer.id, (e) => {
-          const { locationId } = e.features[0].properties
-          this.getGraphData({ id: locationId })
-        })
+      onMouseEnter() {
+        this.map.getCanvas().style.cursor = 'pointer'
       },
-      handleMapMouseEnter(map) {
-        map.on('mouseenter', this.layer.id, () => {
-          map.getCanvas().style.cursor = 'pointer'
-        })
+      onMouseLeave() {
+        this.map.getCanvas().style.cursor = ''
       },
-      handleMapMouseLeave(map) {
-        map.on('mouseleave', this.layer.id, () => {
-          map.getCanvas().style.cursor = ''
-        })
+      addEventsToMap() {
+        this.map.on('click', this.layer.id, this.onClick)
+        this.map.on('mouseenter', this.layer.id, this.onMouseEnter)
+        this.map.on('mouseleave', this.layer.id, this.onMouseLeave)
+      },
+      removeEventsFromMap() {
+        this.map.off('click', this.layer.id, this.onClick)
+        this.map.off('mouseenter', this.layer.id, this.onMouseEnter)
+        this.map.off('mouseleave', this.layer.id, this.onMouseLeave)
       },
     },
   }
