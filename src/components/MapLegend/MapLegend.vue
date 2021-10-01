@@ -36,9 +36,9 @@
 <style lang="scss">
   .map-legend {
     position: absolute;
-    pointer-events: none;
     z-index: 2;
-    bottom: $spacing-large;
     right: $spacing-default;
+    bottom: $spacing-large;
+    pointer-events: none;
   }
 </style>
