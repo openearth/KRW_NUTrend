@@ -33,7 +33,7 @@
       <map-controls v-if="filteredMap" :layer="filteredMap" />
 
       <v-fade-transition mode="out-in">
-        <map-legend v-if="showLegend" :items="legendGraphic.legend" />
+        <map-legend v-if="showLegend" :items="legendGraphic" />
       </v-fade-transition>
     </mapbox-map>
   </app-shell>
@@ -76,20 +76,16 @@
       ...mapState('layers', [ 'activeMap', 'legendGraphic' ]),
       ...mapGetters('layers', [ 'filteredMap' ]),
       showLegend() {
-        return this.legendGraphic?.legend
+        return this.legendGraphic.length
       },
     },
     watch: {
       filteredMap: {
         handler(value) {
+          this.layers = []
           if (value) {
-            // Want to empty the layers every time we click to open a new one.
-            this.layers = []
-            if (this.filteredMap?.data) {
-              this.layers.push(buildGeojonLayer(this.filteredMap))
-            }
-          } else {
-            this.layers = []
+            const layers = buildGeojonLayer(this.filteredMap)
+            this.layers.push(layers)
           }
         },
       },
