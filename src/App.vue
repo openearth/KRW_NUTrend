@@ -97,8 +97,7 @@
       this.getLocations()
     },
     methods: {
-      ...mapActions('locations', [ 'getLocations' ]) ,
-      ...mapActions('layers', [ 'getDefaultMapLayer' ]),
+      ...mapActions('locations', [ 'getLocations' ]),
     },
   }
 </script>

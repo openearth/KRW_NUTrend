@@ -2,7 +2,7 @@ import Vue from 'vue'
 import Vuex from 'vuex'
 
 import filters from './modules/filters'
-import graphs from './modules/graphs'
+import charts from './modules/charts'
 import locations from './modules/locations'
 import layers from './modules/layers'
 import modal from './modules/modal'
@@ -13,7 +13,7 @@ export default new Vuex.Store({
   actions: {},
   modules: {
     filters,
-    graphs,
+    charts,
     locations,
     layers,
     modal,

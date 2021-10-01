@@ -37,8 +37,8 @@
       this.removeEventsFromMap()
     },
     methods: {
-      ...mapActions('graphs', [
-        'getGraphData',
+      ...mapActions('charts', [
+        'getChartsData',
       ]),
       deferredMountedTo(map) {
         if (this.layer) {
@@ -47,7 +47,7 @@
       },
       onClick(e) {
         const { locationId } = e.features[0].properties
-        this.getGraphData({ id: locationId })
+        this.getChartsData({ id: locationId })
       },
       onMouseEnter() {
         this.map.getCanvas().style.cursor = 'pointer'
