@@ -85,33 +85,6 @@
             />
           </v-col>
         </v-row>
-
-        <v-row v-else-if="!selectedBasin && !selectedWaterManager">
-          <v-col>
-            <chart-modal-activator
-              title="Nederland"
-              modal-title="Nederland"
-            />
-          </v-col>
-        </v-row>
-
-        <v-row v-else-if="!selectedWaterManager">
-          <v-col>
-            <chart-modal-activator
-              title="Stroomgebied"
-              modal-title="Stroomgebied"
-            />
-          </v-col>
-        </v-row>
-
-        <v-row v-if="!activeMapLocation">
-          <v-col>
-            <chart-modal-activator
-              title="Waterbeheerders"
-              modal-title="Waterbeheerders"
-            />
-          </v-col>
-        </v-row>
       </v-container>
     </v-navigation-drawer>
 
@@ -142,10 +115,6 @@
       FilterDataForm,
     },
     computed: {
-      ...mapState('filters', [
-        'selectedBasin',
-        'selectedWaterManager',
-      ]),
       ...mapState('layers', [
         'activeMapLocation',
       ]),
