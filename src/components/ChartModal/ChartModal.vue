@@ -74,4 +74,12 @@
   .v-dialog > .v-card > .v-card__text {
     padding: 20px $spacing-medium;
   }
+
+  .v-dialog .app-chart {
+    margin-top: $spacing-small;
+
+    + .app-chart {
+      margin-top: $spacing-medium;
+    }
+  }
 </style>
