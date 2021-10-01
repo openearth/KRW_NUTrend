@@ -62,6 +62,7 @@
         'getLegendGraphic',
         'resetActiveMap',
         'resetActiveMapLocation',
+        'resetLegend',
         'setActiveMap',
         'setDifferenceMap',
       ]),
@@ -91,6 +92,7 @@
         } else {
           this.resetActiveMap()
           this.resetActiveMapLocation()
+          this.resetLegend()
         }
       },
     },

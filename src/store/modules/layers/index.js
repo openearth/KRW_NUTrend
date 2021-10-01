@@ -108,6 +108,9 @@ export default {
     resetActiveMapLocation(context) {
       context.commit('RESET_ACTIVE_MAP_LOCATION')
     },
+    resetLegend(context) {
+      context.commit('RESET_LEGEND')
+    },
     setActiveMap(context, payload) {
       context.commit('SET_ACTIVE_MAP', payload)
     },
@@ -129,6 +132,9 @@ export default {
     },
     RESET_ACTIVE_MAP_LOCATION(state) {
       state.activeMapLocation = null
+    },
+    RESET_LEGEND(state) {
+      state.legend = []
     },
     SET_ACTIVE_MAP(state, { activeMap }) {
       state.activeMap = activeMap
