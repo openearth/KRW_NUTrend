@@ -4,8 +4,10 @@ import services from '~/config/services.json'
 import filterFeaturesCollection from '~/lib/filter-features-collection'
 import mapTimeseriesToGeoJSON from '~/lib/map-timeseries-to-geojson'
 import buildCirclesColor from '~/lib/build-circles-color'
+import buildCirclesColorConcentraties from '~/lib/build-circles-color-concentraties'
 import buildPaintObject from '~/lib/build-paint-object'
 import buildPaintObjectDiffMaps from '~/lib/build-paint-object-diff-maps'
+import mapTimeseriesToGeoJSONConcentraties from '~/lib/map-timeseries-to-geojson-concentraties'
 
 const { VUE_APP_API_VERSION } = process.env
 
@@ -24,7 +26,7 @@ export default {
     filteredMap(state, getters, rootState, rootGetters) {
       const waterBodies = rootGetters['filters/availableWaterBodies']
       const { selectedBodyOfWater } = rootState.filters
-
+      const { selectedType } = rootState.filters
       if (state.activeMap?.data && state?.legendGraphic) {
         const featuresCollection = filterFeaturesCollection(
           state.activeMap.data,
@@ -32,11 +34,13 @@ export default {
           selectedBodyOfWater,
         )
         const data = { data: featuresCollection }
-        const circlesColor = buildCirclesColor(state.legendGraphic)
+        
+        const circlesColor = selectedType === 'concentration' ? buildCirclesColorConcentraties(state.legendGraphic) : buildCirclesColor(state.legendGraphic)
+
         const paint = state.differenceMap
           ? { paint: buildPaintObjectDiffMaps(circlesColor) }
           : { paint: buildPaintObject(circlesColor) }
-
+        
         return { ...state.activeMap, ...data, ...paint }
       }
     },
@@ -55,6 +59,7 @@ export default {
     getTimeSeries({ commit, state, rootState }) {
       const { id } = state.activeMap
       const { selectedTimestamp } = rootState.filters
+      const { selectedType } = rootState.filters
       const params = {
         filterId: id,
         startTime: selectedTimestamp,
@@ -64,7 +69,7 @@ export default {
       return $axios
         .get(`/FewsWebServices/rest/fewspiservice/${ VUE_APP_API_VERSION }/timeseries`, { params })
         .then(response => response?.data)
-        .then(mapTimeseriesToGeoJSON)
+        .then(selectedType === 'concentration' ? mapTimeseriesToGeoJSONConcentraties : mapTimeseriesToGeoJSON)
         .then((timeSeries) => {
           commit('ADD_DATA_TO_ACTIVE_MAP', timeSeries)
         })
