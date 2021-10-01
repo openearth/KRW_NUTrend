@@ -99,21 +99,21 @@
       ]),
       ...mapActions('layers', [
         'getTimeSeries',
-        'setActiveMapLocation',
+        'resetActiveMapLocation',
       ]),
       onSelectedType(value) {
         this.setSelectedType({ selectedType: value })
-        this.setActiveMapLocation({ activeMapLocation: null })
+        this.resetActiveMapLocation()
       },
       onSelectedParticle(value) {
         this.setSelectedParticle({ selectedParticle: value })
-        this.setActiveMapLocation({ activeMapLocation: null })
+        this.resetActiveMapLocation()
       },
       onSelectedYear(value) {
         const timestamp = getISOTimestamp(value)
         this.setSelectedTimestamp({ selectedTimestamp: timestamp })
         this.getTimeSeries()
-        this.setActiveMapLocation({ activeMapLocation: null })
+        this.resetActiveMapLocation()
       },
       updateSelectedYear(value) {
         this.selectedYear = value

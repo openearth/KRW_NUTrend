@@ -99,6 +99,9 @@ export default {
           commit('SET_LEGEND_GRAPHIC', { legend })
         })
     },
+    resetActiveMapLocation(context) {
+      context.commit('RESET_ACTIVE_MAP_LOCATION')
+    },
     setActiveMap(context, payload) {
       context.commit('SET_ACTIVE_MAP', payload)
     },
@@ -114,6 +117,9 @@ export default {
     ADD_DATA_TO_ACTIVE_MAP(state, features) {
       const data = { data: features }
       state.activeMap = { ...state.activeMap, ...data }
+    },
+    RESET_ACTIVE_MAP_LOCATION(state) {
+      state.activeMapLocation = null
     },
     SET_ACTIVE_MAP(state, { activeMap }) {
       state.activeMap = activeMap
