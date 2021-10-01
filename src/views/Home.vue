@@ -54,37 +54,45 @@
 
         <app-divider />
 
-        <v-row v-if="activeMapLocation">
-          <v-col>
-            <v-btn
-              block
-              elevation="0"
-            >
-              Download (.csv)
-            </v-btn>
-          </v-col>
-        </v-row>
+        <v-fade-transition mode="out-in">
+          <v-row v-if="activeMapLocation">
+            <v-col>
+              <v-btn
+                block
+                elevation="0"
+              >
+                Download (.csv)
+              </v-btn>
+            </v-col>
+          </v-row>
+        </v-fade-transition>
 
-        <v-row v-if="activeMapLocation">
-          <v-col>
-            <active-location-card
-              :id="activeMapLocation.locationId"
-              :name="activeMapLocation.stationName"
-              :value="activeMapLocation.value"
-            />
-          </v-col>
-        </v-row>
+        <v-fade-transition mode="out-in">
+          <v-row v-if="activeMapLocation">
+            <v-col>
+              <active-location-card
+                :id="activeMapLocation.locationId"
+                :name="activeMapLocation.stationName"
+                :value="activeMapLocation.value"
+              />
+            </v-col>
+          </v-row>
+        </v-fade-transition>
 
-        <app-divider v-if="activeMapLocation" />
+        <v-fade-transition mode="out-in">
+          <app-divider v-if="activeMapLocation" />
+        </v-fade-transition>
 
-        <v-row v-if="activeMapLocation">
-          <v-col>
-            <chart-modal-activator
-              :title="activeMapLocation.stationName"
-              :modal-title="activeMapLocation.locationId"
-            />
-          </v-col>
-        </v-row>
+        <v-fade-transition mode="out-in">
+          <v-row v-if="activeMapLocation">
+            <v-col>
+              <chart-modal-activator
+                :title="activeMapLocation.stationName"
+                :modal-title="activeMapLocation.locationId"
+              />
+            </v-col>
+          </v-row>
+        </v-fade-transition>
       </v-container>
     </v-navigation-drawer>
 
