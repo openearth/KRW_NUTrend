@@ -1,5 +1,6 @@
 /**
- *
+ * Get a single value from an array of values.
+ * We are assuming all values in the array are the same.
  */
 export default (data) => {
   if (!data?.timeSeries.length) {

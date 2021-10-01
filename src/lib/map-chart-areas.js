@@ -1,5 +1,5 @@
 /**
- *
+ * Map the area values recieved from a request to the chart areas we need.
  *
  * Output example:
  * [

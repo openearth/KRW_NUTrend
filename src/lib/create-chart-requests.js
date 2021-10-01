@@ -6,7 +6,11 @@ import mapTimeseriesToChartData from '~/lib/map-timeseries-to-chart-data'
 const { VUE_APP_API_VERSION } = process.env
 
 /**
+ * For each set type of chart, create and make a request with each set of parameters.
+ * Depending on the request response, we map the chart data series and chart area.
  *
+ * Output: Array with Promises (resolved or rejected) fror each request.
+ * [ Promise, Promise, Promise, ... ]
  */
 export default ({ charts, id }) => {
   let requests = []
