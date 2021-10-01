@@ -88,6 +88,8 @@
             if (this.filteredMap?.data) {
               this.layers.push(buildGeojonLayer(this.filteredMap))
             }
+          } else {
+            this.layers = []
           }
         },
       },

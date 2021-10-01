@@ -99,6 +99,9 @@ export default {
           commit('SET_LEGEND_GRAPHIC', { legend })
         })
     },
+    resetActiveMap(context) {
+      context.commit('RESET_ACTIVE_MAP')
+    },
     resetActiveMapLocation(context) {
       context.commit('RESET_ACTIVE_MAP_LOCATION')
     },
@@ -117,6 +120,9 @@ export default {
     ADD_DATA_TO_ACTIVE_MAP(state, features) {
       const data = { data: features }
       state.activeMap = { ...state.activeMap, ...data }
+    },
+    RESET_ACTIVE_MAP(state) {
+      state.activeMap = null
     },
     RESET_ACTIVE_MAP_LOCATION(state) {
       state.activeMapLocation = null
