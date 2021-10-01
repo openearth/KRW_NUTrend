@@ -117,15 +117,16 @@
       },
       getXAxisData(data) {
         const flattenedData = data
-          .map(serie => serie.map(item => parseInt(item.label)))
+          .map(serie => serie.map(item => parseFloat(item.label, 10)))
           .flat()
+          .sort()
 
         return [ ...new Set(flattenedData) ]
       },
       getSeriesData(data) {
         return data.map((serie, index) => ({
           ...this.seriesStyle,
-          data: serie.map(item => parseInt(item.value, 10)),
+          data: serie.map(item => parseFloat(item.value, 10)),
           itemStyle: {
             color: this.seriesColors[index],
           },

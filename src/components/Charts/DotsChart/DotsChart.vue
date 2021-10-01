@@ -116,7 +116,7 @@
       series() {
         return {
           ...this.seriesStyle,
-          data: this.filterdData.map(item => parseInt(item.value, 10)),
+          data: this.filterdData.map(item => parseFloat(item.value, 10)),
         }
       },
       markAreas() {
