@@ -58,9 +58,12 @@
     methods: {
       ...mapActions('layers', [
         'getTimeSeries',
-        'setActiveMap',
         'getTimeSeriesDifferenceMaps',
         'getLegendGraphic',
+        'resetActiveMap',
+        'resetActiveMapLocation',
+        'resetLegend',
+        'setActiveMap',
         'setDifferenceMap',
       ]),
       importFileContent(fileName) {
@@ -70,19 +73,26 @@
         const { isActive } = this.$refs[`panel-${ index }`][0]
         const { propertyName } = event
 
-        if (isActive && propertyName === 'min-height') {
-          //Only the difference maps have url in the services.json
+        if (propertyName !== 'min-height') {
+          return
+        }
+
+        if (isActive) {
+          this.setActiveMap({ activeMap: panel })
+          this.getLegendGraphic()
+
+          // Only the difference maps have url in the services.json
           if (panel.url) {
             this.setDifferenceMap(true)
-            this.setActiveMap({ activeMap: panel })
-            this.getLegendGraphic()
             this.getTimeSeriesDifferenceMaps()
           } else {
             this.setDifferenceMap(false)
-            this.setActiveMap({ activeMap: panel })
-            this.getLegendGraphic()
             this.getTimeSeries()
           }
+        } else {
+          this.resetActiveMap()
+          this.resetActiveMapLocation()
+          this.resetLegend()
         }
       },
     },

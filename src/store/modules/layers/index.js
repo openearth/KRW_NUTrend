@@ -18,29 +18,30 @@ export default {
     activeMap: null,
     activeMapLocation: null,
     featuresCollection: [],
-    legendGraphic: null,
+    legend: [],
     differenceMap: false,
   }),
 
   getters: {
     filteredMap(state, getters, rootState, rootGetters) {
       const waterBodies = rootGetters['filters/availableWaterBodies']
-      const { selectedBodyOfWater } = rootState.filters
-      const { selectedType } = rootState.filters
-      if (state.activeMap?.data && state?.legendGraphic) {
+      const { selectedBodyOfWater, selectedType } = rootState.filters
+
+      if (state.activeMap?.data && state?.legend.length) {
         const featuresCollection = filterFeaturesCollection(
           state.activeMap.data,
           waterBodies,
           selectedBodyOfWater,
         )
         const data = { data: featuresCollection }
-        
-        const circlesColor = selectedType === 'concentration' ? buildCirclesColorConcentraties(state.legendGraphic) : buildCirclesColor(state.legendGraphic)
+        const circlesColor = selectedType === 'concentration'
+          ? buildCirclesColorConcentraties(state.legend)
+          : buildCirclesColor(state.legend)
 
         const paint = state.differenceMap
           ? { paint: buildPaintObjectDiffMaps(circlesColor) }
           : { paint: buildPaintObject(circlesColor) }
-        
+
         return { ...state.activeMap, ...data, ...paint }
       }
     },
@@ -58,14 +59,14 @@ export default {
   actions: {
     getTimeSeries({ commit, state, rootState }) {
       const { id } = state.activeMap
-      const { selectedTimestamp } = rootState.filters
-      const { selectedType } = rootState.filters
+      const { selectedTimestamp, selectedType } = rootState.filters
       const params = {
         filterId: id,
         startTime: selectedTimestamp,
         endTime: selectedTimestamp,
         documentFormat: 'PI_JSON',
       }
+
       return $axios
         .get(`/FewsWebServices/rest/fewspiservice/${ VUE_APP_API_VERSION }/timeseries`, { params })
         .then(response => response?.data)
@@ -76,6 +77,7 @@ export default {
     },
     getTimeSeriesDifferenceMaps({ commit, state }) {
       const { url } = state.activeMap
+
       return $axios
         .get(url)
         .then((response) => response?.data)
@@ -92,12 +94,22 @@ export default {
         format: 'application/json',
         layers: legendGraphicId,
       }
+
       return $axios
         .get('/FewsWebServices/wms?', { params })
         .then((response) => response?.data)
-        .then((legend) => {
+        .then(({ legend }) => {
           commit('SET_LEGEND_GRAPHIC', { legend })
         })
+    },
+    resetActiveMap(context) {
+      context.commit('RESET_ACTIVE_MAP')
+    },
+    resetActiveMapLocation(context) {
+      context.commit('RESET_ACTIVE_MAP_LOCATION')
+    },
+    resetLegend(context) {
+      context.commit('RESET_LEGEND')
     },
     setActiveMap(context, payload) {
       context.commit('SET_ACTIVE_MAP', payload)
@@ -115,6 +127,15 @@ export default {
       const data = { data: features }
       state.activeMap = { ...state.activeMap, ...data }
     },
+    RESET_ACTIVE_MAP(state) {
+      state.activeMap = null
+    },
+    RESET_ACTIVE_MAP_LOCATION(state) {
+      state.activeMapLocation = null
+    },
+    RESET_LEGEND(state) {
+      state.legend = []
+    },
     SET_ACTIVE_MAP(state, { activeMap }) {
       state.activeMap = activeMap
     },
@@ -122,7 +143,7 @@ export default {
       state.activeMapLocation = activeMapLocation
     },
     SET_LEGEND_GRAPHIC(state, { legend }) {
-      state.legendGraphic = legend
+      state.legend = legend
     },
     SET_DIFFERENCE_MAP(state, boolean) {
       state.differenceMap = boolean
