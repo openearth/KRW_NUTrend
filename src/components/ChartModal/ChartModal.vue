@@ -20,7 +20,7 @@
         </v-btn>
       </v-app-bar>
       <v-divider />
-      <v-card-text>
+      <v-card-text v-if="hasDataToDisplayInCharts">
         <app-chart
           :title="lineChartTitle"
           type="lines"
@@ -29,6 +29,25 @@
           :title="dotsChartTitle"
           type="dots"
         />
+      </v-card-text>
+      <v-card-text v-else>
+        <p class="text-body-1">
+          No chart to display.
+        </p>
+      </v-card-text>
+      <v-card-text v-if="hasChartImageToDisplay">
+        <v-img
+          v-if="image"
+          width="500"
+          height="400"
+          contain
+          :src="image"
+        />
+      </v-card-text>
+      <v-card-text v-else>
+        <p class="text-body-1">
+          No chart to display.
+        </p>
       </v-card-text>
     </v-card>
   </v-dialog>
@@ -44,10 +63,20 @@
       AppChart,
     },
     computed: {
+      ...mapState('charts', [
+        'data',
+        'image',
+      ]),
       ...mapState('modal', [
         'isOpen',
         'title',
       ]),
+      hasDataToDisplayInCharts() {
+        return this.data.length
+      },
+      hasChartImageToDisplay() {
+        return this.image
+      },
       lineChartTitle() {
         return `N Totaal ${ this.title } (mg/l)`
       },

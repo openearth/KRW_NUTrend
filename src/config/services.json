@@ -128,11 +128,11 @@
         "name": "Stikstof",
         "services": [
           {
-            "id": "krw-wl-ntot-1",
+            "id": "krw-ml-ntot",
             "name": "Trendhelling (% per decennium)",
             "data": {},
-            "url": null,
-            "legendGraphicId": "Ntot Toetsing t.o.v. normen laatste_SGBP (-) NL",
+            "url": "http://185.224.89.110:8082/FewsWebServices/rest/fewspiservice/v1/timeseries?filterId=krw-ml-ntot&startTime=2020-01-01T00%3A00%3A00Z&endTime=2020-01-01T00%3A00%3A00Z&showThresholds=true&showStatistics=true&documentFormat=PI_JSON",
+            "legendGraphicId": "Ntot Trendhelling (% per decennium) NL",
             "charts": {}
           }
         ]
@@ -142,11 +142,11 @@
         "name": "Fosfor",
         "services": [
           {
-            "id": "krw-wl-ptot-1",
+            "id": "krw-ml-ptot",
             "name": "Trendhelling (% per decennium)",
             "data": {},
-            "url": null,
-            "legendGraphicId": "Ntot Toetsing t.o.v. normen laatste_SGBP (-) NL",
+            "url": "http://185.224.89.110:8082/FewsWebServices/rest/fewspiservice/v1/timeseries?filterId=krw-ml-ptot&startTime=2020-01-01T00%3A00%3A00Z&endTime=2020-01-01T00%3A00%3A00Z&showThresholds=true&showStatistics=true&documentFormat=PI_JSON",
+            "legendGraphicId": "Ptot Trendhelling (% per decennium) NL",
             "charts": {}
           }
         ]
@@ -156,11 +156,11 @@
         "name": "DIN (Anorganisch stikstof)",
         "services": [
           {
-            "id": "krw-wl-din-1",
+            "id": "krw-ml-din",
             "name": "Trendhelling (% per decennium)",
             "data": {},
-            "url": null,
-            "legendGraphicId": "Ntot Toetsing t.o.v. normen laatste_SGBP (-) NL",
+            "url": "http://185.224.89.110:8082/FewsWebServices/rest/fewspiservice/v1/timeseries?filterId=krw-ml-din&startTime=2020-01-01T00%3A00%3A00Z&endTime=2020-01-01T00%3A00%3A00Z&showThresholds=true&showStatistics=true&documentFormat=PI_JSON",
+            "legendGraphicId": "DIN Trendhelling (% per decennium) NL",
             "charts": {}
           }
         ]

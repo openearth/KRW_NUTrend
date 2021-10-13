@@ -13,7 +13,7 @@
           </v-list-item-icon>
           <v-list-item-content>
             <span class="text-body-2">
-              {{ item.label }}
+              {{ item.label | capitalize }}
             </span>
           </v-list-item-content>
         </v-list-item>
@@ -23,7 +23,17 @@
 </template>
 
 <script>
+  import capitalizeString from '~/lib/capitalize-string'
+
   export default {
+    filters: {
+      capitalize: (value) => {
+        if (!value) {
+          return ''
+        }
+        return capitalizeString(value)
+      },
+    },
     props: {
       items: {
         type: Array,
