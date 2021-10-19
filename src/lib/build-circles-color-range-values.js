@@ -1,10 +1,11 @@
 //get legendgraphic response
 //create empty array
+//TODO: change name at build-circles-colors-range-values
 export default(legend) => {
   if (!legend.length) {
     return []
   }
-
+  
   const circlesColor = [ 'step', [ 'get', 'value' ] ]
   const matchValues = [ legend[0].color ]
 
@@ -14,6 +15,9 @@ export default(legend) => {
       matchValues.push(object.color)
     }
   })
-
-  return circlesColor.concat(matchValues)
+ 
+  
+  const circleColors = circlesColor.concat(matchValues)
+  
+  return [ 'case', [ '==', [ 'get', 'value' ], 'null' ], 'rgba(255, 255, 255, 0)', circleColors ]
 }
