@@ -2,6 +2,7 @@ import getBasinsFromLocations from '~/lib/get-basins-from-locations'
 import getSubBasinsFromLocations from '~/lib/get-sub-basins-from-locations'
 import getWaterBodiesFromLocations from '~/lib/get-water-bodies-from-locations'
 import getWaterManagersFromLocations from '~/lib/get-water-managers-from-locations'
+import getMonitoringLocationsForEveryLocation from '~/lib/get-monitoring-locations-for-every-location'
 
 export default {
   namespaced: true,
@@ -13,13 +14,12 @@ export default {
     selectedSubBasin: null,
     selectedType: null,
     selectedWaterManager: null,
-    selectedTimestamp: '2020-01-01T00:00:00Z',
+    selectedTimestamp: '2020-01-01T00:00:00Z', // pass it at env file for easier updates in the future. 
   }),
 
   getters: {
     availableBasins(state, getters, rootState) {
       const { locations } = rootState.locations
-
       return getBasinsFromLocations(locations)
     },
     availableSubBasins(state, getters, rootState) {
@@ -38,6 +38,10 @@ export default {
       const { selectedBasin, selectedSubBasin } = state
 
       return getWaterManagersFromLocations(locations, selectedBasin, selectedSubBasin)
+    },
+    availableMonitoringLocations(state, getters, rootState) {
+      const { locations } = rootState.locations
+      return getMonitoringLocationsForEveryLocation(locations)
     },
   },
 
