@@ -1,4 +1,5 @@
 export default (data) => {
+  
   if (!data?.timeSeries.length) {
     return []
   }
@@ -15,7 +16,7 @@ export default (data) => {
       coordinates: [ header.lon, header.lat ],
     },
   }))
-
+  
   return {
     type: 'FeatureCollection',
     features,
