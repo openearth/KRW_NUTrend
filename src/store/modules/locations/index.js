@@ -15,6 +15,7 @@ export default {
     getLocations(context) {
       const params = {
         showAttributes: 'true',
+        includeLocationRelations: 'true',
         documentFormat: 'PI_JSON',
       }
 
