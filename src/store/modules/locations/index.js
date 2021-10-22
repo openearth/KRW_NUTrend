@@ -1,6 +1,8 @@
 import $axios from '~/plugins/axios'
 
 import filterEmptyLocations from '~/lib/filter-empty-locations'
+import getMonitoringLocationsForEveryLocation from '~/lib/get-monitoring-locations-for-every-location'
+import filterMonitoringLocationsBasedOnLocation from '~/lib/filter-monitoring-locations-based-on-location'
 
 const { VUE_APP_API_VERSION } = process.env
 
@@ -10,6 +12,19 @@ export default {
   state: () => ({
     locations: [],
   }),
+  getters: {
+    availableMonitoringLocations(state) {
+      const { locations } = state
+      return getMonitoringLocationsForEveryLocation(locations)
+    },
+    selectedMonitoringLocations(state, getters, rootState) {
+      const { availableMonitoringLocations } = getters
+      const { activeMapLocation } = rootState.layers
+      const { locationId } = activeMapLocation
+      return filterMonitoringLocationsBasedOnLocation(availableMonitoringLocations, locationId)
+    },
+    
+  },
 
   actions: {
     getLocations(context) {
