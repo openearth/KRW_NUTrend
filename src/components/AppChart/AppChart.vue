@@ -8,6 +8,7 @@
       />
     </div>
     <div v-else class="app-chart__canvas">
+      <scatter-chart v-if="isScatterChart" :title="title" /> 
       <line-chart v-if="isLinesChart" :title="title" />
       <dots-chart v-if="isDotsChart" :title="title" />
     </div>
@@ -18,6 +19,8 @@
   import { mapState } from 'vuex'
   import DotsChart from '~/components/Charts/DotsChart/DotsChart'
   import LineChart from '~/components/Charts/LineChart/LineChart'
+  import ScatterChart from '~/components/Charts/ScatterChart/ScatterChart'
+
 
   const TIMEOUT_DURATION = 1000 // 1 second
 
@@ -26,6 +29,7 @@
     components: {
       DotsChart,
       LineChart,
+      ScatterChart,
     },
     props: {
       title: {
@@ -36,7 +40,7 @@
         type: String,
         default: '',
         validator(value) {
-          return [ 'dots', 'lines' ].indexOf(value) !== -1
+          return [ 'dots', 'lines', 'scatter' ].indexOf(value) !== -1
         },
       },
     },
@@ -54,6 +58,9 @@
       },
       isLinesChart() {
         return this.type === 'lines'
+      },
+      isScatterChart() {
+        return this.type === 'scatter'
       },
     },
     created() {

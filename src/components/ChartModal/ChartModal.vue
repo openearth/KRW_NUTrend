@@ -22,6 +22,10 @@
       <v-divider />
       <v-card-text>
         <app-chart
+          :title="scatterChartTitle"
+          type="scatter"
+        />
+        <app-chart
           :title="lineChartTitle"
           type="lines"
         />
@@ -48,6 +52,9 @@
         'isOpen',
         'title',
       ]),
+      scatterChartTitle() {
+        return `N Totaal ${ this.title } (KRW monitoringslocatie in mg/l)`
+      },
       lineChartTitle() {
         return `N Totaal ${ this.title } (mg/l)`
       },

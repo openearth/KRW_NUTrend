@@ -9,7 +9,7 @@
 </template>
 
 <script>
- 
+  import { mapState } from 'vuex'
   import { use } from 'echarts/core'
   import { CanvasRenderer } from 'echarts/renderers'
   import { ScatterChart } from 'echarts/charts'
@@ -18,7 +18,7 @@
     TitleComponent,
   } from 'echarts/components'
   import VChart from 'vue-echarts'
-
+  import createSeriesScatterData from '~/lib/create-series-scatter-data'
   use([
     CanvasRenderer,
     GridComponent,
@@ -47,6 +47,7 @@
       }
     },
     computed: {
+      ...mapState('charts', [ 'data' ]),
       baseOptions() {
         return {
           title: { text: this.title },
@@ -59,14 +60,14 @@
             backgroundColor: '#fff',
           },
           legend: {
-            data: [ 'MonitoringLocationId1', 'MonitoringLocationId2' ], //TODO replace with real data
+            data: this.getLegendData(this.scatterChartData), 
           },
         }
       },
       scatterChartData() {
-        return true
+        return this.data.filter(data => data.name === 'scatter')
       },
-      //TODO options need work
+     
       options() {
         return {
           ...this.baseOptions,
@@ -79,7 +80,7 @@
         return {
           type: 'category',
           boundaryGap: false,
-          data: [ '1991', '1992', '1993', '1994', '1995', '1996', '1997' ], // this.getXAxisData
+          data: this.labels,
         }
       },
       yAxis() {
@@ -88,30 +89,47 @@
         }
       },
       series() {
-        const sampleData = [
-          {
-            name: 'MonitoringLocationId1',
-            type: 'scatter',
-     
-            data: [ 120, 132, 101, 134, 290, 230, 210 ],
-          },
-          {
-            name: 'MonitoringLocationId2',
-            type: 'scatter',
-     
-            data: [ 120, 182, 191, 234, 290, 330, 310 ],
-          },
-
-        ]
-        return sampleData// this.getSeriesData(this.filterdData)
+        return this.getSeriesData(this.scatterChartData)
       },
-
+      labels() { 
+        return this.fullDates.map(date => date.split('-')[0])
+      },
+      fullDates() {
+        return  this.getXAxisData(this.scatterChartData)
+      },
+    },
+    methods: {
+      getLegendData(data) {
+        const stationNames =  data.map(({ location })=> {
+          return location.stationName
+        })
+        return stationNames
+      },
+      //NOTE leave the whole date or only the year ?
+      getXAxisData(data) {
+        let labelsDateType = []
+        data.forEach(({ series })=> {
       
-    },
-    mounted() {
+          let seriesLabelsDateType = series.map(serie => new Date (serie.label))
+          labelsDateType = [ ...labelsDateType, ...seriesLabelsDateType ]
+        })
+        let sortedLabelsDateType = labelsDateType.sort((a,b)=> a - b)
+        let labels = sortedLabelsDateType.map(label => label.toISOString().slice(0, 10))
 
+        return labels
+      },
+      getSeriesData(data) {
+        const series = data.map(({ location, name, series }) => {
+          return {
+            'name': location.stationName,
+            'type': name,
+            'data': createSeriesScatterData(this.fullDates, series),
+          }
+        })
+       
+        return series
+      },
     },
-
   }
 
 </script>
