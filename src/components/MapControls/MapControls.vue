@@ -3,7 +3,7 @@
 </template>
 
 <script>
-  import { mapActions } from 'vuex'
+  import { mapActions, mapState } from 'vuex'
 
   export default {
     inject: [ 'getMap' ],
@@ -17,6 +17,11 @@
       return {
         map: null,
       }
+    },
+    computed: {
+      ...mapState('filters', [
+        'selectedType',
+      ]),
     },
     watch: {
       map: {
@@ -38,6 +43,7 @@
     },
     methods: {
       ...mapActions('charts', [
+        'getChartImage',
         'getChartsData',
       ]),
       ...mapActions('layers', [ 'setActiveMapLocation' ]),
@@ -51,6 +57,13 @@
         
         this.setActiveMapLocation({ locationId: locationId, value: value, stationName: name })
         this.getChartsData()
+        
+
+        if (this.selectedType === 'trends') {
+          this.getChartImage()
+        } else {
+          this.getChartsData()
+        }
       },
       onMouseEnter() {
         this.map.getCanvas().style.cursor = 'pointer'

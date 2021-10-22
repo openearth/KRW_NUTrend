@@ -16,7 +16,6 @@
 </template>
 
 <script>
-  import { mapState } from 'vuex'
   import DotsChart from '~/components/Charts/DotsChart/DotsChart'
   import LineChart from '~/components/Charts/LineChart/LineChart'
   import ScatterChart from '~/components/Charts/ScatterChart/ScatterChart'
@@ -50,9 +49,6 @@
       }
     },
     computed: {
-      ...mapState('charts', [
-        'data',
-      ]),
       isDotsChart() {
         return this.type === 'dots'
       },
