@@ -260,11 +260,10 @@
                 {
                   "filterId": "krw-wl-gr-ntot",
                   "parameterIds": "Ntot",
-                  "moduleInstanceIds": "SamenvoegenMeetdata_Ntot",
-                  "qualifierIds": "BE_summermean",
+                  "moduleInstanceIds": "Preproces_N_fracties",
+                  "qualifierIds": "HH_1",
                   "startTime": "1980-01-01T00:00:00Z",
-                  "endTime": "2020-01-01T00:00:00Z",
-                  "timeStepId": "zomer"
+                  "endTime": "2020-01-01T00:00:00Z"
                 }
               ]
             }
