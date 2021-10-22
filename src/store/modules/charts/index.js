@@ -1,3 +1,4 @@
+import { active } from 'sortablejs'
 import createChartRequests from '~/lib/create-chart-requests'
 import mapChartData from '~/lib/map-chart-data'
 
@@ -9,22 +10,25 @@ export default {
   }),
 
   actions: {
-    getChartsData({ commit, rootGetters }, payload) {
+    getChartsData({ commit, rootState, rootGetters }) {
+      
       if (!Object.keys(rootGetters['layers/activeService']?.charts).length) {
         console.warn('No chart parameters available to retreive data with. Add them to services config.')
         return
       }
-
+      const { activeMapLocation } = rootState.layers
+     
       const { charts } = rootGetters['layers/activeService']
-      const { id } = payload
-      const chartDataRequests = createChartRequests({ charts, id })
+      
+      const { locationId } = activeMapLocation
+      const  selectedMonitoringLocations = rootGetters['locations/selectedMonitoringLocations']
+      const chartDataRequests = createChartRequests({ charts, locationId, selectedMonitoringLocations }) 
 
       try {
         Promise.all(chartDataRequests)
           .then((result) => mapChartData(result))
-          .then(({ data, location }) => {
+          .then(({ data }) => {
             commit('SET_CHART_DATA', { data })
-            commit('layers/SET_ACTIVE_MAP_LOCATION', { activeMapLocation: location }, { root: true })
           })
       } catch (err) {
         console.log(err)
