@@ -41,7 +41,7 @@ export default (array) => {
     const { data, value } = result
     const existingEntry = mappedData.find(item => item.name === name)
 
-    if (index === 0 && result.location) {
+    if (index === 0 && result?.location) {
       location = result.location
     }
 
