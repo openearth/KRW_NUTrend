@@ -141,7 +141,7 @@ export default {
     SET_ACTIVE_MAP(state, { activeMap }) {
       state.activeMap = activeMap
     },
-    SET_ACTIVE_MAP_LOCATION(state, { activeMapLocation }) {
+    SET_ACTIVE_MAP_LOCATION(state, activeMapLocation ) {
       state.activeMapLocation = activeMapLocation
     },
     SET_LEGEND_GRAPHIC(state, { legend }) {

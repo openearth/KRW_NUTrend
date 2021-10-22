@@ -40,14 +40,17 @@
       ...mapActions('charts', [
         'getChartsData',
       ]),
+      ...mapActions('layers', [ 'setActiveMapLocation' ]),
       deferredMountedTo(map) {
         if (this.layer) {
           this.map = map
         }
       },
       onClick(e) {
-        const { locationId } = e.features[0].properties
-        this.getChartsData({ id: locationId })
+        const { locationId, value, name } = e.features[0].properties
+        
+        this.setActiveMapLocation({ locationId: locationId, value: value, stationName: name })
+        this.getChartsData()
       },
       onMouseEnter() {
         this.map.getCanvas().style.cursor = 'pointer'
