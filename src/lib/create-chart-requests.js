@@ -1,10 +1,4 @@
-import $axios from '~/plugins/axios'
-
-import getChartAreaFromTimeseries from '~/lib/get-chart-area-from-timeseries'
-import mapTimeseriesToChartData from '~/lib/map-timeseries-to-chart-data'
-
-const { VUE_APP_API_VERSION } = process.env
-
+import getChartDataRequest from '~/lib/get-chart-data-request'
 /**
  * For each set type of chart, create and make a request with each set of parameters.
  * Depending on the request response, we map the chart data series and chart area.
@@ -12,32 +6,25 @@ const { VUE_APP_API_VERSION } = process.env
  * Output: Array with Promises (resolved or rejected) fror each request.
  * [ Promise, Promise, Promise, ... ]
  */
-export default ({ charts, id }) => {
+export default ({ charts, locationId, selectedMonitoringLocations }) => {
   let requests = []
-
+ 
+  const { monitoringLocations }= selectedMonitoringLocations
+  
   Object.entries(charts).forEach(([ name, array ]) => {
-    array.forEach((parameters) => {
-      const hasAreaParameter = parameters?.moduleInstanceIds.includes('BerekenNormen')
-      const params = {
-        ...parameters,
-        locationIds: id,
-        documentFormat: 'PI_JSON',
-      }
-      const request = new Promise((resolve, reject) => {
-        $axios
-          .get(`/FewsWebServices/rest/fewspiservice/${ VUE_APP_API_VERSION }/timeseries`, { params })
-          .then((response) => response?.data)
-          .then((data) => hasAreaParameter
-            ? getChartAreaFromTimeseries(data)
-            : mapTimeseriesToChartData(data),
-          )
-          .then((result) => resolve({ name, result }))
-          .catch((err) => reject(err))
+    if (name ==='scatter') {
+      monitoringLocations.forEach(({ monitoringLocationId }) => {
+        let requestScatter = getChartDataRequest(name, array, monitoringLocationId)
+        
+        requests = [ ...requests, ...requestScatter ]
       })
-
-      requests.push(request)
-    })
+      
+      
+    }else{
+      let requestsChart = getChartDataRequest(name, array, locationId)
+      requests = [ ...requests, ...requestsChart ]
+    }
   })
-
+  
   return requests
 }

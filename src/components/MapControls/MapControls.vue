@@ -46,18 +46,23 @@
         'getChartImage',
         'getChartsData',
       ]),
+      ...mapActions('layers', [ 'setActiveMapLocation' ]),
       deferredMountedTo(map) {
         if (this.layer) {
           this.map = map
         }
       },
       onClick(e) {
-        const { locationId } = e.features[0].properties
+        const { locationId, value, name } = e.features[0].properties
+        
+        this.setActiveMapLocation({ locationId: locationId, value: value, stationName: name })
+        this.getChartsData()
+        
 
         if (this.selectedType === 'trends') {
-          this.getChartImage({ id: locationId })
+          this.getChartImage()
         } else {
-          this.getChartsData({ id: locationId })
+          this.getChartsData()
         }
       },
       onMouseEnter() {

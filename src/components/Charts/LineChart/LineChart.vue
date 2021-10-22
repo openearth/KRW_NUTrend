@@ -9,6 +9,7 @@
 </template>
 
 <script>
+
   import { mapState } from 'vuex'
   import { use } from 'echarts/core'
   import { CanvasRenderer } from 'echarts/renderers'
@@ -120,7 +121,6 @@
           .map(serie => serie.map(item => parseFloat(item.label, 10)))
           .flat()
           .sort()
-
         return [ ...new Set(flattenedData) ]
       },
       getSeriesData(data) {

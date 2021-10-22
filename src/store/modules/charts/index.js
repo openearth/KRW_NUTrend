@@ -1,3 +1,4 @@
+import { active } from 'sortablejs'
 import $axios from '~/plugins/axios'
 
 import capitalizeString  from '~/lib/capitalize-string'
@@ -13,6 +14,8 @@ export default {
   }),
 
   actions: {
+    
+      
     getChartImage({ commit, rootState }, payload) {
       const { id } = payload
       const location = { locationId: id, stationName: id }
@@ -37,25 +40,24 @@ export default {
         console.log(err)
       }
     },
-    getChartsData({ commit, rootGetters }, payload) {
+    getChartsData({ commit, rootState, rootGetters }) {
       if (!Object.keys(rootGetters['layers/activeService']?.charts).length) {
         console.warn('No chart parameters available to retreive data with. Add them to services config.')
         return
       }
-
+      const { activeMapLocation } = rootState.layers
+     
       const { charts } = rootGetters['layers/activeService']
-      const { id } = payload
-      const chartDataRequests = createChartRequests({ charts, id })
+      
+      const { locationId } = activeMapLocation
+      const  selectedMonitoringLocations = rootGetters['locations/selectedMonitoringLocations']
+      const chartDataRequests = createChartRequests({ charts, locationId, selectedMonitoringLocations }) 
 
       try {
         Promise.all(chartDataRequests)
           .then((result) => mapChartData(result))
-          .then(({ data, location }) => {
+          .then(({ data }) => {
             commit('SET_CHART_DATA', { data })
-
-            if (location) {
-              commit('layers/SET_ACTIVE_MAP_LOCATION', { activeMapLocation: location }, { root: true })
-            }
           })
       } catch (err) {
         console.log(err)

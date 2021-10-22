@@ -30,10 +30,16 @@
     components: {
       VueMarkdown,
     },
+    data() { 
+      return {
+        activePanel: null,
+      }
+    },
     computed: {
       ...mapState('filters', [
         'selectedType',
         'selectedParticle',
+        'selectedTimestamp',
       ]),
       mappedServices() {
         const type = services.find(service => service.id === this.selectedType)
@@ -42,23 +48,29 @@
         return spatialPlot.services
       },
       panels() {
-        return this.mappedServices.map(({ id, name, url, legendGraphicId }) => {
+        return this.mappedServices.map(({ id, name, url, legendGraphicId, differenceMap }) => {
           const content = this.importFileContent(id)
           return {
             content: content.default,
             id,
             title: name,
             url,
+            differenceMap,
             legendGraphicId,
           }
         })
+      },
+    },
+    watch: {
+      selectedTimestamp() {
+        
       },
     },
 
     methods: {
       ...mapActions('layers', [
         'getTimeSeries',
-        'getTimeSeriesDifferenceMaps',
+        'getTimeSeriesWithStandardTime',
         'getLegendGraphic',
         'resetActiveMap',
         'resetActiveMapLocation',
@@ -81,10 +93,13 @@
           this.setActiveMap({ activeMap: panel })
           this.getLegendGraphic()
 
-          // Only the difference maps have url in the services.json
-          if (panel.url) {
+          // Only the difference maps and the trends have url in the services.json
+          if (panel.url && panel.differenceMap) {
             this.setDifferenceMap(true)
-            this.getTimeSeriesDifferenceMaps()
+            this.getTimeSeriesWithStandardTime()
+          } else if (panel.url) {
+            this.setDifferenceMap(false)
+            this.getTimeSeriesWithStandardTime() //TODO change naming to getTimeSeriesStandardTime
           } else {
             this.setDifferenceMap(false)
             this.getTimeSeries()

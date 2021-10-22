@@ -4,10 +4,10 @@ import services from '~/config/services.json'
 import filterFeaturesCollection from '~/lib/filter-features-collection'
 import mapTimeseriesToGeoJSON from '~/lib/map-timeseries-to-geojson'
 import buildCirclesColor from '~/lib/build-circles-color'
-import buildCirclesColorConcentraties from '~/lib/build-circles-color-concentraties'
+import buildCirclesColorsRangeValues from '~/lib/build-circles-color-range-values'
 import buildPaintObject from '~/lib/build-paint-object'
 import buildPaintObjectDiffMaps from '~/lib/build-paint-object-diff-maps'
-import mapTimeseriesToGeoJSONConcentraties from '~/lib/map-timeseries-to-geojson-concentraties'
+import mapTimeseriesToGeoJSONFloatValues from '~/lib/map-timeseries-to-geojson-float-values'
 
 const { VUE_APP_API_VERSION } = process.env
 
@@ -34,8 +34,8 @@ export default {
           selectedBodyOfWater,
         )
         const data = { data: featuresCollection }
-        const circlesColor = selectedType === 'concentration'
-          ? buildCirclesColorConcentraties(state.legend)
+        const circlesColor = selectedType === 'concentration' || selectedType === 'trends'
+          ? buildCirclesColorsRangeValues(state.legend) //TODO change name to buildCirclesColorsRangeValues
           : buildCirclesColor(state.legend)
 
         const paint = state.differenceMap
@@ -58,6 +58,7 @@ export default {
 
   actions: {
     getTimeSeries({ commit, state, rootState }) {
+      
       const { id } = state.activeMap
       const { selectedTimestamp, selectedType } = rootState.filters
       const params = {
@@ -66,22 +67,23 @@ export default {
         endTime: selectedTimestamp,
         documentFormat: 'PI_JSON',
       }
-
       return $axios
         .get(`/FewsWebServices/rest/fewspiservice/${ VUE_APP_API_VERSION }/timeseries`, { params })
         .then(response => response?.data)
-        .then(selectedType === 'concentration' ? mapTimeseriesToGeoJSONConcentraties : mapTimeseriesToGeoJSON)
+        .then(selectedType === 'concentration' ? mapTimeseriesToGeoJSONFloatValues : mapTimeseriesToGeoJSON)
         .then((timeSeries) => {
           commit('ADD_DATA_TO_ACTIVE_MAP', timeSeries)
         })
     },
-    getTimeSeriesDifferenceMaps({ commit, state }) {
-      const { url } = state.activeMap
+    //TODO change name it is not used only for difference maps but also for trends getTimeSeriesStandardTime getTimeSeriesDifferenceMaps
+    getTimeSeriesWithStandardTime({ commit, state, rootState }) {
 
+      const { url } = state.activeMap
+      const { selectedType } = rootState.filters
       return $axios
         .get(url)
         .then((response) => response?.data)
-        .then(mapTimeseriesToGeoJSON)
+         .then(selectedType === 'trends' ? mapTimeseriesToGeoJSONFloatValues : mapTimeseriesToGeoJSON)
         .then((timeSeries) => {
           commit('ADD_DATA_TO_ACTIVE_MAP', timeSeries)
         })
@@ -139,7 +141,7 @@ export default {
     SET_ACTIVE_MAP(state, { activeMap }) {
       state.activeMap = activeMap
     },
-    SET_ACTIVE_MAP_LOCATION(state, { activeMapLocation }) {
+    SET_ACTIVE_MAP_LOCATION(state, activeMapLocation ) {
       state.activeMapLocation = activeMapLocation
     },
     SET_LEGEND_GRAPHIC(state, { legend }) {

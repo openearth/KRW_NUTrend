@@ -22,6 +22,10 @@
       <v-divider />
       <v-card-text v-if="hasDataToDisplayInCharts">
         <app-chart
+          :title="scatterChartTitle"
+          type="scatter"
+        />
+        <app-chart
           :title="lineChartTitle"
           type="lines"
         />
@@ -71,11 +75,15 @@
         'isOpen',
         'title',
       ]),
+ 
       hasDataToDisplayInCharts() {
         return this.data.length
       },
       hasChartImageToDisplay() {
         return this.image
+      },
+      scatterChartTitle() {
+        return `N Totaal ${ this.title } (KRW monitoringslocatie in mg/l)`
       },
       lineChartTitle() {
         return `N Totaal ${ this.title } (mg/l)`

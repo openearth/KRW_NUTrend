@@ -15,7 +15,7 @@ export default (locations, selectedBasin, selectedSubBasin, selectedWaterManager
     return []
   }
 
-  const filterByBodyOfWater = ({ name }) => name === 'OWMIDENT'
+  const filterByBodyOfWater = ({ name }) => name === 'OWMIDENT' || name ==='VERWIJZING'
 
   const filteredLocations = locations
     .filter(({ attributes }) => attributes.find(filterByBodyOfWater))

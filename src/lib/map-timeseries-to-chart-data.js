@@ -1,4 +1,4 @@
-export default (data) => {
+export default (data, type) => {
   if (!data?.timeSeries.length) {
     return []
   }
@@ -12,7 +12,7 @@ export default (data) => {
     .flat()
     .map(event => {
       return {
-        label: event.date.split('-')[0],
+        label: type==='scatter' ? event.date : event.date.split('-')[0],
         value: event.value,
       }
     })

@@ -13,13 +13,12 @@ export default {
     selectedSubBasin: null,
     selectedType: null,
     selectedWaterManager: null,
-    selectedTimestamp: '2020-01-01T00:00:00Z',
+    selectedTimestamp: '2020-01-01T00:00:00Z', // pass it at env file for easier updates in the future. 
   }),
 
   getters: {
     availableBasins(state, getters, rootState) {
       const { locations } = rootState.locations
-
       return getBasinsFromLocations(locations)
     },
     availableSubBasins(state, getters, rootState) {
@@ -39,6 +38,7 @@ export default {
 
       return getWaterManagersFromLocations(locations, selectedBasin, selectedSubBasin)
     },
+
   },
 
   actions: {

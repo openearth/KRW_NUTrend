@@ -111,6 +111,7 @@
       selectedBodyOfWater(value) {
         this.setSelectedBodyOfWater({ selectedBodyOfWater: value })
       },
+
     },
 
     methods: {
