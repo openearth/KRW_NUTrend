@@ -43,7 +43,7 @@
     },
     methods: {
       ...mapActions('charts', [
-        'getChartImage',
+        'createImageUrl',
         'getChartsData',
       ]),
       ...mapActions('layers', [ 'setActiveMapLocation' ]),
@@ -56,12 +56,14 @@
         const { locationId, value, name } = e.features[0].properties
         
         this.setActiveMapLocation({ locationId: locationId, value: value, stationName: name })
-        this.getChartsData()
+        
         
 
         if (this.selectedType === 'trends') {
-          this.getChartImage()
+          console.log('getChartImage was called in MapControls')
+          this.createImageUrl()
         } else {
+          console.log('getChartsData is called')
           this.getChartsData()
         }
       },

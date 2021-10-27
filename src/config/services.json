@@ -140,7 +140,9 @@
             "data": {},
             "url": "http://185.224.89.110:8082/FewsWebServices/rest/fewspiservice/v1/timeseries?filterId=krw-ml-ntot&startTime=2020-01-01T00%3A00%3A00Z&endTime=2020-01-01T00%3A00%3A00Z&showThresholds=true&showStatistics=true&documentFormat=PI_JSON",
             "legendGraphicId": "Ntot Trendhelling (% per decennium) RWS",
-            "charts": {}
+            "charts": {
+              "graphUrl": "https: //krw-nutrend.nl/site/data/trend-graph-per-location/Trend"
+            }
           }
         ]
       },
@@ -154,7 +156,9 @@
             "data": {},
             "url": "http://185.224.89.110:8082/FewsWebServices/rest/fewspiservice/v1/timeseries?filterId=krw-ml-ptot&startTime=2020-01-01T00%3A00%3A00Z&endTime=2020-01-01T00%3A00%3A00Z&showThresholds=true&showStatistics=true&documentFormat=PI_JSON",
             "legendGraphicId": "Ptot Trendhelling (% per decennium) RWS",
-            "charts": {}
+            "charts": {
+              "graphUrl": "https: //krw-nutrend.nl/site/data/trend-graph-per-location/Trend"
+            }
           }
         ]
       },
@@ -168,7 +172,9 @@
             "data": {},
             "url": "http://185.224.89.110:8082/FewsWebServices/rest/fewspiservice/v1/timeseries?filterId=krw-ml-din&startTime=2020-01-01T00%3A00%3A00Z&endTime=2020-01-01T00%3A00%3A00Z&showThresholds=true&showStatistics=true&documentFormat=PI_JSON",
             "legendGraphicId": "DIN Trendhelling (% per decennium) RWS",
-            "charts": {}
+            "charts": {
+              "graphUrl": "https: //krw-nutrend.nl/site/data/trend-graph-per-location/Trend"
+            }
           }
         ]
       }

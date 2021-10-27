@@ -21,25 +21,22 @@
       </v-app-bar>
       <v-divider />
       <v-card-text v-if="hasDataToDisplayInCharts">
-        <app-chart
-          :title="scatterChartTitle"
-          type="scatter"
-        />
-        <app-chart
-          :title="lineChartTitle"
-          type="lines"
-        />
-        <app-chart
-          :title="dotsChartTitle"
-          type="dots"
-        />
+        <div>
+          <app-chart
+            :title="scatterChartTitle"
+            type="scatter"
+          />
+          <app-chart
+            :title="lineChartTitle"
+            type="lines"
+          />
+          <app-chart
+            :title="dotsChartTitle"
+            type="dots"
+          />
+        </div>
       </v-card-text>
-      <v-card-text v-else>
-        <p class="text-body-1">
-          No chart to display.
-        </p>
-      </v-card-text>
-      <v-card-text v-if="hasChartImageToDisplay">
+      <v-card-text v-else-if="hasChartImageToDisplay" class="d-flex justify-center">
         <v-img
           v-if="image"
           width="500"

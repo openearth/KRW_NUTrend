@@ -47,12 +47,24 @@ export default {
     },
     activeService(state, getters, rootState) {
       const { selectedParticle, selectedType } = rootState.filters
-      const { id } = state.activeMap
-
+       
+      const { activeMap } = state
+      if (!activeMap) {
+        return
+      }
+      const { id } = activeMap
       const service = services.find(service => service.id === selectedType)
       const particle = service.spatialPlots.find(plot => plot.id === selectedParticle)
 
       return particle.services.find(service => service.id === id)
+    },
+    availableCharts(state, getters) {
+      const { activeService } = getters
+      const { charts } = activeService
+      if(!Object.keys(charts).length) {
+        return
+      }
+      return charts
     },
   },
 

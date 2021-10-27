@@ -14,20 +14,22 @@ export default {
   }),
 
   actions: {
-    
-      
-    getChartImage({ commit, rootState }, payload) {
-      const { id } = payload
-      const location = { locationId: id, stationName: id }
+    //TODO in the payload there is no locationId anymore. Extract it similar with getChartData.
+    //TODO baseUrl load it from services.json
+    createImageUrl({ commit, rootState }) {
+      const { activeMapLocation } = rootState.layers
+      const { locationId } = activeMapLocation
+     
       const { selectedParticle } = rootState['filters']
       const type = capitalizeString(selectedParticle)
 
-      commit('layers/SET_ACTIVE_MAP_LOCATION', { activeMapLocation: location }, { root: true })
-
-      try {
+      const imageUrl =  `https://krw-nutrend.nl/site/data/trend-graph-per-location/Trend-${ locationId }%20-%20${ type }.jpg`
+      commit('SET_CHART_IMAGE', imageUrl)
+      //TODO replace baseUrl with url from services.json
+/*       try {
         $axios({
           method: 'get',
-          baseURL: `https://krw-nutrend.nl/site/data/trend-graph-per-location/Trend-${ id }%20-%20${ type }.jpg`,
+          baseURL: `https://krw-nutrend.nl/site/data/trend-graph-per-location/Trend-${ locationId }%20-%20${ type }.jpg`,
           // Set correct content-type, using 'image/jpeg' for now.
           headers: { 'Content-type': 'image/jpeg' },
         })
@@ -38,17 +40,17 @@ export default {
           })
       } catch (err) {
         console.log(err)
-      }
+      } */
     },
     getChartsData({ commit, rootState, rootGetters }) {
-      if (!Object.keys(rootGetters['layers/activeService']?.charts).length) {
-        console.warn('No chart parameters available to retreive data with. Add them to services config.')
+      const charts  = rootGetters['layers/availableCharts']
+
+      if (!charts) {
+        console.warn('No chart parameters available to retreive data with.')
         return
       }
       const { activeMapLocation } = rootState.layers
      
-      const { charts } = rootGetters['layers/activeService']
-      
       const { locationId } = activeMapLocation
       const  selectedMonitoringLocations = rootGetters['locations/selectedMonitoringLocations']
       const chartDataRequests = createChartRequests({ charts, locationId, selectedMonitoringLocations }) 
@@ -72,7 +74,7 @@ export default {
     SET_CHART_DATA(state, { data }) {
       state.data = data
     },
-    SET_CHART_IMAGE(state, { image }) {
+    SET_CHART_IMAGE(state, image ) {
       state.image = image
     },
     RESET_CHART_DATA(state) {
