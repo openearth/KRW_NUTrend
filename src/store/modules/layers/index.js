@@ -8,6 +8,7 @@ import buildCirclesColorsRangeValues from '~/lib/build-circles-color-range-value
 import buildPaintObject from '~/lib/build-paint-object'
 import buildPaintObjectDiffMaps from '~/lib/build-paint-object-diff-maps'
 import mapTimeseriesToGeoJSONFloatValues from '~/lib/map-timeseries-to-geojson-float-values'
+import { active } from 'sortablejs'
 
 const { VUE_APP_API_VERSION } = process.env
 
@@ -58,8 +59,11 @@ export default {
 
       return particle.services.find(service => service.id === id)
     },
-    availableCharts(state, getters) {
+    availableCharts(state, getters) { 
       const { activeService } = getters
+      if (!activeService) {
+        return 
+      }
       const { charts } = activeService
       if(!Object.keys(charts).length) {
         return
