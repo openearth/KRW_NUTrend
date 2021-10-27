@@ -9,9 +9,82 @@ export default {
   namespaced: true,
 
   state: () => ({
-    data: [],
+    data: [], //TODO rename to data for concentratie charts
     image: null,
   }),
+  getters:{
+    showToestandGraphs(state, getters, rootState, rootGetters) {
+      const { selectedType } = rootState.filters
+      const { activeMapLocation } = rootState.layers
+      const availableCharts = rootGetters['layers/availableCharts']
+      const activeService = rootGetters['layers/activeService']
+       
+      const show = selectedType === 'state' 
+          && activeService 
+          && !activeMapLocation 
+         ? true : false //  && availableCharts
+      return  show 
+       
+
+    },
+    showTrendsGraphs(state, getters, rootState, rootGetters) { 
+      const { selectedType } = rootState.filters
+      const { activeMapLocation } = rootState.layers
+      const availableCharts = rootGetters['layers/availableCharts']
+      
+      const show = selectedType === 'trends' 
+          && activeMapLocation
+          && availableCharts ? true : false
+      return show
+
+    },
+    showConcentrationGraphs(state, getters, rootState, rootGetters) { 
+      const { selectedType } = rootState.filters
+      const { activeMapLocation } = rootState.layers
+      const availableCharts = rootGetters['layers/availableCharts']
+      const show = selectedType === 'concentration' 
+          && activeMapLocation 
+          && availableCharts ? true : false
+      return show
+    },
+    showToestandGraphNl(state, getters, rootState, rootGetters) {
+      const { showToestandGraphs } = getters
+      const { selectedBasin, selectedWaterManager } = rootState.filters
+      if (showToestandGraphs & !selectedBasin & !selectedWaterManager) {
+        return true
+      }
+    },
+    showToestandGraphAllBasins(state, getters, rootState, rootGetters) {
+      const { showToestandGraphs } = getters
+      const { selectedBasin, selectedWaterManager } = rootState.filters
+      if (showToestandGraphs & !selectedBasin & !selectedWaterManager) {
+        return true
+      }
+
+    },
+    showToestandGraphAllWatermanagers(state, getters, rootState, rootGetters) {
+      const { showToestandGraphs } = getters
+      const { selectedBasin, selectedWaterManager } = rootState.filters
+      if (showToestandGraphs && !selectedWaterManager) {
+        return true
+      }
+    },
+    showToestandGraphSelectedBasin(state, getters, rootState, rootGetters) {
+      const { showToestandGraphs } = getters
+      const { selectedBasin, selectedWaterManager } = rootState.filters
+      if (showToestandGraphs && selectedBasin && !selectedWaterManager) {
+        return true
+      }
+    },
+    showToestandGraphSelectedWaterManager(state, getters, rootState, rootGetters) {
+      const { showToestandGraphs } = getters
+      const { selectedBasin, selectedWaterManager } = rootState.filters
+      if (showToestandGraphs && selectedWaterManager) {
+        return true
+      }
+    },
+
+  },
 
   actions: {
     //TODO in the payload there is no locationId anymore. Extract it similar with getChartData.
@@ -25,25 +98,10 @@ export default {
 
       const imageUrl =  `https://krw-nutrend.nl/site/data/trend-graph-per-location/Trend-${ locationId }%20-%20${ type }.jpg`
       commit('SET_CHART_IMAGE', imageUrl)
-      //TODO replace baseUrl with url from services.json
-/*       try {
-        $axios({
-          method: 'get',
-          baseURL: `https://krw-nutrend.nl/site/data/trend-graph-per-location/Trend-${ locationId }%20-%20${ type }.jpg`,
-          // Set correct content-type, using 'image/jpeg' for now.
-          headers: { 'Content-type': 'image/jpeg' },
-        })
-          .then((response) => response?.data)
-          .then((data) => {
-            // Commit image response to store. We might need to do some base64 encoding.
-            commit('SET_CHART_IMAGE', { image: data })
-          })
-      } catch (err) {
-        console.log(err)
-      } */
     },
     getChartsData({ commit, rootState, rootGetters }) {
       const charts  = rootGetters['layers/availableCharts']
+      console.log('charts', charts)
 
       if (!charts) {
         console.warn('No chart parameters available to retreive data with.')
@@ -65,8 +123,14 @@ export default {
         console.log(err)
       }
     },
+    getChartDataToestandNl() {
+
+    },
     resetChartsData({ commit }) {
       commit('RESET_CHART_DATA')
+    },
+    resetImageData({ commit }) {
+      commit('RESET_IMAGE_DATA')
     },
   },
 
