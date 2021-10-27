@@ -84,7 +84,7 @@
         </v-fade-transition>
         <!-- concentration graphs -->
         <v-fade-transition mode="out-in">
-          <v-row v-if="showConcetratieGraphs">
+          <v-row v-if="showConcentrationGraphs">
             <v-col>
               <chart-modal-activator
                 :title="activeMapLocation.stationName"
@@ -104,58 +104,53 @@
             </v-col>
           </v-row>
         </v-fade-transition>
-        <!-- toestand graphs have subcases based on basin and water manager selection -->
-        <div v-if="showToestandGraphs">
-          <v-fade-transition mode="out-in">
-            <!-- TODO: modal-title will be used when I will have the graphs finished.
-            check what titles the graphs will need -->
-            <!-- TODO: Sub-basin is not included in this logic.-->
-            <v-row v-if="!selectedBasin && !selectedWaterManager">
-              <v-col>
-                <chart-modal-activator
-                  title="Nederland"
-                  modal-title="Nederland"
-                />
-              </v-col>
-            </v-row>
-          </v-fade-transition>
-          <v-fade-transition mode="out-in">
-            <v-row v-if="!selectedBasin && !selectedWaterManager"> 
-              <v-col>
-                <chart-modal-activator
-                  title="Stroomgebied"
-                  modal-title="Stroomgebied"
-                />
-              </v-col>
-            </v-row>
-            <v-row v-else-if="selectedBasin && !selectedWaterManager ">
-              <v-col>
-                <chart-modal-activator
-                  :title="selectedBasin"
-                  :modal-title="selectedBasin"
-                />
-              </v-col>
-            </v-row>
-          </v-fade-transition>
-          <v-fade-transition mode="out-in">
-            <v-row v-if="!selectedWaterManager">
-              <v-col>
-                <chart-modal-activator
-                  title="Waterbeheerders"
-                  modal-title="Waterbeheerders"
-                />
-              </v-col>
-            </v-row>
-            <v-row v-else>
-              <v-col>
-                <chart-modal-activator
-                  :title="selectedWaterManager"
-                  :modal-title="selectedWaterManager"
-                />
-              </v-col>
-            </v-row>
-          </v-fade-transition>
-        </div>
+        <v-fade-transition mode="out-in">
+          <!-- TODO: Sub-basin is not included in this logic.-->
+          <v-row v-if="showToestandGraphNl">
+            <v-col>
+              <chart-modal-activator
+                title="Nederland"
+                modal-title="Nederland"
+              />
+            </v-col>
+          </v-row>
+        </v-fade-transition>
+        <v-fade-transition mode="out-in">
+          <v-row v-if="showToestandGraphAllBasins"> 
+            <v-col>
+              <chart-modal-activator
+                title="Stroomgebied"
+                modal-title="Stroomgebied"
+              />
+            </v-col>
+          </v-row>
+          <v-row v-else-if="showToestandGraphSelectedBasin">
+            <v-col>
+              <chart-modal-activator
+                :title="selectedBasin"
+                :modal-title="selectedBasin"
+              />
+            </v-col>
+          </v-row>
+        </v-fade-transition>
+        <v-fade-transition mode="out-in">
+          <v-row v-if="showToestandGraphAllWatermanagers">
+            <v-col>
+              <chart-modal-activator
+                title="Waterbeheerders"
+                modal-title="Waterbeheerders"
+              />
+            </v-col>
+          </v-row>
+          <v-row v-if="showToestandGraphSelectedWaterManager">
+            <v-col>
+              <chart-modal-activator
+                :title="selectedWaterManager"
+                :modal-title="selectedWaterManager"
+              />
+            </v-col>
+          </v-row>
+        </v-fade-transition>
       </v-container>
     </v-navigation-drawer>
 
@@ -192,27 +187,27 @@
       ...mapState('filters', [
         'selectedType', 'selectedBasin', 'selectedSubBasin', 'selectedWaterManager',
       ]),
-      ...mapGetters('layers', [ 'availableCharts', 'activeService' ]),
-      //TODO if in services.json they have graphs then and only then show the button. Check also when the call is made. For the case of
-      // trends that they don't have 
-      showConcetratieGraphs() {
-        const show = this.selectedType === 'concentration' 
-          && this.activeMapLocation 
-          && this.availableCharts ? true : false
-        return show
-      },
-      showTrendsGraphs() {
-        const show = this.selectedType === 'trends' 
-          && this.activeMapLocation
-          && this.availableCharts ? true : false
-        return show
-      },
-      showToestandGraphs() {
-        const show = this.selectedType === 'state' 
-          && this.activeService && !this.activeMapLocation ? true : false
-        return  show //TODO: && this.availableCharts
-      },
+      ...mapGetters('charts', [ 'showTrendsGraphs', 'showConcentrationGraphs', 'showToestandGraphNl', 
+                                'showToestandGraphAllBasins', 'showToestandGraphAllWatermanagers', 
+                                'showToestandGraphSelectedBasin', 'showToestandGraphSelectedWaterManager' ]),
 
+    },
+    watch: { 
+      showToestandGraphNl() {
+        console.log('send request for NL')
+      },
+      showToestandGraphAllBasins() {
+        console.log('send request for showToestandGraphAllBasins')
+      },
+      showToestandGraphAllWatermanagers() {
+        console.log('send request for showToestandGraphAllWatermanagers')
+      },
+      showToestandGraphSelectedBasin() {
+        console.log('send request for showToestandGraphSelectedBasin')
+      },
+      showToestandGraphAllBasins() {
+        console.log('send request for showToestandGraphSelectedWaterManager')
+      },
     },
   }
 </script>
