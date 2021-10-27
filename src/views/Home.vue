@@ -13,7 +13,7 @@
               width="110"
               height="50"
               contain
-              src="/assets/images/deltares-logo.png"
+              :src="require(`@/assets/deltares-logo.png`)"
             />
           </v-col>
           <v-col cols="5">
@@ -21,7 +21,7 @@
               width="110"
               height="50"
               contain
-              src="/assets/images/rws-logo.png"
+              :src="require(`@/assets/rws-logo.png`)"
             />
           </v-col>
         </v-row>
@@ -82,9 +82,9 @@
         <v-fade-transition mode="out-in">
           <app-divider v-if="activeMapLocation" />
         </v-fade-transition>
-
+        <!-- concentration graphs -->
         <v-fade-transition mode="out-in">
-          <v-row v-if="activeMapLocation">
+          <v-row v-if="showConcetratieGraphs">
             <v-col>
               <chart-modal-activator
                 :title="activeMapLocation.stationName"
@@ -93,6 +93,69 @@
             </v-col>
           </v-row>
         </v-fade-transition>
+        <v-fade-transition mode="out-in">
+          <!-- trend graphs -->
+          <v-row v-if="showTrendsGraphs">
+            <v-col>
+              <chart-modal-activator
+                :title="activeMapLocation.stationName"
+                :modal-title="activeMapLocation.locationId"
+              />
+            </v-col>
+          </v-row>
+        </v-fade-transition>
+        <!-- toestand graphs have subcases based on basin and water manager selection -->
+        <div v-if="showToestandGraphs">
+          <v-fade-transition mode="out-in">
+            <!-- TODO: modal-title will be used when I will have the graphs finished.
+            check what titles the graphs will need -->
+            <!-- TODO: Sub-basin is not included in this logic.-->
+            <v-row v-if="!selectedBasin && !selectedWaterManager">
+              <v-col>
+                <chart-modal-activator
+                  title="Nederland"
+                  modal-title="Nederland"
+                />
+              </v-col>
+            </v-row>
+          </v-fade-transition>
+          <v-fade-transition mode="out-in">
+            <v-row v-if="!selectedBasin && !selectedWaterManager"> 
+              <v-col>
+                <chart-modal-activator
+                  title="Stroomgebied"
+                  modal-title="Stroomgebied"
+                />
+              </v-col>
+            </v-row>
+            <v-row v-else-if="selectedBasin && !selectedWaterManager ">
+              <v-col>
+                <chart-modal-activator
+                  :title="selectedBasin"
+                  :modal-title="selectedBasin"
+                />
+              </v-col>
+            </v-row>
+          </v-fade-transition>
+          <v-fade-transition mode="out-in">
+            <v-row v-if="!selectedWaterManager">
+              <v-col>
+                <chart-modal-activator
+                  title="Waterbeheerders"
+                  modal-title="Waterbeheerders"
+                />
+              </v-col>
+            </v-row>
+            <v-row v-else>
+              <v-col>
+                <chart-modal-activator
+                  :title="selectedWaterManager"
+                  :modal-title="selectedWaterManager"
+                />
+              </v-col>
+            </v-row>
+          </v-fade-transition>
+        </div>
       </v-container>
     </v-navigation-drawer>
 
@@ -101,7 +164,7 @@
 </template>
 
 <script>
-  import { mapState } from 'vuex'
+  import { mapState, mapGetters } from 'vuex'
 
   import ActiveLocationCard from '~/components/ActiveLocationCard/ActiveLocationCard'
   import AppDivider from '~/components/AppDivider/AppDivider'
@@ -126,6 +189,30 @@
       ...mapState('layers', [
         'activeMapLocation',
       ]),
+      ...mapState('filters', [
+        'selectedType', 'selectedBasin', 'selectedSubBasin', 'selectedWaterManager',
+      ]),
+      ...mapGetters('layers', [ 'availableCharts', 'activeService' ]),
+      //TODO if in services.json they have graphs then and only then show the button. Check also when the call is made. For the case of
+      // trends that they don't have 
+      showConcetratieGraphs() {
+        const show = this.selectedType === 'concentration' 
+          && this.activeMapLocation 
+          && this.availableCharts ? true : false
+        return show
+      },
+      showTrendsGraphs() {
+        const show = this.selectedType === 'trends' 
+          && this.activeMapLocation
+          && this.availableCharts ? true : false
+        return show
+      },
+      showToestandGraphs() {
+        const show = this.selectedType === 'state' 
+          && this.activeService && !this.activeMapLocation ? true : false
+        return  show //TODO: && this.availableCharts
+      },
+
     },
   }
 </script>

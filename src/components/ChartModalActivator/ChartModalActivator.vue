@@ -14,7 +14,7 @@
         size="92"
         tile
       >
-        <v-img src="/assets/images/graph-icon.jpeg" />
+        <v-img :src="require(`@/assets/graph-icon.jpeg`)" />
       </v-avatar>
     </div>
   </v-card>
@@ -46,5 +46,6 @@
         this.setModalTitle({ title: this.modalTitle })
       },
     },
+
   }
 </script>
