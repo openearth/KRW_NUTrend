@@ -13,7 +13,36 @@
             "data": {},
             "url": null,
             "legendGraphicId": "Ntot Toetsing t.o.v. normen laatste_SGBP (-) NL",
-            "charts": {}
+            "charts": {
+              "NL": [
+                {
+                  "plotId": "NL_aantal_N",
+                  "startTime": "1991-01-01T00:00:00Z",
+                  "endTime": "2020-01-01T00:00:00Z"
+                },
+                {
+                  "plotId": "NL_perc_N",
+                  "startTime": "1991-01-01T00:00:00Z",
+                  "endTime": "2020-01-01T00:00:00Z"
+                }
+              ],
+              "BasinsAll": [
+                {
+                  "plotId": "Deelstroomgebied_aantal_N"
+                },
+                {
+                  "plotId": "Deelstroomgebied_perc_N"
+                }
+              ],
+              "WaterMangersAll": [
+                {
+                  "plotId": "Waterbeheerder_aantal_N"
+                },
+                {
+                  "plotId": "Waterbeheerder_perc_N"
+                }
+              ]
+            }
           },
           {
             "id": "krw-wl-ntot-difference-2009",
