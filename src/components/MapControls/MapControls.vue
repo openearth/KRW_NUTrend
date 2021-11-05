@@ -60,10 +60,8 @@
         
 
         if (this.selectedType === 'trends') {
-          console.log('getChartImage was called in MapControls')
           this.createImageUrl()
         } else {
-          console.log('getChartsData is called')
           this.getChartsData()
         }
       },

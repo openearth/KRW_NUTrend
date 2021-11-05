@@ -20,7 +20,107 @@
         </v-btn>
       </v-app-bar>
       <v-divider />
-      <v-card-text v-if="hasDataToDisplayInCharts">
+      <v-card-text v-if="displayToestandChartsNlCard">
+        <div>
+          <!-- normal -->
+          <app-chart
+            :title="toestandChartTitle"
+            type="barStackedYears"
+            :chart-data="toestandDataNl.aantal"
+          />
+          <!-- percentage-->
+          <app-chart
+            :title="toestandChartTitlePer"
+            type="barStackedYears"
+            :chart-data="toestandDataNl.percentage"
+          />
+        </div>
+      </v-card-text>
+      <v-card-text v-else-if="displayToestandChartsAllBasinsCard">
+        <v-carousel
+          hide-delimiter-background
+          height="800"
+        >
+          <v-carousel-item
+            v-for="toestandData in toestandDataAllBasins"
+            :key="toestandData.year"
+          >
+            <div>
+              <!-- normal -->
+              <app-chart
+                :title="toestandChartTitle + toestandData.year.substring(0,4)"  
+                type="barStacked"
+                :chart-data="toestandData.data.aantal"
+              />
+              <!-- percentage-->
+              <app-chart
+                :title="toestandChartTitlePer + toestandData.year.substring(0,4)"
+                type="barStacked"
+                :chart-data="toestandData.data.percentage"
+              />
+            </div>
+          </v-carousel-item>
+        </v-carousel>
+      </v-card-text>
+      <v-card-text v-else-if="displayToestandChartsWaterManagersCard">
+        <v-carousel
+          hide-delimiter-background
+          height="800"
+        >
+          <v-carousel-item
+            v-for="toestandData in toestandDataAllWaterManagers"
+            :key="toestandData.year"
+          >
+            <div>
+              <!-- normal -->
+              <app-chart
+                :title="toestandChartTitle + toestandData.year.substring(0,4)"
+                type="barStacked"
+                :chart-data="toestandData.data.aantal"
+              />
+              <!-- percentage-->
+              <app-chart
+                :title="toestandChartTitlePer + toestandData.year.substring(0,4)"
+                type="barStacked"
+                :chart-data="toestandData.data.percentage"
+              />
+            </div>
+          </v-carousel-item>
+        </v-carousel>
+      </v-card-text>
+      <v-card-text v-else-if="displayToestandChartsSelectedBasinCard">
+        <div>
+          <!-- normal -->
+          <app-chart
+            :title="toestandChartTitle"
+            type="barStackedYears"
+            :chart-data="toestandDataSelectedBasin.aantal"
+          />
+          <!-- percentage-->
+          <app-chart
+            :title="toestandChartTitlePer"
+            type="barStackedYears"
+            :chart-data="toestandDataSelectedBasin.percentage"
+          />
+        </div>
+      </v-card-text>
+      <v-card-text v-else-if="displayToestandChartsSelectedWaterManagerCard">
+        <div>
+          <!-- normal -->
+          <app-chart
+            :title="toestandChartTitle"
+            type="barStackedYears"
+            :chart-data="toestandDataSelectedWaterManager.aantal"
+          />
+          <!-- percentage-->
+          <app-chart
+            :title="toestandChartTitlePer"
+            type="barStackedYears"
+            :chart-data="toestandDataSelectedWaterManager.percentage"
+          />
+        </div>
+      </v-card-text>
+      <v-card-text v-else-if="hasDataToDisplayInCharts">
         <div>
           <app-chart
             :title="scatterChartTitle"
@@ -67,10 +167,17 @@
       ...mapState('charts', [
         'data',
         'image',
+        'toestandDataNl',
+        'toestandDataAllBasins',
+        'toestandDataAllWaterManagers',
+        'toestandDataSelectedBasin',
+        'toestandDataSelectedWaterManager',
+
       ]),
       ...mapState('modal', [
         'isOpen',
         'title',
+        'toestandChartType',
       ]),
  
       hasDataToDisplayInCharts() {
@@ -78,6 +185,39 @@
       },
       hasChartImageToDisplay() {
         return this.image
+      },
+      displayToestandChartsNlCard() {
+        const display = this.toestandDataNl
+          &&this.toestandChartType === 'NL' 
+          ? true : false
+        return display
+      },
+      displayToestandChartsAllBasinsCard() {
+        const display = this.toestandDataAllBasins.length
+          &&this.toestandChartType === 'AllBasins' 
+          ? true : false
+        return display
+      },
+      sortedDataAllBasins() {
+        return this.toestandDataAllBasins
+      },
+      displayToestandChartsWaterManagersCard() {
+        const display = this.toestandDataAllWaterManagers.length 
+          &&this.toestandChartType === 'AllWaterManagers' 
+          ? true : false
+        return display
+      },
+      displayToestandChartsSelectedBasinCard() {
+        const display = this.toestandDataSelectedBasin 
+          &&this.toestandChartType === 'selectedBasin' 
+          ? true : false
+        return display
+      },
+      displayToestandChartsSelectedWaterManagerCard() {
+        const display = this.toestandDataSelectedWaterManager 
+          &&this.toestandChartType === 'selectedWaterManager' 
+          ? true : false
+        return display
       },
       scatterChartTitle() {
         return `N Totaal ${ this.title } (KRW monitoringslocatie in mg/l)`
@@ -88,19 +228,29 @@
       dotsChartTitle() {
         return `N Totaal ${ this.title } (Toetsing)`
       },
+      toestandChartTitle() {
+        return `${ this.title } (aantal waterlichamen) `
+      },
+      toestandChartTitlePer() {
+        return `${ this.title } (% waterlichamen) `
+      },
     },
+
     methods: {
       ...mapActions('modal', [
         'setIsOpen',
+        'resetToestandChartType',
       ]),
       ...mapActions('charts', [
         'resetChartsData',
       ]),
       onClickClose() {
         this.setIsOpen({ isOpen: false })
-        this.resetChartsData()
+        //this.resetChartsData()
+        this.resetToestandChartType()
       },
     },
+
   }
 </script>
 

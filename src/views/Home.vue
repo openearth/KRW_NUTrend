@@ -35,7 +35,15 @@
         <app-divider />
 
         <v-row>
-          <content-panels />
+          <v-col
+            v-if="selectedType && selectedParticle"
+          >
+            <content-panels
+              :key="panelsResetKey"
+              :open-panel="initOpenPanel"
+              @active-panel-index="setActivePanelIndex"
+            />
+          </v-col>
         </v-row>
       </v-container>
     </v-navigation-drawer>
@@ -60,6 +68,7 @@
               <v-btn
                 block
                 elevation="0"
+                disabled
               >
                 Download (.csv)
               </v-btn>
@@ -106,47 +115,52 @@
         </v-fade-transition>
         <v-fade-transition mode="out-in">
           <!-- TODO: Sub-basin is not included in this logic.-->
-          <v-row v-if="showToestandGraphNl">
+          <v-row v-if="showToestandGraphNlModal">
             <v-col>
               <chart-modal-activator
                 title="Nederland"
                 modal-title="Nederland"
+                toestand-chart-type="NL"
               />
             </v-col>
           </v-row>
         </v-fade-transition>
         <v-fade-transition mode="out-in">
-          <v-row v-if="showToestandGraphAllBasins"> 
+          <v-row v-if="showToestandGraphAllBasinsModal"> 
             <v-col>
               <chart-modal-activator
                 title="Stroomgebied"
                 modal-title="Stroomgebied"
+                toestand-chart-type="AllBasins"
               />
             </v-col>
           </v-row>
-          <v-row v-else-if="showToestandGraphSelectedBasin">
+          <v-row v-if="showToestandGraphSelectedBasinModal">
             <v-col>
               <chart-modal-activator
                 :title="selectedBasin"
                 :modal-title="selectedBasin"
+                toestand-chart-type="selectedBasin"
               />
             </v-col>
           </v-row>
         </v-fade-transition>
         <v-fade-transition mode="out-in">
-          <v-row v-if="showToestandGraphAllWatermanagers">
+          <v-row v-if="showToestandGraphAllWatermanagersModal">
             <v-col>
               <chart-modal-activator
                 title="Waterbeheerders"
                 modal-title="Waterbeheerders"
+                toestand-chart-type="AllWaterManagers"
               />
             </v-col>
           </v-row>
-          <v-row v-if="showToestandGraphSelectedWaterManager">
+          <v-row v-if="showToestandGraphSelectedWaterManagerModal">
             <v-col>
               <chart-modal-activator
                 :title="selectedWaterManager"
                 :modal-title="selectedWaterManager"
+                toestand-chart-type="selectedWaterManager"
               />
             </v-col>
           </v-row>
@@ -159,7 +173,7 @@
 </template>
 
 <script>
-  import { mapState, mapGetters } from 'vuex'
+  import { mapState, mapGetters, mapActions } from 'vuex'
 
   import ActiveLocationCard from '~/components/ActiveLocationCard/ActiveLocationCard'
   import AppDivider from '~/components/AppDivider/AppDivider'
@@ -180,33 +194,69 @@
       DataTypeForm,
       FilterDataForm,
     },
+    data() { 
+      return {
+        initOpenPanel:0,
+        activePanelIndex: 0,
+        panelsResetKey: `${ this.selectedType }-${ this.selectedParticle }`,
+      }
+    },
     computed: {
       ...mapState('layers', [
         'activeMapLocation',
       ]),
       ...mapState('filters', [
-        'selectedType', 'selectedBasin', 'selectedSubBasin', 'selectedWaterManager',
+        'selectedType', 'selectedBasin', 'selectedSubBasin', 'selectedWaterManager', 'selectedParticle',
       ]),
-      ...mapGetters('charts', [ 'showTrendsGraphs', 'showConcentrationGraphs', 'showToestandGraphNl', 
-                                'showToestandGraphAllBasins', 'showToestandGraphAllWatermanagers', 
-                                'showToestandGraphSelectedBasin', 'showToestandGraphSelectedWaterManager' ]),
+      ...mapGetters('charts', [ 'showTrendsGraphs', 'showConcentrationGraphs', 'showToestandGraphNlModal', 
+                                'showToestandGraphAllBasinsModal', 'showToestandGraphAllWatermanagersModal', 
+                                'showToestandGraphSelectedBasinModal', 'showToestandGraphSelectedWaterManagerModal' ]),
 
     },
     watch: { 
-      showToestandGraphNl() {
-        console.log('send request for NL')
+      showToestandGraphNlModal() { 
+        if (this.showToestandGraphNlModal) {
+          this.getChartDataToestandNl()
+        }
       },
-      showToestandGraphAllBasins() {
-        console.log('send request for showToestandGraphAllBasins')
+      showToestandGraphAllBasinsModal() {
+        if (this.showToestandGraphAllBasinsModal) {
+          this.getChartDataToestandAllBasins()
+        }
       },
-      showToestandGraphAllWatermanagers() {
-        console.log('send request for showToestandGraphAllWatermanagers')
+      showToestandGraphAllWatermanagersModal() {
+        if (this.showToestandGraphAllWatermanagersModal) {
+          this.getChartDataToestandAllWaterManagers()
+        }
       },
-      showToestandGraphSelectedBasin() {
-        console.log('send request for showToestandGraphSelectedBasin')
+      showToestandGraphSelectedBasinModal() {
+        if (this.showToestandGraphSelectedBasinModal) {
+          this.getChartToestandAvailableWaterManagers()
+          this.getChartDataToestandSelectedBasin()
+        }
       },
-      showToestandGraphAllBasins() {
-        console.log('send request for showToestandGraphSelectedWaterManager')
+      showToestandGraphSelectedWaterManagerModal() {
+        if (this.showToestandGraphSelectedWaterManagerModal) {
+          this.getChartDataToestandSelectedWaterManager()
+        }
+      },
+      selectedType(){
+        this.panelsResetKey=`${ this.selectedType }-${ this.selectedParticle }`
+      },
+      selectedParticle() {
+        if(this.activePanelIndex === 0) {
+          this.panelsResetKey=`${ this.selectedType }-${ this.selectedParticle }`
+        }
+      },
+      
+    },
+    methods: { 
+      ...mapActions('charts', [ 'getChartDataToestandNl', 'getChartDataToestandAllBasins', 
+                                'getChartDataToestandAllWaterManagers', 'getChartToestandAvailableWaterManagers', 
+                                'getChartDataToestandSelectedBasin', 'getChartDataToestandSelectedWaterManager', 
+                                'getChartDataToestandSelectedBasin' ]),
+      setActivePanelIndex(event) {
+        this.activePanelIndex = event
       },
     },
   }

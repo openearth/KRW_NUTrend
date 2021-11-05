@@ -4,13 +4,25 @@ import $axios from '~/plugins/axios'
 import capitalizeString  from '~/lib/capitalize-string'
 import createChartRequests from '~/lib/create-chart-requests'
 import mapChartData from '~/lib/map-chart-data'
-
+import createToestandChartRequests from '~/lib/toestand-graphs-utils/create-toestand-chart-requests'
+import mapToestandChartData from '~/lib/toestand-graphs-utils/map-toestand-chart-data'
+import timespan from '~/config/timespan.json'
+import sortDescending from '~/lib/toestand-graphs-utils/sort-descending'
+import { parseJSON } from 'date-fns'
+//TODO change showTrendsGraphs and showConcentratieGraphs to modal.
+//TODO Perhpas the toestandGraphType will solve also the issue with the reseting of the data of the graphs
 export default {
   namespaced: true,
 
   state: () => ({
     data: [], //TODO rename to data for concentratie charts
     image: null,
+    toestandDataNl: null,
+    toestandDataAllBasins: [], //TODO rename
+    toestandDataAllWaterManagers: [], 
+    toestandDataSelectedBasin: null,
+    toestandDataSelectedWaterManager: null,
+   
   }),
   getters:{
     showToestandGraphs(state, getters, rootState, rootGetters) {
@@ -21,8 +33,8 @@ export default {
        
       const show = selectedType === 'state' 
           && activeService 
-          && !activeMapLocation 
-         ? true : false //  && availableCharts
+          && !activeMapLocation && availableCharts
+         ? true : false 
       return  show 
        
 
@@ -47,14 +59,14 @@ export default {
           && availableCharts ? true : false
       return show
     },
-    showToestandGraphNl(state, getters, rootState, rootGetters) {
+    showToestandGraphNlModal(state, getters, rootState, rootGetters) {
       const { showToestandGraphs } = getters
       const { selectedBasin, selectedWaterManager } = rootState.filters
       if (showToestandGraphs & !selectedBasin & !selectedWaterManager) {
         return true
       }
     },
-    showToestandGraphAllBasins(state, getters, rootState, rootGetters) {
+    showToestandGraphAllBasinsModal(state, getters, rootState, rootGetters) {
       const { showToestandGraphs } = getters
       const { selectedBasin, selectedWaterManager } = rootState.filters
       if (showToestandGraphs & !selectedBasin & !selectedWaterManager) {
@@ -62,21 +74,21 @@ export default {
       }
 
     },
-    showToestandGraphAllWatermanagers(state, getters, rootState, rootGetters) {
+    showToestandGraphAllWatermanagersModal(state, getters, rootState, rootGetters) {
       const { showToestandGraphs } = getters
       const { selectedBasin, selectedWaterManager } = rootState.filters
       if (showToestandGraphs && !selectedWaterManager) {
         return true
       }
     },
-    showToestandGraphSelectedBasin(state, getters, rootState, rootGetters) {
+    showToestandGraphSelectedBasinModal(state, getters, rootState, rootGetters) {
       const { showToestandGraphs } = getters
       const { selectedBasin, selectedWaterManager } = rootState.filters
       if (showToestandGraphs && selectedBasin && !selectedWaterManager) {
         return true
       }
     },
-    showToestandGraphSelectedWaterManager(state, getters, rootState, rootGetters) {
+    showToestandGraphSelectedWaterManagerModal(state, getters, rootState, rootGetters) {
       const { showToestandGraphs } = getters
       const { selectedBasin, selectedWaterManager } = rootState.filters
       if (showToestandGraphs && selectedWaterManager) {
@@ -101,7 +113,6 @@ export default {
     },
     getChartsData({ commit, rootState, rootGetters }) {
       const charts  = rootGetters['layers/availableCharts']
-      console.log('charts', charts)
 
       if (!charts) {
         console.warn('No chart parameters available to retreive data with.')
@@ -123,14 +134,169 @@ export default {
         console.log(err)
       }
     },
-    getChartDataToestandNl() {
+    getChartDataToestandNl(context) {
+      const { showToestandGraphNlModal } = context.getters
+      if (!showToestandGraphNlModal) {
+        return
+      }
+      const availableCharts = context.rootGetters['layers/availableCharts']
+      const { NL_charts } = availableCharts
+      const requests = createToestandChartRequests(NL_charts)
+      
+      try {
+        Promise.all(requests)
+          .then((result) => mapToestandChartData(result))
+          .then(( data ) => {
+            context.commit('SET_TOESTAND_DATA_NL', data)
+          })
+      } catch (err) {
+        console.log(err)
+      }
+    },
+    getChartDataToestandAllBasins(context) {
+      const { showToestandGraphAllBasinsModal } = context.getters
+      if (!showToestandGraphAllBasinsModal) {
+        return
+      }
+      const availableCharts = context.rootGetters['layers/availableCharts']
+      const { Basins_charts } = availableCharts
+      
+      let chartData = new Array()
+
+      timespan.forEach(async time =>{
+        const requests = createToestandChartRequests(Basins_charts, time)
+        try {
+          Promise.all(requests)
+            .then((result) => mapToestandChartData(result))
+            .then(( data ) => {
+              const yearlyData = {
+                year: time,
+                data,
+              }
+              chartData.push(yearlyData)
+            })
+        } catch (err) {
+          console.log(err)
+        }
+      })
+      //const result =  Promise.all(promises)
+      //console.log('result', result)
+
+
+     
+      //chartData.sort((a, b ) => (new Date ((b.year).substring(0,10)) - new Date ((a.year).substring(0,10)) ? 1 : -1))
+      context.commit('SET_TOESTAND_DATA_ALL_BASINS', chartData)
+    },
+    getChartDataToestandAllWaterManagers(context) {
+      const { showToestandGraphAllBasinsModal } = context.getters
+      if (!showToestandGraphAllBasinsModal) {
+        return
+      }
+      const availableCharts = context.rootGetters['layers/availableCharts']
+      const { WaterManagers_charts } = availableCharts
+     
+      let chartData = []
+      timespan.forEach((time)=>{
+        const requests = createToestandChartRequests(WaterManagers_charts, time)
+        try {
+          Promise.all(requests)
+            .then((result) => mapToestandChartData(result))
+            .then(( data ) => {
+              const yearlyData = {
+                year: time,
+                data,
+              }
+              chartData.push(yearlyData)
+            })
+        } catch (err) {
+          console.log(err)
+        }
+      })
+     
+      //chartData.sort((a, b ) => (new Date ((b.year).substring(0,10)) - new Date ((a.year).substring(0,10)) ? 1 : -1))
+      context.commit('SET_TOESTAND_DATA_ALL_WATER_MANAGERS', chartData)
+    },
+    getChartDataToestandSelectedBasin(context) {
+      const { showToestandGraphSelectedBasinModal } = context.getters
+      if (!showToestandGraphSelectedBasinModal) {
+        return
+      }
+      const availableCharts = context.rootGetters['layers/availableCharts']
+      const { SelectedBasin_charts } = availableCharts
+      const { selectedBasin } = context.rootState.filters
+      const requests = createToestandChartRequests(SelectedBasin_charts, null, [ selectedBasin ] )
+      //TODO fix the above call of the function
+      
+      try {
+        Promise.all(requests)
+          .then((result) => mapToestandChartData(result))
+          .then(( data ) => {
+            context.commit('SET_TOESTAND_DATA_SELECTED_BASIN', data)
+          })
+      } catch (err) {
+        console.log(err)
+      }
+    },
+    getChartToestandAvailableWaterManagers(context) {
+      const { showToestandGraphSelectedBasinModal } = context.getters
+      if (!showToestandGraphSelectedBasinModal) {
+        return
+      }
+      const availableCharts = context.rootGetters['layers/availableCharts']
+      const { WaterManagers_charts } = availableCharts
+      const availableWaterManagers = context.rootGetters['filters/availableWaterManagers']
+      
+      let chartData = []
+      timespan.forEach((time)=>{
+        const requests = createToestandChartRequests(WaterManagers_charts, time, availableWaterManagers)
+        try {
+          Promise.all(requests)
+            .then((result) => mapToestandChartData(result))
+            .then(( data ) => {
+              const yearlyData = {
+                year: time,
+                data,
+              }
+              chartData.push(yearlyData)
+            })
+        } catch (err) {
+          console.log(err)
+        }
+      })
+      //console.log(chartData)
+      //chartData.sort((a, b ) => (new Date ((b.year).substring(0,10)) - new Date ((a.year).substring(0,10)) ? 1 : -1))
+      context.commit('SET_TOESTAND_DATA_ALL_WATER_MANAGERS', chartData)
 
     },
+    getChartDataToestandSelectedWaterManager(context) {
+      const { showToestandGraphSelectedWaterManagerModal } = context.getters
+      if (!showToestandGraphSelectedWaterManagerModal) {
+        return
+      }
+      const availableCharts = context.rootGetters['layers/availableCharts']
+      const { SelectedWaterManager_charts } = availableCharts
+      const { selectedWaterManager } = context.rootState.filters
+      const requests = createToestandChartRequests(SelectedWaterManager_charts, null, [ selectedWaterManager ])
+      
+      try {
+        Promise.all(requests)
+          .then((result) => mapToestandChartData(result))
+          .then(( data ) => {
+            context.commit('SET_TOESTAND_DATA_SELECTED_WATER_MANAGER', data)
+          })
+      } catch (err) {
+        console.log(err)
+      }
+    },
+
     resetChartsData({ commit }) {
       commit('RESET_CHART_DATA')
-    },
-    resetImageData({ commit }) {
       commit('RESET_IMAGE_DATA')
+      commit('RESET_TOESTAND_DATA_NL')
+      commit('RESET_TOESTAND_DATA_ALL_BASINS')
+      commit('RESET_TOESTAND_DATA_WATER_MANAGERS')
+      commit('RESET_TOESTAND_DATA_SELECTED_BASIN')
+      commit('RESET_TOESTAND_DATA_SELECTED_WATER_MANAGER')
     },
   },
 
@@ -147,5 +313,36 @@ export default {
     RESET_CHART_IMAGE(state) {
       state.image = null
     },
+    RESET_TOESTAND_DATA_NL(state) {
+      state.toestandDataNl = null
+    },
+    RESET_TOESTAND_DATA_ALL_BASINS(state) {
+      state.toestandDataAllBasins = []
+    },
+    RESET_TOESTAND_DATA_WATER_MANAGERS(state) {
+      state.toestandDataAllWaterManagers =[]
+    },
+    RESET_TOESTAND_DATA_SELECTED_BASIN(state) {
+      state.toestandDataSelectedBasin =null
+    },
+    RESET_TOESTAND_DATA_SELECTED_WATER_MANAGER(state) {
+      state.toestandDataSelectedWaterManager = null
+    },
+    SET_TOESTAND_DATA_NL(state,  data ) {
+      state.toestandDataNl = data
+    },
+    SET_TOESTAND_DATA_ALL_BASINS(state, data) {
+      state.toestandDataAllBasins = data //todo change to simple basins the name
+    },
+    SET_TOESTAND_DATA_ALL_WATER_MANAGERS(state,  data ) {
+      state.toestandDataAllWaterManagers = data
+    },
+    SET_TOESTAND_DATA_SELECTED_BASIN(state, data) {
+      state.toestandDataSelectedBasin = data
+    },
+    SET_TOESTAND_DATA_SELECTED_WATER_MANAGER(state, data) {
+      state.toestandDataSelectedWaterManager = data
+    },
+
   },
 }

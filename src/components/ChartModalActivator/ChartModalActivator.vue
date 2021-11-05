@@ -35,15 +35,22 @@
         type: String,
         required: true,
       },
+      toestandChartType: {
+        type: String,
+        required: false,
+        default: '',
+      },
     },
     methods: {
       ...mapActions('modal', [
         'setIsOpen',
         'setModalTitle',
+        'setToestandChartType',
       ]),
       onButtonClick() {
         this.setIsOpen({ isOpen: true })
         this.setModalTitle({ title: this.modalTitle })
+        this.setToestandChartType({ type: this.toestandChartType })
       },
     },
 

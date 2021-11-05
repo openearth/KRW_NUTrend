@@ -14,7 +14,7 @@
             "url": null,
             "legendGraphicId": "Ntot Toetsing t.o.v. normen laatste_SGBP (-) NL",
             "charts": {
-              "NL": [
+              "NL_charts": [
                 {
                   "plotId": "NL_aantal_N",
                   "startTime": "1991-01-01T00:00:00Z",
@@ -26,7 +26,7 @@
                   "endTime": "2020-01-01T00:00:00Z"
                 }
               ],
-              "BasinsAll": [
+              "Basins_charts": [
                 {
                   "plotId": "Deelstroomgebied_aantal_N"
                 },
@@ -34,12 +34,36 @@
                   "plotId": "Deelstroomgebied_perc_N"
                 }
               ],
-              "WaterMangersAll": [
+              "SelectedBasin_charts": [
+                {
+                  "plotId": "Deelstroomgebied_aantal_N",
+                  "startTime": "1991-01-01T00:00:00Z",
+                  "endTime": "2020-01-01T00:00:00Z"
+                },
+                {
+                  "plotId": "Deelstroomgebied_perc_N",
+                  "startTime": "1991-01-01T00:00:00Z",
+                  "endTime": "2020-01-01T00:00:00Z"
+                }
+              ],
+              "WaterManagers_charts": [
                 {
                   "plotId": "Waterbeheerder_aantal_N"
                 },
                 {
                   "plotId": "Waterbeheerder_perc_N"
+                }
+              ],
+              "SelectedWaterManager_charts": [
+                {
+                  "plotId": "Waterbeheerder_aantal_N",
+                  "startTime": "1991-01-01T00:00:00Z",
+                  "endTime": "2020-01-01T00:00:00Z"
+                },
+                {
+                  "plotId": "Waterbeheerder_perc_N",
+                  "startTime": "1991-01-01T00:00:00Z",
+                  "endTime": "2020-01-01T00:00:00Z"
                 }
               ]
             }
@@ -82,7 +106,60 @@
             "data": {},
             "url": null,
             "legendGraphicId": "Ptot Toetsing t.o.v. normen laatste_SGBP (-) NL",
-            "charts": {}
+            "charts": {
+              "NL_charts": [
+                {
+                  "plotId": "NL_aantal_P",
+                  "startTime": "1991-01-01T00:00:00Z",
+                  "endTime": "2020-01-01T00:00:00Z"
+                },
+                {
+                  "plotId": "NL_perc_P",
+                  "startTime": "1991-01-01T00:00:00Z",
+                  "endTime": "2020-01-01T00:00:00Z"
+                }
+              ],
+              "Basins_charts": [
+                {
+                  "plotId": "Deelstroomgebied_aantal_P"
+                },
+                {
+                  "plotId": "Deelstroomgebied_perc_P"
+                }
+              ],
+              "SelectedBasin_charts": [
+                {
+                  "plotId": "Deelstroomgebied_aantal_P",
+                  "startTime": "1991-01-01T00:00:00Z",
+                  "endTime": "2020-01-01T00:00:00Z"
+                },
+                {
+                  "plotId": "Deelstroomgebied_perc_P",
+                  "startTime": "1991-01-01T00:00:00Z",
+                  "endTime": "2020-01-01T00:00:00Z"
+                }
+              ],
+              "WaterManagers_charts": [
+                {
+                  "plotId": "Waterbeheerder_aantal_P"
+                },
+                {
+                  "plotId": "Waterbeheerder_perc_P"
+                }
+              ],
+              "SelectedWaterManager_charts": [
+                {
+                  "plotId": "Waterbeheerder_aantal_P",
+                  "startTime": "1991-01-01T00:00:00Z",
+                  "endTime": "2020-01-01T00:00:00Z"
+                },
+                {
+                  "plotId": "Waterbeheerder_perc_P",
+                  "startTime": "1991-01-01T00:00:00Z",
+                  "endTime": "2020-01-01T00:00:00Z"
+                }
+              ]
+            }
           },
           {
             "id": "krw-wl-ptot-difference-2009",
@@ -123,7 +200,60 @@
             "data": {},
             "url": null,
             "legendGraphicId": "DIN Toetsing t.o.v. normen laatste_SGBP (-) NL",
-            "charts": {}
+            "charts": {
+              "NL_charts": [
+                {
+                  "plotId": "NL_aantal_DIN",
+                  "startTime": "1991-01-01T00:00:00Z",
+                  "endTime": "2020-01-01T00:00:00Z"
+                },
+                {
+                  "plotId": "NL_perc_DIN",
+                  "startTime": "1991-01-01T00:00:00Z",
+                  "endTime": "2020-01-01T00:00:00Z"
+                }
+              ],
+              "Basins_charts": [
+                {
+                  "plotId": "Deelstroomgebied_aantal_DIN"
+                },
+                {
+                  "plotId": "Deelstroomgebied_perc_DIN"
+                }
+              ],
+              "SelectedBasin_charts": [
+                {
+                  "plotId": "Deelstroomgebied_aantal_DIN",
+                  "startTime": "1991-01-01T00:00:00Z",
+                  "endTime": "2020-01-01T00:00:00Z"
+                },
+                {
+                  "plotId": "Deelstroomgebied_perc_DIN",
+                  "startTime": "1991-01-01T00:00:00Z",
+                  "endTime": "2020-01-01T00:00:00Z"
+                }
+              ],
+              "WaterManagers_charts": [
+                {
+                  "plotId": "Waterbeheerder_aantal_DIN"
+                },
+                {
+                  "plotId": "Waterbeheerder_perc_DIN"
+                }
+              ],
+              "SelectedWaterManager_charts": [
+                {
+                  "plotId": "Waterbeheerder_aantal_DIN",
+                  "startTime": "1991-01-01T00:00:00Z",
+                  "endTime": "2020-01-01T00:00:00Z"
+                },
+                {
+                  "plotId": "Waterbeheerder_perc_DIN",
+                  "startTime": "1991-01-01T00:00:00Z",
+                  "endTime": "2020-01-01T00:00:00Z"
+                }
+              ]
+            }
           },
           {
             "id": "krw-wl-din-difference-2009",
@@ -229,7 +359,7 @@
                   "filterId": "krw-wl-gr-ntot",
                   "parameterIds": "Oordeel",
                   "moduleInstanceIds": "SamenvoegenToetsing_Ntot",
-                  "qualifierIds": "HH_1",
+                  "qualifierIds": "BE_SGBPhuidig_toets",
                   "startTime": "1980-01-01T00:00:00Z",
                   "endTime": "2020-01-01T00:00:00Z",
                   "timeStepId": "jaar"
@@ -363,7 +493,85 @@
             "data": {},
             "url": null,
             "legendGraphicId": "Ptot Zomergemiddeld (mg/l) NL",
-            "charts": {}
+            "charts": {
+              "dots": [
+                {
+                  "filterId": "krw-wl-gr-ptot",
+                  "parameterIds": "Oordeel",
+                  "moduleInstanceIds": "SamenvoegenToetsing_Ptot",
+                  "qualifierIds": "BE_SGBPhuidig_toets",
+                  "startTime": "1980-01-01T00:00:00Z",
+                  "endTime": "2020-01-01T00:00:00Z",
+                  "timeStepId": "jaar"
+                }
+              ],
+              "lines": [
+                {
+                  "filterId": "krw-wl-gr-ptot",
+                  "parameterIds": "Ptot",
+                  "moduleInstanceIds": "BerekenNormen_Ptot",
+                  "qualifierIds": "WN_3",
+                  "startTime": "1980-01-01T00:00:00Z",
+                  "endTime": "2020-01-01T00:00:00Z",
+                  "timeStepId": "jaar"
+                },
+                {
+                  "filterId": "krw-wl-gr-ptot",
+                  "parameterIds": "Ptot",
+                  "moduleInstanceIds": "BerekenNormen_Ptot",
+                  "qualifierIds": "WN_4",
+                  "startTime": "1980-01-01T00:00:00Z",
+                  "endTime": "2020-01-01T00:00:00Z",
+                  "timeStepId": "jaar"
+                },
+                {
+                  "filterId": "krw-wl-gr-ptot",
+                  "parameterIds": "Ptot",
+                  "moduleInstanceIds": "BerekenNormen_Ptot",
+                  "qualifierIds": "WN_5",
+                  "startTime": "1980-01-01T00:00:00Z",
+                  "endTime": "2020-01-01T00:00:00Z",
+                  "timeStepId": "jaar"
+                },
+                {
+                  "filterId": "krw-wl-gr-ptot",
+                  "parameterIds": "Ptot",
+                  "moduleInstanceIds": "SamenvoegenMeetdata_Ptot",
+                  "qualifierIds": "BE_3jaargem",
+                  "startTime": "1980-01-01T00:00:00Z",
+                  "endTime": "2020-01-01T00:00:00Z",
+                  "timeStepId": "jaar"
+                },
+                {
+                  "filterId": "krw-wl-gr-ptot",
+                  "parameterIds": "Ptot",
+                  "moduleInstanceIds": "SamenvoegenMeetdata_Ptot",
+                  "qualifierIds": "BE_jaargem",
+                  "startTime": "1980-01-01T00:00:00Z",
+                  "endTime": "2020-01-01T00:00:00Z",
+                  "timeStepId": "een.jaar"
+                },
+                {
+                  "filterId": "krw-wl-gr-ptot",
+                  "parameterIds": "Ptot",
+                  "moduleInstanceIds": "SamenvoegenMeetdata_Ptot",
+                  "qualifierIds": "BE_summermean",
+                  "startTime": "1980-01-01T00:00:00Z",
+                  "endTime": "2020-01-01T00:00:00Z",
+                  "timeStepId": "zomer"
+                }
+              ],
+              "scatter": [
+                {
+                  "filterId": "krw-wl-gr-ptot",
+                  "parameterIds": "Ptot",
+                  "moduleInstanceIds": "Preproces_N_fracties",
+                  "qualifierIds": "HH_2",
+                  "startTime": "1980-01-01T00:00:00Z",
+                  "endTime": "2020-01-01T00:00:00Z"
+                }
+              ]
+            }
           },
           {
             "id": "krw-wl-ptot-zomgem-vvSGBP",
@@ -425,7 +633,85 @@
             "data": {},
             "url": null,
             "legendGraphicId": "DIN Wintergemiddeld (mg/l) RWS",
-            "charts": {}
+            "charts": {
+              "dots": [
+                {
+                  "filterId": "krw-wl-gr-din",
+                  "parameterIds": "Oordeel",
+                  "moduleInstanceIds": "SamenvoegenToetsing_DIN",
+                  "qualifierIds": "BE_SGBPhuidig_toets",
+                  "startTime": "1980-01-01T00:00:00Z",
+                  "endTime": "2020-01-01T00:00:00Z",
+                  "timeStepId": "jaar"
+                }
+              ],
+              "lines": [
+                {
+                  "filterId": "krw-wl-gr-din",
+                  "parameterIds": "DIN",
+                  "moduleInstanceIds": "BerekenNormen_DIN",
+                  "qualifierIds": "WN_3",
+                  "startTime": "1980-01-01T00:00:00Z",
+                  "endTime": "2020-01-01T00:00:00Z",
+                  "timeStepId": "jaar"
+                },
+                {
+                  "filterId": "krw-wl-gr-din",
+                  "parameterIds": "DIN",
+                  "moduleInstanceIds": "BerekenNormen_DIN",
+                  "qualifierIds": "WN_4",
+                  "startTime": "1980-01-01T00:00:00Z",
+                  "endTime": "2020-01-01T00:00:00Z",
+                  "timeStepId": "jaar"
+                },
+                {
+                  "filterId": "krw-wl-gr-din",
+                  "parameterIds": "DIN",
+                  "moduleInstanceIds": "BerekenNormen_DIN",
+                  "qualifierIds": "WN_5",
+                  "startTime": "1980-01-01T00:00:00Z",
+                  "endTime": "2020-01-01T00:00:00Z",
+                  "timeStepId": "jaar"
+                },
+                {
+                  "filterId": "krw-wl-gr-din",
+                  "parameterIds": "DIN",
+                  "moduleInstanceIds": "SamenvoegenMeetdata_DIN",
+                  "qualifierIds": "BE_3jaargem",
+                  "startTime": "1980-01-01T00:00:00Z",
+                  "endTime": "2020-01-01T00:00:00Z",
+                  "timeStepId": "jaar"
+                },
+                {
+                  "filterId": "krw-wl-gr-din",
+                  "parameterIds": "DIN",
+                  "moduleInstanceIds": "SamenvoegenMeetdata_DIN",
+                  "qualifierIds": "BE_jaargem",
+                  "startTime": "1980-01-01T00:00:00Z",
+                  "endTime": "2020-01-01T00:00:00Z",
+                  "timeStepId": "een.jaar"
+                },
+                {
+                  "filterId": "krw-wl-gr-din",
+                  "parameterIds": "DIN",
+                  "moduleInstanceIds": "SamenvoegenMeetdata_DIN",
+                  "qualifierIds": "BE_wintermean",
+                  "startTime": "1980-01-01T00:00:00Z",
+                  "endTime": "2020-01-01T00:00:00Z",
+                  "timeStepId": "winter"
+                }
+              ],
+              "scatter": [
+                {
+                  "filterId": "krw-wl-gr-din",
+                  "parameterIds": "DIN",
+                  "moduleInstanceIds": "Preproces_N_fracties",
+                  "qualifierIds": "HH_4",
+                  "startTime": "1980-01-01T00:00:00Z",
+                  "endTime": "2020-01-01T00:00:00Z"
+                }
+              ]
+            }
           },
           {
             "id": "krw-wl-din-wingem-vvSGBP",

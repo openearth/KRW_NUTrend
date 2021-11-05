@@ -4,6 +4,7 @@ export default {
   state: () => ({
     isOpen: false,
     title: '',
+    toestandChartType: null, //TODO perhaps move it modal.
   }),
 
   getters: {},
@@ -15,6 +16,12 @@ export default {
     setModalTitle(context, payload) {
       context.commit('SET_MODAL_TITLE', payload)
     },
+    setToestandChartType(context, payload){
+      context.commit('SET_TOESTAND_CHART_TYPE', payload)
+    },
+    resetToestandChartType({ commit }) {
+      commit('RESET_TOESTAND_CHART_TYPE')
+    },
   },
 
   mutations: {
@@ -23,6 +30,12 @@ export default {
     },
     SET_MODAL_TITLE(state, { title }) {
       state.title = title
+    },
+    SET_TOESTAND_CHART_TYPE(state, { type }) {
+      state.toestandChartType = type
+    },
+    RESET_TOESTAND_CHART_TYPE(state) {
+      state.toestandChartType = null
     },
   },
 }

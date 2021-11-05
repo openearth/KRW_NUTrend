@@ -103,9 +103,13 @@
         'resetActiveMapLocation',
         'resetLegend',
       ]),
+      ...mapActions('charts', [
+        'resetChartsData',
+      ]),
       onSelectedType(value) {
         this.setSelectedType({ selectedType: value })
         this.resetMap()
+        this.resetChartsData()
       },
       onSelectedParticle(value) {
         this.setSelectedParticle({ selectedParticle: value })
