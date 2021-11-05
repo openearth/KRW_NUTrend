@@ -1,3 +1,4 @@
+import checkForNullMaps from './check-for-null-maps'
 export default (data) => {
   
   if (!data?.timeSeries.length) {
@@ -8,8 +9,8 @@ export default (data) => {
     type: 'Feature',
     properties: {
       locationId: header.locationId,
-      value: events[0].value,
-      value2: events[events.length - 1].value,
+      value: checkForNullMaps(events[0].value),
+      value2: checkForNullMaps(events[events.length - 1].value),
       name: header.stationName,
     },
     geometry: {

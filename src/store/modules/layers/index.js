@@ -8,6 +8,7 @@ import buildCirclesColorsRangeValues from '~/lib/build-circles-color-range-value
 import buildPaintObject from '~/lib/build-paint-object'
 import buildPaintObjectDiffMaps from '~/lib/build-paint-object-diff-maps'
 import mapTimeseriesToGeoJSONFloatValues from '~/lib/map-timeseries-to-geojson-float-values'
+import createAvailableTimestamp from '~/lib/create-available-timestamp'
 import { active } from 'sortablejs'
 
 const { VUE_APP_API_VERSION } = process.env
@@ -21,6 +22,7 @@ export default {
     featuresCollection: [],
     legend: [],
     differenceMap: false,
+    availableTimeStamp: createAvailableTimestamp(),
   }),
 
   getters: {
@@ -36,7 +38,7 @@ export default {
         )
         const data = { data: featuresCollection }
         const circlesColor = selectedType === 'concentration' || selectedType === 'trends'
-          ? buildCirclesColorsRangeValues(state.legend) //TODO change name to buildCirclesColorsRangeValues
+          ? buildCirclesColorsRangeValues(state.legend)
           : buildCirclesColor(state.legend)
 
         const paint = state.differenceMap
@@ -91,7 +93,7 @@ export default {
           commit('ADD_DATA_TO_ACTIVE_MAP', timeSeries)
         })
     },
-    //TODO change name it is not used only for difference maps but also for trends getTimeSeriesStandardTime getTimeSeriesDifferenceMaps
+    
     getTimeSeriesWithStandardTime({ commit, state, rootState }) {
 
       const { url } = state.activeMap
