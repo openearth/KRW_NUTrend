@@ -17,6 +17,7 @@
     GridComponent,
     MarkAreaComponent,
     TitleComponent,
+    TooltipComponent,
   } from 'echarts/components'
   import VChart from 'vue-echarts'
 
@@ -28,6 +29,7 @@
     LineChart,
     MarkAreaComponent,
     TitleComponent,
+    TooltipComponent,
   ])
 
   export default {
@@ -73,6 +75,9 @@
         return {
           title: {
             text: this.title,
+          },
+          tooltip: {
+            trigger: 'axis',
           },
           grid: {
             top: '40px',

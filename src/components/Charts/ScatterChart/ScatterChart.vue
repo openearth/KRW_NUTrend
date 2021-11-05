@@ -16,6 +16,8 @@
   import {
     GridComponent,
     TitleComponent,
+    LegendComponent,
+    TooltipComponent,
   } from 'echarts/components'
   import VChart from 'vue-echarts'
   import createSeriesScatterData from '~/lib/create-series-scatter-data'
@@ -24,6 +26,8 @@
     GridComponent,
     ScatterChart,
     TitleComponent,
+    LegendComponent,
+    TooltipComponent,
   ])
 
 
@@ -51,6 +55,9 @@
       baseOptions() {
         return {
           title: { text: this.title },
+          tooltip: {
+            trigger: 'axis',
+          },
           grid: {
             top: '40px',
             right: '90px',
@@ -61,6 +68,10 @@
           },
           legend: {
             data: this.getLegendData(this.scatterChartData), 
+            orient: 'vertical',
+            x: 'right',
+            right: '20%',
+          
           },
         }
       },
