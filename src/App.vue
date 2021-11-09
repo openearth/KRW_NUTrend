@@ -84,6 +84,7 @@
         handler(value) {
           this.layers = []
           if (value) {
+  
             const layers = buildGeojonLayer(this.filteredMap)
             this.layers.push(layers)
           }

@@ -14,7 +14,7 @@
         size="92"
         tile
       >
-        <v-img src="/assets/images/graph-icon.jpeg" />
+        <v-img :src="require(`@/assets/graph-icon.jpeg`)" />
       </v-avatar>
     </div>
   </v-card>
@@ -35,16 +35,24 @@
         type: String,
         required: true,
       },
+      toestandChartType: {
+        type: String,
+        required: false,
+        default: '',
+      },
     },
     methods: {
       ...mapActions('modal', [
         'setIsOpen',
         'setModalTitle',
+        'setToestandChartType',
       ]),
       onButtonClick() {
         this.setIsOpen({ isOpen: true })
         this.setModalTitle({ title: this.modalTitle })
+        this.setToestandChartType({ type: this.toestandChartType })
       },
     },
+
   }
 </script>

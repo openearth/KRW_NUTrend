@@ -6,7 +6,7 @@ export default(legend) => {
   }
 
   const circlesColor = [ 'match', [ 'get', 'value' ] ]
-  const matchValues = [ '#E9E6EA' ]
+  const matchValues = [ 'rgba(255, 255, 255, 0)' ]
 
   legend.forEach(object => {
     matchValues.push(object.color)

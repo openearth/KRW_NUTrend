@@ -11,6 +11,16 @@
       <scatter-chart v-if="isScatterChart" :title="title" /> 
       <line-chart v-if="isLinesChart" :title="title" />
       <dots-chart v-if="isDotsChart" :title="title" />
+      <bar-chart-stacked-years
+        v-if="isBarChartStackedYears"
+        :title="title"
+        :chart-data="chartData"
+      />
+      <bar-chart-stacked
+        v-if="isBarChartStacked"
+        :title="title"
+        :chart-data="chartData"
+      />
     </div>
   </div>
 </template>
@@ -19,6 +29,8 @@
   import DotsChart from '~/components/Charts/DotsChart/DotsChart'
   import LineChart from '~/components/Charts/LineChart/LineChart'
   import ScatterChart from '~/components/Charts/ScatterChart/ScatterChart'
+  import BarChartStackedYears from '~/components/Charts/BarChart/BarChartStackedYears'
+  import BarChartStacked from '~/components/Charts/BarChart/BarChartStacked'
 
 
   const TIMEOUT_DURATION = 1000 // 1 second
@@ -29,6 +41,8 @@
       DotsChart,
       LineChart,
       ScatterChart,
+      BarChartStackedYears,
+      BarChartStacked,
     },
     props: {
       title: {
@@ -39,8 +53,13 @@
         type: String,
         default: '',
         validator(value) {
-          return [ 'dots', 'lines', 'scatter' ].indexOf(value) !== -1
+          return [ 'dots', 'lines', 'scatter', 'barStackedYears', 'barStacked' ].indexOf(value) !== -1
         },
+      },
+      chartData: {
+        type: Object,
+        required:false,
+        default: null,
       },
     },
     data() {
@@ -57,6 +76,12 @@
       },
       isScatterChart() {
         return this.type === 'scatter'
+      },
+      isBarChartStackedYears() { 
+        return this.type === 'barStackedYears'
+      },
+      isBarChartStacked() { 
+        return this.type === 'barStacked'
       },
     },
     created() {

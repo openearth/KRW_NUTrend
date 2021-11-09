@@ -1,3 +1,5 @@
+import checkForNullValuesRangesMap from './check-for-null-values-ranges-map'
+
 export default (data) => {
   if (!data?.timeSeries.length) {
     return []
@@ -6,8 +8,8 @@ export default (data) => {
     type: 'Feature',
     properties: {
       locationId: header.locationId,
-      value: events ? parseFloat(events[0].value) : 'null',
-      value2: events ? events[events.length - 1].value : 'null',
+      value: events ? checkForNullValuesRangesMap(events[0].value) : 'null',
+      value2: events ? checkForNullValuesRangesMap(events[events.length - 1].value) : 'null',
       name: header.stationName,
     },
     geometry: {

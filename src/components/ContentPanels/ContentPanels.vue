@@ -1,23 +1,25 @@
 <template>
-  <v-col>
-    <v-expansion-panels v-if="selectedType && selectedParticle">
-      <v-expansion-panel
-        v-for="(panel, index) in panels"
-        :key="panel.id"
-        :ref="`panel-${ index }`"
+  <v-expansion-panels
+    key="selectedType"
+    v-model="selectedPanel"
+  >
+    <v-expansion-panel
+      v-for="(panel, index) in panels"
+      :key="panel.id"
+      :ref="`panel-${ index }`"
+      @change="setPanelIndex(index)"
+    >
+      <v-expansion-panel-header
+        class="text-caption"
+        @transitionend="(event) => onTransitionEnd(event)"
       >
-        <v-expansion-panel-header
-          class="text-caption"
-          @transitionend="(event) => onTransitionEnd(event, index, panel)"
-        >
-          {{ panel.title }}
-        </v-expansion-panel-header>
-        <v-expansion-panel-content>
-          <vue-markdown class="markdown" :source="panel.content" />
-        </v-expansion-panel-content>
-      </v-expansion-panel>
-    </v-expansion-panels>
-  </v-col>
+        {{ panel.title }}
+      </v-expansion-panel-header>
+      <v-expansion-panel-content>
+        <vue-markdown class="markdown" :source="panel.content" />
+      </v-expansion-panel-content>
+    </v-expansion-panel>
+  </v-expansion-panels>
 </template>
 
 <script>
@@ -26,13 +28,22 @@
 
   import services from '~/config/services.json'
 
+
   export default {
     components: {
       VueMarkdown,
     },
+    props:{ 
+      openPanel:{
+        type: Number,
+        required: true,
+        default: 0,
+      },
+    },
     data() { 
       return {
-        activePanel: null,
+        panelRef: null,
+        panelIndex: 0,
       }
     },
     computed: {
@@ -41,11 +52,25 @@
         'selectedParticle',
         'selectedTimestamp',
       ]),
+    
       mappedServices() {
         const type = services.find(service => service.id === this.selectedType)
         const spatialPlot = type.spatialPlots.find(spatialPlot => spatialPlot.id === this.selectedParticle)
 
         return spatialPlot.services
+      },
+      selectedPanel: {
+        get() {
+          return this.openPanel
+        },
+        set(index) {
+          if(!index){
+            return 0
+          }
+         
+          return index
+        },
+        
       },
       panels() {
         return this.mappedServices.map(({ id, name, url, legendGraphicId, differenceMap }) => {
@@ -60,13 +85,25 @@
           }
         })
       },
-    },
-    watch: {
-      selectedTimestamp() {
-        
+      activePanel() {
+        return this.panels[this.panelIndex]
       },
     },
+    watch: {
 
+
+      selectedTimestamp() {
+        const isActive  = this.$refs[`panel-${ this.panelIndex }`][0].isActive
+        this.setMap(isActive)
+      },
+      panelRef() {
+        const isActive = this.panelRef.isActive
+        this.setMap(isActive)
+      },
+    },
+    mounted() {
+      this.panelRef = this.$refs[`panel-${ this.panelIndex }`][0]
+    },
     methods: {
       ...mapActions('layers', [
         'getTimeSeries',
@@ -81,23 +118,34 @@
       importFileContent(fileName) {
         return require(`~/content/services/${ this.selectedType }/${ this.selectedParticle }/${ fileName }.md`)
       },
-      onTransitionEnd(event, index, panel) {
-        const { isActive } = this.$refs[`panel-${ index }`][0]
+      onTransitionEnd(event) {
+        
+        const isActive  = this.$refs[`panel-${ this.panelIndex }`][0].isActive
         const { propertyName } = event
 
-        if (propertyName !== 'min-height') {
+        if (propertyName === 'min-height') {
           return
         }
-
+       
+        this.setMap(isActive)
+      },
+      setPanelIndex(index){
+        this.$emit('active-panel-index', index)
+        this.panelIndex = index
+    
+      },
+      setMap(isActive) {
+   
         if (isActive) {
-          this.setActiveMap({ activeMap: panel })
+        
+          this.setActiveMap({ activeMap: this.activePanel })
           this.getLegendGraphic()
 
-          // Only the difference maps and the trends have url in the services.json
-          if (panel.url && panel.differenceMap) {
+          // Only the difference maps and the trends have uFmaprl in the services.json
+          if (this.activePanel.url && this.activePanel.differenceMap) {
             this.setDifferenceMap(true)
             this.getTimeSeriesWithStandardTime()
-          } else if (panel.url) {
+          } else if (this.activePanel.url) {
             this.setDifferenceMap(false)
             this.getTimeSeriesWithStandardTime() //TODO change naming to getTimeSeriesStandardTime
           } else {
@@ -111,5 +159,7 @@
         }
       },
     },
+
+
   }
 </script>

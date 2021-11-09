@@ -1,6 +1,6 @@
 //get legendgraphic response
 //create empty array
-//TODO: change name at build-circles-colors-range-values
+
 export default(legend) => {
   if (!legend.length) {
     return []
