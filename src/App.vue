@@ -1,10 +1,10 @@
 <template>
-  <app-shell header-title="KRW: NUTrend">
+  <app-shell header-title="KRW-NUTrend">
     <template slot="header-right">
       <v-btn href="http://krw-nutrend.nl/site/data/download/11203728-006-BGS-0002_v1.1-KRW%20-%20Toestand-%20en%20trendanalyse%20voor%20nutrienten1.pdf" text>
         Meer informatie
       </v-btn>
-      <v-btn href="mailto:asdf@asdf.nl" text>
+      <v-btn href="mailto:@asdasdff.nl" text>
         Contact
       </v-btn>
     </template>
@@ -23,7 +23,10 @@
       <v-fade-transition mode="out-in">
         <map-title v-if="activeMap" :title="activeMap.title" />
       </v-fade-transition>
-
+      <v-fade-transition mode="out-in">
+        <map-title v-if="activeMap && timeOption" :title="activeMap.title + selectedTimestamp.substring(0,4)" />
+      </v-fade-transition>
+      <v-mapbox-scale-control :options="scaleBarOptions" />
       <v-mapbox-layer
         v-for="layer in layers"
         :key="layer.id"
@@ -54,6 +57,7 @@
   import MapLegend from '~/components/MapLegend/MapLegend'
   import MapTitle from '~/components/MapTitle/MapTitle'
 
+
   export default {
     components: {
       AppShell,
@@ -62,6 +66,7 @@
       MapControls,
       MapLegend,
       MapTitle,
+       
     },
     data: () => ({
       accessToken: process.env.VUE_APP_MAPBOX_TOKEN,
@@ -71,9 +76,14 @@
         'Alleen functionele cookies',
       ],
       layers: [],
+      scaleBarOptions: {
+        maxWidth: 80,
+        unit: 'metric',
+      },
     }),
     computed: {
-      ...mapState('layers', [ 'activeMap', 'legend' ]),
+      ...mapState('layers', [ 'activeMap', 'legend', 'timeOption' ]),
+      ...mapState('filters', [ 'selectedTimestamp' ]),
       ...mapGetters('layers', [ 'filteredMap' ]),
       showLegend() {
         return this.legend.length
