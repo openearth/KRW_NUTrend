@@ -1,5 +1,3 @@
-import { active } from 'sortablejs'
-import $axios from '~/plugins/axios'
 
 import capitalizeString  from '~/lib/capitalize-string'
 import createChartRequests from '~/lib/create-chart-requests'
@@ -7,8 +5,7 @@ import mapChartData from '~/lib/map-chart-data'
 import createToestandChartRequests from '~/lib/toestand-graphs-utils/create-toestand-chart-requests'
 import mapToestandChartData from '~/lib/toestand-graphs-utils/map-toestand-chart-data'
 import timespan from '~/config/timespan.json'
-import sortDescending from '~/lib/toestand-graphs-utils/sort-descending'
-import { parseJSON } from 'date-fns'
+
 //TODO change showTrendsGraphs and showConcentratieGraphs to modal.
 //TODO Perhpas the toestandGraphType will solve also the issue with the reseting of the data of the graphs
 export default {
@@ -18,8 +15,8 @@ export default {
     data: [], //TODO rename to data for concentratie charts
     image: null,
     toestandDataNl: null,
-    toestandDataAllBasins: [], //TODO rename
-    toestandDataAllWaterManagers: [], 
+    toestandDataAllBasins: [], 
+    toestandDataAllWaterManagers: [], // TODO rename to waterManagers
     toestandDataSelectedBasin: null,
     toestandDataSelectedWaterManager: null,
    
@@ -37,7 +34,6 @@ export default {
          ? true : false 
       return  show 
        
-
     },
     showTrendsGraphs(state, getters, rootState, rootGetters) { 
       const { selectedType } = rootState.filters
@@ -291,7 +287,7 @@ export default {
 
     resetChartsData({ commit }) {
       commit('RESET_CHART_DATA')
-      commit('RESET_IMAGE_DATA')
+      commit('RESET_CHART_IMAGE')
       commit('RESET_TOESTAND_DATA_NL')
       commit('RESET_TOESTAND_DATA_ALL_BASINS')
       commit('RESET_TOESTAND_DATA_WATER_MANAGERS')
