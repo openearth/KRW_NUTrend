@@ -1,6 +1,6 @@
 {
-  "name": "KRW: NUtrend",
-  "short_name": "KRW: NUtrend",
+  "name": "KRW-NUtrend",
+  "short_name": "KRW-NUtrend",
   "start_url": "/",
   "orientation": "portrait",
   "theme_color": "#008fc5",
