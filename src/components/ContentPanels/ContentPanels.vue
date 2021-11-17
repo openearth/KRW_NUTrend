@@ -114,6 +114,7 @@
         'resetLegend',
         'setActiveMap',
         'setDifferenceMap',
+        'setTimeOption',
       ]),
       importFileContent(fileName) {
         return require(`~/content/services/${ this.selectedType }/${ this.selectedParticle }/${ fileName }.md`)
@@ -145,12 +146,15 @@
           if (this.activePanel.url && this.activePanel.differenceMap) {
             this.setDifferenceMap(true)
             this.getTimeSeriesWithStandardTime()
+            this.setTimeOption(false)
           } else if (this.activePanel.url) {
             this.setDifferenceMap(false)
-            this.getTimeSeriesWithStandardTime() //TODO change naming to getTimeSeriesStandardTime
+            this.getTimeSeriesWithStandardTime()
+            this.setTimeOption(false)
           } else {
             this.setDifferenceMap(false)
             this.getTimeSeries()
+            this.setTimeOption(true)
           }
         } else {
           this.resetActiveMap()
