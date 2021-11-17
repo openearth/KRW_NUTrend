@@ -1,6 +1,8 @@
 <template>
   <v-card class="active-location-card" outlined>
-    <v-card-title>Punt informatie</v-card-title>
+    <v-card-title class="text-title">
+      Punt informatie
+    </v-card-title>
     <v-card-text>
       <p class="text-body-2">
         Naam: {{ name }}
@@ -36,7 +38,12 @@
 </script>
 
 <style lang="scss">
+  .text-title {
+    font-size: 1rem !important;
+  }
+
   .active-location-card .text-body-2 {
     margin-bottom: 0;
   }
+
 </style>
