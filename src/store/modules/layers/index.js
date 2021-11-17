@@ -22,7 +22,8 @@ export default {
     featuresCollection: [],
     legend: [],
     differenceMap: false,
-    availableTimeStamp: createAvailableTimestamp(),
+    availableTimeStamp: createAvailableTimestamp(), // TODO make use of it 
+    timeOption: true,
   }),
 
   getters: {
@@ -101,7 +102,7 @@ export default {
       return $axios
         .get(url)
         .then((response) => response?.data)
-         .then(selectedType === 'trends' ? mapTimeseriesToGeoJSONFloatValues : mapTimeseriesToGeoJSON)
+         .then(selectedType === 'trends' || selectedType ==='concentration' ? mapTimeseriesToGeoJSONFloatValues : mapTimeseriesToGeoJSON)
         .then((timeSeries) => {
           commit('ADD_DATA_TO_ACTIVE_MAP', timeSeries)
         })
@@ -140,6 +141,9 @@ export default {
     setDifferenceMap(context, payload) {
       context.commit('SET_DIFFERENCE_MAP', payload)
     },
+    setTimeOption(context, payload) {
+      context.commit('SET_TIME_OPTION', payload)
+    },
   },
 
   mutations: {
@@ -167,6 +171,9 @@ export default {
     },
     SET_DIFFERENCE_MAP(state, boolean) {
       state.differenceMap = boolean
+    },
+    SET_TIME_OPTION(state, boolean) {
+      state.timeOption = boolean
     },
   },
 }
