@@ -4,7 +4,7 @@
       <v-btn href="http://krw-nutrend.nl/site/data/download/11203728-006-BGS-0002_v1.1-KRW%20-%20Toestand-%20en%20trendanalyse%20voor%20nutrienten1.pdf" text>
         Meer informatie
       </v-btn>
-      <v-btn href="mailto:@asdasdff.nl" text>
+      <v-btn href="mailto:@krw-nutrend@deltares.nl" text>
         Contact
       </v-btn>
     </template>
@@ -20,6 +20,7 @@
       slot="map"
       :access-token="accessToken"
     >
+      <v-mapbox-layer v-if="availableBaseMap" :options="availableBaseMap" />
       <v-fade-transition mode="out-in">
         <map-title v-if="activeMap" :title="activeMap.title" />
       </v-fade-transition>
@@ -27,17 +28,15 @@
         <map-title v-if="activeMap && timeOption" :title="activeMap.title + selectedTimestamp.substring(0,4)" />
       </v-fade-transition>
       <v-mapbox-scale-control :options="scaleBarOptions" />
+      <map-controls v-if="filteredMap" :layer="filteredMap" />
+      <v-fade-transition mode="out-in">
+        <map-legend v-if="showLegend" :items="legend" />
+      </v-fade-transition>
       <v-mapbox-layer
         v-for="layer in layers"
         :key="layer.id"
         :options="layer"
       />
-
-      <map-controls v-if="filteredMap" :layer="filteredMap" />
-
-      <v-fade-transition mode="out-in">
-        <map-legend v-if="showLegend" :items="legend" />
-      </v-fade-transition>
     </mapbox-map>
   </app-shell>
 </template>
@@ -66,7 +65,6 @@
       MapControls,
       MapLegend,
       MapTitle,
-       
     },
     data: () => ({
       accessToken: process.env.VUE_APP_MAPBOX_TOKEN,
@@ -84,7 +82,7 @@
     computed: {
       ...mapState('layers', [ 'activeMap', 'legend', 'timeOption' ]),
       ...mapState('filters', [ 'selectedTimestamp' ]),
-      ...mapGetters('layers', [ 'filteredMap' ]),
+      ...mapGetters('layers', [ 'filteredMap', 'availableBaseMap' ]),
       showLegend() {
         return this.legend.length
       },

@@ -9,7 +9,8 @@ import buildPaintObject from '~/lib/build-paint-object'
 import buildPaintObjectDiffMaps from '~/lib/build-paint-object-diff-maps'
 import mapTimeseriesToGeoJSONFloatValues from '~/lib/map-timeseries-to-geojson-float-values'
 import createAvailableTimestamp from '~/lib/create-available-timestamp'
-import { active } from 'sortablejs'
+import WaterbeheerderContours from '~/config/Waterbeheerder_contours.json'
+import buildBaseMapLayer from '~/lib/build-base-map-layer'
 
 const { VUE_APP_API_VERSION } = process.env
 
@@ -24,6 +25,7 @@ export default {
     differenceMap: false,
     availableTimeStamp: createAvailableTimestamp(), // TODO make use of it 
     timeOption: true,
+    
   }),
 
   getters: {
@@ -47,6 +49,11 @@ export default {
           : { paint: buildPaintObject(circlesColor) }
 
         return { ...state.activeMap, ...data, ...paint }
+      }
+    },
+    availableBaseMap() { 
+      if (WaterbeheerderContours) {
+        return buildBaseMapLayer(WaterbeheerderContours)
       }
     },
     activeService(state, getters, rootState) {
