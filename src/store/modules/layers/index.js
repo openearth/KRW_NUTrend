@@ -11,6 +11,7 @@ import mapTimeseriesToGeoJSONFloatValues from '~/lib/map-timeseries-to-geojson-f
 import createAvailableTimestamp from '~/lib/create-available-timestamp'
 import WaterbeheerderContours from '~/config/Waterbeheerder_contours.json'
 import buildBaseMapLayer from '~/lib/build-base-map-layer'
+import buildGeojonLayer  from '~/lib/build-geojson-layer'
 
 const { VUE_APP_API_VERSION } = process.env
 
@@ -18,7 +19,7 @@ export default {
   namespaced: true,
 
   state: () => ({
-    activeMap: null,
+    activeMap: null, // activeMap details that we read from the configuration
     activeMapLocation: null,
     featuresCollection: [],
     legend: [],
@@ -50,6 +51,13 @@ export default {
 
         return { ...state.activeMap, ...data, ...paint }
       }
+    },
+    activeMapLayer(state, getters) {
+      const { filteredMap } = getters
+      if (!filteredMap) {
+        return null
+      }
+      return buildGeojonLayer(filteredMap)
     },
     availableBaseMap() { 
       if (WaterbeheerderContours) {

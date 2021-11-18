@@ -15,28 +15,32 @@
       :body="legalText"
       :checkboxes="checkboxes"
     />
-
+    <v-fade-transition mode="out-in">
+      <map-title v-if="activeMap" :title="activeMap.title" />
+    </v-fade-transition>
+    <v-fade-transition mode="out-in">
+      <map-title v-if="activeMap && timeOption" :title="activeMap.title + selectedTimestamp.substring(0,4)" />
+    </v-fade-transition>
+    <v-fade-transition mode="out-in">
+      <map-legend v-if="showLegend" :items="legend" />
+    </v-fade-transition>
     <mapbox-map
       slot="map"
       :access-token="accessToken"
     >
-      <v-mapbox-layer v-if="availableBaseMap" :options="availableBaseMap" />
-      <v-fade-transition mode="out-in">
-        <map-title v-if="activeMap" :title="activeMap.title" />
-      </v-fade-transition>
-      <v-fade-transition mode="out-in">
-        <map-title v-if="activeMap && timeOption" :title="activeMap.title + selectedTimestamp.substring(0,4)" />
-      </v-fade-transition>
-      <v-mapbox-scale-control :options="scaleBarOptions" />
-      <map-controls v-if="filteredMap" :layer="filteredMap" />
-      <v-fade-transition mode="out-in">
-        <map-legend v-if="showLegend" :items="legend" />
-      </v-fade-transition>
-      <v-mapbox-layer
-        v-for="layer in layers"
-        :key="layer.id"
-        :options="layer"
+      <base-layer
+        v-if="availableBaseMap"
+        :options="availableBaseMap"
+        @base-layer-is-loaded="onBaseLayerIsLoaded"
       />
+      
+      <div v-if="baseLayerIsAvailable && activeMapLayer" :key="activeMapLayer.id">
+        <v-mapbox-layer
+          :options="activeMapLayer"
+        />
+      </div>
+      <v-mapbox-scale-control :options="scaleBarOptions" />
+      <map-controls v-if="activeMapLayer" :layer="activeMapLayer" />
     </mapbox-map>
   </app-shell>
 </template>
@@ -46,7 +50,7 @@
   import { mapActions, mapGetters, mapState } from 'vuex'
 
   import legalMarkdown from '~/content/legal.md'
-  import buildGeojonLayer  from '~/lib/build-geojson-layer'
+  
 
   import { MapboxMap } from '@deltares/vue-components'
 
@@ -55,6 +59,7 @@
   import MapControls from '~/components/MapControls/MapControls'
   import MapLegend from '~/components/MapLegend/MapLegend'
   import MapTitle from '~/components/MapTitle/MapTitle'
+  import BaseLayer from '~/components/MapBoxLayer/BaseLayer'
 
 
   export default {
@@ -65,6 +70,7 @@
       MapControls,
       MapLegend,
       MapTitle,
+      BaseLayer,
     },
     data: () => ({
       accessToken: process.env.VUE_APP_MAPBOX_TOKEN,
@@ -78,25 +84,15 @@
         maxWidth: 80,
         unit: 'metric',
       },
+      mapLayer: null,
+      baseLayerIsAvailable: false,
     }),
     computed: {
       ...mapState('layers', [ 'activeMap', 'legend', 'timeOption' ]),
       ...mapState('filters', [ 'selectedTimestamp' ]),
-      ...mapGetters('layers', [ 'filteredMap', 'availableBaseMap' ]),
+      ...mapGetters('layers', [ 'activeMapLayer', 'availableBaseMap' ]),
       showLegend() {
         return this.legend.length
-      },
-    },
-    watch: {
-      filteredMap: {
-        handler(value) {
-          this.layers = []
-          if (value) {
-  
-            const layers = buildGeojonLayer(this.filteredMap)
-            this.layers.push(layers)
-          }
-        },
       },
     },
     created() {
@@ -105,6 +101,9 @@
     },
     methods: {
       ...mapActions('locations', [ 'getLocations' ]),
+      onBaseLayerIsLoaded(){
+        this.baseLayerIsAvailable = true
+      },
     },
   }
 </script>
