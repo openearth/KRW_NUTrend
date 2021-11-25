@@ -49,7 +49,7 @@
         'createImageUrl',
         'getChartsData',
       ]),
-      ...mapActions('layers', [ 'setActiveMapLocation' ]),
+      ...mapActions('layers', [ 'setActiveMapLocation', 'setClickedPointBbox' ]),
       deferredMountedTo(map) {
         if (this.layer) {
           this.map = map
@@ -62,20 +62,15 @@
           closeOnClick: false,
         })
       },
-      addScalebar() { 
-        this.map.addControl(new mapboxgl.ScaleControl({
-          maxWidth: 80,
-          unit: 'metric',
-        }))
-      },
       onClick(e) {
         const { locationId, value, name } = e.features[0].properties
-        
+        const coordinates = e.features[0].geometry.coordinates.slice()
         this.setActiveMapLocation({ locationId: locationId, value: value, stationName: name })
-        
+        this.setClickedPointBbox(coordinates)
         if (this.selectedType === 'trends') {
           this.createImageUrl()
-        } else {
+        } 
+        if (this.selectedType === 'concentration') {
           this.getChartsData()
         }
       },

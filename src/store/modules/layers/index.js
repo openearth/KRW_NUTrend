@@ -12,6 +12,7 @@ import createAvailableTimestamp from '~/lib/create-available-timestamp'
 import WaterbeheerderContours from '~/config/Waterbeheerder_contours.json'
 import buildBaseMapLayer from '~/lib/build-base-map-layer'
 import buildGeojonLayer  from '~/lib/build-geojson-layer'
+import getGeojsonBoundingBox from '~/lib/get-geojson-bounding-box'
 
 const { VUE_APP_API_VERSION } = process.env
 
@@ -26,10 +27,12 @@ export default {
     differenceMap: false,
     availableTimeStamp: createAvailableTimestamp(), // TODO make use of it 
     timeOption: true,
+    clickedPointBbox: [],
     
   }),
 
   getters: {
+    //filters the features collection of the activeMap
     filteredMap(state, getters, rootState, rootGetters) {
       const waterBodies = rootGetters['filters/availableWaterBodies']
       const { selectedBodyOfWater, selectedType } = rootState.filters
@@ -52,6 +55,19 @@ export default {
         return { ...state.activeMap, ...data, ...paint }
       }
     },
+    layerBbox(state, getters) {
+      const { filteredMap } = getters
+      
+      if (!filteredMap) {
+        return []
+      }
+
+      const { data } = filteredMap
+      return getGeojsonBoundingBox(data)
+
+    },
+
+    //Mapbox layer from filteredMap
     activeMapLayer(state, getters) {
       const { filteredMap } = getters
       if (!filteredMap) {
@@ -159,6 +175,12 @@ export default {
     setTimeOption(context, payload) {
       context.commit('SET_TIME_OPTION', payload)
     },
+    setClickedPointBbox(context, payload) {
+      context.commit('SET_CLICKED_POINT_BBOX', payload)
+    },
+    resetClickedPointBbox(context) {
+      context.commit('SET_CLICKED_POINT_BBOX', [])
+    },
   },
 
   mutations: {
@@ -189,6 +211,10 @@ export default {
     },
     SET_TIME_OPTION(state, boolean) {
       state.timeOption = boolean
+    },
+    SET_CLICKED_POINT_BBOX(state, array) {
+      state.clickedPointBbox = [ ...array, ...array ]
+      console.log('state of clicked point bbox', state.clickedPointBbox)
     },
   },
 }

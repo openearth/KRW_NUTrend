@@ -41,6 +41,10 @@
       </div>
       <v-mapbox-scale-control :options="scaleBarOptions" />
       <map-controls v-if="activeMapLayer" :layer="activeMapLayer" />
+      <map-controls-zoom
+        v-if="zoomBounds.length"
+        :bounds="zoomBounds"
+      />
     </mapbox-map>
   </app-shell>
 </template>
@@ -60,6 +64,7 @@
   import MapLegend from '~/components/MapLegend/MapLegend'
   import MapTitle from '~/components/MapTitle/MapTitle'
   import BaseLayer from '~/components/MapBoxLayer/BaseLayer'
+  import MapControlsZoom from '~/components/MapControls/MapControlsZoom'
 
 
   export default {
@@ -71,6 +76,7 @@
       MapLegend,
       MapTitle,
       BaseLayer,
+      MapControlsZoom,
     },
     data: () => ({
       accessToken: process.env.VUE_APP_MAPBOX_TOKEN,
@@ -86,13 +92,26 @@
       },
       mapLayer: null,
       baseLayerIsAvailable: false,
+      zoomBounds: [],
     }),
     computed: {
-      ...mapState('layers', [ 'activeMap', 'legend', 'timeOption' ]),
+      ...mapState('layers', [ 'activeMap', 'legend', 'timeOption', 'clickedPointBbox' ]),
       ...mapState('filters', [ 'selectedTimestamp' ]),
-      ...mapGetters('layers', [ 'activeMapLayer', 'availableBaseMap' ]),
+      ...mapGetters('layers', [ 'activeMapLayer', 'availableBaseMap', 'layerBbox' ]),
       showLegend() {
         return this.legend.length
+      },
+    },
+    watch: { 
+      clickedPointBbox() {
+        console.log('clickedPointBbox changed', this.clickedPointBbox)
+        if (this.clickedPointBbox.length) {
+          this.zoomBounds = this.clickedPointBbox
+        }
+      },
+      layerBbox() { 
+        console.log('layerBbox changed', this.layerBbox)
+        this.zoomBounds  = this.layerBbox
       },
     },
     created() {
