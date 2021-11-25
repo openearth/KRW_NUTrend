@@ -19,7 +19,6 @@ export default {
     }
   },
   mounted() {
-    console.log('options', this.options)
     if (this.getMap()) {
       this.rerender()
       this.isInitialized = true
@@ -57,21 +56,14 @@ export default {
         map.addLayer(this.options)
     },
     checkIfLayerLoaded() { 
-     
-      const map = this.getMap()
-         
-      if (map.getLayer(this.options.id)) {
-        this.$emit('base-layer-is-loaded', true)
-      }
-
+      setTimeout(() => {
+         this.$emit('base-layer-is-loaded', true)
+      }, 2000)
     },
     rerender() {
       this.removeLayer()
       this.addLayer()
       this.checkIfLayerLoaded()
-
-      
-      
     },
   },
 }
