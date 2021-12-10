@@ -175,12 +175,7 @@ export default {
           console.log(err)
         }
       })
-      //const result =  Promise.all(promises)
-      //console.log('result', result)
 
-
-     
-      //chartData.sort((a, b ) => (new Date ((b.year).substring(0,10)) - new Date ((a.year).substring(0,10)) ? 1 : -1))
       context.commit('SET_TOESTAND_DATA_ALL_BASINS', chartData)
     },
     getChartDataToestandAllWaterManagers(context) {
@@ -209,7 +204,6 @@ export default {
         }
       })
      
-      //chartData.sort((a, b ) => (new Date ((b.year).substring(0,10)) - new Date ((a.year).substring(0,10)) ? 1 : -1))
       context.commit('SET_TOESTAND_DATA_ALL_WATER_MANAGERS', chartData)
     },
     getChartDataToestandSelectedBasin(context) {
@@ -221,7 +215,7 @@ export default {
       const { SelectedBasin_charts } = availableCharts
       const { selectedBasin } = context.rootState.filters
       const requests = createToestandChartRequests(SelectedBasin_charts, null, [ selectedBasin ] )
-      //TODO fix the above call of the function
+     
       
       try {
         Promise.all(requests)
@@ -259,8 +253,7 @@ export default {
           console.log(err)
         }
       })
-      //console.log(chartData)
-      //chartData.sort((a, b ) => (new Date ((b.year).substring(0,10)) - new Date ((a.year).substring(0,10)) ? 1 : -1))
+ 
       context.commit('SET_TOESTAND_DATA_ALL_WATER_MANAGERS', chartData)
 
     },

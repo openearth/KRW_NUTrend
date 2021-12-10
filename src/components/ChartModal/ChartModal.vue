@@ -42,7 +42,7 @@
           height="1000"
         >
           <v-carousel-item
-            v-for="toestandData in toestandDataAllBasins"
+            v-for="toestandData in sortedToestandDataAllBasins"
             :key="toestandData.year"
           >
             <div>
@@ -68,7 +68,7 @@
           height="1000"
         >
           <v-carousel-item
-            v-for="toestandData in toestandDataAllWaterManagers"
+            v-for="toestandData in sortedToestandDataAllWaterManagers"
             :key="toestandData.year"
           >
             <div>
@@ -157,7 +157,8 @@
 <script>
   import { mapActions, mapState } from 'vuex'
   import AppChart from '~/components/AppChart/AppChart'
-
+  import sortDataBasedOnDate from '~/lib/toestand-graphs-utils/sort-data-based-on-date'
+  
   export default {
     name: 'ChartModal',
     components: {
@@ -198,8 +199,11 @@
           ? true : false
         return display
       },
-      sortedDataAllBasins() {
-        return this.toestandDataAllBasins
+      sortedToestandDataAllBasins() {
+        return sortDataBasedOnDate(this.toestandDataAllBasins)
+      },
+      sortedToestandDataAllWaterManagers() { 
+        return sortDataBasedOnDate(this.toestandDataAllWaterManagers)
       },
       displayToestandChartsWaterManagersCard() {
         const display = this.toestandDataAllWaterManagers.length 
