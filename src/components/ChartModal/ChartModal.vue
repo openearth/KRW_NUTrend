@@ -256,8 +256,8 @@
 
 <style lang="scss">
   .v-dialog > .v-card > .v-card__text {
-    padding: 20px $spacing-medium;
     height: 1500px;
+    padding: 20px $spacing-medium;
   }
 
   .v-dialog .app-chart {
@@ -267,6 +267,7 @@
       margin-top: $spacing-medium;
     }
   }
+
   .v-window > .v-item-group > .v-carousel {
     height: 1000px;
   }
