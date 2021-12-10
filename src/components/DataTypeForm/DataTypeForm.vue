@@ -33,16 +33,15 @@
     </v-row>
 
     <v-row no-gutters>
-      <v-col>
+      <v-col v-if="timeOption">
         <div class="text-body-1 pb-3">
           Jaar:
         </div>
         <v-slider
-          :thumb-label="true"
           min="1991"
           max="2020"
           :value="selectedYear"
-          :disabled="!activeMap"
+          thumb-label="always"
           @change="updateSelectedYear"
           @end="onSelectedYear"
         />
@@ -69,7 +68,7 @@
     },
     computed: {
       ...mapState('layers', [
-        'activeMap',
+        'activeMap', 'timeOption',
       ]),
       ...mapState('filters', [
         'selectedTimestamp',

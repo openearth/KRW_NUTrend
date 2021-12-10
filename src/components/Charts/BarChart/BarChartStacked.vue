@@ -48,29 +48,32 @@
     },
     data() {
       return {
-        initOptions: { height: '400px' },
+        initOptions: { height: '450px', width:'1000px' },
       }
     },
     computed: {
       ...mapState('layers', [ 'legend' ]),
       baseOptions() {
         return {
-          title: { text: this.title },
+          title: { text: this.title, padding:[ 0,0,0,80 ] },
           tooltip: {
             trigger: 'axis',
           },
           grid: {
             top: '40px',
-            right: '90px',
+            right: '150px',
             bottom: '8px',
-            left: '8px',
+            left: 80,
             containLabel: true,
             backgroundColor: '#fff',
           },
           legend: {
             orient: 'vertical',
-            x: 'right',
-            right: '20%',
+            right: '2%',
+            padding: [ 0,0,10,20 ],
+            itemGap:20,
+            itemWidth: 10,
+            itemHeight: 10,
           },
         }
       },     
@@ -86,6 +89,7 @@
         return {
           type: 'category',
           data: this.chartData.labels,
+          
         }
       },
       xAxis() {

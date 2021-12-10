@@ -9,7 +9,10 @@ import buildPaintObject from '~/lib/build-paint-object'
 import buildPaintObjectDiffMaps from '~/lib/build-paint-object-diff-maps'
 import mapTimeseriesToGeoJSONFloatValues from '~/lib/map-timeseries-to-geojson-float-values'
 import createAvailableTimestamp from '~/lib/create-available-timestamp'
-import { active } from 'sortablejs'
+import WaterbeheerderContours from '~/config/Waterbeheerder_contours.json'
+import buildBaseMapLayer from '~/lib/build-base-map-layer'
+import buildGeojonLayer  from '~/lib/build-geojson-layer'
+import getGeojsonBoundingBox from '~/lib/get-geojson-bounding-box'
 
 const { VUE_APP_API_VERSION } = process.env
 
@@ -17,15 +20,19 @@ export default {
   namespaced: true,
 
   state: () => ({
-    activeMap: null,
+    activeMap: null, // activeMap details that we read from the configuration
     activeMapLocation: null,
     featuresCollection: [],
     legend: [],
     differenceMap: false,
-    availableTimeStamp: createAvailableTimestamp(),
+    availableTimeStamp: createAvailableTimestamp(), // TODO make use of it 
+    timeOption: true,
+    clickedPointBbox: [],
+    
   }),
 
   getters: {
+    //filters the features collection of the activeMap
     filteredMap(state, getters, rootState, rootGetters) {
       const waterBodies = rootGetters['filters/availableWaterBodies']
       const { selectedBodyOfWater, selectedType } = rootState.filters
@@ -46,6 +53,31 @@ export default {
           : { paint: buildPaintObject(circlesColor) }
 
         return { ...state.activeMap, ...data, ...paint }
+      }
+    },
+    layerBbox(state, getters) {
+      const { filteredMap } = getters
+      
+      if (!filteredMap) {
+        return []
+      }
+
+      const { data } = filteredMap
+      return getGeojsonBoundingBox(data)
+
+    },
+
+    //Mapbox layer from filteredMap
+    activeMapLayer(state, getters) {
+      const { filteredMap } = getters
+      if (!filteredMap) {
+        return null
+      }
+      return buildGeojonLayer(filteredMap)
+    },
+    availableBaseMap() { 
+      if (WaterbeheerderContours) {
+        return buildBaseMapLayer(WaterbeheerderContours)
       }
     },
     activeService(state, getters, rootState) {
@@ -101,7 +133,7 @@ export default {
       return $axios
         .get(url)
         .then((response) => response?.data)
-         .then(selectedType === 'trends' ? mapTimeseriesToGeoJSONFloatValues : mapTimeseriesToGeoJSON)
+         .then(selectedType === 'trends' || selectedType ==='concentration' ? mapTimeseriesToGeoJSONFloatValues : mapTimeseriesToGeoJSON)
         .then((timeSeries) => {
           commit('ADD_DATA_TO_ACTIVE_MAP', timeSeries)
         })
@@ -140,6 +172,15 @@ export default {
     setDifferenceMap(context, payload) {
       context.commit('SET_DIFFERENCE_MAP', payload)
     },
+    setTimeOption(context, payload) {
+      context.commit('SET_TIME_OPTION', payload)
+    },
+    setClickedPointBbox(context, payload) {
+      context.commit('SET_CLICKED_POINT_BBOX', payload)
+    },
+    resetClickedPointBbox(context) {
+      context.commit('SET_CLICKED_POINT_BBOX', [])
+    },
   },
 
   mutations: {
@@ -167,6 +208,13 @@ export default {
     },
     SET_DIFFERENCE_MAP(state, boolean) {
       state.differenceMap = boolean
+    },
+    SET_TIME_OPTION(state, boolean) {
+      state.timeOption = boolean
+    },
+    SET_CLICKED_POINT_BBOX(state, array) {
+      state.clickedPointBbox = [ ...array, ...array ]
+      console.log('state of clicked point bbox', state.clickedPointBbox)
     },
   },
 }

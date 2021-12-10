@@ -2,8 +2,8 @@
   <v-dialog
     :value="isOpen"
     class="chart-modal"
-    width="90%"
-    max-width="1000"
+    width="100%"
+    max-width="1200"
     scrollable
     @click:outside="onClickClose"
   >
@@ -36,10 +36,10 @@
           />
         </div>
       </v-card-text>
-      <v-card-text v-else-if="displayToestandChartsAllBasinsCard">
+      <v-card-text v-else-if="displayToestandChartsAllBasinsCard" class="chart-content">
         <v-carousel
-          hide-delimiter-background
-          height="800"
+          hide-delimiters
+          height="1000"
         >
           <v-carousel-item
             v-for="toestandData in toestandDataAllBasins"
@@ -64,8 +64,8 @@
       </v-card-text>
       <v-card-text v-else-if="displayToestandChartsWaterManagersCard">
         <v-carousel
-          hide-delimiter-background
-          height="800"
+          hide-delimiters
+          height="1000"
         >
           <v-carousel-item
             v-for="toestandData in toestandDataAllWaterManagers"
@@ -256,6 +256,7 @@
 
 <style lang="scss">
   .v-dialog > .v-card > .v-card__text {
+    height: 1500px;
     padding: 20px $spacing-medium;
   }
 
@@ -265,5 +266,9 @@
     + .app-chart {
       margin-top: $spacing-medium;
     }
+  }
+
+  .v-window > .v-item-group > .v-carousel {
+    height: 1000px;
   }
 </style>

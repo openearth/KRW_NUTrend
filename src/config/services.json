@@ -9,7 +9,7 @@
         "services": [
           {
             "id": "krw-wl-ntot-toets-lSGBP",
-            "name": "Toetsing stikstof aan normen toetsjaar 2020",
+            "name": "Toetsing stikstof aan normen toetsjaar ",
             "data": {},
             "url": null,
             "legendGraphicId": "Ntot Toetsing t.o.v. normen laatste_SGBP (-) NL",
@@ -88,7 +88,7 @@
           },
           {
             "id": "krw-wl-ntot-toets-doelgat",
-            "name": "Doelgat (afstand tot de norm 'goed')",
+            "name": "Doelgat (afstand tot de norm 'goed') ",
             "data": {},
             "url": null,
             "legendGraphicId": "Ntot Verschil t.o.v. de huidige norm Goed (-; doelgat) NL",
@@ -102,7 +102,7 @@
         "services": [
           {
             "id": "krw-wl-ptot-toets-lSGBP",
-            "name": "Toetsing fosfor aan normen toetsjaar 2020",
+            "name": "Toetsing fosfor aan normen toetsjaar ",
             "data": {},
             "url": null,
             "legendGraphicId": "Ptot Toetsing t.o.v. normen laatste_SGBP (-) NL",
@@ -181,7 +181,7 @@
           },
           {
             "id": "krw-wl-ptot-toets-doelgat",
-            "name": "Doelgat (afstand tot de norm 'goed')",
+            "name": "Doelgat (afstand tot de norm 'goed') ",
             "data": {},
             "url": null,
             "legendGraphicId": "Ptot Verschil t.o.v. de huidige norm Goed (-; doelgat) NL",
@@ -196,7 +196,7 @@
         "services": [
           {
             "id": "krw-wl-din-toets-lSGBP",
-            "name": "Toetsing DIN aan normen toetsjaar 2020",
+            "name": "Toetsing DIN aan normen toetsjaar ",
             "data": {},
             "url": null,
             "legendGraphicId": "DIN Toetsing t.o.v. normen laatste_SGBP (-) NL",
@@ -235,10 +235,10 @@
               ],
               "WaterManagers_charts": [
                 {
-                  "plotId": "Waterbeheerder_aantal_DIN"
+                  "plotId": "RWS_aantal_DIN"
                 },
                 {
-                  "plotId": "Waterbeheerder_perc_DIN"
+                  "plotId": "RWS_perc_DIN"
                 }
               ],
               "SelectedWaterManager_charts": [
@@ -275,7 +275,7 @@
           },
           {
             "id": "krw-wl-din-toets-doelgat",
-            "name": "Doelgat (afstand tot de norm 'goed')",
+            "name": "Doelgat (afstand tot de norm 'goed') ",
             "data": {},
             "url": null,
             "legendGraphicId": "DIN Verschil t.o.v. de huidige norm Goed (-; doelgat) NL",
@@ -349,7 +349,7 @@
         "services": [
           {
             "id": "krw-wl-ntot-zomgem-basis",
-            "name": "3-jarig zomergemiddelde (mg/l)",
+            "name": "3-jarig zomergemiddelde (mg/l) ",
             "data": {},
             "url": null,
             "legendGraphicId": "Ntot Zomergemiddeld (mg/l) NL",
@@ -437,7 +437,7 @@
             "id": "krw-wl-ntot-zomgem-vvSGBP",
             "name": "Verschilkaart actueel t.o.v. toetsjaar 2009 (3 voorgaande jaren, mg/l)",
             "data": {},
-            "url": null,
+            "url": "http://185.224.89.110:8082/FewsWebServices/rest/fewspiservice/v1/timeseries?filterId=krw-wl-ntot-zomgem-vvSGBP&startTime=2020-01-01T00%3A00%3A00Z&endTime=2020-01-01T00%3A00%3A00Z&documentFormat=PI_JSON",
             "legendGraphicId": "Ntot Verschilkaart actueel t.o.v. voorlaatste_SGBP (mg/l) NL",
             "charts": {}
           },
@@ -445,13 +445,13 @@
             "id": "krw-wl-ntot-zomgem-vlSGBP",
             "name": "Verschilkaart actueel t.o.v. toetsjaar 2015 (3 voorgaande jaren, mg/l)",
             "data": {},
-            "url": null,
+            "url": "http://185.224.89.110:8082/FewsWebServices/rest/fewspiservice/v1/timeseries?filterId=krw-wl-ntot-zomgem-vlSGBP&startTime=2020-01-01T00%3A00%3A00Z&endTime=2020-01-01T00%3A00%3A00Z&documentFormat=PI_JSON",
             "legendGraphicId": "Ntot Verschilkaart actueel t.o.v. laatste_SGBP (mg/l) NL",
             "charts": {}
           },
           {
             "id": "krw-wl-ntot-jaargem",
-            "name": "Jaargemiddelde (mg/l)",
+            "name": "Jaargemiddelde (mg/l) ",
             "data": {},
             "url": null,
             "legendGraphicId": "Ntot Jaargemiddeld (mg/l) NL",
@@ -459,7 +459,7 @@
           },
           {
             "id": "krw-wl-ntot-norm-GM",
-            "name": "Normklassegrens goed-matig (mg/l)",
+            "name": "Normklassegrens goed-matig (mg/l) ",
             "data": {},
             "url": null,
             "legendGraphicId": "Ntot Norm Goed-Matig (mg/l) NL",
@@ -467,7 +467,7 @@
           },
           {
             "id": "krw-wl-ntot-norm-MO",
-            "name": "Normklassegrens matig-ontoereikend (mg/l)",
+            "name": "Normklassegrens matig-ontoereikend (mg/l) ",
             "data": {},
             "url": null,
             "legendGraphicId": "Ntot Norm Matig-Ontoereikend (mg/l) NL",
@@ -475,7 +475,7 @@
           },
           {
             "id": "krw-wl-ntot-norm-OS",
-            "name": "Normklassegrens ontoereikend-slecht (mg/l)",
+            "name": "Normklassegrens ontoereikend-slecht (mg/l) ",
             "data": {},
             "url": null,
             "legendGraphicId": "Ntot Norm Ontoereikend-Slecht (mg/l) NL",
@@ -489,7 +489,7 @@
         "services": [
           {
             "id": "krw-wl-ptot-zomgem-basis",
-            "name": "3-jarig zomergemiddelde (mg/l)",
+            "name": "3-jarig zomergemiddelde (mg/l) ",
             "data": {},
             "url": null,
             "legendGraphicId": "Ptot Zomergemiddeld (mg/l) NL",
@@ -577,7 +577,7 @@
             "id": "krw-wl-ptot-zomgem-vvSGBP",
             "name": "Verschilkaart actueel t.o.v. toetsjaar 2009 (3 voorgaande jaren, mg/l)",
             "data": {},
-            "url": null,
+            "url": "http://185.224.89.110:8082/FewsWebServices/rest/fewspiservice/v1/timeseries?filterId=krw-wl-ptot-zomgem-vvSGBP&startTime=2020-01-01T00%3A00%3A00Z&endTime=2020-01-01T00%3A00%3A00Z&documentFormat=PI_JSON",
             "legendGraphicId": "Ptot Verschilkaart actueel t.o.v. voorlaatste_SGBP (mg/l) NL",
             "charts": {}
           },
@@ -585,13 +585,13 @@
             "id": "krw-wl-ptot-zomgem-vlSGBP",
             "name": "Verschilkaart actueel t.o.v. toetsjaar 2015 (3 voorgaande jaren, mg/l)",
             "data": {},
-            "url": null,
+            "url": "http://185.224.89.110:8082/FewsWebServices/rest/fewspiservice/v1/timeseries?filterId=krw-wl-ptot-zomgem-vlSGBP&startTime=2020-01-01T00%3A00%3A00Z&endTime=2020-01-01T00%3A00%3A00Z&documentFormat=PI_JSON",
             "legendGraphicId": "Ptot Verschilkaart actueel t.o.v. laatste_SGBP (mg/l) NL",
             "charts": {}
           },
           {
             "id": "krw-wl-ptot-jaargem",
-            "name": "Jaargemiddelde (mg/l)",
+            "name": "Jaargemiddelde (mg/l) ",
             "data": {},
             "url": null,
             "legendGraphicId": "Ptot Jaargemiddeld (mg/l) NL",
@@ -599,7 +599,7 @@
           },
           {
             "id": "krw-wl-ptot-norm-GM",
-            "name": "Normklassegrens goed-matig (mg/l)",
+            "name": "Normklassegrens goed-matig (mg/l) ",
             "data": {},
             "url": null,
             "legendGraphicId": "Ptot Norm Goed-Matig (mg/l) NL",
@@ -607,7 +607,7 @@
           },
           {
             "id": "krw-wl-ptot-norm-MO",
-            "name": "Normklassegrens matig-ontoereikend (mg/l)",
+            "name": "Normklassegrens matig-ontoereikend (mg/l) ",
             "data": {},
             "url": null,
             "legendGraphicId": "Ptot Norm Matig-Ontoereikend (mg/l) NL",
@@ -615,7 +615,7 @@
           },
           {
             "id": "krw-wl-ptot-norm-OS",
-            "name": "Normklassegrens ontoereikend-slecht (mg/l)",
+            "name": "Normklassegrens ontoereikend-slecht (mg/l) ",
             "data": {},
             "url": null,
             "legendGraphicId": "Ptot Norm Ontoereikend-Slecht (mg/l) NL",
@@ -629,7 +629,7 @@
         "services": [
           {
             "id": "krw-wl-din-wingem-basis",
-            "name": "3-jarig wintergemiddelde (mg/l)",
+            "name": "3-jarig wintergemiddelde (mg/l)  ",
             "data": {},
             "url": null,
             "legendGraphicId": "DIN Wintergemiddeld (mg/l) RWS",
@@ -715,9 +715,9 @@
           },
           {
             "id": "krw-wl-din-wingem-vvSGBP",
-            "name": "Verschilkaart actueel t.o.v. toetsjaar 2009 (3 voorgaande jaren, mg/l)",
+            "name": "Verschilkaart actueel t.o.v. toetsjaar 2009 (3 voorgaande jaren, mg/l) ",
             "data": {},
-            "url": null,
+            "url": "http://185.224.89.110:8082/FewsWebServices/rest/fewspiservice/v1/timeseries?filterId=krw-wl-din-wingem-vvSGBP&startTime=2020-01-01T00%3A00%3A00Z&endTime=2020-01-01T00%3A00%3A00Z&documentFormat=PI_JSON",
             "legendGraphicId": "DIN Verschilkaart actueel t.o.v. voorlaatste_SGBP (mg/l) RWS",
             "charts": {}
           },
@@ -725,13 +725,13 @@
             "id": "krw-wl-din-wingem-vlSGBP",
             "name": "Verschilkaart actueel t.o.v. toetsjaar 2015 (3 voorgaande jaren, mg/l)",
             "data": {},
-            "url": null,
+            "url": "http://185.224.89.110:8082/FewsWebServices/rest/fewspiservice/v1/timeseries?filterId=krw-wl-din-wingem-vlSGBP&startTime=2020-01-01T00%3A00%3A00Z&endTime=2020-01-01T00%3A00%3A00Z&documentFormat=PI_JSON",
             "legendGraphicId": "DIN Verschilkaart actueel t.o.v. laatste_SGBP (mg/l) RWS",
             "charts": {}
           },
           {
             "id": "krw-wl-din-jaargem",
-            "name": "Jaargemiddelde (mg/l)",
+            "name": "Jaargemiddelde (mg/l) ",
             "data": {},
             "url": null,
             "legendGraphicId": "DIN Jaargemiddeld (mg/l) NL",
@@ -739,7 +739,7 @@
           },
           {
             "id": "krw-wl-din-norm-GM",
-            "name": "Normklassegrens goed-matig (mg/l)",
+            "name": "Normklassegrens goed-matig (mg/l) ",
             "data": {},
             "url": null,
             "legendGraphicId": "DIN Norm Goed-Matig (mg/l) NL",
@@ -747,7 +747,7 @@
           },
           {
             "id": "krw-wl-din-norm-MO",
-            "name": "Normklassegrens matig-ontoereikend (mg/l)",
+            "name": "Normklassegrens matig-ontoereikend (mg/l) ",
             "data": {},
             "url": null,
             "legendGraphicId": "DIN Norm Matig-Ontoereikend (mg/l) NL",
@@ -755,7 +755,7 @@
           },
           {
             "id": "krw-wl-din-norm-OS",
-            "name": "Normklassegrens ontoereikend-slecht (mg/l)",
+            "name": "Normklassegrens ontoereikend-slecht (mg/l) ",
             "data": {},
             "url": null,
             "legendGraphicId": "DIN Toetsing t.o.v. normen laatste_SGBP (-) NL",

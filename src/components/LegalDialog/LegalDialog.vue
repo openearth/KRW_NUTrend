@@ -92,7 +92,7 @@
     },
     computed: {
       allAccepted() {
-        return this.accepted.every(val => val)
+        return this.accepted[0]
       },
       storageMethod() {
         if (this.storage === 'none') {

@@ -4,7 +4,7 @@
       app
       clipped
       permanent
-      width="350"
+      width="550"
     >
       <v-container fluid>
         <v-row justify="space-between" no-gutters>
@@ -53,7 +53,7 @@
       clipped
       permanent
       right
-      width="350"
+      width="400"
     >
       <v-container fluid>
         <v-row>
@@ -108,7 +108,7 @@
             <v-col>
               <chart-modal-activator
                 :title="activeMapLocation.stationName"
-                :modal-title="activeMapLocation.locationId"
+                :modal-title="activeMapLocation.stationName"
               />
             </v-col>
           </v-row>
