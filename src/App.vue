@@ -110,7 +110,6 @@
         }
       },
       layerBbox() { 
-        console.log('layerBbox changed', this.layerBbox)
         this.zoomBounds  = this.layerBbox
       },
     },
