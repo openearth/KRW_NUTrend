@@ -3,7 +3,7 @@
     :value="isOpen"
     class="chart-modal"
     width="100%"
-    max-width="1200"
+    max-width="1300"
     scrollable
     @click:outside="onClickClose"
   >

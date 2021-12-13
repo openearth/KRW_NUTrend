@@ -47,8 +47,9 @@
     },
     data() {
       return {
-        initOptions: { height: '450px', width:'1000px' },
+        initOptions: { height: '450px', width:'1200px' },
         seriesStyle: {
+          name:'Oordeel',
           symbol: 'circle',
           symbolSize: 7,
           type: 'line',
@@ -82,9 +83,9 @@
           },
           grid: {
             top: '40px',
-            right: '90px',
+            right: '280px',
             bottom: '8px',
-            left: '8px',
+            left: 10,
             containLabel: true,
             backgroundColor: '#fff',
           },
@@ -95,11 +96,17 @@
           },
           legend: {
             orient: 'vertical',
-            right: '2%',
-            padding: [ 0,0,10,20 ],
+            right: '7%',
+            padding: [ 40,10,10,20 ],
             itemGap:20,
-            itemWidth: 10,
+            itemWidth: 20,
             itemHeight: 10,
+            icon: 'rect',
+            itemStyle: {
+              borderColor: '#000000',
+              borderType: 'solid',
+              borderWidth: 0.5,
+            },
           },
         }
       },

@@ -19,6 +19,7 @@
     MarkAreaComponent,
     TitleComponent,
     TooltipComponent,
+    LegendComponent,
   } from 'echarts/components'
   import VChart from 'vue-echarts'
 
@@ -32,6 +33,7 @@
     MarkAreaComponent,
     TitleComponent,
     TooltipComponent,
+    LegendComponent,
   ])
 
   export default {
@@ -47,12 +49,13 @@
     },
     data() {
       return {
-        initOptions: { height: '450px', width:'1000px' },
+        initOptions: { height: '450px', width:'1200px' },
         seriesStyle: {
           symbolSize: 0,
           type: 'line',
           lineStyle: { width: 3 },
         },
+        seriesName: [ '3-jarig \nZomergemiddelde', 'Jaargemiddelde', 'Zomergemiddelde' ],
         seriesColors: [ 'black', 'white', 'blue' ],
       }
     },
@@ -68,11 +71,25 @@
           },
           grid: {
             top: '40px',
-            right: '90px',
+            right: '280px',
             bottom: '8px',
-            left: '8px',
+            left: 10,
             containLabel: true,
             backgroundColor: '#fff',
+          },
+          legend: {
+            orient: 'vertical',
+            right: '5%',
+            padding: [ 40,10,10,20 ],
+            itemGap:20,
+            itemWidth: 20,
+            itemHeight: 10,
+            icon: 'rect',
+            itemStyle: {
+              borderColor: '#000000',
+              borderType: 'solid',
+              borderWidth: 0.5,
+            },
           },
         }
       },
@@ -118,6 +135,7 @@
       getSeriesData(data) {
         return data.map((serie, index) => ({
           ...this.seriesStyle,
+          name: this.seriesName[index],
           data: serie,
           itemStyle: {
             color: this.seriesColors[index],

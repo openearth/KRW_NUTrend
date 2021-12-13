@@ -1,14 +1,15 @@
 export default ({ color, name, min, max }) => {
   return {
     type: 'line',
+    name,
+    color: color,
     markArea: {
       silent: true,
       itemStyle: {
         color,
       },
       label: {
-        position: [ '102%', '45%' ],
-        align: 'left',
+        show: false,
       },
       data: [
         [

@@ -45,7 +45,7 @@
     },
     data() {
       return {
-        initOptions: { height: '450px', width:'1000px' },
+        initOptions: { height: '450px', width:'1200px'  },
         seriesStyle: {
           type: 'scatter',
         },
@@ -62,17 +62,17 @@
           },
           grid: {
             top: '40px',
-            right: '150px',
+            right: '280px',
             bottom: '8px',
-            left: '8px',
+            left: 10,
             containLabel: true,
             backgroundColor: '#fff',
           },
           legend: {
             //data: this.getLegendData(this.scatterChartData), 
             orient: 'vertical',
-            right: '0%',
-            padding: [ 0,0,10,20 ],
+            right: '4%',
+            padding: [ 40,10,10,20 ],
             itemGap:20,
             itemWidth: 10,
             itemHeight: 10,
@@ -133,7 +133,12 @@
 
         let stationName = ''
         if (subNames.length === 1) {
-          stationName = name
+          if (name.length >18) {
+            stationName = `${ name.slice(0,18) }\n${ name.slice(18) }`
+          }else{
+            stationName = name
+          }
+          
         }
         if (subNames.length === 2) {
           stationName = `${ subNames[0].trim() },${ subNames[1].trim() },`
