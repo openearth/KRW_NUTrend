@@ -250,7 +250,6 @@
       ]),
       onClickClose() {
         this.setIsOpen({ isOpen: false })
-        //this.resetChartsData()
         this.resetToestandChartType()
       },
     },

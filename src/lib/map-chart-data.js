@@ -36,7 +36,6 @@ export default (array) => {
   const mappedData = []
   
   array.forEach((item) => {
-    
     const { name, result } = item
     const { data, value, location } = result
     
@@ -78,7 +77,6 @@ export default (array) => {
       }
 
   })
-  
   return {
     data: mappedData,
   }

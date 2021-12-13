@@ -50,6 +50,7 @@
         'getChartsData',
       ]),
       ...mapActions('layers', [ 'setActiveMapLocation', 'setClickedPointBbox' ]),
+      ...mapActions('charts',[ 'resetChartsData' ]),
       deferredMountedTo(map) {
         if (this.layer) {
           this.map = map
@@ -63,6 +64,7 @@
         })
       },
       onClick(e) {
+        this.resetChartsData()
         const { locationId, value, name } = e.features[0].properties
         const coordinates = e.features[0].geometry.coordinates.slice()
         this.setActiveMapLocation({ locationId: locationId, value: value, stationName: name })

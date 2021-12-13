@@ -47,7 +47,7 @@
     },
     data() {
       return {
-        initOptions: { height: '400px' },
+        initOptions: { height: '450px', width:'1000px' },
         seriesStyle: {
           symbolSize: 0,
           type: 'line',
@@ -79,9 +79,6 @@
       lineChartData() {
         return this.data.find(data => data.name === 'lines')
       },
-      filterdData() {
-        return this.getFilteredData(this.lineChartData.series)
-      },
       areas() {
         return mapChartAreas(this.lineChartData.areas)
       },
@@ -98,44 +95,38 @@
       },
       xAxis() {
         return {
-          type: 'category',
-          boundaryGap: false,
-          data: this.getXAxisData(this.filterdData),
+          type: 'time',
+          min: '1991',
+          max: '2022',
         }
       },
       yAxis() {
         return {
           type: 'value',
-          min: this.areas[0].min,
-          max: this.areas[3].max,
+          min: parseFloat(this.areas[0].min),
+          max: this.formatMaxY(parseFloat(this.areas[3].max)),
         }
       },
       series() {
-        return this.getSeriesData(this.filterdData)
+        return this.getSeriesData(this.lineChartData.series)
       },
       markAreas() {
         return this.areas.map(area => createChartMarkAreas(area))
       },
     },
     methods: {
-      getFilteredData(series) {
-        return series.map((serie) => serie.filter(item => item.value > -1))
-      },
-      getXAxisData(data) {
-        const flattenedData = data
-          .map(serie => serie.map(item => parseFloat(item.label, 10)))
-          .flat()
-          .sort()
-        return [ ...new Set(flattenedData) ]
-      },
       getSeriesData(data) {
         return data.map((serie, index) => ({
           ...this.seriesStyle,
-          data: serie.map(item => parseFloat(item.value, 10)),
+          data: serie,
           itemStyle: {
             color: this.seriesColors[index],
           },
         }))
+      },
+      formatMaxY(max) {
+        const formattedMax = Math.ceil((max + 1))
+        return formattedMax
       },
     },
   }
