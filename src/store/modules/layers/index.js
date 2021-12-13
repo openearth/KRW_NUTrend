@@ -13,6 +13,7 @@ import buildBaseMapLayer from '~/lib/build-base-map-layer'
 import buildGeojonLayer  from '~/lib/build-geojson-layer'
 import getGeojsonBoundingBox from '~/lib/get-geojson-bounding-box'
 import buildGeojsonLayerDiffMap from '~/lib/build-geojson-layer-diff-map'
+import buildGeojsonLayerDiffMapsOuterCircle from '~/lib/build-geojson-layer-diff-maps-outer-circle'
 
 const { VUE_APP_API_VERSION } = process.env
 
@@ -93,7 +94,8 @@ export default {
       //NOTE: left reprsents old value, right new value
       const leftSemiCircleLayer = buildGeojsonLayerDiffMap(filteredMap, 'left', state.legend)
       const rightSemiCircleLayer = buildGeojsonLayerDiffMap(filteredMap, 'right', state.legend)
-      return [ leftSemiCircleLayer, rightSemiCircleLayer ]
+      const outerCircleLayer = buildGeojsonLayerDiffMapsOuterCircle(filteredMap)
+      return [ outerCircleLayer, leftSemiCircleLayer, rightSemiCircleLayer ]
       
 
     },

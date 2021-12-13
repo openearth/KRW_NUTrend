@@ -109,11 +109,9 @@
     },
     methods: {
       getLegendData(data) {
-        console.log('data in getLegendData', data)
         const stationNames =  data.map(({ location })=> {
           return location.stationName
         })
-        console.log('legendData', stationNames)
         return stationNames
       },
       getSeriesData(data) {
