@@ -112,19 +112,53 @@
         const stationNames =  data.map(({ location })=> {
           return location.stationName
         })
+        //console.log('')
         return stationNames
       },
       getSeriesData(data) {
         const series = data.map(({ location, name, series }) => {
           return {
             'symbolSize': 8,
-            'name': location.stationName,
+            'name': this.formatStationNameToFit(location.stationName),
             'type': name,
             'data': series,
           }
         })
        
         return series
+      },
+      formatStationNameToFit(name) {
+       
+        const subNames = name.split(',')
+
+        let stationName = ''
+        if (subNames.length === 1) {
+          stationName = name
+        }
+        if (subNames.length === 2) {
+          stationName = `${ subNames[0].trim() },${ subNames[1].trim() },`
+        }
+        if (subNames.length > 2) {
+          
+          subNames.forEach((subName, index) => {
+            
+            // console.log(index, 'subname', subName)
+            if ((index%2===0) && !(index === (subNames.length -1))) {
+             
+              stationName = stationName + `\n${ subName.trim() },${ subNames[index+1] },`
+            }
+            if (index === (subNames.length -1) && (index%2===0)) {
+              stationName = stationName + `\n${ subName.trim() }`
+            }
+           
+          })
+        }
+        
+        if (stationName.charAt(stationName.length-1) === ',') {
+          stationName = stationName.slice(0, -1)
+        }
+        
+        return stationName
       },
     },
   }
