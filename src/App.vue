@@ -39,6 +39,13 @@
           :options="activeMapLayer"
         />
       </div>
+      <div v-if="baseLayerIsAvailable && activeDiffMapLayers.length">
+        <v-mapbox-layer
+          v-for="layer in activeDiffMapLayers"
+          :key="layer.id"
+          :options="layer"
+        />
+      </div>
       <v-mapbox-scale-control :options="scaleBarOptions" />
       <map-controls v-if="activeMapLayer" :layer="activeMapLayer" />
       <map-controls-zoom
@@ -97,14 +104,13 @@
     computed: {
       ...mapState('layers', [ 'activeMap', 'legend', 'timeOption', 'clickedPointBbox' ]),
       ...mapState('filters', [ 'selectedTimestamp' ]),
-      ...mapGetters('layers', [ 'activeMapLayer', 'availableBaseMap', 'layerBbox' ]),
+      ...mapGetters('layers', [ 'activeMapLayer', 'activeDiffMapLayers', 'availableBaseMap', 'layerBbox' ]),
       showLegend() {
         return this.legend.length
       },
     },
     watch: { 
       clickedPointBbox() {
-        console.log('clickedPointBbox changed', this.clickedPointBbox)
         if (this.clickedPointBbox.length) {
           this.zoomBounds = this.clickedPointBbox
         }
