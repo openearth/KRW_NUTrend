@@ -10,21 +10,24 @@
  * 6. Sort results alphabetically.
  * 7. Return unique values using Set().
  */
-export default (locations, selectedBasin, selectedSubBasin, selectedWaterManager) => {
+export default (locations, selectedBasin, selectedSubBasin, selectedWaterManager, selectedType) => {
   if (!locations.length) {
     return []
   }
-
-  const filterByBodyOfWater = ({ name }) => name === 'OWMIDENT' || name ==='VERWIJZING'
-
+  let filterByBodyOfWater
+  if (selectedType === 'trends') {
+    filterByBodyOfWater = ({ name }) =>  name ==='VERWIJZING'
+  }else {
+    filterByBodyOfWater = ({ name }) => name === 'OWMIDENT' 
+  }
   const filteredLocations = locations
     .filter(({ attributes }) => attributes.find(filterByBodyOfWater))
     .filter(({ attributes }) => selectedBasin
-      ? attributes.find(({ name, value }) => name === 'Stroomgebied' && value === selectedBasin)
+      ? attributes.find(({ name, value }) => (name === 'Stroomgebied' || name === 'SGB') && value === selectedBasin)
       : true,
     )
     .filter(({ attributes }) => selectedSubBasin
-      ? attributes.find(({ name, value }) => name === 'Deelstroomgebied' && value === selectedSubBasin)
+      ? attributes.find(({ name, value }) => (name === 'Deelstroomgebied' || name === 'D-SGB') && value === selectedSubBasin)
       : true,
     )
     .filter(({ attributes }) => selectedWaterManager

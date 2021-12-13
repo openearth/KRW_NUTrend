@@ -13,7 +13,7 @@ export default {
     selectedSubBasin: null,
     selectedType: null,
     selectedWaterManager: null,
-    selectedTimestamp: '2020-01-01T00:00:00Z', // pass it at env file for easier updates in the future. 
+    selectedTimestamp: '2020-01-01T00:00:00Z', 
   }),
 
   getters: {
@@ -28,9 +28,9 @@ export default {
     },
     availableWaterBodies(state, getters, rootState) {
       const { locations } = rootState.locations
-      const { selectedBasin, selectedSubBasin, selectedWaterManager } = state
+      const { selectedBasin, selectedSubBasin, selectedWaterManager, selectedType } = state
 
-      return getWaterBodiesFromLocations(locations, selectedBasin, selectedSubBasin, selectedWaterManager)
+      return getWaterBodiesFromLocations(locations, selectedBasin, selectedSubBasin, selectedWaterManager, selectedType)
     },
     availableWaterManagers(state, getters, rootState) {
       const { locations } = rootState.locations

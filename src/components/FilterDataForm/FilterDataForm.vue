@@ -2,6 +2,20 @@
   <v-container class="filter-data-form" fluid>
     <v-row no-gutters>
       <v-col>
+        <div class="pb-3">
+          <v-btn
+            depressed
+            block
+            color="primary"
+            @click="onResetAllChoices"
+          >
+            LANDELIJK
+          </v-btn>
+        </div>
+      </v-col>
+    </v-row>
+    <v-row no-gutters>
+      <v-col>
         <div class="text-body-1 pb-3">
           Stroomgebied:
         </div>
@@ -56,7 +70,10 @@
 
     <v-row no-gutters>
       <v-col>
-        <div class="text-body-1 pb-3">
+        <div v-if="selectedType==='trends'" class="text-body-1 pb-3">
+          Monitoringslocatie:
+        </div>
+        <div v-else class="text-body-1 pb-3">
           Waterlichaam:
         </div>
         <v-select
@@ -75,7 +92,7 @@
 </template>
 
 <script>
-  import { mapActions, mapGetters } from 'vuex'
+  import { mapState, mapActions, mapGetters } from 'vuex'
 
   export default {
     name: 'FilterDataForm',
@@ -88,6 +105,7 @@
       }
     },
     computed: {
+      ...mapState('filters', [ 'selectedType' ] ),
       ...mapGetters('filters', [
         'availableBasins',
         'availableSubBasins',
@@ -97,6 +115,7 @@
       selectedBasinHasSubBasins() {
         return this.selectedBasin === 'Rijn'
       },
+      
     },
     watch: {
       selectedBasin(value) {
@@ -132,6 +151,12 @@
       },
       onSelectedBodyOfWater(value) {
         this.selectedBodyOfWater = value
+      },
+      onResetAllChoices() {
+        this.selectedBasin = null
+        this.selectedSubBasin = null
+        this.selectedWaterManager = null
+        this.selectedBodyOfWater = null
       },
     },
 
