@@ -6,8 +6,7 @@ import createToestandChartRequests from '~/lib/toestand-graphs-utils/create-toes
 import mapToestandChartData from '~/lib/toestand-graphs-utils/map-toestand-chart-data'
 import timespan from '~/config/timespan.json'
 
-//TODO change showTrendsGraphs and showConcentratieGraphs to modal.
-//TODO Perhpas the toestandGraphType will solve also the issue with the reseting of the data of the graphs
+//TODO: change showTrendsGraphs and showConcentratieGraphs to modal.
 export default {
   namespaced: true,
 

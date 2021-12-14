@@ -67,8 +67,7 @@
                 }
               ]
             },
-            "downloadUrl": "http://185.224.89.110:8082/FewsWebServices/rest/fewspiservice/v1/timeseries?filterId=krw-wl-ntot-toets-lSGBP&startTime=1991-01-01T00:00:00Z&endTime=2020-01-01T00:00:00Z&documentFormat=PI_JSON",
-            "downloadIdCol": "N Totaal"
+            "downloadUrl": "http://185.224.89.110:8082/FewsWebServices/rest/fewspiservice/v1/timeseries?filterId=krw-wl-ntot-toets-lSGBP&startTime=1991-01-01T00:00:00Z&endTime=2020-01-01T00:00:00Z&documentFormat=PI_JSON"
           },
           {
             "id": "krw-wl-ntot-difference-2009",
@@ -161,7 +160,8 @@
                   "endTime": "2020-01-01T00:00:00Z"
                 }
               ]
-            }
+            },
+            "downloadUrl": "http://185.224.89.110:8082/FewsWebServices/rest/fewspiservice/v1/timeseries?filterId=krw-wl-ptot-toets-lSGBP&startTime=1991-01-01T00:00:00Z&endTime=2020-01-01T00:00:00Z&documentFormat=PI_JSON"
           },
           {
             "id": "krw-wl-ptot-difference-2009",
@@ -255,7 +255,8 @@
                   "endTime": "2020-01-01T00:00:00Z"
                 }
               ]
-            }
+            },
+            "downloadUrl": "http://185.224.89.110:8082/FewsWebServices/rest/fewspiservice/v1/timeseries?filterId=krw-wl-din-toets-lSGBP&startTime=1991-01-01T00:00:00Z&endTime=2020-01-01T00:00:00Z&documentFormat=PI_JSON"
           },
           {
             "id": "krw-wl-din-difference-2009",
@@ -433,7 +434,8 @@
                   "endTime": "2020-01-01T00:00:00Z"
                 }
               ]
-            }
+            },
+            "downloadUrl": "http://185.224.89.110:8082/FewsWebServices/rest/fewspiservice/v1/timeseries?filterId=krw-wl-ntot-zomgem-basis&startTime=1991-01-01T00:00:00Z&endTime=2020-01-01T00:00:00Z&documentFormat=PI_JSON"
           },
           {
             "id": "krw-wl-ntot-zomgem-vvSGBP",
@@ -573,7 +575,8 @@
                   "endTime": "2020-01-01T00:00:00Z"
                 }
               ]
-            }
+            },
+            "downloadUrl": "http://185.224.89.110:8082/FewsWebServices/rest/fewspiservice/v1/timeseries?filterId=krw-wl-ptot-zomgem-basis&startTime=1991-01-01T00:00:00Z&endTime=2020-01-01T00:00:00Z&documentFormat=PI_JSON"
           },
           {
             "id": "krw-wl-ptot-zomgem-vvSGBP",
@@ -713,7 +716,8 @@
                   "endTime": "2020-01-01T00:00:00Z"
                 }
               ]
-            }
+            },
+            "downloadUrl": "http://185.224.89.110:8082/FewsWebServices/rest/fewspiservice/v1/timeseries?filterId=krw-wl-din-wingem-basis&startTime=1991-01-01T00:00:00Z&endTime=2020-01-01T00:00:00Z&documentFormat=PI_JSON"
           },
           {
             "id": "krw-wl-din-wingem-vvSGBP",
