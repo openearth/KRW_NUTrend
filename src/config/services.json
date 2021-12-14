@@ -66,7 +66,9 @@
                   "endTime": "2020-01-01T00:00:00Z"
                 }
               ]
-            }
+            },
+            "downloadUrl": "http://185.224.89.110:8082/FewsWebServices/rest/fewspiservice/v1/timeseries?filterId=krw-wl-ntot-toets-lSGBP&startTime=1991-01-01T00:00:00Z&endTime=2020-01-01T00:00:00Z&documentFormat=PI_JSON",
+            "downloadIdCol": "N Totaal"
           },
           {
             "id": "krw-wl-ntot-difference-2009",

@@ -115,6 +115,7 @@
         'setActiveMap',
         'setDifferenceMap',
         'setTimeOption',
+        'getTimeSeriesForDownload',
       ]),
       importFileContent(fileName) {
         return require(`~/content/services/${ this.selectedType }/${ this.selectedParticle }/${ fileName }.md`)
@@ -155,6 +156,8 @@
             this.setDifferenceMap(false)
             this.getTimeSeries()
             this.setTimeOption(true)
+            this.getTimeSeriesForDownload()
+            
           }
         } else {
           this.resetActiveMap()

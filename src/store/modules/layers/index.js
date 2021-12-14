@@ -14,6 +14,8 @@ import buildGeojonLayer  from '~/lib/build-geojson-layer'
 import getGeojsonBoundingBox from '~/lib/get-geojson-bounding-box'
 import buildGeojsonLayerDiffMap from '~/lib/build-geojson-layer-diff-map'
 import buildGeojsonLayerDiffMapsOuterCircle from '~/lib/build-geojson-layer-diff-maps-outer-circle'
+import mapCsvFormatToTimeseries from '~/lib/map-csv-format-to-timeseries'
+
 
 const { VUE_APP_API_VERSION } = process.env
 
@@ -29,6 +31,7 @@ export default {
     availableTimeStamp: createAvailableTimestamp(), // TODO make use of it 
     timeOption: true,
     clickedPointBbox: [],
+    timeSeriesForDownload: [],
     
   }),
 
@@ -128,6 +131,34 @@ export default {
       }
       return charts
     },
+    availableDownloadUrl(state, getters) { 
+      const { activeService } = getters
+      if (!activeService) {
+        return 
+      }
+      
+      if(!activeService.hasOwnProperty('downloadUrl')) {
+        return
+      }
+      const { downloadUrl } = activeService
+
+      return downloadUrl
+    },
+    csvRows(state, getters, rootState, rootGetters){
+      const { availableDownloadUrl }= getters
+      if (!availableDownloadUrl) {
+        return []
+      }
+      const { timeSeriesForDownload } = state
+      
+      const { selectedType, selectedParticle } = rootState.filters
+      
+      const locationsWithRelations = rootGetters['locations/locationsAndRelations']
+      console.log('timeSeriesForDownload state', timeSeriesForDownload)
+      console.log('selectedType', selectedType)
+      console.log('locationsWithRelations', locationsWithRelations)
+      return  mapCsvFormatToTimeseries(timeSeriesForDownload, locationsWithRelations, selectedParticle, selectedType)
+    },
   },
 
   actions: {
@@ -161,6 +192,16 @@ export default {
         .then((timeSeries) => {
           commit('ADD_DATA_TO_ACTIVE_MAP', timeSeries)
         })
+    },
+    getTimeSeriesForDownload({ commit, state, getters }) {
+      const { availableDownloadUrl } = getters
+      
+      
+      return $axios
+        .get(availableDownloadUrl)
+        .then((response) => response?.data)
+        .then((timeSeries) => commit('SET_TIME_SERIES_FOR_DOWNLOAD', timeSeries))
+
     },
     getLegendGraphic({ commit, state }) {
       const { legendGraphicId } = state.activeMap
@@ -238,6 +279,10 @@ export default {
     },
     SET_CLICKED_POINT_BBOX(state, array) {
       state.clickedPointBbox = [ ...array, ...array ]
+    },
+    SET_TIME_SERIES_FOR_DOWNLOAD(state, timeSeries) {
+      console.log('timeSeries', timeSeries)
+      state.timeSeriesForDownload = timeSeries
     },
   },
 }

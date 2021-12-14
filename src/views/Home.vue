@@ -64,9 +64,9 @@
 
         <v-fade-transition mode="out-in">
           <!-- TODO: the download button appears only after clicking on the map. Change that -->
-          <v-row v-if="activeMapLocation">
+          <v-row v-if="csvRows.length">
             <v-col>
-              <export-data :locations-data="testData" />  
+              <export-data :csv-rows="csvRows" />  
             </v-col>
           </v-row>
         </v-fade-transition>
@@ -196,34 +196,13 @@
         initOpenPanel:0,
         activePanelIndex: 0,
         panelsResetKey: `${ this.selectedType }-${ this.selectedParticle }`,
-        testData: [
-          {
-            'name': 'Tony Peña',
-            'city': 'New York',
-            'country': 'United States',
-            'birthdate': '1978-03-15',
-            'phone': {
-              'mobile': '1-541-754-3010',
-              'landline': '(541) 754-3010',
-            },
-          },
-          {
-            'name': 'Thessaloniki',
-            'city': 'Athens',
-            'country': 'Greece',
-            'birthdate': '1987-11-23',
-            'phone': {
-              'mobile': '+1 855 275 5071',
-              'landline': '(2741) 2621-244',
-            },
-          },
-        ],
       }
     },
     computed: {
       ...mapState('layers', [
         'activeMapLocation',
       ]),
+      ...mapGetters('layers', [ 'csvRows' ]),
       ...mapState('filters', [
         'selectedType', 'selectedBasin', 'selectedSubBasin', 'selectedWaterManager', 'selectedParticle',
       ]),
@@ -233,6 +212,10 @@
 
     },
     watch: { 
+      csvRows() {
+        console.log('csvRows getter has changed')
+        console.log(this.csvRows)
+      },
       showToestandGraphNlModal() { 
         if (this.showToestandGraphNlModal) {
           this.getChartDataToestandNl()

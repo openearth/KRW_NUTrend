@@ -38,7 +38,6 @@ export default {
 
       return getWaterManagersFromLocations(locations, selectedBasin, selectedSubBasin)
     },
-
   },
 
   actions: {

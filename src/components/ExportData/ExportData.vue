@@ -1,16 +1,18 @@
 <template>
-  <download-csv
-    :data="locationsData"
-    :name="fileName"
-  >
-    <v-btn
-      block
-      elevation="0"
-      @click="onGenerateFileName"
+  <div>
+    <download-csv
+      :data="csvRows"
+      :name="fileName"
     >
-      Download (.csv)
-    </v-btn>
-  </download-csv>
+      <v-btn
+        block
+        elevation="0"
+        @click="onCreatFileName"
+      >
+        Download (.csv)
+      </v-btn>
+    </download-csv>
+  </div>
 </template>
 <script>
   import Vue from 'vue'
@@ -20,7 +22,7 @@
 
   export default {
     props: {
-      locationsData: {
+      csvRows: {
         type: Array,
         default: () => [],
       },
@@ -30,8 +32,9 @@
         fileName: '',
       }
     },
+
     methods: {
-      onGenerateFileName() {
+      onCreatFileName() {
         const timestamp = Date.now()
         this.fileName = `date_extract_${ timestamp }.csv`
       },
