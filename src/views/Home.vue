@@ -63,15 +63,10 @@
         <app-divider />
 
         <v-fade-transition mode="out-in">
+          <!-- TODO: the download button appears only after clicking on the map. Change that -->
           <v-row v-if="activeMapLocation">
             <v-col>
-              <v-btn
-                block
-                elevation="0"
-                disabled
-              >
-                Download (.csv)
-              </v-btn>
+              <export-data :locations-data="testData" />  
             </v-col>
           </v-row>
         </v-fade-transition>
@@ -182,7 +177,8 @@
   import ContentPanels from '~/components/ContentPanels/ContentPanels'
   import DataTypeForm from '~/components/DataTypeForm/DataTypeForm'
   import FilterDataForm from '~/components/FilterDataForm/FilterDataForm'
-
+  import ExportData from '~/components/ExportData/ExportData'
+  
   export default {
     name: 'Home',
     components: {
@@ -193,12 +189,35 @@
       ContentPanels,
       DataTypeForm,
       FilterDataForm,
+      ExportData,
     },
     data() { 
       return {
         initOpenPanel:0,
         activePanelIndex: 0,
         panelsResetKey: `${ this.selectedType }-${ this.selectedParticle }`,
+        testData: [
+          {
+            'name': 'Tony Peña',
+            'city': 'New York',
+            'country': 'United States',
+            'birthdate': '1978-03-15',
+            'phone': {
+              'mobile': '1-541-754-3010',
+              'landline': '(541) 754-3010',
+            },
+          },
+          {
+            'name': 'Thessaloniki',
+            'city': 'Athens',
+            'country': 'Greece',
+            'birthdate': '1987-11-23',
+            'phone': {
+              'mobile': '+1 855 275 5071',
+              'landline': '(2741) 2621-244',
+            },
+          },
+        ],
       }
     },
     computed: {
