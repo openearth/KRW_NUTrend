@@ -78,6 +78,7 @@
                 :id="activeMapLocation.locationId"
                 :name="activeMapLocation.stationName"
                 :value="activeMapLocation.value"
+                :value2="activeMapLocation.value2"
                 :selected-type="selectedType"
                 :thresholds="legend"
               />
@@ -234,6 +235,9 @@
 
     },
     watch: { 
+      activeMapLocation() { 
+        console.log('this.activeMapLocation', this.activeMapLocation)
+      },
       showToestandGraphNlModal() { 
         if (this.showToestandGraphNlModal) {
           this.getChartDataToestandNl()

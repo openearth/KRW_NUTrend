@@ -34,7 +34,7 @@ export default ({ id, data }, semicircle, legend) => {
                 'text-variable-anchor': [ 'center' ],
             },
     paint: {
-            'text-color': semicircle === 'right'? buildCirclesColor(legend) : buildCirclesColor(legend, 'value2'),
+            'text-color': semicircle === 'right'? buildCirclesColor(legend, 'value2') : buildCirclesColor(legend),
             'text-halo-color': 'hsla(0, 0%, 0%, 0)',
             'text-halo-width': 1.25,
             'text-halo-blur': 0.5,

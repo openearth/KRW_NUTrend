@@ -16,13 +16,14 @@
       :checkboxes="checkboxes"
     />
     <v-fade-transition mode="out-in">
-      <map-title v-if="activeMap" :title="activeMap.title" />
+      <map-title v-if="activeMap" :title="activeMap.title " />
     </v-fade-transition>
     <v-fade-transition mode="out-in">
-      <map-title v-if="activeMap && timeOption" :title="activeMap.title + selectedTimestamp.substring(0,4)" />
-    </v-fade-transition>
-    <v-fade-transition mode="out-in">
-      <map-legend v-if="showLegend" :items="legend" />
+      <map-legend
+        v-if="showLegend"
+        :items="legend"
+        :title="legendTitle"
+      />
     </v-fade-transition>
     <mapbox-map
       slot="map"
@@ -111,7 +112,7 @@
     computed: {
       ...mapState('layers', [ 'activeMap', 'legend', 'timeOption', 'clickedPointBbox' ]),
       ...mapState('filters', [ 'selectedTimestamp' ]),
-      ...mapGetters('layers', [ 'activeMapLayer', 'activeDiffMapLayers', 'availableBaseMap', 'layerBbox' ]),
+      ...mapGetters('layers', [ 'activeMapLayer', 'activeDiffMapLayers', 'availableBaseMap', 'layerBbox', 'legendTitle' ]),
       showLegend() {
         return this.legend.length
       },

@@ -24,6 +24,7 @@
       ...mapState('filters', [
         'selectedType',
       ]),
+      ...mapState('layers', [ 'differenceMap' ]),
     },
     watch: {
       map: {
@@ -49,7 +50,7 @@
         'createImageUrl',
         'getChartsData',
       ]),
-      ...mapActions('layers', [ 'setActiveMapLocation', 'setClickedPointBbox' ]),
+      ...mapActions('layers', [ 'setActiveMapLocation', 'setClickedPointBbox'  ]),
       ...mapActions('charts',[ 'resetChartsData' ]),
       deferredMountedTo(map) {
         if (this.layer) {
@@ -65,9 +66,21 @@
       },
       onClick(e) {
         this.resetChartsData()
-        const { locationId, value, name } = e.features[0].properties
+        const { locationId, value, value2, name } = e.features[0].properties
         const coordinates = e.features[0].geometry.coordinates.slice()
-        this.setActiveMapLocation({ locationId: locationId, value: value, stationName: name })
+        const layerId = this.layer.id
+        //Check only one of the two layers for the difference maps case is enough
+       
+
+        if (this.differenceMap === true ) {
+          if (layerId.includes('left')) {
+            this.setActiveMapLocation({ locationId: locationId, value: value, value2: value2, stationName: name })
+          }
+        }else{
+          this.setActiveMapLocation({ locationId: locationId, value: value, value2: null, stationName: name })
+        }
+        
+
         this.setClickedPointBbox(coordinates)
         if (this.selectedType === 'trends') {
           this.createImageUrl()

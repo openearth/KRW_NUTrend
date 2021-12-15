@@ -25,14 +25,13 @@ export default {
   state: () => ({
     activeMap: null, // activeMap details that we read from the configuration
     activeMapLocation: null,
-    featuresCollection: [],//TODO remove it?. It is not used I think
+    featuresCollection: [],//TODO: remove it?. It is not used I think
     legend: [],
     differenceMap: false,
-    availableTimeStamp: createAvailableTimestamp(), // TODO make use of it 
-    timeOption: true,
+    availableTimeStamp: createAvailableTimestamp(), // TODO: make use of it 
+    timeOption: true, //TODO: do I need it?
     clickedPointBbox: [],
     timeSeriesForDownload: [],
-   
   }),
 
   getters: {
@@ -131,6 +130,21 @@ export default {
         return
       }
       return charts
+    },
+    legendTitle(state, getters, rootState) {
+      const { activeService } = getters
+      const { selectedTimestamp } = rootState.filters
+      if (!activeService) {
+        return 
+      }
+      if(!activeService.hasOwnProperty('legendTitle')) {
+        console.log('selectedTimeSTamp', selectedTimestamp)
+        return selectedTimestamp.slice(0,4)
+      }
+      
+      const { legendTitle } = activeService
+
+      return legendTitle
     },
     availableDownloadUrl(state, getters) { 
       const { activeService } = getters

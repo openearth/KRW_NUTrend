@@ -10,9 +10,19 @@
       <p class="text-body-2">
         OWL: {{ id }}
       </p>
-      <p class="text-body-2">
-        Waarde: {{ formattedValue }}
-      </p>
+      <div v-if="!showTwoValues">
+        <p class="text-body-2">
+          Waarde: {{ formattedValue }}
+        </p>
+      </div>
+      <div v-if="showTwoValues">
+        <p class="text-body-2">
+          {{ yearOld }}: {{ formattedValue }}
+        </p>
+        <p class="text-body-2">
+          2020: {{ formattedValue2 }}
+        </p>
+      </div>
     </v-card-text>
   </v-card>
 </template>
@@ -32,10 +42,13 @@
         type: [ String, Number ],
         default: '',
       },
-      valueOld: {
+      value2: {
         type: [ String, Number ],
+        default: null,
+      },
+      yearOld: { 
+        type: String, 
         default: '',
-        required: false,
       },
       selectedType: {
         type: String, 
@@ -49,10 +62,22 @@
     computed: {
       formattedValue() {
         if (this.selectedType === 'state') {
-          console.log('call format function for state')
           return this.formatValue(this.value)
         }
         return this.value
+      },
+      formattedValue2() {
+        if (this.selectedType === 'state') {
+          return this.formatValue(this.value2)
+        }
+        return this.value2
+      },
+      showTwoValues() {
+        console.log('this.value2', this.value2)
+        if (this.value2) {
+          return true
+        }
+        return false
       },
     },
     methods: { 
