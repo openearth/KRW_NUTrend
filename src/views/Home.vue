@@ -78,6 +78,8 @@
                 :id="activeMapLocation.locationId"
                 :name="activeMapLocation.stationName"
                 :value="activeMapLocation.value"
+                :selected-type="selectedType"
+                :thresholds="legend"
               />
             </v-col>
           </v-row>
@@ -220,7 +222,7 @@
     },
     computed: {
       ...mapState('layers', [
-        'activeMapLocation',
+        'activeMapLocation', 'legend',
       ]),
       ...mapGetters('layers', [ 'csvRows' ]),
       ...mapState('filters', [

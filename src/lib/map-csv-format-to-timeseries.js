@@ -45,10 +45,10 @@ export default(data, locationsWithRelations, particle, type) => {
       return {
       ...relationsObject,
       Klasse: event?.value,
-      Toestand: event.value === '0' ? 'Goed'
-                :event.value === '1' ? 'Matig'
-                :event.value === '2' ? 'Ontoereikend'
-                :event.value === '3' ? 'Slecht'
+      Toestand: event.value === '1' ? 'Goed'
+                :event.value === '2' ? 'Matig'
+                :event.value === '3' ? 'Ontoereikend'
+                :event.value === '4' ? 'Slecht'
                 : null,
       Stof: stof,
       Jaar: event?.date.slice(0,4),

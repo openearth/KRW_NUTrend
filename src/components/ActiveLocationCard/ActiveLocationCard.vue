@@ -11,7 +11,7 @@
         OWL: {{ id }}
       </p>
       <p class="text-body-2">
-        Waarde: {{ value }}
+        Waarde: {{ formattedValue }}
       </p>
     </v-card-text>
   </v-card>
@@ -31,6 +31,34 @@
       value: {
         type: [ String, Number ],
         default: '',
+      },
+      valueOld: {
+        type: [ String, Number ],
+        default: '',
+        required: false,
+      },
+      selectedType: {
+        type: String, 
+        default: '',
+      },
+      thresholds: {
+        type: Array,
+        default: ()=>[],
+      },
+    },
+    computed: {
+      formattedValue() {
+        if (this.selectedType === 'state') {
+          console.log('call format function for state')
+          return this.formatValue(this.value)
+        }
+        return this.value
+      },
+    },
+    methods: { 
+      formatValue(value) {
+        const filterByValue = ({ lowerValue }) => lowerValue === parseInt(value)
+        return this.thresholds.find(filterByValue).label
       },
     },
   }

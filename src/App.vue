@@ -48,6 +48,13 @@
       </div>
       <v-mapbox-scale-control :options="scaleBarOptions" />
       <map-controls v-if="activeMapLayer" :layer="activeMapLayer" />
+      <div v-if="activeDiffMapLayers.length">
+        <map-controls 
+          v-for="layer in activeDiffMapLayers"
+          :key="layer.id" 
+          :layer="layer"
+        /> 
+      </div>
       <map-controls-zoom
         v-if="zoomBounds.length"
         :bounds="zoomBounds"
