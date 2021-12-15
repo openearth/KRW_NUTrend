@@ -385,7 +385,7 @@ export default {
       state.toestandDataSelectedSubBasin =null
     },
     RESET_TOESTAND_DATA_ALL_SUB_BASINS(state) {
-      state.toestandDataAllSubBasins = null
+      state.toestandDataAllSubBasins = []
     },
     RESET_TOESTAND_DATA_SELECTED_WATER_MANAGER(state) {
       state.toestandDataSelectedWaterManager = null

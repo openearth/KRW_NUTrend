@@ -15,7 +15,7 @@ export default (data, type) => {
     .map(event => {
       return [ event.date, checkForNull(event.value) ]
     })
-
+  
   return {
     location,
     data: events,

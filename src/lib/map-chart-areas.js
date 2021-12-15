@@ -7,7 +7,8 @@
  *   ...
  * ]
  */
-export default (areas) => {
+export default (areas, maxValue) => {
+ 
   if (!areas.length) {
     return []
   }
@@ -23,9 +24,16 @@ export default (areas) => {
 
   return areaSettings
     .map(({ name, color }, index) => {
-      const min = sortedAreas[index - 1]?.value || '0'
-      const max = sortedAreas[index]?.value || (parseFloat(sortedAreas[index - 1]?.value, 10) + 3).toString()
-
+    
+      let max
+      let min = sortedAreas[index - 1]?.value || '0'
+      if (index === 3) {
+       
+        max = maxValue
+      }else {
+        max = sortedAreas[index]?.value || (parseFloat(sortedAreas[index - 1]?.value, 10) + 1).toString()
+      }
+     
       return { name, color, min, max }
     })
 }

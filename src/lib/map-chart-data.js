@@ -55,18 +55,29 @@ export default (array) => {
       if (existingEntry) {
         
         if (value) {
+          
           existingEntry.areas
             ? existingEntry.areas.push({ value })
             : existingEntry.areas = [ { value } ]
         }
 
         if (data) {
+         
           existingEntry.series
             ? existingEntry.series.push(data)
             : existingEntry.series = [ data ]
+
+          existingEntry.minValues
+          ? existingEntry.minValues.push(location.minValue)
+          : existingEntry.minValues = [ location.minValue ]
+
+          existingEntry.maxValues
+          ? existingEntry.maxValues.push(location.maxValue)
+          : existingEntry.maxValues = [ location.maxValue ]
         }
 
       } else {
+       
         // else, we create a new entry in mappedData and add the available data.
         mappedData.push({
           name,

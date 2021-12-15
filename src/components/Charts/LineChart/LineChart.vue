@@ -97,7 +97,7 @@
         return this.data.find(data => data.name === 'lines')
       },
       areas() {
-        return mapChartAreas(this.lineChartData.areas)
+        return mapChartAreas(this.lineChartData.areas, this.maxValue)
       },
       options() {
         return {
@@ -121,11 +121,14 @@
         return {
           type: 'value',
           min: parseFloat(this.areas[0].min),
-          max: this.formatMaxY(parseFloat(this.areas[3].max)),
+          max: this.maxValue,
         }
       },
       series() {
         return this.getSeriesData(this.lineChartData.series)
+      },
+      maxValue() {
+        return this.getMaxValueOfSeries(this.lineChartData.maxValues)
       },
       markAreas() {
         return this.areas.map(area => createChartMarkAreas(area))
@@ -141,6 +144,11 @@
             color: this.seriesColors[index],
           },
         }))
+      },
+      getMaxValueOfSeries(values) {
+        let floatValues = values.map(parseFloat)
+
+        return Math.ceil(Math.max(...floatValues))
       },
       formatMaxY(max) {
         const formattedMax = Math.ceil((max + 1))
