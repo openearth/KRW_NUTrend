@@ -134,7 +134,7 @@
       setPanelIndex(index){
         this.$emit('active-panel-index', index)
         this.panelIndex = index
-    
+        this.resetActiveMapLocation()
       },
       setMap(isActive) {
    

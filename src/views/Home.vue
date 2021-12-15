@@ -81,6 +81,7 @@
                 :value2="activeMapLocation.value2"
                 :selected-type="selectedType"
                 :thresholds="legend"
+                :compare-year="compareYear"
               />
             </v-col>
           </v-row>
@@ -225,7 +226,7 @@
       ...mapState('layers', [
         'activeMapLocation', 'legend',
       ]),
-      ...mapGetters('layers', [ 'csvRows' ]),
+      ...mapGetters('layers', [ 'csvRows', 'compareYear' ]),
       ...mapState('filters', [
         'selectedType', 'selectedBasin', 'selectedSubBasin', 'selectedWaterManager', 'selectedParticle',
       ]),

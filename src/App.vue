@@ -1,10 +1,29 @@
 <template>
   <app-shell header-title="KRW-NUTrend" @reset-bounds="onResetBounds">
     <template slot="header-right">
-      <v-btn href="http://krw-nutrend.nl/site/data/download/11203728-006-BGS-0002_v1.1-KRW%20-%20Toestand-%20en%20trendanalyse%20voor%20nutrienten1.pdf" text>
-        Meer informatie
-      </v-btn>
-      <v-btn href="mailto:@krw-nutrend@deltares.nl" text>
+      <v-menu offset-y>
+        <template #activator="{ on, attrs }">
+          <v-btn 
+            text
+            v-bind="attrs"
+            v-on="on"
+          >
+            Meer informatie
+          </v-btn>
+        </template>
+        <v-list>
+          <v-list-item
+            v-for="(report, index) in reports"
+            :key="index"
+            :href="report.url"
+            target="_blank"
+          >
+            <v-list-item-title>{{ report.title }}</v-list-item-title>
+          </v-list-item>
+        </v-list>
+      </v-menu>
+     
+      <v-btn href="mailto:krw-nutrend@deltares.nl" text>
         Contact
       </v-btn>
     </template>
@@ -80,7 +99,7 @@
   import MapTitle from '~/components/MapTitle/MapTitle'
   import BaseLayer from '~/components/MapBoxLayer/BaseLayer'
   import MapControlsZoom from '~/components/MapControls/MapControlsZoom'
-
+  import reports from '~/config/reports.json'
 
   export default {
     components: {
@@ -108,6 +127,7 @@
       mapLayer: null,
       baseLayerIsAvailable: false,
       zoomBounds: [],
+      reports: reports,
     }),
     computed: {
       ...mapState('layers', [ 'activeMap', 'legend', 'timeOption', 'clickedPointBbox' ]),

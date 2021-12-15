@@ -17,7 +17,7 @@
       </div>
       <div v-if="showTwoValues">
         <p class="text-body-2">
-          {{ yearOld }}: {{ formattedValue }}
+          {{ compareYear }}: {{ formattedValue }}
         </p>
         <p class="text-body-2">
           2020: {{ formattedValue2 }}
@@ -46,10 +46,6 @@
         type: [ String, Number ],
         default: null,
       },
-      yearOld: { 
-        type: String, 
-        default: '',
-      },
       selectedType: {
         type: String, 
         default: '',
@@ -57,6 +53,10 @@
       thresholds: {
         type: Array,
         default: ()=>[],
+      },
+      compareYear: { 
+        type: String,
+        default: '',
       },
     },
     computed: {
@@ -81,6 +81,10 @@
     },
     methods: { 
       formatValue(value) {
+        console.log('value', value)
+        if (!value || value === '999.0') {
+          return 'Geen data'
+        }
         const filterByValue = ({ lowerValue }) => lowerValue === parseInt(value)
         return this.thresholds.find(filterByValue).label
       },

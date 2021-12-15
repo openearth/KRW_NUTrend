@@ -77,22 +77,23 @@
     bottom: $spacing-large;
     pointer-events: none;
   }
- .legend-title {
-   font-size: 0.875rem;
-   padding-bottom: 0px;
-  
- }
+
+  .legend-title {
+    padding-bottom: 0;
+    font-size: .875rem;
+  }
 
   .v-application .text-body-2 {
-    font-size: 0.75rem !important;
+    font-size: .75rem !important;
   }
 
   .v-list-item {
     height: 30px;
     min-height: 30px;
   }
+
   .border {
-    border: 0.5px solid black !important;
+    border: .5px solid black !important;
   }
 
 </style>

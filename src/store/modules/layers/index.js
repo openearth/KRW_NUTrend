@@ -145,6 +145,19 @@ export default {
 
       return legendTitle
     },
+    compareYear(state, getters, rootState) {
+      const { activeService } = getters
+      const { selectedTimestamp } = rootState.filters
+      if (!activeService) {
+        return 
+      }
+      if(!activeService.hasOwnProperty('compareYear')) {
+        return 
+      }
+      const { compareYear } = activeService
+
+      return compareYear
+    },
     availableDownloadUrl(state, getters) { 
       const { activeService } = getters
       if (!activeService) {

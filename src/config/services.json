@@ -230,7 +230,7 @@
             "legendTitle": "2015/2020"
           },
           {
-            "id": "krw-wl-ptot-toets-doelgat 2020",
+            "id": "krw-wl-ptot-toets-doelgat",
             "name": "Doelgat (afstand tot de norm 'goed') ",
             "data": {},
             "url": null,
@@ -349,7 +349,7 @@
             "legendTitle": "2015/2020"
           },
           {
-            "id": "krw-wl-din-toets-doelgat 2020",
+            "id": "krw-wl-din-toets-doelgat",
             "name": "Doelgat (afstand tot de norm 'goed') ",
             "data": {},
             "url": null,
