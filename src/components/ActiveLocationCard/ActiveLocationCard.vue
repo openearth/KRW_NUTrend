@@ -73,7 +73,6 @@
         return this.value2
       },
       showTwoValues() {
-        console.log('this.value2', this.value2)
         if (this.value2) {
           return true
         }

@@ -235,9 +235,6 @@
 
     },
     watch: { 
-      activeMapLocation() { 
-        console.log('this.activeMapLocation', this.activeMapLocation)
-      },
       showToestandGraphNlModal() { 
         if (this.showToestandGraphNlModal) {
           this.getChartDataToestandNl()

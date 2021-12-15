@@ -138,7 +138,6 @@ export default {
         return 
       }
       if(!activeService.hasOwnProperty('legendTitle')) {
-        console.log('selectedTimeSTamp', selectedTimestamp)
         return selectedTimestamp.slice(0,4)
       }
       

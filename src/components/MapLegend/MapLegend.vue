@@ -66,12 +66,6 @@
         return [ ...this.items, transparentItem ]
       },
     },
-    watch: {
-      items() {
-        console.log('item', this.items)
-      },
-      
-    },
   }
 </script>
 
