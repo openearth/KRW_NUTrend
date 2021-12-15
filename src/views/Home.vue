@@ -57,7 +57,7 @@
     >
       <v-container fluid>
         <v-row>
-          <filter-data-form />
+          <filter-data-form @reset-bounds="onResetBounds" />
         </v-row>
 
         <app-divider />
@@ -212,10 +212,6 @@
 
     },
     watch: { 
-      csvRows() {
-        console.log('csvRows getter has changed')
-        console.log(this.csvRows)
-      },
       showToestandGraphNlModal() { 
         if (this.showToestandGraphNlModal) {
           this.getChartDataToestandNl()
@@ -259,6 +255,9 @@
                                 'getChartDataToestandSelectedBasin' ]),
       setActivePanelIndex(event) {
         this.activePanelIndex = event
+      },
+      onResetBounds(event) {
+        this.$emit('reset-bounds', event)
       },
     },
   }

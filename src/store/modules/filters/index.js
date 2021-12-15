@@ -29,7 +29,7 @@ export default {
     availableWaterBodies(state, getters, rootState) {
       const { locations } = rootState.locations
       const { selectedBasin, selectedSubBasin, selectedWaterManager, selectedType } = state
-
+      //console.log('selections', selectedBasin, selectedSubBasin, selectedWaterManager, selectedType)
       return getWaterBodiesFromLocations(locations, selectedBasin, selectedSubBasin, selectedWaterManager, selectedType)
     },
     availableWaterManagers(state, getters, rootState) {
@@ -44,14 +44,23 @@ export default {
     setSelectedBasin(context, payload) {
       context.commit('SET_SELECTED_BASIN', payload)
     },
+    resetSelectedBasin(context) {
+      context.commit('SET_SELECTED_BASIN', null)
+    },
     setSelectedBodyOfWater(context, payload) {
       context.commit('SET_SELECTED_BODY_OF_WATER', payload)
+    },
+    resetSelectedBodyOfWater(context) {
+      context.commit('SET_SELECTED_BODY_OF_WATER', null)
     },
     setSelectedParticle(context, payload) {
       context.commit('SET_SELECTED_PARTICLE', payload)
     },
     setSelectedSubBasin(context, payload) {
       context.commit('SET_SELECTED_SUB_BASIN', payload)
+    },
+    resetSelectedSubBasin(context) {
+      context.commit('SET_SELECTED_SUB_BASIN', null)
     },
     setSelectedTimestamp(context, payload) {
       context.commit('SET_SELECTED_TIMESTAMP', payload)
@@ -61,6 +70,9 @@ export default {
     },
     setSelectedWaterManager(context, payload) {
       context.commit('SET_SELECTED_WATER_MANAGER', payload)
+    },
+    resetSelectedWaterManager(context) {
+      context.commit('SET_SELECTED_WATER_MANAGER', null)
     },
   },
 

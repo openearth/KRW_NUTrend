@@ -10,7 +10,7 @@
     </app-header>
 
     <v-main>
-      <router-view />
+      <router-view v-on="$listeners" />
       <slot />
       <slot name="map" />
     </v-main>

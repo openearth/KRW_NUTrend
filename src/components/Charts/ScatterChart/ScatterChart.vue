@@ -112,7 +112,6 @@
         const stationNames =  data.map(({ location })=> {
           return location.stationName
         })
-        //console.log('')
         return stationNames
       },
       getSeriesData(data) {
@@ -146,8 +145,6 @@
         if (subNames.length > 2) {
           
           subNames.forEach((subName, index) => {
-            
-            // console.log(index, 'subname', subName)
             if ((index%2===0) && !(index === (subNames.length -1))) {
              
               stationName = stationName + `\n${ subName.trim() },${ subNames[index+1] },`

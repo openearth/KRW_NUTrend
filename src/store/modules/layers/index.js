@@ -32,13 +32,14 @@ export default {
     timeOption: true,
     clickedPointBbox: [],
     timeSeriesForDownload: [],
-    
+   
   }),
 
   getters: {
     //filters the features collection of the activeMap
     filteredMap(state, getters, rootState, rootGetters) {
       const waterBodies = rootGetters['filters/availableWaterBodies']
+      
       const { selectedBodyOfWater, selectedType } = rootState.filters
 
       if (state.activeMap?.data && state?.legend.length) {
@@ -53,8 +54,7 @@ export default {
           ? buildCirclesColorsRangeValues(state.legend)
           : buildCirclesColor(state.legend)
         
-       
-        //TODO: remove if it is working as expected
+      
         const paint = !state.differenceMap ? { paint: buildPaintObject(circlesColor) } : null
 
         return { ...state.activeMap, ...data, ...paint }
@@ -66,8 +66,9 @@ export default {
       if (!filteredMap) {
         return []
       }
-
+      
       const { data } = filteredMap
+  
       return getGeojsonBoundingBox(data)
 
     },
@@ -154,9 +155,6 @@ export default {
       const { selectedType, selectedParticle } = rootState.filters
       
       const locationsWithRelations = rootGetters['locations/locationsAndRelations']
-      console.log('timeSeriesForDownload state', timeSeriesForDownload)
-      console.log('selectedType', selectedType)
-      console.log('locationsWithRelations', locationsWithRelations)
       return  mapCsvFormatToTimeseries(timeSeriesForDownload, locationsWithRelations, selectedParticle, selectedType)
     },
   },
@@ -281,8 +279,8 @@ export default {
       state.clickedPointBbox = [ ...array, ...array ]
     },
     SET_TIME_SERIES_FOR_DOWNLOAD(state, timeSeries) {
-      console.log('timeSeries', timeSeries)
       state.timeSeriesForDownload = timeSeries
     },
+
   },
 }

@@ -1,5 +1,5 @@
 <template>
-  <app-shell header-title="KRW-NUTrend">
+  <app-shell header-title="KRW-NUTrend" @reset-bounds="onResetBounds">
     <template slot="header-right">
       <v-btn href="http://krw-nutrend.nl/site/data/download/11203728-006-BGS-0002_v1.1-KRW%20-%20Toestand-%20en%20trendanalyse%20voor%20nutrienten1.pdf" text>
         Meer informatie
@@ -127,6 +127,9 @@
       ...mapActions('locations', [ 'getLocations' ]),
       onBaseLayerIsLoaded(){
         this.baseLayerIsAvailable = true
+      },
+      onResetBounds(event) {
+        this.zoomBounds = event
       },
     },
   }
