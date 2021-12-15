@@ -224,6 +224,7 @@
         'title',
         'toestandChartType',
       ]),
+      ...mapState('filters', [ 'selectedParticle' ]),
  
       hasDataToDisplayInCharts() {
         return this.data.length
@@ -282,14 +283,21 @@
           ? true : false
         return display
       },
+      titleParticle() { 
+        const title = this.selectedParticle === 'ntot' ? 'N Totaal' 
+          :this.selectedParticle === 'ptot' ? 'P Totaal'
+            :this.selectedParticle === 'din' ? 'DIN'
+              :null
+        return title
+      },
       scatterChartTitle() {
-        return `N Totaal ${ this.title } (KRW monitoringslocatie in mg/l)`
+        return `${ this.titleParticle } ${ this.title } (KRW monitoringslocatie in mg/l)`
       },
       lineChartTitle() {
-        return `N Totaal ${ this.title } (mg/l)`
+        return `${ this.titleParticle } ${ this.title } (mg/l)`
       },
       dotsChartTitle() {
-        return `N Totaal ${ this.title } (Toetsing)`
+        return `${ this.titleParticle } ${ this.title } (Toetsing)`
       },
       toestandChartTitle() {
         return `${ this.title } (aantal waterlichamen) `

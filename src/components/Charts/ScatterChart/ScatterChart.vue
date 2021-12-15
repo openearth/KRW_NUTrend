@@ -117,7 +117,7 @@
       getSeriesData(data) {
         const series = data.map(({ location, name, series }) => {
           return {
-            'symbolSize': 8,
+            'symbolSize': 6,
             'name': this.formatStationNameToFit(location.stationName),
             'type': name,
             'data': series,

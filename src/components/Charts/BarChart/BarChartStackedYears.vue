@@ -104,6 +104,7 @@
             type: 'bar',
             stack: 'total',
             label: {
+              fontSize: 8,
               show: true,
               color: 'black',
               formatter: function(param) {
@@ -119,6 +120,7 @@
             type: 'bar',
             stack: 'total',
             label: {
+              fontSize: 8,
               show: true,
               color: 'black',
               formatter: function(param) {
@@ -134,6 +136,7 @@
             type: 'bar',
             stack: 'total',
             label: {
+              fontSize: 8,
               show: true,
               color: 'black',
               formatter: function(param) {
@@ -149,6 +152,7 @@
             type: 'bar',
             stack: 'total',
             label: {
+              fontSize: 8,
               show: true,
               color: 'black',
               formatter: function(param) {

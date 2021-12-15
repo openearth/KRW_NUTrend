@@ -107,6 +107,7 @@
             stack: 'total',
             //TODO: styling issue if there is time: show the numbers rounded
             label: {
+              fontSize: 10,
               show: true,
               color: 'black',
               formatter: function(param) {
@@ -121,6 +122,7 @@
             type: 'bar',
             stack: 'total',
             label: {
+              fontSize: 10,
               show: true,
               color: 'black',
               formatter: function(param) {
@@ -136,6 +138,7 @@
             type: 'bar',
             stack: 'total',
             label: {
+              fontSize: 10,
               show: true,
               color: 'black',
               formatter: function(param) {
@@ -151,6 +154,7 @@
             type: 'bar',
             stack: 'total',
             label: {
+              fontSize: 10,
               show: true,
               color: 'black',
               formatter: function(param) {

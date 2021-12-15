@@ -28,6 +28,14 @@
               ],
               "Basins_charts": [
                 {
+                  "plotId": "Stroomgebied_aantal_N"
+                },
+                {
+                  "plotId": "Stroomgebied_perc_N"
+                }
+              ],
+              "SubBasins_charts": [
+                {
                   "plotId": "Deelstroomgebied_aantal_N"
                 },
                 {
@@ -35,6 +43,18 @@
                 }
               ],
               "SelectedBasin_charts": [
+                {
+                  "plotId": "Stroomgebied_aantal_N",
+                  "startTime": "1991-01-01T00:00:00Z",
+                  "endTime": "2020-01-01T00:00:00Z"
+                },
+                {
+                  "plotId": "Stroomgebied_perc_N",
+                  "startTime": "1991-01-01T00:00:00Z",
+                  "endTime": "2020-01-01T00:00:00Z"
+                }
+              ],
+              "SelectedSubBasin_charts": [
                 {
                   "plotId": "Deelstroomgebied_aantal_N",
                   "startTime": "1991-01-01T00:00:00Z",
@@ -122,20 +142,40 @@
               ],
               "Basins_charts": [
                 {
-                  "plotId": "Deelstroomgebied_aantal_P"
+                  "plotId": "Stroomgebied_aantal_N"
                 },
                 {
-                  "plotId": "Deelstroomgebied_perc_P"
+                  "plotId": "Stroomgebied_perc_N"
+                }
+              ],
+              "SubBasins_charts": [
+                {
+                  "plotId": "Deelstroomgebied_aantal_N"
+                },
+                {
+                  "plotId": "Deelstroomgebied_perc_N"
                 }
               ],
               "SelectedBasin_charts": [
                 {
-                  "plotId": "Deelstroomgebied_aantal_P",
+                  "plotId": "Stroomgebied_aantal_N",
                   "startTime": "1991-01-01T00:00:00Z",
                   "endTime": "2020-01-01T00:00:00Z"
                 },
                 {
-                  "plotId": "Deelstroomgebied_perc_P",
+                  "plotId": "Stroomgebied_perc_N",
+                  "startTime": "1991-01-01T00:00:00Z",
+                  "endTime": "2020-01-01T00:00:00Z"
+                }
+              ],
+              "SelectedSubBasin_charts": [
+                {
+                  "plotId": "Deelstroomgebied_aantal_N",
+                  "startTime": "1991-01-01T00:00:00Z",
+                  "endTime": "2020-01-01T00:00:00Z"
+                },
+                {
+                  "plotId": "Deelstroomgebied_perc_N",
                   "startTime": "1991-01-01T00:00:00Z",
                   "endTime": "2020-01-01T00:00:00Z"
                 }
@@ -217,20 +257,40 @@
               ],
               "Basins_charts": [
                 {
-                  "plotId": "Deelstroomgebied_aantal_DIN"
+                  "plotId": "Stroomgebied_aantal_N"
                 },
                 {
-                  "plotId": "Deelstroomgebied_perc_DIN"
+                  "plotId": "Stroomgebied_perc_N"
+                }
+              ],
+              "SubBasins_charts": [
+                {
+                  "plotId": "Deelstroomgebied_aantal_N"
+                },
+                {
+                  "plotId": "Deelstroomgebied_perc_N"
                 }
               ],
               "SelectedBasin_charts": [
                 {
-                  "plotId": "Deelstroomgebied_aantal_DIN",
+                  "plotId": "Stroomgebied_aantal_N",
                   "startTime": "1991-01-01T00:00:00Z",
                   "endTime": "2020-01-01T00:00:00Z"
                 },
                 {
-                  "plotId": "Deelstroomgebied_perc_DIN",
+                  "plotId": "Stroomgebied_perc_N",
+                  "startTime": "1991-01-01T00:00:00Z",
+                  "endTime": "2020-01-01T00:00:00Z"
+                }
+              ],
+              "SelectedSubBasin_charts": [
+                {
+                  "plotId": "Deelstroomgebied_aantal_N",
+                  "startTime": "1991-01-01T00:00:00Z",
+                  "endTime": "2020-01-01T00:00:00Z"
+                },
+                {
+                  "plotId": "Deelstroomgebied_perc_N",
                   "startTime": "1991-01-01T00:00:00Z",
                   "endTime": "2020-01-01T00:00:00Z"
                 }
@@ -376,7 +436,8 @@
                   "qualifierIds": "WN_3",
                   "startTime": "1980-01-01T00:00:00Z",
                   "endTime": "2020-01-01T00:00:00Z",
-                  "timeStepId": "jaar"
+                  "timeStepId": "jaar",
+                  "showStatistics": "true"
                 },
                 {
                   "filterId": "krw-wl-gr-ntot",
@@ -385,7 +446,8 @@
                   "qualifierIds": "WN_4",
                   "startTime": "1980-01-01T00:00:00Z",
                   "endTime": "2020-01-01T00:00:00Z",
-                  "timeStepId": "jaar"
+                  "timeStepId": "jaar",
+                  "showStatistics": "true"
                 },
                 {
                   "filterId": "krw-wl-gr-ntot",
@@ -394,7 +456,8 @@
                   "qualifierIds": "WN_5",
                   "startTime": "1980-01-01T00:00:00Z",
                   "endTime": "2020-01-01T00:00:00Z",
-                  "timeStepId": "jaar"
+                  "timeStepId": "jaar",
+                  "showStatistics": "true"
                 },
                 {
                   "filterId": "krw-wl-gr-ntot",
@@ -403,7 +466,8 @@
                   "qualifierIds": "BE_3jaargem",
                   "startTime": "1980-01-01T00:00:00Z",
                   "endTime": "2020-01-01T00:00:00Z",
-                  "timeStepId": "jaar"
+                  "timeStepId": "jaar",
+                  "showStatistics": "true"
                 },
                 {
                   "filterId": "krw-wl-gr-ntot",
@@ -412,7 +476,8 @@
                   "qualifierIds": "BE_jaargem",
                   "startTime": "1980-01-01T00:00:00Z",
                   "endTime": "2020-01-01T00:00:00Z",
-                  "timeStepId": "een.jaar"
+                  "timeStepId": "een.jaar",
+                  "showStatistics": "true"
                 },
                 {
                   "filterId": "krw-wl-gr-ntot",
@@ -421,7 +486,8 @@
                   "qualifierIds": "BE_summermean",
                   "startTime": "1980-01-01T00:00:00Z",
                   "endTime": "2020-01-01T00:00:00Z",
-                  "timeStepId": "zomer"
+                  "timeStepId": "zomer",
+                  "showStatistics": "true"
                 }
               ],
               "scatter": [
@@ -517,7 +583,8 @@
                   "qualifierIds": "WN_3",
                   "startTime": "1980-01-01T00:00:00Z",
                   "endTime": "2020-01-01T00:00:00Z",
-                  "timeStepId": "jaar"
+                  "timeStepId": "jaar",
+                  "showStatistics": "true"
                 },
                 {
                   "filterId": "krw-wl-gr-ptot",
@@ -526,7 +593,8 @@
                   "qualifierIds": "WN_4",
                   "startTime": "1980-01-01T00:00:00Z",
                   "endTime": "2020-01-01T00:00:00Z",
-                  "timeStepId": "jaar"
+                  "timeStepId": "jaar",
+                  "showStatistics": "true"
                 },
                 {
                   "filterId": "krw-wl-gr-ptot",
@@ -535,7 +603,8 @@
                   "qualifierIds": "WN_5",
                   "startTime": "1980-01-01T00:00:00Z",
                   "endTime": "2020-01-01T00:00:00Z",
-                  "timeStepId": "jaar"
+                  "timeStepId": "jaar",
+                  "showStatistics": "true"
                 },
                 {
                   "filterId": "krw-wl-gr-ptot",
@@ -544,7 +613,8 @@
                   "qualifierIds": "BE_3jaargem",
                   "startTime": "1980-01-01T00:00:00Z",
                   "endTime": "2020-01-01T00:00:00Z",
-                  "timeStepId": "jaar"
+                  "timeStepId": "jaar",
+                  "showStatistics": "true"
                 },
                 {
                   "filterId": "krw-wl-gr-ptot",
@@ -553,7 +623,8 @@
                   "qualifierIds": "BE_jaargem",
                   "startTime": "1980-01-01T00:00:00Z",
                   "endTime": "2020-01-01T00:00:00Z",
-                  "timeStepId": "een.jaar"
+                  "timeStepId": "een.jaar",
+                  "showStatistics": "true"
                 },
                 {
                   "filterId": "krw-wl-gr-ptot",
@@ -562,7 +633,8 @@
                   "qualifierIds": "BE_summermean",
                   "startTime": "1980-01-01T00:00:00Z",
                   "endTime": "2020-01-01T00:00:00Z",
-                  "timeStepId": "zomer"
+                  "timeStepId": "zomer",
+                  "showStatistics": "true"
                 }
               ],
               "scatter": [
@@ -658,7 +730,8 @@
                   "qualifierIds": "WN_3",
                   "startTime": "1980-01-01T00:00:00Z",
                   "endTime": "2020-01-01T00:00:00Z",
-                  "timeStepId": "jaar"
+                  "timeStepId": "jaar",
+                  "showStatistics": "true"
                 },
                 {
                   "filterId": "krw-wl-gr-din",
@@ -667,7 +740,8 @@
                   "qualifierIds": "WN_4",
                   "startTime": "1980-01-01T00:00:00Z",
                   "endTime": "2020-01-01T00:00:00Z",
-                  "timeStepId": "jaar"
+                  "timeStepId": "jaar",
+                  "showStatistics": "true"
                 },
                 {
                   "filterId": "krw-wl-gr-din",
@@ -676,7 +750,8 @@
                   "qualifierIds": "WN_5",
                   "startTime": "1980-01-01T00:00:00Z",
                   "endTime": "2020-01-01T00:00:00Z",
-                  "timeStepId": "jaar"
+                  "timeStepId": "jaar",
+                  "showStatistics": "true"
                 },
                 {
                   "filterId": "krw-wl-gr-din",
@@ -685,7 +760,8 @@
                   "qualifierIds": "BE_3jaargem",
                   "startTime": "1980-01-01T00:00:00Z",
                   "endTime": "2020-01-01T00:00:00Z",
-                  "timeStepId": "jaar"
+                  "timeStepId": "jaar",
+                  "showStatistics": "true"
                 },
                 {
                   "filterId": "krw-wl-gr-din",
@@ -694,7 +770,8 @@
                   "qualifierIds": "BE_jaargem",
                   "startTime": "1980-01-01T00:00:00Z",
                   "endTime": "2020-01-01T00:00:00Z",
-                  "timeStepId": "een.jaar"
+                  "timeStepId": "een.jaar",
+                  "showStatistics": "true"
                 },
                 {
                   "filterId": "krw-wl-gr-din",
@@ -703,7 +780,8 @@
                   "qualifierIds": "BE_wintermean",
                   "startTime": "1980-01-01T00:00:00Z",
                   "endTime": "2020-01-01T00:00:00Z",
-                  "timeStepId": "winter"
+                  "timeStepId": "winter",
+                  "showStatistics": "true"
                 }
               ],
               "scatter": [
