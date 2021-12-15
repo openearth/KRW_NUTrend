@@ -281,6 +281,5 @@ export default {
     SET_TIME_SERIES_FOR_DOWNLOAD(state, timeSeries) {
       state.timeSeriesForDownload = timeSeries
     },
-
   },
 }

@@ -62,6 +62,32 @@
           </v-carousel-item>
         </v-carousel>
       </v-card-text>
+      <v-card-text v-else-if="displayToestandChartsAllSubBasinsCard" class="chart-content">
+        <v-carousel
+          hide-delimiters
+          height="1000"
+        >
+          <v-carousel-item
+            v-for="toestandData in sortedToestandDataAllSubBasins"
+            :key="toestandData.year"
+          >
+            <div>
+              <!-- normal -->
+              <app-chart
+                :title="toestandChartTitle + toestandData.year.substring(0,4)"  
+                type="barStacked"
+                :chart-data="toestandData.data.aantal"
+              />
+              <!-- percentage-->
+              <app-chart
+                :title="toestandChartTitlePer + toestandData.year.substring(0,4)"
+                type="barStacked"
+                :chart-data="toestandData.data.percentage"
+              />
+            </div>
+          </v-carousel-item>
+        </v-carousel>
+      </v-card-text>
       <v-card-text v-else-if="displayToestandChartsWaterManagersCard">
         <v-carousel
           hide-delimiters
@@ -101,6 +127,22 @@
             :title="toestandChartTitlePer"
             type="barStackedYears"
             :chart-data="toestandDataSelectedBasin.percentage"
+          />
+        </div>
+      </v-card-text>
+      <v-card-text v-else-if="displayToestandChartsSelectedSubBasinCard">
+        <div>
+          <!-- normal -->
+          <app-chart
+            :title="toestandChartTitle"
+            type="barStackedYears"
+            :chart-data="toestandDataSelectedSubBasin.aantal"
+          />
+          <!-- percentage-->
+          <app-chart
+            :title="toestandChartTitlePer"
+            type="barStackedYears"
+            :chart-data="toestandDataSelectedSubBasin.percentage"
           />
         </div>
       </v-card-text>
@@ -170,8 +212,10 @@
         'image',
         'toestandDataNl',
         'toestandDataAllBasins',
+        'toestandDataAllSubBasins',
         'toestandDataAllWaterManagers',
         'toestandDataSelectedBasin',
+        'toestandDataSelectedSubBasin',
         'toestandDataSelectedWaterManager',
 
       ]),
@@ -199,8 +243,17 @@
           ? true : false
         return display
       },
+      displayToestandChartsAllSubBasinsCard() {
+        const display = this.toestandDataAllSubBasins.length
+          &&this.toestandChartType === 'AllSubBasins' 
+          ? true : false
+        return display
+      },
       sortedToestandDataAllBasins() {
         return sortDataBasedOnDate(this.toestandDataAllBasins)
+      },
+      sortedToestandDataAllSubBasins() {
+        return sortDataBasedOnDate(this.toestandDataAllSubBasins)
       },
       sortedToestandDataAllWaterManagers() { 
         return sortDataBasedOnDate(this.toestandDataAllWaterManagers)
@@ -214,6 +267,12 @@
       displayToestandChartsSelectedBasinCard() {
         const display = this.toestandDataSelectedBasin 
           &&this.toestandChartType === 'selectedBasin' 
+          ? true : false
+        return display
+      },
+      displayToestandChartsSelectedSubBasinCard() {
+        const display = this.toestandDataSelectedSubBasin 
+          &&this.toestandChartType === 'selectedSubBasin' 
           ? true : false
         return display
       },

@@ -29,7 +29,6 @@ export default {
     availableWaterBodies(state, getters, rootState) {
       const { locations } = rootState.locations
       const { selectedBasin, selectedSubBasin, selectedWaterManager, selectedType } = state
-      //console.log('selections', selectedBasin, selectedSubBasin, selectedWaterManager, selectedType)
       return getWaterBodiesFromLocations(locations, selectedBasin, selectedSubBasin, selectedWaterManager, selectedType)
     },
     availableWaterManagers(state, getters, rootState) {

@@ -141,6 +141,26 @@
           </v-row>
         </v-fade-transition>
         <v-fade-transition mode="out-in">
+          <v-row v-if="showToestandGraphAllSubBasinsModal"> 
+            <v-col>
+              <chart-modal-activator
+                title="Deelstroomgebied"
+                modal-title="Deelstroomgebied"
+                toestand-chart-type="AllSubBasins"
+              />
+            </v-col>
+          </v-row>
+          <v-row v-if="showToestandGraphSelectedSubBasinModal">
+            <v-col>
+              <chart-modal-activator
+                :title="selectedSubBasin"
+                :modal-title="selectedSubBasin"
+                toestand-chart-type="selectedSubBasin"
+              />
+            </v-col>
+          </v-row>
+        </v-fade-transition>
+        <v-fade-transition mode="out-in">
           <v-row v-if="showToestandGraphAllWatermanagersModal">
             <v-col>
               <chart-modal-activator
@@ -207,8 +227,8 @@
         'selectedType', 'selectedBasin', 'selectedSubBasin', 'selectedWaterManager', 'selectedParticle',
       ]),
       ...mapGetters('charts', [ 'showTrendsGraphs', 'showConcentrationGraphs', 'showToestandGraphNlModal', 
-                                'showToestandGraphAllBasinsModal', 'showToestandGraphAllWatermanagersModal', 
-                                'showToestandGraphSelectedBasinModal', 'showToestandGraphSelectedWaterManagerModal' ]),
+                                'showToestandGraphAllBasinsModal', 'showToestandGraphAllSubBasinsModal','showToestandGraphAllWatermanagersModal', 
+                                'showToestandGraphSelectedBasinModal', 'showToestandGraphSelectedSubBasinModal', 'showToestandGraphSelectedWaterManagerModal' ]),
 
     },
     watch: { 
@@ -222,6 +242,11 @@
           this.getChartDataToestandAllBasins()
         }
       },
+      showToestandGraphAllSubBasinsModal() {
+        if (this.showToestandGraphAllSubBasinsModal) {
+          this.getChartDataToestandAllSubBasins()
+        }
+      },
       showToestandGraphAllWatermanagersModal() {
         if (this.showToestandGraphAllWatermanagersModal) {
           this.getChartDataToestandAllWaterManagers()
@@ -231,6 +256,12 @@
         if (this.showToestandGraphSelectedBasinModal) {
           this.getChartToestandAvailableWaterManagers()
           this.getChartDataToestandSelectedBasin()
+        }
+      },
+      showToestandGraphSelectedSubBasinModal() {
+        if (this.showToestandGraphSelectedSubBasinModal) {
+          this.getChartToestandAvailableWaterManagers()
+          this.getChartDataToestandSelectedSubBasin()
         }
       },
       showToestandGraphSelectedWaterManagerModal() {
@@ -249,10 +280,10 @@
       
     },
     methods: { 
-      ...mapActions('charts', [ 'getChartDataToestandNl', 'getChartDataToestandAllBasins', 
+      ...mapActions('charts', [ 'getChartDataToestandNl', 'getChartDataToestandAllBasins', 'getChartDataToestandAllSubBasins',
                                 'getChartDataToestandAllWaterManagers', 'getChartToestandAvailableWaterManagers', 
                                 'getChartDataToestandSelectedBasin', 'getChartDataToestandSelectedWaterManager', 
-                                'getChartDataToestandSelectedBasin' ]),
+                                'getChartDataToestandSelectedSubBasin' ]),
       setActivePanelIndex(event) {
         this.activePanelIndex = event
       },

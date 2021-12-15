@@ -15,8 +15,10 @@ export default {
     image: null,
     toestandDataNl: null,
     toestandDataAllBasins: [], 
+    toestandDataAllSubBasins: [],
     toestandDataAllWaterManagers: [], // TODO rename to waterManagers
     toestandDataSelectedBasin: null,
+    toestandDataSelectedSubBasin: null,
     toestandDataSelectedWaterManager: null,
    
   }),
@@ -67,7 +69,13 @@ export default {
       if (showToestandGraphs & !selectedBasin & !selectedWaterManager) {
         return true
       }
-
+    },
+    showToestandGraphAllSubBasinsModal(state, getters, rootState, rootGetters) {
+      const { showToestandGraphs } = getters
+      const { selectedBasin, selectedWaterManager } = rootState.filters
+      if (showToestandGraphs & !selectedBasin & !selectedWaterManager) {
+        return true
+      }
     },
     showToestandGraphAllWatermanagersModal(state, getters, rootState, rootGetters) {
       const { showToestandGraphs } = getters
@@ -80,6 +88,13 @@ export default {
       const { showToestandGraphs } = getters
       const { selectedBasin, selectedWaterManager } = rootState.filters
       if (showToestandGraphs && selectedBasin && !selectedWaterManager) {
+        return true
+      }
+    },
+    showToestandGraphSelectedSubBasinModal(state, getters, rootState, rootGetters) {
+      const { showToestandGraphs } = getters
+      const { selectedSubBasin, selectedWaterManager } = rootState.filters
+      if (showToestandGraphs && selectedSubBasin && !selectedWaterManager) {
         return true
       }
     },
@@ -177,6 +192,35 @@ export default {
 
       context.commit('SET_TOESTAND_DATA_ALL_BASINS', chartData)
     },
+    getChartDataToestandAllSubBasins(context) {
+      const { showToestandGraphAllBasinsModal } = context.getters
+      if (!showToestandGraphAllBasinsModal) {
+        return
+      }
+      const availableCharts = context.rootGetters['layers/availableCharts']
+      const { SubBasins_charts } = availableCharts
+  
+      let chartData = new Array()
+
+      timespan.forEach(async time =>{
+        const requests = createToestandChartRequests(SubBasins_charts, time)
+        try {
+          Promise.all(requests)
+            .then((result) => mapToestandChartData(result))
+            .then(( data ) => {
+              const yearlyData = {
+                year: time,
+                data,
+              }
+              chartData.push(yearlyData)
+            })
+        } catch (err) {
+          console.log(err)
+        }
+      })
+
+      context.commit('SET_TOESTAND_DATA_ALL_SUB_BASINS', chartData)
+    },
     getChartDataToestandAllWaterManagers(context) {
       const { showToestandGraphAllBasinsModal } = context.getters
       if (!showToestandGraphAllBasinsModal) {
@@ -226,6 +270,28 @@ export default {
         console.log(err)
       }
     },
+    getChartDataToestandSelectedSubBasin(context) {
+      const { showToestandGraphSelectedBasinModal } = context.getters
+      if (!showToestandGraphSelectedBasinModal) {
+        return
+      }
+      const availableCharts = context.rootGetters['layers/availableCharts']
+      const { SelectedSubBasin_charts } = availableCharts 
+      const { selectedSubBasin } = context.rootState.filters
+      const requests = createToestandChartRequests(SelectedSubBasin_charts, null, [ selectedSubBasin ] )
+     
+      
+      try {
+        Promise.all(requests)
+          .then((result) => mapToestandChartData(result))
+          .then(( data ) => {
+            context.commit('SET_TOESTAND_DATA_SELECTED_SUB_BASIN', data)
+          })
+      } catch (err) {
+        console.log(err)
+      }
+    },
+    
     getChartToestandAvailableWaterManagers(context) {
       const { showToestandGraphSelectedBasinModal } = context.getters
       if (!showToestandGraphSelectedBasinModal) {
@@ -285,6 +351,8 @@ export default {
       commit('RESET_TOESTAND_DATA_WATER_MANAGERS')
       commit('RESET_TOESTAND_DATA_SELECTED_BASIN')
       commit('RESET_TOESTAND_DATA_SELECTED_WATER_MANAGER')
+      commit('RESET_TOESTAND_DATA_ALL_SUB_BASINS')
+      commit('RESET_TOESTAND_DATA_SELECTED_SUB_BASIN')
     },
   },
 
@@ -313,6 +381,12 @@ export default {
     RESET_TOESTAND_DATA_SELECTED_BASIN(state) {
       state.toestandDataSelectedBasin =null
     },
+    RESET_TOESTAND_DATA_SELECTED_SUB_BASIN(state) {
+      state.toestandDataSelectedSubBasin =null
+    },
+    RESET_TOESTAND_DATA_ALL_SUB_BASINS(state) {
+      state.toestandDataAllSubBasins = null
+    },
     RESET_TOESTAND_DATA_SELECTED_WATER_MANAGER(state) {
       state.toestandDataSelectedWaterManager = null
     },
@@ -322,6 +396,9 @@ export default {
     SET_TOESTAND_DATA_ALL_BASINS(state, data) {
       state.toestandDataAllBasins = data //todo change to simple basins the name
     },
+    SET_TOESTAND_DATA_ALL_SUB_BASINS(state, data) {
+      state.toestandDataAllSubBasins = data
+    },
     SET_TOESTAND_DATA_ALL_WATER_MANAGERS(state,  data ) {
       state.toestandDataAllWaterManagers = data
     },
@@ -330,6 +407,9 @@ export default {
     },
     SET_TOESTAND_DATA_SELECTED_WATER_MANAGER(state, data) {
       state.toestandDataSelectedWaterManager = data
+    },
+    SET_TOESTAND_DATA_SELECTED_SUB_BASIN(state, data) {
+      state.toestandDataSelectedSubBasin = data
     },
 
   },
