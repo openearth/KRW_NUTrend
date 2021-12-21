@@ -146,40 +146,40 @@
               ],
               "Basins_charts": [
                 {
-                  "plotId": "Stroomgebied_aantal_N"
+                  "plotId": "Stroomgebied_aantal_P"
                 },
                 {
-                  "plotId": "Stroomgebied_perc_N"
+                  "plotId": "Stroomgebied_perc_P"
                 }
               ],
               "SubBasins_charts": [
                 {
-                  "plotId": "Deelstroomgebied_aantal_N"
+                  "plotId": "Deelstroomgebied_aantal_P"
                 },
                 {
-                  "plotId": "Deelstroomgebied_perc_N"
+                  "plotId": "Deelstroomgebied_perc_P"
                 }
               ],
               "SelectedBasin_charts": [
                 {
-                  "plotId": "Stroomgebied_aantal_N",
+                  "plotId": "Stroomgebied_aantal_P",
                   "startTime": "1991-01-01T00:00:00Z",
                   "endTime": "2020-01-01T00:00:00Z"
                 },
                 {
-                  "plotId": "Stroomgebied_perc_N",
+                  "plotId": "Stroomgebied_perc_P",
                   "startTime": "1991-01-01T00:00:00Z",
                   "endTime": "2020-01-01T00:00:00Z"
                 }
               ],
               "SelectedSubBasin_charts": [
                 {
-                  "plotId": "Deelstroomgebied_aantal_N",
+                  "plotId": "Deelstroomgebied_aantal_P",
                   "startTime": "1991-01-01T00:00:00Z",
                   "endTime": "2020-01-01T00:00:00Z"
                 },
                 {
-                  "plotId": "Deelstroomgebied_perc_N",
+                  "plotId": "Deelstroomgebied_perc_P",
                   "startTime": "1991-01-01T00:00:00Z",
                   "endTime": "2020-01-01T00:00:00Z"
                 }
@@ -195,6 +195,19 @@
               "SelectedWaterManager_charts": [
                 {
                   "plotId": "Waterbeheerder_aantal_P",
+                  "startTime": "1991-01-01T00:00:00Z",
+                  "endTime": "2020-01-01T00:00:00Z"
+                },
+                {
+                  "plotId": "Waterbeheerder_perc_P",
+                  "startTime": "1991-01-01T00:00:00Z",
+                  "endTime": "2020-01-01T00:00:00Z"
+                }
+              ],
+              "SelectedWaterManagerIfBasinIselected_charts": [
+                {
+                  "plotId": "Stroomgebied",
+                  "plotId2": "aantal_DIN",
                   "startTime": "1991-01-01T00:00:00Z",
                   "endTime": "2020-01-01T00:00:00Z"
                 },
@@ -265,40 +278,40 @@
               ],
               "Basins_charts": [
                 {
-                  "plotId": "Stroomgebied_aantal_N"
+                  "plotId": "Stroomgebied_aantal_DIN"
                 },
                 {
-                  "plotId": "Stroomgebied_perc_N"
+                  "plotId": "Stroomgebied_perc_DIN"
                 }
               ],
               "SubBasins_charts": [
                 {
-                  "plotId": "Deelstroomgebied_aantal_N"
+                  "plotId": "Deelstroomgebied_aantal_DIN"
                 },
                 {
-                  "plotId": "Deelstroomgebied_perc_N"
+                  "plotId": "Deelstroomgebied_perc_DIN"
                 }
               ],
               "SelectedBasin_charts": [
                 {
-                  "plotId": "Stroomgebied_aantal_N",
+                  "plotId": "Stroomgebied_aantal_DIN",
                   "startTime": "1991-01-01T00:00:00Z",
                   "endTime": "2020-01-01T00:00:00Z"
                 },
                 {
-                  "plotId": "Stroomgebied_perc_N",
+                  "plotId": "Stroomgebied_perc_DIN",
                   "startTime": "1991-01-01T00:00:00Z",
                   "endTime": "2020-01-01T00:00:00Z"
                 }
               ],
               "SelectedSubBasin_charts": [
                 {
-                  "plotId": "Deelstroomgebied_aantal_N",
+                  "plotId": "Deelstroomgebied_aantal_DIN",
                   "startTime": "1991-01-01T00:00:00Z",
                   "endTime": "2020-01-01T00:00:00Z"
                 },
                 {
-                  "plotId": "Deelstroomgebied_perc_N",
+                  "plotId": "Deelstroomgebied_perc_DIN",
                   "startTime": "1991-01-01T00:00:00Z",
                   "endTime": "2020-01-01T00:00:00Z"
                 }
@@ -860,7 +873,7 @@
             "name": "Normklassegrens ontoereikend-slecht (mg/l) ",
             "data": {},
             "url": null,
-            "legendGraphicId": "DIN Toetsing t.o.v. normen laatste_SGBP (-) NL",
+            "legendGraphicId": "DIN Norm Ontoereikend-Slecht (mg/l) NL",
             "charts": {}
           }
         ]

@@ -31,7 +31,7 @@ export default (areas, maxValue) => {
        
         max = maxValue
       }else {
-        max = sortedAreas[index]?.value || (parseFloat(sortedAreas[index - 1]?.value, 10) + 1).toString()
+        max = sortedAreas[index]?.value || (parseFloat(sortedAreas[index - 1]?.value, 10) ).toString()
       }
      
       return { name, color, min, max }
