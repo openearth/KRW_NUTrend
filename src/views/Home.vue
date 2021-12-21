@@ -174,6 +174,15 @@
               />
             </v-col>
           </v-row>
+          <v-row v-if="showToestandGraphAvailableWatermanagersModal">
+            <v-col>
+              <chart-modal-activator
+                title="Waterbeheerders"
+                modal-title="Waterbeheerders"
+                toestand-chart-type="AllWaterManagers"
+              />
+            </v-col>
+          </v-row>
           <v-row v-if="showToestandGraphSelectedWaterManagerModal">
             <v-col>
               <chart-modal-activator
@@ -232,7 +241,8 @@
       ]),
       ...mapGetters('charts', [ 'showTrendsGraphs', 'showConcentrationGraphs', 'showToestandGraphNlModal', 
                                 'showToestandGraphAllBasinsModal', 'showToestandGraphAllSubBasinsModal','showToestandGraphAllWatermanagersModal', 
-                                'showToestandGraphSelectedBasinModal', 'showToestandGraphSelectedSubBasinModal', 'showToestandGraphSelectedWaterManagerModal' ]),
+                                'showToestandGraphSelectedBasinModal', 'showToestandGraphSelectedSubBasinModal', 'showToestandGraphSelectedWaterManagerModal', 
+                                'showToestandGraphAvailableWatermanagersModal' ]),
 
     },
     watch: { 

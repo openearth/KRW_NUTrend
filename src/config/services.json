@@ -204,6 +204,14 @@
                   "endTime": "2020-01-01T00:00:00Z"
                 }
               ],
+              "AvailableWaterManagers_charts": [
+                {
+                  "plotId": "Stroomgebied_{name}_aantal_P"
+                },
+                {
+                  "plotId": "Stroomgebied_{name}_perc_P"
+                }
+              ],
               "WaterManagers_charts": [
                 {
                   "plotId": "Waterbeheerder_aantal_P"
@@ -212,22 +220,21 @@
                   "plotId": "Waterbeheerder_perc_P"
                 }
               ],
-              "SelectedWaterManager_charts": [
+              "SelectedWaterManagerCase1_charts": [
                 {
-                  "plotId": "Waterbeheerder_aantal_P",
+                  "plotId": "Stroomgebied_{name}_aantal_P",
                   "startTime": "1991-01-01T00:00:00Z",
                   "endTime": "2020-01-01T00:00:00Z"
                 },
                 {
-                  "plotId": "Waterbeheerder_perc_P",
+                  "plotId": "Stroomgebied_{name}_perc_P",
                   "startTime": "1991-01-01T00:00:00Z",
                   "endTime": "2020-01-01T00:00:00Z"
                 }
               ],
-              "SelectedWaterManagerIfBasinIselected_charts": [
+              "SelectedWaterManagerCase2_charts": [
                 {
-                  "plotId": "Stroomgebied",
-                  "plotId2": "aantal_DIN",
+                  "plotId": "Waterbeheerder_aantal_P",
                   "startTime": "1991-01-01T00:00:00Z",
                   "endTime": "2020-01-01T00:00:00Z"
                 },

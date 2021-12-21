@@ -80,6 +80,17 @@ export default {
     showToestandGraphAllWatermanagersModal(state, getters, rootState, rootGetters) {
       const { showToestandGraphs } = getters
       const { selectedBasin, selectedWaterManager } = rootState.filters
+      
+      if (showToestandGraphs & !selectedBasin & !selectedWaterManager) {
+        return true
+      }
+    },
+    showToestandGraphAvailableWatermanagersModal(state, getters, rootState, rootGetters) {
+      const { showToestandGraphs, showToestandGraphAllWatermanagersModal } = getters
+      const { selectedBasin, selectedWaterManager } = rootState.filters
+      if (showToestandGraphAllWatermanagersModal) {
+        return 
+      }
       if (showToestandGraphs && !selectedWaterManager) {
         return true
       }
