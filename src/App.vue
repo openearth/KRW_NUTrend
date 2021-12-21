@@ -1,10 +1,29 @@
 <template>
-  <app-shell header-title="KRW-NUTrend">
+  <app-shell header-title="KRW-NUTrend" @reset-bounds="onResetBounds">
     <template slot="header-right">
-      <v-btn href="http://krw-nutrend.nl/site/data/download/11203728-006-BGS-0002_v1.1-KRW%20-%20Toestand-%20en%20trendanalyse%20voor%20nutrienten1.pdf" text>
-        Meer informatie
-      </v-btn>
-      <v-btn href="mailto:@krw-nutrend@deltares.nl" text>
+      <v-menu offset-y>
+        <template #activator="{ on, attrs }">
+          <v-btn 
+            text
+            v-bind="attrs"
+            v-on="on"
+          >
+            Meer informatie
+          </v-btn>
+        </template>
+        <v-list>
+          <v-list-item
+            v-for="(report, index) in reports"
+            :key="index"
+            :href="report.url"
+            target="_blank"
+          >
+            <v-list-item-title>{{ report.title }}</v-list-item-title>
+          </v-list-item>
+        </v-list>
+      </v-menu>
+     
+      <v-btn href="mailto:krw-nutrend@deltares.nl" text>
         Contact
       </v-btn>
     </template>
@@ -16,13 +35,14 @@
       :checkboxes="checkboxes"
     />
     <v-fade-transition mode="out-in">
-      <map-title v-if="activeMap" :title="activeMap.title" />
+      <map-title v-if="activeMap" :title="activeMap.title " />
     </v-fade-transition>
     <v-fade-transition mode="out-in">
-      <map-title v-if="activeMap && timeOption" :title="activeMap.title + selectedTimestamp.substring(0,4)" />
-    </v-fade-transition>
-    <v-fade-transition mode="out-in">
-      <map-legend v-if="showLegend" :items="legend" />
+      <map-legend
+        v-if="showLegend"
+        :items="legend"
+        :title="legendTitle"
+      />
     </v-fade-transition>
     <mapbox-map
       slot="map"
@@ -39,8 +59,22 @@
           :options="activeMapLayer"
         />
       </div>
+      <div v-if="baseLayerIsAvailable && activeDiffMapLayers.length">
+        <v-mapbox-layer
+          v-for="layer in activeDiffMapLayers"
+          :key="layer.id"
+          :options="layer"
+        />
+      </div>
       <v-mapbox-scale-control :options="scaleBarOptions" />
       <map-controls v-if="activeMapLayer" :layer="activeMapLayer" />
+      <div v-if="activeDiffMapLayers.length">
+        <map-controls 
+          v-for="layer in activeDiffMapLayers"
+          :key="layer.id" 
+          :layer="layer"
+        /> 
+      </div>
       <map-controls-zoom
         v-if="zoomBounds.length"
         :bounds="zoomBounds"
@@ -65,7 +99,7 @@
   import MapTitle from '~/components/MapTitle/MapTitle'
   import BaseLayer from '~/components/MapBoxLayer/BaseLayer'
   import MapControlsZoom from '~/components/MapControls/MapControlsZoom'
-
+  import reports from '~/config/reports.json'
 
   export default {
     components: {
@@ -93,24 +127,23 @@
       mapLayer: null,
       baseLayerIsAvailable: false,
       zoomBounds: [],
+      reports: reports,
     }),
     computed: {
       ...mapState('layers', [ 'activeMap', 'legend', 'timeOption', 'clickedPointBbox' ]),
       ...mapState('filters', [ 'selectedTimestamp' ]),
-      ...mapGetters('layers', [ 'activeMapLayer', 'availableBaseMap', 'layerBbox' ]),
+      ...mapGetters('layers', [ 'activeMapLayer', 'activeDiffMapLayers', 'availableBaseMap', 'layerBbox', 'legendTitle' ]),
       showLegend() {
         return this.legend.length
       },
     },
     watch: { 
       clickedPointBbox() {
-        console.log('clickedPointBbox changed', this.clickedPointBbox)
         if (this.clickedPointBbox.length) {
           this.zoomBounds = this.clickedPointBbox
         }
       },
       layerBbox() { 
-        console.log('layerBbox changed', this.layerBbox)
         this.zoomBounds  = this.layerBbox
       },
     },
@@ -122,6 +155,9 @@
       ...mapActions('locations', [ 'getLocations' ]),
       onBaseLayerIsLoaded(){
         this.baseLayerIsAvailable = true
+      },
+      onResetBounds(event) {
+        this.zoomBounds = event
       },
     },
   }

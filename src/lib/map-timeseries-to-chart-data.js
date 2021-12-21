@@ -1,3 +1,5 @@
+import checkForNull from './toestand-graphs-utils/check-for-null'
+
 export default (data, type) => {
   if (!data?.timeSeries.length) {
     return []
@@ -11,12 +13,9 @@ export default (data, type) => {
     .map(({ events }) => events)
     .flat()
     .map(event => {
-      return {
-        label: type==='scatter' ? event.date : event.date.split('-')[0],
-        value: event.value,
-      }
+      return [ event.date, checkForNull(event.value) ]
     })
-
+  
   return {
     location,
     data: events,

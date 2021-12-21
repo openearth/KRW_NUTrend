@@ -3,7 +3,7 @@
     :value="isOpen"
     class="chart-modal"
     width="100%"
-    max-width="1200"
+    max-width="1300"
     scrollable
     @click:outside="onClickClose"
   >
@@ -42,7 +42,33 @@
           height="1000"
         >
           <v-carousel-item
-            v-for="toestandData in toestandDataAllBasins"
+            v-for="toestandData in sortedToestandDataAllBasins"
+            :key="toestandData.year"
+          >
+            <div>
+              <!-- normal -->
+              <app-chart
+                :title="toestandChartTitle + toestandData.year.substring(0,4)"  
+                type="barStacked"
+                :chart-data="toestandData.data.aantal"
+              />
+              <!-- percentage-->
+              <app-chart
+                :title="toestandChartTitlePer + toestandData.year.substring(0,4)"
+                type="barStacked"
+                :chart-data="toestandData.data.percentage"
+              />
+            </div>
+          </v-carousel-item>
+        </v-carousel>
+      </v-card-text>
+      <v-card-text v-else-if="displayToestandChartsAllSubBasinsCard" class="chart-content">
+        <v-carousel
+          hide-delimiters
+          height="1000"
+        >
+          <v-carousel-item
+            v-for="toestandData in sortedToestandDataAllSubBasins"
             :key="toestandData.year"
           >
             <div>
@@ -68,7 +94,7 @@
           height="1000"
         >
           <v-carousel-item
-            v-for="toestandData in toestandDataAllWaterManagers"
+            v-for="toestandData in sortedToestandDataAllWaterManagers"
             :key="toestandData.year"
           >
             <div>
@@ -101,6 +127,22 @@
             :title="toestandChartTitlePer"
             type="barStackedYears"
             :chart-data="toestandDataSelectedBasin.percentage"
+          />
+        </div>
+      </v-card-text>
+      <v-card-text v-else-if="displayToestandChartsSelectedSubBasinCard">
+        <div>
+          <!-- normal -->
+          <app-chart
+            :title="toestandChartTitle"
+            type="barStackedYears"
+            :chart-data="toestandDataSelectedSubBasin.aantal"
+          />
+          <!-- percentage-->
+          <app-chart
+            :title="toestandChartTitlePer"
+            type="barStackedYears"
+            :chart-data="toestandDataSelectedSubBasin.percentage"
           />
         </div>
       </v-card-text>
@@ -157,7 +199,8 @@
 <script>
   import { mapActions, mapState } from 'vuex'
   import AppChart from '~/components/AppChart/AppChart'
-
+  import sortDataBasedOnDate from '~/lib/toestand-graphs-utils/sort-data-based-on-date'
+  
   export default {
     name: 'ChartModal',
     components: {
@@ -169,8 +212,10 @@
         'image',
         'toestandDataNl',
         'toestandDataAllBasins',
+        'toestandDataAllSubBasins',
         'toestandDataAllWaterManagers',
         'toestandDataSelectedBasin',
+        'toestandDataSelectedSubBasin',
         'toestandDataSelectedWaterManager',
 
       ]),
@@ -179,6 +224,7 @@
         'title',
         'toestandChartType',
       ]),
+      ...mapState('filters', [ 'selectedParticle' ]),
  
       hasDataToDisplayInCharts() {
         return this.data.length
@@ -198,8 +244,20 @@
           ? true : false
         return display
       },
-      sortedDataAllBasins() {
-        return this.toestandDataAllBasins
+      displayToestandChartsAllSubBasinsCard() {
+        const display = this.toestandDataAllSubBasins.length
+          &&this.toestandChartType === 'AllSubBasins' 
+          ? true : false
+        return display
+      },
+      sortedToestandDataAllBasins() {
+        return sortDataBasedOnDate(this.toestandDataAllBasins)
+      },
+      sortedToestandDataAllSubBasins() {
+        return sortDataBasedOnDate(this.toestandDataAllSubBasins)
+      },
+      sortedToestandDataAllWaterManagers() { 
+        return sortDataBasedOnDate(this.toestandDataAllWaterManagers)
       },
       displayToestandChartsWaterManagersCard() {
         const display = this.toestandDataAllWaterManagers.length 
@@ -213,20 +271,33 @@
           ? true : false
         return display
       },
+      displayToestandChartsSelectedSubBasinCard() {
+        const display = this.toestandDataSelectedSubBasin 
+          &&this.toestandChartType === 'selectedSubBasin' 
+          ? true : false
+        return display
+      },
       displayToestandChartsSelectedWaterManagerCard() {
         const display = this.toestandDataSelectedWaterManager 
           &&this.toestandChartType === 'selectedWaterManager' 
           ? true : false
         return display
       },
+      titleParticle() { 
+        const title = this.selectedParticle === 'ntot' ? 'N Totaal' 
+          :this.selectedParticle === 'ptot' ? 'P Totaal'
+            :this.selectedParticle === 'din' ? 'DIN'
+              :null
+        return title
+      },
       scatterChartTitle() {
-        return `N Totaal ${ this.title } (KRW monitoringslocatie in mg/l)`
+        return `${ this.titleParticle } ${ this.title } (KRW monitoringslocatie in mg/l)`
       },
       lineChartTitle() {
-        return `N Totaal ${ this.title } (mg/l)`
+        return `${ this.titleParticle } ${ this.title } (mg/l)`
       },
       dotsChartTitle() {
-        return `N Totaal ${ this.title } (Toetsing)`
+        return `${ this.titleParticle } ${ this.title } (Toetsing)`
       },
       toestandChartTitle() {
         return `${ this.title } (aantal waterlichamen) `
@@ -246,7 +317,6 @@
       ]),
       onClickClose() {
         this.setIsOpen({ isOpen: false })
-        //this.resetChartsData()
         this.resetToestandChartType()
       },
     },

@@ -4,7 +4,7 @@ export default {
   state: () => ({
     isOpen: false,
     title: '',
-    toestandChartType: null, //TODO perhaps move it modal.
+    toestandChartType: null, 
   }),
 
   getters: {},

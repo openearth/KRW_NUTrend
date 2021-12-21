@@ -115,6 +115,7 @@
         'setActiveMap',
         'setDifferenceMap',
         'setTimeOption',
+        'getTimeSeriesForDownload',
       ]),
       importFileContent(fileName) {
         return require(`~/content/services/${ this.selectedType }/${ this.selectedParticle }/${ fileName }.md`)
@@ -133,7 +134,7 @@
       setPanelIndex(index){
         this.$emit('active-panel-index', index)
         this.panelIndex = index
-    
+        this.resetActiveMapLocation()
       },
       setMap(isActive) {
    
@@ -155,6 +156,8 @@
             this.setDifferenceMap(false)
             this.getTimeSeries()
             this.setTimeOption(true)
+            this.getTimeSeriesForDownload()
+            
           }
         } else {
           this.resetActiveMap()

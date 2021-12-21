@@ -81,12 +81,8 @@ export default((array ) => {
    : percentage ? dataObject.percentage = seriesData
    :null
     
-
-
-
     })
 
-  
   return dataObject
     
 })

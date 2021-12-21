@@ -21,7 +21,7 @@
   } from 'echarts/components'
 
   import VChart from 'vue-echarts'
-
+  import checkTitleForPercentage from '~/lib/toestand-graphs-utils/check-title-for-percentage'
   use([
     CanvasRenderer,
     GridComponent,
@@ -76,7 +76,7 @@
             itemHeight: 10,
           },
         }
-      },     
+      },    
       options() {
         return {
           ...this.baseOptions,
@@ -94,6 +94,7 @@
       yAxis() {
         return {
           type: 'value', 
+          max: !!this.percentageType ? 100 : null,
         }
       },
       series() {
@@ -103,11 +104,14 @@
             type: 'bar',
             stack: 'total',
             label: {
+              fontSize: 8,
               show: true,
+              color: 'black',
+              formatter: function(param) {
+                return param.data == 0 ? '': param.data
+              },           
             },
-            emphasis: {
-              focus: 'series',
-            },
+
             data: this.chartData.goedData,
             color: this.legend.find(item => item.label==='goed').color,
           },
@@ -116,11 +120,14 @@
             type: 'bar',
             stack: 'total',
             label: {
+              fontSize: 8,
               show: true,
+              color: 'black',
+              formatter: function(param) {
+                return param.data == 0 ? '': param.data
+              },
             },
-            emphasis: {
-              focus: 'series',
-            },
+
             data: this.chartData.matigData,
             color: this.legend.find(item => item.label==='matig').color,
           },
@@ -129,11 +136,14 @@
             type: 'bar',
             stack: 'total',
             label: {
+              fontSize: 8,
               show: true,
+              color: 'black',
+              formatter: function(param) {
+                return param.data == 0 ? '': param.data
+              },
             },
-            emphasis: {
-              focus: 'series',
-            },
+
             data: this.chartData.ontoereikendData,
             color: this.legend.find(item => item.label==='ontoereikend').color,
           },
@@ -142,11 +152,14 @@
             type: 'bar',
             stack: 'total',
             label: {
+              fontSize: 8,
               show: true,
+              color: 'black',
+              formatter: function(param) {
+                return param.data == 0 ? '': param.data
+              },
             },
-            emphasis: {
-              focus: 'series',
-            },
+
             data: this.chartData.slechtData,
             color: this.legend.find(item => item.label==='slecht').color,
 
@@ -154,6 +167,10 @@
         ]
         return sample
       },
+      percentageType() {
+        return checkTitleForPercentage(this.title)
+      },
+
 
     },
   }

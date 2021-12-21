@@ -2,10 +2,25 @@
   <v-container class="filter-data-form" fluid>
     <v-row no-gutters>
       <v-col>
+        <div class="pb-3">
+          <v-btn
+            depressed
+            block
+            color="primary"
+            @click="onResetAllChoices"
+          >
+            LANDELIJK
+          </v-btn>
+        </div>
+      </v-col>
+    </v-row>
+    <v-row no-gutters>
+      <v-col>
         <div class="text-body-1 pb-3">
           Stroomgebied:
         </div>
         <v-select
+          v-model="selectedBasin"
           :items="availableBasins"
           :value="selectedBasin"
           placeholder="selecteer gebied"
@@ -13,7 +28,6 @@
           clearable
           outlined
           dense
-          @input="onSelectedBasin"
         />
       </v-col>
     </v-row>
@@ -24,6 +38,7 @@
           Deelstroomgebied:
         </div>
         <v-select
+          v-model="selectedSubBasin"
           :items="availableSubBasins"
           :value="selectedSubBasin"
           placeholder="selecteer gebied"
@@ -31,7 +46,6 @@
           clearable
           outlined
           dense
-          @input="onSelectedSubBasin"
         />
       </v-col>
     </v-row>
@@ -42,6 +56,7 @@
           Waterbeheerder:
         </div>
         <v-select
+          v-model="selectedWaterManager"
           :items="availableWaterManagers"
           :value="selectedWaterManager"
           placeholder="selecteer beheerder"
@@ -49,17 +64,20 @@
           clearable
           outlined
           dense
-          @input="onSelectedWaterManager"
         />
       </v-col>
     </v-row>
 
     <v-row no-gutters>
       <v-col>
-        <div class="text-body-1 pb-3">
+        <div v-if="selectedType==='trends'" class="text-body-1 pb-3">
+          Monitoringslocatie:
+        </div>
+        <div v-else class="text-body-1 pb-3">
           Waterlichaam:
         </div>
         <v-select
+          v-model="selectedBodyOfWater"
           :items="availableWaterBodies"
           :value="selectedBodyOfWater"
           placeholder="selecteer water"
@@ -67,7 +85,6 @@
           clearable
           outlined
           dense
-          @input="onSelectedBodyOfWater"
         />
       </v-col>
     </v-row>
@@ -75,7 +92,7 @@
 </template>
 
 <script>
-  import { mapActions, mapGetters } from 'vuex'
+  import { mapState, mapActions, mapGetters } from 'vuex'
 
   export default {
     name: 'FilterDataForm',
@@ -88,19 +105,26 @@
       }
     },
     computed: {
+      ...mapState('filters', [ 'selectedType' ] ),
       ...mapGetters('filters', [
         'availableBasins',
         'availableSubBasins',
         'availableWaterBodies',
         'availableWaterManagers',
+       
+        
       ]),
       selectedBasinHasSubBasins() {
         return this.selectedBasin === 'Rijn'
       },
+      
     },
     watch: {
       selectedBasin(value) {
         this.setSelectedBasin({ selectedBasin: value })
+        this.selectedSubBasin = null
+        this.selectedWaterManager = null
+        this.selectedBodyOfWater = null
       },
       selectedSubBasin(value) {
         this.setSelectedSubBasin({ selectedSubBasin: value })
@@ -120,18 +144,23 @@
         'setSelectedSubBasin',
         'setSelectedWaterManager',
         'setSelectedBodyOfWater',
+        'resetSelectedSubBasin',
+        'resetSelectedBodyOfWater',
+        'resetSelectedWaterManager',
       ]),
-      onSelectedBasin(value) {
-        this.selectedBasin = value
-      },
-      onSelectedSubBasin(value) {
-        this.selectedSubBasin = value
-      },
-      onSelectedWaterManager(value) {
-        this.selectedWaterManager = value
-      },
-      onSelectedBodyOfWater(value) {
-        this.selectedBodyOfWater = value
+      ...mapActions('layers',[ 'resetActiveMapLocation' ]),
+
+      onResetAllChoices() {
+        //FIXME: it doesn't zoom out when clicked point or zoomed with mouse.
+        //What is the general zoom level?
+        this.selectedBasin = null
+        this.selectedSubBasin = null
+        this.selectedWaterManager = null
+        this.selectedBodyOfWater = null
+        this.resetActiveMapLocation()
+        const nlBounds = [ 3.3776388197376783, 50.79448191127488,
+                           7.202833778514265, 53.444481041016566 ]
+        this.$emit('reset-bounds', nlBounds )
       },
     },
 

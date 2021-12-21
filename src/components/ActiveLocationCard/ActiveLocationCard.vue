@@ -10,9 +10,19 @@
       <p class="text-body-2">
         OWL: {{ id }}
       </p>
-      <p class="text-body-2">
-        Waarde: {{ value }}
-      </p>
+      <div v-if="!showTwoValues">
+        <p class="text-body-2">
+          Waarde: {{ formattedValue }}
+        </p>
+      </div>
+      <div v-if="showTwoValues">
+        <p class="text-body-2">
+          {{ compareYear }}: {{ formattedValue }}
+        </p>
+        <p class="text-body-2">
+          2020: {{ formattedValue2 }}
+        </p>
+      </div>
     </v-card-text>
   </v-card>
 </template>
@@ -31,6 +41,52 @@
       value: {
         type: [ String, Number ],
         default: '',
+      },
+      value2: {
+        type: [ String, Number ],
+        default: null,
+      },
+      selectedType: {
+        type: String, 
+        default: '',
+      },
+      thresholds: {
+        type: Array,
+        default: ()=>[],
+      },
+      compareYear: { 
+        type: String,
+        default: '',
+      },
+    },
+    computed: {
+      formattedValue() {
+        if (this.selectedType === 'state') {
+          return this.formatValue(this.value)
+        }
+        return this.value
+      },
+      formattedValue2() {
+        if (this.selectedType === 'state') {
+          return this.formatValue(this.value2)
+        }
+        return this.value2
+      },
+      showTwoValues() {
+        if (this.value2) {
+          return true
+        }
+        return false
+      },
+    },
+    methods: { 
+      formatValue(value) {
+        console.log('value', value)
+        if (!value || value === '999.0') {
+          return 'Geen data'
+        }
+        const filterByValue = ({ lowerValue }) => lowerValue === parseInt(value)
+        return this.thresholds.find(filterByValue).label
       },
     },
   }

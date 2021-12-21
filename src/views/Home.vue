@@ -4,7 +4,7 @@
       app
       clipped
       permanent
-      width="550"
+      width="700"
     >
       <v-container fluid>
         <v-row justify="space-between" no-gutters>
@@ -57,21 +57,16 @@
     >
       <v-container fluid>
         <v-row>
-          <filter-data-form />
+          <filter-data-form @reset-bounds="onResetBounds" />
         </v-row>
 
         <app-divider />
 
         <v-fade-transition mode="out-in">
-          <v-row v-if="activeMapLocation">
+          <!-- TODO: the download button appears only after clicking on the map. Change that -->
+          <v-row v-if="csvRows.length">
             <v-col>
-              <v-btn
-                block
-                elevation="0"
-                disabled
-              >
-                Download (.csv)
-              </v-btn>
+              <export-data :csv-rows="csvRows" />  
             </v-col>
           </v-row>
         </v-fade-transition>
@@ -83,6 +78,10 @@
                 :id="activeMapLocation.locationId"
                 :name="activeMapLocation.stationName"
                 :value="activeMapLocation.value"
+                :value2="activeMapLocation.value2"
+                :selected-type="selectedType"
+                :thresholds="legend"
+                :compare-year="compareYear"
               />
             </v-col>
           </v-row>
@@ -146,6 +145,26 @@
           </v-row>
         </v-fade-transition>
         <v-fade-transition mode="out-in">
+          <v-row v-if="showToestandGraphAllSubBasinsModal"> 
+            <v-col>
+              <chart-modal-activator
+                title="Deelstroomgebied"
+                modal-title="Deelstroomgebied"
+                toestand-chart-type="AllSubBasins"
+              />
+            </v-col>
+          </v-row>
+          <v-row v-if="showToestandGraphSelectedSubBasinModal">
+            <v-col>
+              <chart-modal-activator
+                :title="selectedSubBasin"
+                :modal-title="selectedSubBasin"
+                toestand-chart-type="selectedSubBasin"
+              />
+            </v-col>
+          </v-row>
+        </v-fade-transition>
+        <v-fade-transition mode="out-in">
           <v-row v-if="showToestandGraphAllWatermanagersModal">
             <v-col>
               <chart-modal-activator
@@ -182,7 +201,8 @@
   import ContentPanels from '~/components/ContentPanels/ContentPanels'
   import DataTypeForm from '~/components/DataTypeForm/DataTypeForm'
   import FilterDataForm from '~/components/FilterDataForm/FilterDataForm'
-
+  import ExportData from '~/components/ExportData/ExportData'
+  
   export default {
     name: 'Home',
     components: {
@@ -193,6 +213,7 @@
       ContentPanels,
       DataTypeForm,
       FilterDataForm,
+      ExportData,
     },
     data() { 
       return {
@@ -203,14 +224,15 @@
     },
     computed: {
       ...mapState('layers', [
-        'activeMapLocation',
+        'activeMapLocation', 'legend',
       ]),
+      ...mapGetters('layers', [ 'csvRows', 'compareYear' ]),
       ...mapState('filters', [
         'selectedType', 'selectedBasin', 'selectedSubBasin', 'selectedWaterManager', 'selectedParticle',
       ]),
       ...mapGetters('charts', [ 'showTrendsGraphs', 'showConcentrationGraphs', 'showToestandGraphNlModal', 
-                                'showToestandGraphAllBasinsModal', 'showToestandGraphAllWatermanagersModal', 
-                                'showToestandGraphSelectedBasinModal', 'showToestandGraphSelectedWaterManagerModal' ]),
+                                'showToestandGraphAllBasinsModal', 'showToestandGraphAllSubBasinsModal','showToestandGraphAllWatermanagersModal', 
+                                'showToestandGraphSelectedBasinModal', 'showToestandGraphSelectedSubBasinModal', 'showToestandGraphSelectedWaterManagerModal' ]),
 
     },
     watch: { 
@@ -224,6 +246,11 @@
           this.getChartDataToestandAllBasins()
         }
       },
+      showToestandGraphAllSubBasinsModal() {
+        if (this.showToestandGraphAllSubBasinsModal) {
+          this.getChartDataToestandAllSubBasins()
+        }
+      },
       showToestandGraphAllWatermanagersModal() {
         if (this.showToestandGraphAllWatermanagersModal) {
           this.getChartDataToestandAllWaterManagers()
@@ -233,6 +260,12 @@
         if (this.showToestandGraphSelectedBasinModal) {
           this.getChartToestandAvailableWaterManagers()
           this.getChartDataToestandSelectedBasin()
+        }
+      },
+      showToestandGraphSelectedSubBasinModal() {
+        if (this.showToestandGraphSelectedSubBasinModal) {
+          this.getChartToestandAvailableWaterManagers()
+          this.getChartDataToestandSelectedSubBasin()
         }
       },
       showToestandGraphSelectedWaterManagerModal() {
@@ -251,12 +284,15 @@
       
     },
     methods: { 
-      ...mapActions('charts', [ 'getChartDataToestandNl', 'getChartDataToestandAllBasins', 
+      ...mapActions('charts', [ 'getChartDataToestandNl', 'getChartDataToestandAllBasins', 'getChartDataToestandAllSubBasins',
                                 'getChartDataToestandAllWaterManagers', 'getChartToestandAvailableWaterManagers', 
                                 'getChartDataToestandSelectedBasin', 'getChartDataToestandSelectedWaterManager', 
-                                'getChartDataToestandSelectedBasin' ]),
+                                'getChartDataToestandSelectedSubBasin' ]),
       setActivePanelIndex(event) {
         this.activePanelIndex = event
+      },
+      onResetBounds(event) {
+        this.$emit('reset-bounds', event)
       },
     },
   }

@@ -19,6 +19,7 @@
     MarkAreaComponent,
     TitleComponent,
     TooltipComponent,
+    LegendComponent,
   } from 'echarts/components'
   import VChart from 'vue-echarts'
 
@@ -32,6 +33,7 @@
     MarkAreaComponent,
     TitleComponent,
     TooltipComponent,
+    LegendComponent,
   ])
 
   export default {
@@ -47,12 +49,13 @@
     },
     data() {
       return {
-        initOptions: { height: '400px' },
+        initOptions: { height: '450px', width:'1200px' },
         seriesStyle: {
           symbolSize: 0,
           type: 'line',
           lineStyle: { width: 3 },
         },
+        seriesName: [ '3-jarig \nZomergemiddelde', 'Jaargemiddelde', 'Zomergemiddelde' ],
         seriesColors: [ 'black', 'white', 'blue' ],
       }
     },
@@ -68,22 +71,33 @@
           },
           grid: {
             top: '40px',
-            right: '90px',
+            right: '280px',
             bottom: '8px',
-            left: '8px',
+            left: 10,
             containLabel: true,
             backgroundColor: '#fff',
+          },
+          legend: {
+            orient: 'vertical',
+            right: '5%',
+            padding: [ 40,10,10,20 ],
+            itemGap:20,
+            itemWidth: 20,
+            itemHeight: 10,
+            icon: 'rect',
+            itemStyle: {
+              borderColor: '#000000',
+              borderType: 'solid',
+              borderWidth: 0.5,
+            },
           },
         }
       },
       lineChartData() {
         return this.data.find(data => data.name === 'lines')
       },
-      filterdData() {
-        return this.getFilteredData(this.lineChartData.series)
-      },
       areas() {
-        return mapChartAreas(this.lineChartData.areas)
+        return mapChartAreas(this.lineChartData.areas, this.maxValue)
       },
       options() {
         return {
@@ -98,44 +112,47 @@
       },
       xAxis() {
         return {
-          type: 'category',
-          boundaryGap: false,
-          data: this.getXAxisData(this.filterdData),
+          type: 'time',
+          min: '1991',
+          max: '2022',
         }
       },
       yAxis() {
         return {
           type: 'value',
-          min: this.areas[0].min,
-          max: this.areas[3].max,
+          min: parseFloat(this.areas[0].min),
+          max: this.maxValue,
         }
       },
       series() {
-        return this.getSeriesData(this.filterdData)
+        return this.getSeriesData(this.lineChartData.series)
+      },
+      maxValue() {
+        return this.getMaxValueOfSeries(this.lineChartData.maxValues)
       },
       markAreas() {
         return this.areas.map(area => createChartMarkAreas(area))
       },
     },
     methods: {
-      getFilteredData(series) {
-        return series.map((serie) => serie.filter(item => item.value > -1))
-      },
-      getXAxisData(data) {
-        const flattenedData = data
-          .map(serie => serie.map(item => parseFloat(item.label, 10)))
-          .flat()
-          .sort()
-        return [ ...new Set(flattenedData) ]
-      },
       getSeriesData(data) {
         return data.map((serie, index) => ({
           ...this.seriesStyle,
-          data: serie.map(item => parseFloat(item.value, 10)),
+          name: this.seriesName[index],
+          data: serie,
           itemStyle: {
             color: this.seriesColors[index],
           },
         }))
+      },
+      getMaxValueOfSeries(values) {
+        let floatValues = values.map(parseFloat)
+
+        return Math.ceil(Math.max(...floatValues))
+      },
+      formatMaxY(max) {
+        const formattedMax = Math.ceil((max + 1))
+        return formattedMax
       },
     },
   }

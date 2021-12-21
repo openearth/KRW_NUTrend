@@ -13,7 +13,7 @@ export default {
     selectedSubBasin: null,
     selectedType: null,
     selectedWaterManager: null,
-    selectedTimestamp: '2020-01-01T00:00:00Z', // pass it at env file for easier updates in the future. 
+    selectedTimestamp: '2020-01-01T00:00:00Z', 
   }),
 
   getters: {
@@ -28,9 +28,8 @@ export default {
     },
     availableWaterBodies(state, getters, rootState) {
       const { locations } = rootState.locations
-      const { selectedBasin, selectedSubBasin, selectedWaterManager } = state
-
-      return getWaterBodiesFromLocations(locations, selectedBasin, selectedSubBasin, selectedWaterManager)
+      const { selectedBasin, selectedSubBasin, selectedWaterManager, selectedType } = state
+      return getWaterBodiesFromLocations(locations, selectedBasin, selectedSubBasin, selectedWaterManager, selectedType)
     },
     availableWaterManagers(state, getters, rootState) {
       const { locations } = rootState.locations
@@ -38,21 +37,29 @@ export default {
 
       return getWaterManagersFromLocations(locations, selectedBasin, selectedSubBasin)
     },
-
   },
 
   actions: {
     setSelectedBasin(context, payload) {
       context.commit('SET_SELECTED_BASIN', payload)
     },
+    resetSelectedBasin(context) {
+      context.commit('SET_SELECTED_BASIN', null)
+    },
     setSelectedBodyOfWater(context, payload) {
       context.commit('SET_SELECTED_BODY_OF_WATER', payload)
+    },
+    resetSelectedBodyOfWater(context) {
+      context.commit('SET_SELECTED_BODY_OF_WATER', null)
     },
     setSelectedParticle(context, payload) {
       context.commit('SET_SELECTED_PARTICLE', payload)
     },
     setSelectedSubBasin(context, payload) {
       context.commit('SET_SELECTED_SUB_BASIN', payload)
+    },
+    resetSelectedSubBasin(context) {
+      context.commit('SET_SELECTED_SUB_BASIN', null)
     },
     setSelectedTimestamp(context, payload) {
       context.commit('SET_SELECTED_TIMESTAMP', payload)
@@ -62,6 +69,9 @@ export default {
     },
     setSelectedWaterManager(context, payload) {
       context.commit('SET_SELECTED_WATER_MANAGER', payload)
+    },
+    resetSelectedWaterManager(context) {
+      context.commit('SET_SELECTED_WATER_MANAGER', null)
     },
   },
 

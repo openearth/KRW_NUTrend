@@ -18,6 +18,7 @@
     MarkAreaComponent,
     TitleComponent,
     TooltipComponent,
+    LegendComponent,
   } from 'echarts/components'
   import VChart from 'vue-echarts'
 
@@ -30,6 +31,7 @@
     MarkAreaComponent,
     TitleComponent,
     TooltipComponent,
+    LegendComponent,
   ])
 
   export default {
@@ -45,10 +47,9 @@
     },
     data() {
       return {
-        initOptions: {
-          height: '400px',
-        },
+        initOptions: { height: '450px', width:'1200px' },
         seriesStyle: {
+          name:'Oordeel',
           symbol: 'circle',
           symbolSize: 7,
           type: 'line',
@@ -59,11 +60,12 @@
             color: 'black',
           },
         },
+        //TODO these are the values that Annelotte gave me to change. 
         areas: [
-          { name: 'Goed', color: 'rgb(181, 239, 181)', min: '3.5', max: '4.5' },
-          { name: 'Matig', color: 'rgb(240, 240, 133)', min: '2.5', max: '3.5' },
-          { name: 'Ontoereikend', color: 'rgb(255, 210, 128)', min: '1.5', max: '2.5' },
-          { name: 'Slecht', color: 'rgb(233, 158, 160)', min: '0.5', max: '1.5' },
+          { name: 'Goed', color: 'rgb(181, 239, 181)',  min: 0.5, max: 1.5 },
+          { name: 'Matig', color: 'rgb(240, 240, 133)',  min: 1.5, max: 2.5  }, 
+          { name: 'Ontoereikend', color: 'rgb(255, 210, 128)',  min: 2.5, max: 3.5 },
+          { name: 'Slecht', color: 'rgb(233, 158, 160)', min: 3.5, max: 4.5 },
         ],
       }
     },
@@ -81,26 +83,37 @@
           },
           grid: {
             top: '40px',
-            right: '90px',
+            right: '280px',
             bottom: '8px',
-            left: '8px',
+            left: 10,
             containLabel: true,
             backgroundColor: '#fff',
           },
           yAxis: {
             type: 'value',
-            min: '0',
-            max: '5',
+            min: 0,
+            max: 5,
+          },
+          legend: {
+            orient: 'vertical',
+            right: '7%',
+            padding: [ 40,10,10,20 ],
+            itemGap:20,
+            itemWidth: 20,
+            itemHeight: 10,
+            icon: 'rect',
+            itemStyle: {
+              borderColor: '#000000',
+              borderType: 'solid',
+              borderWidth: 0.5,
+            },
           },
         }
       },
       dotsChartData() {
         return this.data.find(data => data.name === 'dots')
       },
-      filterdData() {
-        return this.dotsChartData.series
-          .filter(item => item.value > -1)
-      },
+
       options() {
         return {
           ...this.baseOptions,
@@ -113,15 +126,15 @@
       },
       xAxis() {
         return {
-          type: 'category',
-          boundaryGap: false,
-          data: this.filterdData.map(item => item.label),
+          type: 'time',
+          min: '1991',
+          max: '2022',       
         }
       },
       series() {
         return {
           ...this.seriesStyle,
-          data: this.filterdData.map(item => parseFloat(item.value, 10)),
+          data: this.dotsChartData.series,
         }
       },
       markAreas() {

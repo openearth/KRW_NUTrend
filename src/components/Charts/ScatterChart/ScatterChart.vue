@@ -1,6 +1,7 @@
 <template>
   <v-chart
     v-if="scatterChartData"
+    ref="scatterChart"
     class="scatter-chart"
     :init-options="initOptions"
     :option="options"
@@ -9,7 +10,7 @@
 </template>
 
 <script>
-  import { mapState } from 'vuex'
+  import { mapActions, mapState } from 'vuex'
   import { use } from 'echarts/core'
   import { CanvasRenderer } from 'echarts/renderers'
   import { ScatterChart } from 'echarts/charts'
@@ -20,7 +21,7 @@
     TooltipComponent,
   } from 'echarts/components'
   import VChart from 'vue-echarts'
-  import createSeriesScatterData from '~/lib/create-series-scatter-data'
+
   use([
     CanvasRenderer,
     GridComponent,
@@ -44,12 +45,13 @@
     },
     data() {
       return {
-        initOptions: { height: '400px' },
+        initOptions: { height: '450px', width:'1200px'  },
         seriesStyle: {
           type: 'scatter',
         },
       }
     },
+
     computed: {
       ...mapState('charts', [ 'data' ]),
       baseOptions() {
@@ -60,18 +62,20 @@
           },
           grid: {
             top: '40px',
-            right: '90px',
+            right: '280px',
             bottom: '8px',
-            left: '8px',
+            left: 10,
             containLabel: true,
             backgroundColor: '#fff',
           },
           legend: {
-            data: this.getLegendData(this.scatterChartData), 
+            //data: this.getLegendData(this.scatterChartData), 
             orient: 'vertical',
-            x: 'right',
-            right: '20%',
-          
+            right: '4%',
+            padding: [ 40,10,10,20 ],
+            itemGap:20,
+            itemWidth: 10,
+            itemHeight: 10,
           },
         }
       },
@@ -89,24 +93,18 @@
       },
       xAxis() {
         return {
-          type: 'category',
-          boundaryGap: false,
-          data: this.labels,
+          type: 'time',
+          min: '1991',
+          max: '2022',
         }
       },
       yAxis() {
         return {
-          type: 'value', // min, max ?
+          type: 'value', 
         }
       },
       series() {
         return this.getSeriesData(this.scatterChartData)
-      },
-      labels() { 
-        return this.fullDates.map(date => date.split('-')[0])
-      },
-      fullDates() {
-        return  this.getXAxisData(this.scatterChartData)
       },
     },
     methods: {
@@ -116,29 +114,53 @@
         })
         return stationNames
       },
-      //NOTE leave the whole date or only the year ?
-      getXAxisData(data) {
-        let labelsDateType = []
-        data.forEach(({ series })=> {
-      
-          let seriesLabelsDateType = series.map(serie => new Date (serie.label))
-          labelsDateType = [ ...labelsDateType, ...seriesLabelsDateType ]
-        })
-        let sortedLabelsDateType = labelsDateType.sort((a,b)=> a - b)
-        let labels = sortedLabelsDateType.map(label => label.toISOString().slice(0, 10))
-
-        return labels
-      },
       getSeriesData(data) {
         const series = data.map(({ location, name, series }) => {
           return {
-            'name': location.stationName,
+            'symbolSize': 6,
+            'name': this.formatStationNameToFit(location.stationName),
             'type': name,
-            'data': createSeriesScatterData(this.fullDates, series),
+            'data': series,
           }
         })
        
         return series
+      },
+      formatStationNameToFit(name) {
+       
+        const subNames = name.split(',')
+
+        let stationName = ''
+        if (subNames.length === 1) {
+          if (name.length >18) {
+            stationName = `${ name.slice(0,18) }\n${ name.slice(18) }`
+          }else{
+            stationName = name
+          }
+          
+        }
+        if (subNames.length === 2) {
+          stationName = `${ subNames[0].trim() },${ subNames[1].trim() },`
+        }
+        if (subNames.length > 2) {
+          
+          subNames.forEach((subName, index) => {
+            if ((index%2===0) && !(index === (subNames.length -1))) {
+             
+              stationName = stationName + `\n${ subName.trim() },${ subNames[index+1] },`
+            }
+            if (index === (subNames.length -1) && (index%2===0)) {
+              stationName = stationName + `\n${ subName.trim() }`
+            }
+           
+          })
+        }
+        
+        if (stationName.charAt(stationName.length-1) === ',') {
+          stationName = stationName.slice(0, -1)
+        }
+        
+        return stationName
       },
     },
   }

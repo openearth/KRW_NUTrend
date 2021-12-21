@@ -6,13 +6,16 @@ import mapTimeseriesToGeoJSON from '~/lib/map-timeseries-to-geojson'
 import buildCirclesColor from '~/lib/build-circles-color'
 import buildCirclesColorsRangeValues from '~/lib/build-circles-color-range-values'
 import buildPaintObject from '~/lib/build-paint-object'
-import buildPaintObjectDiffMaps from '~/lib/build-paint-object-diff-maps'
 import mapTimeseriesToGeoJSONFloatValues from '~/lib/map-timeseries-to-geojson-float-values'
 import createAvailableTimestamp from '~/lib/create-available-timestamp'
 import WaterbeheerderContours from '~/config/Waterbeheerder_contours.json'
 import buildBaseMapLayer from '~/lib/build-base-map-layer'
 import buildGeojonLayer  from '~/lib/build-geojson-layer'
 import getGeojsonBoundingBox from '~/lib/get-geojson-bounding-box'
+import buildGeojsonLayerDiffMap from '~/lib/build-geojson-layer-diff-map'
+import buildGeojsonLayerDiffMapsOuterCircle from '~/lib/build-geojson-layer-diff-maps-outer-circle'
+import mapCsvFormatToTimeseries from '~/lib/map-csv-format-to-timeseries'
+
 
 const { VUE_APP_API_VERSION } = process.env
 
@@ -22,19 +25,20 @@ export default {
   state: () => ({
     activeMap: null, // activeMap details that we read from the configuration
     activeMapLocation: null,
-    featuresCollection: [],
+    featuresCollection: [],//TODO: remove it?. It is not used I think
     legend: [],
     differenceMap: false,
-    availableTimeStamp: createAvailableTimestamp(), // TODO make use of it 
-    timeOption: true,
+    availableTimeStamp: createAvailableTimestamp(), // TODO: make use of it 
+    timeOption: true, //TODO: do I need it?
     clickedPointBbox: [],
-    
+    timeSeriesForDownload: [],
   }),
 
   getters: {
     //filters the features collection of the activeMap
     filteredMap(state, getters, rootState, rootGetters) {
       const waterBodies = rootGetters['filters/availableWaterBodies']
+      
       const { selectedBodyOfWater, selectedType } = rootState.filters
 
       if (state.activeMap?.data && state?.legend.length) {
@@ -44,13 +48,13 @@ export default {
           selectedBodyOfWater,
         )
         const data = { data: featuresCollection }
+        
         const circlesColor = selectedType === 'concentration' || selectedType === 'trends'
           ? buildCirclesColorsRangeValues(state.legend)
           : buildCirclesColor(state.legend)
-
-        const paint = state.differenceMap
-          ? { paint: buildPaintObjectDiffMaps(circlesColor) }
-          : { paint: buildPaintObject(circlesColor) }
+        
+      
+        const paint = !state.differenceMap ? { paint: buildPaintObject(circlesColor) } : null
 
         return { ...state.activeMap, ...data, ...paint }
       }
@@ -61,19 +65,42 @@ export default {
       if (!filteredMap) {
         return []
       }
-
+      
       const { data } = filteredMap
+  
       return getGeojsonBoundingBox(data)
 
     },
 
     //Mapbox layer from filteredMap
     activeMapLayer(state, getters) {
+      if (state.differenceMap) {
+        return null
+      }
       const { filteredMap } = getters
       if (!filteredMap) {
         return null
       }
       return buildGeojonLayer(filteredMap)
+    },
+    activeDiffMapLayers(state, getters) {
+     
+      const { filteredMap } = getters
+   
+      if (!state.differenceMap ) {
+        return []
+      }
+     
+      if (!filteredMap) {
+        return []
+      }
+      //NOTE: left reprsents old value, right new value
+      const leftSemiCircleLayer = buildGeojsonLayerDiffMap(filteredMap, 'left', state.legend)
+      const rightSemiCircleLayer = buildGeojsonLayerDiffMap(filteredMap, 'right', state.legend)
+      const outerCircleLayer = buildGeojsonLayerDiffMapsOuterCircle(filteredMap)
+      return [ outerCircleLayer, leftSemiCircleLayer, rightSemiCircleLayer ]
+      
+
     },
     availableBaseMap() { 
       if (WaterbeheerderContours) {
@@ -103,6 +130,58 @@ export default {
         return
       }
       return charts
+    },
+    legendTitle(state, getters, rootState) {
+      const { activeService } = getters
+      const { selectedTimestamp } = rootState.filters
+      if (!activeService) {
+        return 
+      }
+      if(!activeService.hasOwnProperty('legendTitle')) {
+        return selectedTimestamp.slice(0,4)
+      }
+      
+      const { legendTitle } = activeService
+
+      return legendTitle
+    },
+    compareYear(state, getters, rootState) {
+      const { activeService } = getters
+      const { selectedTimestamp } = rootState.filters
+      if (!activeService) {
+        return 
+      }
+      if(!activeService.hasOwnProperty('compareYear')) {
+        return 
+      }
+      const { compareYear } = activeService
+
+      return compareYear
+    },
+    availableDownloadUrl(state, getters) { 
+      const { activeService } = getters
+      if (!activeService) {
+        return 
+      }
+      
+      if(!activeService.hasOwnProperty('downloadUrl')) {
+        return
+      }
+      const { downloadUrl } = activeService
+
+      return downloadUrl
+    },
+    csvRows(state, getters, rootState, rootGetters){
+      const { availableDownloadUrl }= getters
+      if (!availableDownloadUrl) {
+        return []
+      }
+      const { timeSeriesForDownload } = state
+      
+      const { selectedType, selectedParticle } = rootState.filters
+      
+      const locationsWithRelations = rootGetters['locations/locationsAndRelations']
+      return  mapCsvFormatToTimeseries(timeSeriesForDownload, locationsWithRelations, selectedParticle, selectedType)
     },
   },
 
@@ -137,6 +216,16 @@ export default {
         .then((timeSeries) => {
           commit('ADD_DATA_TO_ACTIVE_MAP', timeSeries)
         })
+    },
+    getTimeSeriesForDownload({ commit, state, getters }) {
+      const { availableDownloadUrl } = getters
+      
+      
+      return $axios
+        .get(availableDownloadUrl)
+        .then((response) => response?.data)
+        .then((timeSeries) => commit('SET_TIME_SERIES_FOR_DOWNLOAD', timeSeries))
+
     },
     getLegendGraphic({ commit, state }) {
       const { legendGraphicId } = state.activeMap
@@ -214,7 +303,9 @@ export default {
     },
     SET_CLICKED_POINT_BBOX(state, array) {
       state.clickedPointBbox = [ ...array, ...array ]
-      console.log('state of clicked point bbox', state.clickedPointBbox)
+    },
+    SET_TIME_SERIES_FOR_DOWNLOAD(state, timeSeries) {
+      state.timeSeriesForDownload = timeSeries
     },
   },
 }
