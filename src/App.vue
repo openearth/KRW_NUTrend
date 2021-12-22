@@ -55,21 +55,21 @@
       />
       
       <div v-if="baseLayerIsAvailable && activeMapLayer" :key="activeMapLayer.id">
-        <v-mapbox-layer
+        <map-layer
           :options="activeMapLayer"
         />
       </div>
-      <div v-if="baseLayerIsAvailable && activeDiffMapLayers.length">
-        <v-mapbox-layer
+      <div v-if="activeDiffMapLayers.length">
+        <map-layer
           v-for="layer in activeDiffMapLayers"
-          :key="layer.id"
+          :key="layer.id" 
           :options="layer"
-        />
+        /> 
       </div>
       <v-mapbox-scale-control :options="scaleBarOptions" />
       <map-controls v-if="activeMapLayer" :layer="activeMapLayer" />
       <div v-if="activeDiffMapLayers.length">
-        <map-controls 
+        <map-controls
           v-for="layer in activeDiffMapLayers"
           :key="layer.id" 
           :layer="layer"
@@ -98,6 +98,7 @@
   import MapLegend from '~/components/MapLegend/MapLegend'
   import MapTitle from '~/components/MapTitle/MapTitle'
   import BaseLayer from '~/components/MapBoxLayer/BaseLayer'
+  import MapLayer from '~/components/MapBoxLayer/MapLayer'
   import MapControlsZoom from '~/components/MapControls/MapControlsZoom'
   import reports from '~/config/reports.json'
 
@@ -111,6 +112,7 @@
       MapTitle,
       BaseLayer,
       MapControlsZoom,
+      MapLayer,
     },
     data: () => ({
       accessToken: process.env.VUE_APP_MAPBOX_TOKEN,
@@ -128,6 +130,8 @@
       baseLayerIsAvailable: false,
       zoomBounds: [],
       reports: reports,
+      diffLayers: [],
+      hardReload: false,
     }),
     computed: {
       ...mapState('layers', [ 'activeMap', 'legend', 'timeOption', 'clickedPointBbox' ]),
@@ -145,6 +149,15 @@
       },
       layerBbox() { 
         this.zoomBounds  = this.layerBbox
+      },
+      activeDiffMapLayers() {
+        if (this.activeDiffMapLayers.length === 3) {
+          this.diffLayers = this.activeDiffMapLayers
+          this.hardReload = true
+        }else{
+          this.diffLayers = []
+          this.hardReload = false
+        }
       },
     },
     created() {

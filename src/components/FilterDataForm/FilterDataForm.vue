@@ -131,6 +131,9 @@
       },
       selectedSubBasin(value) {
         this.setSelectedSubBasin({ selectedSubBasin: value })
+        if (!value && this.selectedBasin) {
+          this.getChartToestandAvailableWaterManagers()
+        }
         if (value) {
           this.getChartDataToestandSelectedSubBasin()
           this.getChartToestandAvailableWaterManagers()

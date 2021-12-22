@@ -376,9 +376,13 @@ export default {
       if (basin) {
         //Case 1
         const params = SelectedWaterManagerCase1_charts.map((chart) => {
-          
+          const { startTime, endTime } = chart
           const plotId = chart.plotId.replace('{name}', basin)
-          return { plotId }
+          return {
+            ... { startTime },
+            ... { endTime },
+            ... { plotId }, 
+          }
         })
         
         requests = createToestandChartRequests(params, null, [ `${ basin }: ${ selectedWaterManager }` ])

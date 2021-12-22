@@ -83,7 +83,7 @@ export default {
     activeDiffMapLayers(state, getters) {
      
       const { filteredMap } = getters
-   
+      
       if (!state.differenceMap ) {
         return []
       }
@@ -143,6 +143,7 @@ export default {
       return legendTitle
     },
     compareYear(state, getters, rootState) {
+      //used in activemap location card
       const { activeService } = getters
       const { selectedTimestamp } = rootState.filters
       if (!activeService) {
@@ -156,6 +157,7 @@ export default {
       return compareYear
     },
     availableDownloadUrl(state, getters) { 
+      //used in csv
       const { activeService } = getters
       if (!activeService) {
         return 
@@ -203,7 +205,7 @@ export default {
     },
     
     getTimeSeriesWithStandardTime({ commit, state, rootState }) {
-
+ 
       const { url } = state.activeMap
       const { selectedType } = rootState.filters
       return $axios
