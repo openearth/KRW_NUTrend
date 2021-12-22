@@ -27,8 +27,7 @@ export default {
     activeMapLocation: null,
     featuresCollection: [],//TODO: remove it?. It is not used I think
     legend: [],
-    differenceMap: false,
-    availableTimeStamp: createAvailableTimestamp(), // TODO: make use of it 
+    differenceMap: false, 
     timeOption: true, //TODO: do I need it?
     clickedPointBbox: [],
     timeSeriesForDownload: [],
