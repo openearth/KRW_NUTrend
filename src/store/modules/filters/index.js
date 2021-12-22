@@ -34,7 +34,6 @@ export default {
     availableWaterManagers(state, getters, rootState) {
       const { locations } = rootState.locations
       const { selectedBasin, selectedSubBasin } = state
-
       return getWaterManagersFromLocations(locations, selectedBasin, selectedSubBasin)
     },
   },

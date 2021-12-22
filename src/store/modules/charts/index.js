@@ -80,6 +80,17 @@ export default {
     showToestandGraphAllWatermanagersModal(state, getters, rootState, rootGetters) {
       const { showToestandGraphs } = getters
       const { selectedBasin, selectedWaterManager } = rootState.filters
+      
+      if (showToestandGraphs & !selectedBasin & !selectedWaterManager) {
+        return true
+      }
+    },
+    showToestandGraphAvailableWatermanagersModal(state, getters, rootState, rootGetters) {
+      const { showToestandGraphs, showToestandGraphAllWatermanagersModal } = getters
+      const { selectedBasin, selectedWaterManager } = rootState.filters
+      if (showToestandGraphAllWatermanagersModal) {
+        return 
+      }
       if (showToestandGraphs && !selectedWaterManager) {
         return true
       }
@@ -228,7 +239,7 @@ export default {
       }
       const availableCharts = context.rootGetters['layers/availableCharts']
       const { WaterManagers_charts } = availableCharts
-     
+      
       let chartData = []
       timespan.forEach((time)=>{
         const requests = createToestandChartRequests(WaterManagers_charts, time)
@@ -293,17 +304,31 @@ export default {
     },
     
     getChartToestandAvailableWaterManagers(context) {
+      /*
+      * When we select basin/sub basin case
+      */ 
       const { showToestandGraphSelectedBasinModal } = context.getters
       if (!showToestandGraphSelectedBasinModal) {
         return
       }
+      const { selectedBasin, selectedSubBasin } = context.rootState.filters
+      const basin = selectedSubBasin ? selectedSubBasin 
+                          :selectedBasin ? selectedBasin
+                          :null
       const availableCharts = context.rootGetters['layers/availableCharts']
-      const { WaterManagers_charts } = availableCharts
-      const availableWaterManagers = context.rootGetters['filters/availableWaterManagers']
+      const { AvailableWaterManagers_charts } = availableCharts
+      //const availableWaterManagers = context.rootGetters['filters/availableWaterManagers']
       
+       const params = AvailableWaterManagers_charts.map((chart) => {
+          const { plotId } = chart
+          chart.plotId = plotId.replace('{name}', basin)
+          return chart
+        })
+
+
       let chartData = []
       timespan.forEach((time)=>{
-        const requests = createToestandChartRequests(WaterManagers_charts, time, availableWaterManagers)
+        const requests = createToestandChartRequests(params, time)
         try {
           Promise.all(requests)
             .then((result) => mapToestandChartData(result))
@@ -323,14 +348,40 @@ export default {
 
     },
     getChartDataToestandSelectedWaterManager(context) {
+      /** 
+       * Case 1: If a basin or subbasin has been already selected
+       * Case 2: If no basin has been selected
+      */
+      
       const { showToestandGraphSelectedWaterManagerModal } = context.getters
       if (!showToestandGraphSelectedWaterManagerModal) {
         return
       }
+      
       const availableCharts = context.rootGetters['layers/availableCharts']
-      const { SelectedWaterManager_charts } = availableCharts
+      let requests
+      const { selectedBasin, selectedSubBasin } = context.rootState.filters
       const { selectedWaterManager } = context.rootState.filters
-      const requests = createToestandChartRequests(SelectedWaterManager_charts, null, [ selectedWaterManager ])
+      const basin = selectedSubBasin ? selectedSubBasin 
+                          :selectedBasin ? selectedBasin
+                          :null
+     
+      
+      const { SelectedWaterManagerCase1_charts, SelectedWaterManagerCase2_charts } = availableCharts
+      
+      if (basin) {
+        //Case 1
+        const params = SelectedWaterManagerCase1_charts.map((chart) => {
+          const { plotId } = chart
+          chart.plotId = plotId.replace('{name}', basin)
+          return chart
+        })
+        requests = createToestandChartRequests(params, null, [ `${ basin }: ${ selectedWaterManager }` ])
+      }else{
+        //Case 2
+        requests = createToestandChartRequests(SelectedWaterManagerCase2_charts, null, [ selectedWaterManager ])
+      }
+     
       
       try {
         Promise.all(requests)
