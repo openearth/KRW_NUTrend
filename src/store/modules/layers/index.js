@@ -7,7 +7,6 @@ import buildCirclesColor from '~/lib/build-circles-color'
 import buildCirclesColorsRangeValues from '~/lib/build-circles-color-range-values'
 import buildPaintObject from '~/lib/build-paint-object'
 import mapTimeseriesToGeoJSONFloatValues from '~/lib/map-timeseries-to-geojson-float-values'
-import createAvailableTimestamp from '~/lib/create-available-timestamp'
 import WaterbeheerderContours from '~/config/Waterbeheerder_contours.json'
 import buildBaseMapLayer from '~/lib/build-base-map-layer'
 import buildGeojonLayer  from '~/lib/build-geojson-layer'
@@ -54,7 +53,6 @@ export default {
         
       
         const paint = !state.differenceMap ? { paint: buildPaintObject(circlesColor) } : null
-
         return { ...state.activeMap, ...data, ...paint }
       }
     },

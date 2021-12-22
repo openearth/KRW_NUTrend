@@ -81,7 +81,6 @@
     },
     methods: { 
       formatValue(value) {
-        console.log('value', value)
         if (!value || value === '999.0') {
           return 'Geen data'
         }

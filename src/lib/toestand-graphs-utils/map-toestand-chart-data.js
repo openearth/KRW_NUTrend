@@ -26,7 +26,7 @@
 import checkForNull from './check-for-null'
 export default((array ) => {
   let dataObject = {}
-  
+
   array.forEach(({ data, plotId }) => {
 
     const aantal = plotId.includes('aantal')

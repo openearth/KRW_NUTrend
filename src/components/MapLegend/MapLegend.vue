@@ -79,7 +79,7 @@
     right: $spacing-default;
     bottom: $spacing-large;
     pointer-events: none;
-     }
+  }
 
   .legend-title {
     padding-bottom: 0;

@@ -266,18 +266,6 @@
           this.getChartDataToestandAllWaterManagers()
         }
       },
-      showToestandGraphSelectedBasinModal() {
-        if (this.showToestandGraphSelectedBasinModal) {
-          this.getChartToestandAvailableWaterManagers()
-          this.getChartDataToestandSelectedBasin()
-        }
-      },
-      showToestandGraphSelectedSubBasinModal() {
-        if (this.showToestandGraphSelectedSubBasinModal) {
-          this.getChartToestandAvailableWaterManagers()
-          this.getChartDataToestandSelectedSubBasin()
-        }
-      },
       showToestandGraphSelectedWaterManagerModal() {
         if (this.showToestandGraphSelectedWaterManagerModal) {
           this.getChartDataToestandSelectedWaterManager()
