@@ -282,7 +282,7 @@
       },
       {
         "id": "din",
-        "name": "DIN (Anorganisch stikstof) 2020",
+        "name": "DIN (Anorganisch stikstof)",
         "services": [
           {
             "id": "krw-wl-din-toets-lSGBP",
@@ -343,15 +343,35 @@
                   "endTime": "2020-01-01T00:00:00Z"
                 }
               ],
-              "WaterManagers_charts": [
+              "AvailableWaterManagers_charts": [
                 {
-                  "plotId": "RWS_aantal_DIN"
+                  "plotId": "Stroomgebied_{name}_aantal_DIN"
                 },
                 {
-                  "plotId": "RWS_perc_DIN"
+                  "plotId": "Stroomgebied_{name}_perc_DIN"
                 }
               ],
-              "SelectedWaterManager_charts": [
+              "WaterManagers_charts": [
+                {
+                  "plotId": "Waterbeheerder_aantal_DIN"
+                },
+                {
+                  "plotId": "Waterbeheerder_perc_DIN"
+                }
+              ],
+              "SelectedWaterManagerCase1_charts": [
+                {
+                  "plotId": "Stroomgebied_{name}_aantal_DIN",
+                  "startTime": "1991-01-01T00:00:00Z",
+                  "endTime": "2020-01-01T00:00:00Z"
+                },
+                {
+                  "plotId": "Stroomgebied_{name}_perc_DIN",
+                  "startTime": "1991-01-01T00:00:00Z",
+                  "endTime": "2020-01-01T00:00:00Z"
+                }
+              ],
+              "SelectedWaterManagerCase2_charts": [
                 {
                   "plotId": "Waterbeheerder_aantal_DIN",
                   "startTime": "1991-01-01T00:00:00Z",
@@ -585,7 +605,7 @@
             "id": "krw-wl-ntot-norm-GM",
             "name": "Normklassegrens goed-matig (mg/l) ",
             "data": {},
-            "url": null,
+            "url": "http://185.224.89.110:8082/FewsWebServices/rest/fewspiservice/v1/timeseries?filterId=krw-wl-ntot-norm-GM&startTime=2020-01-01T00%3A00%3A00Z&endTime=2020-01-01T00%3A00%3A00Z&documentFormat=PI_JSON",
             "legendGraphicId": "Ntot Norm Goed-Matig (mg/l) NL",
             "charts": {}
           },
@@ -593,7 +613,7 @@
             "id": "krw-wl-ntot-norm-MO",
             "name": "Normklassegrens matig-ontoereikend (mg/l) ",
             "data": {},
-            "url": null,
+            "url": "http://185.224.89.110:8082/FewsWebServices/rest/fewspiservice/v1/timeseries?filterId=krw-wl-ntot-norm-MO&startTime=2020-01-01T00%3A00%3A00Z&endTime=2020-01-01T00%3A00%3A00Z&documentFormat=PI_JSON",
             "legendGraphicId": "Ntot Norm Matig-Ontoereikend (mg/l) NL",
             "charts": {}
           },
@@ -601,7 +621,7 @@
             "id": "krw-wl-ntot-norm-OS",
             "name": "Normklassegrens ontoereikend-slecht (mg/l) ",
             "data": {},
-            "url": null,
+            "url": "http://185.224.89.110:8082/FewsWebServices/rest/fewspiservice/v1/timeseries?filterId=krw-wl-ntot-norm-OS&startTime=2020-01-01T00%3A00%3A00Z&endTime=2020-01-01T00%3A00%3A00Z&documentFormat=PI_JSON",
             "legendGraphicId": "Ntot Norm Ontoereikend-Slecht (mg/l) NL",
             "charts": {}
           }
@@ -734,7 +754,7 @@
             "id": "krw-wl-ptot-norm-GM",
             "name": "Normklassegrens goed-matig (mg/l) ",
             "data": {},
-            "url": null,
+            "url": "http://185.224.89.110:8082/FewsWebServices/rest/fewspiservice/v1/timeseries?filterId=krw-wl-ptot-norm-GM&startTime=2020-01-01T00%3A00%3A00Z&endTime=2020-01-01T00%3A00%3A00Z&documentFormat=PI_JSON",
             "legendGraphicId": "Ptot Norm Goed-Matig (mg/l) NL",
             "charts": {}
           },
@@ -742,7 +762,7 @@
             "id": "krw-wl-ptot-norm-MO",
             "name": "Normklassegrens matig-ontoereikend (mg/l) ",
             "data": {},
-            "url": null,
+            "url": "http://185.224.89.110:8082/FewsWebServices/rest/fewspiservice/v1/timeseries?filterId=krw-wl-ptot-norm-MO&startTime=2020-01-01T00%3A00%3A00Z&endTime=2020-01-01T00%3A00%3A00Z&documentFormat=PI_JSON",
             "legendGraphicId": "Ptot Norm Matig-Ontoereikend (mg/l) NL",
             "charts": {}
           },
@@ -750,7 +770,7 @@
             "id": "krw-wl-ptot-norm-OS",
             "name": "Normklassegrens ontoereikend-slecht (mg/l) ",
             "data": {},
-            "url": null,
+            "url": "http://185.224.89.110:8082/FewsWebServices/rest/fewspiservice/v1/timeseries?filterId=krw-wl-ptot-norm-OS&startTime=2020-01-01T00%3A00%3A00Z&endTime=2020-01-01T00%3A00%3A00Z&documentFormat=PI_JSON",
             "legendGraphicId": "Ptot Norm Ontoereikend-Slecht (mg/l) NL",
             "charts": {}
           }
@@ -883,7 +903,7 @@
             "id": "krw-wl-din-norm-GM",
             "name": "Normklassegrens goed-matig (mg/l) ",
             "data": {},
-            "url": null,
+            "url": "http://185.224.89.110:8082/FewsWebServices/rest/fewspiservice/v1/timeseries?filterId=krw-wl-din-norm-GM&startTime=2020-01-01T00%3A00%3A00Z&endTime=2020-01-01T00%3A00%3A00Z&documentFormat=PI_JSON",
             "legendGraphicId": "DIN Norm Goed-Matig (mg/l) NL",
             "charts": {}
           },
@@ -891,7 +911,7 @@
             "id": "krw-wl-din-norm-MO",
             "name": "Normklassegrens matig-ontoereikend (mg/l) ",
             "data": {},
-            "url": null,
+            "url": "http://185.224.89.110:8082/FewsWebServices/rest/fewspiservice/v1/timeseries?filterId=krw-wl-din-norm-MO&startTime=2020-01-01T00%3A00%3A00Z&endTime=2020-01-01T00%3A00%3A00Z&documentFormat=PI_JSON",
             "legendGraphicId": "DIN Norm Matig-Ontoereikend (mg/l) NL",
             "charts": {}
           },
@@ -899,7 +919,7 @@
             "id": "krw-wl-din-norm-OS",
             "name": "Normklassegrens ontoereikend-slecht (mg/l) ",
             "data": {},
-            "url": null,
+            "url": "http://185.224.89.110:8082/FewsWebServices/rest/fewspiservice/v1/timeseries?filterId=krw-wl-din-norm-OS&startTime=2020-01-01T00%3A00%3A00Z&endTime=2020-01-01T00%3A00%3A00Z&documentFormat=PI_JSON",
             "legendGraphicId": "DIN Norm Ontoereikend-Slecht (mg/l) NL",
             "charts": {}
           }

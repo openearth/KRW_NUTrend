@@ -4,7 +4,7 @@
       app
       clipped
       permanent
-      width="700"
+      width="40%"
     >
       <v-container fluid>
         <v-row justify="space-between" no-gutters>
