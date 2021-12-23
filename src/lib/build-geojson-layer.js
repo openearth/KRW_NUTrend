@@ -1,6 +1,7 @@
-export default ({ id, data, paint }) => {
+export default ({ id, data, paint }, uniqueId) => {
+ 
   return {
-    id,
+    id: `${ id }-${ uniqueId }`,
     type: 'circle',
     source: {
       type: 'geojson',

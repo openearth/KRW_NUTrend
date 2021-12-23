@@ -90,8 +90,6 @@
       },
     },
     watch: {
-
-
       selectedTimestamp() {
         const isActive  = this.$refs[`panel-${ this.panelIndex }`][0].isActive
         this.setMap(isActive)
@@ -121,14 +119,12 @@
         return require(`~/content/services/${ this.selectedType }/${ this.selectedParticle }/${ fileName }.md`)
       },
       onTransitionEnd(event) {
-        
         const isActive  = this.$refs[`panel-${ this.panelIndex }`][0].isActive
         const { propertyName } = event
 
         if (propertyName === 'min-height') {
           return
         }
-       
         this.setMap(isActive)
       },
       setPanelIndex(index){

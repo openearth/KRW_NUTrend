@@ -2,10 +2,10 @@ import buildCirclesColor from './build-circles-color'
 //Semicircle right is the new value
 //Semicircle left is the old value
 //Passing to buildCircleColor the left means I want the value2
-export default ({ id, data }, semicircle, legend) => {
+export default ({ id, data }, semicircle, legend, uniqueId) => {
   
   return {
-    id: `${ id }-${ semicircle }`,
+    id: `${ id }-${ semicircle }-${ uniqueId }`,
     type: 'symbol',
     source: {
       type: 'geojson',

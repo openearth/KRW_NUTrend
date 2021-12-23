@@ -307,25 +307,29 @@ export default {
       /*
       * When we select basin/sub basin case
       */ 
+     
       const { showToestandGraphSelectedBasinModal } = context.getters
       if (!showToestandGraphSelectedBasinModal) {
         return
       }
       const { selectedBasin, selectedSubBasin } = context.rootState.filters
-      const basin = selectedSubBasin ? selectedSubBasin 
+      const basin = selectedSubBasin ? selectedSubBasin.replace('-', '_')
                           :selectedBasin ? selectedBasin
                           :null
+    
       const availableCharts = context.rootGetters['layers/availableCharts']
       const { AvailableWaterManagers_charts } = availableCharts
-      //const availableWaterManagers = context.rootGetters['filters/availableWaterManagers']
+      const charts = AvailableWaterManagers_charts
       
-       const params = AvailableWaterManagers_charts.map((chart) => {
-          const { plotId } = chart
-          chart.plotId = plotId.replace('{name}', basin)
-          return chart
+      const params = charts.map((chart) => {
+          
+          
+          const  plotId  = chart.plotId.replace('{name}', basin)
+         
+          return { plotId }
         })
 
-
+     
       let chartData = []
       timespan.forEach((time)=>{
         const requests = createToestandChartRequests(params, time)
@@ -343,7 +347,7 @@ export default {
           console.log(err)
         }
       })
- 
+     
       context.commit('SET_TOESTAND_DATA_ALL_WATER_MANAGERS', chartData)
 
     },
@@ -352,7 +356,7 @@ export default {
        * Case 1: If a basin or subbasin has been already selected
        * Case 2: If no basin has been selected
       */
-      
+  
       const { showToestandGraphSelectedWaterManagerModal } = context.getters
       if (!showToestandGraphSelectedWaterManagerModal) {
         return
@@ -372,21 +376,27 @@ export default {
       if (basin) {
         //Case 1
         const params = SelectedWaterManagerCase1_charts.map((chart) => {
-          const { plotId } = chart
-          chart.plotId = plotId.replace('{name}', basin)
-          return chart
+          const { startTime, endTime } = chart
+          const plotId = chart.plotId.replace('{name}', basin)
+          return {
+            ... { startTime },
+            ... { endTime },
+            ... { plotId }, 
+          }
         })
+        
         requests = createToestandChartRequests(params, null, [ `${ basin }: ${ selectedWaterManager }` ])
       }else{
         //Case 2
         requests = createToestandChartRequests(SelectedWaterManagerCase2_charts, null, [ selectedWaterManager ])
       }
      
-      
+    
       try {
         Promise.all(requests)
           .then((result) => mapToestandChartData(result))
           .then(( data ) => {
+         
             context.commit('SET_TOESTAND_DATA_SELECTED_WATER_MANAGER', data)
           })
       } catch (err) {
@@ -445,7 +455,7 @@ export default {
       state.toestandDataNl = data
     },
     SET_TOESTAND_DATA_ALL_BASINS(state, data) {
-      state.toestandDataAllBasins = data //todo change to simple basins the name
+      state.toestandDataAllBasins = data 
     },
     SET_TOESTAND_DATA_ALL_SUB_BASINS(state, data) {
       state.toestandDataAllSubBasins = data

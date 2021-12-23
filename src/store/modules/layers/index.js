@@ -7,7 +7,6 @@ import buildCirclesColor from '~/lib/build-circles-color'
 import buildCirclesColorsRangeValues from '~/lib/build-circles-color-range-values'
 import buildPaintObject from '~/lib/build-paint-object'
 import mapTimeseriesToGeoJSONFloatValues from '~/lib/map-timeseries-to-geojson-float-values'
-import createAvailableTimestamp from '~/lib/create-available-timestamp'
 import WaterbeheerderContours from '~/config/Waterbeheerder_contours.json'
 import buildBaseMapLayer from '~/lib/build-base-map-layer'
 import buildGeojonLayer  from '~/lib/build-geojson-layer'
@@ -54,7 +53,6 @@ export default {
         
       
         const paint = !state.differenceMap ? { paint: buildPaintObject(circlesColor) } : null
-
         return { ...state.activeMap, ...data, ...paint }
       }
     },
@@ -72,7 +70,7 @@ export default {
     },
 
     //Mapbox layer from filteredMap
-    activeMapLayer(state, getters) {
+    activeMapLayer(state, getters, rootState, rootGetters) {
       if (state.differenceMap) {
         return null
       }
@@ -80,12 +78,15 @@ export default {
       if (!filteredMap) {
         return null
       }
-      return buildGeojonLayer(filteredMap)
+    
+      const id = rootGetters['filters/uniqueId']
+     
+      return buildGeojonLayer(filteredMap, id)
     },
-    activeDiffMapLayers(state, getters) {
+    activeDiffMapLayers(state, getters, rootState, rootGetters) {
      
       const { filteredMap } = getters
-   
+      
       if (!state.differenceMap ) {
         return []
       }
@@ -93,10 +94,11 @@ export default {
       if (!filteredMap) {
         return []
       }
+      const id = rootGetters['filters/uniqueId']
       //NOTE: left reprsents old value, right new value
-      const leftSemiCircleLayer = buildGeojsonLayerDiffMap(filteredMap, 'left', state.legend)
-      const rightSemiCircleLayer = buildGeojsonLayerDiffMap(filteredMap, 'right', state.legend)
-      const outerCircleLayer = buildGeojsonLayerDiffMapsOuterCircle(filteredMap)
+      const leftSemiCircleLayer = buildGeojsonLayerDiffMap(filteredMap, 'left', state.legend, id)
+      const rightSemiCircleLayer = buildGeojsonLayerDiffMap(filteredMap, 'right', state.legend, id)
+      const outerCircleLayer = buildGeojsonLayerDiffMapsOuterCircle(filteredMap, id)
       return [ outerCircleLayer, leftSemiCircleLayer, rightSemiCircleLayer ]
       
 
@@ -145,6 +147,7 @@ export default {
       return legendTitle
     },
     compareYear(state, getters, rootState) {
+      //used in activemap location card
       const { activeService } = getters
       const { selectedTimestamp } = rootState.filters
       if (!activeService) {
@@ -158,6 +161,7 @@ export default {
       return compareYear
     },
     availableDownloadUrl(state, getters) { 
+      //used in csv
       const { activeService } = getters
       if (!activeService) {
         return 
@@ -205,7 +209,7 @@ export default {
     },
     
     getTimeSeriesWithStandardTime({ commit, state, rootState }) {
-
+ 
       const { url } = state.activeMap
       const { selectedType } = rootState.filters
       return $axios

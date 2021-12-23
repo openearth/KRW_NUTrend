@@ -312,9 +312,6 @@
         'setIsOpen',
         'resetToestandChartType',
       ]),
-      ...mapActions('charts', [
-        'resetChartsData',
-      ]),
       onClickClose() {
         this.setIsOpen({ isOpen: false })
         this.resetToestandChartType()

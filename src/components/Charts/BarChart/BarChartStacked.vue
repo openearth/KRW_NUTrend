@@ -105,7 +105,7 @@
             name: 'Goed',
             type: 'bar',
             stack: 'total',
-            //TODO: styling issue if there is time: show the numbers rounded
+            
             label: {
               fontSize: 10,
               show: true,

@@ -89,6 +89,15 @@
         return {
           type: 'category',
           data: this.chartData.labels,
+          axisTick: {
+            alignWithLabel: true,
+            interval: 0,
+          },
+          axisLabel: {
+            interval: 0,
+            rotate: 80,
+            fontSize: 10,
+          },
         }
       },
       yAxis() {
