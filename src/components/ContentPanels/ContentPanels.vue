@@ -133,7 +133,6 @@
         this.resetActiveMapLocation()
       },
       setMap(isActive) {
-        console.log('setMap is called', isActive)
         if (isActive) {
         
           this.setActiveMap({ activeMap: this.activePanel })
@@ -142,7 +141,6 @@
           // Only the difference maps and the trends have uFmaprl in the services.json
           if (this.activePanel.url && this.activePanel.differenceMap) {
             this.setDifferenceMap(true)
-            console.log('call the getTimeserieswithstandardTime')
             this.getTimeSeriesWithStandardTime()
             this.setTimeOption(false)
           } else if (this.activePanel.url) {
