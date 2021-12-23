@@ -59,7 +59,7 @@
           :options="activeMapLayer"
         />
       </div>
-      <div v-if="activeDiffMapLayers.length">
+      <div v-if="activeDiffMapLayers.length" :key="selectedParticle">
         <map-layer
           v-for="layer in activeDiffMapLayers"
           :key="layer.id" 
@@ -134,7 +134,7 @@
       hardReload: false,
     }),
     computed: {
-      ...mapState('layers', [ 'activeMap', 'legend', 'timeOption', 'clickedPointBbox' ]),
+      ...mapState('layers', [ 'activeMap', 'legend', 'timeOption', 'clickedPointBbox', 'selectedParticle' ]),
       ...mapState('filters', [ 'selectedTimestamp' ]),
       ...mapGetters('layers', [ 'activeMapLayer', 'activeDiffMapLayers', 'availableBaseMap', 'layerBbox', 'legendTitle' ]),
       showLegend() {
