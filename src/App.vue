@@ -59,18 +59,18 @@
           :options="activeMapLayer"
         />
       </div>
-      <div v-if="diffLayers.length">
+      <div v-if="activeDiffMapLayers.length">
         <map-layer
-          v-for="layer in diffLayers"
+          v-for="layer in activeDiffMapLayers"
           :key="layer.id" 
           :options="layer"
         /> 
       </div>
       <v-mapbox-scale-control :options="scaleBarOptions" />
       <map-controls v-if="activeMapLayer" :layer="activeMapLayer" />
-      <div v-if="diffLayers.length">
+      <div v-if="activeDiffMapLayers.length">
         <map-controls
-          v-for="layer in diffLayers"
+          v-for="layer in activeDiffMapLayers"
           :key="layer.id" 
           :layer="layer"
         /> 
@@ -121,6 +121,7 @@
         'Functionele en analytische cookies accepteren',
         'Alleen functionele cookies',
       ],
+      layers: [],
       scaleBarOptions: {
         maxWidth: 80,
         unit: 'metric',
@@ -130,10 +131,10 @@
       zoomBounds: [],
       reports: reports,
       diffLayers: [],
-      
+      hardReload: false,
     }),
     computed: {
-      ...mapState('layers', [ 'activeMap', 'legend', 'timeOption', 'clickedPointBbox', 'selectedParticle' ]),
+      ...mapState('layers', [ 'activeMap', 'legend', 'timeOption', 'clickedPointBbox' ]),
       ...mapState('filters', [ 'selectedTimestamp' ]),
       ...mapGetters('layers', [ 'activeMapLayer', 'activeDiffMapLayers', 'availableBaseMap', 'layerBbox', 'legendTitle' ]),
       showLegend() {
@@ -150,8 +151,13 @@
         this.zoomBounds  = this.layerBbox
       },
       activeDiffMapLayers() {
-        this.diffLayers = []
-        setTimeout(this.loadDiffLayers, 2000)
+        if (this.activeDiffMapLayers.length === 3) {
+          this.diffLayers = this.activeDiffMapLayers
+          this.hardReload = true
+        }else{
+          this.diffLayers = []
+          this.hardReload = false
+        }
       },
     },
     created() {
@@ -165,9 +171,6 @@
       },
       onResetBounds(event) {
         this.zoomBounds = event
-      },
-      loadDiffLayers() {
-        this.diffLayers = this.activeDiffMapLayers
       },
     },
   }
