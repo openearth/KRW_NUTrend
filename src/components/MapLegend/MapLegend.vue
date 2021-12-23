@@ -4,12 +4,15 @@
     flat
     max-height="300"
     max-width="250"
+    color="grey lighten-2"
   >
     <div class="legend-content">
       <v-card-title class="justify-center legend-title">
         {{ title }}
       </v-card-title>
-      <v-list>
+      <v-list
+        color="grey lighten-2"
+      >
         <v-list-item-group>
           <v-list-item
             v-for="(item, index) in legendItems"

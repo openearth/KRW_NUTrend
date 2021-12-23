@@ -85,7 +85,7 @@
             top: '40px',
             right: '280px',
             bottom: '8px',
-            left: 10,
+            left: 22,
             containLabel: true,
             backgroundColor: '#fff',
           },
@@ -93,6 +93,7 @@
             type: 'value',
             min: 0,
             max: 5,
+            show: false,
           },
           legend: {
             orient: 'vertical',

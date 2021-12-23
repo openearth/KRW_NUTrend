@@ -111,9 +111,8 @@
         'availableSubBasins',
         'availableWaterBodies',
         'availableWaterManagers',
-       
-        
       ]),
+      ...mapGetters('layers', [ 'filteredMap' ]),
       selectedBasinHasSubBasins() {
         return this.selectedBasin === 'Rijn'
       },
@@ -125,15 +124,38 @@
         this.selectedSubBasin = null
         this.selectedWaterManager = null
         this.selectedBodyOfWater = null
+        if (value) {
+          this.getChartDataToestandSelectedBasin()
+          this.getChartToestandAvailableWaterManagers()
+        }
       },
       selectedSubBasin(value) {
         this.setSelectedSubBasin({ selectedSubBasin: value })
+        if (!value && this.selectedBasin) {
+          this.getChartToestandAvailableWaterManagers()
+        }
+        if (value) {
+          this.getChartDataToestandSelectedSubBasin()
+          this.getChartToestandAvailableWaterManagers()
+        }
       },
       selectedWaterManager(value) {
         this.setSelectedWaterManager({ selectedWaterManager: value })
       },
       selectedBodyOfWater(value) {
         this.setSelectedBodyOfWater({ selectedBodyOfWater: value })
+        if (value) {
+          const { data, id } = this.filteredMap
+          const { features } = data
+          const { properties } = features[0]
+          const { locationId, name, value, value2 } = properties
+          if (id.includes('difference')) {
+            this.setActiveMapLocation({ locationId: locationId, value: value, value2: value2, stationName: name })
+          }else {
+            this.setActiveMapLocation({ locationId: locationId, value: value, value2: null, stationName: name })
+          }
+        }
+        
       },
 
     },
@@ -148,11 +170,11 @@
         'resetSelectedBodyOfWater',
         'resetSelectedWaterManager',
       ]),
-      ...mapActions('layers',[ 'resetActiveMapLocation' ]),
+      ...mapActions('layers',[ 'resetActiveMapLocation', 'setActiveMapLocation' ]),
+
+      ...mapActions('charts', [ 'getChartToestandAvailableWaterManagers', 'getChartDataToestandSelectedSubBasin', 'getChartDataToestandSelectedBasin' ]),
 
       onResetAllChoices() {
-        //FIXME: it doesn't zoom out when clicked point or zoomed with mouse.
-        //What is the general zoom level?
         this.selectedBasin = null
         this.selectedSubBasin = null
         this.selectedWaterManager = null

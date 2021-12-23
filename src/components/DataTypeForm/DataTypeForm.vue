@@ -42,6 +42,7 @@
           max="2020"
           :value="selectedYear"
           thumb-label="always"
+          ticks="always"
           @change="updateSelectedYear"
           @end="onSelectedYear"
         />
@@ -131,10 +132,10 @@
       createTypeList(services) {
         this.typeList = services
           .map(service => ({ text: service.name, value: service.id }))
-          .sort((a, b) => a.text.localeCompare(b.text))
+        
 
         // set first option as selected by default.
-        this.setSelectedType({ selectedType: this.typeList[1].value })
+        this.setSelectedType({ selectedType: this.typeList[0].value })
       },
       createParticleList(services) {
         const service = services.find(service => service.id === this.selectedType)

@@ -4,7 +4,7 @@
       app
       clipped
       permanent
-      width="700"
+      width="40%"
     >
       <v-container fluid>
         <v-row justify="space-between" no-gutters>
@@ -174,6 +174,15 @@
               />
             </v-col>
           </v-row>
+          <v-row v-if="showToestandGraphAvailableWatermanagersModal">
+            <v-col>
+              <chart-modal-activator
+                title="Waterbeheerders"
+                modal-title="Waterbeheerders"
+                toestand-chart-type="AllWaterManagers"
+              />
+            </v-col>
+          </v-row>
           <v-row v-if="showToestandGraphSelectedWaterManagerModal">
             <v-col>
               <chart-modal-activator
@@ -232,7 +241,8 @@
       ]),
       ...mapGetters('charts', [ 'showTrendsGraphs', 'showConcentrationGraphs', 'showToestandGraphNlModal', 
                                 'showToestandGraphAllBasinsModal', 'showToestandGraphAllSubBasinsModal','showToestandGraphAllWatermanagersModal', 
-                                'showToestandGraphSelectedBasinModal', 'showToestandGraphSelectedSubBasinModal', 'showToestandGraphSelectedWaterManagerModal' ]),
+                                'showToestandGraphSelectedBasinModal', 'showToestandGraphSelectedSubBasinModal', 'showToestandGraphSelectedWaterManagerModal', 
+                                'showToestandGraphAvailableWatermanagersModal' ]),
 
     },
     watch: { 
@@ -256,18 +266,6 @@
           this.getChartDataToestandAllWaterManagers()
         }
       },
-      showToestandGraphSelectedBasinModal() {
-        if (this.showToestandGraphSelectedBasinModal) {
-          this.getChartToestandAvailableWaterManagers()
-          this.getChartDataToestandSelectedBasin()
-        }
-      },
-      showToestandGraphSelectedSubBasinModal() {
-        if (this.showToestandGraphSelectedSubBasinModal) {
-          this.getChartToestandAvailableWaterManagers()
-          this.getChartDataToestandSelectedSubBasin()
-        }
-      },
       showToestandGraphSelectedWaterManagerModal() {
         if (this.showToestandGraphSelectedWaterManagerModal) {
           this.getChartDataToestandSelectedWaterManager()
@@ -277,11 +275,14 @@
         this.panelsResetKey=`${ this.selectedType }-${ this.selectedParticle }`
       },
       selectedParticle() {
+        //TODO: Not nice solution: Add this if statement to fix bug trends map dont change when particle changes
+        if (this.selectedType === 'trends') {
+          this.panelsResetKey=`${ this.selectedType }-${ this.selectedParticle }`
+        }
         if(this.activePanelIndex === 0) {
           this.panelsResetKey=`${ this.selectedType }-${ this.selectedParticle }`
         }
       },
-      
     },
     methods: { 
       ...mapActions('charts', [ 'getChartDataToestandNl', 'getChartDataToestandAllBasins', 'getChartDataToestandAllSubBasins',
@@ -289,6 +290,7 @@
                                 'getChartDataToestandSelectedBasin', 'getChartDataToestandSelectedWaterManager', 
                                 'getChartDataToestandSelectedSubBasin' ]),
       setActivePanelIndex(event) {
+        console.log('listen to event of panel index', event)
         this.activePanelIndex = event
       },
       onResetBounds(event) {
