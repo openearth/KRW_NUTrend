@@ -119,9 +119,10 @@
         return require(`~/content/services/${ this.selectedType }/${ this.selectedParticle }/${ fileName }.md`)
       },
       onTransitionEnd(event) {
+        console.log('transition event', this.panelIndex)
         const isActive  = this.$refs[`panel-${ this.panelIndex }`][0].isActive
         const { propertyName } = event
-
+        console.log('event of transition')
         if (propertyName === 'min-height') {
           return
         }
@@ -133,7 +134,6 @@
         this.resetActiveMapLocation()
       },
       setMap(isActive) {
-   
         if (isActive) {
         
           this.setActiveMap({ activeMap: this.activePanel })

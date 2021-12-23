@@ -199,6 +199,7 @@ export default {
         endTime: selectedTimestamp,
         documentFormat: 'PI_JSON',
       }
+
       return $axios
         .get(`/FewsWebServices/rest/fewspiservice/${ VUE_APP_API_VERSION }/timeseries`, { params })
         .then(response => response?.data)
