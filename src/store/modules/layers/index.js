@@ -70,7 +70,7 @@ export default {
     },
 
     //Mapbox layer from filteredMap
-    activeMapLayer(state, getters) {
+    activeMapLayer(state, getters, rootState, rootGetters) {
       if (state.differenceMap) {
         return null
       }
@@ -78,9 +78,12 @@ export default {
       if (!filteredMap) {
         return null
       }
-      return buildGeojonLayer(filteredMap)
+    
+      const id = rootGetters['filters/uniqueId']
+     
+      return buildGeojonLayer(filteredMap, id)
     },
-    activeDiffMapLayers(state, getters) {
+    activeDiffMapLayers(state, getters, rootState, rootGetters) {
      
       const { filteredMap } = getters
       
@@ -91,10 +94,11 @@ export default {
       if (!filteredMap) {
         return []
       }
+      const id = rootGetters['filters/uniqueId']
       //NOTE: left reprsents old value, right new value
-      const leftSemiCircleLayer = buildGeojsonLayerDiffMap(filteredMap, 'left', state.legend)
-      const rightSemiCircleLayer = buildGeojsonLayerDiffMap(filteredMap, 'right', state.legend)
-      const outerCircleLayer = buildGeojsonLayerDiffMapsOuterCircle(filteredMap)
+      const leftSemiCircleLayer = buildGeojsonLayerDiffMap(filteredMap, 'left', state.legend, id)
+      const rightSemiCircleLayer = buildGeojsonLayerDiffMap(filteredMap, 'right', state.legend, id)
+      const outerCircleLayer = buildGeojsonLayerDiffMapsOuterCircle(filteredMap, id)
       return [ outerCircleLayer, leftSemiCircleLayer, rightSemiCircleLayer ]
       
 

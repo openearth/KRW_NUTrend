@@ -1,6 +1,6 @@
-export default ({ id, data }) => {
+export default ({ id, data }, uniqueId) => {
   return {
-    id: `${ id }-outer-circle`,
+    id: `${ id }-outer-circle-${ uniqueId }`,
     type: 'circle',
     source: {
       type: 'geojson',
