@@ -1,6 +1,7 @@
 <template>
   <v-expansion-panels
     key="selectedType"
+    ref="parentPanels"
     v-model="selectedPanel"
   >
     <v-expansion-panel
@@ -11,7 +12,7 @@
     >
       <v-expansion-panel-header
         class="text-caption"
-        @transitionend="(event) => onTransitionEnd(event)"
+        @click="onClick"
       >
         {{ panel.title }}
       </v-expansion-panel-header>
@@ -44,6 +45,7 @@
       return {
         panelRef: null,
         panelIndex: 0,
+        parentPanels: null,
       }
     },
     computed: {
@@ -52,6 +54,7 @@
         'selectedParticle',
         'selectedTimestamp',
       ]),
+
     
       mappedServices() {
         const type = services.find(service => service.id === this.selectedType)
@@ -73,6 +76,7 @@
         
       },
       panels() {
+    
         return this.mappedServices.map(({ id, name, url, legendGraphicId, differenceMap }) => {
           const content = this.importFileContent(id)
           return {
@@ -88,6 +92,7 @@
       activePanel() {
         return this.panels[this.panelIndex]
       },
+
     },
     watch: {
       selectedTimestamp() {
@@ -98,9 +103,17 @@
         const isActive = this.panelRef.isActive
         this.setMap(isActive)
       },
+      selectedParticle(val) {
+        if (val !=='trends') {
+          this.setMap(true)
+        }
+      },
     },
     mounted() {
       this.panelRef = this.$refs[`panel-${ this.panelIndex }`][0]
+     
+      this.parentPanels = this.$refs['parentPanels']
+     
     },
     methods: {
       ...mapActions('layers', [
@@ -118,15 +131,31 @@
       importFileContent(fileName) {
         return require(`~/content/services/${ this.selectedType }/${ this.selectedParticle }/${ fileName }.md`)
       },
-      onTransitionEnd(event) {
+      onClick() {
+        setTimeout(() => {
+          this.checkIfPanelOpen()
+        }, 500)
+      },
+      checkIfPanelOpen() {
+        this.parentPanels = this.$refs['parentPanels']
         
-        const isActive  = this.$refs[`panel-${ this.panelIndex }`][0].isActive
-        const { propertyName } = event
+        const childrentComponents = this.parentPanels.$children
+        const children = childrentComponents.map(child => child.$el)
         
-        if (propertyName === 'min-height') {
-          return
-        }
-        this.setMap(isActive)
+        
+        children.forEach((child, index) => {
+          const isActive  = this.$refs[`panel-${ index }`][0].isActive
+          
+          let closedPanels = children.length 
+          if (child.className !== 'v-expansion-panel') {
+            closedPanels = children.length - 1
+            this.setMap(isActive)
+          }
+        
+          if (closedPanels === children.length) {
+            this.setMap(false)
+          }
+        }) 
       },
       setPanelIndex(index){
         this.$emit('active-panel-index', index)
@@ -134,6 +163,7 @@
         this.resetActiveMapLocation()
       },
       setMap(isActive) {
+        
         if (isActive) {
         
           this.setActiveMap({ activeMap: this.activePanel })
