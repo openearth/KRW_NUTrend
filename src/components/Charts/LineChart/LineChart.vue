@@ -51,7 +51,7 @@
       return {
         initOptions: { height: '450px', width:'1200px' },
         seriesStyle: {
-          symbolSize: 0,
+          symbolSize: 0.5,
           type: 'line',
           lineStyle: { width: 3 },
         },
@@ -148,11 +148,15 @@
       getMaxValueOfSeries(values) {
         let floatValues = values.map(parseFloat)
 
-        return Math.ceil(Math.max(...floatValues))
+        return this.roundMax(Math.max(...floatValues))
       },
       formatMaxY(max) {
         const formattedMax = Math.ceil((max + 1))
         return formattedMax
+      },
+      roundMax(number) {
+        let power = Math.pow(10, 1)
+        return Math.ceil(number * power) / power
       },
     },
   }

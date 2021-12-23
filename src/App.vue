@@ -131,7 +131,6 @@
       zoomBounds: [],
       reports: reports,
       diffLayers: [],
-      hardReload: false,
     }),
     computed: {
       ...mapState('layers', [ 'activeMap', 'legend', 'timeOption', 'clickedPointBbox' ]),

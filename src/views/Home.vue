@@ -275,11 +275,14 @@
         this.panelsResetKey=`${ this.selectedType }-${ this.selectedParticle }`
       },
       selectedParticle() {
+        //TODO: Not nice solution: Add this if statement to fix bug trends map dont change when particle changes
+        if (this.selectedType === 'trends') {
+          this.panelsResetKey=`${ this.selectedType }-${ this.selectedParticle }`
+        }
         if(this.activePanelIndex === 0) {
           this.panelsResetKey=`${ this.selectedType }-${ this.selectedParticle }`
         }
       },
-      
     },
     methods: { 
       ...mapActions('charts', [ 'getChartDataToestandNl', 'getChartDataToestandAllBasins', 'getChartDataToestandAllSubBasins',
@@ -287,6 +290,7 @@
                                 'getChartDataToestandSelectedBasin', 'getChartDataToestandSelectedWaterManager', 
                                 'getChartDataToestandSelectedSubBasin' ]),
       setActivePanelIndex(event) {
+        console.log('listen to event of panel index', event)
         this.activePanelIndex = event
       },
       onResetBounds(event) {

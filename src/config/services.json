@@ -107,13 +107,13 @@
                 }
               ]
             },
-            "downloadUrl": "http://185.224.89.110:8082/FewsWebServices/rest/fewspiservice/v1/timeseries?filterId=krw-wl-ntot-toets-lSGBP&startTime=1991-01-01T00:00:00Z&endTime=2020-01-01T00:00:00Z&documentFormat=PI_JSON"
+            "downloadUrl": "https://krw-nutrend.avi.deltares.nl/FewsWebServices/rest/fewspiservice/v1/timeseries?filterId=krw-wl-ntot-toets-lSGBP&startTime=1991-01-01T00:00:00Z&endTime=2020-01-01T00:00:00Z&documentFormat=PI_JSON"
           },
           {
             "id": "krw-wl-ntot-difference-2009",
             "name": "Verschilkaart toetsing stikstof actueel vs. toetsjaar 2009",
             "data": {},
-            "url": "http://185.224.89.110:8082/FewsWebServices/rest/fewspiservice/v1/timeseries?filterId=krw-wl-ntot-toets-lSGBP&startTime=2009-01-01T00%3A00%3A00Z&endTime=2020-01-01T00%3A00%3A00Z&showThresholds=true&showStatistics=true&documentFormat=PI_JSON",
+            "url": "https://krw-nutrend.avi.deltares.nl/FewsWebServices/rest/fewspiservice/v1/timeseries?filterId=krw-wl-ntot-toets-lSGBP&startTime=2009-01-01T00%3A00%3A00Z&endTime=2020-01-01T00%3A00%3A00Z&showThresholds=true&showStatistics=true&documentFormat=PI_JSON",
             "legendGraphicId": "Ntot Toetsing t.o.v. normen laatste_SGBP (-) NL",
             "differenceMap": true,
             "charts": {},
@@ -124,7 +124,7 @@
             "id": "krw-wl-ntot-difference-2015",
             "name": "Verschilkaart toetsing stikstof actueel vs. toetsjaar 2015",
             "data": {},
-            "url": "http://185.224.89.110:8082/FewsWebServices/rest/fewspiservice/v1/timeseries?filterId=krw-wl-ntot-toets-lSGBP&startTime=2015-01-01T00%3A00%3A00Z&endTime=2020-01-01T00%3A00%3A00Z&showThresholds=true&showStatistics=true&documentFormat=PI_JSON",
+            "url": "https://krw-nutrend.avi.deltares.nl/FewsWebServices/rest/fewspiservice/v1/timeseries?filterId=krw-wl-ntot-toets-lSGBP&startTime=2015-01-01T00%3A00%3A00Z&endTime=2020-01-01T00%3A00%3A00Z&showThresholds=true&showStatistics=true&documentFormat=PI_JSON",
             "legendGraphicId": "Ntot Toetsing t.o.v. normen laatste_SGBP (-) NL",
             "differenceMap": true,
             "charts": {},
@@ -245,13 +245,13 @@
                 }
               ]
             },
-            "downloadUrl": "http://185.224.89.110:8082/FewsWebServices/rest/fewspiservice/v1/timeseries?filterId=krw-wl-ptot-toets-lSGBP&startTime=1991-01-01T00:00:00Z&endTime=2020-01-01T00:00:00Z&documentFormat=PI_JSON"
+            "downloadUrl": "https://krw-nutrend.avi.deltares.nl/FewsWebServices/rest/fewspiservice/v1/timeseries?filterId=krw-wl-ptot-toets-lSGBP&startTime=1991-01-01T00:00:00Z&endTime=2020-01-01T00:00:00Z&documentFormat=PI_JSON"
           },
           {
             "id": "krw-wl-ptot-difference-2009",
             "name": "Verschilkaart toetsing fosfor actueel vs. toetsjaar 2009",
             "data": {},
-            "url": "http://185.224.89.110:8082/FewsWebServices/rest/fewspiservice/v1/timeseries?filterId=krw-wl-ptot-toets-lSGBP&startTime=2009-01-01T00%3A00%3A00Z&endTime=2020-01-01T00%3A00%3A00Z&showThresholds=true&showStatistics=true&documentFormat=PI_JSON",
+            "url": "https://krw-nutrend.avi.deltares.nl/FewsWebServices/rest/fewspiservice/v1/timeseries?filterId=krw-wl-ptot-toets-lSGBP&startTime=2009-01-01T00%3A00%3A00Z&endTime=2020-01-01T00%3A00%3A00Z&showThresholds=true&showStatistics=true&documentFormat=PI_JSON",
             "legendGraphicId": "Ptot Toetsing t.o.v. normen laatste_SGBP (-) NL",
             "differenceMap": true,
             "charts": {},
@@ -262,7 +262,7 @@
             "id": "krw-wl-ptot-difference-2015",
             "name": "Verschilkaart toetsing fosfor actueel vs. toetsjaar 2015",
             "data": {},
-            "url": "http://185.224.89.110:8082/FewsWebServices/rest/fewspiservice/v1/timeseries?filterId=krw-wl-ptot-toets-lSGBP&startTime=2015-01-01T00%3A00%3A00Z&endTime=2020-01-01T00%3A00%3A00Z&showThresholds=true&showStatistics=true&documentFormat=PI_JSON",
+            "url": "https://krw-nutrend.avi.deltares.nl/FewsWebServices/rest/fewspiservice/v1/timeseries?filterId=krw-wl-ptot-toets-lSGBP&startTime=2015-01-01T00%3A00%3A00Z&endTime=2020-01-01T00%3A00%3A00Z&showThresholds=true&showStatistics=true&documentFormat=PI_JSON",
             "legendGraphicId": "Ptot Toetsing t.o.v. normen laatste_SGBP (-) NL",
             "differenceMap": true,
             "charts": {},
@@ -384,13 +384,13 @@
                 }
               ]
             },
-            "downloadUrl": "http://185.224.89.110:8082/FewsWebServices/rest/fewspiservice/v1/timeseries?filterId=krw-wl-din-toets-lSGBP&startTime=1991-01-01T00:00:00Z&endTime=2020-01-01T00:00:00Z&documentFormat=PI_JSON"
+            "downloadUrl": "https://krw-nutrend.avi.deltares.nl/FewsWebServices/rest/fewspiservice/v1/timeseries?filterId=krw-wl-din-toets-lSGBP&startTime=1991-01-01T00:00:00Z&endTime=2020-01-01T00:00:00Z&documentFormat=PI_JSON"
           },
           {
             "id": "krw-wl-din-difference-2009",
             "name": "Verschilkaart toetsing DIN actueel vs. toetsjaar 2009",
             "data": {},
-            "url": "http://185.224.89.110:8082/FewsWebServices/rest/fewspiservice/v1/timeseries?filterId=krw-wl-din-toets-lSGBP&startTime=2009-01-01T00%3A00%3A00Z&endTime=2020-01-01T00%3A00%3A00Z&showThresholds=true&showStatistics=true&documentFormat=PI_JSON",
+            "url": "https://krw-nutrend.avi.deltares.nl/FewsWebServices/rest/fewspiservice/v1/timeseries?filterId=krw-wl-din-toets-lSGBP&startTime=2009-01-01T00%3A00%3A00Z&endTime=2020-01-01T00%3A00%3A00Z&showThresholds=true&showStatistics=true&documentFormat=PI_JSON",
             "legendGraphicId": "DIN Toetsing t.o.v. normen laatste_SGBP (-) NL",
             "differenceMap": true,
             "charts": {},
@@ -401,7 +401,7 @@
             "id": "krw-wl-din-difference-2015",
             "name": "Verschilkaart toetsing DIN actueel vs. toetsjaar 2015",
             "data": {},
-            "url": "http://185.224.89.110:8082/FewsWebServices/rest/fewspiservice/v1/timeseries?filterId=krw-wl-din-toets-lSGBP&startTime=2015-01-01T00%3A00%3A00Z&endTime=2020-01-01T00%3A00%3A00Z&showThresholds=true&showStatistics=true&documentFormat=PI_JSON",
+            "url": "https://krw-nutrend.avi.deltares.nl/FewsWebServices/rest/fewspiservice/v1/timeseries?filterId=krw-wl-din-toets-lSGBP&startTime=2015-01-01T00%3A00%3A00Z&endTime=2020-01-01T00%3A00%3A00Z&showThresholds=true&showStatistics=true&documentFormat=PI_JSON",
             "legendGraphicId": "DIN Toetsing t.o.v. normen laatste_SGBP (-) NL",
             "differenceMap": true,
             "charts": {},
@@ -432,7 +432,7 @@
             "id": "krw-ml-ntot",
             "name": "Trendhelling (% per decennium)",
             "data": {},
-            "url": "http://185.224.89.110:8082/FewsWebServices/rest/fewspiservice/v1/timeseries?filterId=krw-ml-ntot&startTime=2020-01-01T00%3A00%3A00Z&endTime=2020-01-01T00%3A00%3A00Z&showThresholds=true&showStatistics=true&documentFormat=PI_JSON",
+            "url": "https://krw-nutrend.avi.deltares.nl/FewsWebServices/rest/fewspiservice/v1/timeseries?filterId=krw-ml-ntot&startTime=2020-01-01T00%3A00%3A00Z&endTime=2020-01-01T00%3A00%3A00Z&showThresholds=true&showStatistics=true&documentFormat=PI_JSON",
             "legendGraphicId": "Ntot Trendhelling (% per decennium) RWS",
             "charts": {
               "graphUrl": "https: //krw-nutrend.nl/site/data/trend-graph-per-location/Trend"
@@ -448,7 +448,7 @@
             "id": "krw-ml-ptot",
             "name": "Trendhelling (% per decennium)",
             "data": {},
-            "url": "http://185.224.89.110:8082/FewsWebServices/rest/fewspiservice/v1/timeseries?filterId=krw-ml-ptot&startTime=2020-01-01T00%3A00%3A00Z&endTime=2020-01-01T00%3A00%3A00Z&showThresholds=true&showStatistics=true&documentFormat=PI_JSON",
+            "url": "https://krw-nutrend.avi.deltares.nl/FewsWebServices/rest/fewspiservice/v1/timeseries?filterId=krw-ml-ptot&startTime=2020-01-01T00%3A00%3A00Z&endTime=2020-01-01T00%3A00%3A00Z&showThresholds=true&showStatistics=true&documentFormat=PI_JSON",
             "legendGraphicId": "Ptot Trendhelling (% per decennium) RWS",
             "charts": {
               "graphUrl": "https: //krw-nutrend.nl/site/data/trend-graph-per-location/Trend"
@@ -464,7 +464,7 @@
             "id": "krw-ml-din",
             "name": "Trendhelling (% per decennium)",
             "data": {},
-            "url": "http://185.224.89.110:8082/FewsWebServices/rest/fewspiservice/v1/timeseries?filterId=krw-ml-din&startTime=2020-01-01T00%3A00%3A00Z&endTime=2020-01-01T00%3A00%3A00Z&showThresholds=true&showStatistics=true&documentFormat=PI_JSON",
+            "url": "https://krw-nutrend.avi.deltares.nl/FewsWebServices/rest/fewspiservice/v1/timeseries?filterId=krw-ml-din&startTime=2020-01-01T00%3A00%3A00Z&endTime=2020-01-01T00%3A00%3A00Z&showThresholds=true&showStatistics=true&documentFormat=PI_JSON",
             "legendGraphicId": "DIN Trendhelling (% per decennium) RWS",
             "charts": {
               "graphUrl": "https: //krw-nutrend.nl/site/data/trend-graph-per-location/Trend"
@@ -573,13 +573,13 @@
                 }
               ]
             },
-            "downloadUrl": "http://185.224.89.110:8082/FewsWebServices/rest/fewspiservice/v1/timeseries?filterId=krw-wl-ntot-zomgem-basis&startTime=1991-01-01T00:00:00Z&endTime=2020-01-01T00:00:00Z&documentFormat=PI_JSON"
+            "downloadUrl": "https://krw-nutrend.avi.deltares.nl/FewsWebServices/rest/fewspiservice/v1/timeseries?filterId=krw-wl-ntot-zomgem-basis&startTime=1991-01-01T00:00:00Z&endTime=2020-01-01T00:00:00Z&documentFormat=PI_JSON"
           },
           {
             "id": "krw-wl-ntot-zomgem-vvSGBP",
             "name": "Verschilkaart actueel t.o.v. toetsjaar 2009 (3 voorgaande jaren, mg/l)",
             "data": {},
-            "url": "http://185.224.89.110:8082/FewsWebServices/rest/fewspiservice/v1/timeseries?filterId=krw-wl-ntot-zomgem-vvSGBP&startTime=2020-01-01T00%3A00%3A00Z&endTime=2020-01-01T00%3A00%3A00Z&documentFormat=PI_JSON",
+            "url": "https://krw-nutrend.avi.deltares.nl/FewsWebServices/rest/fewspiservice/v1/timeseries?filterId=krw-wl-ntot-zomgem-vvSGBP&startTime=2020-01-01T00%3A00%3A00Z&endTime=2020-01-01T00%3A00%3A00Z&documentFormat=PI_JSON",
             "legendGraphicId": "Ntot Verschilkaart actueel t.o.v. voorlaatste_SGBP (mg/l) NL",
             "charts": {},
             "legendTitle": ""
@@ -588,7 +588,7 @@
             "id": "krw-wl-ntot-zomgem-vlSGBP",
             "name": "Verschilkaart actueel t.o.v. toetsjaar 2015 (3 voorgaande jaren, mg/l)",
             "data": {},
-            "url": "http://185.224.89.110:8082/FewsWebServices/rest/fewspiservice/v1/timeseries?filterId=krw-wl-ntot-zomgem-vlSGBP&startTime=2020-01-01T00%3A00%3A00Z&endTime=2020-01-01T00%3A00%3A00Z&documentFormat=PI_JSON",
+            "url": "https://krw-nutrend.avi.deltares.nl/FewsWebServices/rest/fewspiservice/v1/timeseries?filterId=krw-wl-ntot-zomgem-vlSGBP&startTime=2020-01-01T00%3A00%3A00Z&endTime=2020-01-01T00%3A00%3A00Z&documentFormat=PI_JSON",
             "legendGraphicId": "Ntot Verschilkaart actueel t.o.v. laatste_SGBP (mg/l) NL",
             "charts": {},
             "legendTitle": ""
@@ -605,7 +605,7 @@
             "id": "krw-wl-ntot-norm-GM",
             "name": "Normklassegrens goed-matig (mg/l) ",
             "data": {},
-            "url": "http://185.224.89.110:8082/FewsWebServices/rest/fewspiservice/v1/timeseries?filterId=krw-wl-ntot-norm-GM&startTime=2020-01-01T00%3A00%3A00Z&endTime=2020-01-01T00%3A00%3A00Z&documentFormat=PI_JSON",
+            "url": "https://krw-nutrend.avi.deltares.nl/FewsWebServices/rest/fewspiservice/v1/timeseries?filterId=krw-wl-ntot-norm-GM&startTime=2020-01-01T00%3A00%3A00Z&endTime=2020-01-01T00%3A00%3A00Z&documentFormat=PI_JSON",
             "legendGraphicId": "Ntot Norm Goed-Matig (mg/l) NL",
             "charts": {}
           },
@@ -613,7 +613,7 @@
             "id": "krw-wl-ntot-norm-MO",
             "name": "Normklassegrens matig-ontoereikend (mg/l) ",
             "data": {},
-            "url": "http://185.224.89.110:8082/FewsWebServices/rest/fewspiservice/v1/timeseries?filterId=krw-wl-ntot-norm-MO&startTime=2020-01-01T00%3A00%3A00Z&endTime=2020-01-01T00%3A00%3A00Z&documentFormat=PI_JSON",
+            "url": "https://krw-nutrend.avi.deltares.nl/FewsWebServices/rest/fewspiservice/v1/timeseries?filterId=krw-wl-ntot-norm-MO&startTime=2020-01-01T00%3A00%3A00Z&endTime=2020-01-01T00%3A00%3A00Z&documentFormat=PI_JSON",
             "legendGraphicId": "Ntot Norm Matig-Ontoereikend (mg/l) NL",
             "charts": {}
           },
@@ -621,7 +621,7 @@
             "id": "krw-wl-ntot-norm-OS",
             "name": "Normklassegrens ontoereikend-slecht (mg/l) ",
             "data": {},
-            "url": "http://185.224.89.110:8082/FewsWebServices/rest/fewspiservice/v1/timeseries?filterId=krw-wl-ntot-norm-OS&startTime=2020-01-01T00%3A00%3A00Z&endTime=2020-01-01T00%3A00%3A00Z&documentFormat=PI_JSON",
+            "url": "https://krw-nutrend.avi.deltares.nl/FewsWebServices/rest/fewspiservice/v1/timeseries?filterId=krw-wl-ntot-norm-OS&startTime=2020-01-01T00%3A00%3A00Z&endTime=2020-01-01T00%3A00%3A00Z&documentFormat=PI_JSON",
             "legendGraphicId": "Ntot Norm Ontoereikend-Slecht (mg/l) NL",
             "charts": {}
           }
@@ -722,13 +722,13 @@
                 }
               ]
             },
-            "downloadUrl": "http://185.224.89.110:8082/FewsWebServices/rest/fewspiservice/v1/timeseries?filterId=krw-wl-ptot-zomgem-basis&startTime=1991-01-01T00:00:00Z&endTime=2020-01-01T00:00:00Z&documentFormat=PI_JSON"
+            "downloadUrl": "https://krw-nutrend.avi.deltares.nl/FewsWebServices/rest/fewspiservice/v1/timeseries?filterId=krw-wl-ptot-zomgem-basis&startTime=1991-01-01T00:00:00Z&endTime=2020-01-01T00:00:00Z&documentFormat=PI_JSON"
           },
           {
             "id": "krw-wl-ptot-zomgem-vvSGBP",
             "name": "Verschilkaart actueel t.o.v. toetsjaar 2009 (3 voorgaande jaren, mg/l)",
             "data": {},
-            "url": "http://185.224.89.110:8082/FewsWebServices/rest/fewspiservice/v1/timeseries?filterId=krw-wl-ptot-zomgem-vvSGBP&startTime=2020-01-01T00%3A00%3A00Z&endTime=2020-01-01T00%3A00%3A00Z&documentFormat=PI_JSON",
+            "url": "https://krw-nutrend.avi.deltares.nl/FewsWebServices/rest/fewspiservice/v1/timeseries?filterId=krw-wl-ptot-zomgem-vvSGBP&startTime=2020-01-01T00%3A00%3A00Z&endTime=2020-01-01T00%3A00%3A00Z&documentFormat=PI_JSON",
             "legendGraphicId": "Ptot Verschilkaart actueel t.o.v. voorlaatste_SGBP (mg/l) NL",
             "charts": {},
             "legendTitle": ""
@@ -737,7 +737,7 @@
             "id": "krw-wl-ptot-zomgem-vlSGBP",
             "name": "Verschilkaart actueel t.o.v. toetsjaar 2015 (3 voorgaande jaren, mg/l)",
             "data": {},
-            "url": "http://185.224.89.110:8082/FewsWebServices/rest/fewspiservice/v1/timeseries?filterId=krw-wl-ptot-zomgem-vlSGBP&startTime=2020-01-01T00%3A00%3A00Z&endTime=2020-01-01T00%3A00%3A00Z&documentFormat=PI_JSON",
+            "url": "https://krw-nutrend.avi.deltares.nl/FewsWebServices/rest/fewspiservice/v1/timeseries?filterId=krw-wl-ptot-zomgem-vlSGBP&startTime=2020-01-01T00%3A00%3A00Z&endTime=2020-01-01T00%3A00%3A00Z&documentFormat=PI_JSON",
             "legendGraphicId": "Ptot Verschilkaart actueel t.o.v. laatste_SGBP (mg/l) NL",
             "charts": {},
             "legendTitle": ""
@@ -754,7 +754,7 @@
             "id": "krw-wl-ptot-norm-GM",
             "name": "Normklassegrens goed-matig (mg/l) ",
             "data": {},
-            "url": "http://185.224.89.110:8082/FewsWebServices/rest/fewspiservice/v1/timeseries?filterId=krw-wl-ptot-norm-GM&startTime=2020-01-01T00%3A00%3A00Z&endTime=2020-01-01T00%3A00%3A00Z&documentFormat=PI_JSON",
+            "url": "https://krw-nutrend.avi.deltares.nl/FewsWebServices/rest/fewspiservice/v1/timeseries?filterId=krw-wl-ptot-norm-GM&startTime=2020-01-01T00%3A00%3A00Z&endTime=2020-01-01T00%3A00%3A00Z&documentFormat=PI_JSON",
             "legendGraphicId": "Ptot Norm Goed-Matig (mg/l) NL",
             "charts": {}
           },
@@ -762,7 +762,7 @@
             "id": "krw-wl-ptot-norm-MO",
             "name": "Normklassegrens matig-ontoereikend (mg/l) ",
             "data": {},
-            "url": "http://185.224.89.110:8082/FewsWebServices/rest/fewspiservice/v1/timeseries?filterId=krw-wl-ptot-norm-MO&startTime=2020-01-01T00%3A00%3A00Z&endTime=2020-01-01T00%3A00%3A00Z&documentFormat=PI_JSON",
+            "url": "https://krw-nutrend.avi.deltares.nl/FewsWebServices/rest/fewspiservice/v1/timeseries?filterId=krw-wl-ptot-norm-MO&startTime=2020-01-01T00%3A00%3A00Z&endTime=2020-01-01T00%3A00%3A00Z&documentFormat=PI_JSON",
             "legendGraphicId": "Ptot Norm Matig-Ontoereikend (mg/l) NL",
             "charts": {}
           },
@@ -770,7 +770,7 @@
             "id": "krw-wl-ptot-norm-OS",
             "name": "Normklassegrens ontoereikend-slecht (mg/l) ",
             "data": {},
-            "url": "http://185.224.89.110:8082/FewsWebServices/rest/fewspiservice/v1/timeseries?filterId=krw-wl-ptot-norm-OS&startTime=2020-01-01T00%3A00%3A00Z&endTime=2020-01-01T00%3A00%3A00Z&documentFormat=PI_JSON",
+            "url": "https://krw-nutrend.avi.deltares.nl/FewsWebServices/rest/fewspiservice/v1/timeseries?filterId=krw-wl-ptot-norm-OS&startTime=2020-01-01T00%3A00%3A00Z&endTime=2020-01-01T00%3A00%3A00Z&documentFormat=PI_JSON",
             "legendGraphicId": "Ptot Norm Ontoereikend-Slecht (mg/l) NL",
             "charts": {}
           }
@@ -871,13 +871,13 @@
                 }
               ]
             },
-            "downloadUrl": "http://185.224.89.110:8082/FewsWebServices/rest/fewspiservice/v1/timeseries?filterId=krw-wl-din-wingem-basis&startTime=1991-01-01T00:00:00Z&endTime=2020-01-01T00:00:00Z&documentFormat=PI_JSON"
+            "downloadUrl": "https://krw-nutrend.avi.deltares.nl/FewsWebServices/rest/fewspiservice/v1/timeseries?filterId=krw-wl-din-wingem-basis&startTime=1991-01-01T00:00:00Z&endTime=2020-01-01T00:00:00Z&documentFormat=PI_JSON"
           },
           {
             "id": "krw-wl-din-wingem-vvSGBP",
             "name": "Verschilkaart actueel t.o.v. toetsjaar 2009 (3 voorgaande jaren, mg/l) ",
             "data": {},
-            "url": "http://185.224.89.110:8082/FewsWebServices/rest/fewspiservice/v1/timeseries?filterId=krw-wl-din-wingem-vvSGBP&startTime=2020-01-01T00%3A00%3A00Z&endTime=2020-01-01T00%3A00%3A00Z&documentFormat=PI_JSON",
+            "url": "https://krw-nutrend.avi.deltares.nl/FewsWebServices/rest/fewspiservice/v1/timeseries?filterId=krw-wl-din-wingem-vvSGBP&startTime=2020-01-01T00%3A00%3A00Z&endTime=2020-01-01T00%3A00%3A00Z&documentFormat=PI_JSON",
             "legendGraphicId": "DIN Verschilkaart actueel t.o.v. voorlaatste_SGBP (mg/l) RWS",
             "charts": {},
             "legendTitle": ""
@@ -886,7 +886,7 @@
             "id": "krw-wl-din-wingem-vlSGBP",
             "name": "Verschilkaart actueel t.o.v. toetsjaar 2015 (3 voorgaande jaren, mg/l)",
             "data": {},
-            "url": "http://185.224.89.110:8082/FewsWebServices/rest/fewspiservice/v1/timeseries?filterId=krw-wl-din-wingem-vlSGBP&startTime=2020-01-01T00%3A00%3A00Z&endTime=2020-01-01T00%3A00%3A00Z&documentFormat=PI_JSON",
+            "url": "https://krw-nutrend.avi.deltares.nl/FewsWebServices/rest/fewspiservice/v1/timeseries?filterId=krw-wl-din-wingem-vlSGBP&startTime=2020-01-01T00%3A00%3A00Z&endTime=2020-01-01T00%3A00%3A00Z&documentFormat=PI_JSON",
             "legendGraphicId": "DIN Verschilkaart actueel t.o.v. laatste_SGBP (mg/l) RWS",
             "charts": {},
             "legendTitle": ""
@@ -903,7 +903,7 @@
             "id": "krw-wl-din-norm-GM",
             "name": "Normklassegrens goed-matig (mg/l) ",
             "data": {},
-            "url": "http://185.224.89.110:8082/FewsWebServices/rest/fewspiservice/v1/timeseries?filterId=krw-wl-din-norm-GM&startTime=2020-01-01T00%3A00%3A00Z&endTime=2020-01-01T00%3A00%3A00Z&documentFormat=PI_JSON",
+            "url": "https://krw-nutrend.avi.deltares.nl/FewsWebServices/rest/fewspiservice/v1/timeseries?filterId=krw-wl-din-norm-GM&startTime=2020-01-01T00%3A00%3A00Z&endTime=2020-01-01T00%3A00%3A00Z&documentFormat=PI_JSON",
             "legendGraphicId": "DIN Norm Goed-Matig (mg/l) NL",
             "charts": {}
           },
@@ -911,7 +911,7 @@
             "id": "krw-wl-din-norm-MO",
             "name": "Normklassegrens matig-ontoereikend (mg/l) ",
             "data": {},
-            "url": "http://185.224.89.110:8082/FewsWebServices/rest/fewspiservice/v1/timeseries?filterId=krw-wl-din-norm-MO&startTime=2020-01-01T00%3A00%3A00Z&endTime=2020-01-01T00%3A00%3A00Z&documentFormat=PI_JSON",
+            "url": "https://krw-nutrend.avi.deltares.nl/FewsWebServices/rest/fewspiservice/v1/timeseries?filterId=krw-wl-din-norm-MO&startTime=2020-01-01T00%3A00%3A00Z&endTime=2020-01-01T00%3A00%3A00Z&documentFormat=PI_JSON",
             "legendGraphicId": "DIN Norm Matig-Ontoereikend (mg/l) NL",
             "charts": {}
           },
@@ -919,7 +919,7 @@
             "id": "krw-wl-din-norm-OS",
             "name": "Normklassegrens ontoereikend-slecht (mg/l) ",
             "data": {},
-            "url": "http://185.224.89.110:8082/FewsWebServices/rest/fewspiservice/v1/timeseries?filterId=krw-wl-din-norm-OS&startTime=2020-01-01T00%3A00%3A00Z&endTime=2020-01-01T00%3A00%3A00Z&documentFormat=PI_JSON",
+            "url": "https://krw-nutrend.avi.deltares.nl/FewsWebServices/rest/fewspiservice/v1/timeseries?filterId=krw-wl-din-norm-OS&startTime=2020-01-01T00%3A00%3A00Z&endTime=2020-01-01T00%3A00%3A00Z&documentFormat=PI_JSON",
             "legendGraphicId": "DIN Norm Ontoereikend-Slecht (mg/l) NL",
             "charts": {}
           }
