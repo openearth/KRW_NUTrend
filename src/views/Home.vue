@@ -290,7 +290,6 @@
                                 'getChartDataToestandSelectedBasin', 'getChartDataToestandSelectedWaterManager', 
                                 'getChartDataToestandSelectedSubBasin' ]),
       setActivePanelIndex(event) {
-        console.log('listen-to-event', event)
         this.activePanelIndex = event
       },
       onResetBounds(event) {
