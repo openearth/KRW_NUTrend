@@ -58,6 +58,7 @@
         <map-layer
           :options="activeMapLayer"
         />
+        <map-controls v-if="activeMapLayer" :layer="activeMapLayer" />
       </div>
       <div v-if="activeDiffMapLayers.length">
         <map-layer
@@ -67,7 +68,7 @@
         /> 
       </div>
       <v-mapbox-scale-control :options="scaleBarOptions" />
-      <map-controls v-if="activeMapLayer" :layer="activeMapLayer" />
+      
       <div v-if="activeDiffMapLayers.length">
         <map-controls
           v-for="layer in activeDiffMapLayers"
