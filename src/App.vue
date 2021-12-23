@@ -59,18 +59,18 @@
           :options="activeMapLayer"
         />
       </div>
-      <div v-if="activeDiffMapLayers.length" :key="selectedParticle">
+      <div v-if="diffLayers.length">
         <map-layer
-          v-for="layer in activeDiffMapLayers"
+          v-for="layer in diffLayers"
           :key="layer.id" 
           :options="layer"
         /> 
       </div>
       <v-mapbox-scale-control :options="scaleBarOptions" />
       <map-controls v-if="activeMapLayer" :layer="activeMapLayer" />
-      <div v-if="activeDiffMapLayers.length">
+      <div v-if="diffLayers.length">
         <map-controls
-          v-for="layer in activeDiffMapLayers"
+          v-for="layer in diffLayers"
           :key="layer.id" 
           :layer="layer"
         /> 
@@ -121,7 +121,6 @@
         'Functionele en analytische cookies accepteren',
         'Alleen functionele cookies',
       ],
-      layers: [],
       scaleBarOptions: {
         maxWidth: 80,
         unit: 'metric',
@@ -131,7 +130,7 @@
       zoomBounds: [],
       reports: reports,
       diffLayers: [],
-      hardReload: false,
+      
     }),
     computed: {
       ...mapState('layers', [ 'activeMap', 'legend', 'timeOption', 'clickedPointBbox', 'selectedParticle' ]),
@@ -151,13 +150,8 @@
         this.zoomBounds  = this.layerBbox
       },
       activeDiffMapLayers() {
-        if (this.activeDiffMapLayers.length === 3) {
-          this.diffLayers = this.activeDiffMapLayers
-          this.hardReload = true
-        }else{
-          this.diffLayers = []
-          this.hardReload = false
-        }
+        this.diffLayers = []
+        setTimeout(this.loadDiffLayers, 2000)
       },
     },
     created() {
@@ -171,6 +165,9 @@
       },
       onResetBounds(event) {
         this.zoomBounds = event
+      },
+      loadDiffLayers() {
+        this.diffLayers = this.activeDiffMapLayers
       },
     },
   }
