@@ -41,8 +41,7 @@ export default {
       if (!selectedBasin && !selectedSubBasin && !selectedWaterManager && !selectedBodyOfWater) {
         return null
       }
-      console.log('in getter')
-      console.log(`${ selectedBasin }-${ selectedSubBasin }-${ selectedWaterManager }-${ selectedBodyOfWater }`)
+
       return `${ selectedBasin }-${ selectedSubBasin }-${ selectedWaterManager }-${ selectedBodyOfWater }`
     },
   },

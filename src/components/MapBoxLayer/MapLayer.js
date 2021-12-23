@@ -25,6 +25,7 @@ export default {
   },
   mounted() {
     // only execute when map is available and layer is not already initialized
+    console.log('layer that is loading', this.options.id)
     if (this.getMap()) {
       this.rerender()
       this.isInitialized = true
