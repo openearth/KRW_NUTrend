@@ -134,24 +134,26 @@
       onClick() {
         setTimeout(() => {
           this.checkIfPanelOpen()
-        }, 500)
+        }, 550)
       },
       checkIfPanelOpen() {
+        
+        //Check which panels are open and which are closed.
+        
         this.parentPanels = this.$refs['parentPanels']
         
         const childrentComponents = this.parentPanels.$children
         const children = childrentComponents.map(child => child.$el)
-        
-        
+        //Assume all panels are closed at the beginning
+        let closedPanels = children.length 
         children.forEach((child, index) => {
           const isActive  = this.$refs[`panel-${ index }`][0].isActive
           
-          let closedPanels = children.length 
           if (child.className !== 'v-expansion-panel') {
             closedPanels = children.length - 1
             this.setMap(isActive)
           }
-        
+    
           if (closedPanels === children.length) {
             this.setMap(false)
           }
@@ -163,9 +165,7 @@
         this.resetActiveMapLocation()
       },
       setMap(isActive) {
-        
         if (isActive) {
-        
           this.setActiveMap({ activeMap: this.activePanel })
           this.getLegendGraphic()
 
