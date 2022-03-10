@@ -55,13 +55,15 @@
           type: 'line',
           lineStyle: { width: 3 },
         },
-        seriesName: [ '3-jarig \nZomergemiddelde', 'Jaargemiddelde', 'Zomergemiddelde' ],
         seriesColors: [ 'black', 'white', 'blue' ],
       }
     },
     computed: {
       ...mapState('charts', [
         'data',
+      ]),
+      ...mapState('filters', [
+        'selectedParticle',
       ]),
       baseOptions() {
         return {
@@ -93,6 +95,14 @@
           },
         }
       },
+      seriesName() {
+        if (this.selectedParticle === 'din') {
+          return [ '3-jarig \nWintergemiddelde', 'Jaargemiddelde', 'Wintergemiddelde' ] 
+        }else{
+          return [ '3-jarig \nZomergemiddelde', 'Jaargemiddelde', 'Zomergemiddelde' ]
+        }
+      }, 
+
       lineChartData() {
         return this.data.find(data => data.name === 'lines')
       },

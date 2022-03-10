@@ -599,7 +599,91 @@
             "data": {},
             "url": null,
             "legendGraphicId": "Ntot Jaargemiddeld (mg/l) NL",
-            "charts": {}
+            "charts": {
+              "dots": [
+                {
+                  "filterId": "krw-wl-gr-ntot",
+                  "parameterIds": "Oordeel",
+                  "moduleInstanceIds": "SamenvoegenToetsing_Ntot",
+                  "qualifierIds": "BE_SGBPhuidig_toets",
+                  "startTime": "1980-01-01T00:00:00Z",
+                  "endTime": "2020-01-01T00:00:00Z",
+                  "timeStepId": "jaar"
+                }
+              ],
+              "lines": [
+                {
+                  "filterId": "krw-wl-gr-ntot",
+                  "parameterIds": "Ntot",
+                  "moduleInstanceIds": "BerekenNormen_Ntot",
+                  "qualifierIds": "WN_3",
+                  "startTime": "1980-01-01T00:00:00Z",
+                  "endTime": "2020-01-01T00:00:00Z",
+                  "timeStepId": "jaar",
+                  "showStatistics": "true"
+                },
+                {
+                  "filterId": "krw-wl-gr-ntot",
+                  "parameterIds": "Ntot",
+                  "moduleInstanceIds": "BerekenNormen_Ntot",
+                  "qualifierIds": "WN_4",
+                  "startTime": "1980-01-01T00:00:00Z",
+                  "endTime": "2020-01-01T00:00:00Z",
+                  "timeStepId": "jaar",
+                  "showStatistics": "true"
+                },
+                {
+                  "filterId": "krw-wl-gr-ntot",
+                  "parameterIds": "Ntot",
+                  "moduleInstanceIds": "BerekenNormen_Ntot",
+                  "qualifierIds": "WN_5",
+                  "startTime": "1980-01-01T00:00:00Z",
+                  "endTime": "2020-01-01T00:00:00Z",
+                  "timeStepId": "jaar",
+                  "showStatistics": "true"
+                },
+                {
+                  "filterId": "krw-wl-gr-ntot",
+                  "parameterIds": "Ntot",
+                  "moduleInstanceIds": "SamenvoegenMeetdata_Ntot",
+                  "qualifierIds": "BE_3jaargem",
+                  "startTime": "1980-01-01T00:00:00Z",
+                  "endTime": "2020-01-01T00:00:00Z",
+                  "timeStepId": "jaar",
+                  "showStatistics": "true"
+                },
+                {
+                  "filterId": "krw-wl-gr-ntot",
+                  "parameterIds": "Ntot",
+                  "moduleInstanceIds": "SamenvoegenMeetdata_Ntot",
+                  "qualifierIds": "BE_jaargem",
+                  "startTime": "1980-01-01T00:00:00Z",
+                  "endTime": "2020-01-01T00:00:00Z",
+                  "timeStepId": "een.jaar",
+                  "showStatistics": "true"
+                },
+                {
+                  "filterId": "krw-wl-gr-ntot",
+                  "parameterIds": "Ntot",
+                  "moduleInstanceIds": "SamenvoegenMeetdata_Ntot",
+                  "qualifierIds": "BE_summermean",
+                  "startTime": "1980-01-01T00:00:00Z",
+                  "endTime": "2020-01-01T00:00:00Z",
+                  "timeStepId": "zomer",
+                  "showStatistics": "true"
+                }
+              ],
+              "scatter": [
+                {
+                  "filterId": "krw-wl-gr-ntot",
+                  "parameterIds": "Ntot",
+                  "moduleInstanceIds": "Preproces_N_fracties",
+                  "qualifierIds": "HH_1",
+                  "startTime": "1980-01-01T00:00:00Z",
+                  "endTime": "2020-01-01T00:00:00Z"
+                }
+              ]
+            }
           },
           {
             "id": "krw-wl-ntot-norm-GM",
@@ -748,7 +832,91 @@
             "data": {},
             "url": null,
             "legendGraphicId": "Ptot Jaargemiddeld (mg/l) NL",
-            "charts": {}
+            "charts": {
+              "dots": [
+                {
+                  "filterId": "krw-wl-gr-ptot",
+                  "parameterIds": "Oordeel",
+                  "moduleInstanceIds": "SamenvoegenToetsing_Ptot",
+                  "qualifierIds": "BE_SGBPhuidig_toets",
+                  "startTime": "1980-01-01T00:00:00Z",
+                  "endTime": "2020-01-01T00:00:00Z",
+                  "timeStepId": "jaar"
+                }
+              ],
+              "lines": [
+                {
+                  "filterId": "krw-wl-gr-ptot",
+                  "parameterIds": "Ptot",
+                  "moduleInstanceIds": "BerekenNormen_Ptot",
+                  "qualifierIds": "WN_3",
+                  "startTime": "1980-01-01T00:00:00Z",
+                  "endTime": "2020-01-01T00:00:00Z",
+                  "timeStepId": "jaar",
+                  "showStatistics": "true"
+                },
+                {
+                  "filterId": "krw-wl-gr-ptot",
+                  "parameterIds": "Ptot",
+                  "moduleInstanceIds": "BerekenNormen_Ptot",
+                  "qualifierIds": "WN_4",
+                  "startTime": "1980-01-01T00:00:00Z",
+                  "endTime": "2020-01-01T00:00:00Z",
+                  "timeStepId": "jaar",
+                  "showStatistics": "true"
+                },
+                {
+                  "filterId": "krw-wl-gr-ptot",
+                  "parameterIds": "Ptot",
+                  "moduleInstanceIds": "BerekenNormen_Ptot",
+                  "qualifierIds": "WN_5",
+                  "startTime": "1980-01-01T00:00:00Z",
+                  "endTime": "2020-01-01T00:00:00Z",
+                  "timeStepId": "jaar",
+                  "showStatistics": "true"
+                },
+                {
+                  "filterId": "krw-wl-gr-ptot",
+                  "parameterIds": "Ptot",
+                  "moduleInstanceIds": "SamenvoegenMeetdata_Ptot",
+                  "qualifierIds": "BE_3jaargem",
+                  "startTime": "1980-01-01T00:00:00Z",
+                  "endTime": "2020-01-01T00:00:00Z",
+                  "timeStepId": "jaar",
+                  "showStatistics": "true"
+                },
+                {
+                  "filterId": "krw-wl-gr-ptot",
+                  "parameterIds": "Ptot",
+                  "moduleInstanceIds": "SamenvoegenMeetdata_Ptot",
+                  "qualifierIds": "BE_jaargem",
+                  "startTime": "1980-01-01T00:00:00Z",
+                  "endTime": "2020-01-01T00:00:00Z",
+                  "timeStepId": "een.jaar",
+                  "showStatistics": "true"
+                },
+                {
+                  "filterId": "krw-wl-gr-ptot",
+                  "parameterIds": "Ptot",
+                  "moduleInstanceIds": "SamenvoegenMeetdata_Ptot",
+                  "qualifierIds": "BE_summermean",
+                  "startTime": "1980-01-01T00:00:00Z",
+                  "endTime": "2020-01-01T00:00:00Z",
+                  "timeStepId": "zomer",
+                  "showStatistics": "true"
+                }
+              ],
+              "scatter": [
+                {
+                  "filterId": "krw-wl-gr-ptot",
+                  "parameterIds": "Ptot",
+                  "moduleInstanceIds": "Preproces_N_fracties",
+                  "qualifierIds": "HH_2",
+                  "startTime": "1980-01-01T00:00:00Z",
+                  "endTime": "2020-01-01T00:00:00Z"
+                }
+              ]
+            }
           },
           {
             "id": "krw-wl-ptot-norm-GM",
@@ -897,7 +1065,91 @@
             "data": {},
             "url": null,
             "legendGraphicId": "DIN Jaargemiddeld (mg/l) NL",
-            "charts": {}
+            "charts": {
+              "dots": [
+                {
+                  "filterId": "krw-wl-gr-din",
+                  "parameterIds": "Oordeel",
+                  "moduleInstanceIds": "SamenvoegenToetsing_DIN",
+                  "qualifierIds": "BE_SGBPhuidig_toets",
+                  "startTime": "1980-01-01T00:00:00Z",
+                  "endTime": "2020-01-01T00:00:00Z",
+                  "timeStepId": "jaar"
+                }
+              ],
+              "lines": [
+                {
+                  "filterId": "krw-wl-gr-din",
+                  "parameterIds": "DIN",
+                  "moduleInstanceIds": "BerekenNormen_DIN",
+                  "qualifierIds": "WN_3",
+                  "startTime": "1980-01-01T00:00:00Z",
+                  "endTime": "2020-01-01T00:00:00Z",
+                  "timeStepId": "jaar",
+                  "showStatistics": "true"
+                },
+                {
+                  "filterId": "krw-wl-gr-din",
+                  "parameterIds": "DIN",
+                  "moduleInstanceIds": "BerekenNormen_DIN",
+                  "qualifierIds": "WN_4",
+                  "startTime": "1980-01-01T00:00:00Z",
+                  "endTime": "2020-01-01T00:00:00Z",
+                  "timeStepId": "jaar",
+                  "showStatistics": "true"
+                },
+                {
+                  "filterId": "krw-wl-gr-din",
+                  "parameterIds": "DIN",
+                  "moduleInstanceIds": "BerekenNormen_DIN",
+                  "qualifierIds": "WN_5",
+                  "startTime": "1980-01-01T00:00:00Z",
+                  "endTime": "2020-01-01T00:00:00Z",
+                  "timeStepId": "jaar",
+                  "showStatistics": "true"
+                },
+                {
+                  "filterId": "krw-wl-gr-din",
+                  "parameterIds": "DIN",
+                  "moduleInstanceIds": "SamenvoegenMeetdata_DIN",
+                  "qualifierIds": "BE_3jaargem",
+                  "startTime": "1980-01-01T00:00:00Z",
+                  "endTime": "2020-01-01T00:00:00Z",
+                  "timeStepId": "jaar",
+                  "showStatistics": "true"
+                },
+                {
+                  "filterId": "krw-wl-gr-din",
+                  "parameterIds": "DIN",
+                  "moduleInstanceIds": "SamenvoegenMeetdata_DIN",
+                  "qualifierIds": "BE_jaargem",
+                  "startTime": "1980-01-01T00:00:00Z",
+                  "endTime": "2020-01-01T00:00:00Z",
+                  "timeStepId": "een.jaar",
+                  "showStatistics": "true"
+                },
+                {
+                  "filterId": "krw-wl-gr-din",
+                  "parameterIds": "DIN",
+                  "moduleInstanceIds": "SamenvoegenMeetdata_DIN",
+                  "qualifierIds": "BE_wintermean",
+                  "startTime": "1980-01-01T00:00:00Z",
+                  "endTime": "2020-01-01T00:00:00Z",
+                  "timeStepId": "winter",
+                  "showStatistics": "true"
+                }
+              ],
+              "scatter": [
+                {
+                  "filterId": "krw-wl-gr-din",
+                  "parameterIds": "DIN",
+                  "moduleInstanceIds": "Preproces_N_fracties",
+                  "qualifierIds": "HH_4",
+                  "startTime": "1980-01-01T00:00:00Z",
+                  "endTime": "2020-01-01T00:00:00Z"
+                }
+              ]
+            }
           },
           {
             "id": "krw-wl-din-norm-GM",
