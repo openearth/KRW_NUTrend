@@ -139,9 +139,12 @@ export default {
         return 
       }
       if(!activeService.hasOwnProperty('legendTitle')) {
-        return selectedTimestamp.slice(0,4)
+        if (activeService.hasOwnProperty('legendPrefix')){
+          return `${ activeService.legendPrefix } ${ selectedTimestamp.slice(0,4) }`
+        }else{
+          return selectedTimestamp.slice(0,4)
+        }
       }
-      
       const { legendTitle } = activeService
 
       return legendTitle

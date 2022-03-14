@@ -82,12 +82,6 @@
         
 
         this.setClickedPointBbox(coordinates)
-        if (this.selectedType === 'trends') {
-          this.createImageUrl()
-        } 
-        if (this.selectedType === 'concentration') {
-          this.getChartsData()
-        }
       },
       onMouseEnter(e) {
         this.map.getCanvas().style.cursor = 'pointer'

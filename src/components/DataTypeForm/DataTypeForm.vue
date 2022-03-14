@@ -116,7 +116,6 @@
         this.resetMap()
       },
       onSelectedYear(value) {
-        console.log('value', typeof value, 'selectedYear', typeof parseInt(this.selectedYear))
         if (value !== parseInt(this.selectedYear)) {
           const timestamp = getISOTimestamp(value)
           this.setSelectedTimestamp({ selectedTimestamp: timestamp })
@@ -125,7 +124,6 @@
         }
       },
       updateSelectedYear(value) {
-        console.log('updateSelectedYear', value)
         this.selectedYear = value
       },
       resetMap() {

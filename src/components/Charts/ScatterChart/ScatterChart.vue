@@ -127,40 +127,8 @@
         return series
       },
       formatStationNameToFit(name) {
-       
-        const subNames = name.split(',')
-
-        let stationName = ''
-        if (subNames.length === 1) {
-          if (name.length >18) {
-            stationName = `${ name.slice(0,18) }\n${ name.slice(18) }`
-          }else{
-            stationName = name
-          }
-          
-        }
-        if (subNames.length === 2) {
-          stationName = `${ subNames[0].trim() },${ subNames[1].trim() },`
-        }
-        if (subNames.length > 2) {
-          
-          subNames.forEach((subName, index) => {
-            if ((index%2===0) && !(index === (subNames.length -1))) {
-             
-              stationName = stationName + `\n${ subName.trim() },${ subNames[index+1] },`
-            }
-            if (index === (subNames.length -1) && (index%2===0)) {
-              stationName = stationName + `\n${ subName.trim() }`
-            }
-           
-          })
-        }
-        
-        if (stationName.charAt(stationName.length-1) === ',') {
-          stationName = stationName.slice(0, -1)
-        }
-        
-        return stationName
+        const wrappedName = name.replace(/(?![^\n]{1,32}$)([^\n]{1,32})\s/g, '$1\n')
+        return wrappedName
       },
     },
   }
