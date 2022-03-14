@@ -9,10 +9,11 @@
         "services": [
           {
             "id": "krw-wl-ntot-toets-lSGBP",
-            "name": "Toetsing stikstof aan normen toetsjaar 2020",
+            "name": "Toetsing stikstof (3-jarig zomergemiddelde) aan normen toetsjaar 2020",
             "data": {},
             "url": null,
             "legendGraphicId": "Ntot Toetsing t.o.v. normen laatste_SGBP (-) NL",
+            "legendPrefix": "Toetsjaar",
             "charts": {
               "NL_charts": [
                 {
@@ -147,10 +148,11 @@
         "services": [
           {
             "id": "krw-wl-ptot-toets-lSGBP",
-            "name": "Toetsing fosfor aan normen toetsjaar 2020",
+            "name": "Toetsing fosfor (3-jarig zomergemiddelde) aan normen toetsjaar 2020",
             "data": {},
             "url": null,
             "legendGraphicId": "Ptot Toetsing t.o.v. normen laatste_SGBP (-) NL",
+            "legendPrefix": "Toetsjaar",
             "charts": {
               "NL_charts": [
                 {
@@ -282,11 +284,12 @@
       },
       {
         "id": "din",
-        "name": "DIN (Anorganisch stikstof)",
+        "name": "DIN (Anorganisch stikstof) 2020",
         "services": [
           {
             "id": "krw-wl-din-toets-lSGBP",
-            "name": "Toetsing DIN aan normen toetsjaar ",
+            "name": "Toetsing DIN (3-jarig wintergemiddelde) aan normen toetsjaar ",
+            "legendPrefix": "Toetsjaar",
             "data": {},
             "url": null,
             "legendGraphicId": "DIN Toetsing t.o.v. normen laatste_SGBP (-) NL",
@@ -446,7 +449,7 @@
         "services": [
           {
             "id": "krw-ml-ptot",
-            "name": "Trendhelling (% per decennium)",
+            "name": "Trendhelling per monitoringslocatie (% per decennium)",
             "data": {},
             "url": "https://krw-nutrend.avi.deltares.nl/FewsWebServices/rest/fewspiservice/v1/timeseries?filterId=krw-ml-ptot&startTime=2020-01-01T00%3A00%3A00Z&endTime=2020-01-01T00%3A00%3A00Z&showThresholds=true&showStatistics=true&documentFormat=PI_JSON",
             "legendGraphicId": "Ptot Trendhelling (% per decennium) RWS",
@@ -462,7 +465,7 @@
         "services": [
           {
             "id": "krw-ml-din",
-            "name": "Trendhelling (% per decennium)",
+            "name": "Trendhelling per monitoringslocatie (% per decennium)",
             "data": {},
             "url": "https://krw-nutrend.avi.deltares.nl/FewsWebServices/rest/fewspiservice/v1/timeseries?filterId=krw-ml-din&startTime=2020-01-01T00%3A00%3A00Z&endTime=2020-01-01T00%3A00%3A00Z&showThresholds=true&showStatistics=true&documentFormat=PI_JSON",
             "legendGraphicId": "DIN Trendhelling (% per decennium) RWS",
@@ -488,6 +491,7 @@
             "data": {},
             "url": null,
             "legendGraphicId": "Ntot Zomergemiddeld (mg/l) NL",
+            "legendPrefix": "Zomergemiddelde",
             "charts": {
               "dots": [
                 {
@@ -721,6 +725,7 @@
             "data": {},
             "url": null,
             "legendGraphicId": "Ptot Zomergemiddeld (mg/l) NL",
+            "legendPrefix": "Zomergemiddelde",
             "charts": {
               "dots": [
                 {
@@ -954,6 +959,7 @@
             "data": {},
             "url": null,
             "legendGraphicId": "DIN Wintergemiddeld (mg/l) RWS",
+            "legendPrefix": "Wintergemiddelde",
             "charts": {
               "dots": [
                 {

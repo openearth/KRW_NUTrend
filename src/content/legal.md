@@ -14,8 +14,8 @@ De gebruikte meetdata zijn tot 2015 voor de regionale wateren afkomstig van het 
 
 Meer informatie over het tot stand komen van de gepresenteerde data is terug te vinden in de volgende rapporten:
 
-- [KRW-Toestand- en trendanalyse voor nutriënten](http://publications.deltares.nl/11203728_006.pdf) (van Duijnhoven et al, 2019)
-- [Toestand- en trendanalyse voor nutriënten op KRW-meetlocaties](http://publications.deltares.nl/1220098_015.pdf) (van Duijnhoven et al, 2015)
+- [KRW-Toestand- en trendanalyse 1990-2018 voor nutriënten](http://publications.deltares.nl/11203728_006.pdf)
+- [KRW-Toestand- en trendanalyse 1990-2013 voor nutriënten op KRW-meetlocaties](http://publications.deltares.nl/1220098_015.pdf)
 
 ##### Weergave waterlichamen
 De waterlichamen worden weergegeven als een puntlocatie. Dit is het geografische middelpunt van het betreffende waterlichaam.
