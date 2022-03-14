@@ -135,8 +135,9 @@
       hardReload: false,
     }),
     computed: {
-      ...mapState('layers', [ 'activeMap', 'legend', 'timeOption', 'clickedPointBbox' ]),
-      ...mapState('filters', [ 'selectedTimestamp' ]),
+      ...mapState('layers', [ 'activeMap', 'legend', 'timeOption', 'clickedPointBbox', 'activeMapLocation' ]),
+      ...mapState('charts', [ 'data' ]),
+      ...mapState('filters', [ 'selectedTimestamp', 'selectedType' ]),
       ...mapGetters('layers', [ 'activeMapLayer', 'activeDiffMapLayers', 'availableBaseMap', 'layerBbox', 'legendTitle' ]),
       showLegend() {
         return this.legend.length
@@ -160,6 +161,15 @@
           this.hardReload = false
         }
       },
+      activeMapLocation() {
+        //this.resetChartsData()
+        if (this.selectedType === 'concentration' && this.activeMapLocation) {
+          this.getChartsData()
+        } 
+        if (this.selectedType === 'trends' && this.activeMapLocation) {
+          this.createImageUrl()
+        } 
+      },
     },
     created() {
       this.legalText = legalMarkdown
@@ -167,6 +177,9 @@
     },
     methods: {
       ...mapActions('locations', [ 'getLocations' ]),
+      ...mapActions('charts', [
+        'getChartsData', 'resetChartsData','createImageUrl',
+      ]),
       onBaseLayerIsLoaded(){
         this.baseLayerIsAvailable = true
       },
