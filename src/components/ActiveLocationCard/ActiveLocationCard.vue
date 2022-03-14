@@ -101,4 +101,7 @@
     margin-bottom: 0;
   }
 
+  .v-card__title {
+    word-break: normal !important;
+  }
 </style>
