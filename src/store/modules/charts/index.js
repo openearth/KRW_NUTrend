@@ -129,7 +129,8 @@ export default {
       const { selectedParticle } = rootState['filters']
       const type = capitalizeString(selectedParticle)
 
-      const imageUrl =  `https://krw-nutrend.nl/site/data/trend-graph-per-location/Trend-${ locationId }%20-%20${ type }.jpg`
+      const imageUrl =  `https://krw-nutrend.avi.deltares.nl/data/Trend-${ locationId }%20-%20${ type }.jpg`
+     
       commit('SET_CHART_IMAGE', imageUrl)
     },
     getChartsData({ commit, rootState, rootGetters }) {
@@ -142,6 +143,7 @@ export default {
       const { activeMapLocation } = rootState.layers
      
       const { locationId } = activeMapLocation
+
       const  selectedMonitoringLocations = rootGetters['locations/selectedMonitoringLocations']
       const chartDataRequests = createChartRequests({ charts, locationId, selectedMonitoringLocations }) 
 
