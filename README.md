@@ -22,3 +22,5 @@ $ npm i
 ``` bash
 $ npm run dev
 ```
+
+- viewer contains data untill 2021
