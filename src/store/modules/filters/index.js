@@ -13,7 +13,7 @@ export default {
     selectedSubBasin: null,
     selectedType: null,
     selectedWaterManager: null,
-    selectedTimestamp: '2020-01-01T00:00:00Z', 
+    selectedTimestamp: '2021-01-01T00:00:00Z', 
   }),
 
   getters: {
