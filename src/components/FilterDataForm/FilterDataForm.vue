@@ -172,7 +172,8 @@
       ]),
       ...mapActions('layers',[ 'resetActiveMapLocation', 'setActiveMapLocation' ]),
 
-      ...mapActions('charts', [ 'getChartToestandAvailableWaterManagers', 'getChartDataToestandSelectedSubBasin', 'getChartDataToestandSelectedBasin' ]),
+      ...mapActions('charts', [ 'getChartToestandAvailableWaterManagers', 
+                                'getChartDataToestandSelectedSubBasin', 'getChartDataToestandSelectedBasin' ]),
 
       onResetAllChoices() {
         this.selectedBasin = null

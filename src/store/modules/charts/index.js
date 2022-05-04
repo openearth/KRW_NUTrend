@@ -98,6 +98,7 @@ export default {
     showToestandGraphSelectedBasinModal(state, getters, rootState, rootGetters) {
       const { showToestandGraphs } = getters
       const { selectedBasin, selectedWaterManager } = rootState.filters
+      
       if (showToestandGraphs && selectedBasin && !selectedWaterManager) {
         return true
       }
@@ -120,8 +121,6 @@ export default {
   },
 
   actions: {
-    //TODO in the payload there is no locationId anymore. Extract it similar with getChartData.
-    //TODO baseUrl load it from services.json
     createImageUrl({ commit, rootState }) {
       const { activeMapLocation } = rootState.layers
       const { locationId } = activeMapLocation
@@ -263,16 +262,17 @@ export default {
       context.commit('SET_TOESTAND_DATA_ALL_WATER_MANAGERS', chartData)
     },
     getChartDataToestandSelectedBasin(context) {
+      
       const { showToestandGraphSelectedBasinModal } = context.getters
+      
       if (!showToestandGraphSelectedBasinModal) {
         return
       }
+      
       const availableCharts = context.rootGetters['layers/availableCharts']
       const { SelectedBasin_charts } = availableCharts
       const { selectedBasin } = context.rootState.filters
       const requests = createToestandChartRequests(SelectedBasin_charts, null, [ selectedBasin ] )
-     
-      
       try {
         Promise.all(requests)
           .then((result) => mapToestandChartData(result))

@@ -123,6 +123,7 @@ export default {
     },
     availableCharts(state, getters) { 
       const { activeService } = getters
+      
       if (!activeService) {
         return 
       }
