@@ -271,6 +271,16 @@
           this.getChartDataToestandSelectedWaterManager()
         }
       },
+      showToestandGraphSelectedBasinModal() {
+        if (this.showToestandGraphSelectedBasinModal) {
+          this.getChartDataToestandSelectedBasin()
+        }
+      },
+      showToestandGraphAvailableWatermanagersModal() {
+        if (this.showToestandGraphAvailableWatermanagersModal) {
+          this.getChartToestandAvailableWaterManagers()
+        }
+      },
       selectedType(){
         this.panelsResetKey=`${ this.selectedType }-${ this.selectedParticle }`
       },

@@ -105,14 +105,24 @@
       ]),
       ...mapActions('charts', [
         'resetChartsData',
+        'getChartToestandAvailableWaterManagers', 
+        'getChartDataToestandSelectedSubBasin', 
+        'getChartDataToestandSelectedBasin',
       ]),
       onSelectedType(value) {
         this.setSelectedType({ selectedType: value })
         this.resetMap()
         this.resetChartsData()
+
       },
       onSelectedParticle(value) {
         this.setSelectedParticle({ selectedParticle: value })
+        //get chart data when particle changes
+        setTimeout(() => { //TODO: perhaps could be moved at home.vue
+          this.getChartDataToestandSelectedBasin()
+          this.getChartDataToestandSelectedSubBasin()
+          this.getChartToestandAvailableWaterManagers()
+        }, 2000)
         this.resetMap()
       },
       onSelectedYear(value) {
@@ -147,7 +157,6 @@
           .sort((a, b) => a.text.localeCompare(b.text))
         this.setSelectedParticle({ selectedParticle: this.particleList[2].value })
       },
-
     },
   }
 </script>
