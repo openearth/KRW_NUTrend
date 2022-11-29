@@ -9,7 +9,7 @@
         "services": [
           {
             "id": "krw-wl-ntot-toets-lSGBP",
-            "name": "Toetsing stikstof (3-jarig zomergemiddelde) aan normen toetsjaar 2021",
+            "name": "Toetsing stikstof (3-jarig zomergemiddelde) aan normen toetsjaar 2022",
             "data": {},
             "url": null,
             "legendGraphicId": "Ntot Toetsing t.o.v. normen laatste_SGBP (-) NL",
@@ -19,12 +19,12 @@
                 {
                   "plotId": "NL_aantal_N",
                   "startTime": "1991-01-01T00:00:00Z",
-                  "endTime": "2021-01-01T00:00:00Z"
+                  "endTime": "2022-01-01T00:00:00Z"
                 },
                 {
                   "plotId": "NL_perc_N",
                   "startTime": "1991-01-01T00:00:00Z",
-                  "endTime": "2021-01-01T00:00:00Z"
+                  "endTime": "2022-01-01T00:00:00Z"
                 }
               ],
               "Basins_charts": [
@@ -47,24 +47,24 @@
                 {
                   "plotId": "Stroomgebied_aantal_N",
                   "startTime": "1991-01-01T00:00:00Z",
-                  "endTime": "2021-01-01T00:00:00Z"
+                  "endTime": "2022-01-01T00:00:00Z"
                 },
                 {
                   "plotId": "Stroomgebied_perc_N",
                   "startTime": "1991-01-01T00:00:00Z",
-                  "endTime": "2021-01-01T00:00:00Z"
+                  "endTime": "2022-01-01T00:00:00Z"
                 }
               ],
               "SelectedSubBasin_charts": [
                 {
                   "plotId": "Deelstroomgebied_aantal_N",
                   "startTime": "1991-01-01T00:00:00Z",
-                  "endTime": "2021-01-01T00:00:00Z"
+                  "endTime": "2022-01-01T00:00:00Z"
                 },
                 {
                   "plotId": "Deelstroomgebied_perc_N",
                   "startTime": "1991-01-01T00:00:00Z",
-                  "endTime": "2021-01-01T00:00:00Z"
+                  "endTime": "2022-01-01T00:00:00Z"
                 }
               ],
               "AvailableWaterManagers_charts": [
@@ -87,54 +87,54 @@
                 {
                   "plotId": "Stroomgebied_{name}_aantal_N",
                   "startTime": "1991-01-01T00:00:00Z",
-                  "endTime": "2021-01-01T00:00:00Z"
+                  "endTime": "2022-01-01T00:00:00Z"
                 },
                 {
                   "plotId": "Stroomgebied_{name}_perc_N",
                   "startTime": "1991-01-01T00:00:00Z",
-                  "endTime": "2021-01-01T00:00:00Z"
+                  "endTime": "2022-01-01T00:00:00Z"
                 }
               ],
               "SelectedWaterManagerCase2_charts": [
                 {
                   "plotId": "Waterbeheerder_aantal_N",
                   "startTime": "1991-01-01T00:00:00Z",
-                  "endTime": "2021-01-01T00:00:00Z"
+                  "endTime": "2022-01-01T00:00:00Z"
                 },
                 {
                   "plotId": "Waterbeheerder_perc_N",
                   "startTime": "1991-01-01T00:00:00Z",
-                  "endTime": "2021-01-01T00:00:00Z"
+                  "endTime": "2022-01-01T00:00:00Z"
                 }
               ]
             },
-            "downloadUrl": "https://krw-nutrend.avi.deltares.nl/FewsWebServices/rest/fewspiservice/v1/timeseries?filterId=krw-wl-ntot-toets-lSGBP&startTime=1991-01-01T00:00:00Z&endTime=2021-01-01T00:00:00Z&documentFormat=PI_JSON"
+            "downloadUrl": "https://krw-nutrend.avi.deltares.nl/FewsWebServices/rest/fewspiservice/v1/timeseries?filterId=krw-wl-ntot-toets-lSGBP&startTime=1991-01-01T00:00:00Z&endTime=2022-01-01T00:00:00Z&documentFormat=PI_JSON"
           },
           {
             "id": "krw-wl-ntot-difference-2009",
             "name": "Verschilkaart toetsing stikstof actueel vs. toetsjaar 2009",
             "data": {},
-            "url": "https://krw-nutrend.avi.deltares.nl/FewsWebServices/rest/fewspiservice/v1/timeseries?filterId=krw-wl-ntot-toets-lSGBP&startTime=2009-01-01T00%3A00%3A00Z&endTime=2021-01-01T00%3A00%3A00Z&showThresholds=true&showStatistics=true&documentFormat=PI_JSON",
+            "url": "https://krw-nutrend.avi.deltares.nl/FewsWebServices/rest/fewspiservice/v1/timeseries?filterId=krw-wl-ntot-toets-lSGBP&startTime=2009-01-01T00%3A00%3A00Z&endTime=2022-01-01T00%3A00%3A00Z&showThresholds=true&showStatistics=true&documentFormat=PI_JSON",
             "legendGraphicId": "Ntot Toetsing t.o.v. normen laatste_SGBP (-) NL",
             "differenceMap": true,
             "charts": {},
             "compareYear": "2009",
-            "legendTitle": "2009/2021"
+            "legendTitle": "2009/2022"
           },
           {
             "id": "krw-wl-ntot-difference-2015",
             "name": "Verschilkaart toetsing stikstof actueel vs. toetsjaar 2015",
             "data": {},
-            "url": "https://krw-nutrend.avi.deltares.nl/FewsWebServices/rest/fewspiservice/v1/timeseries?filterId=krw-wl-ntot-toets-lSGBP&startTime=2015-01-01T00%3A00%3A00Z&endTime=2021-01-01T00%3A00%3A00Z&showThresholds=true&showStatistics=true&documentFormat=PI_JSON",
+            "url": "https://krw-nutrend.avi.deltares.nl/FewsWebServices/rest/fewspiservice/v1/timeseries?filterId=krw-wl-ntot-toets-lSGBP&startTime=2015-01-01T00%3A00%3A00Z&endTime=2022-01-01T00%3A00%3A00Z&showThresholds=true&showStatistics=true&documentFormat=PI_JSON",
             "legendGraphicId": "Ntot Toetsing t.o.v. normen laatste_SGBP (-) NL",
             "differenceMap": true,
             "charts": {},
             "compareYear": "2015",
-            "legendTitle": "2015/2021"
+            "legendTitle": "2015/2022"
           },
           {
             "id": "krw-wl-ntot-toets-doelgat",
-            "name": "Doelgat (afstand tot de norm 'goed') 2021",
+            "name": "Doelgat (afstand tot de norm 'goed') 2022",
             "data": {},
             "url": null,
             "legendGraphicId": "Ntot Verschil t.o.v. de huidige norm Goed (-; doelgat) NL",
@@ -148,7 +148,7 @@
         "services": [
           {
             "id": "krw-wl-ptot-toets-lSGBP",
-            "name": "Toetsing fosfor (3-jarig zomergemiddelde) aan normen toetsjaar 2021",
+            "name": "Toetsing fosfor (3-jarig zomergemiddelde) aan normen toetsjaar 2022",
             "data": {},
             "url": null,
             "legendGraphicId": "Ptot Toetsing t.o.v. normen laatste_SGBP (-) NL",
@@ -158,12 +158,12 @@
                 {
                   "plotId": "NL_aantal_P",
                   "startTime": "1991-01-01T00:00:00Z",
-                  "endTime": "2021-01-01T00:00:00Z"
+                  "endTime": "2022-01-01T00:00:00Z"
                 },
                 {
                   "plotId": "NL_perc_P",
                   "startTime": "1991-01-01T00:00:00Z",
-                  "endTime": "2021-01-01T00:00:00Z"
+                  "endTime": "2022-01-01T00:00:00Z"
                 }
               ],
               "Basins_charts": [
@@ -186,24 +186,24 @@
                 {
                   "plotId": "Stroomgebied_aantal_P",
                   "startTime": "1991-01-01T00:00:00Z",
-                  "endTime": "2021-01-01T00:00:00Z"
+                  "endTime": "2022-01-01T00:00:00Z"
                 },
                 {
                   "plotId": "Stroomgebied_perc_P",
                   "startTime": "1991-01-01T00:00:00Z",
-                  "endTime": "2021-01-01T00:00:00Z"
+                  "endTime": "2022-01-01T00:00:00Z"
                 }
               ],
               "SelectedSubBasin_charts": [
                 {
                   "plotId": "Deelstroomgebied_aantal_P",
                   "startTime": "1991-01-01T00:00:00Z",
-                  "endTime": "2021-01-01T00:00:00Z"
+                  "endTime": "2022-01-01T00:00:00Z"
                 },
                 {
                   "plotId": "Deelstroomgebied_perc_P",
                   "startTime": "1991-01-01T00:00:00Z",
-                  "endTime": "2021-01-01T00:00:00Z"
+                  "endTime": "2022-01-01T00:00:00Z"
                 }
               ],
               "AvailableWaterManagers_charts": [
@@ -226,50 +226,50 @@
                 {
                   "plotId": "Stroomgebied_{name}_aantal_P",
                   "startTime": "1991-01-01T00:00:00Z",
-                  "endTime": "2021-01-01T00:00:00Z"
+                  "endTime": "2022-01-01T00:00:00Z"
                 },
                 {
                   "plotId": "Stroomgebied_{name}_perc_P",
                   "startTime": "1991-01-01T00:00:00Z",
-                  "endTime": "2021-01-01T00:00:00Z"
+                  "endTime": "2022-01-01T00:00:00Z"
                 }
               ],
               "SelectedWaterManagerCase2_charts": [
                 {
                   "plotId": "Waterbeheerder_aantal_P",
                   "startTime": "1991-01-01T00:00:00Z",
-                  "endTime": "2021-01-01T00:00:00Z"
+                  "endTime": "2022-01-01T00:00:00Z"
                 },
                 {
                   "plotId": "Waterbeheerder_perc_P",
                   "startTime": "1991-01-01T00:00:00Z",
-                  "endTime": "2021-01-01T00:00:00Z"
+                  "endTime": "2022-01-01T00:00:00Z"
                 }
               ]
             },
-            "downloadUrl": "https://krw-nutrend.avi.deltares.nl/FewsWebServices/rest/fewspiservice/v1/timeseries?filterId=krw-wl-ptot-toets-lSGBP&startTime=1991-01-01T00:00:00Z&endTime=2021-01-01T00:00:00Z&documentFormat=PI_JSON"
+            "downloadUrl": "https://krw-nutrend.avi.deltares.nl/FewsWebServices/rest/fewspiservice/v1/timeseries?filterId=krw-wl-ptot-toets-lSGBP&startTime=1991-01-01T00:00:00Z&endTime=2022-01-01T00:00:00Z&documentFormat=PI_JSON"
           },
           {
             "id": "krw-wl-ptot-difference-2009",
             "name": "Verschilkaart toetsing fosfor actueel vs. toetsjaar 2009",
             "data": {},
-            "url": "https://krw-nutrend.avi.deltares.nl/FewsWebServices/rest/fewspiservice/v1/timeseries?filterId=krw-wl-ptot-toets-lSGBP&startTime=2009-01-01T00%3A00%3A00Z&endTime=2021-01-01T00%3A00%3A00Z&showThresholds=true&showStatistics=true&documentFormat=PI_JSON",
+            "url": "https://krw-nutrend.avi.deltares.nl/FewsWebServices/rest/fewspiservice/v1/timeseries?filterId=krw-wl-ptot-toets-lSGBP&startTime=2009-01-01T00%3A00%3A00Z&endTime=2022-01-01T00%3A00%3A00Z&showThresholds=true&showStatistics=true&documentFormat=PI_JSON",
             "legendGraphicId": "Ptot Toetsing t.o.v. normen laatste_SGBP (-) NL",
             "differenceMap": true,
             "charts": {},
             "compareYear": "2009",
-            "legendTitle": "2009/2021"
+            "legendTitle": "2009/2022"
           },
           {
             "id": "krw-wl-ptot-difference-2015",
             "name": "Verschilkaart toetsing fosfor actueel vs. toetsjaar 2015",
             "data": {},
-            "url": "https://krw-nutrend.avi.deltares.nl/FewsWebServices/rest/fewspiservice/v1/timeseries?filterId=krw-wl-ptot-toets-lSGBP&startTime=2015-01-01T00%3A00%3A00Z&endTime=2021-01-01T00%3A00%3A00Z&showThresholds=true&showStatistics=true&documentFormat=PI_JSON",
+            "url": "https://krw-nutrend.avi.deltares.nl/FewsWebServices/rest/fewspiservice/v1/timeseries?filterId=krw-wl-ptot-toets-lSGBP&startTime=2015-01-01T00%3A00%3A00Z&endTime=2022-01-01T00%3A00%3A00Z&showThresholds=true&showStatistics=true&documentFormat=PI_JSON",
             "legendGraphicId": "Ptot Toetsing t.o.v. normen laatste_SGBP (-) NL",
             "differenceMap": true,
             "charts": {},
             "compareYear": "2015",
-            "legendTitle": "2015/2021"
+            "legendTitle": "2015/2022"
           },
           {
             "id": "krw-wl-ptot-toets-doelgat",
@@ -284,7 +284,7 @@
       },
       {
         "id": "din",
-        "name": "DIN (Anorganisch stikstof) 2021",
+        "name": "DIN (Anorganisch stikstof) 2022",
         "services": [
           {
             "id": "krw-wl-din-toets-lSGBP",
@@ -298,12 +298,12 @@
                 {
                   "plotId": "NL_aantal_DIN",
                   "startTime": "1991-01-01T00:00:00Z",
-                  "endTime": "2021-01-01T00:00:00Z"
+                  "endTime": "2022-01-01T00:00:00Z"
                 },
                 {
                   "plotId": "NL_perc_DIN",
                   "startTime": "1991-01-01T00:00:00Z",
-                  "endTime": "2021-01-01T00:00:00Z"
+                  "endTime": "2022-01-01T00:00:00Z"
                 }
               ],
               "Basins_charts": [
@@ -326,24 +326,24 @@
                 {
                   "plotId": "Stroomgebied_aantal_DIN",
                   "startTime": "1991-01-01T00:00:00Z",
-                  "endTime": "2021-01-01T00:00:00Z"
+                  "endTime": "2022-01-01T00:00:00Z"
                 },
                 {
                   "plotId": "Stroomgebied_perc_DIN",
                   "startTime": "1991-01-01T00:00:00Z",
-                  "endTime": "2021-01-01T00:00:00Z"
+                  "endTime": "2022-01-01T00:00:00Z"
                 }
               ],
               "SelectedSubBasin_charts": [
                 {
                   "plotId": "Deelstroomgebied_aantal_DIN",
                   "startTime": "1991-01-01T00:00:00Z",
-                  "endTime": "2021-01-01T00:00:00Z"
+                  "endTime": "2022-01-01T00:00:00Z"
                 },
                 {
                   "plotId": "Deelstroomgebied_perc_DIN",
                   "startTime": "1991-01-01T00:00:00Z",
-                  "endTime": "2021-01-01T00:00:00Z"
+                  "endTime": "2022-01-01T00:00:00Z"
                 }
               ],
               "AvailableWaterManagers_charts": [
@@ -366,50 +366,50 @@
                 {
                   "plotId": "Stroomgebied_{name}_aantal_DIN",
                   "startTime": "1991-01-01T00:00:00Z",
-                  "endTime": "2021-01-01T00:00:00Z"
+                  "endTime": "2022-01-01T00:00:00Z"
                 },
                 {
                   "plotId": "Stroomgebied_{name}_perc_DIN",
                   "startTime": "1991-01-01T00:00:00Z",
-                  "endTime": "2021-01-01T00:00:00Z"
+                  "endTime": "2022-01-01T00:00:00Z"
                 }
               ],
               "SelectedWaterManagerCase2_charts": [
                 {
                   "plotId": "Waterbeheerder_aantal_DIN",
                   "startTime": "1991-01-01T00:00:00Z",
-                  "endTime": "2021-01-01T00:00:00Z"
+                  "endTime": "2022-01-01T00:00:00Z"
                 },
                 {
                   "plotId": "Waterbeheerder_perc_DIN",
                   "startTime": "1991-01-01T00:00:00Z",
-                  "endTime": "2021-01-01T00:00:00Z"
+                  "endTime": "2022-01-01T00:00:00Z"
                 }
               ]
             },
-            "downloadUrl": "https://krw-nutrend.avi.deltares.nl/FewsWebServices/rest/fewspiservice/v1/timeseries?filterId=krw-wl-din-toets-lSGBP&startTime=1991-01-01T00:00:00Z&endTime=2021-01-01T00:00:00Z&documentFormat=PI_JSON"
+            "downloadUrl": "https://krw-nutrend.avi.deltares.nl/FewsWebServices/rest/fewspiservice/v1/timeseries?filterId=krw-wl-din-toets-lSGBP&startTime=1991-01-01T00:00:00Z&endTime=2022-01-01T00:00:00Z&documentFormat=PI_JSON"
           },
           {
             "id": "krw-wl-din-difference-2009",
             "name": "Verschilkaart toetsing DIN actueel vs. toetsjaar 2009",
             "data": {},
-            "url": "https://krw-nutrend.avi.deltares.nl/FewsWebServices/rest/fewspiservice/v1/timeseries?filterId=krw-wl-din-toets-lSGBP&startTime=2009-01-01T00%3A00%3A00Z&endTime=2021-01-01T00%3A00%3A00Z&showThresholds=true&showStatistics=true&documentFormat=PI_JSON",
+            "url": "https://krw-nutrend.avi.deltares.nl/FewsWebServices/rest/fewspiservice/v1/timeseries?filterId=krw-wl-din-toets-lSGBP&startTime=2009-01-01T00%3A00%3A00Z&endTime=2022-01-01T00%3A00%3A00Z&showThresholds=true&showStatistics=true&documentFormat=PI_JSON",
             "legendGraphicId": "DIN Toetsing t.o.v. normen laatste_SGBP (-) NL",
             "differenceMap": true,
             "charts": {},
             "compareYear": "2009",
-            "legendTitle": "2009/2021"
+            "legendTitle": "2009/2022"
           },
           {
             "id": "krw-wl-din-difference-2015",
             "name": "Verschilkaart toetsing DIN actueel vs. toetsjaar 2015",
             "data": {},
-            "url": "https://krw-nutrend.avi.deltares.nl/FewsWebServices/rest/fewspiservice/v1/timeseries?filterId=krw-wl-din-toets-lSGBP&startTime=2015-01-01T00%3A00%3A00Z&endTime=2021-01-01T00%3A00%3A00Z&showThresholds=true&showStatistics=true&documentFormat=PI_JSON",
+            "url": "https://krw-nutrend.avi.deltares.nl/FewsWebServices/rest/fewspiservice/v1/timeseries?filterId=krw-wl-din-toets-lSGBP&startTime=2015-01-01T00%3A00%3A00Z&endTime=2022-01-01T00%3A00%3A00Z&showThresholds=true&showStatistics=true&documentFormat=PI_JSON",
             "legendGraphicId": "DIN Toetsing t.o.v. normen laatste_SGBP (-) NL",
             "differenceMap": true,
             "charts": {},
             "compareYear": "2015",
-            "legendTitle": "2015/2021"
+            "legendTitle": "2015/2022"
           },
           {
             "id": "krw-wl-din-toets-doelgat",
@@ -435,7 +435,7 @@
             "id": "krw-ml-ntot",
             "name": "Trendhelling (% per decennium)",
             "data": {},
-            "url": "https://krw-nutrend.avi.deltares.nl/FewsWebServices/rest/fewspiservice/v1/timeseries?filterId=krw-ml-ntot&startTime=2021-01-01T00%3A00%3A00Z&endTime=2021-01-01T00%3A00%3A00Z&showThresholds=true&showStatistics=true&documentFormat=PI_JSON",
+            "url": "https://krw-nutrend.avi.deltares.nl/FewsWebServices/rest/fewspiservice/v1/timeseries?filterId=krw-ml-ntot&startTime=2022-01-01T00%3A00%3A00Z&endTime=2022-01-01T00%3A00%3A00Z&showThresholds=true&showStatistics=true&documentFormat=PI_JSON",
             "legendGraphicId": "Ntot Trendhelling (% per decennium) RWS",
             "charts": {
               "graphUrl": "https: //krw-nutrend.nl/site/data/trend-graph-per-location/Trend"
@@ -451,7 +451,7 @@
             "id": "krw-ml-ptot",
             "name": "Trendhelling per monitoringslocatie (% per decennium)",
             "data": {},
-            "url": "https://krw-nutrend.avi.deltares.nl/FewsWebServices/rest/fewspiservice/v1/timeseries?filterId=krw-ml-ptot&startTime=2021-01-01T00%3A00%3A00Z&endTime=2021-01-01T00%3A00%3A00Z&showThresholds=true&showStatistics=true&documentFormat=PI_JSON",
+            "url": "https://krw-nutrend.avi.deltares.nl/FewsWebServices/rest/fewspiservice/v1/timeseries?filterId=krw-ml-ptot&startTime=2022-01-01T00%3A00%3A00Z&endTime=2022-01-01T00%3A00%3A00Z&showThresholds=true&showStatistics=true&documentFormat=PI_JSON",
             "legendGraphicId": "Ptot Trendhelling (% per decennium) RWS",
             "charts": {
               "graphUrl": "https: //krw-nutrend.nl/site/data/trend-graph-per-location/Trend"
@@ -467,7 +467,7 @@
             "id": "krw-ml-din",
             "name": "Trendhelling per monitoringslocatie (% per decennium)",
             "data": {},
-            "url": "https://krw-nutrend.avi.deltares.nl/FewsWebServices/rest/fewspiservice/v1/timeseries?filterId=krw-ml-din&startTime=2021-01-01T00%3A00%3A00Z&endTime=2021-01-01T00%3A00%3A00Z&showThresholds=true&showStatistics=true&documentFormat=PI_JSON",
+            "url": "https://krw-nutrend.avi.deltares.nl/FewsWebServices/rest/fewspiservice/v1/timeseries?filterId=krw-ml-din&startTime=2022-01-01T00%3A00%3A00Z&endTime=2022-01-01T00%3A00%3A00Z&showThresholds=true&showStatistics=true&documentFormat=PI_JSON",
             "legendGraphicId": "DIN Trendhelling (% per decennium) RWS",
             "charts": {
               "graphUrl": "https: //krw-nutrend.nl/site/data/trend-graph-per-location/Trend"
@@ -500,7 +500,7 @@
                   "moduleInstanceIds": "SamenvoegenToetsing_Ntot",
                   "qualifierIds": "BE_SGBPhuidig_toets",
                   "startTime": "1980-01-01T00:00:00Z",
-                  "endTime": "2021-01-01T00:00:00Z",
+                  "endTime": "2022-01-01T00:00:00Z",
                   "timeStepId": "jaar"
                 }
               ],
@@ -511,7 +511,7 @@
                   "moduleInstanceIds": "BerekenNormen_Ntot",
                   "qualifierIds": "WN_3",
                   "startTime": "1980-01-01T00:00:00Z",
-                  "endTime": "2021-01-01T00:00:00Z",
+                  "endTime": "2022-01-01T00:00:00Z",
                   "timeStepId": "jaar",
                   "showStatistics": "true"
                 },
@@ -521,7 +521,7 @@
                   "moduleInstanceIds": "BerekenNormen_Ntot",
                   "qualifierIds": "WN_4",
                   "startTime": "1980-01-01T00:00:00Z",
-                  "endTime": "2021-01-01T00:00:00Z",
+                  "endTime": "2022-01-01T00:00:00Z",
                   "timeStepId": "jaar",
                   "showStatistics": "true"
                 },
@@ -531,7 +531,7 @@
                   "moduleInstanceIds": "BerekenNormen_Ntot",
                   "qualifierIds": "WN_5",
                   "startTime": "1980-01-01T00:00:00Z",
-                  "endTime": "2021-01-01T00:00:00Z",
+                  "endTime": "2022-01-01T00:00:00Z",
                   "timeStepId": "jaar",
                   "showStatistics": "true"
                 },
@@ -541,7 +541,7 @@
                   "moduleInstanceIds": "SamenvoegenMeetdata_Ntot",
                   "qualifierIds": "BE_3jaargem",
                   "startTime": "1980-01-01T00:00:00Z",
-                  "endTime": "2021-01-01T00:00:00Z",
+                  "endTime": "2022-01-01T00:00:00Z",
                   "timeStepId": "jaar",
                   "showStatistics": "true"
                 },
@@ -551,7 +551,7 @@
                   "moduleInstanceIds": "SamenvoegenMeetdata_Ntot",
                   "qualifierIds": "BE_jaargem",
                   "startTime": "1980-01-01T00:00:00Z",
-                  "endTime": "2021-01-01T00:00:00Z",
+                  "endTime": "2022-01-01T00:00:00Z",
                   "timeStepId": "een.jaar",
                   "showStatistics": "true"
                 },
@@ -561,7 +561,7 @@
                   "moduleInstanceIds": "SamenvoegenMeetdata_Ntot",
                   "qualifierIds": "BE_summermean",
                   "startTime": "1980-01-01T00:00:00Z",
-                  "endTime": "2021-01-01T00:00:00Z",
+                  "endTime": "2022-01-01T00:00:00Z",
                   "timeStepId": "zomer",
                   "showStatistics": "true"
                 }
@@ -573,17 +573,17 @@
                   "moduleInstanceIds": "Preproces_N_fracties",
                   "qualifierIds": "HH_1",
                   "startTime": "1980-01-01T00:00:00Z",
-                  "endTime": "2021-01-01T00:00:00Z"
+                  "endTime": "2022-01-01T00:00:00Z"
                 }
               ]
             },
-            "downloadUrl": "https://krw-nutrend.avi.deltares.nl/FewsWebServices/rest/fewspiservice/v1/timeseries?filterId=krw-wl-ntot-zomgem-basis&startTime=1991-01-01T00:00:00Z&endTime=2021-01-01T00:00:00Z&documentFormat=PI_JSON"
+            "downloadUrl": "https://krw-nutrend.avi.deltares.nl/FewsWebServices/rest/fewspiservice/v1/timeseries?filterId=krw-wl-ntot-zomgem-basis&startTime=1991-01-01T00:00:00Z&endTime=2022-01-01T00:00:00Z&documentFormat=PI_JSON"
           },
           {
             "id": "krw-wl-ntot-zomgem-vvSGBP",
             "name": "Verschilkaart actueel t.o.v. toetsjaar 2009 (3 voorgaande jaren, mg/l)",
             "data": {},
-            "url": "https://krw-nutrend.avi.deltares.nl/FewsWebServices/rest/fewspiservice/v1/timeseries?filterId=krw-wl-ntot-zomgem-vvSGBP&startTime=2021-01-01T00%3A00%3A00Z&endTime=2021-01-01T00%3A00%3A00Z&documentFormat=PI_JSON",
+            "url": "https://krw-nutrend.avi.deltares.nl/FewsWebServices/rest/fewspiservice/v1/timeseries?filterId=krw-wl-ntot-zomgem-vvSGBP&startTime=2022-01-01T00%3A00%3A00Z&endTime=2022-01-01T00%3A00%3A00Z&documentFormat=PI_JSON",
             "legendGraphicId": "Ntot Verschilkaart actueel t.o.v. voorlaatste_SGBP (mg/l) NL",
             "charts": {},
             "legendTitle": ""
@@ -592,7 +592,7 @@
             "id": "krw-wl-ntot-zomgem-vlSGBP",
             "name": "Verschilkaart actueel t.o.v. toetsjaar 2015 (3 voorgaande jaren, mg/l)",
             "data": {},
-            "url": "https://krw-nutrend.avi.deltares.nl/FewsWebServices/rest/fewspiservice/v1/timeseries?filterId=krw-wl-ntot-zomgem-vlSGBP&startTime=2021-01-01T00%3A00%3A00Z&endTime=2021-01-01T00%3A00%3A00Z&documentFormat=PI_JSON",
+            "url": "https://krw-nutrend.avi.deltares.nl/FewsWebServices/rest/fewspiservice/v1/timeseries?filterId=krw-wl-ntot-zomgem-vlSGBP&startTime=2022-01-01T00%3A00%3A00Z&endTime=2022-01-01T00%3A00%3A00Z&documentFormat=PI_JSON",
             "legendGraphicId": "Ntot Verschilkaart actueel t.o.v. laatste_SGBP (mg/l) NL",
             "charts": {},
             "legendTitle": ""
@@ -611,7 +611,7 @@
                   "moduleInstanceIds": "SamenvoegenToetsing_Ntot",
                   "qualifierIds": "BE_SGBPhuidig_toets",
                   "startTime": "1980-01-01T00:00:00Z",
-                  "endTime": "2021-01-01T00:00:00Z",
+                  "endTime": "2022-01-01T00:00:00Z",
                   "timeStepId": "jaar"
                 }
               ],
@@ -622,7 +622,7 @@
                   "moduleInstanceIds": "BerekenNormen_Ntot",
                   "qualifierIds": "WN_3",
                   "startTime": "1980-01-01T00:00:00Z",
-                  "endTime": "2021-01-01T00:00:00Z",
+                  "endTime": "2022-01-01T00:00:00Z",
                   "timeStepId": "jaar",
                   "showStatistics": "true"
                 },
@@ -632,7 +632,7 @@
                   "moduleInstanceIds": "BerekenNormen_Ntot",
                   "qualifierIds": "WN_4",
                   "startTime": "1980-01-01T00:00:00Z",
-                  "endTime": "2021-01-01T00:00:00Z",
+                  "endTime": "2022-01-01T00:00:00Z",
                   "timeStepId": "jaar",
                   "showStatistics": "true"
                 },
@@ -642,7 +642,7 @@
                   "moduleInstanceIds": "BerekenNormen_Ntot",
                   "qualifierIds": "WN_5",
                   "startTime": "1980-01-01T00:00:00Z",
-                  "endTime": "2021-01-01T00:00:00Z",
+                  "endTime": "2022-01-01T00:00:00Z",
                   "timeStepId": "jaar",
                   "showStatistics": "true"
                 },
@@ -652,7 +652,7 @@
                   "moduleInstanceIds": "SamenvoegenMeetdata_Ntot",
                   "qualifierIds": "BE_3jaargem",
                   "startTime": "1980-01-01T00:00:00Z",
-                  "endTime": "2021-01-01T00:00:00Z",
+                  "endTime": "2022-01-01T00:00:00Z",
                   "timeStepId": "jaar",
                   "showStatistics": "true"
                 },
@@ -662,7 +662,7 @@
                   "moduleInstanceIds": "SamenvoegenMeetdata_Ntot",
                   "qualifierIds": "BE_jaargem",
                   "startTime": "1980-01-01T00:00:00Z",
-                  "endTime": "2021-01-01T00:00:00Z",
+                  "endTime": "2022-01-01T00:00:00Z",
                   "timeStepId": "een.jaar",
                   "showStatistics": "true"
                 },
@@ -672,7 +672,7 @@
                   "moduleInstanceIds": "SamenvoegenMeetdata_Ntot",
                   "qualifierIds": "BE_summermean",
                   "startTime": "1980-01-01T00:00:00Z",
-                  "endTime": "2021-01-01T00:00:00Z",
+                  "endTime": "2022-01-01T00:00:00Z",
                   "timeStepId": "zomer",
                   "showStatistics": "true"
                 }
@@ -684,7 +684,7 @@
                   "moduleInstanceIds": "Preproces_N_fracties",
                   "qualifierIds": "HH_1",
                   "startTime": "1980-01-01T00:00:00Z",
-                  "endTime": "2021-01-01T00:00:00Z"
+                  "endTime": "2022-01-01T00:00:00Z"
                 }
               ]
             }
@@ -693,7 +693,7 @@
             "id": "krw-wl-ntot-norm-GM",
             "name": "Normklassegrens goed-matig (mg/l) ",
             "data": {},
-            "url": "https://krw-nutrend.avi.deltares.nl/FewsWebServices/rest/fewspiservice/v1/timeseries?filterId=krw-wl-ntot-norm-GM&startTime=2021-01-01T00%3A00%3A00Z&endTime=2021-01-01T00%3A00%3A00Z&documentFormat=PI_JSON",
+            "url": "https://krw-nutrend.avi.deltares.nl/FewsWebServices/rest/fewspiservice/v1/timeseries?filterId=krw-wl-ntot-norm-GM&startTime=2022-01-01T00%3A00%3A00Z&endTime=2022-01-01T00%3A00%3A00Z&documentFormat=PI_JSON",
             "legendGraphicId": "Ntot Norm Goed-Matig (mg/l) NL",
             "charts": {}
           },
@@ -701,7 +701,7 @@
             "id": "krw-wl-ntot-norm-MO",
             "name": "Normklassegrens matig-ontoereikend (mg/l) ",
             "data": {},
-            "url": "https://krw-nutrend.avi.deltares.nl/FewsWebServices/rest/fewspiservice/v1/timeseries?filterId=krw-wl-ntot-norm-MO&startTime=2021-01-01T00%3A00%3A00Z&endTime=2021-01-01T00%3A00%3A00Z&documentFormat=PI_JSON",
+            "url": "https://krw-nutrend.avi.deltares.nl/FewsWebServices/rest/fewspiservice/v1/timeseries?filterId=krw-wl-ntot-norm-MO&startTime=2022-01-01T00%3A00%3A00Z&endTime=2022-01-01T00%3A00%3A00Z&documentFormat=PI_JSON",
             "legendGraphicId": "Ntot Norm Matig-Ontoereikend (mg/l) NL",
             "charts": {}
           },
@@ -709,7 +709,7 @@
             "id": "krw-wl-ntot-norm-OS",
             "name": "Normklassegrens ontoereikend-slecht (mg/l) ",
             "data": {},
-            "url": "https://krw-nutrend.avi.deltares.nl/FewsWebServices/rest/fewspiservice/v1/timeseries?filterId=krw-wl-ntot-norm-OS&startTime=2021-01-01T00%3A00%3A00Z&endTime=2021-01-01T00%3A00%3A00Z&documentFormat=PI_JSON",
+            "url": "https://krw-nutrend.avi.deltares.nl/FewsWebServices/rest/fewspiservice/v1/timeseries?filterId=krw-wl-ntot-norm-OS&startTime=2022-01-01T00%3A00%3A00Z&endTime=2022-01-01T00%3A00%3A00Z&documentFormat=PI_JSON",
             "legendGraphicId": "Ntot Norm Ontoereikend-Slecht (mg/l) NL",
             "charts": {}
           }
@@ -734,7 +734,7 @@
                   "moduleInstanceIds": "SamenvoegenToetsing_Ptot",
                   "qualifierIds": "BE_SGBPhuidig_toets",
                   "startTime": "1980-01-01T00:00:00Z",
-                  "endTime": "2021-01-01T00:00:00Z",
+                  "endTime": "2022-01-01T00:00:00Z",
                   "timeStepId": "jaar"
                 }
               ],
@@ -745,7 +745,7 @@
                   "moduleInstanceIds": "BerekenNormen_Ptot",
                   "qualifierIds": "WN_3",
                   "startTime": "1980-01-01T00:00:00Z",
-                  "endTime": "2021-01-01T00:00:00Z",
+                  "endTime": "2022-01-01T00:00:00Z",
                   "timeStepId": "jaar",
                   "showStatistics": "true"
                 },
@@ -755,7 +755,7 @@
                   "moduleInstanceIds": "BerekenNormen_Ptot",
                   "qualifierIds": "WN_4",
                   "startTime": "1980-01-01T00:00:00Z",
-                  "endTime": "2021-01-01T00:00:00Z",
+                  "endTime": "2022-01-01T00:00:00Z",
                   "timeStepId": "jaar",
                   "showStatistics": "true"
                 },
@@ -765,7 +765,7 @@
                   "moduleInstanceIds": "BerekenNormen_Ptot",
                   "qualifierIds": "WN_5",
                   "startTime": "1980-01-01T00:00:00Z",
-                  "endTime": "2021-01-01T00:00:00Z",
+                  "endTime": "2022-01-01T00:00:00Z",
                   "timeStepId": "jaar",
                   "showStatistics": "true"
                 },
@@ -775,7 +775,7 @@
                   "moduleInstanceIds": "SamenvoegenMeetdata_Ptot",
                   "qualifierIds": "BE_3jaargem",
                   "startTime": "1980-01-01T00:00:00Z",
-                  "endTime": "2021-01-01T00:00:00Z",
+                  "endTime": "2022-01-01T00:00:00Z",
                   "timeStepId": "jaar",
                   "showStatistics": "true"
                 },
@@ -785,7 +785,7 @@
                   "moduleInstanceIds": "SamenvoegenMeetdata_Ptot",
                   "qualifierIds": "BE_jaargem",
                   "startTime": "1980-01-01T00:00:00Z",
-                  "endTime": "2021-01-01T00:00:00Z",
+                  "endTime": "2022-01-01T00:00:00Z",
                   "timeStepId": "een.jaar",
                   "showStatistics": "true"
                 },
@@ -795,7 +795,7 @@
                   "moduleInstanceIds": "SamenvoegenMeetdata_Ptot",
                   "qualifierIds": "BE_summermean",
                   "startTime": "1980-01-01T00:00:00Z",
-                  "endTime": "2021-01-01T00:00:00Z",
+                  "endTime": "2022-01-01T00:00:00Z",
                   "timeStepId": "zomer",
                   "showStatistics": "true"
                 }
@@ -807,17 +807,17 @@
                   "moduleInstanceIds": "Preproces_N_fracties",
                   "qualifierIds": "HH_2",
                   "startTime": "1980-01-01T00:00:00Z",
-                  "endTime": "2021-01-01T00:00:00Z"
+                  "endTime": "2022-01-01T00:00:00Z"
                 }
               ]
             },
-            "downloadUrl": "https://krw-nutrend.avi.deltares.nl/FewsWebServices/rest/fewspiservice/v1/timeseries?filterId=krw-wl-ptot-zomgem-basis&startTime=1991-01-01T00:00:00Z&endTime=2021-01-01T00:00:00Z&documentFormat=PI_JSON"
+            "downloadUrl": "https://krw-nutrend.avi.deltares.nl/FewsWebServices/rest/fewspiservice/v1/timeseries?filterId=krw-wl-ptot-zomgem-basis&startTime=1991-01-01T00:00:00Z&endTime=2022-01-01T00:00:00Z&documentFormat=PI_JSON"
           },
           {
             "id": "krw-wl-ptot-zomgem-vvSGBP",
             "name": "Verschilkaart actueel t.o.v. toetsjaar 2009 (3 voorgaande jaren, mg/l)",
             "data": {},
-            "url": "https://krw-nutrend.avi.deltares.nl/FewsWebServices/rest/fewspiservice/v1/timeseries?filterId=krw-wl-ptot-zomgem-vvSGBP&startTime=2021-01-01T00%3A00%3A00Z&endTime=2021-01-01T00%3A00%3A00Z&documentFormat=PI_JSON",
+            "url": "https://krw-nutrend.avi.deltares.nl/FewsWebServices/rest/fewspiservice/v1/timeseries?filterId=krw-wl-ptot-zomgem-vvSGBP&startTime=2022-01-01T00%3A00%3A00Z&endTime=2022-01-01T00%3A00%3A00Z&documentFormat=PI_JSON",
             "legendGraphicId": "Ptot Verschilkaart actueel t.o.v. voorlaatste_SGBP (mg/l) NL",
             "charts": {},
             "legendTitle": ""
@@ -826,7 +826,7 @@
             "id": "krw-wl-ptot-zomgem-vlSGBP",
             "name": "Verschilkaart actueel t.o.v. toetsjaar 2015 (3 voorgaande jaren, mg/l)",
             "data": {},
-            "url": "https://krw-nutrend.avi.deltares.nl/FewsWebServices/rest/fewspiservice/v1/timeseries?filterId=krw-wl-ptot-zomgem-vlSGBP&startTime=2021-01-01T00%3A00%3A00Z&endTime=2021-01-01T00%3A00%3A00Z&documentFormat=PI_JSON",
+            "url": "https://krw-nutrend.avi.deltares.nl/FewsWebServices/rest/fewspiservice/v1/timeseries?filterId=krw-wl-ptot-zomgem-vlSGBP&startTime=2022-01-01T00%3A00%3A00Z&endTime=2022-01-01T00%3A00%3A00Z&documentFormat=PI_JSON",
             "legendGraphicId": "Ptot Verschilkaart actueel t.o.v. laatste_SGBP (mg/l) NL",
             "charts": {},
             "legendTitle": ""
@@ -845,7 +845,7 @@
                   "moduleInstanceIds": "SamenvoegenToetsing_Ptot",
                   "qualifierIds": "BE_SGBPhuidig_toets",
                   "startTime": "1980-01-01T00:00:00Z",
-                  "endTime": "2021-01-01T00:00:00Z",
+                  "endTime": "2022-01-01T00:00:00Z",
                   "timeStepId": "jaar"
                 }
               ],
@@ -856,7 +856,7 @@
                   "moduleInstanceIds": "BerekenNormen_Ptot",
                   "qualifierIds": "WN_3",
                   "startTime": "1980-01-01T00:00:00Z",
-                  "endTime": "2021-01-01T00:00:00Z",
+                  "endTime": "2022-01-01T00:00:00Z",
                   "timeStepId": "jaar",
                   "showStatistics": "true"
                 },
@@ -866,7 +866,7 @@
                   "moduleInstanceIds": "BerekenNormen_Ptot",
                   "qualifierIds": "WN_4",
                   "startTime": "1980-01-01T00:00:00Z",
-                  "endTime": "2021-01-01T00:00:00Z",
+                  "endTime": "2022-01-01T00:00:00Z",
                   "timeStepId": "jaar",
                   "showStatistics": "true"
                 },
@@ -876,7 +876,7 @@
                   "moduleInstanceIds": "BerekenNormen_Ptot",
                   "qualifierIds": "WN_5",
                   "startTime": "1980-01-01T00:00:00Z",
-                  "endTime": "2021-01-01T00:00:00Z",
+                  "endTime": "2022-01-01T00:00:00Z",
                   "timeStepId": "jaar",
                   "showStatistics": "true"
                 },
@@ -886,7 +886,7 @@
                   "moduleInstanceIds": "SamenvoegenMeetdata_Ptot",
                   "qualifierIds": "BE_3jaargem",
                   "startTime": "1980-01-01T00:00:00Z",
-                  "endTime": "2021-01-01T00:00:00Z",
+                  "endTime": "2022-01-01T00:00:00Z",
                   "timeStepId": "jaar",
                   "showStatistics": "true"
                 },
@@ -896,7 +896,7 @@
                   "moduleInstanceIds": "SamenvoegenMeetdata_Ptot",
                   "qualifierIds": "BE_jaargem",
                   "startTime": "1980-01-01T00:00:00Z",
-                  "endTime": "2021-01-01T00:00:00Z",
+                  "endTime": "2022-01-01T00:00:00Z",
                   "timeStepId": "een.jaar",
                   "showStatistics": "true"
                 },
@@ -906,7 +906,7 @@
                   "moduleInstanceIds": "SamenvoegenMeetdata_Ptot",
                   "qualifierIds": "BE_summermean",
                   "startTime": "1980-01-01T00:00:00Z",
-                  "endTime": "2021-01-01T00:00:00Z",
+                  "endTime": "2022-01-01T00:00:00Z",
                   "timeStepId": "zomer",
                   "showStatistics": "true"
                 }
@@ -918,7 +918,7 @@
                   "moduleInstanceIds": "Preproces_N_fracties",
                   "qualifierIds": "HH_2",
                   "startTime": "1980-01-01T00:00:00Z",
-                  "endTime": "2021-01-01T00:00:00Z"
+                  "endTime": "2022-01-01T00:00:00Z"
                 }
               ]
             }
@@ -927,7 +927,7 @@
             "id": "krw-wl-ptot-norm-GM",
             "name": "Normklassegrens goed-matig (mg/l) ",
             "data": {},
-            "url": "https://krw-nutrend.avi.deltares.nl/FewsWebServices/rest/fewspiservice/v1/timeseries?filterId=krw-wl-ptot-norm-GM&startTime=2021-01-01T00%3A00%3A00Z&endTime=2021-01-01T00%3A00%3A00Z&documentFormat=PI_JSON",
+            "url": "https://krw-nutrend.avi.deltares.nl/FewsWebServices/rest/fewspiservice/v1/timeseries?filterId=krw-wl-ptot-norm-GM&startTime=2022-01-01T00%3A00%3A00Z&endTime=2022-01-01T00%3A00%3A00Z&documentFormat=PI_JSON",
             "legendGraphicId": "Ptot Norm Goed-Matig (mg/l) NL",
             "charts": {}
           },
@@ -935,7 +935,7 @@
             "id": "krw-wl-ptot-norm-MO",
             "name": "Normklassegrens matig-ontoereikend (mg/l) ",
             "data": {},
-            "url": "https://krw-nutrend.avi.deltares.nl/FewsWebServices/rest/fewspiservice/v1/timeseries?filterId=krw-wl-ptot-norm-MO&startTime=2021-01-01T00%3A00%3A00Z&endTime=2021-01-01T00%3A00%3A00Z&documentFormat=PI_JSON",
+            "url": "https://krw-nutrend.avi.deltares.nl/FewsWebServices/rest/fewspiservice/v1/timeseries?filterId=krw-wl-ptot-norm-MO&startTime=2022-01-01T00%3A00%3A00Z&endTime=2022-01-01T00%3A00%3A00Z&documentFormat=PI_JSON",
             "legendGraphicId": "Ptot Norm Matig-Ontoereikend (mg/l) NL",
             "charts": {}
           },
@@ -943,7 +943,7 @@
             "id": "krw-wl-ptot-norm-OS",
             "name": "Normklassegrens ontoereikend-slecht (mg/l) ",
             "data": {},
-            "url": "https://krw-nutrend.avi.deltares.nl/FewsWebServices/rest/fewspiservice/v1/timeseries?filterId=krw-wl-ptot-norm-OS&startTime=2021-01-01T00%3A00%3A00Z&endTime=2021-01-01T00%3A00%3A00Z&documentFormat=PI_JSON",
+            "url": "https://krw-nutrend.avi.deltares.nl/FewsWebServices/rest/fewspiservice/v1/timeseries?filterId=krw-wl-ptot-norm-OS&startTime=2022-01-01T00%3A00%3A00Z&endTime=2022-01-01T00%3A00%3A00Z&documentFormat=PI_JSON",
             "legendGraphicId": "Ptot Norm Ontoereikend-Slecht (mg/l) NL",
             "charts": {}
           }
@@ -968,7 +968,7 @@
                   "moduleInstanceIds": "SamenvoegenToetsing_DIN",
                   "qualifierIds": "BE_SGBPhuidig_toets",
                   "startTime": "1980-01-01T00:00:00Z",
-                  "endTime": "2021-01-01T00:00:00Z",
+                  "endTime": "2022-01-01T00:00:00Z",
                   "timeStepId": "jaar"
                 }
               ],
@@ -979,7 +979,7 @@
                   "moduleInstanceIds": "BerekenNormen_DIN",
                   "qualifierIds": "WN_3",
                   "startTime": "1980-01-01T00:00:00Z",
-                  "endTime": "2021-01-01T00:00:00Z",
+                  "endTime": "2022-01-01T00:00:00Z",
                   "timeStepId": "jaar",
                   "showStatistics": "true"
                 },
@@ -989,7 +989,7 @@
                   "moduleInstanceIds": "BerekenNormen_DIN",
                   "qualifierIds": "WN_4",
                   "startTime": "1980-01-01T00:00:00Z",
-                  "endTime": "2021-01-01T00:00:00Z",
+                  "endTime": "2022-01-01T00:00:00Z",
                   "timeStepId": "jaar",
                   "showStatistics": "true"
                 },
@@ -999,7 +999,7 @@
                   "moduleInstanceIds": "BerekenNormen_DIN",
                   "qualifierIds": "WN_5",
                   "startTime": "1980-01-01T00:00:00Z",
-                  "endTime": "2021-01-01T00:00:00Z",
+                  "endTime": "2022-01-01T00:00:00Z",
                   "timeStepId": "jaar",
                   "showStatistics": "true"
                 },
@@ -1009,7 +1009,7 @@
                   "moduleInstanceIds": "SamenvoegenMeetdata_DIN",
                   "qualifierIds": "BE_3jaargem",
                   "startTime": "1980-01-01T00:00:00Z",
-                  "endTime": "2021-01-01T00:00:00Z",
+                  "endTime": "2022-01-01T00:00:00Z",
                   "timeStepId": "jaar",
                   "showStatistics": "true"
                 },
@@ -1019,7 +1019,7 @@
                   "moduleInstanceIds": "SamenvoegenMeetdata_DIN",
                   "qualifierIds": "BE_jaargem",
                   "startTime": "1980-01-01T00:00:00Z",
-                  "endTime": "2021-01-01T00:00:00Z",
+                  "endTime": "2022-01-01T00:00:00Z",
                   "timeStepId": "een.jaar",
                   "showStatistics": "true"
                 },
@@ -1029,7 +1029,7 @@
                   "moduleInstanceIds": "SamenvoegenMeetdata_DIN",
                   "qualifierIds": "BE_wintermean",
                   "startTime": "1980-01-01T00:00:00Z",
-                  "endTime": "2021-01-01T00:00:00Z",
+                  "endTime": "2022-01-01T00:00:00Z",
                   "timeStepId": "winter",
                   "showStatistics": "true"
                 }
@@ -1041,17 +1041,17 @@
                   "moduleInstanceIds": "Preproces_N_fracties",
                   "qualifierIds": "HH_4",
                   "startTime": "1980-01-01T00:00:00Z",
-                  "endTime": "2021-01-01T00:00:00Z"
+                  "endTime": "2022-01-01T00:00:00Z"
                 }
               ]
             },
-            "downloadUrl": "https://krw-nutrend.avi.deltares.nl/FewsWebServices/rest/fewspiservice/v1/timeseries?filterId=krw-wl-din-wingem-basis&startTime=1991-01-01T00:00:00Z&endTime=2021-01-01T00:00:00Z&documentFormat=PI_JSON"
+            "downloadUrl": "https://krw-nutrend.avi.deltares.nl/FewsWebServices/rest/fewspiservice/v1/timeseries?filterId=krw-wl-din-wingem-basis&startTime=1991-01-01T00:00:00Z&endTime=2022-01-01T00:00:00Z&documentFormat=PI_JSON"
           },
           {
             "id": "krw-wl-din-wingem-vvSGBP",
             "name": "Verschilkaart actueel t.o.v. toetsjaar 2009 (3 voorgaande jaren, mg/l) ",
             "data": {},
-            "url": "https://krw-nutrend.avi.deltares.nl/FewsWebServices/rest/fewspiservice/v1/timeseries?filterId=krw-wl-din-wingem-vvSGBP&startTime=2021-01-01T00%3A00%3A00Z&endTime=2021-01-01T00%3A00%3A00Z&documentFormat=PI_JSON",
+            "url": "https://krw-nutrend.avi.deltares.nl/FewsWebServices/rest/fewspiservice/v1/timeseries?filterId=krw-wl-din-wingem-vvSGBP&startTime=2022-01-01T00%3A00%3A00Z&endTime=2022-01-01T00%3A00%3A00Z&documentFormat=PI_JSON",
             "legendGraphicId": "DIN Verschilkaart actueel t.o.v. voorlaatste_SGBP (mg/l) RWS",
             "charts": {},
             "legendTitle": ""
@@ -1060,7 +1060,7 @@
             "id": "krw-wl-din-wingem-vlSGBP",
             "name": "Verschilkaart actueel t.o.v. toetsjaar 2015 (3 voorgaande jaren, mg/l)",
             "data": {},
-            "url": "https://krw-nutrend.avi.deltares.nl/FewsWebServices/rest/fewspiservice/v1/timeseries?filterId=krw-wl-din-wingem-vlSGBP&startTime=2021-01-01T00%3A00%3A00Z&endTime=2021-01-01T00%3A00%3A00Z&documentFormat=PI_JSON",
+            "url": "https://krw-nutrend.avi.deltares.nl/FewsWebServices/rest/fewspiservice/v1/timeseries?filterId=krw-wl-din-wingem-vlSGBP&startTime=2022-01-01T00%3A00%3A00Z&endTime=2022-01-01T00%3A00%3A00Z&documentFormat=PI_JSON",
             "legendGraphicId": "DIN Verschilkaart actueel t.o.v. laatste_SGBP (mg/l) RWS",
             "charts": {},
             "legendTitle": ""
@@ -1079,7 +1079,7 @@
                   "moduleInstanceIds": "SamenvoegenToetsing_DIN",
                   "qualifierIds": "BE_SGBPhuidig_toets",
                   "startTime": "1980-01-01T00:00:00Z",
-                  "endTime": "2021-01-01T00:00:00Z",
+                  "endTime": "2022-01-01T00:00:00Z",
                   "timeStepId": "jaar"
                 }
               ],
@@ -1090,7 +1090,7 @@
                   "moduleInstanceIds": "BerekenNormen_DIN",
                   "qualifierIds": "WN_3",
                   "startTime": "1980-01-01T00:00:00Z",
-                  "endTime": "2021-01-01T00:00:00Z",
+                  "endTime": "2022-01-01T00:00:00Z",
                   "timeStepId": "jaar",
                   "showStatistics": "true"
                 },
@@ -1100,7 +1100,7 @@
                   "moduleInstanceIds": "BerekenNormen_DIN",
                   "qualifierIds": "WN_4",
                   "startTime": "1980-01-01T00:00:00Z",
-                  "endTime": "2021-01-01T00:00:00Z",
+                  "endTime": "2022-01-01T00:00:00Z",
                   "timeStepId": "jaar",
                   "showStatistics": "true"
                 },
@@ -1110,7 +1110,7 @@
                   "moduleInstanceIds": "BerekenNormen_DIN",
                   "qualifierIds": "WN_5",
                   "startTime": "1980-01-01T00:00:00Z",
-                  "endTime": "2021-01-01T00:00:00Z",
+                  "endTime": "2022-01-01T00:00:00Z",
                   "timeStepId": "jaar",
                   "showStatistics": "true"
                 },
@@ -1120,7 +1120,7 @@
                   "moduleInstanceIds": "SamenvoegenMeetdata_DIN",
                   "qualifierIds": "BE_3jaargem",
                   "startTime": "1980-01-01T00:00:00Z",
-                  "endTime": "2021-01-01T00:00:00Z",
+                  "endTime": "2022-01-01T00:00:00Z",
                   "timeStepId": "jaar",
                   "showStatistics": "true"
                 },
@@ -1130,7 +1130,7 @@
                   "moduleInstanceIds": "SamenvoegenMeetdata_DIN",
                   "qualifierIds": "BE_jaargem",
                   "startTime": "1980-01-01T00:00:00Z",
-                  "endTime": "2021-01-01T00:00:00Z",
+                  "endTime": "2022-01-01T00:00:00Z",
                   "timeStepId": "een.jaar",
                   "showStatistics": "true"
                 },
@@ -1140,7 +1140,7 @@
                   "moduleInstanceIds": "SamenvoegenMeetdata_DIN",
                   "qualifierIds": "BE_wintermean",
                   "startTime": "1980-01-01T00:00:00Z",
-                  "endTime": "2021-01-01T00:00:00Z",
+                  "endTime": "2022-01-01T00:00:00Z",
                   "timeStepId": "winter",
                   "showStatistics": "true"
                 }
@@ -1152,7 +1152,7 @@
                   "moduleInstanceIds": "Preproces_N_fracties",
                   "qualifierIds": "HH_4",
                   "startTime": "1980-01-01T00:00:00Z",
-                  "endTime": "2021-01-01T00:00:00Z"
+                  "endTime": "2022-01-01T00:00:00Z"
                 }
               ]
             }
@@ -1161,7 +1161,7 @@
             "id": "krw-wl-din-norm-GM",
             "name": "Normklassegrens goed-matig (mg/l) ",
             "data": {},
-            "url": "https://krw-nutrend.avi.deltares.nl/FewsWebServices/rest/fewspiservice/v1/timeseries?filterId=krw-wl-din-norm-GM&startTime=2021-01-01T00%3A00%3A00Z&endTime=2021-01-01T00%3A00%3A00Z&documentFormat=PI_JSON",
+            "url": "https://krw-nutrend.avi.deltares.nl/FewsWebServices/rest/fewspiservice/v1/timeseries?filterId=krw-wl-din-norm-GM&startTime=2022-01-01T00%3A00%3A00Z&endTime=2022-01-01T00%3A00%3A00Z&documentFormat=PI_JSON",
             "legendGraphicId": "DIN Norm Goed-Matig (mg/l) NL",
             "charts": {}
           },
@@ -1169,7 +1169,7 @@
             "id": "krw-wl-din-norm-MO",
             "name": "Normklassegrens matig-ontoereikend (mg/l) ",
             "data": {},
-            "url": "https://krw-nutrend.avi.deltares.nl/FewsWebServices/rest/fewspiservice/v1/timeseries?filterId=krw-wl-din-norm-MO&startTime=2021-01-01T00%3A00%3A00Z&endTime=2021-01-01T00%3A00%3A00Z&documentFormat=PI_JSON",
+            "url": "https://krw-nutrend.avi.deltares.nl/FewsWebServices/rest/fewspiservice/v1/timeseries?filterId=krw-wl-din-norm-MO&startTime=2022-01-01T00%3A00%3A00Z&endTime=2022-01-01T00%3A00%3A00Z&documentFormat=PI_JSON",
             "legendGraphicId": "DIN Norm Matig-Ontoereikend (mg/l) NL",
             "charts": {}
           },
@@ -1177,7 +1177,7 @@
             "id": "krw-wl-din-norm-OS",
             "name": "Normklassegrens ontoereikend-slecht (mg/l) ",
             "data": {},
-            "url": "https://krw-nutrend.avi.deltares.nl/FewsWebServices/rest/fewspiservice/v1/timeseries?filterId=krw-wl-din-norm-OS&startTime=2021-01-01T00%3A00%3A00Z&endTime=2021-01-01T00%3A00%3A00Z&documentFormat=PI_JSON",
+            "url": "https://krw-nutrend.avi.deltares.nl/FewsWebServices/rest/fewspiservice/v1/timeseries?filterId=krw-wl-din-norm-OS&startTime=2022-01-01T00%3A00%3A00Z&endTime=2022-01-01T00%3A00%3A00Z&documentFormat=PI_JSON",
             "legendGraphicId": "DIN Norm Ontoereikend-Slecht (mg/l) NL",
             "charts": {}
           }
