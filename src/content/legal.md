@@ -1,4 +1,4 @@
-KRW-NUTrend is een applicatie waarin een ruimtelijk beeld wordt gegeven van de toestand, trends, concentraties, afstand tot de norm(doelgat) en normen van nutriënten in Nederland. De applicatie is onderverdeeld in drie verschillende tabbladen (toestand, trends en concentraties) met daarin verschillende informatie voor stikstof, fosfor en DIN voor de jaren 1990 tot en met 2022. In de applicatie gaat het om toetsjaren. Elk toetsjaar maakt gebruik van drie voorafgaande jaren; voor 2022 zijn bijvoorbeeld de jaren 2017 tot en met 2019 gebruikt.
+KRW-NUTrend is een applicatie waarin een ruimtelijk beeld wordt gegeven van de toestand, trends, concentraties, afstand tot de norm(doelgat) en normen van nutriënten in Nederland. De applicatie is onderverdeeld in drie verschillende tabbladen (toestand, trends en concentraties) met daarin verschillende informatie voor stikstof, fosfor en DIN voor de jaren 1990 tot en met 2022. In de applicatie gaat het om toetsjaren. Elk toetsjaar maakt gebruik van drie voorafgaande jaren; voor 2022 zijn bijvoorbeeld de jaren 2017 tot en met 2021 gebruikt.
 
 ##### Toestand
 
