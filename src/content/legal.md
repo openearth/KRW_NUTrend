@@ -1,8 +1,8 @@
-KRW-NUTrend is een applicatie waarin een ruimtelijk beeld wordt gegeven van de toestand, trends, concentraties, afstand tot de norm(doelgat) en normen van nutriënten in Nederland. De applicatie is onderverdeeld in drie verschillende tabbladen (toestand, trends en concentraties) met daarin verschillende informatie voor stikstof, fosfor en DIN voor de jaren 1990 tot en met 2021. In de applicatie gaat het om toetsjaren. Elk toetsjaar maakt gebruik van drie voorafgaande jaren; voor 2021 zijn bijvoorbeeld de jaren 2017 tot en met 2019 gebruikt.
+KRW-NUTrend is een applicatie waarin een ruimtelijk beeld wordt gegeven van de toestand, trends, concentraties, afstand tot de norm(doelgat) en normen van nutriënten in Nederland. De applicatie is onderverdeeld in drie verschillende tabbladen (toestand, trends en concentraties) met daarin verschillende informatie voor stikstof, fosfor en DIN voor de jaren 1990 tot en met 2022. In de applicatie gaat het om toetsjaren. Elk toetsjaar maakt gebruik van drie voorafgaande jaren; voor 2022 zijn bijvoorbeeld de jaren 2019 tot en met 2021 gebruikt.
 
 ##### Toestand
 
-Per KRW-waterlichaam (conform SGBP 2022-2027) zijn de resultaten van de toestandsbepaling weergegeven in kaarten en grafieken. Bij de kaarten kan worden ingezoomd per stroomgebied en waterbeheerder voor toestand en doelgat. De grafieken zijn beschikbaar voor Nederland, de stroomgebieden en de waterbeheerders. Met behulp van een tijdbalk kunnen de resultaten van de toetsing voor de jaren 1990 tot en met 2021 getoond worden. De oordelen per waterlichaam per jaar worden ook per download aangeboden.
+Per KRW-waterlichaam (conform SGBP 2022-2027) zijn de resultaten van de toestandsbepaling weergegeven in kaarten en grafieken. Bij de kaarten kan worden ingezoomd per stroomgebied en waterbeheerder voor toestand en doelgat. De grafieken zijn beschikbaar voor Nederland, de stroomgebieden en de waterbeheerders. Met behulp van een tijdbalk kunnen de resultaten van de toetsing voor de jaren 1990 tot en met 2022 getoond worden. De oordelen per waterlichaam per jaar worden ook per download aangeboden.
 
 ##### Trends
 
@@ -18,7 +18,7 @@ De gebruikte meetdata zijn tot 2015 voor de regionale wateren afkomstig van het 
 
 Meer informatie over het tot stand komen van de gepresenteerde data is terug te vinden in de volgende rapporten:
 
-- [KRW-Toestand- en trendanalyse 1990-2018 voor nutriënten](http://publications.deltares.nl/11203728_006.pdf)
+- [KRW-Toestand- en trendanalyse 1990-2019 voor nutriënten](http://publications.deltares.nl/11203728_006.pdf)
 - [KRW-Toestand- en trendanalyse 1990-2013 voor nutriënten op KRW-meetlocaties](http://publications.deltares.nl/1220098_015.pdf)
 
 ##### Weergave waterlichamen

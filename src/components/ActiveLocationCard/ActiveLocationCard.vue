@@ -20,7 +20,7 @@
           {{ compareYear }}: {{ formattedValue }}
         </p>
         <p class="text-body-2">
-          2021: {{ formattedValue2 }}
+          2022: {{ formattedValue2 }}
         </p>
       </div>
     </v-card-text>

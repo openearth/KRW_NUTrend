@@ -3,5 +3,5 @@ Voor stikstof en fosfor is de zomer gedefinieerd als de periode april tot en met
 Per KRW-waterlichaam kunnen de meetresultaten ook in grafiekvorm bekeken worden:
 
 - Bovenste grafiek: Meetwaardes van de KRW-monitoringslocatie(s) behorend bij het KRW-waterlichaam.
-- Middelste grafiek: Het driejarig zomergemiddelde, zomergemiddelde en jaargemiddelde voor het KRW-waterlichaam, op basis van de onderliggende KRW-monitoringslocaties. De normgrenzen zijn ook aangegeven in de grafiek (normen uit toetsjaar 2021).
+- Middelste grafiek: Het driejarig zomergemiddelde, zomergemiddelde en jaargemiddelde voor het KRW-waterlichaam, op basis van de onderliggende KRW-monitoringslocaties. De normgrenzen zijn ook aangegeven in de grafiek (normen uit toetsjaar 2022).
 - Onderste grafiek: Het resultaat van de toetsing voor de verschillende jaren.
