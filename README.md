@@ -6,21 +6,21 @@ Vue app for KRW-NUTrend.
 
 - Clone [this repository](https://github.com/openearth/KRW_NUTrend):
 
-``` bash
+```bash
 $ git clone git@github.com:openearth/KRW_NUTrend.git
 ```
 
 - Copy `.env.example` to `.env`. And set all variables.
 - Install dependencies:
 
-``` bash
+```bash
 $ npm i
 ```
 
 - Build & run development server:
 
-``` bash
+```bash
 $ npm run dev
 ```
 
-- viewer contains data untill 2022
+- viewer contains data untill 2024
