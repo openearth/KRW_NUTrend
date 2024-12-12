@@ -1,14 +1,8 @@
-##### ***Actualisatie KRW-NUTrend 2024***
-
-De meetwaarden t/m 2023, en de toetsing t/m toetsjaar 2024 zijn in september’24 beschikbaar gekomen via het Waterkwaliteitsportaal van het Informatiehuis Water ([KRW-bronbestanden | Het Waterkwaliteitsportaal](https://www.waterkwaliteitsportaal.nl/krw-bronbestanden "https://www.waterkwaliteitsportaal.nl/krw-bronbestanden")). Deze data zijn met de laatste update (10 december 2024) nu ook beschikbaar in deze viewer. Voor vragen kunt u contact opnemen via [KRW-NUTrend@deltares.nl](mailto:KRW-NUTrend@deltares.nl "mailto:krw-nutrend@deltares.nl").
-
-##### KRW-NUTrend
-
-KRW-NUTrend is een applicatie waarin een ruimtelijk beeld wordt gegeven van de toestand, trends, concentraties, afstand tot de norm(doelgat) en normen van nutriënten in Nederland. De applicatie is onderverdeeld in drie verschillende tabbladen (toestand, trends en concentraties) met daarin verschillende informatie voor stikstof, fosfor en DIN voor de jaren 1990 tot en met 2024. In de applicatie gaat het om toetsjaren. Elk toetsjaar maakt gebruik van drie voorafgaande jaren; voor 2022 zijn bijvoorbeeld de jaren 2019 tot en met 2021 gebruikt.
+KRW-NUTrend is een applicatie waarin een ruimtelijk beeld wordt gegeven van de toestand, trends, concentraties, afstand tot de norm(doelgat) en normen van nutriënten in Nederland. De applicatie is onderverdeeld in drie verschillende tabbladen (toestand, trends en concentraties) met daarin verschillende informatie voor stikstof, fosfor en DIN voor de jaren 1990 tot en met 2022. In de applicatie gaat het om toetsjaren. Elk toetsjaar maakt gebruik van drie voorafgaande jaren; voor 2022 zijn bijvoorbeeld de jaren 2019 tot en met 2021 gebruikt.
 
 ##### Toestand
 
-Per KRW-waterlichaam (conform SGBP 2022-2027) zijn de resultaten van de toestandsbepaling weergegeven in kaarten en grafieken. Bij de kaarten kan worden ingezoomd per stroomgebied en waterbeheerder voor toestand en doelgat. De grafieken zijn beschikbaar voor Nederland, de stroomgebieden en de waterbeheerders. Met behulp van een tijdbalk kunnen de resultaten van de toetsing voor de jaren 1990 tot en met 2024 getoond worden. De oordelen per waterlichaam per jaar worden ook per download aangeboden.
+Per KRW-waterlichaam (conform SGBP 2022-2027) zijn de resultaten van de toestandsbepaling weergegeven in kaarten en grafieken. Bij de kaarten kan worden ingezoomd per stroomgebied en waterbeheerder voor toestand en doelgat. De grafieken zijn beschikbaar voor Nederland, de stroomgebieden en de waterbeheerders. Met behulp van een tijdbalk kunnen de resultaten van de toetsing voor de jaren 1990 tot en met 2022 getoond worden. De oordelen per waterlichaam per jaar worden ook per download aangeboden.
 
 ##### Trends
 
