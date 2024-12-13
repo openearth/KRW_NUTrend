@@ -59,7 +59,7 @@ export default((array ) => {
       const slechtClass = parameterId.includes('.S.')
 
       events.forEach(({ date, value }) => {
-        goedClass && locationIds.length === 4 ? (goedData.push(checkForNull(value)), labels.push(date.split('-')[0]))
+        goedClass && locationIds.length === 4 ? (goedData.push(checkForNull(value)), labels.push(parseInt(date.split('-')[0], 10) + 1))
         :goedClass && locationIds.length > 4 ? goedData.push(checkForNull(value))
         :matigClass? matigData.push(checkForNull(value)) 
         :ontoeClass ? ontoereikendData.push(checkForNull(value))
@@ -76,7 +76,6 @@ export default((array ) => {
         'slechtData':slechtData,
 
       }
-  
    aantal ? dataObject.aantal = seriesData 
    : percentage ? dataObject.percentage = seriesData
    :null
