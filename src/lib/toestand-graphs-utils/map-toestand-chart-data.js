@@ -59,7 +59,8 @@ export default((array ) => {
       const slechtClass = parameterId.includes('.S.')
 
       events.forEach(({ date, value }) => {
-        goedClass && locationIds.length === 4 ? (goedData.push(checkForNull(value)), labels.push(date.split('-')[0]))
+        // The years for the aantal and % NL graphs are pushed in labels with a value of +1 year, to compensate that the data is from the previous year 31st Dec at 23:00
+        goedClass && locationIds.length === 4 ? (goedData.push(checkForNull(value)), labels.push(parseInt(date.split('-')[0], 10) + 1))
         :goedClass && locationIds.length > 4 ? goedData.push(checkForNull(value))
         :matigClass? matigData.push(checkForNull(value)) 
         :ontoeClass ? ontoereikendData.push(checkForNull(value))
