@@ -2,6 +2,8 @@ Per waterlichaam wordt voor de toetsjaren 1991 tot en met 2024 het resultaat van
 
 Het resultaat van de toetsing wordt weergegeven volgens de KRW klassen goed, matig, ontoereikend en slecht. Met behulp van de tijdbalk kunnen de verschillende jaren bekeken worden.
 
+In de brakke wateren in Zeeland is er een hoge aanvoer van fosfor vanuit de brakke kwel. Vanwege deze achtergrondbelasting is stikstof de beperkende factor voor de biologische parameters en speelt fosfor geen rol (er ligt geen opgave in de vorm van een vastgestelde norm). In deze viewer zijn de normen en toestand daarom niet beschikbaar voor fosfor voor deze wateren.
+
 De toetsresultaten voor Nederland, per stroomgebied of per waterbeheerder kunnen ook in grafiekvorm getoond worden. Het toetsresultaat wordt weergegeven in zowel absolute aantallen als relatieve percentage.
 
 De oordelen per waterlichaam worden ook ter download aangeboden.
