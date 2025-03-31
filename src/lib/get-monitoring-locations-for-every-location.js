@@ -14,7 +14,8 @@ export default (locations) => {
     return []
   }
 
-  const filterByMonnetParent = ({ id }) => id.includes('monnet') === true
+  const filterByMonnetParent = ({ id }) => id.includes('monnet') === true 
+
   
   const monitoringLocations = locations
     .filter(({ relations }) => relations.find(filterByMonnetParent))

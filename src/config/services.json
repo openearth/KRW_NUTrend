@@ -566,16 +566,27 @@
                   "showStatistics": "true"
                 }
               ],
-              "scatter": [
-                {
-                  "filterId": "krw-wl-gr-ntot",
-                  "parameterIds": "Ntot",
-                  "moduleInstanceIds": "Preproces_N_fracties",
-                  "qualifierIds": "HH_1",
-                  "startTime": "1980-01-01T00:00:00Z",
-                  "endTime": "2024-01-01T00:00:00Z"
-                }
-              ]
+             "scatter": {
+                "monitoring": [
+                  {
+                    "filterId": "krw-wl-gr-ntot",
+                    "parameterIds": "Ntot",
+                    "moduleInstanceIds": "Preproces_N_fracties",
+                    "qualifierIds": "HH_1",
+                    "startTime": "1980-01-01T00:00:00Z",
+                    "endTime": "2024-01-01T00:00:00Z"
+                  }
+                ],
+                "meetnet": [
+                  {
+                    "filterId": "krw-wl-gr-ntot",
+                    "parameterIds": "Ntot",
+                    "moduleInstanceIds": "Import_KRW_CSV",
+                    "startTime": "1980-01-01T00:00:00Z",
+                    "endTime": "2024-01-01T00:00:00Z"
+                  }
+                ]
+              }
             },
             "downloadUrl": "https://krw-nutrend.avi.deltares.nl/FewsWebServices/rest/fewspiservice/v1/timeseries?filterId=krw-wl-ntot-zomgem-basis&startTime=1991-01-01T00:00:00Z&endTime=2024-01-01T00:00:00Z&documentFormat=PI_JSON"
           },
@@ -677,16 +688,27 @@
                   "showStatistics": "true"
                 }
               ],
-              "scatter": [
-                {
-                  "filterId": "krw-wl-gr-ntot",
-                  "parameterIds": "Ntot",
-                  "moduleInstanceIds": "Preproces_N_fracties",
-                  "qualifierIds": "HH_1",
-                  "startTime": "1980-01-01T00:00:00Z",
-                  "endTime": "2024-01-01T00:00:00Z"
-                }
-              ]
+              "scatter": {
+                "monitoring": [
+                  {
+                    "filterId": "krw-wl-gr-ntot",
+                    "parameterIds": "Ntot",
+                    "moduleInstanceIds": "Preproces_N_fracties",
+                    "qualifierIds": "HH_1",
+                    "startTime": "1980-01-01T00:00:00Z",
+                    "endTime": "2024-01-01T00:00:00Z"
+                  }
+                ],
+                "meetnet": [
+                  {
+                    "filterId": "krw-wl-gr-ntot",
+                    "parameterIds": "Ntot",
+                    "moduleInstanceIds": "Import_KRW_CSV",
+                    "startTime": "1980-01-01T00:00:00Z",
+                    "endTime": "2024-01-01T00:00:00Z"
+                  }
+                ]
+              }
             }
           },
           {
@@ -800,7 +822,8 @@
                   "showStatistics": "true"
                 }
               ],
-              "scatter": [
+              "scatter":  {
+                "monitoring": [
                 {
                   "filterId": "krw-wl-gr-ptot",
                   "parameterIds": "Ptot",
@@ -809,7 +832,17 @@
                   "startTime": "1980-01-01T00:00:00Z",
                   "endTime": "2024-01-01T00:00:00Z"
                 }
+              ],
+              "meetnet": [
+                {
+                  "filterId": "krw-wl-gr-ptot",
+                  "parameterIds": "Ptot",
+                  "moduleInstanceIds": "Import_KRW_CSV",
+                  "startTime": "1980-01-01T00:00:00Z",
+                  "endTime": "2024-01-01T00:00:00Z"
+                }
               ]
+            }
             },
             "downloadUrl": "https://krw-nutrend.avi.deltares.nl/FewsWebServices/rest/fewspiservice/v1/timeseries?filterId=krw-wl-ptot-zomgem-basis&startTime=1991-01-01T00:00:00Z&endTime=2024-01-01T00:00:00Z&documentFormat=PI_JSON"
           },
@@ -911,7 +944,8 @@
                   "showStatistics": "true"
                 }
               ],
-              "scatter": [
+              "scatter":  {
+                "monitoring": [
                 {
                   "filterId": "krw-wl-gr-ptot",
                   "parameterIds": "Ptot",
@@ -920,7 +954,17 @@
                   "startTime": "1980-01-01T00:00:00Z",
                   "endTime": "2024-01-01T00:00:00Z"
                 }
+              ],
+              "meetnet": [
+                {
+                  "filterId": "krw-wl-gr-ptot",
+                  "parameterIds": "Ptot",
+                  "moduleInstanceIds": "Import_KRW_CSV",
+                  "startTime": "1980-01-01T00:00:00Z",
+                  "endTime": "2024-01-01T00:00:00Z"
+                }
               ]
+            }
             }
           },
           {
@@ -1034,17 +1078,29 @@
                   "showStatistics": "true"
                 }
               ],
-              "scatter": [
-                {
-                  "filterId": "krw-wl-gr-din",
-                  "parameterIds": "DIN",
-                  "moduleInstanceIds": "Preproces_N_fracties",
-                  "qualifierIds": "HH_4",
-                  "startTime": "1980-01-01T00:00:00Z",
-                  "endTime": "2024-01-01T00:00:00Z"
-                }
-              ]
+              "scatter": {
+                "monitoring": [
+                  {
+                    "filterId": "krw-wl-gr-din",
+                    "parameterIds": "DIN",
+                    "moduleInstanceIds": "Preproces_N_fracties",
+                    "qualifierIds": "HH_4",
+                    "startTime": "1980-01-01T00:00:00Z",
+                    "endTime": "2024-01-01T00:00:00Z"
+                  }
+                ],
+                "meetnet": [
+                  {
+                    "filterId": "krw-wl-gr-din",
+                    "parameterIds": "DIN",
+                    "moduleInstanceIds": "Import_KRW_CSV",
+                    "startTime": "1980-01-01T00:00:00Z",
+                    "endTime": "2024-01-01T00:00:00Z"
+                  }
+                ]
+              }
             },
+            
             "downloadUrl": "https://krw-nutrend.avi.deltares.nl/FewsWebServices/rest/fewspiservice/v1/timeseries?filterId=krw-wl-din-wingem-basis&startTime=1991-01-01T00:00:00Z&endTime=2024-01-01T00:00:00Z&documentFormat=PI_JSON"
           },
           {
@@ -1145,16 +1201,27 @@
                   "showStatistics": "true"
                 }
               ],
-              "scatter": [
-                {
-                  "filterId": "krw-wl-gr-din",
-                  "parameterIds": "DIN",
-                  "moduleInstanceIds": "Preproces_N_fracties",
-                  "qualifierIds": "HH_4",
-                  "startTime": "1980-01-01T00:00:00Z",
-                  "endTime": "2024-01-01T00:00:00Z"
-                }
-              ]
+              "scatter": {
+                "monitoring": [
+                  {
+                    "filterId": "krw-wl-gr-din",
+                    "parameterIds": "DIN",
+                    "moduleInstanceIds": "Preproces_N_fracties",
+                    "qualifierIds": "HH_4",
+                    "startTime": "1980-01-01T00:00:00Z",
+                    "endTime": "2024-01-01T00:00:00Z"
+                  }
+                ],
+                "meetnet": [
+                  {
+                    "filterId": "krw-wl-gr-din",
+                    "parameterIds": "DIN",
+                    "moduleInstanceIds": "Import_KRW_CSV",
+                    "startTime": "1980-01-01T00:00:00Z",
+                    "endTime": "2024-01-01T00:00:00Z"
+                  }
+                ]
+              }
             }
           },
           {
