@@ -46,12 +46,9 @@ export default {
           selectedBodyOfWater,
         )
         const data = { data: featuresCollection }
-        
         const circlesColor = selectedType === 'concentration' || selectedType === 'trends'
           ? buildCirclesColorsRangeValues(state.legend)
           : buildCirclesColor(state.legend)
-        
-      
         const paint = !state.differenceMap ? { paint: buildPaintObject(circlesColor) } : null
         return { ...state.activeMap, ...data, ...paint }
       }

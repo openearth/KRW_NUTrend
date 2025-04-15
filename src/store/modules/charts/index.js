@@ -134,7 +134,7 @@ export default {
     },
     getChartsData({ commit, rootState, rootGetters }) {
       const charts  = rootGetters['layers/availableCharts']
-
+      
       if (!charts) {
         console.warn('No chart parameters available to retreive data with.')
         return
@@ -144,7 +144,8 @@ export default {
       const { locationId } = activeMapLocation
 
       const  selectedMonitoringLocations = rootGetters['locations/selectedMonitoringLocations']
-      const chartDataRequests = createChartRequests({ charts, locationId, selectedMonitoringLocations }) 
+      const  selectedMeetnetLocations = rootGetters['locations/selectedMeetnetLocations']
+      const chartDataRequests = createChartRequests({ charts, locationId, selectedMonitoringLocations, selectedMeetnetLocations }) 
 
       try {
         Promise.all(chartDataRequests)

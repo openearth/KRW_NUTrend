@@ -9,15 +9,19 @@ export default (data, type) => {
     .map(({ header }) => header)
     .reduce((obj, item) => item, {})
 
-  const events = data.timeSeries
-    .map(({ events }) => events)
-    .flat()
-    .map(event => {
-      return [ event.date, checkForNull(event.value) ]
-    })
+    let dateValuePairs = []
+
+    try {
+      dateValuePairs = data.timeSeries
+        .map(({ events }) => events)
+        .flat()
+        .map(event => [ event.date, checkForNull(event.value) ])
+    } catch (error) {
+      dateValuePairs = []
+    }
   
-  return {
-    location,
-    data: events,
-  }
+    return {
+      location,
+      data: dateValuePairs,
+    }
 }

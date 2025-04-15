@@ -2,7 +2,9 @@ import $axios from '~/plugins/axios'
 
 import filterEmptyLocations from '~/lib/filter-empty-locations'
 import getMonitoringLocationsForEveryLocation from '~/lib/get-monitoring-locations-for-every-location'
+import getMeetnetLocationsForEveryLocation from '../../../lib/get-meetnet-locations-for-every-location'
 import filterMonitoringLocationsBasedOnLocation from '~/lib/filter-monitoring-locations-based-on-location'
+import filterMeetnetLocationsBasedOnLocation from '../../../lib/filterMeetnetLocationsBasedOnLocation'
 import getRelationsForEveryLocation from '~/lib/get-relations-for-every-location'
 const { VUE_APP_API_VERSION } = process.env
 
@@ -16,6 +18,16 @@ export default {
     availableMonitoringLocations(state) {
       const { locations } = state
       return getMonitoringLocationsForEveryLocation(locations)
+    },
+    availableMeetnetLocations(state) {
+      const { locations } = state
+      return getMeetnetLocationsForEveryLocation(locations)
+    },
+    selectedMeetnetLocations(state, getters, rootState) {
+      const { availableMeetnetLocations } = getters
+      const { activeMapLocation } = rootState.layers
+      const { locationId } = activeMapLocation
+      return filterMeetnetLocationsBasedOnLocation(availableMeetnetLocations, locationId)
     },
     selectedMonitoringLocations(state, getters, rootState) {
       const { availableMonitoringLocations } = getters

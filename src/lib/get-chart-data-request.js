@@ -9,9 +9,10 @@ const { VUE_APP_API_VERSION } = process.env
  * For each parameter object it sends the request for the given id (id= locationid or id=montironing locationid) 
  * sends bach the results of all the requests in an array
  */
-export default ((name, array, id) => {
-  let requests = []
 
+export default ((name, array, id) => { //array is the params from services.json
+  let requests = []
+    
    array.forEach((parameters) => {
       
       const hasAreaParameter = parameters?.moduleInstanceIds.includes('BerekenNormen')
@@ -20,13 +21,14 @@ export default ((name, array, id) => {
         locationIds: id,
         documentFormat: 'PI_JSON',
       }
+      //console.log('getChartDataRequest params', params)
       const request = new Promise((resolve, reject) => {
         $axios
           .get(`/FewsWebServices/rest/fewspiservice/${ VUE_APP_API_VERSION }/timeseries`, { params })
           .then((response) => response?.data)
           .then((data) => hasAreaParameter
             ? getChartAreaFromTimeseries(data)
-            : mapTimeseriesToChartData(data, name),
+            : mapTimeseriesToChartData(data, name), 
           )
           .then((result) => resolve({ name, result }))
           .catch((err) => reject(err))
