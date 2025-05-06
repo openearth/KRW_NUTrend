@@ -133,6 +133,17 @@
             "legendTitle": "2015/2024"
           },
           {
+            "id": "krw-wl-ntot-difference-2021",
+            "name": "Verschilkaart toetsing stikstof actueel vs. toetsjaar 2021",
+            "data": {},
+            "url": "https://krw-nutrend.avi.deltares.nl/FewsWebServices/rest/fewspiservice/v1/timeseries?filterId=krw-wl-ntot-toets-lSGBP&startTime=2021-01-01T00%3A00%3A00Z&endTime=2024-01-01T00%3A00%3A00Z&showThresholds=true&showStatistics=true&documentFormat=PI_JSON",
+            "legendGraphicId": "Ntot Toetsing t.o.v. normen laatste_SGBP (-) NL",
+            "differenceMap": true,
+            "charts": {},
+            "compareYear": "2021",
+            "legendTitle": "2021/2024"
+          },
+          {
             "id": "krw-wl-ntot-toets-doelgat",
             "name": "Doelgat (afstand tot de norm 'goed') 2024",
             "data": {},
