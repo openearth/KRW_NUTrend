@@ -133,6 +133,17 @@
             "legendTitle": "2015/2024"
           },
           {
+            "id": "krw-wl-ntot-difference-2021",
+            "name": "Verschilkaart toetsing stikstof actueel vs. toetsjaar 2021",
+            "data": {},
+            "url": "https://krw-nutrend.avi.deltares.nl/FewsWebServices/rest/fewspiservice/v1/timeseries?filterId=krw-wl-ntot-toets-lSGBP&startTime=2021-01-01T00%3A00%3A00Z&endTime=2024-01-01T00%3A00%3A00Z&showThresholds=true&showStatistics=true&documentFormat=PI_JSON",
+            "legendGraphicId": "Ntot Toetsing t.o.v. normen laatste_SGBP (-) NL",
+            "differenceMap": true,
+            "charts": {},
+            "compareYear": "2021",
+            "legendTitle": "2021/2024"
+          },
+          {
             "id": "krw-wl-ntot-toets-doelgat",
             "name": "Doelgat (afstand tot de norm 'goed') 2024",
             "data": {},
@@ -270,6 +281,17 @@
             "charts": {},
             "compareYear": "2015",
             "legendTitle": "2015/2024"
+          },
+          {
+            "id": "krw-wl-ptot-difference-2021",
+            "name": "Verschilkaart toetsing fosfor actueel vs. toetsjaar 2021",
+            "data": {},
+            "url": "https://krw-nutrend.avi.deltares.nl/FewsWebServices/rest/fewspiservice/v1/timeseries?filterId=krw-wl-ptot-toets-lSGBP&startTime=2021-01-01T00%3A00%3A00Z&endTime=2024-01-01T00%3A00%3A00Z&showThresholds=true&showStatistics=true&documentFormat=PI_JSON",
+            "legendGraphicId": "Ptot Toetsing t.o.v. normen laatste_SGBP (-) NL",
+            "differenceMap": true,
+            "charts": {},
+            "compareYear": "2021",
+            "legendTitle": "2021/2024"
           },
           {
             "id": "krw-wl-ptot-toets-doelgat",
@@ -410,6 +432,17 @@
             "charts": {},
             "compareYear": "2015",
             "legendTitle": "2015/2024"
+          },
+          {
+            "id": "krw-wl-din-difference-2021",
+            "name": "Verschilkaart toetsing DIN actueel vs. toetsjaar 2021",
+            "data": {},
+            "url": "https://krw-nutrend.avi.deltares.nl/FewsWebServices/rest/fewspiservice/v1/timeseries?filterId=krw-wl-din-toets-lSGBP&startTime=2021-01-01T00%3A00%3A00Z&endTime=2024-01-01T00%3A00%3A00Z&showThresholds=true&showStatistics=true&documentFormat=PI_JSON",
+            "legendGraphicId": "DIN Toetsing t.o.v. normen laatste_SGBP (-) NL",
+            "differenceMap": true,
+            "charts": {},
+            "compareYear": "2021",
+            "legendTitle": "2021/2024"
           },
           {
             "id": "krw-wl-din-toets-doelgat",
@@ -591,17 +624,26 @@
             "downloadUrl": "https://krw-nutrend.avi.deltares.nl/FewsWebServices/rest/fewspiservice/v1/timeseries?filterId=krw-wl-ntot-zomgem-basis&startTime=1991-01-01T00:00:00Z&endTime=2024-01-01T00:00:00Z&documentFormat=PI_JSON"
           },
           {
-            "id": "krw-wl-ntot-zomgem-vvSGBP",
+            "id": "krw-wl-ntot-zomgem-voSGBP",
             "name": "Verschilkaart actueel t.o.v. toetsjaar 2009 (3 voorgaande jaren, mg/l)",
             "data": {},
-            "url": "https://krw-nutrend.avi.deltares.nl/FewsWebServices/rest/fewspiservice/v1/timeseries?filterId=krw-wl-ntot-zomgem-vvSGBP&startTime=2024-01-01T00%3A00%3A00Z&endTime=2024-01-01T00%3A00%3A00Z&documentFormat=PI_JSON",
+            "url": "https://krw-nutrend.avi.deltares.nl/FewsWebServices/rest/fewspiservice/v1/timeseries?filterId=krw-wl-ntot-zomgem-voSGBP&startTime=2024-01-01T00%3A00%3A00Z&endTime=2024-01-01T00%3A00%3A00Z&documentFormat=PI_JSON",
             "legendGraphicId": "Ntot Verschilkaart actueel t.o.v. voorlaatste_SGBP (mg/l) NL",
             "charts": {},
             "legendTitle": ""
           },
           {
-            "id": "krw-wl-ntot-zomgem-vlSGBP",
+            "id": "krw-wl-ntot-zomgem-vvSGBP",
             "name": "Verschilkaart actueel t.o.v. toetsjaar 2015 (3 voorgaande jaren, mg/l)",
+            "data": {},
+            "url": "https://krw-nutrend.avi.deltares.nl/FewsWebServices/rest/fewspiservice/v1/timeseries?filterId=krw-wl-ntot-zomgem-vvSGBP&startTime=2024-01-01T00%3A00%3A00Z&endTime=2024-01-01T00%3A00%3A00Z&documentFormat=PI_JSON",
+            "legendGraphicId": "Ntot Verschilkaart actueel t.o.v. laatste_SGBP (mg/l) NL",
+            "charts": {},
+            "legendTitle": ""
+          },
+                    {
+            "id": "krw-wl-ntot-zomgem-vlSGBP",
+            "name": "Verschilkaart actueel t.o.v. toetsjaar 2021 (3 voorgaande jaren, mg/l)",
             "data": {},
             "url": "https://krw-nutrend.avi.deltares.nl/FewsWebServices/rest/fewspiservice/v1/timeseries?filterId=krw-wl-ntot-zomgem-vlSGBP&startTime=2024-01-01T00%3A00%3A00Z&endTime=2024-01-01T00%3A00%3A00Z&documentFormat=PI_JSON",
             "legendGraphicId": "Ntot Verschilkaart actueel t.o.v. laatste_SGBP (mg/l) NL",
@@ -847,17 +889,26 @@
             "downloadUrl": "https://krw-nutrend.avi.deltares.nl/FewsWebServices/rest/fewspiservice/v1/timeseries?filterId=krw-wl-ptot-zomgem-basis&startTime=1991-01-01T00:00:00Z&endTime=2024-01-01T00:00:00Z&documentFormat=PI_JSON"
           },
           {
-            "id": "krw-wl-ptot-zomgem-vvSGBP",
+            "id": "krw-wl-ptot-zomgem-voSGBP",
             "name": "Verschilkaart actueel t.o.v. toetsjaar 2009 (3 voorgaande jaren, mg/l)",
             "data": {},
-            "url": "https://krw-nutrend.avi.deltares.nl/FewsWebServices/rest/fewspiservice/v1/timeseries?filterId=krw-wl-ptot-zomgem-vvSGBP&startTime=2024-01-01T00%3A00%3A00Z&endTime=2024-01-01T00%3A00%3A00Z&documentFormat=PI_JSON",
+            "url": "https://krw-nutrend.avi.deltares.nl/FewsWebServices/rest/fewspiservice/v1/timeseries?filterId=krw-wl-ptot-zomgem-voSGBP&startTime=2024-01-01T00%3A00%3A00Z&endTime=2024-01-01T00%3A00%3A00Z&documentFormat=PI_JSON",
             "legendGraphicId": "Ptot Verschilkaart actueel t.o.v. voorlaatste_SGBP (mg/l) NL",
             "charts": {},
             "legendTitle": ""
           },
           {
-            "id": "krw-wl-ptot-zomgem-vlSGBP",
+            "id": "krw-wl-ptot-zomgem-vvSGBP",
             "name": "Verschilkaart actueel t.o.v. toetsjaar 2015 (3 voorgaande jaren, mg/l)",
+            "data": {},
+            "url": "https://krw-nutrend.avi.deltares.nl/FewsWebServices/rest/fewspiservice/v1/timeseries?filterId=krw-wl-ptot-zomgem-vvSGBP&startTime=2024-01-01T00%3A00%3A00Z&endTime=2024-01-01T00%3A00%3A00Z&documentFormat=PI_JSON",
+            "legendGraphicId": "Ptot Verschilkaart actueel t.o.v. laatste_SGBP (mg/l) NL",
+            "charts": {},
+            "legendTitle": ""
+          },
+          {
+            "id": "krw-wl-ptot-zomgem-vlSGBP",
+            "name": "Verschilkaart actueel t.o.v. toetsjaar 2021 (3 voorgaande jaren, mg/l)",
             "data": {},
             "url": "https://krw-nutrend.avi.deltares.nl/FewsWebServices/rest/fewspiservice/v1/timeseries?filterId=krw-wl-ptot-zomgem-vlSGBP&startTime=2024-01-01T00%3A00%3A00Z&endTime=2024-01-01T00%3A00%3A00Z&documentFormat=PI_JSON",
             "legendGraphicId": "Ptot Verschilkaart actueel t.o.v. laatste_SGBP (mg/l) NL",
@@ -1104,17 +1155,26 @@
             "downloadUrl": "https://krw-nutrend.avi.deltares.nl/FewsWebServices/rest/fewspiservice/v1/timeseries?filterId=krw-wl-din-wingem-basis&startTime=1991-01-01T00:00:00Z&endTime=2024-01-01T00:00:00Z&documentFormat=PI_JSON"
           },
           {
-            "id": "krw-wl-din-wingem-vvSGBP",
+            "id": "krw-wl-din-wingem-voSGBP",
             "name": "Verschilkaart actueel t.o.v. toetsjaar 2009 (3 voorgaande jaren, mg/l) ",
             "data": {},
-            "url": "https://krw-nutrend.avi.deltares.nl/FewsWebServices/rest/fewspiservice/v1/timeseries?filterId=krw-wl-din-wingem-vvSGBP&startTime=2024-01-01T00%3A00%3A00Z&endTime=2024-01-01T00%3A00%3A00Z&documentFormat=PI_JSON",
+            "url": "https://krw-nutrend.avi.deltares.nl/FewsWebServices/rest/fewspiservice/v1/timeseries?filterId=krw-wl-din-wingem-voSGBP&startTime=2024-01-01T00%3A00%3A00Z&endTime=2024-01-01T00%3A00%3A00Z&documentFormat=PI_JSON",
             "legendGraphicId": "DIN Verschilkaart actueel t.o.v. voorlaatste_SGBP (mg/l) RWS",
             "charts": {},
             "legendTitle": ""
           },
           {
-            "id": "krw-wl-din-wingem-vlSGBP",
+            "id": "krw-wl-din-wingem-vvSGBP",
             "name": "Verschilkaart actueel t.o.v. toetsjaar 2015 (3 voorgaande jaren, mg/l)",
+            "data": {},
+            "url": "https://krw-nutrend.avi.deltares.nl/FewsWebServices/rest/fewspiservice/v1/timeseries?filterId=krw-wl-din-wingem-vvSGBP&startTime=2024-01-01T00%3A00%3A00Z&endTime=2024-01-01T00%3A00%3A00Z&documentFormat=PI_JSON",
+            "legendGraphicId": "DIN Verschilkaart actueel t.o.v. laatste_SGBP (mg/l) RWS",
+            "charts": {},
+            "legendTitle": ""
+          },
+          {
+            "id": "krw-wl-din-wingem-vlSGBP",
+            "name": "Verschilkaart actueel t.o.v. toetsjaar 2021 (3 voorgaande jaren, mg/l)",
             "data": {},
             "url": "https://krw-nutrend.avi.deltares.nl/FewsWebServices/rest/fewspiservice/v1/timeseries?filterId=krw-wl-din-wingem-vlSGBP&startTime=2024-01-01T00%3A00%3A00Z&endTime=2024-01-01T00%3A00%3A00Z&documentFormat=PI_JSON",
             "legendGraphicId": "DIN Verschilkaart actueel t.o.v. laatste_SGBP (mg/l) RWS",
