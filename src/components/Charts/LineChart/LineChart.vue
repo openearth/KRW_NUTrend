@@ -124,7 +124,7 @@
         return {
           type: 'time',
           min: '1991',
-          max: '2024',
+          max: '2025',
         }
       },
       yAxis() {

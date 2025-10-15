@@ -39,7 +39,7 @@
         </div>
         <v-slider
           min="1991"
-          max="2024"
+          max="2025"
           :value="selectedYear"
           thumb-label="always"
           ticks="always"
