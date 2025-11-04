@@ -23,6 +23,39 @@ export default {
       isInitialized: false,
     }
   },
+  watch: {
+    'options.source.data': {
+      handler(newData, oldData) {
+        // Update source data when it changes (e.g., when locations are loaded)
+        // This avoids recreating the layer when only data changes
+        if (!this.isInitialized || !this.getMap() || !this.options.id || !newData) {
+          return
+        }
+        
+        // Skip if this is the initial mount (mounted() will handle it)
+        // oldData will be undefined on first mount
+        if (oldData === undefined) {
+          return
+        }
+        
+        // Skip if data reference is the same (already updated)
+        if (newData === oldData) {
+          return
+        }
+        
+        const map = this.getMap()
+        const layer = map.getLayer(this.options.id)
+        if (layer) {
+          const sourceId = layer.source
+          const source = map.getSource(sourceId)
+          if (source && source.type === 'geojson') {
+            source.setData(newData)
+          }
+        }
+      },
+      deep: true,
+    },
+  },
   mounted() {
     // only execute when map is available and layer is not already initialized
     if (this.getMap()) {
