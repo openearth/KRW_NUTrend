@@ -53,17 +53,15 @@ export default {
     },
     addLayer() {
       const map = this.getMap()
-        map.addLayer(this.options)
-    },
-    checkIfLayerLoaded() { 
-      setTimeout(() => {
-         this.$emit('base-layer-is-loaded', true)
-      }, 2000)
+      map.addLayer(this.options)
+      
+      // Emit immediately after adding layer - Mapbox handles layer ordering
+      // The layer is added synchronously, so we don't need setTimeout
+      this.$emit('base-layer-is-loaded', true)
     },
     rerender() {
       this.removeLayer()
       this.addLayer()
-      this.checkIfLayerLoaded()
     },
   },
 }
