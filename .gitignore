@@ -21,3 +21,8 @@ pnpm-debug.log*
 *.njsproj
 *.sln
 *.sw?
+
+# Generated config files (from templates)
+src/config/reports.json
+src/config/services.json
+src/config/timespan.json

@@ -10,6 +10,8 @@
     "node": ">=15.0.0"
   },
   "scripts": {
+    "prebuild": "node scripts/process-config.js",
+    "predev": "node scripts/process-config.js",
     "build": "vue-cli-service build",
     "dev": "run-s lint serve",
     "fix": "run-s fix:*",
