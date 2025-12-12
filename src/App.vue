@@ -33,6 +33,7 @@
       button-text="Accepteren"
       :body="legalText"
       :checkboxes="checkboxes"
+      storage="local"
     />
     <v-fade-transition mode="out-in">
       <map-title v-if="activeMap" :title="activeMap.title " />
