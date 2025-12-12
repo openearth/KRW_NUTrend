@@ -20,7 +20,7 @@
           {{ compareYear }}: {{ formattedValue }}
         </p>
         <p class="text-body-2">
-          2022: {{ formattedValue2 }}
+          {{ endYear }}: {{ formattedValue2 }}
         </p>
       </div>
     </v-card-text>
@@ -60,6 +60,9 @@
       },
     },
     computed: {
+      endYear() {
+        return process.env.VUE_APP_END_YEAR
+      },
       formattedValue() {
         if (this.selectedType === 'state') {
           return this.formatValue(this.value)

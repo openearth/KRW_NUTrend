@@ -93,6 +93,42 @@ function processConfigFile(templatePath, outputPath, env) {
   }
 }
 
+/**
+ * Generate timespan.json from 1991 to VUE_APP_END_YEAR
+ * Creates an array of ISO date strings in descending order
+ */
+function generateTimespan(endYear, outputPath) {
+  try {
+    const startYear = 1991
+    const endYearNum = parseInt(endYear, 10)
+    
+    if (isNaN(endYearNum)) {
+      throw new Error(`Invalid VUE_APP_END_YEAR: ${ endYear }`)
+    }
+    
+    const timespan = []
+    // Generate from endYear down to 1991 (descending order)
+    for (let year = endYearNum; year >= startYear; year--) {
+      timespan.push(`"${ year }-01-01T00: 00: 00Z"`)
+    }
+    
+    // Ensure output directory exists
+    const outputDir = path.dirname(outputPath)
+    if (!fs.existsSync(outputDir)) {
+      fs.mkdirSync(outputDir, { recursive: true })
+    }
+    
+    // Format as JSON array
+    const content = '[\n' + timespan.map(item => `  ${ item }`).join(',\n') + '\n]'
+    
+    fs.writeFileSync(outputPath, content, 'utf8')
+    console.log(`✓ Generated timespan.json (${ startYear }-${ endYearNum })`)
+  } catch (error) {
+    console.error('✗ Error generating timespan.json:', error.message)
+    process.exit(1)
+  }
+}
+
 // Load .env file first
 loadEnvFile()
 
@@ -104,7 +140,6 @@ const env = process.env
 const configFiles = [
   { template: 'reports.template.json', output: 'reports.json' },
   { template: 'services.template.json', output: 'services.json' },
-  { template: 'timespan.template.json', output: 'timespan.json' },
 ]
 
 configFiles.forEach(({ template, output }) => {
@@ -117,5 +152,15 @@ configFiles.forEach(({ template, output }) => {
     console.warn(`⚠ Template file not found: ${ templatePath }`)
   }
 })
+
+// Generate timespan.json automatically
+const endYear = env.VUE_APP_END_YEAR
+if (!endYear) {
+  console.error('✗ VUE_APP_END_YEAR is not defined in environment variables')
+  process.exit(1)
+}
+
+const timespanPath = path.join(configDir, 'timespan.json')
+generateTimespan(endYear, timespanPath)
 
 console.log('✓ Config processing complete')
