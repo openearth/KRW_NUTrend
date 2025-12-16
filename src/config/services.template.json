@@ -1308,6 +1308,20 @@
             "charts": {}
           }
         ]
+      },
+      {
+        "id": "no3",
+        "name": "Nitraat",
+        "services": [
+          {
+            "id": "krw-wl-no3-jaargem",
+            "name": "Jaargemiddelde (mg/l) ",
+            "data": {},
+            "url": null,
+            "legendGraphicId": "No3 Jaargemiddeld (mg/l) NL",
+            "charts": {}
+          }
+        ]
       }
     ]
   }

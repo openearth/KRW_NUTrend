@@ -111,6 +111,7 @@
       ]),
       onSelectedType(value) {
         this.setSelectedType({ selectedType: value })
+        this.createParticleList(services)
         this.resetMap()
         this.resetChartsData()
 
@@ -155,7 +156,7 @@
         this.particleList = service.spatialPlots
           .map(spatialPlot => ({ text: spatialPlot.name, value: spatialPlot.id }))
           .sort((a, b) => a.text.localeCompare(b.text))
-        this.setSelectedParticle({ selectedParticle: this.particleList[2].value })
+        this.setSelectedParticle({ selectedParticle: 'ntot' })
       },
     },
   }

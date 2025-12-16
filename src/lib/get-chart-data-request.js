@@ -21,7 +21,7 @@ export default ((name, array, id) => { //array is the params from services.json
         locationIds: id,
         documentFormat: 'PI_JSON',
       }
-      //console.log('getChartDataRequest params', params)
+     
       const request = new Promise((resolve, reject) => {
         $axios
           .get(`/FewsWebServices/rest/fewspiservice/${ VUE_APP_API_VERSION }/timeseries`, { params })

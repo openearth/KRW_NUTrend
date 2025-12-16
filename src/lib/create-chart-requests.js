@@ -8,7 +8,6 @@ import getChartDataRequest from '~/lib/get-chart-data-request'
  */
 export default ({ charts, locationId, selectedMonitoringLocations, selectedMeetnetLocations }) => {
   let requests = []
-  console.log('createChartData charts',charts)
   const { monitoringLocations }= selectedMonitoringLocations
   const { meetnetLocations }= selectedMeetnetLocations
   
