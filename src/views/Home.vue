@@ -3,8 +3,9 @@
     <v-navigation-drawer
       app
       clipped
-      permanent
-      width="650"
+      :permanent="$vuetify.breakpoint.mdAndUp"
+      :temporary="$vuetify.breakpoint.smAndDown"
+      :width="drawerWidth"
     >
       <v-container fluid>
         <v-row justify="space-between" no-gutters>
@@ -51,9 +52,10 @@
     <v-navigation-drawer
       app
       clipped
-      permanent
+      :permanent="$vuetify.breakpoint.mdAndUp"
+      :temporary="$vuetify.breakpoint.smAndDown"
       right
-      width="400"
+      :width="rightDrawerWidth"
     >
       <v-container fluid>
         <v-row>
@@ -243,7 +245,22 @@
                                 'showToestandGraphAllBasinsModal', 'showToestandGraphAllSubBasinsModal','showToestandGraphAllWatermanagersModal', 
                                 'showToestandGraphSelectedBasinModal', 'showToestandGraphSelectedSubBasinModal', 'showToestandGraphSelectedWaterManagerModal', 
                                 'showToestandGraphAvailableWatermanagersModal' ]),
+      drawerWidth () {
+        const bp = this.$vuetify.breakpoint
 
+        if (bp.xl) return 650
+        if (bp.lg) return 500
+        if (bp.md) return 480
+        return 300
+      },
+      rightDrawerWidth () {
+        const bp = this.$vuetify.breakpoint
+
+        if (bp.xl) return 400
+        if (bp.lg) return 400
+        if (bp.md) return 400
+        return 300
+      },
     },
     watch: { 
       showToestandGraphNlModal() { 
