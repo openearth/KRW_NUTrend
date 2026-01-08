@@ -1,4 +1,4 @@
-Met behulp van de tijdbalk kunnen de verschillende jaren bekeken worden.
+De winter is gedefinieerd als de periode december tot en met februari. Met behulp van de tijdbalk kunnen de verschillende jaren bekeken worden.
  
 Per KRW-waterlichaam kunnen de meetresultaten ook in grafiekvorm bekeken worden:
  

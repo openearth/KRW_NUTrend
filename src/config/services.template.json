@@ -1319,7 +1319,188 @@
             "data": {},
             "url": null,
             "legendGraphicId": "No3 Jaargemiddeld (mg/l) NL",
-            "charts": {}
+            "charts": {
+              "scatter": {
+                "monitoring": [
+                  {
+                    "filterId": "krw-wl-gr-no3",
+                    "parameterIds": "NO3",
+                    "moduleInstanceIds": "Import_KRW_waterbeheerders_CSV",
+                    "qualifierIds": "HH_1",
+                    "startTime": "1980-01-01T00:00:00Z",
+                    "endTime": "2025-01-01T00:00:00Z"
+                  }
+                ],
+                "meetnet": [
+                  {
+                    "filterId": "krw-wl-gr-no3",
+                    "parameterIds": "NO3",
+                    "moduleInstanceIds": "Import_KRW_waterbeheerders_CSV",
+                    "qualifierIds": "HH_1",
+                    "startTime": "1980-01-01T00:00:00Z",
+                    "endTime": "2025-01-01T00:00:00Z"
+                  }
+                ]
+              },
+              "lines": [
+                {
+                  "filterId": "krw-wl-gr-no3",
+                  "parameterIds": "NO3",
+                  "moduleInstanceIds": "SamenvoegenMeetdata_NO3",
+                  "qualifierIds": "BE_yearmean",
+                  "startTime": "1980-01-01T00:00:00Z",
+                  "endTime": "2025-01-01T00:00:00Z",
+                  "timeStepId": "een.jaar",
+                  "showStatistics": "true"
+                },
+                {
+                  "filterId": "krw-wl-gr-no3",
+                  "parameterIds": "NO3",
+                  "moduleInstanceIds": "SamenvoegenMeetdata_NO3",
+                  "qualifierIds": "BE_summermean",
+                  "startTime": "1980-01-01T00:00:00Z",
+                  "endTime": "2025-01-01T00:00:00Z",
+                  "timeStepId": "een.jaar",
+                  "showStatistics": "true"
+                },
+                {
+                  "filterId": "krw-wl-gr-no3",
+                  "parameterIds": "NO3",
+                  "moduleInstanceIds": "SamenvoegenMeetdata_NO3",
+                  "qualifierIds": "BE_wintermean",
+                  "startTime": "1980-01-01T00:00:00Z",
+                  "endTime": "2025-01-01T00:00:00Z",
+                  "timeStepId": "een.jaar",
+                  "showStatistics": "true"
+                }
+              ]
+            }
+          },
+          {
+            "id": "krw-wl-no3-zomergem",
+            "name": "Zomergemiddelde (mg/l)",
+            "data": {},
+            "url": null,
+            "legendGraphicId": "NO3 Zomergemiddeld (mg/l) NL",
+            "charts": {
+              "scatter": {
+                "monitoring": [
+                  {
+                    "filterId": "krw-wl-gr-no3",
+                    "parameterIds": "NO3",
+                    "moduleInstanceIds": "Import_KRW_waterbeheerders_CSV",
+                    "qualifierIds": "HH_1",
+                    "startTime": "1980-01-01T00:00:00Z",
+                    "endTime": "2025-01-01T00:00:00Z"
+                  }
+                ],
+                "meetnet": [
+                  {
+                    "filterId": "krw-wl-gr-no3",
+                    "parameterIds": "NO3",
+                    "moduleInstanceIds": "Import_KRW_waterbeheerders_CSV",
+                    "qualifierIds": "HH_1",
+                    "startTime": "1980-01-01T00:00:00Z",
+                    "endTime": "2025-01-01T00:00:00Z"
+                  }
+                ]
+              },
+              "lines": [
+                {
+                  "filterId": "krw-wl-gr-no3",
+                  "parameterIds": "NO3",
+                  "moduleInstanceIds": "SamenvoegenMeetdata_NO3",
+                  "qualifierIds": "BE_yearmean",
+                  "startTime": "1980-01-01T00:00:00Z",
+                  "endTime": "2025-01-01T00:00:00Z",
+                  "timeStepId": "een.jaar",
+                  "showStatistics": "true"
+                },
+                {
+                  "filterId": "krw-wl-gr-no3",
+                  "parameterIds": "NO3",
+                  "moduleInstanceIds": "SamenvoegenMeetdata_NO3",
+                  "qualifierIds": "BE_summermean",
+                  "startTime": "1980-01-01T00:00:00Z",
+                  "endTime": "2025-01-01T00:00:00Z",
+                  "timeStepId": "een.jaar",
+                  "showStatistics": "true"
+                },
+                {
+                  "filterId": "krw-wl-gr-no3",
+                  "parameterIds": "NO3",
+                  "moduleInstanceIds": "SamenvoegenMeetdata_NO3",
+                  "qualifierIds": "BE_wintermean",
+                  "startTime": "1980-01-01T00:00:00Z",
+                  "endTime": "2025-01-01T00:00:00Z",
+                  "timeStepId": "een.jaar",
+                  "showStatistics": "true"
+                }
+              ]
+            }
+          },
+          {
+            "id": "krw-wl-no3-wintergem",
+            "name": "3-jarig wintergemiddelde (mg/l)  ",
+            "data": {},
+            "url": null,
+            "legendGraphicId": "NO3 Wintergemiddeld (mg/l) NL",
+            "charts": {
+              "scatter": {
+                "monitoring": [
+                  {
+                    "filterId": "krw-wl-gr-no3",
+                    "parameterIds": "NO3",
+                    "moduleInstanceIds": "Import_KRW_waterbeheerders_CSV",
+                    "qualifierIds": "HH_1",
+                    "startTime": "1980-01-01T00:00:00Z",
+                    "endTime": "2025-01-01T00:00:00Z"
+                  }
+                ],
+                "meetnet": [
+                  {
+                    "filterId": "krw-wl-gr-no3",
+                    "parameterIds": "NO3",
+                    "moduleInstanceIds": "Import_KRW_waterbeheerders_CSV",
+                    "qualifierIds": "HH_1",
+                    "startTime": "1980-01-01T00:00:00Z",
+                    "endTime": "2025-01-01T00:00:00Z"
+                  }
+                ]
+              },
+              "lines": [
+                {
+                  "filterId": "krw-wl-gr-no3",
+                  "parameterIds": "NO3",
+                  "moduleInstanceIds": "SamenvoegenMeetdata_NO3",
+                  "qualifierIds": "BE_yearmean",
+                  "startTime": "1980-01-01T00:00:00Z",
+                  "endTime": "2025-01-01T00:00:00Z",
+                  "timeStepId": "een.jaar",
+                  "showStatistics": "true"
+                },
+                {
+                  "filterId": "krw-wl-gr-no3",
+                  "parameterIds": "NO3",
+                  "moduleInstanceIds": "SamenvoegenMeetdata_NO3",
+                  "qualifierIds": "BE_summermean",
+                  "startTime": "1980-01-01T00:00:00Z",
+                  "endTime": "2025-01-01T00:00:00Z",
+                  "timeStepId": "een.jaar",
+                  "showStatistics": "true"
+                },
+                {
+                  "filterId": "krw-wl-gr-no3",
+                  "parameterIds": "NO3",
+                  "moduleInstanceIds": "SamenvoegenMeetdata_NO3",
+                  "qualifierIds": "BE_wintermean",
+                  "startTime": "1980-01-01T00:00:00Z",
+                  "endTime": "2025-01-01T00:00:00Z",
+                  "timeStepId": "een.jaar",
+                  "showStatistics": "true"
+                }
+              ]
+            }
           }
         ]
       },
@@ -1333,7 +1514,188 @@
             "data": {},
             "url": null,
             "legendGraphicId": "Nh4 Jaargemiddeld (mg/l) NL",
-            "charts": {}
+            "charts": {
+              "scatter": {
+                "monitoring": [
+                  {
+                    "filterId": "krw-wl-gr-nh4",
+                    "parameterIds": "NH4",
+                    "moduleInstanceIds": "Import_KRW_waterbeheerders_CSV",
+                    "qualifierIds": "HH_1",
+                    "startTime": "1980-01-01T00:00:00Z",
+                    "endTime": "2025-01-01T00:00:00Z"
+                  }
+                ],
+                "meetnet": [
+                  {
+                    "filterId": "krw-wl-gr-nh4",
+                    "parameterIds": "NH4",
+                    "moduleInstanceIds": "Import_KRW_waterbeheerders_CSV",
+                    "qualifierIds": "HH_1",
+                    "startTime": "1980-01-01T00:00:00Z",
+                    "endTime": "2025-01-01T00:00:00Z"
+                  }
+                ]
+              },
+              "lines": [
+                {
+                  "filterId": "krw-wl-gr-nh4",
+                  "parameterIds": "NH4",
+                  "moduleInstanceIds": "SamenvoegenMeetdata_NH4",
+                  "qualifierIds": "BE_yearmean",
+                  "startTime": "1980-01-01T00:00:00Z",
+                  "endTime": "2025-01-01T00:00:00Z",
+                  "timeStepId": "een.jaar",
+                  "showStatistics": "true"
+                },
+                {
+                  "filterId": "krw-wl-gr-nh4",
+                  "parameterIds": "NH4",
+                  "moduleInstanceIds": "SamenvoegenMeetdata_NH4",
+                  "qualifierIds": "BE_summermean",
+                  "startTime": "1980-01-01T00:00:00Z",
+                  "endTime": "2025-01-01T00:00:00Z",
+                  "timeStepId": "een.jaar",
+                  "showStatistics": "true"
+                },
+                {
+                  "filterId": "krw-wl-gr-nh4",
+                  "parameterIds": "NH4",
+                  "moduleInstanceIds": "SamenvoegenMeetdata_NH4",
+                  "qualifierIds": "BE_wintermean",
+                  "startTime": "1980-01-01T00:00:00Z",
+                  "endTime": "2025-01-01T00:00:00Z",
+                  "timeStepId": "een.jaar",
+                  "showStatistics": "true"
+                }
+              ]
+            }
+          },
+          {
+            "id": "krw-wl-nh4-zomergem",
+            "name": "Zomergemiddelde (mg/l)",
+            "data": {},
+            "url": null,
+            "legendGraphicId": "NH4 Zomergemiddeld (mg/l) NL",
+            "charts": {
+              "scatter": {
+                "monitoring": [
+                  {
+                    "filterId": "krw-wl-gr-nh4",
+                    "parameterIds": "NH4",
+                    "moduleInstanceIds": "Import_KRW_waterbeheerders_CSV",
+                    "qualifierIds": "HH_1",
+                    "startTime": "1980-01-01T00:00:00Z",
+                    "endTime": "2025-01-01T00:00:00Z"
+                  }
+                ],
+                "meetnet": [
+                  {
+                    "filterId": "krw-wl-gr-nh4",
+                    "parameterIds": "NH4",
+                    "moduleInstanceIds": "Import_KRW_waterbeheerders_CSV",
+                    "qualifierIds": "HH_1",
+                    "startTime": "1980-01-01T00:00:00Z",
+                    "endTime": "2025-01-01T00:00:00Z"
+                  }
+                ]
+              },
+              "lines": [
+                {
+                  "filterId": "krw-wl-gr-nh4",
+                  "parameterIds": "NH4",
+                  "moduleInstanceIds": "SamenvoegenMeetdata_NH4",
+                  "qualifierIds": "BE_yearmean",
+                  "startTime": "1980-01-01T00:00:00Z",
+                  "endTime": "2025-01-01T00:00:00Z",
+                  "timeStepId": "een.jaar",
+                  "showStatistics": "true"
+                },
+                {
+                  "filterId": "krw-wl-gr-nh4",
+                  "parameterIds": "NH4",
+                  "moduleInstanceIds": "SamenvoegenMeetdata_NH4",
+                  "qualifierIds": "BE_summermean",
+                  "startTime": "1980-01-01T00:00:00Z",
+                  "endTime": "2025-01-01T00:00:00Z",
+                  "timeStepId": "een.jaar",
+                  "showStatistics": "true"
+                },
+                {
+                  "filterId": "krw-wl-gr-nh4",
+                  "parameterIds": "NH4",
+                  "moduleInstanceIds": "SamenvoegenMeetdata_NH4",
+                  "qualifierIds": "BE_wintermean",
+                  "startTime": "1980-01-01T00:00:00Z",
+                  "endTime": "2025-01-01T00:00:00Z",
+                  "timeStepId": "een.jaar",
+                  "showStatistics": "true"
+                }
+              ]
+            }
+          },
+          {
+            "id": "krw-wl-nh4-wintergem",
+            "name": "Wintergemiddelde (mg/l)  ",
+            "data": {},
+            "url": null,
+            "legendGraphicId": "NH4 Wintergemiddeld (mg/l) NL",
+            "charts": {
+              "scatter": {
+                "monitoring": [
+                  {
+                    "filterId": "krw-wl-gr-nh4",
+                    "parameterIds": "NH4",
+                    "moduleInstanceIds": "Import_KRW_waterbeheerders_CSV",
+                    "qualifierIds": "HH_1",
+                    "startTime": "1980-01-01T00:00:00Z",
+                    "endTime": "2025-01-01T00:00:00Z"
+                  }
+                ],
+                "meetnet": [
+                  {
+                    "filterId": "krw-wl-gr-nh4",
+                    "parameterIds": "NH4",
+                    "moduleInstanceIds": "Import_KRW_waterbeheerders_CSV",
+                    "qualifierIds": "HH_1",
+                    "startTime": "1980-01-01T00:00:00Z",
+                    "endTime": "2025-01-01T00:00:00Z"
+                  }
+                ]
+              },
+              "lines": [
+                {
+                  "filterId": "krw-wl-gr-nh4",
+                  "parameterIds": "NH4",
+                  "moduleInstanceIds": "SamenvoegenMeetdata_NH4",
+                  "qualifierIds": "BE_yearmean",
+                  "startTime": "1980-01-01T00:00:00Z",
+                  "endTime": "2025-01-01T00:00:00Z",
+                  "timeStepId": "een.jaar",
+                  "showStatistics": "true"
+                },
+                {
+                  "filterId": "krw-wl-gr-nh4",
+                  "parameterIds": "NH4",
+                  "moduleInstanceIds": "SamenvoegenMeetdata_NH4",
+                  "qualifierIds": "BE_summermean",
+                  "startTime": "1980-01-01T00:00:00Z",
+                  "endTime": "2025-01-01T00:00:00Z",
+                  "timeStepId": "een.jaar",
+                  "showStatistics": "true"
+                },
+                {
+                  "filterId": "krw-wl-gr-nh4",
+                  "parameterIds": "NH4",
+                  "moduleInstanceIds": "SamenvoegenMeetdata_NH4",
+                  "qualifierIds": "BE_wintermean",
+                  "startTime": "1980-01-01T00:00:00Z",
+                  "endTime": "2025-01-01T00:00:00Z",
+                  "timeStepId": "een.jaar",
+                  "showStatistics": "true"
+                }
+              ]
+            }
           }
         ]
       }
