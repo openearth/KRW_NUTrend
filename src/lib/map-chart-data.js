@@ -33,10 +33,13 @@
  * ]
  */
 export default (array) => {
+
   const mappedData = []
   
   array.forEach((item) => {
+    
     const { name, result } = item
+   
     const { data, value, location } = result
     
     if (name === 'scatter') {
@@ -49,9 +52,9 @@ export default (array) => {
       }) 
     }else{
       const existingEntry = mappedData.find(item => item.name === name)
+
       
-      
-      // if an entry already exists in mappedData, add the data to it.
+      // if an entry (with entry I mean lines, dots, etc.) already exists in mappedData, add the data to it.
       if (existingEntry) {
         
         if (value) {
@@ -79,15 +82,24 @@ export default (array) => {
       } else {
        
         // else, we create a new entry in mappedData and add the available data.
+        if (name === 'lines') {
+          mappedData.push({
+            name,
+            ...(data && { series:  [ data ]  }),
+            ...(value && { areas: [ { value } ] }),
+          })
+        
+        }
         mappedData.push({
           name,
-          ...(data && { series: data }),
+          ...(data && { series:  data  }),
           ...(value && { areas: [ { value } ] }),
         })
       }
       }
 
   })
+  
   return {
     data: mappedData,
   }
