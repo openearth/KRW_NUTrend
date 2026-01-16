@@ -37,7 +37,7 @@
   ])
 
   export default {
-    name: 'DotsChart',
+    name: 'LinesChart',
     components: {
       VChart,
     },
@@ -55,7 +55,7 @@
           type: 'line',
           lineStyle: { width: 3 },
         },
-        seriesColors: [ 'black', 'purple', 'blue' ],
+        seriesColors: [ 'magenta', 'cyan', 'black' ],
       }
     },
     computed: {
@@ -98,10 +98,12 @@
       seriesName() {
         if (this.selectedParticle === 'din') {
           return [ '3-jarig \nWintergemiddelde', 'Jaargemiddelde', 'Wintergemiddelde' ] 
-        }else{
+        } else if (this.selectedParticle === 'nh4' || this.selectedParticle === 'no3') {
+          return [ 'Jaargemiddelde', 'Zomergemiddelde', 'Wintergemiddelde' ]
+        } else {
           return [ '3-jarig \nZomergemiddelde', 'Jaargemiddelde', 'Zomergemiddelde' ]
         }
-      }, 
+      },
 
       lineChartData() {
         const chartData = this.data.find(data => data.name === 'lines')
@@ -136,7 +138,7 @@
           type: 'value',
           min: this.areas && this.areas.length > 0 
             ? parseFloat(this.areas[0].min)
-            : this.minValue,
+            : 0,
           max: this.maxValue,
         }
       },

@@ -1441,7 +1441,7 @@
           },
           {
             "id": "krw-wl-no3-wintergem",
-            "name": "3-jarig wintergemiddelde (mg/l)  ",
+            "name": "Wintergemiddelde (mg/l)",
             "data": {},
             "url": null,
             "legendGraphicId": "NO3 Wintergemiddeld (mg/l) NL",

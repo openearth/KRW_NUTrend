@@ -128,7 +128,7 @@ export default {
       const { selectedParticle } = rootState['filters']
       const type = capitalizeString(selectedParticle)
 
-      const imageUrl =  `https://krw-nutrend.avi.deltares.nl/data/Trend-${ locationId }%20-%20${ type }.jpg`
+      const imageUrl =  `${ process.env.VUE_APP_API_ENDPOINT }/data/Trend-${ locationId }%20-%20${ type }.jpg`
      
       commit('SET_CHART_IMAGE', imageUrl)
     },
