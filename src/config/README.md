@@ -2,6 +2,8 @@
 
 These JSON configuration files contain placeholders that are replaced with environment variable values during the build process.
 
+For detailed instructions on altering `services.template.json` (adding layers, charts, legends, etc.), see [SERVICES_TEMPLATE_README.md](./SERVICES_TEMPLATE_README.md).
+
 ## Placeholders
 
 - `${VUE_APP_API_ENDPOINT}` - Replaced with the API endpoint URL (e.g., `https://krw-nutrend.avi.deltares.nl`)
