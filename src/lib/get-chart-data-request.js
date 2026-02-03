@@ -16,8 +16,10 @@ export default ((name, array, id) => { //array is the params from services.json
    array.forEach((parameters) => {
       
       const hasAreaParameter = parameters?.moduleInstanceIds.includes('BerekenNormen')
+      // Extract seriesDetails before creating params to exclude it from the request this is used for the lines charts
+      const { seriesDetails, ...paramsWithoutSeriesDetails } = parameters
       const params = {
-        ...parameters,
+        ...paramsWithoutSeriesDetails,
         locationIds: id,
         documentFormat: 'PI_JSON',
       }
@@ -30,7 +32,7 @@ export default ((name, array, id) => { //array is the params from services.json
             ? getChartAreaFromTimeseries(data)
             : mapTimeseriesToChartData(data, name), 
           )
-          .then((result) => resolve({ name, result }))
+          .then((result) => resolve({ name, result, seriesDetails }))
           .catch((err) => reject(err))
       })
 

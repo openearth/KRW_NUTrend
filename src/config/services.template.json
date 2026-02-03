@@ -576,7 +576,11 @@
                   "startTime": "1980-01-01T00:00:00Z",
                   "endTime": "${VUE_APP_END_YEAR}-01-01T00:00:00Z",
                   "timeStepId": "jaar",
-                  "showStatistics": "true"
+                  "showStatistics": "true",
+                  "seriesDetails": {
+                    "name": "3-jarig \nZomergemiddelde",
+                    "color": "black"
+                  }
                 },
                 {
                   "filterId": "krw-wl-gr-ntot",
@@ -586,7 +590,11 @@
                   "startTime": "1980-01-01T00:00:00Z",
                   "endTime": "${VUE_APP_END_YEAR}-01-01T00:00:00Z",
                   "timeStepId": "een.jaar",
-                  "showStatistics": "true"
+                  "showStatistics": "true",
+                  "seriesDetails": {
+                    "name": "Jaargemiddelde",
+                    "color": "cyan"
+                  }
                 },
                 {
                   "filterId": "krw-wl-gr-ntot",
@@ -596,7 +604,11 @@
                   "startTime": "1980-01-01T00:00:00Z",
                   "endTime": "${VUE_APP_END_YEAR}-01-01T00:00:00Z",
                   "timeStepId": "zomer",
-                  "showStatistics": "true"
+                  "showStatistics": "true",
+                  "seriesDetails": {
+                    "name": "Zomergemiddelde",
+                    "color": "magenta"
+                  }
                 }
               ],
               "scatter": {
@@ -707,7 +719,11 @@
                   "startTime": "1980-01-01T00:00:00Z",
                   "endTime": "${VUE_APP_END_YEAR}-01-01T00:00:00Z",
                   "timeStepId": "jaar",
-                  "showStatistics": "true"
+                  "showStatistics": "true",
+                  "seriesDetails": {
+                    "name": "3-jarig \nZomergemiddelde",
+                    "color": "black"
+                  }
                 },
                 {
                   "filterId": "krw-wl-gr-ntot",
@@ -717,7 +733,11 @@
                   "startTime": "1980-01-01T00:00:00Z",
                   "endTime": "${VUE_APP_END_YEAR}-01-01T00:00:00Z",
                   "timeStepId": "een.jaar",
-                  "showStatistics": "true"
+                  "showStatistics": "true",
+                  "seriesDetails": {
+                    "name": "Jaargemiddelde",
+                    "color": "cyan"
+                  }
                 },
                 {
                   "filterId": "krw-wl-gr-ntot",
@@ -727,7 +747,11 @@
                   "startTime": "1980-01-01T00:00:00Z",
                   "endTime": "${VUE_APP_END_YEAR}-01-01T00:00:00Z",
                   "timeStepId": "zomer",
-                  "showStatistics": "true"
+                  "showStatistics": "true",
+                  "seriesDetails": {
+                    "name": "Zomergemiddelde",
+                    "color": "magenta"
+                  }
                 }
               ],
               "scatter": {
@@ -841,7 +865,11 @@
                   "startTime": "1980-01-01T00:00:00Z",
                   "endTime": "${VUE_APP_END_YEAR}-01-01T00:00:00Z",
                   "timeStepId": "jaar",
-                  "showStatistics": "true"
+                  "showStatistics": "true",
+                  "seriesDetails": {
+                    "name": "3-jarig \nZomergemiddelde",
+                    "color": "black"
+                  }
                 },
                 {
                   "filterId": "krw-wl-gr-ptot",
@@ -851,7 +879,11 @@
                   "startTime": "1980-01-01T00:00:00Z",
                   "endTime": "${VUE_APP_END_YEAR}-01-01T00:00:00Z",
                   "timeStepId": "een.jaar",
-                  "showStatistics": "true"
+                  "showStatistics": "true",
+                  "seriesDetails": {
+                    "name": "Jaargemiddelde",
+                    "color": "cyan"
+                  }
                 },
                 {
                   "filterId": "krw-wl-gr-ptot",
@@ -861,7 +893,11 @@
                   "startTime": "1980-01-01T00:00:00Z",
                   "endTime": "${VUE_APP_END_YEAR}-01-01T00:00:00Z",
                   "timeStepId": "zomer",
-                  "showStatistics": "true"
+                  "showStatistics": "true",
+                  "seriesDetails": {
+                    "name": "Zomergemiddelde",
+                    "color": "magenta"
+                  }
                 }
               ],
               "scatter": {
@@ -972,7 +1008,11 @@
                   "startTime": "1980-01-01T00:00:00Z",
                   "endTime": "${VUE_APP_END_YEAR}-01-01T00:00:00Z",
                   "timeStepId": "jaar",
-                  "showStatistics": "true"
+                  "showStatistics": "true",
+                  "seriesDetails": {
+                    "name": "3-jarig \nZomergemiddelde",
+                    "color": "black"
+                  }
                 },
                 {
                   "filterId": "krw-wl-gr-ptot",
@@ -982,7 +1022,11 @@
                   "startTime": "1980-01-01T00:00:00Z",
                   "endTime": "${VUE_APP_END_YEAR}-01-01T00:00:00Z",
                   "timeStepId": "een.jaar",
-                  "showStatistics": "true"
+                  "showStatistics": "true",
+                  "seriesDetails": {
+                    "name": "Jaargemiddelde",
+                    "color": "cyan"
+                  }
                 },
                 {
                   "filterId": "krw-wl-gr-ptot",
@@ -992,7 +1036,11 @@
                   "startTime": "1980-01-01T00:00:00Z",
                   "endTime": "${VUE_APP_END_YEAR}-01-01T00:00:00Z",
                   "timeStepId": "zomer",
-                  "showStatistics": "true"
+                  "showStatistics": "true",
+                  "seriesDetails": {
+                    "name": "Zomergemiddelde",
+                    "color": "magenta"
+                  }
                 }
               ],
               "scatter": {
@@ -1106,7 +1154,11 @@
                   "startTime": "1980-01-01T00:00:00Z",
                   "endTime": "${VUE_APP_END_YEAR}-01-01T00:00:00Z",
                   "timeStepId": "jaar",
-                  "showStatistics": "true"
+                  "showStatistics": "true",
+                  "seriesDetails": {
+                    "name": "3-jarig \nWintergemiddelde",
+                    "color": "black"
+                  }
                 },
                 {
                   "filterId": "krw-wl-gr-din",
@@ -1116,7 +1168,11 @@
                   "startTime": "1980-01-01T00:00:00Z",
                   "endTime": "${VUE_APP_END_YEAR}-01-01T00:00:00Z",
                   "timeStepId": "een.jaar",
-                  "showStatistics": "true"
+                  "showStatistics": "true",
+                  "seriesDetails": {
+                    "name": "Jaargemiddelde",
+                    "color": "cyan"
+                  }
                 },
                 {
                   "filterId": "krw-wl-gr-din",
@@ -1126,7 +1182,11 @@
                   "startTime": "1980-01-01T00:00:00Z",
                   "endTime": "${VUE_APP_END_YEAR}-01-01T00:00:00Z",
                   "timeStepId": "winter",
-                  "showStatistics": "true"
+                  "showStatistics": "true",
+                  "seriesDetails": {
+                    "name": "Wintergemiddelde",
+                    "color": "blue"
+                  }
                 }
               ],
               "scatter": {
@@ -1237,7 +1297,11 @@
                   "startTime": "1980-01-01T00:00:00Z",
                   "endTime": "${VUE_APP_END_YEAR}-01-01T00:00:00Z",
                   "timeStepId": "jaar",
-                  "showStatistics": "true"
+                  "showStatistics": "true",
+                  "seriesDetails": {
+                    "name": "3-jarig \nWintergemiddelde",
+                    "color": "black"
+                  }
                 },
                 {
                   "filterId": "krw-wl-gr-din",
@@ -1247,7 +1311,11 @@
                   "startTime": "1980-01-01T00:00:00Z",
                   "endTime": "${VUE_APP_END_YEAR}-01-01T00:00:00Z",
                   "timeStepId": "een.jaar",
-                  "showStatistics": "true"
+                  "showStatistics": "true",
+                  "seriesDetails": {
+                    "name": "Jaargemiddelde",
+                    "color": "cyan"
+                  }
                 },
                 {
                   "filterId": "krw-wl-gr-din",
@@ -1257,7 +1325,11 @@
                   "startTime": "1980-01-01T00:00:00Z",
                   "endTime": "${VUE_APP_END_YEAR}-01-01T00:00:00Z",
                   "timeStepId": "winter",
-                  "showStatistics": "true"
+                  "showStatistics": "true",
+                  "seriesDetails": {
+                    "name": "Wintergemiddelde",
+                    "color": "blue"
+                  }
                 }
               ],
               "scatter": {
@@ -1351,7 +1423,11 @@
                   "startTime": "1980-01-01T00:00:00Z",
                   "endTime": "2025-01-01T00:00:00Z",
                   "timeStepId": "een.jaar",
-                  "showStatistics": "true"
+                  "showStatistics": "true",
+                  "seriesDetails": {
+                    "name": "Jaargemiddelde",
+                    "color": "cyan"
+                  }
                 },
                 {
                   "filterId": "krw-wl-gr-no3",
@@ -1361,7 +1437,11 @@
                   "startTime": "1980-01-01T00:00:00Z",
                   "endTime": "2025-01-01T00:00:00Z",
                   "timeStepId": "een.jaar",
-                  "showStatistics": "true"
+                  "showStatistics": "true",
+                  "seriesDetails": {
+                    "name": "Zomergemiddelde",
+                    "color": "magenta"
+                  }
                 },
                 {
                   "filterId": "krw-wl-gr-no3",
@@ -1371,7 +1451,11 @@
                   "startTime": "1980-01-01T00:00:00Z",
                   "endTime": "2025-01-01T00:00:00Z",
                   "timeStepId": "een.jaar",
-                  "showStatistics": "true"
+                  "showStatistics": "true",
+                  "seriesDetails": {
+                    "name": "Wintergemiddelde",
+                    "color": "blue"
+                  }
                 }
               ]
             }
@@ -1414,7 +1498,11 @@
                   "startTime": "1980-01-01T00:00:00Z",
                   "endTime": "2025-01-01T00:00:00Z",
                   "timeStepId": "een.jaar",
-                  "showStatistics": "true"
+                  "showStatistics": "true",
+                  "seriesDetails": {
+                    "name": "Jaargemiddelde",
+                    "color": "cyan"
+                  }
                 },
                 {
                   "filterId": "krw-wl-gr-no3",
@@ -1424,7 +1512,11 @@
                   "startTime": "1980-01-01T00:00:00Z",
                   "endTime": "2025-01-01T00:00:00Z",
                   "timeStepId": "een.jaar",
-                  "showStatistics": "true"
+                  "showStatistics": "true",
+                  "seriesDetails": {
+                    "name": "Zomergemiddelde",
+                    "color": "magenta"
+                  }
                 },
                 {
                   "filterId": "krw-wl-gr-no3",
@@ -1434,7 +1526,11 @@
                   "startTime": "1980-01-01T00:00:00Z",
                   "endTime": "2025-01-01T00:00:00Z",
                   "timeStepId": "een.jaar",
-                  "showStatistics": "true"
+                  "showStatistics": "true",
+                  "seriesDetails": {
+                    "name": "Wintergemiddelde",
+                    "color": "blue"
+                  }
                 }
               ]
             }
@@ -1477,7 +1573,11 @@
                   "startTime": "1980-01-01T00:00:00Z",
                   "endTime": "2025-01-01T00:00:00Z",
                   "timeStepId": "een.jaar",
-                  "showStatistics": "true"
+                  "showStatistics": "true",
+                  "seriesDetails": {
+                    "name": "Jaargemiddelde",
+                    "color": "cyan"
+                  }
                 },
                 {
                   "filterId": "krw-wl-gr-no3",
@@ -1487,7 +1587,11 @@
                   "startTime": "1980-01-01T00:00:00Z",
                   "endTime": "2025-01-01T00:00:00Z",
                   "timeStepId": "een.jaar",
-                  "showStatistics": "true"
+                  "showStatistics": "true",
+                  "seriesDetails": {
+                    "name": "Zomergemiddelde",
+                    "color": "magenta"
+                  }
                 },
                 {
                   "filterId": "krw-wl-gr-no3",
@@ -1497,7 +1601,11 @@
                   "startTime": "1980-01-01T00:00:00Z",
                   "endTime": "2025-01-01T00:00:00Z",
                   "timeStepId": "een.jaar",
-                  "showStatistics": "true"
+                  "showStatistics": "true",
+                  "seriesDetails": {
+                    "name": "Wintergemiddelde",
+                    "color": "blue"
+                  }
                 }
               ]
             }
@@ -1546,7 +1654,11 @@
                   "startTime": "1980-01-01T00:00:00Z",
                   "endTime": "2025-01-01T00:00:00Z",
                   "timeStepId": "een.jaar",
-                  "showStatistics": "true"
+                  "showStatistics": "true",
+                  "seriesDetails": {
+                    "name": "Jaargemiddelde",
+                    "color": "cyan"
+                  }
                 },
                 {
                   "filterId": "krw-wl-gr-nh4",
@@ -1556,7 +1668,11 @@
                   "startTime": "1980-01-01T00:00:00Z",
                   "endTime": "2025-01-01T00:00:00Z",
                   "timeStepId": "een.jaar",
-                  "showStatistics": "true"
+                  "showStatistics": "true",
+                  "seriesDetails": {
+                    "name": "Zomergemiddelde",
+                    "color": "magenta"
+                  }
                 },
                 {
                   "filterId": "krw-wl-gr-nh4",
@@ -1566,7 +1682,11 @@
                   "startTime": "1980-01-01T00:00:00Z",
                   "endTime": "2025-01-01T00:00:00Z",
                   "timeStepId": "een.jaar",
-                  "showStatistics": "true"
+                  "showStatistics": "true",
+                  "seriesDetails": {
+                    "name": "Wintergemiddelde",
+                    "color": "blue"
+                  }
                 }
               ]
             }
@@ -1609,7 +1729,11 @@
                   "startTime": "1980-01-01T00:00:00Z",
                   "endTime": "2025-01-01T00:00:00Z",
                   "timeStepId": "een.jaar",
-                  "showStatistics": "true"
+                  "showStatistics": "true",
+                  "seriesDetails": {
+                    "name": "Jaargemiddelde",
+                    "color": "cyan"
+                  }
                 },
                 {
                   "filterId": "krw-wl-gr-nh4",
@@ -1619,7 +1743,11 @@
                   "startTime": "1980-01-01T00:00:00Z",
                   "endTime": "2025-01-01T00:00:00Z",
                   "timeStepId": "een.jaar",
-                  "showStatistics": "true"
+                  "showStatistics": "true",
+                  "seriesDetails": {
+                    "name": "Zomergemiddelde",
+                    "color": "magenta"
+                  }
                 },
                 {
                   "filterId": "krw-wl-gr-nh4",
@@ -1629,7 +1757,11 @@
                   "startTime": "1980-01-01T00:00:00Z",
                   "endTime": "2025-01-01T00:00:00Z",
                   "timeStepId": "een.jaar",
-                  "showStatistics": "true"
+                  "showStatistics": "true",
+                  "seriesDetails": {
+                    "name": "Wintergemiddelde",
+                    "color": "blue"
+                  }
                 }
               ]
             }
@@ -1672,7 +1804,11 @@
                   "startTime": "1980-01-01T00:00:00Z",
                   "endTime": "2025-01-01T00:00:00Z",
                   "timeStepId": "een.jaar",
-                  "showStatistics": "true"
+                  "showStatistics": "true",
+                  "seriesDetails": {
+                    "name": "Jaargemiddelde",
+                    "color": "cyan"
+                  }
                 },
                 {
                   "filterId": "krw-wl-gr-nh4",
@@ -1682,7 +1818,11 @@
                   "startTime": "1980-01-01T00:00:00Z",
                   "endTime": "2025-01-01T00:00:00Z",
                   "timeStepId": "een.jaar",
-                  "showStatistics": "true"
+                  "showStatistics": "true",
+                  "seriesDetails": {
+                    "name": "Zomergemiddelde",
+                    "color": "magenta"
+                  }
                 },
                 {
                   "filterId": "krw-wl-gr-nh4",
@@ -1692,7 +1832,11 @@
                   "startTime": "1980-01-01T00:00:00Z",
                   "endTime": "2025-01-01T00:00:00Z",
                   "timeStepId": "een.jaar",
-                  "showStatistics": "true"
+                  "showStatistics": "true",
+                  "seriesDetails": {
+                    "name": "Wintergemiddelde",
+                    "color": "blue"
+                  }
                 }
               ]
             }

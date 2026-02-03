@@ -55,7 +55,6 @@
           type: 'line',
           lineStyle: { width: 3 },
         },
-        seriesColors: [ 'magenta', 'cyan', 'black' ],
       }
     },
     computed: {
@@ -93,15 +92,6 @@
               borderWidth: 0.5,
             },
           },
-        }
-      },
-      seriesName() {
-        if (this.selectedParticle === 'din') {
-          return [ '3-jarig \nWintergemiddelde', 'Jaargemiddelde', 'Wintergemiddelde' ] 
-        } else if (this.selectedParticle === 'nh4' || this.selectedParticle === 'no3') {
-          return [ 'Jaargemiddelde', 'Zomergemiddelde', 'Wintergemiddelde' ]
-        } else {
-          return [ '3-jarig \nZomergemiddelde', 'Jaargemiddelde', 'Zomergemiddelde' ]
         }
       },
 
@@ -161,12 +151,12 @@
     },
     methods: {
       getSeriesData(data) {
-        const result = data.map((serie, index) => ({
+        const result = data.map((serie) => ({
           ...this.seriesStyle,
-          name: this.seriesName[index],
-          data: serie,
+          name: serie.seriesName,
+          data: serie.data || serie,
           itemStyle: {
-            color: this.seriesColors[index],
+            color: serie.seriesColor,
           },
         }))
         return result
