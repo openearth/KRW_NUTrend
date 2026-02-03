@@ -524,7 +524,7 @@
             "data": {},
             "url": null,
             "legendGraphicId": "Ntot Zomergemiddeld (mg/l) NL",
-            "legendPrefix": "Zomergemiddelde",
+            "legendPrefix": "Toetsjaar",
             "charts": {
               "dots": [
                 {
@@ -813,7 +813,7 @@
             "data": {},
             "url": null,
             "legendGraphicId": "Ptot Zomergemiddeld (mg/l) NL",
-            "legendPrefix": "Zomergemiddelde",
+            "legendPrefix": "Toetsjaar",
             "charts": {
               "dots": [
                 {
@@ -956,6 +956,7 @@
             "name": "Jaargemiddelde (mg/l) ",
             "data": {},
             "url": null,
+            "legendPrefix": "Meetjaar",
             "legendGraphicId": "Ptot Jaargemiddeld (mg/l) NL",
             "charts": {
               "dots": [
@@ -1102,7 +1103,7 @@
             "data": {},
             "url": null,
             "legendGraphicId": "DIN Wintergemiddeld (mg/l) RWS",
-            "legendPrefix": "Wintergemiddelde",
+            "legendPrefix": "Toetsjaar",
             "charts": {
               "dots": [
                 {
