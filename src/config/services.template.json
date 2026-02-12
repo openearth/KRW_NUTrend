@@ -668,6 +668,7 @@
             "data": {},
             "url": null,
             "legendGraphicId": "Ntot Jaargemiddeld (mg/l) NL",
+            "legendPrefix": "Meetjaar",
             "charts": {
               "dots": [
                 {
@@ -958,6 +959,7 @@
             "url": null,
             "legendPrefix": "Meetjaar",
             "legendGraphicId": "Ptot Jaargemiddeld (mg/l) NL",
+            "legendPrefix": "Meetjaar",
             "charts": {
               "dots": [
                 {
@@ -1247,6 +1249,7 @@
             "data": {},
             "url": null,
             "legendGraphicId": "DIN Jaargemiddeld (mg/l) NL",
+            "legendPrefix": "Meetjaar",
             "charts": {
               "dots": [
                 {
@@ -1392,6 +1395,7 @@
             "data": {},
             "url": null,
             "legendGraphicId": "No3 Jaargemiddeld (mg/l) NL",
+            "legendPrefix": "Meetjaar",
             "charts": {
               "scatter": {
                 "monitoring": [
@@ -1467,6 +1471,7 @@
             "data": {},
             "url": null,
             "legendGraphicId": "NO3 Zomergemiddeld (mg/l) NL",
+            "legendPrefix": "Meetjaar",
             "charts": {
               "scatter": {
                 "monitoring": [
@@ -1542,6 +1547,7 @@
             "data": {},
             "url": null,
             "legendGraphicId": "NO3 Wintergemiddeld (mg/l) NL",
+            "legendPrefix": "Meetjaar",
             "charts": {
               "scatter": {
                 "monitoring": [
@@ -1623,6 +1629,7 @@
             "data": {},
             "url": null,
             "legendGraphicId": "Nh4 Jaargemiddeld (mg/l) NL",
+            "legendPrefix": "Meetjaar",
             "charts": {
               "scatter": {
                 "monitoring": [
@@ -1698,6 +1705,7 @@
             "data": {},
             "url": null,
             "legendGraphicId": "NH4 Zomergemiddeld (mg/l) NL",
+            "legendPrefix": "Meetjaar",
             "charts": {
               "scatter": {
                 "monitoring": [
@@ -1773,6 +1781,7 @@
             "data": {},
             "url": null,
             "legendGraphicId": "NH4 Wintergemiddeld (mg/l) NL",
+            "legendPrefix": "Meetjaar",
             "charts": {
               "scatter": {
                 "monitoring": [
