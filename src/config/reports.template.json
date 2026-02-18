@@ -1,7 +1,15 @@
 [
   {
+    "title": "Homepage KRW-NUTrend",
+    "url": "https://www.deltares.nl/software-en-data/producten/krw-nutrend"
+  },
+  {
     "title": "Beschrijving viewer",
     "url": "${VUE_APP_API_ENDPOINT}/reports/Gebruikshandleiding%20KRW-NUTrend.pdf"
+  },
+  {
+    "title": "KRW Toestand- en trendanalyse voor nutriënten: update 2024",
+    "url": "https://publications.deltares.nl/11210346_005_0003.pdf"
   },
   {
     "title": "Update KRW-NUTrend t/m toetsjaar 2020",
