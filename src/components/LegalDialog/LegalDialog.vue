@@ -106,7 +106,8 @@
     mounted() {
       this.accepted = this.checkboxes.map(() => false)
       if (this.storageMethod) {
-        this.show = !JSON.parse(window[this.storageMethod].getItem(STORAGE_KEY))
+        const stored = window[this.storageMethod].getItem(STORAGE_KEY)
+        this.show = !(stored && JSON.parse(stored))
       } else {
         this.show = true
       }
@@ -116,7 +117,7 @@
         this.show = false
         this.$emit('accepted')
         if (this.storageMethod) {
-          window[this.storageMethod].setItem(STORAGE_KEY, true)
+          window[this.storageMethod].setItem(STORAGE_KEY, JSON.stringify(true))
         }
       },
     },

@@ -33,6 +33,7 @@
       button-text="Accepteren"
       :body="legalText"
       :checkboxes="checkboxes"
+      storage="local"
     />
     <v-fade-transition mode="out-in">
       <map-title v-if="activeMap" :title="activeMap.title " />
@@ -150,7 +151,10 @@
         }
       },
       layerBbox() { 
-        this.zoomBounds  = this.layerBbox
+        // Only auto-zoom to layer extent if no point is currently clicked
+        if (!this.clickedPointBbox || this.clickedPointBbox.length === 0) {
+          this.zoomBounds = this.layerBbox
+        }
       },
       activeDiffMapLayers() {
         if (this.activeDiffMapLayers.length === 3) {

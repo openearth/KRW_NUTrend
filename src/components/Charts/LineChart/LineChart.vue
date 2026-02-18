@@ -37,7 +37,7 @@
   ])
 
   export default {
-    name: 'DotsChart',
+    name: 'LinesChart',
     components: {
       VChart,
     },
@@ -55,7 +55,6 @@
           type: 'line',
           lineStyle: { width: 3 },
         },
-        seriesColors: [ 'black', 'white', 'blue' ],
       }
     },
     computed: {
@@ -95,18 +94,15 @@
           },
         }
       },
-      seriesName() {
-        if (this.selectedParticle === 'din') {
-          return [ '3-jarig \nWintergemiddelde', 'Jaargemiddelde', 'Wintergemiddelde' ] 
-        }else{
-          return [ '3-jarig \nZomergemiddelde', 'Jaargemiddelde', 'Zomergemiddelde' ]
-        }
-      }, 
 
       lineChartData() {
-        return this.data.find(data => data.name === 'lines')
+        const chartData = this.data.find(data => data.name === 'lines')
+        return chartData
       },
       areas() {
+        if (!this.lineChartData.areas) {
+          return []
+        }
         return mapChartAreas(this.lineChartData.areas, this.maxValue)
       },
       options() {
@@ -116,7 +112,7 @@
           yAxis: this.yAxis,
           series: [
             ...this.series,
-            ...this.markAreas,
+            ...(this.markAreas.length > 0 ? this.markAreas : []),
           ],
         }
       },
@@ -124,41 +120,59 @@
         return {
           type: 'time',
           min: '1991',
-          max: '2024',
+          max: '2025',
         }
       },
       yAxis() {
         return {
           type: 'value',
-          min: parseFloat(this.areas[0].min),
+          min: this.areas && this.areas.length > 0 
+            ? parseFloat(this.areas[0].min)
+            : 0,
           max: this.maxValue,
         }
       },
       series() {
-        return this.getSeriesData(this.lineChartData.series)
+        const seriesData = this.getSeriesData(this.lineChartData.series)
+        return seriesData
       },
       maxValue() {
         return this.getMaxValueOfSeries(this.lineChartData.maxValues)
       },
+      minValue() {
+        return this.getMinValueOfSeries(this.lineChartData.minValues)
+      },
       markAreas() {
+        if (!this.areas) {
+          return []
+        }
         return this.areas.map(area => createChartMarkAreas(area))
       },
     },
     methods: {
       getSeriesData(data) {
-        return data.map((serie, index) => ({
+        const result = data.map((serie) => ({
           ...this.seriesStyle,
-          name: this.seriesName[index],
-          data: serie,
+          name: serie.seriesName,
+          data: serie.data || serie,
           itemStyle: {
-            color: this.seriesColors[index],
+            color: serie.seriesColor,
           },
         }))
+        return result
       },
       getMaxValueOfSeries(values) {
         let floatValues = values.map(parseFloat)
 
         return this.roundMax(Math.max(...floatValues))
+      },
+      getMinValueOfSeries(values) {
+        if (!values || !values.length) {
+          return 0
+        }
+        let floatValues = values.map(parseFloat)
+
+        return Math.min(...floatValues)
       },
       formatMaxY(max) {
         const formattedMax = Math.ceil((max + 1))

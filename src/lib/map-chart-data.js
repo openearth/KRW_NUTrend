@@ -33,10 +33,13 @@
  * ]
  */
 export default (array) => {
+
   const mappedData = []
   
   array.forEach((item) => {
-    const { name, result } = item
+    
+    const { name, result, seriesDetails } = item
+   
     const { data, value, location } = result
     
     if (name === 'scatter') {
@@ -49,9 +52,9 @@ export default (array) => {
       }) 
     }else{
       const existingEntry = mappedData.find(item => item.name === name)
+
       
-      
-      // if an entry already exists in mappedData, add the data to it.
+      // if an entry (with entry I mean lines, dots, etc.) already exists in mappedData, add the data to it.
       if (existingEntry) {
         
         if (value) {
@@ -62,10 +65,21 @@ export default (array) => {
         }
 
         if (data) {
-         
-          existingEntry.series
-            ? existingEntry.series.push(data)
-            : existingEntry.series = [ data ]
+          // For lines chart, attach seriesDetails directly to the series entry
+          if (name === 'lines' && seriesDetails) {
+            const seriesEntry = {
+              data: data,
+              seriesName: seriesDetails.name,
+              seriesColor: seriesDetails.color,
+            }
+            existingEntry.series
+              ? existingEntry.series.push(seriesEntry)
+              : existingEntry.series = [ seriesEntry ]
+          } else {
+            existingEntry.series
+              ? existingEntry.series.push(data)
+              : existingEntry.series = [ data ]
+          }
 
           existingEntry.minValues
           ? existingEntry.minValues.push(location.minValue)
@@ -79,15 +93,32 @@ export default (array) => {
       } else {
        
         // else, we create a new entry in mappedData and add the available data.
-        mappedData.push({
-          name,
-          ...(data && { series: data }),
-          ...(value && { areas: [ { value } ] }),
-        })
+        if (name === 'lines') {
+          const seriesData = data && seriesDetails
+            ? [ {
+              data: data,
+              seriesName: seriesDetails.name,
+              seriesColor: seriesDetails.color,
+            } ]
+            : (data ? [ data ] : [])
+          
+          mappedData.push({
+            name,
+            ...(seriesData.length > 0 && { series: seriesData }),
+            ...(value && { areas: [ { value } ] }),
+          })
+        } else {
+          mappedData.push({
+            name,
+            ...(data && { series:  data  }),
+            ...(value && { areas: [ { value } ] }),
+          })
+        }
       }
       }
 
   })
+  
   return {
     data: mappedData,
   }

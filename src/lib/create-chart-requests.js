@@ -3,35 +3,41 @@ import getChartDataRequest from '~/lib/get-chart-data-request'
  * For each set type of chart, create and make a request with each set of parameters.
  * Depending on the request response, we map the chart data series and chart area.
  *
- * Output: Array with Promises (resolved or rejected) fror each request.
- * [ Promise, Promise, Promise, ... ]
+ * Output: Object with arrays of Promises grouped by chart type.
+ * { 
+ *   lines: [ Promise, Promise, ... ],
+ *   dots: [ Promise, Promise, ... ],
+ *   scatter: [ Promise, Promise, ... ],
+ * }
  */
 export default ({ charts, locationId, selectedMonitoringLocations, selectedMeetnetLocations }) => {
-  let requests = []
-  console.log('createChartData charts',charts)
-  const { monitoringLocations }= selectedMonitoringLocations
-  const { meetnetLocations }= selectedMeetnetLocations
+  const requestsByType = {}
+  const { monitoringLocations }= selectedMonitoringLocations || {}
+  const { meetnetLocations }= selectedMeetnetLocations || {}
   
   Object.entries(charts).forEach(([ name, array ]) => {
     
     if (name ==='scatter') {
+      requestsByType[name] = []
       
-      monitoringLocations.forEach(({ monitoringLocationId }) => {
-        let requestScatter = getChartDataRequest(name, array.monitoring, monitoringLocationId)        
-        requests = [ ...requests, ...requestScatter ]
-      })
-      if (meetnetLocations.length > 0) {
-      meetnetLocations.forEach(({ meetnetLocationId }) => {
-        let requestScatter = getChartDataRequest(name, array.meetnet, meetnetLocationId)        
-        requests = [ ...requests, ...requestScatter ]
-      })
-    }
+      if (monitoringLocations && monitoringLocations.length > 0) {
+        monitoringLocations.forEach(({ monitoringLocationId }) => {
+          let requestScatter = getChartDataRequest(name, array.monitoring, monitoringLocationId)        
+          requestsByType[name] = [ ...requestsByType[name], ...requestScatter ]
+        })
+      }
+      if (meetnetLocations && meetnetLocations.length > 0) {
+        meetnetLocations.forEach(({ meetnetLocationId }) => {
+          let requestScatter = getChartDataRequest(name, array.meetnet, meetnetLocationId)        
+          requestsByType[name] = [ ...requestsByType[name], ...requestScatter ]
+        })
+      }
       
-    }else{
+    } else {
       let requestsChart = getChartDataRequest(name, array, locationId)
-      requests = [ ...requests, ...requestsChart ]
+      requestsByType[name] = requestsChart
     }
   })
   
-  return requests
+  return requestsByType
 }

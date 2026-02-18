@@ -23,4 +23,4 @@ $ npm i
 $ npm run dev
 ```
 
-- viewer contains data untill 2024
+- viewer contains data untill 2025

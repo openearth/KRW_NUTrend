@@ -284,10 +284,13 @@
         return display
       },
       titleParticle() { 
+        //TODO: Can we move that to a config file?
         const title = this.selectedParticle === 'ntot' ? 'N Totaal' 
           :this.selectedParticle === 'ptot' ? 'P Totaal'
             :this.selectedParticle === 'din' ? 'DIN'
-              :null
+              :this.selectedParticle ==='nh4' ? 'Ammonium'
+                :this.selectedParticle ==='no3' ? 'Nitraat'
+                  :null
         return title
       },
       scatterChartTitle() {

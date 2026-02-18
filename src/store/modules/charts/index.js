@@ -128,11 +128,11 @@ export default {
       const { selectedParticle } = rootState['filters']
       const type = capitalizeString(selectedParticle)
 
-      const imageUrl =  `https://krw-nutrend.avi.deltares.nl/data/Trend-${ locationId }%20-%20${ type }.jpg`
+      const imageUrl =  `${ process.env.VUE_APP_API_ENDPOINT }/data/Trend-${ locationId }%20-%20${ type }.jpg`
      
       commit('SET_CHART_IMAGE', imageUrl)
     },
-    getChartsData({ commit, rootState, rootGetters }) {
+    async getChartsData({ commit, rootState, rootGetters }) {
       const charts  = rootGetters['layers/availableCharts']
       
       if (!charts) {
@@ -145,16 +145,31 @@ export default {
 
       const  selectedMonitoringLocations = rootGetters['locations/selectedMonitoringLocations']
       const  selectedMeetnetLocations = rootGetters['locations/selectedMeetnetLocations']
-      const chartDataRequests = createChartRequests({ charts, locationId, selectedMonitoringLocations, selectedMeetnetLocations }) 
+      const requestsByType = createChartRequests({ charts, locationId, selectedMonitoringLocations, selectedMeetnetLocations }) 
 
-      try {
-        Promise.all(chartDataRequests)
-          .then((result) => mapChartData(result))
-          .then(({ data }) => {
-            commit('SET_CHART_DATA', { data })
-          })
-      } catch (err) {
-        console.log(err)
+      // Process each chart type independently so failures don't affect other charts
+      const allResults = []
+      
+      for (const [ chartType, requests ] of Object.entries(requestsByType)) {
+        if (!requests || requests.length === 0) {
+          continue
+        }
+        
+        try {
+          const results = await Promise.all(requests)
+          allResults.push(...results)
+        } catch (err) {
+          console.warn(`Failed to load ${ chartType } chart data:`, err)
+          // Continue processing other chart types even if this one fails
+        }
+      }
+
+      if (allResults.length > 0) {
+        const { data } = mapChartData(allResults)
+        commit('SET_CHART_DATA', { data })
+      } else {
+        console.warn('No chart data could be loaded')
+        commit('SET_CHART_DATA', { data: [] })
       }
     },
     getChartDataToestandNl(context) {
