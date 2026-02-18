@@ -109,16 +109,23 @@
     },
     methods: {
       getLegendData(data) {
-        const stationNames =  data.map(({ location })=> {
-          return location.stationName
+        const stationNames = data.map(({ location }) => {
+          return location?.stationName ?? ''
         })
         return stationNames
       },
+      /**
+       * Build ECharts series from scatter chart data (one series per location/response).
+       * Each series must have a unique 'name': ECharts treats series with the same name
+       * as a single series, so only one legend entry and one set of points would show.
+       * Monitoring and meetnet responses for the same station often share stationName;
+       * consider appending locationId (e.g. "Station (NL44_41001)") to keep series distinct.
+       */
       getSeriesData(data) {
         const series = data.map(({ location, name, series }) => {
           return {
             'symbolSize': 6,
-            'name': this.formatStationNameToFit(location.stationName),
+            'name': this.formatStationNameToFit(location?.stationName ?? ''),
             'type': name,
             'data': series,
           }
@@ -127,6 +134,9 @@
         return series
       },
       formatStationNameToFit(name) {
+        if (name == null || name === '') {
+          return ''
+        }
         const wrappedName = name.replace(/(?![^\n]{1,32}$)([^\n]{1,32})\s/g, '$1\n')
         return wrappedName
       },

@@ -1,7 +1,8 @@
 import checkForNull from './toestand-graphs-utils/check-for-null'
 
 export default (data, type) => {
-  if (!data?.timeSeries.length) {
+  console.log('data', data)
+  if (!data?.timeSeries || !data.timeSeries.length) {
     return []
   }
 
