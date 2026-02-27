@@ -1,6 +1,8 @@
-##### ***Actualisatie KRW-NUTrend 2025***
+##### ***Actualisatie en uitbreiding KRW-NUTrend 2025***
 
-De meetwaarden t/m 2023, en de toetsing t/m toetsjaar 2025 zijn in september’24 beschikbaar gekomen via het Waterkwaliteitsportaal van het Informatiehuis Water ([KRW-bronbestanden | Het Waterkwaliteitsportaal](https://www.waterkwaliteitsportaal.nl/krw-bronbestanden "https://www.waterkwaliteitsportaal.nl/krw-bronbestanden")). Deze data zijn met de laatste update (10 december 2025) nu ook beschikbaar in deze viewer. Voor vragen kunt u contact opnemen via [KRW-NUTrend@deltares.nl](mailto:KRW-NUTrend@deltares.nl "mailto:krw-nutrend@deltares.nl").
+De meetwaarden t/m 2024, en de toetsing t/m toetsjaar 2025 zijn in september’25 beschikbaar gekomen via het Waterkwaliteitsportaal van het Informatiehuis Water ([KRW-bronbestanden | Het Waterkwaliteitsportaal](https://www.waterkwaliteitsportaal.nl/krw-bronbestanden "https://www.waterkwaliteitsportaal.nl/krw-bronbestanden")). Deze data zijn met de laatste update (14 januari 2026) nu ook beschikbaar in deze viewer. Het bijbehorende memo "Update KRW-NUTrend t/m toetsjaar 2025" is te vinden onder de knop 'meer informatie'.
+Naast de actualisatie is de viewer ook uitgebreid met Nitraat en Ammonium gegevens. De stoffen worden zichtbaar na selectie van Concentratie in de lijst 'Soort informatie'.
+Voor vragen kunt u contact opnemen via [KRW-NUTrend@deltares.nl](mailto:KRW-NUTrend@deltares.nl "mailto:krw-nutrend@deltares.nl").
 
 ##### KRW-NUTrend
 
