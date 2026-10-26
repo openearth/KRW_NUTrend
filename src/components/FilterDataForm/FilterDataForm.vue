@@ -55,11 +55,12 @@
         <div class="text-body-1 pb-3">
           Waterbeheerder:
         </div>
-        <v-select
+        <v-autocomplete
           v-model="selectedWaterManager"
           :items="availableWaterManagers"
           :value="selectedWaterManager"
-          placeholder="selecteer beheerder"
+          placeholder="zoek of selecteer beheerder"
+          no-data-text="Geen resultaten gevonden"
           append-icon="mdi-chevron-down"
           clearable
           outlined
@@ -76,11 +77,12 @@
         <div v-else class="text-body-1 pb-3">
           Waterlichaam:
         </div>
-        <v-select
+        <v-autocomplete
           v-model="selectedBodyOfWater"
           :items="availableWaterBodies"
           :value="selectedBodyOfWater"
-          placeholder="selecteer water"
+          placeholder="zoek of selecteer water"
+          no-data-text="Geen resultaten gevonden"
           append-icon="mdi-chevron-down"
           clearable
           outlined
