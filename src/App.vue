@@ -54,6 +54,11 @@
         :options="availableBaseMap"
         @base-layer-is-loaded="onBaseLayerIsLoaded"
       />
+      <waterbody-layer
+        v-if="baseLayerIsAvailable && waterbodiesTileset"
+        :tileset="waterbodiesTileset"
+        :ids="highlightedWaterbodies"
+      />
       
       <div v-if="baseLayerIsAvailable && activeMapLayer" :key="activeMapLayer.id">
         <map-layer
@@ -101,6 +106,7 @@
   import MapTitle from '~/components/MapTitle/MapTitle'
   import BaseLayer from '~/components/MapBoxLayer/BaseLayer'
   import MapLayer from '~/components/MapBoxLayer/MapLayer'
+  import WaterbodyLayer from '~/components/MapBoxLayer/WaterbodyLayer'
   import MapControlsZoom from '~/components/MapControls/MapControlsZoom'
   import reports from '~/config/reports.json'
 
@@ -115,9 +121,11 @@
       BaseLayer,
       MapControlsZoom,
       MapLayer,
+      WaterbodyLayer,
     },
     data: () => ({
       accessToken: process.env.VUE_APP_MAPBOX_TOKEN,
+      waterbodiesTileset: process.env.VUE_APP_WATERBODIES_TILESET,
       legalText: '',
       checkboxes: [
         'Functionele en analytische cookies accepteren',
@@ -136,12 +144,15 @@
       hardReload: false,
     }),
     computed: {
-      ...mapState('layers', [ 'activeMap', 'legend', 'timeOption', 'clickedPointBbox', 'activeMapLocation' ]),
+      ...mapState('layers', [ 'activeMap', 'legend', 'timeOption', 'clickedPointBbox', 'activeMapLocation', 'hoveredLocationId' ]),
       ...mapState('charts', [ 'data' ]),
       ...mapState('filters', [ 'selectedTimestamp', 'selectedType' ]),
       ...mapGetters('layers', [ 'activeMapLayer', 'activeDiffMapLayers', 'availableBaseMap', 'layerBbox', 'legendTitle' ]),
       showLegend() {
         return this.legend.length
+      },
+      highlightedWaterbodies() {
+        return [ this.activeMapLocation?.locationId, this.hoveredLocationId ].filter(Boolean)
       },
     },
     watch: { 

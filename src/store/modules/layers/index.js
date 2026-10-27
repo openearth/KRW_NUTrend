@@ -24,6 +24,7 @@ export default {
   state: () => ({
     activeMap: null, // activeMap details that we read from the configuration
     activeMapLocation: null,
+    hoveredLocationId: null,
     featuresCollection: [],//TODO: remove it?. It is not used I think
     legend: [],
     differenceMap: false, 
@@ -263,6 +264,9 @@ export default {
     setActiveMapLocation(context, payload) {
       context.commit('SET_ACTIVE_MAP_LOCATION', payload)
     },
+    setHoveredLocationId(context, locationId) {
+      context.commit('SET_HOVERED_LOCATION_ID', locationId)
+    },
     setDifferenceMap(context, payload) {
       context.commit('SET_DIFFERENCE_MAP', payload)
     },
@@ -296,6 +300,9 @@ export default {
     },
     SET_ACTIVE_MAP_LOCATION(state, activeMapLocation ) {
       state.activeMapLocation = activeMapLocation
+    },
+    SET_HOVERED_LOCATION_ID(state, locationId) {
+      state.hoveredLocationId = locationId
     },
     SET_LEGEND_GRAPHIC(state, { legend }) {
       state.legend = legend
