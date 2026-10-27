@@ -50,7 +50,7 @@
         'createImageUrl',
         'getChartsData',
       ]),
-      ...mapActions('layers', [ 'setActiveMapLocation', 'setClickedPointBbox'  ]),
+      ...mapActions('layers', [ 'setActiveMapLocation', 'setClickedPointBbox', 'setHoveredLocationId' ]),
       ...mapActions('charts',[ 'resetChartsData' ]),
       deferredMountedTo(map) {
         if (this.layer) {
@@ -86,7 +86,8 @@
       onMouseEnter(e) {
         this.map.getCanvas().style.cursor = 'pointer'
         // Copy coordinates array
-        const { name } = e.features[0].properties
+        const { name, locationId } = e.features[0].properties
+        this.setHoveredLocationId(locationId)
         const coordinates = e.features[0].geometry.coordinates.slice()
         
         // Ensure that if the map is zoomed out such that multiple 
@@ -103,6 +104,7 @@
       onMouseLeave() {
         this.map.getCanvas().style.cursor = ''
         this.popup.remove()
+        this.setHoveredLocationId(null)
       },
       addEventsToMap() {
         this.map.on('click', this.layer.id, this.onClick)
